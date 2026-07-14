@@ -357,6 +357,18 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
 .rec-row { margin: 8px 0; font-size: 14.5px; }
 .rec-row b { color: var(--brand-700); }
 
+@media (max-width: 560px) {
+  .top3-card {
+    display: grid; grid-template-columns: 40px minmax(0, 1fr); column-gap: 14px;
+    align-items: start; padding: 18px;
+  }
+  .top3-num { grid-column: 1; grid-row: 1; }
+  .top3-body { display: contents; }
+  .top3-body > h3 { grid-column: 2; grid-row: 1; align-self: start; margin: 0; }
+  .top3-body > :not(h3) { grid-column: 1 / -1; }
+  .top3-body > .rec-row:first-of-type { margin-top: 16px; }
+}
+
 /* Signal lists */
 .signal-grid { display: grid; gap: 16px; }
 @media (min-width: 720px) { .signal-grid { grid-template-columns: 1fr 1fr; } }
@@ -482,11 +494,20 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
   border-radius: var(--radius-card); padding: 32px; display: grid; gap: 16px; max-width: 420px; width: 100%; }
 .contact-card h2 { font-size: var(--fs-h2); line-height: var(--lh-h2); font-weight: var(--fw-h2); margin: 0; }
 .contact-phone-row { display: flex; gap: 16px; align-items: flex-start; }
+.contact-phone-row > div { min-width: 0; }
 .contact-phone-row svg { flex: none; color: var(--brand); margin-top: 6px; }
 .contact-phone { font-size: var(--fs-display); line-height: var(--lh-display); font-weight: var(--fw-display);
-  color: var(--ink); text-decoration: none; display: block; }
+  color: var(--ink); text-decoration: none; display: block; white-space: nowrap; font-variant-numeric: tabular-nums; }
 .contact-phone:hover { color: var(--brand); }
 .contact-hint { font-size: 12px; line-height: 16.8px; color: var(--ink-soft); margin: 6px 0 0; }
+
+@media (max-width: 480px) {
+  .contact-teaser { padding: 32px 12px; }
+  .contact-card { padding: 20px; }
+  .contact-phone-row { gap: 10px; }
+  .contact-phone-row svg { width: 22px; height: 22px; margin-top: 5px; }
+  .contact-phone { font-size: clamp(28px, 9vw, 36px); line-height: 1.15; letter-spacing: -.025em; }
+}
 
 /* Feedback-Block */
 .feedback-block { border-top: 1px solid var(--line); padding-top: 30px; }

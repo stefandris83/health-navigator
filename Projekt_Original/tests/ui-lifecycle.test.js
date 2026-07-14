@@ -266,6 +266,18 @@ test('Fitness-Kurztests erscheinen nur in der Fitness-Dimension und verlinken Em
   assert.ok(css.includes('.plan-retests'));
 });
 
+test('Mobile Ergebnisansicht nutzt die Kartenbreite und hält die Telefonnummer zusammen', () => {
+  const css = fs.readFileSync(path.join(ROOT, 'css/styles.css'), 'utf8');
+  const phoneRule = css.match(/\.contact-phone\s*\{([^}]*)\}/);
+
+  assert.ok(css.includes('grid-template-columns: 40px minmax(0, 1fr);'));
+  assert.ok(css.includes('.top3-body { display: contents; }'));
+  assert.ok(css.includes('.top3-body > :not(h3) { grid-column: 1 / -1; }'));
+  assert.ok(phoneRule, 'Telefonregel fehlt');
+  assert.match(phoneRule[1], /white-space:\s*nowrap/);
+  assert.ok(css.includes('.contact-phone { font-size: clamp(28px, 9vw, 36px);'));
+});
+
 let passed = 0;
 tests.forEach(({ name, fn }) => {
   try {
