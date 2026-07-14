@@ -1,7 +1,7 @@
 # Quellen & fachliche Grundlagen (intern)
 
 > **Zweck dieses Dokuments:** interne Dokumentation der wissenschaftlichen Grundlagen
-> des Gesundheitsschutz-Checks. In der Nutzeroberfläche werden **keine Personennamen**
+> des Gesundheitschecks. In der Nutzeroberfläche werden **keine Personennamen**
 > genannt; Inhalte sind **präventiv** formuliert und stellen **keine Diagnose, Therapie
 > oder medizinische Beratung** dar. Orientierungswerte sind als grobe Richtwerte zu
 > verstehen, nicht als Diagnosegrenzen.

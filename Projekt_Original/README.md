@@ -1,4 +1,4 @@
-# Gesundheitsschutz-Check
+# Gesundheitscheck
 
 Der Health Navigator ist eine statische Helsana-Webanwendung für ein strukturiertes
 Gesundheitsassessment. Sechs Fragebogenabschnitte führen zu fünf bewerteten

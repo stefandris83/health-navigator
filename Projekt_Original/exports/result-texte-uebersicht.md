@@ -13,7 +13,7 @@
 ## Freigabestand
 
 - Sprache: `de-CH`
-- Quellversion: `v1:04392ef057d620a1ccb18eb8a888cd826f8b496b5cb34cb1d7d289c196e6c780`
+- Quellversion: `v1:1405afc957629ced46dec398d600725ab235f47b463d3f7d3bd08376c97e088d`
 - Gesamtbestand: **781 Texte**
 - Freigegeben: **0** · Offen: **781**
 
@@ -7038,7 +7038,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit persönlichen Plänen, Erinnerungen und Übungen. Ihr Gesundheitsschutz\-Check kann Ihnen dort den Start abnehmen.
+> Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit persönlichen Plänen, Erinnerungen und Übungen. Ihr Gesundheitscheck kann Ihnen dort den Start abnehmen.
 
 #### Nächster Schritt: CTA zur Helsana Coach App
 
@@ -8448,7 +8448,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wie war Ihr Gesundheitsschutz\-Check?
+> Wie war Ihr Gesundheitscheck?
 
 #### Begründung / Einordnung: Feedback-Sektion, Beschreibung
 

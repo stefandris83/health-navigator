@@ -1,7 +1,7 @@
 {
-  "name": "Helsana Gesundheits-Check",
-  "short_name": "Gesundheits-Check",
-  "description": "Ihr persönlicher Gesundheits-Check von Helsana.",
+  "name": "Helsana Gesundheitscheck",
+  "short_name": "Gesundheitscheck",
+  "description": "Ihr persönlicher Gesundheitscheck von Helsana.",
   "id": "./",
   "start_url": "./",
   "scope": "./",
