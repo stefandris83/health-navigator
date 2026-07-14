@@ -29,7 +29,7 @@ jobs:
         working-directory: Projekt_Original
         run: |
           mkdir -p ../_site
-          cp index.html quellen.html ../_site/
+          cp index.html quellen.html manifest.webmanifest ../_site/
           cp -R assets css js ../_site/
       - name: Öffentliche Anwendung hochladen
         uses: actions/upload-pages-artifact@v4

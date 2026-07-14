@@ -964,6 +964,19 @@ test('Fitness-Kurztests: 0, 1, 2 oder 3 ausgefüllte Werte werden vollständig u
   );
 });
 
+test('Fitness-Kurztests: hohe Einbeinstand- und Wandsitz-Rohwerte bleiben sichtbar', () => {
+  ['einbeinstand', 'wandsitz'].forEach((id) => {
+    const answers = { ...HEALTHY_ANSWERS, alter: 45, geschlecht: 'maennlich', [id]: 1000 };
+    const results = W.Scoring.computeResults(answers);
+    const testResult = results.fitnessTests.find((test) => test.id === id);
+    const insight = W.Recommendations.fitnessTestInsights(results, []).find((test) => test.id === id);
+
+    assert.strictEqual(testResult.value, 1000, id + ': Die Score-Einordnung darf den eingegebenen Rohwert nicht deckeln');
+    assert.strictEqual(testResult.statusKey, 'stark', id + ': Der Wert bleibt in der obersten Einordnungsstufe');
+    assert.strictEqual(insight.value, 1000, id + ': Auch die Ergebnisdarstellung zeigt den Rohwert unverändert');
+  });
+});
+
 test('Fitness-Kurztests: interne Schwellen werden auf vier sichtbare Statusstufen abgebildet', () => {
   const base = { ...HEALTHY_ANSWERS, alter: 52, geschlecht: 'maennlich' };
   delete base.einbeinstand;
