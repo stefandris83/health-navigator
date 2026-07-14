@@ -457,7 +457,7 @@ const DIMENSIONS = [
         type: 'number',
         unit: 'Sekunden',
         min: 0,
-        max: 300,
+        max: 1000,
         placeholder: 'z. B. 45',
         optional: true,
       },
