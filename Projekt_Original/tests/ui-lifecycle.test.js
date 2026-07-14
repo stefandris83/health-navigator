@@ -53,6 +53,20 @@ test('Wandsitz akzeptiert optionale Werte von 0 bis 1’000 Sekunden', () => {
   assert.strictEqual(schema.isDimensionComplete(dimension, { wandsitz: 1001 }), false);
 });
 
+test('Einbeinstand akzeptiert optionale Werte von 0 bis 1’000 Sekunden', () => {
+  const windowObject = makeQuestions();
+  const question = windowObject.DIMENSIONS
+    .flatMap((dimension) => dimension.questions)
+    .find((candidate) => candidate.id === 'einbeinstand');
+  const dimension = { questions: [question] };
+  const schema = windowObject.HealthAnswerSchema;
+
+  assert.strictEqual(question.max, 1000);
+  assert.strictEqual(schema.isDimensionComplete(dimension, { einbeinstand: 0 }), true);
+  assert.strictEqual(schema.isDimensionComplete(dimension, { einbeinstand: 1000 }), true);
+  assert.strictEqual(schema.isDimensionComplete(dimension, { einbeinstand: 1001 }), false);
+});
+
 test('URL-Allowlist akzeptiert nur absolute HTTPS-Ziele ohne Zugangsdaten', () => {
   const windowObject = {};
   runScript(windowObject, 'js/url-safety.js');

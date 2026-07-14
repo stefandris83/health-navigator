@@ -409,7 +409,7 @@ const DIMENSIONS = [
         type: 'number',
         unit: 'Sekunden',
         min: 0,
-        max: 120,
+        max: 1000,
         placeholder: 'z. B. 30',
         optional: true,
       },
