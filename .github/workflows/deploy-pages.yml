@@ -1,0 +1,48 @@
+name: Health Navigator auf GitHub Pages veröffentlichen
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'Projekt_Original/**'
+      - '.github/workflows/deploy-pages.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: github-pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v6
+      - name: GitHub Pages konfigurieren
+        uses: actions/configure-pages@v5
+      - name: Öffentliche Anwendung vorbereiten
+        working-directory: Projekt_Original
+        run: |
+          mkdir -p ../_site
+          cp index.html quellen.html ../_site/
+          cp -R assets css js ../_site/
+      - name: Öffentliche Anwendung hochladen
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./_site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Auf GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

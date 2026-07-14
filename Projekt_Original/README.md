@@ -117,11 +117,25 @@ gespiegelt und als priorisierter Schritt markiert; die frühere separate Sektion
 Ausgefüllte Einbeinstand-, Liegestütz- und Wandsitz-Tests erscheinen immer direkt
 in der Dimension «Körperliche Fitness». Rohwert, fachlich zulässige Einordnung,
 gesundheitliche Relevanz und Aussagegrenzen werden getrennt ausgewiesen. Ein
-ausbaufähiger, fachlich vergleichbarer Wert verweist auf dieselbe Kraft- oder
+Wert mit «Erhöhter Aufmerksamkeit» verweist auf dieselbe Kraft- oder
 Balance-Empfehlung; liegt diese im Aktionsplan, ergänzt Woche 4 eine persönliche
 Verlaufskontrolle mit dem ursprünglichen Testwert. Im Fitness-Score zählen
 Liegestütz und Wandsitz gemeinsam zur Muskulatur und teilen sich deren Testhälfte;
 der Wandsitz wird nicht als Kondition gewertet.
+
+## Öffentliche Vorschau mit GitHub Pages
+
+Nach der einmaligen Aktivierung von GitHub Pages veröffentlicht der Workflow
+`.github/workflows/deploy-pages.yml` die Anwendung unter
+`https://stefandris83.github.io/health-navigator/`. Jede Änderung an
+`Projekt_Original` auf `main` löst eine neue Veröffentlichung aus; sie kann auch
+manuell über den Tab «Actions» gestartet werden.
+
+Veröffentlicht werden nur die Dateien, die der Check zur Laufzeit benötigt:
+`index.html`, `quellen.html`, `assets/`, `css/` und `js/`. Tests,
+Dokumentation, Marketing-Exporte und Content-Arbeitsdateien sind nicht Teil der
+öffentlichen Website. Die Anwendung speichert Antworten weiterhin nur lokal im
+Browser.
 
 ## Helsana-Integration
 
