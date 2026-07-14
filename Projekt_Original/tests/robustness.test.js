@@ -502,6 +502,46 @@ test('Doppelklick-Portabilität: lokale Assets existieren und klassische Script-
   ]);
 });
 
+test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollständig und sicher', () => {
+  const indexSource = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
+  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.webmanifest'), 'utf8'));
+  const expectedIcons = [
+    ['assets/app-icon.svg', 'any', 'image/svg+xml'],
+    ['assets/app-icon-192.png', '192x192', 'image/png'],
+    ['assets/app-icon-512.png', '512x512', 'image/png'],
+  ];
+
+  assert.ok(indexSource.includes('rel="manifest" href="manifest.webmanifest"'));
+  assert.ok(indexSource.includes('rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180"'));
+  assert.strictEqual(manifest.start_url, './');
+  assert.strictEqual(manifest.scope, './');
+  assert.strictEqual(manifest.display, 'standalone');
+  assert.strictEqual(manifest.theme_color, '#9A0941');
+  assert.deepStrictEqual(
+    manifest.icons.map((icon) => [icon.src, icon.sizes, icon.type]),
+    expectedIcons,
+  );
+
+  const svg = fs.readFileSync(path.join(ROOT, 'assets', 'app-icon.svg'), 'utf8');
+  assert.ok(/^<svg\b/.test(svg));
+  assert.ok(svg.includes('fill="#9A0941"'));
+  assert.ok(!/<script\b|<foreignObject\b|\son[a-z]+\s*=|\b(?:href|src)\s*=|javascript:/i.test(svg));
+
+  [
+    ['assets/app-icon-192.png', 192],
+    ['assets/app-icon-512.png', 512],
+    ['assets/apple-touch-icon.png', 180],
+  ].forEach(([relativePath, expectedSize]) => {
+    const png = fs.readFileSync(path.join(ROOT, relativePath));
+    assert.ok(png.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])), relativePath + ': PNG-Signatur fehlt');
+    assert.strictEqual(png.readUInt32BE(16), expectedSize, relativePath + ': falsche Breite');
+    assert.strictEqual(png.readUInt32BE(20), expectedSize, relativePath + ': falsche Höhe');
+  });
+
+  const pagesWorkflow = fs.readFileSync(path.join(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml'), 'utf8');
+  assert.ok(pagesWorkflow.includes('cp index.html quellen.html manifest.webmanifest ../_site/'));
+});
+
 test('Helsana-Logo ist lokal, unverändert und frei von aktiven SVG-Inhalten', () => {
   const expectedLogoPath = 'assets/helsana-logo.svg';
   const pages = ['index.html', 'quellen.html'].map((file) => fs.readFileSync(path.join(ROOT, file), 'utf8'));

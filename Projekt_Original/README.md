@@ -45,7 +45,9 @@ entfernt.
 
 ```text
 index.html / quellen.html        Statische Einstiegs- und Quellenseite
+manifest.webmanifest             Installationsvertrag für Android und andere PWA-Browser
 assets/helsana-logo.svg          Lokal eingebundenes Helsana-Markenasset
+assets/app-icon.*                Lokales Helsana-rotes App-Icon (SVG und PNGs für Mobilgeräte)
 css/styles.css                   Bestehendes Helsana-Look-and-Feel
 js/config.js                     Validierte Laufzeitkonfiguration
 js/questions.js                  Fragen und Antwortschema
@@ -132,10 +134,25 @@ Nach der einmaligen Aktivierung von GitHub Pages veröffentlicht der Workflow
 manuell über den Tab «Actions» gestartet werden.
 
 Veröffentlicht werden nur die Dateien, die der Check zur Laufzeit benötigt:
-`index.html`, `quellen.html`, `assets/`, `css/` und `js/`. Tests,
+`index.html`, `quellen.html`, `manifest.webmanifest`, `assets/`, `css/` und `js/`. Tests,
 Dokumentation, Marketing-Exporte und Content-Arbeitsdateien sind nicht Teil der
 öffentlichen Website. Die Anwendung speichert Antworten weiterhin nur lokal im
 Browser.
+
+## Auf dem Smartphone installieren
+
+Über die HTTPS-Vorschau kann der Check als Verknüpfung auf dem Startbildschirm
+abgelegt werden. In Chrome auf Android wählen Sie im Browsermenü «App installieren»
+oder «Zum Startbildschirm hinzufügen». In Safari auf iPhone oder iPad wählen Sie
+«Teilen» und danach «Zum Home-Bildschirm». Das lokale App-Symbol verwendet
+Helsana-Rot; seine SVG-Quelle liegt in `assets/app-icon.svg`. Die PNG-Varianten
+`assets/app-icon-192.png`, `assets/app-icon-512.png` und
+`assets/apple-touch-icon.png` sind für Android beziehungsweise iOS vorgesehen.
+
+Die Anwendung bleibt eine statische Web-App: Für die Installation und spätere
+Nutzung ist eine HTTPS-Adresse erforderlich. Ein Doppelklick auf die lokale
+`index.html` funktioniert weiterhin, kann aber nicht als mobile App installiert
+werden.
 
 ## Helsana-Integration
 
