@@ -1,7 +1,7 @@
 /*
  * questions.js
  * ---------------------------------------------------------------------------
- * Definition aller Bereiche und Fragen des Gesundheitsschutz-Checks.
+ * Definition aller Bereiche und Fragen des Gesundheitschecks.
  *
  * Fragetexte, Antwortoptionen und Info-Boxen («Blauer Kasten») folgen 1:1 dem
  * finalen, rechtlich geprüften Fragenset «Fragebogen HN» (Fragenset-final).

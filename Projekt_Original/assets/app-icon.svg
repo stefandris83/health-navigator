@@ -1,5 +1,5 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
-  <title id="title">Helsana Gesundheits-Check</title>
+  <title id="title">Helsana Gesundheitscheck</title>
   <desc id="desc">Weisses Gesundheits- und Navigationssymbol auf Helsana-Rot.</desc>
   <rect width="512" height="512" fill="#9A0941"/>
   <circle cx="256" cy="256" r="150" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="18"/>

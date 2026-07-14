@@ -200,7 +200,7 @@
     const hasProgress = Object.keys(state.answers).length > 0;
     app.innerHTML = `
       <section class="hero fade-in">
-        <p class="eyebrow">Ihr persönlicher Gesundheits-Check</p>
+        <p class="eyebrow">Ihr persönlicher Gesundheitscheck</p>
         <h1>Verstehen Sie Ihren Gesundheitszustand – und erkennen Sie, wo sich Handeln am meisten lohnt.</h1>
         <p class="lead">In wenigen Minuten erhalten Sie eine motivierende Standortbestimmung über fünf
         Gesundheitsdimensionen, persönliche Empfehlungen und Ihre wirkungsvollsten nächsten Schritte.</p>

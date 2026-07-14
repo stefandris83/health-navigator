@@ -4,8 +4,8 @@
   const bundle = {
     "schemaVersion": 1,
     "locale": "de-CH",
-    "version": "v1:04392ef057d620a1ccb18eb8a888cd826f8b496b5cb34cb1d7d289c196e6c780",
-    "sourceHash": "04392ef057d620a1ccb18eb8a888cd826f8b496b5cb34cb1d7d289c196e6c780",
+    "version": "v1:1405afc957629ced46dec398d600725ab235f47b463d3f7d3bd08376c97e088d",
+    "sourceHash": "1405afc957629ced46dec398d600725ab235f47b463d3f7d3bd08376c97e088d",
     "texts": {
       "coach.answer.breathing": "Probieren Sie die Atemübung etwas weiter oben auf dieser Seite (4s ein · 7s halten · 8s aus) – schon ein paar Minuten können die Anspannung senken. Hält die Belastung länger an, ist Helsana für Sie da: Gesundheitsberatung <b>058 340 15 69<\/b>. Bei einer akuten Krise: <b>143<\/b>.",
       "coach.answer.coach_app": "Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit Plänen, Erinnerungen und Übungen. Mit Ihrer Zustimmung könnten Sie Ihr Profil (Score, Fokus-Bereiche, nächste Schritte) direkt übernehmen. Den Absprung finden Sie weiter unten auf dieser Seite.",
@@ -621,7 +621,7 @@
       "ui.chat.title": "Haben Sie Fragen? Der Helsana Digital Coach ist für Sie da.",
       "ui.coach_handoff.consent_title": "Das würde übergeben – nur mit Ihrer Zustimmung:",
       "ui.coach_handoff.cta": "Helsana Coach öffnen",
-      "ui.coach_handoff.description": "Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit persönlichen Plänen, Erinnerungen und Übungen. Ihr Gesundheitsschutz-Check kann Ihnen dort den Start abnehmen.",
+      "ui.coach_handoff.description": "Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit persönlichen Plänen, Erinnerungen und Übungen. Ihr Gesundheitscheck kann Ihnen dort den Start abnehmen.",
       "ui.coach_handoff.eyebrow": "Weiter mit Begleitung",
       "ui.coach_handoff.focus": "Ihre Fokus-Bereiche: {{focusTitles}}",
       "ui.coach_handoff.focus_fallback": "werden aus Ihrer Auswertung abgeleitet",
@@ -650,7 +650,7 @@
       "ui.dimension.empty.open_signal": "Der Orientierungswert bildet nur die bewerteten Antworten ab. Beziehen Sie den zugehörigen Hinweis in der Ergebnisübersicht zusätzlich ein.",
       "ui.feedback.description": "Ihre Rückmeldung hilft uns, den Check laufend zu verbessern – das Ausfüllen dauert nur zwei Minuten.",
       "ui.feedback.eyebrow": "Ihr Feedback ist uns wichtig",
-      "ui.feedback.title": "Wie war Ihr Gesundheitsschutz-Check?",
+      "ui.feedback.title": "Wie war Ihr Gesundheitscheck?",
       "ui.fitness_tests.description": "Diese Kurztests zeigen einzelne Bereiche Ihrer aktuellen körperlichen Leistungsfähigkeit. Sie ersetzen keine medizinische Untersuchung und erlauben allein keine Aussage über Ihr persönliches Erkrankungsrisiko.",
       "ui.fitness_tests.meaning_label": "Was das bedeutet:",
       "ui.fitness_tests.next_reference": "Der nächste Vergleichswert liegt bei {{nextThreshold}} {{unit}}. Er ist keine medizinische Grenze und kein versprochener Vier-Wochen-Erfolg.",
