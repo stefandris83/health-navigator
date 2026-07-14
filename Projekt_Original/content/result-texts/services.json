@@ -1,0 +1,777 @@
+{
+  "schemaVersion": 1,
+  "locale": "de-CH",
+  "domain": "services",
+  "entries": [
+    {
+      "id": "service.offer.bewegung.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.bewegung, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Bewegungsangebote & Ratgeber Bewegung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.bewegung.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.bewegung, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Bewegungsangebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.bewegung.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.bewegung, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Niederschwellige Impulse, um mehr Bewegung in den Alltag zu bringen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.kraft.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.kraft, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Krafttraining-Einstieg & Trainingspläne",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.kraft.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.kraft, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Krafttraining-/Trainingsangebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.kraft.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.kraft, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Hilft Ihnen, gezielt und sicher mit Krafttraining zu starten.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.plus.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.plus, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Helsana+ Partnerangebote",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.plus.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.plus, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana+ passendes Partnerangebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.plus.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.plus, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Belohnt aktive Schritte und macht das Dranbleiben leichter.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.ernaehrung.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.ernaehrung, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ernährungsberatung & Ratgeber Ernährung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.ernaehrung.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.ernaehrung, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Ernährungsberatung verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.ernaehrung.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.ernaehrung, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Persönliche Begleitung für eine alltagstaugliche, gesunde Ernährung.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.metabolisch.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.metabolisch, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Inhalte zu Stoffwechsel & gesundem Gewicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.metabolisch.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.metabolisch, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Angebot metabolische Gesundheit verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.metabolisch.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.metabolisch, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Unterstützt Sie rund um Blutzucker, Gewicht und Energie.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.schlaf.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.schlaf, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Schlafratgeber & Regeneration",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.schlaf.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.schlaf, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Schlafratgeber verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.schlaf.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.schlaf, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Praktische Tipps für besseren, erholsameren Schlaf.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.stress.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.stress, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Stressmanagement & mentale Gesundheit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.stress.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.stress, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Stressmanagement-Angebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.stress.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.stress, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Begleitung und Übungen, um Belastung zu reduzieren und aufzutanken.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.mentale_hilfe.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.mentaleHilfe, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Unterstützungsangebote bei psychischer Belastung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.mentale_hilfe.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.mentaleHilfe, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Angebot psychische Gesundheit / Beratung verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.mentale_hilfe.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.mentaleHilfe, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Vertrauliche Hilfe, wenn die Belastung gross wird.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.vorsorge.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.vorsorge, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Vorsorge- & Check-up-Informationen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.vorsorge.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.vorsorge, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Vorsorgeangebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.vorsorge.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.vorsorge, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Orientierung zu sinnvollen Vorsorge- und Kontrolluntersuchungen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.blutdruck.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.blutdruck, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Inhalte zu Blutdruck & Herzgesundheit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.blutdruck.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.blutdruck, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Blutdruck-/Herzgesundheit-Angebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.blutdruck.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.blutdruck, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Wissen und Impulse rund um Blutdruck und Herz-Kreislauf.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_kardio.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_kardio, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Verständlich erklärt: ApoB, Lp(a) & moderne Herz-Kreislauf-Vorsorge",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_kardio.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_kardio, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Wissensinhalt zu kardiovaskulären Markern & Prävention verlinken – z. B. erklärender Artikel/Video dazu, wie LDL-C, ApoB und Lp(a) unterschiedliche Aspekte des Herz-Kreislauf-Risikos abbilden und wann zusätzliche Messungen sinnvoll sind]",
+      "reviewStatus": "needs-review",
+      "comment": "LDL-C ergänzt und ApoB/Lp(a) nicht als pauschal aussagekräftigste Marker bezeichnet; durch Marketing freigeben."
+    },
+    {
+      "id": "service.offer.wissen_kardio.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_kardio, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Einfach erklärt, warum diese Werte zählen und warum frühes Handeln so wirksam ist.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.rauchstopp.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.rauchstopp, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Rauchstopp-Angebote & Beratung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.rauchstopp.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.rauchstopp, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Rauchstopp-Angebot verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.rauchstopp.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.rauchstopp, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Begleitung und Methoden für einen erfolgreichen Rauchstopp.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_rauchstopp, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Verständlich erklärt: Was im Körper nach dem Rauchstopp passiert",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_rauchstopp, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Wissensinhalt zum Rauchstopp verlinken – z. B. Erholungs-Zeitleiste (20 Min. bis 15 Jahre), Umgang mit Entzug und Rückfällen, warum Begleitung + Nikotinersatz die Erfolgschance vervielfacht]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_rauchstopp, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Die Erholungs-Zeitleiste und warum professionelle Begleitung den Unterschied macht.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_bewegung.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_bewegung, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Verständlich erklärt: Warum schon kurze, intensive Bewegung so viel bewirkt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_bewegung.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_bewegung, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Wissensinhalt zu Bewegung verlinken – z. B. warum der Einstieg den grössten Gewinn bringt, Konzept kurzer intensiver Alltags-Einheiten (VILPA: Treppe/steilen Weg 1–2 Min.), Fitness als starker Prädiktor für Lebenserwartung]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.wissen_bewegung.fit",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.wissen_bewegung, sichtbare Einordnung der Angebots-Passung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Warum der Einstieg am meisten bringt und kurze intensive Einheiten besonders wirksam sind.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.plus_entdecken.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.plusEntdecken, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Helsana+ entdecken",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.plus_entdecken.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.plusEntdecken, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana+ Programmseite verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.feedback.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.feedback, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Zum Formular",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.feedback.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.feedback, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Feedback-Formular verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.coach_app.label",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.coachApp, sichtbares Linklabel; leere fit-Felder werden nicht katalogisiert, weil sie keinen sichtbaren Text erzeugen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Helsana Coach öffnen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.offer.coach_app.placeholder",
+      "section": "Helsana-Angebote",
+      "context": "HELSANA_OFFERS.coachApp, sichtbarer Platzhalter solange keine echte URL hinterlegt ist",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "[Helsana Coach App / Deep-Link verlinken]",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.coverage.ernaehrung.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.ernaehrung, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Mit Ihrer Zusatzversicherung potenziell relevant – ob und in welchem Umfang Kosten unterstützt werden, hängt von Ihrem konkreten Produkt ab.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.bewegung.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.bewegung, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Präventionsangebote wie dieses können je nach Zusatzversicherung unterstützt werden.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.kraft.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.kraft, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Trainings- und Präventionsangebote können je nach Zusatzversicherung unterstützt werden.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.rauchstopp.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.rauchstopp, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Mit Ihrer Zusatzversicherung potenziell relevant – ob und in welchem Umfang Kosten unterstützt werden, hängt von Ihrem konkreten Produkt ab.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.stress.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.stress, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Mit Ihrer Zusatzversicherung potenziell relevant – ob und in welchem Umfang Kosten unterstützt werden, hängt von Ihrem konkreten Produkt ab.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.mentale_hilfe.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.mentaleHilfe, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Mit Ihrer Zusatzversicherung potenziell relevant – ob und in welchem Umfang Kosten unterstützt werden, hängt von Ihrem konkreten Produkt ab.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.coverage.vorsorge.hint",
+      "section": "Versicherungs-Hinweise",
+      "context": "COVERAGE_HINTS.vorsorge, unverbindlicher Hinweis für passende Produktkategorien",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Je nach Zusatzversicherung können Vorsorgeuntersuchungen unterstützt werden – Details klären Sie am besten direkt mit Helsana.",
+      "reviewStatus": "needs-review",
+      "comment": "Deckungsnahe Formulierung vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "service.status_band.stark.label",
+      "section": "Statusbänder",
+      "context": "Scoring STATUS_BANDS, sichtbares Label für stark",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Stark",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.status_band.solide.label",
+      "section": "Statusbänder",
+      "context": "Scoring STATUS_BANDS, sichtbares Label für solide",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Solide Basis",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.status_band.ausbau.label",
+      "section": "Statusbänder",
+      "context": "Scoring STATUS_BANDS, sichtbares Label für ausbau",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ausbaufähig",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.status_band.aufmerksam.label",
+      "section": "Statusbänder",
+      "context": "Scoring STATUS_BANDS, sichtbares Label für aufmerksam",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Erhöhte Aufmerksamkeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.grund.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.grund, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Persönliche Angaben",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.grund.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.grund, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Grundinfo",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.grund.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.grund, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin, Recht",
+      "text": "Ihre persönlichen Angaben bilden ein Antwortprofil für diese Orientierung und die individuellen Empfehlungen. Ihre Angaben werden vertraulich behandelt und bleiben anonym.",
+      "reviewStatus": "needs-review",
+      "comment": "Datenschutz- und Anonymitätsaussage vor Go-live durch Legal/Datenschutz freigeben."
+    },
+    {
+      "id": "service.dimension.einfluss.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.einfluss, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Einflussfaktoren",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.einfluss.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.einfluss, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Einflüsse",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.einfluss.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.einfluss, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Die ehrliche Reflexion Ihrer Gesundheit, Gewohnheiten und familiäre Krankheitsgeschichte helfen Ihnen Einflussfaktoren auf Ihre Gesundheit besser einzuschätzen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.fitness.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.fitness, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Körperliche Fitness",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.fitness.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.fitness, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Fitness",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.fitness.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.fitness, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihre körperliche Fitness ist einer der besten Indikatoren für Ihre Gesundheit.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.ernaehrung.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.ernaehrung, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ernährung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.ernaehrung.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.ernaehrung, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ernährung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.ernaehrung.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.ernaehrung, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihre Essgewohnheiten beeinflussen direkt Ihre Gesundheit und Ihr Wohlbefinden.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.schlaf.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.schlaf, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Schlaf",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.schlaf.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.schlaf, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Schlaf",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.schlaf.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.schlaf, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Qualitativ guter Schlaf ist zentral für Ihre Gesundheit. Während Sie schlafen, werden Zellen repariert, das Immunsystem gestärkt und das Gedächtnis gefestigt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.mental.title",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.mental, vollständiger Bereichstitel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Mentale und emotionale Gesundheit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.mental.short",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.mental, Kurzlabel für Navigation und Ergebnisvisualisierung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Mentales",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "service.dimension.mental.intro",
+      "section": "Shared Quiz & Results",
+      "context": "shared_quiz_and_results: DIMENSIONS.mental, Einleitung im Fragebogen und in den Ergebnisdetails",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihre mentale und emotionale Gesundheit ist genauso wichtig wie Ihre körperliche. Was Sie fühlen, denken und erleben, wirkt sich auf Ihren Körper aus und umgekehrt.",
+      "reviewStatus": "",
+      "comment": ""
+    }
+  ]
+}

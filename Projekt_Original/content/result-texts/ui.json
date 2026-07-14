@@ -1,0 +1,2071 @@
+{
+  "schemaVersion": 1,
+  "locale": "de-CH",
+  "domain": "ui",
+  "entries": [
+    {
+      "id": "ui.offer.placeholder_prefix",
+      "section": "Angebote & Kundenkontext",
+      "context": "Ergebnisseite, Präfix vor einem noch nicht verlinkten Helsana-Angebot",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Platzhalter: {{placeholder}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.customer_context.fallback_name",
+      "section": "Angebote & Kundenkontext",
+      "context": "Ergebnisseite, Ersatzname im Kundenkontext-Chip ohne Anzeigenamen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Angemeldet",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.customer_context.chip",
+      "section": "Angebote & Kundenkontext",
+      "context": "Ergebnisseite, Kundenkontext-Chip für angemeldete Personen",
+      "kind": "template",
+      "reviewers": "Marketing, Recht",
+      "text": "<b>{{displayName}}</b> – passende Angebote werden mit Blick auf Ihre Versicherungsprodukte eingeordnet.",
+      "reviewStatus": "needs-review",
+      "comment": "Versicherungsbezogene Einordnung und Sichtbarkeit des Login-Chips vor Go-live durch Legal und den zuständigen Fachbereich freigeben."
+    },
+    {
+      "id": "ui.recommendation.label.why",
+      "section": "Empfehlungsdarstellung",
+      "context": "Detailkarte einer Empfehlung, Label vor der Begründung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Warum das für Sie relevant ist:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.recommendation.label.step",
+      "section": "Empfehlungsdarstellung",
+      "context": "Detailkarte einer Empfehlung, Label vor dem nächsten Schritt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Konkreter nächster Schritt:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.recommendation.label.benefit",
+      "section": "Empfehlungsdarstellung",
+      "context": "Detailkarte einer Empfehlung, Label vor dem Nutzen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Erwarteter Nutzen:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.einfluss.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension einfluss im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihre Einflussfaktoren",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.einfluss.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension einfluss nach «bei»",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "bei Ihren Einflussfaktoren",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.fitness.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension fitness im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihre körperliche Fitness",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.fitness.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension fitness nach «bei»",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "bei Ihrer körperlichen Fitness",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.ernaehrung.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension ernaehrung im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihre Ernährung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.ernaehrung.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension ernaehrung nach «bei»",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "bei Ihrer Ernährung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.schlaf.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension schlaf im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Schlaf",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.schlaf.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension schlaf nach «bei»",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "bei Ihrem Schlaf",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.mental.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension mental im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr mentales Wohlbefinden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.mental.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Dimension mental nach «bei»",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "bei Ihrem mentalen Wohlbefinden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.fallback.nominative",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Fallback für eine unbekannte Dimension im Nominativ",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "diese Dimension",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.dimension.fallback.prepositional",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, Fallback für eine unbekannte Dimension mit Präposition",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "in dieser Dimension",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.stabilitaet",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für stabilitaet",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sicherheit bei Alltagsbewegungen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.sitzzeit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für sitzzeit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sitzzeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.familienwissen",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für familienwissen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Wissen über familiäre Vorbelastung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.rauchen",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für rauchen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Rauchen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.alkohol",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für alkohol",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Alkohol",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.socialmedia",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für socialmedia",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Social-Media-Zeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.ausdauer_moderat",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für ausdauer_moderat",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "moderate Ausdauer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.ausdauer_intensiv",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für ausdauer_intensiv",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "intensive Ausdauer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.krafttraining",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für krafttraining",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Krafttraining",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.beweglichkeit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für beweglichkeit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Beweglichkeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.treppen",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für treppen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Treppensteigen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.einkaufstaschen",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für einkaufstaschen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Tragkraft im Alltag",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.protein",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für protein",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Protein-Routine",
+      "reviewStatus": "needs-review",
+      "comment": "Vermeidet eine nicht gemessene Aussage zur Gesamtversorgung; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.hero.topic.pflanzenvielfalt",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für pflanzenvielfalt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "pflanzliche Vielfalt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.saettigung",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für saettigung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sättigung nach Mahlzeiten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.verarbeitet",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für verarbeitet",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "stark verarbeitete Lebensmittel",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.omega3",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für omega3",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Omega-3",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.zuckergetraenke",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für zuckergetraenke",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "zuckerhaltige Getränke",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.schlafqualitaet",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für schlafqualitaet",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Schlafqualität",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.schlafdauer",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für schlafdauer",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Schlafdauer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.schlafrhythmus",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für schlafrhythmus",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Schlafrhythmus",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.schlaf_auswirkung",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für schlaf_auswirkung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Auswirkungen auf den Alltag",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.belastbarkeit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für belastbarkeit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Belastbarkeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.selbstwirksamkeit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für selbstwirksamkeit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Selbstwirksamkeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.sinnhaftigkeit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für sinnhaftigkeit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sinnerleben",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.coping",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für coping",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Umgang mit Belastung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.verbundenheit",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für verbundenheit",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "soziale Verbundenheit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.selbstfuersorge",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für selbstfuersorge",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Selbstfürsorge",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.zukunft",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für zukunft",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Zukunftszuversicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.positive_emotionen",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für positive_emotionen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "positive Momente im Alltag",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic.koerperzusammensetzung",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung, kurzes Themenlabel für koerperzusammensetzung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Körperzusammensetzung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic_suffix.one",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung mit genau einem konkreten Defizitthema",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": " – Stichwort: {{topicOne}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.topic_suffix.two",
+      "section": "Ergebnis-Hero",
+      "context": "Hero-Zusammenfassung mit zwei konkreten Defizitthemen",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": " – Stichworte: {{topicOne}} und {{topicTwo}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.balanced.stark",
+      "section": "Ergebnis-Hero",
+      "context": "Ausgeglichenes Profil, Status stark; globale Header/Footer aus index.html sind ausgeschlossen, weil sie nicht resultatspezifisch sind",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Stark unterwegs: Ihre Antworten zeichnen über alle fünf Dimensionen ein sehr gutes, auffallend ausgeglichenes Bild. Halten Sie Ihren Kurs – wenn Sie feilen möchten, dann <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.balanced.solide",
+      "section": "Ergebnis-Hero",
+      "context": "Ausgeglichenes Profil, Status solide",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Solide Basis» heisst bei Ihnen: ein bemerkenswert ausgeglichenes Profil, in dem kein Bereich abfällt. Wählen Sie den Einstieg, der Sie am meisten motiviert – zum Beispiel <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.balanced.ausbau",
+      "section": "Ergebnis-Hero",
+      "context": "Ausgeglichenes Profil, Status ausbaufähig",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Ausbaufähig» heisst bei Ihnen: ein ausgeglichenes Profil mit Luft nach oben in allen fünf Dimensionen. Wählen Sie den Einstieg, der Sie am meisten motiviert – zum Beispiel <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.balanced.aufmerksam",
+      "section": "Ergebnis-Hero",
+      "context": "Ausgeglichenes Profil, Status erhöhte Aufmerksamkeit",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Ergebnis verdient jetzt Aufmerksamkeit – über alle Dimensionen hinweg. Verstehen Sie es als Startpunkt, nicht als Urteil. Wählen Sie den Einstieg, der Sie am meisten motiviert – zum Beispiel <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.stark",
+      "section": "Ergebnis-Hero",
+      "context": "Profil mit deutlichem Unterschied zwischen Dimensionen, Status stark",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Stark unterwegs: Ihre Antworten zeichnen ein sehr gutes Gesamtbild – allen voran <b>{{strongestNominative}}</b> ({{strongestScore}}). Ihre grösste Reserve liegt <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.solide",
+      "section": "Ergebnis-Hero",
+      "context": "Profil mit deutlichem Unterschied zwischen Dimensionen, Status solide",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Solide Basis» heisst bei Ihnen: Vieles trägt bereits – allen voran <b>{{strongestNominative}}</b> ({{strongestScore}}). Den grössten Unterschied machen jetzt die nächsten Schritte <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_strong.singular",
+      "section": "Ergebnis-Hero",
+      "context": "Profil ausbaufähig; stärkste Dimension mindestens solide und grammatisch singular",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Ausbaufähig» heisst bei Ihnen: Das Fundament ist da, und es gibt klare Hebel. Am meisten bewirken Sie aktuell <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}. Gut zu sehen: <b>{{strongestNominative}}</b> ({{strongestScore}}) stützt Sie dabei bereits.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_strong.plural",
+      "section": "Ergebnis-Hero",
+      "context": "Profil ausbaufähig; stärkste Dimension mindestens solide und grammatisch plural",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Ausbaufähig» heisst bei Ihnen: Das Fundament ist da, und es gibt klare Hebel. Am meisten bewirken Sie aktuell <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}. Gut zu sehen: <b>{{strongestNominative}}</b> ({{strongestScore}}) stützen Sie dabei bereits.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_stable.singular",
+      "section": "Ergebnis-Hero",
+      "context": "Profil ausbaufähig; stärkste Dimension unter solide und grammatisch singular",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Ausbaufähig» heisst bei Ihnen: Das Fundament ist da, und es gibt klare Hebel. Am meisten bewirken Sie aktuell <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}. Am stabilsten zeigt sich <b>{{strongestNominative}}</b> ({{strongestScore}}) – darauf lässt sich aufbauen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_stable.plural",
+      "section": "Ergebnis-Hero",
+      "context": "Profil ausbaufähig; stärkste Dimension unter solide und grammatisch plural",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "«Ausbaufähig» heisst bei Ihnen: Das Fundament ist da, und es gibt klare Hebel. Am meisten bewirken Sie aktuell <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}. Am stabilsten zeigen sich <b>{{strongestNominative}}</b> ({{strongestScore}}) – darauf lässt sich aufbauen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.no_wind",
+      "section": "Ergebnis-Hero",
+      "context": "Profil mit erhöhter Aufmerksamkeit ohne ausreichend starke Ankerdimension",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Ergebnis verdient jetzt etwas Aufmerksamkeit – verstehen Sie es als Startpunkt, nicht als Urteil. Beginnen Sie <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}; {{actionPlanReference}} unten {{actionPlanVerb}} genau dort an.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.with_wind.singular",
+      "section": "Ergebnis-Hero",
+      "context": "Profil mit erhöhter Aufmerksamkeit und grammatisch singulärer Ankerdimension",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Ergebnis verdient jetzt etwas Aufmerksamkeit – verstehen Sie es als Startpunkt, nicht als Urteil. Beginnen Sie <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}; {{actionPlanReference}} unten {{actionPlanVerb}} genau dort an. <b>{{strongestNominative}}</b> ({{strongestScore}}) gibt Ihnen dabei Rückenwind.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.with_wind.plural",
+      "section": "Ergebnis-Hero",
+      "context": "Profil mit erhöhter Aufmerksamkeit und grammatisch pluraler Ankerdimension",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Ergebnis verdient jetzt etwas Aufmerksamkeit – verstehen Sie es als Startpunkt, nicht als Urteil. Beginnen Sie <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}; {{actionPlanReference}} unten {{actionPlanVerb}} genau dort an. <b>{{strongestNominative}}</b> ({{strongestScore}}) geben Ihnen dabei Rückenwind.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.dimension.classification.stark",
+      "section": "Einordnung & Metriken",
+      "context": "Dimensionsdetail, Einordnung für Status stark",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Hier zeigt sich eine klare Stärke – schön, das zu sehen.",
+      "reviewStatus": "needs-review",
+      "comment": "Redaktionell von der dimensionsspezifischen Nutzenbotschaft entkoppeln und durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.dimension.classification.solide",
+      "section": "Einordnung & Metriken",
+      "context": "Dimensionsdetail, Einordnung für Status solide",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Hier sind Sie insgesamt solide aufgestellt.",
+      "reviewStatus": "needs-review",
+      "comment": "Redaktionell von der dimensionsspezifischen Nutzenbotschaft entkoppeln und durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.dimension.classification.ausbau",
+      "section": "Einordnung & Metriken",
+      "context": "Dimensionsdetail, Einordnung für Status ausbau",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ausbaufähig – in diesem Bereich gibt es Entwicklungspotenzial.",
+      "reviewStatus": "needs-review",
+      "comment": "Einordnung verspricht keine spezifische Empfehlung, wenn die Regel-Engine keinen eindeutigen Hebel ableitet; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.dimension.classification.aufmerksam",
+      "section": "Einordnung & Metriken",
+      "context": "Dimensionsdetail, Einordnung für Status aufmerksam",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Dieser Bereich verdient gerade etwas mehr Aufmerksamkeit.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.dimension.classification.open_signal",
+      "section": "Einordnung & Metriken",
+      "context": "Dimensionsdetail mit zusätzlichem Risiko- oder Abklärungssignal, unabhängig vom Scorestatus",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Zu diesem Bereich liegt zusätzlich ein Hinweis vor, der bei der Einordnung Vorrang hat.",
+      "reviewStatus": "needs-review",
+      "comment": "Verhindert eine Erfolgseinordnung bei hohem Score und gleichzeitig offenem Signal; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.metrics.bmi_class.untergewicht",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares BMI-Klassenlabel untergewicht",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Untergewicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.bmi_class.normal",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares BMI-Klassenlabel normal",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Normalbereich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.bmi_class.uebergewicht",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares BMI-Klassenlabel uebergewicht",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Übergewicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.bmi_class.adipositas1",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares BMI-Klassenlabel adipositas1",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Adipositas",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.bmi_class.adipositas2",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares BMI-Klassenlabel adipositas2",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Adipositas",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.waist_status.normal",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares Bauchumfang-Statuslabel normal",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "im Normalbereich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.waist_status.erhoeht",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares Bauchumfang-Statuslabel erhoeht",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "im erhöhten Bereich",
+      "reviewStatus": "needs-review",
+      "comment": "Status sprachlich klar vom deutlich erhöhten Referenzbereich abgegrenzt; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.metrics.waist_status.hoch",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares Bauchumfang-Statuslabel hoch",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "im deutlich erhöhten Bereich",
+      "reviewStatus": "needs-review",
+      "comment": "Höchstes Referenzband für die persönliche Einordnung eindeutig benannt; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.metrics.bmi",
+      "section": "Einordnung & Metriken",
+      "context": "Abgeleitete Kennzahlen, BMI-Zeile",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}})",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.waist",
+      "section": "Einordnung & Metriken",
+      "context": "Abgeleitete Kennzahlen, Bauchumfang-Zeile",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bauchumfang {{waist}} cm ({{waistStatusLabel}})",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.metrics.line",
+      "section": "Einordnung & Metriken",
+      "context": "Abgeleitete Kennzahlen unter Einflussfaktoren",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihre persönliche Einordnung: {{metrics}}.",
+      "reviewStatus": "needs-review",
+      "comment": "Messwert und Status werden im Dimensionsdetail deutlicher hervorgehoben; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.metrics.separator",
+      "section": "Einordnung & Metriken",
+      "context": "Trennzeichen zwischen mehreren abgeleiteten Kennzahlen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": " · ",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.urgent.title",
+      "section": "Warnhinweis",
+      "context": "Warnbanner bei dringendem beziehungsweise hohem mentalem Signal",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bitte zeitnah ärztlich abklären",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.urgent.body",
+      "section": "Warnhinweis",
+      "context": "Warnbanner bei dringendem beziehungsweise hohem mentalem Signal",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Einige Ihrer Angaben sollten zeitnah mit einer medizinischen Fachperson besprochen werden. Bei akuten, starken Beschwerden wählen Sie den Notruf <b>144</b>; in seelischen Krisen die Dargebotene Hand <b>143</b>.",
+      "requiredTerms": [
+        "144",
+        "143"
+      ],
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_card.label.why",
+      "section": "Aktionsplan",
+      "context": "Aktionskarte, Kurzlabel der Begründung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Warum:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_card.label.step",
+      "section": "Aktionsplan",
+      "context": "Aktionskarte, Kurzlabel des Startschritts",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Startschritt:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_card.label.benefit",
+      "section": "Aktionsplan",
+      "context": "Aktionskarte, Kurzlabel des Nutzens",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Das bringt es:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_card.plan_title",
+      "section": "Aktionsplan",
+      "context": "Aufklappbarer 4-Wochen-Plan einer Aktionskarte",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Mein 4-Wochen-Plan",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_card.progress",
+      "section": "Aktionsplan",
+      "context": "Fortschritt innerhalb eines 4-Wochen-Plans",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "{{done}}/{{total}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.heading.one",
+      "section": "Aktionsplan",
+      "context": "Sektionsüberschrift bei genau einem priorisierten Schritt",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihr nächster Schritt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.heading.two",
+      "section": "Aktionsplan",
+      "context": "Sektionsüberschrift bei genau zwei priorisierten Schritten",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre nächsten zwei Schritte",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.heading.three",
+      "section": "Aktionsplan",
+      "context": "Sektionsüberschrift bei drei priorisierten Schritten",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre nächsten drei Schritte",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.heading.empty",
+      "section": "Aktionsplan",
+      "context": "Sektionsüberschrift ohne vordringliches Handlungsfeld",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihr persönlicher Startpunkt",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.action_plan.intro.one",
+      "section": "Aktionsplan",
+      "context": "Beschreibung bei genau einem priorisierten Schritt",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Klein anfangen, dranbleiben: Dieser Hebel hat für Sie gerade besonders viel Wirkung. Öffnen Sie pro Schritt Ihren 4-Wochen-Plan und haken Sie ab, was Sie geschafft haben.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.intro.multiple",
+      "section": "Aktionsplan",
+      "context": "Beschreibung bei zwei oder drei priorisierten Schritten",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Klein anfangen, dranbleiben: Diese Hebel haben für Sie gerade besonders viel Wirkung. Öffnen Sie pro Schritt Ihren 4-Wochen-Plan und haken Sie ab, was Sie geschafft haben.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.intro.empty",
+      "section": "Aktionsplan",
+      "context": "Neutrale Beschreibung ohne eindeutig priorisierten Aktionsschritt",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Aktuell hebt sich kein einzelnes Handlungsfeld klar ab. Die fünf Dimensionen unten zeigen, wo Sie Bewährtes erhalten oder einen passenden kleinen Schritt wählen können.",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.action_plan.empty.title",
+      "section": "Aktionsplan",
+      "context": "Neutrale Karte ohne eindeutig priorisierten Aktionsschritt, Titel",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Kein eindeutiger Top-Schritt",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.action_plan.empty.body",
+      "section": "Aktionsplan",
+      "context": "Neutrale Karte ohne eindeutig priorisierten Aktionsschritt, Text",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Ihre Angaben ergeben derzeit keinen einzelnen klar priorisierten Schritt. Behalten Sie Bewährtes bei; wenn Sie etwas verändern möchten, helfen die Dimensionsdetails und der Digital Coach bei der Auswahl.",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.action_plan.total_progress",
+      "section": "Aktionsplan",
+      "context": "Gesamtfortschritt über alle abgehakten Planschritte",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "{{done}} von {{total}} Schritten erledigt – dranbleiben lohnt sich!",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.recommendation.action_plan_badge",
+      "section": "Dimensionsdetails",
+      "context": "Badge an einer Empfehlung, die identisch im priorisierten Aktionsplan erscheint",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Schritt {{planStep}} in Ihrem Aktionsplan",
+      "reviewStatus": "needs-review",
+      "comment": "Neue Orientierung zwischen Aktionsplan und Dimensionsdetails durch Marketing freigeben."
+    },
+    {
+      "id": "ui.dimension.empty.neutral",
+      "section": "Dimensionsdetails",
+      "context": "Dimensionsdetail ohne spezifische Empfehlung und ohne soliden Score",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Aus den aktuellen Antworten ergibt sich hier kein einzelner priorisierter Schritt. Nutzen Sie den Orientierungswert als Ausgangspunkt und beobachten Sie, was sich im Alltag verändert.",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Fallback ohne räumlich falschen Verweis; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.dimension.empty.open_signal",
+      "section": "Dimensionsdetails",
+      "context": "Dimensionsdetail ohne spezifische Empfehlung, aber mit offenem Risiko- oder Abklärungssignal",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Der Orientierungswert bildet nur die bewerteten Antworten ab. Beziehen Sie den zugehörigen Hinweis in der Ergebnisübersicht zusätzlich ein.",
+      "reviewStatus": "needs-review",
+      "comment": "Eigener Fallback für offene Signale statt einer positiven oder pauschal neutralen Aussage; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.breathing.eyebrow",
+      "section": "Atemübung",
+      "context": "Atemübungs-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Technik zum Sofort-Anwenden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.title",
+      "section": "Atemübung",
+      "context": "Atemübungs-Sektion, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Kurze Atemübung zum Runterkommen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.stress_hint",
+      "section": "Atemübung",
+      "context": "Dynamischer Zusatz bei aktivem Belastungssignal",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": " – gerade bei erhöhter Anspannung, wie sie Ihre Antworten andeuten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.description",
+      "section": "Atemübung",
+      "context": "Atemübungs-Sektion, Beschreibung mit optionalem Belastungshinweis",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Die 4-7-8-Atmung kann Anspannung in wenigen Minuten senken{{stressHint}}. Atmen Sie einfach mit dem Kreis.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cue.ready",
+      "section": "Atemübung",
+      "context": "Atemkreis vor beziehungsweise nach der Übung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Bereit?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cue.inhale",
+      "section": "Atemübung",
+      "context": "Atemkreis, Einatemphase",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Einatmen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cue.hold",
+      "section": "Atemübung",
+      "context": "Atemkreis, Haltephase",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Halten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cue.exhale",
+      "section": "Atemübung",
+      "context": "Atemkreis, Ausatemphase",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ausatmen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cycles.initial",
+      "section": "Atemübung",
+      "context": "Zähler vor Beginn der Atemübung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "0 Zyklen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cycles.one",
+      "section": "Atemübung",
+      "context": "Zähler bei genau einem Atemzyklus",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "{{cycleCount}} Zyklus",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.cycles.multiple",
+      "section": "Atemübung",
+      "context": "Zähler bei mehreren Atemzyklen",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "{{cycleCount}} Zyklen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.button.start",
+      "section": "Atemübung",
+      "context": "Button zum Starten der Atemübung",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Übung starten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.button.stop",
+      "section": "Atemübung",
+      "context": "Button zum Beenden der Atemübung",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Übung beenden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.breathing.instructions",
+      "section": "Atemübung",
+      "context": "Kurzanleitung unter dem Atemkreis",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "<b>4s</b> einatmen · <b>7s</b> halten · <b>8s</b> ausatmen. Sie können jederzeit abbrechen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.greeting",
+      "section": "Chat-Container",
+      "context": "Erste sichtbare Nachricht des Demo-Coachs mit priorisiertem Aktionsplan",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Hallo! Ich kenne Ihre Auswertung: Gesamtscore <b>{{overallScore}}/100</b> („{{statusLabel}}“). Fragen Sie mich, wie Sie Ihre nächsten Schritte angehen – oder tippen Sie unten auf einen Vorschlag.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.greeting.empty",
+      "section": "Chat-Container",
+      "context": "Erste sichtbare Nachricht des Demo-Coachs ohne priorisierten Handlungsbedarf",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Hallo! Ich kenne Ihre Auswertung: Gesamtscore <b>{{overallScore}}/100</b> („{{statusLabel}}“). Fragen Sie mich, wie Sie das Ergebnis einordnen oder einen passenden nächsten Schritt finden – oder tippen Sie unten auf einen Vorschlag.",
+      "reviewStatus": "needs-review",
+      "comment": "Leerzustand behauptet weder einen guten Kurs noch fehlenden Handlungsbedarf; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.chat.eyebrow",
+      "section": "Chat-Container",
+      "context": "Chat-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Gesundheits-Coach",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.badge",
+      "section": "Chat-Container",
+      "context": "Chat-Sektion, Demo-Badge",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Vorschau · Demo",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.title",
+      "section": "Chat-Container",
+      "context": "Chat-Sektion, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie Fragen? Der Helsana Digital Coach ist für Sie da.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue Chat-Überschrift durch Marketing freigeben."
+    },
+    {
+      "id": "ui.chat.description",
+      "section": "Chat-Container",
+      "context": "Chat-Sektion, Funktionsbeschreibung",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Der Coach kennt Ihre Auswertung (Score, Bereiche, Empfehlungen). In dieser Vorschau sehen Sie Beispielantworten – es werden keine Daten gesendet, alles bleibt auf Ihrem Gerät.",
+      "reviewStatus": "needs-review",
+      "comment": "Aussage zur lokalen Datenverarbeitung vor Go-live durch Legal/Datenschutz freigeben."
+    },
+    {
+      "id": "ui.chat.input_placeholder",
+      "section": "Chat-Container",
+      "context": "Sichtbarer Platzhalter im Eingabefeld",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Fragen Sie Ihren Coach …",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.disclaimer",
+      "section": "Chat-Container",
+      "context": "Hinweis unter dem Demo-Chat",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin, Recht",
+      "text": "Konzept-Vorschau mit Beispielantworten. Ein echter Coach würde ein EU/CH-gehostetes KI-Modell nutzen – erst nach Ihrer ausdrücklichen Zustimmung. Keine medizinische Beratung; im Notfall <b>144</b>.",
+      "requiredTerms": [
+        "144"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "KI-Hosting-, Einwilligungs- und medizinischen Hinweis vor Go-live fachlich und rechtlich freigeben."
+    },
+    {
+      "id": "ui.coach_handoff.focus_fallback",
+      "section": "Coach-Übergabe",
+      "context": "Fallback, wenn keine Fokus-Bereiche benannt werden",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "werden aus Ihrer Auswertung abgeleitet",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.eyebrow",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Weiter mit Begleitung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.title",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Nehmen Sie Ihre Ergebnisse mit in die Coach App",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.description",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Beschreibung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit persönlichen Plänen, Erinnerungen und Übungen. Ihr Gesundheitsschutz-Check kann Ihnen dort den Start abnehmen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.consent_title",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Überschrift der übergebenen Daten",
+      "kind": "title",
+      "reviewers": "Marketing, Recht",
+      "text": "Das würde übergeben – nur mit Ihrer Zustimmung:",
+      "reviewStatus": "needs-review",
+      "comment": "Einwilligungsformulierung vor Umsetzung und Go-live durch Legal/Datenschutz freigeben."
+    },
+    {
+      "id": "ui.coach_handoff.profile",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Gesamtprofil-Zeile",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Ihr Gesamtprofil: <b>{{overallScore}}/100</b> ({{statusLabel}})",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.focus",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte, Fokus-Bereiche-Zeile",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Ihre Fokus-Bereiche: {{focusTitles}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.plan.one",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte mit genau einem Startschritt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr nächster Schritt als fertiger Startplan",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.plan.two",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte mit zwei Startschritten",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihre nächsten zwei Schritte als fertiger Startplan",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.plan.three",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte mit drei Startschritten",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihre nächsten drei Schritte als fertiger Startplan",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.plan.empty",
+      "section": "Coach-Übergabe",
+      "context": "Coach-App-Karte ohne eindeutig priorisierten Aktionsschritt",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Kein einzelner priorisierter Schritt; Fokus anhand der fünf Dimensionen gemeinsam festlegen",
+      "reviewStatus": "needs-review",
+      "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.coach_handoff.cta",
+      "section": "Coach-Übergabe",
+      "context": "CTA zur Helsana Coach App",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Helsana Coach öffnen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.coach_handoff.note",
+      "section": "Coach-Übergabe",
+      "context": "Technischer Datenschutz-Hinweis zur Übergabe",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Konzept: Die Übergabe erfolgt über einen kurzlebigen, einmaligen Token – Ihre Antworten liegen nicht offen im Link.",
+      "reviewStatus": "needs-review",
+      "comment": "Technische Datenschutzbehauptung erst nach bestätigter Zielarchitektur durch Legal/Datenschutz freigeben."
+    },
+    {
+      "id": "ui.result.score_max",
+      "section": "Ergebnisbereiche",
+      "context": "Score-Ring, Nenner",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "von 100",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result.eyebrow",
+      "section": "Ergebnisbereiche",
+      "context": "Ergebnis-Hero, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ergebnis",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result.title",
+      "section": "Ergebnisbereiche",
+      "context": "Ergebnis-Hero, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre Standortbestimmung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result.legend_item",
+      "section": "Ergebnisbereiche",
+      "context": "Radar-Legende, Statusband mit Mindestwert",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "{{statusLabel}} ({{minimumScore}}+)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.eyebrow",
+      "section": "Ergebnisbereiche",
+      "context": "Stärken-und-Handlungsfelder-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Auf einen Blick",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.title",
+      "section": "Ergebnisbereiche",
+      "context": "Stärken-und-Handlungsfelder-Sektion, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre Stärken & Handlungsfelder",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.strengths_title",
+      "section": "Ergebnisbereiche",
+      "context": "Stärkenkarte, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre Stärken",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.strengths_empty",
+      "section": "Ergebnisbereiche",
+      "context": "Stärkenkarte ohne konkrete Stärke",
+      "kind": "positive_feedback",
+      "reviewers": "Marketing",
+      "text": "Jeder Bereich bietet gerade Potenzial – ein guter Startpunkt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.fields_title",
+      "section": "Ergebnisbereiche",
+      "context": "Handlungsfelder-Karte, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Grösste Handlungsfelder",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.overview.fields_empty",
+      "section": "Ergebnisbereiche",
+      "context": "Handlungsfelder-Karte ohne dringendes Feld",
+      "kind": "positive_feedback",
+      "reviewers": "Marketing",
+      "text": "Aktuell kein dringendes Handlungsfeld – halten Sie Ihren Kurs.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.action_plan.eyebrow",
+      "section": "Ergebnisbereiche",
+      "context": "Aktionsplan-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Aktionsplan",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.details.eyebrow",
+      "section": "Ergebnisbereiche",
+      "context": "Dimensionsdetails-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Im Detail",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.details.title",
+      "section": "Ergebnisbereiche",
+      "context": "Dimensionsdetails-Sektion, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre fünf Dimensionen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.details.description",
+      "section": "Ergebnisbereiche",
+      "context": "Dimensionsdetails-Sektion, Bedienhinweis",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Tippen Sie auf einen Bereich, um die Einordnung, persönliche Empfehlungen und weitere konkrete Schritte oder medizinische Klärungshinweise zu sehen.",
+      "reviewStatus": "needs-review",
+      "comment": "Bedienhinweis an die einheitlich strukturierten Dimensionshinweise angepasst; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.medical_notice.title",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Medizinischer Hinweis & nächste Schritte",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.disclaimer",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, Disclaimer",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Dieser Check ersetzt keine Diagnose, Untersuchung oder Behandlung. Er kann und soll keine medizinische Fachperson ersetzen. Nutzen Sie die Ergebnisse als Gesprächsgrundlage – nicht als abschliessende Beurteilung.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.steps_title",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, Zwischenüberschrift",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Sinnvolle nächste Schritte:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.step.discuss",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, erster Listenpunkt",
+      "kind": "action",
+      "reviewers": "Marketing, Medizin",
+      "text": "Besprechen Sie auffällige Werte, bestehende Diagnosen oder familiäre Vorbelastung mit einer medizinischen Fachperson.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.step.measure",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, zweiter Listenpunkt",
+      "kind": "action",
+      "reviewers": "Marketing, Medizin",
+      "text": "Lassen Sie unbekannte Basiswerte (z. B. Blutdruck, Blutzucker/HbA1c, Blutfette) bei Gelegenheit bestimmen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.step.choose",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, dritter Listenpunkt",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Wählen Sie aus Ihrem Aktionsplan einen einzigen, kleinen Schritt für diese Woche.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.medical_notice.step.emergency",
+      "section": "Medizinischer Hinweis",
+      "context": "Medizinischer Abschlussblock, Notfall-Listenpunkt",
+      "kind": "action",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bei akuten, starken oder plötzlichen Beschwerden: Notruf <b>144</b>. In seelischen Krisen: Dargebotene Hand <b>143</b>.",
+      "requiredTerms": [
+        "144",
+        "143"
+      ],
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.contact.title",
+      "section": "Gesundheitsberatung",
+      "context": "Kontaktkarte, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Unsere Gesundheitsberatung ist gerne für Sie da",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.contact.phone",
+      "section": "Gesundheitsberatung",
+      "context": "Sichtbare Telefonnummer der Gesundheitsberatung; die technische tel-URL bleibt ausserhalb des Textkatalogs",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "058 340 15 69",
+      "requiredTerms": [
+        "058 340 15 69"
+      ],
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.contact.availability_legal",
+      "section": "Gesundheitsberatung",
+      "context": "Kontaktkarte, Öffnungszeiten und Einwilligungshinweis",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Montag bis Freitag, 8.00 Uhr bis 18.00 Uhr (Lokaltarif). Mit Ihrem Anruf erklären Sie sich mit den Nutzungsbestimmungen und der Datenschutzerklärung der Helsana-Gesundheitsberatung einverstanden.",
+      "reviewStatus": "needs-review",
+      "comment": "Öffnungszeiten, Tarif- und Einwilligungshinweis vor Go-live durch Legal und den Service-Fachbereich freigeben."
+    },
+    {
+      "id": "ui.contact.cta",
+      "section": "Gesundheitsberatung",
+      "context": "Kontaktkarte, Anruf-CTA",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Jetzt anrufen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.promo.title",
+      "section": "Promo & Feedback",
+      "context": "Helsana-Plus-Promokarte, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Punkte sammeln",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.promo.description",
+      "section": "Promo & Feedback",
+      "context": "Helsana-Plus-Promokarte, Beschreibung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Sammeln Sie mit Ihrem gesundheitsbewussten Lebensstil Pluspunkte und profitieren Sie von attraktiven Rabatten und Barauszahlungen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.feedback.eyebrow",
+      "section": "Promo & Feedback",
+      "context": "Feedback-Sektion, Rubrik",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Feedback ist uns wichtig",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.feedback.title",
+      "section": "Promo & Feedback",
+      "context": "Feedback-Sektion, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Wie war Ihr Gesundheitsschutz-Check?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.feedback.description",
+      "section": "Promo & Feedback",
+      "context": "Feedback-Sektion, Beschreibung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Ihre Rückmeldung hilft uns, den Check laufend zu verbessern – das Ausfüllen dauert nur zwei Minuten.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.edit",
+      "section": "Ergebnisaktionen",
+      "context": "Button zum Anpassen der Antworten",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Antworten anpassen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.save_link",
+      "section": "Ergebnisaktionen",
+      "context": "Button zum Speichern des Ergebnis-Links",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Ergebnisse als Link speichern",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.restart",
+      "section": "Ergebnisaktionen",
+      "context": "Button für einen neuen Check",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Neuer Check",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.restart_confirm",
+      "section": "Ergebnisaktionen",
+      "context": "Bestätigungsdialog vor dem Löschen der bisherigen Antworten",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Möchten Sie den Check wirklich neu beginnen? Ihre bisherigen Antworten werden gelöscht.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.restart_modal.title",
+      "section": "Ergebnisaktionen",
+      "context": "Dialog nach «Neu beginnen» auf der Startseite, Titel",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Check neu beginnen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.restart_modal.continue",
+      "section": "Ergebnisaktionen",
+      "context": "Dialog nach «Neu beginnen» auf der Startseite, Fortschritt behalten",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Check fortsetzen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.home_modal.title",
+      "section": "Ergebnisaktionen",
+      "context": "Dialog beim Klick auf die Marke während eines laufenden Checks, Titel",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Zurück zur Startseite",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.home_modal.message",
+      "section": "Ergebnisaktionen",
+      "context": "Dialog beim Klick auf die Marke während eines laufenden Checks, Text",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Möchten Sie Ihre bisherigen Eingaben behalten oder den Check von vorne beginnen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.home_modal.keep",
+      "section": "Ergebnisaktionen",
+      "context": "Dialog beim Klick auf die Marke, Eingaben behalten",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Eingaben behalten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result_action.home_modal.restart",
+      "section": "Ergebnisaktionen",
+      "context": "Dialoge zum Verlassen oder Neustarten eines laufenden Checks, neu beginnen",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Neu beginnen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.title",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Überschrift",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihr persönlicher Ergebnis-Link",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.description",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Beschreibung",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Speichern oder teilen Sie diesen Link. Sie können Ihr Ergebnis später wieder öffnen, Ihre Antworten anpassen oder einen neuen Check starten.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.local_file_warning",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Hinweis bei lokaler Doppelklick-Nutzung",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Hinweis zur lokalen Nutzung: Der Link enthält den lokalen Dateipfad. Er funktioniert nur auf diesem Gerät und solange die Anwendung am selben Speicherort bleibt.",
+      "reviewStatus": "needs-review",
+      "comment": "Technischer Hinweis für den bewusst aktivierten Standalone-Fallback; vor produktiver Nutzung durch Marketing und Datenschutz/Legal freigeben."
+    },
+    {
+      "id": "ui.share_modal.copy",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Kopierbutton",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Kopieren",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.status.copied",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Status nach erfolgreichem Kopieren",
+      "kind": "positive_feedback",
+      "reviewers": "Marketing",
+      "text": "Link in die Zwischenablage kopiert.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.status.prompt",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Status vor dem Kopieren",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Tippen Sie auf „Kopieren“, um den Link zu sichern.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.status.manual",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Fallback bei fehlgeschlagenem Kopieren",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "Bitte den markierten Link manuell kopieren (Strg/Cmd + C).",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.close",
+      "section": "Share-Modal",
+      "context": "Ergebnis-Link-Dialog, Schliessen-Button",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Schliessen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.action_plan_reference.empty",
+      "section": "Ergebnis-Hero",
+      "context": "Verweis auf die Detailauswertung, wenn kein Aktionsschritt priorisiert wurde",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "die Detailauswertung",
+      "reviewStatus": "needs-review",
+      "comment": "Verhindert einen falschen Verweis auf drei nicht vorhandene Aktionsschritte; durch Marketing freigeben."
+    },
+    {
+      "id": "ui.hero.action_plan_verb.singular",
+      "section": "Ergebnis-Hero",
+      "context": "Verbform beim Verweis auf genau einen priorisierten Schritt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "setzt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.hero.action_plan_verb.plural",
+      "section": "Ergebnis-Hero",
+      "context": "Verbform beim Verweis auf mehrere priorisierte Schritte",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "setzen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.result.score_aria",
+      "section": "Ergebnis-Hero",
+      "context": "Barrierefreie Beschreibung des Gesamtscores",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Gesamtscore {{overallScore}} von 100",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.chat.send_aria",
+      "section": "Chat-Container",
+      "context": "Barrierefreie Beschriftung des Senden-Buttons",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Senden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.input_aria",
+      "section": "Share-Modal",
+      "context": "Barrierefreie Beschriftung des Ergebnis-Link-Feldes",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ergebnis-Link",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.radar.aria_label",
+      "section": "Gesundheitsprofil",
+      "context": "Barrierefreie Beschreibung des Radardiagramms auf der Ergebnisseite",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Radardiagramm Ihres Gesundheitsprofils über die bewerteten Dimensionen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.radar.dimension_detail_aria",
+      "section": "Gesundheitsprofil",
+      "context": "Barrierefreie Beschriftung einer anklickbaren Dimensionsachse im Radardiagramm",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Zur Detailansicht {{dimensionShort}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.share_modal.privacy_warning",
+      "section": "Share-Modal",
+      "context": "Datenschutzhinweis bei bewusst aktivierter Ergebnis-Link-Funktion",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Dieser Link enthält Ihre Antworten codiert, aber nicht verschlüsselt. Teilen Sie ihn nur mit Personen, denen Sie diese Gesundheitsangaben anvertrauen.",
+      "reviewStatus": "needs-review",
+      "comment": "Vor Aktivierung der Ergebnis-Link-Funktion durch Datenschutz/Legal freigeben."
+    },
+    {
+      "id": "ui.fitness_tests.title",
+      "section": "Fitness-Kurztests",
+      "context": "Ergebnisdetail Körperliche Fitness, Überschrift oberhalb aller ausgefüllten Kurztests",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Ihre ausgefüllten Fitness-Kurztests",
+      "reviewStatus": "needs-review",
+      "comment": "Der Block erscheint nur, wenn mindestens ein optionaler Test ausgefüllt wurde."
+    },
+    {
+      "id": "ui.fitness_tests.description",
+      "section": "Fitness-Kurztests",
+      "context": "Ergebnisdetail Körperliche Fitness, gemeinsamer Hinweis oberhalb der Testkarten",
+      "kind": "medical_notice",
+      "reviewers": "Marketing, Medizin",
+      "text": "Diese Kurztests zeigen einzelne Bereiche Ihrer aktuellen körperlichen Leistungsfähigkeit. Sie ersetzen keine medizinische Untersuchung und erlauben allein keine Aussage über Ihr persönliches Erkrankungsrisiko.",
+      "reviewStatus": "needs-review",
+      "comment": "Gemeinsame Aussagegrenze für alle drei Tests; medizinisch freigeben."
+    },
+    {
+      "id": "ui.fitness_tests.personal_baseline",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte ohne fachlich passende Vergleichswerte",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Keine verlässliche Einordnung möglich",
+      "reviewStatus": "needs-review",
+      "comment": "Bewusst neutral statt einer scheinpräzisen Stärke-/Schwäche-Einstufung."
+    },
+    {
+      "id": "ui.fitness_tests.meaning_label",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte, Label vor der persönlichen Einordnung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Was das bedeutet:",
+      "reviewStatus": "needs-review",
+      "comment": ""
+    },
+    {
+      "id": "ui.fitness_tests.relevance_label",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte, Label vor der gesundheitlichen Relevanz",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Warum das relevant ist:",
+      "reviewStatus": "needs-review",
+      "comment": ""
+    },
+    {
+      "id": "ui.fitness_tests.next_reference_label",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte, Label vor dem nächsten persönlichen Orientierungsbereich",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Nächste Orientierung:",
+      "reviewStatus": "needs-review",
+      "comment": "Kein Therapieziel oder medizinischer Grenzwert."
+    },
+    {
+      "id": "ui.fitness_tests.next_reference",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte, personalisierter nächster Vergleichswert",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Der nächste Vergleichswert liegt bei {{nextThreshold}} {{unit}}. Er ist keine medizinische Grenze und kein versprochener Vier-Wochen-Erfolg.",
+      "reviewStatus": "needs-review",
+      "comment": "Nur bei fachlich passender Referenzstufe; Variablen müssen Klartext bleiben."
+    },
+    {
+      "id": "ui.fitness_tests.unit.seconds",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte und personalisierte Orientierung, Einheit für Zeitwerte",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sekunden",
+      "reviewStatus": "needs-review",
+      "comment": "Wird als Klartextvariable in andere Katalogtexte eingesetzt."
+    },
+    {
+      "id": "ui.fitness_tests.unit.repetitions",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte und personalisierte Orientierung, Einheit für Liegestütze",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Wiederholungen",
+      "reviewStatus": "needs-review",
+      "comment": "Wird als Klartextvariable in andere Katalogtexte eingesetzt."
+    },
+    {
+      "id": "ui.fitness_tests.related_recommendation.top_step",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte mit ausbaufähigem Wert, passende Empfehlung ist im Top-3-Aktionsplan",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Passende Empfehlung: {{recommendationTitle}} – Schritt {{planStep}} in Ihrem Aktionsplan",
+      "reviewStatus": "needs-review",
+      "comment": "Empfehlungstitel muss Klartext bleiben."
+    },
+    {
+      "id": "ui.fitness_tests.related_recommendation.detail",
+      "section": "Fitness-Kurztests",
+      "context": "Testkarte mit ausbaufähigem Wert, passende Empfehlung steht weiter unten in der Fitness-Dimension",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Passende Empfehlung: {{recommendationTitle}}",
+      "reviewStatus": "needs-review",
+      "comment": "Empfehlungstitel muss Klartext bleiben."
+    },
+    {
+      "id": "ui.fitness_tests.retest_label",
+      "section": "Fitness-Kurztests",
+      "context": "4-Wochen-Plan, Label vor einem oder mehreren persönlichen Fitness-Retests in Woche 4",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Abschluss-Check:",
+      "reviewStatus": "needs-review",
+      "comment": "Retest ist eine Verlaufskontrolle und kein Wirksamkeitsnachweis."
+    }
+  ]
+}

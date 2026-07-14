@@ -1,0 +1,300 @@
+{
+  "schemaVersion": 1,
+  "locale": "de-CH",
+  "domain": "coach",
+  "entries": [
+    {
+      "id": "coach.week_plan.fallback.label.this_week",
+      "section": "Plan-Fallback",
+      "context": "Defensiver 4-Wochen-Plan ohne eigenen Plan, erster Zeitraum",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Diese Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.week_plan.fallback.label.weeks_two_three",
+      "section": "Plan-Fallback",
+      "context": "Defensiver 4-Wochen-Plan ohne eigenen Plan, mittlerer Zeitraum",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Woche 2–3",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.week_plan.fallback.label.week_four",
+      "section": "Plan-Fallback",
+      "context": "Defensiver 4-Wochen-Plan ohne eigenen Plan, letzter Zeitraum",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Woche 4",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.week_plan.fallback.step.this_week",
+      "section": "Plan-Fallback",
+      "context": "Defensiver erster Planschritt, wenn auch kein Empfehlungsschritt vorhanden ist",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Wählen Sie einen einzigen, kleinen Startschritt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.week_plan.fallback.step.weeks_two_three",
+      "section": "Plan-Fallback",
+      "context": "Defensiver mittlerer Planschritt",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Wiederholen Sie den Schritt regelmässig und steigern Sie sich langsam.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.week_plan.fallback.step.week_four",
+      "section": "Plan-Fallback",
+      "context": "Defensiver letzter Planschritt",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Machen Sie den Schritt zu einer festen Gewohnheit.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.context.score_unknown",
+      "section": "Coach-Kontext",
+      "context": "Fallback, wenn ein Dimensionsscore im Coach-Kontext fehlt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "noch nicht ermittelt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.context.weakest_title_fallback",
+      "section": "Coach-Kontext",
+      "context": "Fallback-Titel, wenn keine schwächste Dimension vorliegt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "diesem Bereich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.context.strongest_title_fallback",
+      "section": "Coach-Kontext",
+      "context": "Fallback-Titel, wenn keine stärkste Dimension vorliegt",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "—",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.prompt.overall_score",
+      "section": "Vorschlagsfragen",
+      "context": "Immer sichtbarer Vorschlags-Chip zum Gesamtscore",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Was bedeutet mein Gesamtscore?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.prompt.first_step",
+      "section": "Vorschlagsfragen",
+      "context": "Vorschlags-Chip, wenn ein Aktionsschritt vorhanden ist",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Womit fange ich am besten an?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.prompt.improve_dimension",
+      "section": "Vorschlagsfragen",
+      "context": "Vorschlags-Chip für die schwächste Dimension",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Wie verbessere ich „{{dimensionTitle}}“?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.prompt.breathing",
+      "section": "Vorschlagsfragen",
+      "context": "Vorschlags-Chip bei Belastungssignal",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Zeigen Sie mir eine Atemübung",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.prompt.coach_app",
+      "section": "Vorschlagsfragen",
+      "context": "Vorschlags-Chip zur Coach App",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Was kann die Coach App für mich tun?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.improve_dimension.with_recommendation",
+      "section": "Antworttemplates",
+      "context": "Antwort zur Verbesserung einer Dimension mit passendem Top-Schritt",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Für <b>{{dimensionTitle}}</b> ist Ihr wirksamster Schritt: {{recommendationStep}} Klein anfangen und dranbleiben schlägt Perfektion.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.improve_dimension.without_recommendation",
+      "section": "Antworttemplates",
+      "context": "Antwort zur Verbesserung einer Dimension ohne passenden Top-Schritt",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Für <b>{{dimensionTitle}}</b> ({{dimensionScore}}/100) lässt sich aus den aktuellen Antworten keine einzelne spezifische Empfehlung ableiten. Nutzen Sie die Einordnung im Detailbereich und wählen Sie bei Bedarf eine kleine, alltagstaugliche Anpassung.",
+      "reviewStatus": "needs-review",
+      "comment": "Funktioniert bei niedrigen wie hohen Scores ohne nicht vorhandene Empfehlungen zu versprechen; durch Marketing freigeben."
+    },
+    {
+      "id": "coach.answer.emergency",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort bei Notfall- oder Krisenbegriffen",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wenn es akut ist, zögern Sie nicht: Bei starken oder plötzlichen Beschwerden wählen Sie den Notruf <b>144</b>, in seelischen Krisen die Dargebotene Hand <b>143</b>. Ich bin nur eine Vorschau und kann keine medizinische Hilfe leisten.",
+      "requiredTerms": [
+        "144",
+        "143"
+      ],
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.overall_score",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zum Gesamtscore",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Gesamtscore liegt bei <b>{{overallScore}}/100</b> („{{statusLabel}}“). Am stärksten sind Sie bei <b>{{strongestTitle}}</b> ({{strongestScore}}/100), am meisten Hebel haben Sie bei <b>{{weakestTitle}}</b> ({{weakestScore}}/100). Das ist eine Momentaufnahme – kein medizinisches Urteil.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.first_step.with_plan",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zum Einstieg mit vorhandenem Aktionsschritt",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Fangen Sie am besten klein an: <b>{{recommendationTitle}}</b>. Ihr erster Schritt: {{recommendationStep}} Wählen Sie nur diesen einen Schritt für diese Woche.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.first_step.without_plan",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zum Einstieg ohne vorhandenen Aktionsschritt",
+      "kind": "action",
+      "reviewers": "Marketing",
+      "text": "Aus Ihren Antworten lässt sich aktuell kein einzelner priorisierter Startschritt ableiten. Nutzen Sie die Dimensionswerte und Hinweise zur Einordnung und wählen Sie einen kleinen Schritt, der zu Ihrem Alltag passt.",
+      "reviewStatus": "needs-review",
+      "comment": "Leerzustand nicht mehr mit fehlendem Handlungsbedarf gleichgesetzt; durch Marketing freigeben."
+    },
+    {
+      "id": "coach.answer.breathing",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zu Stress, Entspannung oder Atemübung",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Probieren Sie die Atemübung etwas weiter oben auf dieser Seite (4s ein · 7s halten · 8s aus) – schon ein paar Minuten können die Anspannung senken. Hält die Belastung länger an, ist Helsana für Sie da: Gesundheitsberatung <b>058 340 15 69</b>. Bei einer akuten Krise: <b>143</b>.",
+      "requiredTerms": [
+        "058 340 15 69",
+        "143"
+      ],
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.sleep",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zum Schlaf",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Beim Schlaf hilft oft eine ruhige, konstante Abendroutine: Bildschirme 30–60 Min. vorher aus, kein Koffein am Abend und möglichst feste Aufstehzeiten. Ihr Schlaf-Wert: <b>{{sleepScore}}</b>.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.fitness",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zu Bewegung, Sport, Fitness oder Kraft",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Fitness ist einer der wirksamsten Hebel: Schon 3× 20–30 Min. zügiges Gehen pro Woche plus 2 kurze Krafteinheiten wirken. Steigern Sie langsam und planen Sie feste Zeiten ein. Ihr Fitness-Wert: <b>{{fitnessScore}}</b>.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.nutrition",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zu Ernährung oder Gewicht",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Kleine Umstellungen wirken: pro Tag eine zusätzliche Portion Gemüse, Hülsenfrüchte oder Vollkorn und gesüsste Getränke reduzieren. Ihr Ernährungs-Wert: <b>{{nutritionScore}}</b>.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.protein",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zu Protein oder Eiweiss",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Für gesunde Erwachsene mit regelmässigem Krafttraining sind etwa <b>1,4–1,6 g/kg/Tag</b> eine praktische Orientierung. Die durchschnittlichen zusätzlichen Vorteile für den Aufbau fettfreier Masse flachen ab rund <b>1,6 g/kg/Tag</b> deutlich ab. Bis etwa <b>2,0 g/kg/Tag</b> können bei sehr hoher Trainingsbelastung oder einem gezielten Energiedefizit als individueller Spielraum sinnvoll sein; für die meisten Menschen ist das nicht nötig, und das Alter allein begründet dieses Ziel nicht. Für Personen unter 18 Jahren sowie bei einer Nierenerkrankung oder medizinisch verordneter Ernährung sollte die Menge fachlich geklärt werden.",
+      "requiredTerms": [
+        "1,4–1,6 g/kg/Tag",
+        "1,6 g/kg/Tag",
+        "2,0 g/kg/Tag"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Neue evidenzgebundene Proteinantwort mit klaren Anwendungs- und Sicherheitsgrenzen; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "coach.answer.medical_values",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zu Blutdruck, Cholesterin, Blutzucker oder Laborwerten",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Konkrete Werte sollten Sie ärztlich einordnen lassen – ich kann und darf das nicht bewerten. Sinnvoll ist, unbekannte Basiswerte (Blutdruck, Blutzucker/HbA1c, Blutfette) bei Gelegenheit bestimmen zu lassen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "coach.answer.coach_app",
+      "section": "Antworttemplates",
+      "context": "Demo-Coach-Antwort zur Helsana Coach App",
+      "kind": "explanation",
+      "reviewers": "Marketing, Recht",
+      "text": "Die Helsana Coach App begleitet Sie täglich beim Dranbleiben – mit Plänen, Erinnerungen und Übungen. Mit Ihrer Zustimmung könnten Sie Ihr Profil (Score, Fokus-Bereiche, nächste Schritte) direkt übernehmen. Den Absprung finden Sie weiter unten auf dieser Seite.",
+      "reviewStatus": "needs-review",
+      "comment": "Aussage zu Einwilligung und möglicher Profilübernahme vor Go-live durch Legal/Datenschutz freigeben."
+    },
+    {
+      "id": "coach.answer.fallback",
+      "section": "Antworttemplates",
+      "context": "Allgemeine Demo-Coach-Antwort, wenn keine speziellere Regel greift",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Ich bin eine Vorschau und antworte mit Beispielen zu Ihrer Auswertung. Am meisten Wirkung hat bei Ihnen gerade <b>{{weakestTitle}}</b> ({{weakestScore}}/100). Fragen Sie mich z. B. „Womit fange ich an?“ oder tippen Sie oben auf einen Vorschlag.",
+      "reviewStatus": "",
+      "comment": ""
+    }
+  ]
+}
