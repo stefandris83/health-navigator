@@ -1,0 +1,241 @@
+{
+  "schemaVersion": 1,
+  "locale": "it-CH",
+  "domain": "coach",
+  "entries": [
+    {
+      "id": "coach.week_plan.fallback.label.this_week",
+      "text": "Questa settimana",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ac9aa2ef0a2de23b1e33169471ac984862d5bbfda5c5562aa0f0d606ce5af0b5"
+    },
+    {
+      "id": "coach.week_plan.fallback.label.weeks_two_three",
+      "text": "Settimane 2–3",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "03565a3a212e8baff96a988b03ef93f56481f66766f67ce0dd7608c5a948a7a0"
+    },
+    {
+      "id": "coach.week_plan.fallback.label.week_four",
+      "text": "Settimana 4",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "202c96474fd1e068b5c39474ef9834e1af751a770daf7dba4e1c7a814f1f37a2"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.this_week",
+      "text": "Scelga un unico piccolo passo iniziale.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0998fe3138c162312663ed34c2dc11175402ded19c7d3db086bf5ddd99c697e4"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.weeks_two_three",
+      "text": "Ripeta regolarmente questo passo e aumenti gradualmente.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "efe7a94ec30da6c669727bfc1c0aa893cc357c249bc71cd3f62cc9084afeff2a"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.week_four",
+      "text": "Trasformi questo passo in un’abitudine stabile.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3d88159681e2c8bd70c711d57aac380af8b39cb8032fbfdc8ffc051575fdd8ab"
+    },
+    {
+      "id": "coach.context.score_unknown",
+      "text": "non ancora determinato",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "751d4f0c80d28614098f0e2c42d918fb411e4807753fc7167a235d71c81911a6"
+    },
+    {
+      "id": "coach.context.weakest_title_fallback",
+      "text": "questo ambito",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d85dc7e361f14928486beb598b62cf82d7538fec22ecf528b2ea99bcee950d6e"
+    },
+    {
+      "id": "coach.context.strongest_title_fallback",
+      "text": "—",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0bc3b82d02b8195bd58dc943f7fc1c45076ef959325b707c38a6b991895d7ffd"
+    },
+    {
+      "id": "coach.prompt.overall_score",
+      "text": "Che cosa significa il mio punteggio complessivo?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6b8a9bb0e6cebec3ce05dd5ebb961fe909a99a0f05af4349330d0ac301609fb3"
+    },
+    {
+      "id": "coach.prompt.first_step",
+      "text": "Da dove mi conviene iniziare?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f6061238108201f73a347febadbf612f0a4a7028c3ae756c611034103296bbe1"
+    },
+    {
+      "id": "coach.prompt.improve_dimension",
+      "text": "Come posso migliorare «{{dimensionTitle}}»?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "40a985ef6aa4523458e9aad7642576cddd8abfdcd5afbefdcacaf2b42267b7a8"
+    },
+    {
+      "id": "coach.prompt.breathing",
+      "text": "Mi mostri un esercizio di respirazione",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3ed5f9e15d0d8160c3410c828de9b82dee944cce8c7d608a66ef6d8826fffd4d"
+    },
+    {
+      "id": "coach.prompt.coach_app",
+      "text": "Che cosa può fare per me l’app Helsana Coach?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "16e2bfd5448a8d5535a9ddec367a2064a94414a1ac25ea4586676f7449b43be3"
+    },
+    {
+      "id": "coach.improve_dimension.with_recommendation",
+      "text": "Per <b>{{dimensionTitle}}</b>, il passo più efficace è: {{recommendationStep}} Iniziare in piccolo e perseverare è meglio che cercare la perfezione.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "edd9c7d1959844fa4ebb65c16e54fbee378f27d344626b0f75c3c5992e97d988"
+    },
+    {
+      "id": "coach.improve_dimension.without_recommendation",
+      "text": "Per <b>{{dimensionTitle}}</b> ({{dimensionScore}}/100), dalle Sue risposte attuali non emerge una singola raccomandazione specifica. Consulti la valutazione nella sezione dettagliata e, se utile, scelga un piccolo cambiamento adatto alla vita quotidiana.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "94cf18856d9e7d5bfcb9e97472f493241d5af9cdeaeab554ae7eaaaaba5a470c"
+    },
+    {
+      "id": "coach.answer.emergency",
+      "text": "Se la situazione è urgente, non esiti: in caso di disturbi forti o improvvisi chiami il numero d’emergenza <b>144</b>; in caso di crisi psichica, Telefono Amico <b>143</b>. Sono solo un’anteprima e non posso fornire assistenza medica.",
+      "requiredTerms": [
+        "144",
+        "143"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ba1aead2e4383820e0d4dfad4d72b4a75e3368e853c7449aba875e1b365692d1"
+    },
+    {
+      "id": "coach.answer.overall_score",
+      "text": "Il Suo punteggio complessivo è <b>{{overallScore}}/100</b> («{{statusLabel}}»). Il Suo ambito più forte è <b>{{strongestTitle}}</b> ({{strongestScore}}/100), mentre <b>{{weakestTitle}}</b> ({{weakestScore}}/100) offre il maggiore potenziale di miglioramento. È un’istantanea, non una valutazione medica.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fb50def82f1caabf73ea450375bba9c9d3e4f036809e809e6aca46b1e634b90c"
+    },
+    {
+      "id": "coach.answer.first_step.with_plan",
+      "text": "Il modo migliore per iniziare è procedere a piccoli passi: <b>{{recommendationTitle}}</b>. Il Suo primo passo: {{recommendationStep}} Per questa settimana si concentri soltanto su questo passo.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "68ca95dc27131bee6e4ec2037a8de4304a2be8cae3e21c9c3d200b06e8d3d7e9"
+    },
+    {
+      "id": "coach.answer.first_step.without_plan",
+      "text": "Dalle Sue risposte non emerge attualmente un singolo passo iniziale prioritario. Utilizzi i valori delle dimensioni e le indicazioni per interpretare il risultato, quindi scelga un piccolo passo adatto alla Sua vita quotidiana.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dad9bd8b4dd8aa68159f7ff098bebb95879989d1d2be19578919e69a89403dac"
+    },
+    {
+      "id": "coach.answer.breathing",
+      "text": "Provi l’esercizio di respirazione poco più in alto in questa pagina (inspiri per 4 s · trattenga il respiro per 7 s · espiri per 8 s). Anche pochi minuti possono contribuire a ridurre la tensione. Se il carico persiste, Helsana è al Suo fianco: consulenza sanitaria al numero <b>058 340 15 69</b>. In caso di crisi acuta: <b>143</b>.",
+      "requiredTerms": [
+        "058 340 15 69",
+        "143"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bebf98d3a6b297cfb70c799ca9931b03d61b837cc65ec7a986ad0400087f15c0"
+    },
+    {
+      "id": "coach.answer.sleep",
+      "text": "Per il sonno è spesso utile una routine serale tranquilla e costante: spegnere gli schermi 30–60 minuti prima, evitare la caffeina la sera e mantenere orari di risveglio il più possibile regolari. Il Suo valore del sonno: <b>{{sleepScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "06b54c63589c45d07e6e6c00cd44e30952cf488b52b21fb890adb0e884a4994b"
+    },
+    {
+      "id": "coach.answer.fitness",
+      "text": "La forma fisica è una delle leve più efficaci: già 3 × 20–30 minuti di camminata sostenuta alla settimana, insieme a 2 brevi sessioni di forza, possono fare la differenza. Aumenti gradualmente e pianifichi orari fissi. Il Suo valore della forma fisica: <b>{{fitnessScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "adda211d953a93f49ef008268a4395d95e66abcb76535c447567a4ea6d4a5d77"
+    },
+    {
+      "id": "coach.answer.nutrition",
+      "text": "Piccoli cambiamenti possono fare la differenza: aggiunga ogni giorno una porzione di verdura, legumi o prodotti integrali e riduca le bevande zuccherate. Il Suo valore dell’alimentazione: <b>{{nutritionScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7a247f58958ce602435020f5d2f75dffd04e80d8de0023228da77e675155130"
+    },
+    {
+      "id": "coach.answer.protein",
+      "text": "Per adulti sani che praticano regolarmente allenamento della forza, circa <b>1,4–1,6 g/kg/giorno</b> rappresentano un orientamento pratico. In media, i benefici aggiuntivi per l’aumento della massa magra si riducono nettamente intorno a <b>1,6 g/kg/giorno</b>. Fino a circa <b>2,0 g/kg/giorno</b> può essere un margine individuale ragionevole in caso di carichi di allenamento molto elevati o di un deficit energetico mirato; per la maggior parte delle persone non è necessario e l’età da sola non giustifica questo obiettivo. Per le persone sotto i 18 anni e in caso di malattia renale o di alimentazione prescritta dal medico, la quantità va concordata con un professionista sanitario.",
+      "requiredTerms": [
+        "1,4–1,6 g/kg/giorno",
+        "1,6 g/kg/giorno",
+        "2,0 g/kg/giorno"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2e1b7e4df19f3b798ec9dad90a3943fba3f532c30f15ac8e812f3fbc492269d9"
+    },
+    {
+      "id": "coach.answer.medical_values",
+      "text": "I valori concreti devono essere valutati da un medico: non posso né devo interpretarli. Se i valori di base non sono noti, può essere utile far misurare, quando possibile, la pressione arteriosa, la glicemia/HbA1c e i lipidi nel sangue.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d3ef155bf2d1a4a20655a16921bf9b82f01f25e4b6a07ced9fd6c59b3bf28b44"
+    },
+    {
+      "id": "coach.answer.coach_app",
+      "text": "L’app Helsana Coach La aiuta ogni giorno a mantenere le Sue abitudini con programmi, promemoria ed esercizi. Con il Suo consenso, il profilo (punteggio, ambiti prioritari e prossimi passi) potrebbe essere trasferito direttamente. Trova il link più in basso in questa pagina.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "96cd347d9f18d9f0eca24f9e05b801b96ba4ebd78e2370c1fc7ec7eeecbb688d"
+    },
+    {
+      "id": "coach.answer.fallback",
+      "text": "Sono un assistente in versione dimostrativa e fornisco risposte esemplificative sui Suoi risultati. L’ambito in cui può ottenere ora il maggiore effetto è <b>{{weakestTitle}}</b> ({{weakestScore}}/100). Mi chieda, ad esempio, «Da dove comincio?» oppure selezioni uno dei suggerimenti qui sopra.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3d43417a94cf0fa00110d628f159b3aa868ce9e1ff069cd0db8975f01852e1b9"
+    }
+  ]
+}

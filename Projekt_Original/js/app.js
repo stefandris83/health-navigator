@@ -10,6 +10,55 @@
 (function () {
   'use strict';
 
+  function detectedLocale() {
+    const localeApi = typeof window !== 'undefined' ? window.HealthLocale : null;
+    let value = null;
+    try {
+      value = localeApi && typeof localeApi.getLocale === 'function'
+        ? localeApi.getLocale()
+        : (localeApi && localeApi.current);
+      if (localeApi && typeof localeApi.normalize === 'function') value = localeApi.normalize(value);
+    } catch (error) { value = null; }
+    if (!value && typeof window !== 'undefined' && window.__RESULT_COPY_BUNDLE__) {
+      value = window.__RESULT_COPY_BUNDLE__.locale;
+    }
+    if (!value && typeof document !== 'undefined' && document.documentElement) {
+      value = document.documentElement.lang;
+    }
+    const language = String(value || 'de-CH').toLowerCase().split('-')[0];
+    const localeByLanguage = { de: 'de-CH', en: 'en-CH', fr: 'fr-CH', it: 'it-CH' };
+    return localeByLanguage[language] || 'de-CH';
+  }
+
+  function detectedLanguage() {
+    return detectedLocale().split('-')[0];
+  }
+
+  // Dieser letzte Notfallzustand darf nicht vom redaktionellen Bundle abhängen:
+  // Er muss auch dann verständlich bleiben, wenn genau dieses Bundle fehlt.
+  const STATIC_FAILURE_COPY = Object.freeze({
+    de: Object.freeze({
+      title: 'Die Ansicht konnte nicht geladen werden.',
+      message: 'Bitte laden Sie die Seite neu. Falls das Problem bestehen bleibt, versuchen Sie es später erneut.',
+      reload: 'Seite neu laden',
+    }),
+    en: Object.freeze({
+      title: 'The page could not be loaded.',
+      message: 'Please reload the page. If the problem persists, try again later.',
+      reload: 'Reload page',
+    }),
+    fr: Object.freeze({
+      title: 'Impossible de charger la page.',
+      message: 'Veuillez recharger la page. Si le problème persiste, réessayez plus tard.',
+      reload: 'Recharger la page',
+    }),
+    it: Object.freeze({
+      title: 'Non è stato possibile caricare la pagina.',
+      message: 'Ricarichi la pagina. Se il problema persiste, riprovi più tardi.',
+      reload: 'Ricaricare la pagina',
+    }),
+  });
+
   function reportStaticFailure(error) {
     let detail = 'HN_RENDER_FAILED';
     const message = error && typeof error.message === 'string' ? error.message : '';
@@ -30,14 +79,13 @@
     if (!root) return;
     if (document.body) document.body.dataset.screen = 'error';
     root.dataset.renderError = 'true';
-    // Absichtlich katalogunabhängig: Dieser letzte Notfallzustand muss auch
-    // erscheinen, wenn das generierte Textbundle fehlt oder veraltet ist.
+    const fallback = STATIC_FAILURE_COPY[detectedLanguage()] || STATIC_FAILURE_COPY.de;
     root.innerHTML = `
       <section class="section fade-in" role="alert">
         <div class="card">
-          <h1>Die Ansicht konnte nicht geladen werden.</h1>
-          <p>Bitte laden Sie die Seite neu. Falls das Problem bestehen bleibt, versuchen Sie es später erneut.</p>
-          <button class="btn btn-primary" type="button" data-action="reload">Seite neu laden</button>
+          <h1>${fallback.title}</h1>
+          <p>${fallback.message}</p>
+          <button class="btn btn-primary" type="button" data-action="reload">${fallback.reload}</button>
         </div>
       </section>`;
     const reload = root.querySelector('[data-action="reload"]');
@@ -64,6 +112,13 @@
       .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
   function escAttr(s) { return escHtml(s).replace(/"/g, '&quot;'); }
+
+  function localizedRoute(route) {
+    const localeApi = window.HealthLocale;
+    if (!localeApi || typeof localeApi.urlForLocale !== 'function') return route;
+    try { return localeApi.urlForLocale(detectedLocale(), route) || route; }
+    catch (error) { return route; }
+  }
 
   let planStore = {};
   function loadPlan() {
@@ -200,26 +255,24 @@
     const hasProgress = Object.keys(state.answers).length > 0;
     app.innerHTML = `
       <section class="hero fade-in">
-        <p class="eyebrow">Ihr persönlicher Gesundheitscheck</p>
-        <h1>Verstehen Sie Ihren Gesundheitszustand – und erkennen Sie, wo sich Handeln am meisten lohnt.</h1>
-        <p class="lead">In wenigen Minuten erhalten Sie eine motivierende Standortbestimmung über fünf
-        Gesundheitsdimensionen, persönliche Empfehlungen und Ihre wirkungsvollsten nächsten Schritte.</p>
+        <p class="eyebrow">${copy.get('ui.start.eyebrow')}</p>
+        <h1>${copy.get('ui.start.title')}</h1>
+        <p class="lead">${copy.get('ui.start.lead')}</p>
         <div class="hero-points">
-          <div class="hero-point">${I.spark}<div><b>Persönlich</b><span>Auswertung auf Basis Ihrer Antworten</span></div></div>
-          <div class="hero-point">${I.leaf}<div><b>Evidenzbasiert</b><span>Orientiert an anerkannten Empfehlungen</span></div></div>
-          <div class="hero-point">${I.lock}<div><b>Privat</b><span>Antworten bleiben auf Ihrem Gerät</span></div></div>
+          <div class="hero-point">${I.spark}<div><b>${copy.get('ui.start.point.personal.title')}</b><span>${copy.get('ui.start.point.personal.detail')}</span></div></div>
+          <div class="hero-point">${I.leaf}<div><b>${copy.get('ui.start.point.evidence.title')}</b><span>${copy.get('ui.start.point.evidence.detail')}</span></div></div>
+          <div class="hero-point">${I.lock}<div><b>${copy.get('ui.start.point.private.title')}</b><span>${copy.get('ui.start.point.private.detail')}</span></div></div>
         </div>
         <div class="hero-actions">
-          <button class="btn btn-primary btn-lg" data-action="start">${hasProgress ? 'Check fortsetzen' : 'Check starten'} ${I.arrowR}</button>
-          ${hasProgress ? '<button class="btn btn-ghost btn-lg" data-action="restart">Neu beginnen</button>' : ''}
+          <button class="btn btn-primary btn-lg" data-action="start">${copy.get(hasProgress ? 'ui.start.button.continue' : 'ui.start.button.begin')} ${I.arrowR}</button>
+          ${hasProgress ? `<button class="btn btn-ghost btn-lg" data-action="restart">${copy.get('ui.start.button.restart')}</button>` : ''}
         </div>
       </section>
 
       <div class="note-card fade-in">
         ${I.info}
-        <div><b>Wichtig:</b> Dieser Check ist keine medizinische Diagnose und ersetzt keine ärztliche Beratung.
-        Er hilft Ihnen, Stärken und Handlungsfelder zu erkennen. Bei auffälligen Werten empfehlen wir, eine
-        medizinische Fachperson einzubeziehen. <a class="link-button link-button-inline" href="quellen.html">Wissenschaftliche Grundlagen anzeigen</a></div>
+        <div><b>${copy.get('ui.start.disclaimer.title')}</b> ${copy.get('ui.start.disclaimer.body')}
+        <a class="link-button link-button-inline" href="${escAttr(localizedRoute('quellen.html'))}">${copy.get('ui.start.sources_link')}</a></div>
       </div>
     `;
   }
@@ -231,10 +284,10 @@
   }
 
   function numberErrorText(q) {
-    const range = q.min != null && q.max != null
-      ? `zwischen ${q.min} und ${q.max}`
-      : (q.min != null ? `ab ${q.min}` : `bis ${q.max}`);
-    return `Bitte geben Sie einen gültigen Wert ${range}${q.unit ? ` ${q.unit}` : ''} ein.`;
+    const variables = { min: q.min, max: q.max, unit: q.unit ? ` ${q.unit}` : '' };
+    if (q.min != null && q.max != null) return copy.format('ui.quiz.number_error.between', variables);
+    if (q.min != null) return copy.format('ui.quiz.number_error.minimum', variables);
+    return copy.format('ui.quiz.number_error.maximum', variables);
   }
 
   function numberInputInvalid(q, raw) {
@@ -266,7 +319,7 @@
         ${q.unit ? `<span class="num-unit">${q.unit}</span>` : ''}
       </div>
       <div class="field-error" id="${escAttr(errorId)}" data-number-error aria-live="polite"${invalid ? '' : ' hidden'}>${escHtml(numberErrorText(q))}</div>
-      ${q.optional ? '<div class="field-hint">Optional – Sie können das Feld auch leer lassen.</div>' : ''}`;
+      ${q.optional ? `<div class="field-hint">${copy.get('ui.quiz.optional_hint')}</div>` : ''}`;
     } else {
       const opts = q.options.slice();
       if (q.dontKnow) opts.push(window.DONT_KNOW);
@@ -276,7 +329,7 @@
     return `<div class="question" data-qwrap="${q.id}">
       <div class="q-text">${q.text}</div>
       ${q.note ? `<div class="q-note">${q.note}</div>` : ''}
-      ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle">${I.info} ${escHtml(q.helpTitle || 'Was bedeutet das?')}</summary><div class="q-help">${q.help}</div></details>` : ''}
+      ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle">${I.info} ${escHtml(q.helpTitle || copy.get('ui.quiz.help_fallback'))}</summary><div class="q-help">${String(q.help).replace(/\n/g, '<br>')}</div></details>` : ''}
       ${body}
     </div>`;
   }
@@ -291,20 +344,22 @@
       const reachable = i <= state.maxReached;
       const status = i < state.dimIndex ? 'done' : (i === state.dimIndex ? 'current' : 'inactive');
       const conn = i > 0 ? `<span class="step-conn ${i - 1 < state.dimIndex ? 'done' : ''}"></span>` : '';
-      const stateLabel = status === 'done' ? ' (erledigt)' : status === 'current' ? ' (aktuell)' : '';
+      const stateLabel = status === 'done'
+        ? copy.get('ui.quiz.step_state.done')
+        : (status === 'current' ? copy.get('ui.quiz.step_state.current') : '');
       return `${conn}<button class="step-dot ${status}" data-action="goto" data-idx="${i}"
         ${reachable ? '' : 'disabled'} title="${d.short}"
-        aria-current="${i === state.dimIndex}" aria-label="Bereich ${i + 1} von ${total}: ${d.short}${stateLabel}">${status === 'done' ? I.check : i + 1}</button>`;
+        aria-current="${i === state.dimIndex}" aria-label="${escAttr(copy.format('ui.quiz.step_aria', { current: i + 1, total, dimensionShort: d.short, stateLabel }))}">${status === 'done' ? I.check : i + 1}</button>`;
     }).join('');
 
     app.innerHTML = `
       <div class="quiz-head fade-in">
-        <div class="stepper" role="list" aria-label="Fortschritt">${steps}</div>
+        <div class="stepper" role="list" aria-label="${escAttr(copy.get('ui.quiz.progress_aria'))}">${steps}</div>
       </div>
 
       <section class="card fade-in">
         <div class="dim-intro">
-          <div class="dim-count">Bereich ${state.dimIndex + 1} von ${total}</div>
+          <div class="dim-count">${copy.format('ui.quiz.dimension_count', { current: state.dimIndex + 1, total })}</div>
           <h2>${dim.title}</h2>
         </div>
         <p class="dim-lead">${dim.intro}</p>
@@ -313,12 +368,12 @@
 
       <div class="quiz-nav">
         <button class="btn btn-primary btn-block" data-action="next" id="next-btn">
-          ${isLast ? 'Auswertung anzeigen' : 'Weiter'} ${I.arrowR}
+          ${copy.get(isLast ? 'ui.quiz.button.results' : 'ui.quiz.button.continue')} ${I.arrowR}
         </button>
-        <button class="btn btn-secondary btn-block" data-action="back">${I.arrowL} Zurück</button>
+        <button class="btn btn-secondary btn-block" data-action="back">${I.arrowL} ${copy.get('ui.quiz.button.back')}</button>
       </div>
       <div id="nav-hint" class="field-error" style="text-align:right" role="status" aria-live="polite" hidden>
-        Bitte beantworten Sie alle nicht optionalen Fragen in diesem Bereich, um fortzufahren.
+        ${copy.get('ui.quiz.incomplete_hint')}
       </div>
     `;
     updateNextState();
@@ -605,7 +660,10 @@
     const parts = [];
     if (m.bmi) {
       const lbl = copy.get('ui.metrics.bmi_class.' + m.bmiClass);
-      parts.push(copy.format('ui.metrics.bmi', { bmi: m.bmi, bmiClassLabel: lbl }));
+      parts.push(copy.format('ui.metrics.bmi', {
+        bmi: window.HealthLocale.formatDecimal(m.bmi),
+        bmiClassLabel: lbl,
+      }));
     }
     if (m.waist) {
       const lbl = copy.get('ui.metrics.waist_status.' + m.waistStatus);
@@ -824,7 +882,7 @@
 
     // Absprung zur Coach-App inkl. Vorschau der (nur mit Zustimmung) übergebenen Infos
     const focusTitles = fields.length
-      ? new Intl.ListFormat('de-CH', { style: 'long', type: 'conjunction' })
+      ? new Intl.ListFormat(detectedLocale(), { style: 'long', type: 'conjunction' })
         .format([...new Set(fields.map((x) => x.dimTitle))])
       : copy.get('ui.coach_handoff.focus_fallback');
     const handoffPlanId = top3.length === 1 ? 'one' : (top3.length === 2 ? 'two' : (top3.length === 3 ? 'three' : 'empty'));
@@ -1394,21 +1452,39 @@
   }
 
   /* -------------------------------------------------- Share / Permalink -- */
+  function resultLinkLocale() {
+    const localeApi = window.HealthLocale;
+    if (!localeApi || typeof localeApi.normalize !== 'function') return null;
+    try {
+      const raw = typeof localeApi.getLocale === 'function'
+        ? localeApi.getLocale()
+        : localeApi.current;
+      const normalized = localeApi.normalize(raw);
+      const supported = Array.isArray(localeApi.supported) ? localeApi.supported : [];
+      return normalized && (!supported.length || supported.includes(normalized)) ? normalized : null;
+    } catch (error) { return null; }
+  }
+
+  function cleanResultLinkBase(parsed) {
+    parsed.search = '';
+    parsed.hash = '';
+    const locale = resultLinkLocale();
+    if (locale) parsed.searchParams.set('lang', locale);
+    return parsed;
+  }
+
   function resultLinkBaseUrl() {
     const configured = safeHttps(config.resultLinkBaseUrl);
     if (configured) {
-      const parsed = new URL(configured);
-      parsed.search = '';
-      parsed.hash = '';
-      return parsed.href;
+      return cleanResultLinkBase(new URL(configured)).href;
     }
     try {
-      const current = new URL(location.href);
-      current.search = '';
-      current.hash = '';
+      const current = cleanResultLinkBase(new URL(location.href));
       // Die Standalone-Demo darf einen lokalen, gerätegebundenen Speicherlink
       // erzeugen. Live/anonymous benötigen weiterhin HTTPS oder eine konfigurierte
       // kanonische HTTPS-Basis und geben niemals einen lokalen Dateipfad aus.
+      // Sämtliche Query-Werte ausser dem von HealthLocale validierten `lang`
+      // werden bewusst entfernt, damit keine Host-Secrets geteilt werden.
       if (current.protocol === 'file:' && config.integrationMode === 'mock') return current.href;
       return safeHttps(current.href);
     } catch (error) { return null; }
@@ -1509,7 +1585,12 @@
   /* -------------------------------------------------- Init --------------- */
   load();
   loadPlan();
-  restoreFromHash();
+  const restoredSharedResult = restoreFromHash();
+  if (!restoredSharedResult && window.HealthLocale && typeof window.HealthLocale.consumeReturnView === 'function') {
+    const returnView = window.HealthLocale.consumeReturnView();
+    if (returnView === 'results' && answersComplete(state.answers)) state.screen = 'results';
+    else if (returnView === 'quiz' && Object.keys(state.answers).length > 0) state.screen = 'quiz';
+  }
   render();
 
   // Kundenkontext kann asynchron eintreffen. Nur die beiden kundenspezifischen

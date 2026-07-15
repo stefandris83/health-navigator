@@ -2,16 +2,38 @@
  * result-copy.js
  * ---------------------------------------------------------------------------
  * Kleine Laufzeit-API fuer alle Texte der Ergebnisseite. Die eigentlichen
- * Texte werden aus content/result-texts/*.json generiert und davor als
+ * Texte werden aus content/result-texts/*.json und den Sprach-Overlays unter
+ * content/result-texts/locales/ generiert und davor als
  * js/result-copy.generated.js geladen. Dadurch bleibt die App ohne Build-
- * Schritt direkt per index.html startbar, waehrend Marketing mit einer CSV
- * arbeiten kann.
+ * Schritt direkt per index.html startbar, waehrend Marketing und Fachreview
+ * mit sprachspezifischen CSV-Dateien arbeiten koennen.
  * ---------------------------------------------------------------------------
  */
 (function () {
   'use strict';
 
-  const bundle = (typeof window !== 'undefined' && window.__RESULT_COPY_BUNDLE__) || null;
+  const root = typeof window !== 'undefined' ? window : null;
+  const registry = root && root.__RESULT_COPY_BUNDLES__;
+  const localeApi = root && root.HealthLocale;
+  const requestedLocale = localeApi && typeof localeApi.getLocale === 'function'
+    ? localeApi.getLocale()
+    : 'de-CH';
+
+  let bundle = null;
+  if (registry) {
+    if (!registry.bundles || !registry.bundles[requestedLocale]) {
+      throw new Error('ResultCopy: Text-Bundle fuer Sprache "' + requestedLocale + '" fehlt.');
+    }
+    bundle = registry.bundles[requestedLocale];
+  } else if (root && root.__RESULT_COPY_BUNDLE__) {
+    // Rueckwaertskompatibilitaet fuer isolierte Integrations- und Unit-Tests.
+    // Ein altes Einsprach-Bundle darf aber nie als stiller DE-Fallback fuer
+    // eine andere angeforderte Sprache dienen.
+    bundle = root.__RESULT_COPY_BUNDLE__;
+    if (requestedLocale !== 'de-CH' && bundle.locale !== requestedLocale) {
+      throw new Error('ResultCopy: Text-Bundle fuer Sprache "' + requestedLocale + '" fehlt.');
+    }
+  }
   if (!bundle || !bundle.texts) {
     throw new Error('ResultCopy: js/result-copy.generated.js fehlt oder ist ungueltig.');
   }
@@ -37,7 +59,7 @@
 
   /**
    * Setzt {{platzhalter}} ein. Variablen werden HTML-escaped; die wenigen im
-   * Katalog erlaubten <b>/<i>-Tags bleiben erhalten. Fehlende Variablen sind ein
+   * Katalog explizit erlaubten Formatierungs-Tags bleiben erhalten. Fehlende Variablen sind ein
    * harter Fehler, damit nie halbfertige Texte bei Nutzenden erscheinen.
    */
   function format(id, variables) {
@@ -50,8 +72,9 @@
     });
   }
 
-  if (typeof window !== 'undefined') {
-    window.ResultCopy = Object.freeze({
+  if (root) {
+    root.ResultCopy = Object.freeze({
+      locale: bundle.locale || requestedLocale,
       version: bundle.version,
       sourceHash: bundle.sourceHash,
       get,

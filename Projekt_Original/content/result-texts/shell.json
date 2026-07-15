@@ -1,0 +1,487 @@
+{
+  "schemaVersion": 1,
+  "locale": "de-CH",
+  "domain": "shell",
+  "entries": [
+    {
+      "id": "shell.meta.app_title",
+      "section": "Seitengerüst",
+      "context": "Installierte Web-App, Titel auf dem Startbildschirm",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Gesundheitscheck",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.manifest.name",
+      "section": "Mobile Installation",
+      "context": "Vollständiger App-Name auf dem Startbildschirm und in der Installationsansicht",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Helsana Gesundheitscheck",
+      "reviewStatus": "needs-review",
+      "comment": "Wird beim Build automatisch in das sprachspezifische Web-App-Manifest übernommen."
+    },
+    {
+      "id": "shell.manifest.description",
+      "section": "Mobile Installation",
+      "context": "Kurzbeschreibung der installierbaren Web-App",
+      "kind": "detail",
+      "reviewers": "Marketing, Recht",
+      "text": "Ihr persönlicher Gesundheitscheck von Helsana.",
+      "reviewStatus": "needs-review",
+      "comment": "Wird beim Build automatisch in das sprachspezifische Web-App-Manifest übernommen."
+    },
+    {
+      "id": "shell.meta.index_description",
+      "section": "Seitengerüst",
+      "context": "Startseite, Meta-Beschreibung",
+      "kind": "detail",
+      "reviewers": "Marketing, Recht",
+      "text": "Digitaler Gesundheitscheck: Ihr persönlicher Healthspan- und Präventions-Check. Keine Diagnose, sondern eine motivierende Standortbestimmung.",
+      "reviewStatus": "needs-review",
+      "comment": "Meta-Text vor Go-live sprachlich und rechtlich freigeben."
+    },
+    {
+      "id": "shell.meta.index_title",
+      "section": "Seitengerüst",
+      "context": "Startseite, Browser-Titel",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Gesundheitscheck",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.skip_to_content",
+      "section": "Barrierefreiheit",
+      "context": "Sprunglink zum Hauptinhalt",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Zum Inhalt springen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.group",
+      "section": "Kopfzeile",
+      "context": "Helsana-Gruppenmenü",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Helsana-Gruppe",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.private",
+      "section": "Kopf- und Fusszeile",
+      "context": "Link zum Bereich für Privatpersonen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Für Private",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.business",
+      "section": "Kopf- und Fusszeile",
+      "context": "Link zum Bereich für Unternehmen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Für Unternehmen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.nav_aria",
+      "section": "Barrierefreiheit",
+      "context": "Kopfzeile, barrierefreie Bezeichnung der Helsana-Verweise",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Helsana Verweise",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.blog",
+      "section": "Kopfzeile",
+      "context": "Link zum Helsana-Blog",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Blog",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.utility.myhelsana",
+      "section": "Kopf- und Fusszeile",
+      "context": "Link zu myHelsana",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "myHelsana",
+      "reviewStatus": "",
+      "comment": "Markenname nicht übersetzen."
+    },
+    {
+      "id": "shell.header.brand_aria",
+      "section": "Barrierefreiheit",
+      "context": "Helsana-Logo als Link zum Gesundheitscheck",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Helsana – Gesundheitscheck",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.header.logo_alt",
+      "section": "Barrierefreiheit",
+      "context": "Alternativtext des Helsana-Logos",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Helsana",
+      "reviewStatus": "",
+      "comment": "Markenname nicht übersetzen."
+    },
+    {
+      "id": "shell.header.tagline",
+      "section": "Kopfzeile",
+      "context": "Bezeichnung des Gesundheitschecks neben dem Logo",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr Gesundheitscheck",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.footer.nav_aria",
+      "section": "Barrierefreiheit",
+      "context": "Fusszeile, barrierefreie Bezeichnung der Linknavigation",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Weitere Helsana-Links",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.footer.services_heading",
+      "section": "Fusszeile",
+      "context": "Spaltenüberschrift Services",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Services",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.footer.submit_invoice",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Service Rechnung einsenden",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Rechnung einsenden",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.change_address",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Service Adresse ändern",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Adresse ändern",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.all_services",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Übersicht aller Services",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Alle Services",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.areas_heading",
+      "section": "Fusszeile",
+      "context": "Spaltenüberschrift Bereiche",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Bereiche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.footer.helsana_group",
+      "section": "Fusszeile",
+      "context": "Link zur Helsana-Gruppe",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Helsana Gruppe",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.footer.helsana_heading",
+      "section": "Fusszeile",
+      "context": "Spaltenüberschrift Helsana",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Helsana",
+      "reviewStatus": "",
+      "comment": "Markenname nicht übersetzen."
+    },
+    {
+      "id": "shell.footer.about",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Über uns",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Über uns",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.jobs",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Jobs und Karriere",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Jobs & Karriere",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.media",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Medien und Publikationen",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Medien & Publikationen",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.premium_calculator",
+      "section": "Fusszeile",
+      "context": "Platzhalter für den Prämienrechner",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Prämienrechner",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.newsletter",
+      "section": "Fusszeile",
+      "context": "Platzhalter für den Newsletter",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Newsletter",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.placeholder.link_title",
+      "section": "Fusszeile",
+      "context": "Hinweistitel eines noch nicht verlinkten Platzhalters",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Platzhalter – echten Link ergänzen",
+      "reviewStatus": "needs-review",
+      "comment": "Wird entfernt, sobald der jeweilige Link produktiv ist."
+    },
+    {
+      "id": "shell.language.group_aria",
+      "section": "Sprachwahl",
+      "context": "Barrierefreie Bezeichnung der Sprachwahl",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Sprache wählen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.language.de_short",
+      "section": "Sprachwahl",
+      "context": "Kurzbezeichnung Deutsch",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "DE",
+      "reviewStatus": "",
+      "comment": "Nicht übersetzen."
+    },
+    {
+      "id": "shell.language.en_short",
+      "section": "Sprachwahl",
+      "context": "Kurzbezeichnung Englisch",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "EN",
+      "reviewStatus": "",
+      "comment": "Nicht übersetzen."
+    },
+    {
+      "id": "shell.language.fr_short",
+      "section": "Sprachwahl",
+      "context": "Kurzbezeichnung Französisch",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "FR",
+      "reviewStatus": "",
+      "comment": "Nicht übersetzen."
+    },
+    {
+      "id": "shell.language.it_short",
+      "section": "Sprachwahl",
+      "context": "Kurzbezeichnung Italienisch",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "IT",
+      "reviewStatus": "",
+      "comment": "Nicht übersetzen."
+    },
+    {
+      "id": "shell.language.de_label",
+      "section": "Sprachwahl",
+      "context": "Barrierefreie Bezeichnung Deutsch",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Deutsch",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "shell.language.en_label",
+      "section": "Sprachwahl",
+      "context": "Barrierefreie Bezeichnung Englisch",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "English",
+      "reviewStatus": "",
+      "comment": "Eigenbezeichnung beibehalten."
+    },
+    {
+      "id": "shell.language.fr_label",
+      "section": "Sprachwahl",
+      "context": "Barrierefreie Bezeichnung Französisch",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Français",
+      "reviewStatus": "",
+      "comment": "Eigenbezeichnung beibehalten."
+    },
+    {
+      "id": "shell.language.it_label",
+      "section": "Sprachwahl",
+      "context": "Barrierefreie Bezeichnung Italienisch",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Italiano",
+      "reviewStatus": "",
+      "comment": "Eigenbezeichnung beibehalten."
+    },
+    {
+      "id": "shell.legal.imprint",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Impressum",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Impressum",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.legal.privacy",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Datenschutz",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Datenschutz",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.legal.legal_notice",
+      "section": "Fusszeile",
+      "context": "Platzhalter für rechtliche Hinweise",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Rechtliche Hinweise",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.legal.terms",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Nutzungsbedingungen",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Nutzungsbedingungen",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.legal.cookies",
+      "section": "Fusszeile",
+      "context": "Platzhalter für Cookie-Einstellungen",
+      "kind": "legal_notice",
+      "reviewers": "Marketing, Recht",
+      "text": "Cookie-Einstellungen",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.social.facebook_aria",
+      "section": "Barrierefreiheit",
+      "context": "Facebook-Platzhalter in der Fusszeile",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Facebook (Platzhalter)",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.social.instagram_aria",
+      "section": "Barrierefreiheit",
+      "context": "Instagram-Platzhalter in der Fusszeile",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "Instagram (Platzhalter)",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.social.youtube_aria",
+      "section": "Barrierefreiheit",
+      "context": "YouTube-Platzhalter in der Fusszeile",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "YouTube (Platzhalter)",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.social.linkedin_aria",
+      "section": "Barrierefreiheit",
+      "context": "LinkedIn-Platzhalter in der Fusszeile",
+      "kind": "accessibility_label",
+      "reviewers": "Marketing",
+      "text": "LinkedIn (Platzhalter)",
+      "reviewStatus": "needs-review",
+      "comment": "Ziel-Link vor Go-live ergänzen."
+    },
+    {
+      "id": "shell.footer.placeholder_note",
+      "section": "Fusszeile",
+      "context": "Erklärung der grau markierten Platzhalter",
+      "kind": "detail",
+      "reviewers": "Marketing",
+      "text": "Grau markierte Links sind Platzhalter und werden vor Go-live final verlinkt.",
+      "reviewStatus": "needs-review",
+      "comment": "Vor Go-live zusammen mit den Platzhaltern entfernen oder aktualisieren."
+    }
+  ]
+}

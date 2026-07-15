@@ -732,3 +732,86 @@ Dateien waren ebenfalls erfolgreich. Runtime-Bundle, CSV und Markdown-Übersicht
 blieben nach erneuter Generierung SHA-256-identisch. Eine echte visuelle Browser-
 Abnahme war mit der verfügbaren Browser-Steuerung technisch nicht möglich und wird
 nicht behauptet; die betroffenen Rendering- und CSS-Verträge sind statisch getestet.
+
+## 16. Vollständige Vier-Sprachen-Architektur
+
+Die bisher nur optisch vorhandene Sprachwahl wurde zu einer vollständigen
+Lokalisierungsarchitektur für `de-CH`, `en-CH`, `fr-CH` und `it-CH` ausgebaut. Jede
+Sprache besitzt denselben Bestand von 1'185 sichtbaren Text-IDs in sieben Domains.
+Frage-IDs, Antwortwerte, Scoring, Risikosignale, Empfehlungsregeln und Prioritäten
+bleiben sprachunabhängig.
+
+Direkt umgesetzt:
+
+- Die deutschen Dateien unter `content/result-texts/*.json` bleiben die kanonische
+  Struktur- und Textquelle. EN, FR und IT liegen als schlanke, vollständige Overlays
+  unter `content/result-texts/locales/<locale>/` und duplizieren keine Logik.
+- Die beiden früheren Quellenseiten-Footer-IDs `sources.footer.tagline` und
+  `sources.footer.disclaimer` wurden nach der Vereinheitlichung des Footers entfernt:
+  Beide hatten danach keinen Runtime-Verweis mehr; Content-Workflow und statischer
+  ID-Test bestätigen, dass keine verwendete Text-ID verloren ging.
+- Startseite, Fragebogen, Ergebnisseite, Coach, Navigation, Modals, Quellenseite,
+  Metadaten und Installationsmanifest werden aus demselben Textsystem lokalisiert.
+  Im Locale-Katalog und in `ResultCopy` gibt es keinen stillen Rückfall einzelner
+  fehlender Zielsprachtexte auf Deutsch. Nur bei einem vollständig fehlenden oder
+  beschädigten Runtime-Bundle bleibt das deutsche HTML-Grundgerüst als enger
+  Bootstrap-Notfallfallback sichtbar, damit keine leere Seite entsteht.
+- Die Sprachwahl verwendet ausschliesslich den allowlist-validierten Parameter
+  `?lang=` und einen separaten, nicht sensiblen Locale-Storage-Key. Antworten,
+  Resultate und Plandaten bleiben beim Wechsel erhalten; Fragebogen- und
+  Ergebnisansicht werden nach dem Reload wiederhergestellt.
+- Das eingecheckte Runtime-Bundle enthält vier vollständige Sprachpakete und bleibt
+  ohne Build, Server, npm oder Internetverbindung lauffähig. Pro Sprache wird ein
+  eigenes Web-App-Manifest erzeugt; `manifest.webmanifest` bleibt der deutsche
+  Kompatibilitätsalias.
+- Private, Unternehmen, Gruppe und Blog verwenden verifizierte Helsana-Zielseiten
+  je Sprache. Für myHelsana bleibt mangels bestätigter Sprachpfade bewusst der
+  dokumentierte deutsche Fallback als Go-live-Entscheid offen.
+- Die englische Krisenhilfe nennt sprachspezifisch Heart2Heart unter
+  `0800 143 000` mit der offiziellen Erreichbarkeit 18–23 Uhr; DE, FR und IT
+  behalten die landessprachliche Nummer 143. Der Notruf 144 bleibt davon getrennt.
+- Locale-gerechte BMI-Ausgaben verwenden in `de-CH`/`en-CH` den Dezimalpunkt und in
+  `fr-CH`/`it-CH` das Dezimalkomma. Eine fachlich widersprüchliche Erklärung zum
+  Einbeinstand mit geschlossenen Augen wurde in allen Sprachen an den tatsächlich
+  beschriebenen Test mit offenen Augen angepasst.
+
+### Sicherer Übersetzungs- und Review-Workflow
+
+Das CSV-Austauschformat 3 enthält bei Zielsprachen zusätzlich den deutschen
+Ausgangstext, die Locale und den Übersetzungsvertrag. Der Import lehnt gemischte
+Sprachen, fehlende Übersetzungen, strukturelle Abweichungen, entfernte Platzhalter,
+HTML-Abweichungen, veraltete deutsche Ausgangsverträge und fehlende geschützte
+Begriffe ab. Ein noch fehlender Text kann nicht allein durch eine Statusänderung
+als übersetzt markiert werden; eine tatsächlich identische Übersetzung muss in
+`Neuer Text` ausdrücklich bestätigt werden.
+
+Notrufnummern, Kontaktangaben, ApoB/Lp(a), Proteinwerte, Einheiten und weitere
+medizinisch relevante Aussagen besitzen auch in EN und FR sprachspezifische
+`requiredTerms`. Neue `sync-locales`-Skelette bleiben eindeutig `missing` und
+belegen das redaktionelle Kommentarfeld nicht mit einem technischen Hinweis vor.
+
+Erzeugt werden vier CSVs, eine deutsche Standardübersicht plus vier
+sprachspezifische Markdown-Übersichten, vier Sprachmanifeste, der deutsche
+Manifest-Alias und das gemeinsame Runtime-Bundle. `review-report --all` fasst alle
+Sprachen zusammen; `--all --fail-on-open` ist das gemeinsame Release-Gate. Aktuell
+sind 0/4'740 Texte freigegeben. Das ist beabsichtigt: Die EN-, FR- und IT-Fassungen
+sind KI-gestützte Erstübersetzungen und bleiben bis zur muttersprachlichen sowie
+gegebenenfalls medizinischen und rechtlichen Prüfung vollständig auf
+`needs-review`.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 40/40, Integration 58/58, Robustheit 22/22,
+UI-Lifecycle 14/14, I18n-Static 14/14 und I18n-Runtime 4/4, insgesamt **152/152
+Tests**. Alle vier Kataloge bestanden `validate`; `check` bestätigte Bundle, CSV,
+Markdown und Manifeste. Der No-op-Dry-Run aller vier CSVs schrieb keine Datei. Eine
+zweite vollständige Generierung war für sämtliche generierten Artefakte
+SHA-256-identisch.
+
+Die Browser-Steuerung blockierte den direkten `file://`-Aufruf aus
+Sicherheitsgründen. Ein lokaler HTTP-Port durfte in der Ausführungsumgebung nicht
+geöffnet werden. Deshalb wird keine neue interaktive Browser-, Konsolen- oder
+visuelle Mobile-Abnahme behauptet. Die direkte Dateinutzung, Script-Reihenfolge,
+Locale-Navigation, vier Manifeste, technische Sprachinvarianz und responsive
+Verträge sind automatisiert geprüft; ein manueller Smoke-Test jeder Sprache auf
+der Ziel-URL bleibt Bestandteil der Go-live-Checkliste.

@@ -21,6 +21,75 @@
 
   const copy = window.ResultCopy;
 
+  const INTENT_LEXICONS = Object.freeze({
+    de: Object.freeze({
+      emergency: ['notfall', 'akut', 'brust ', 'brustschmerz', 'atemnot', 'luftnot', 'keine luft', 'herzinfarkt', 'schlaganfall', 'bewusstlos', 'starke blutung', 'suizid', 'selbstmord', 'selbstverletz', 'nicht mehr leben', '144', '143'],
+      score: ['score', 'gesamt', 'punkte', 'wie stehe', 'wie gut'],
+      firstStep: ['fang', 'anfang', 'starten', 'zuerst', 'beginn', 'erst'],
+      breathing: ['atem', 'stress', 'entspann', 'runter', 'ruhe', 'anspannung', 'burnout', 'überforder', 'ueberforder'],
+      sleep: ['schlaf', 'müde', 'muede', 'einschlaf', 'schlecht schlaf'],
+      protein: ['protein', 'eiweiss', 'eiweiß'],
+      fitness: ['beweg', 'sport', 'trainier', 'laufen', 'schritte', 'fitness', 'kraft'],
+      nutrition: ['ernähr', 'ernaehr', 'essen', 'abnehm', 'gewicht', 'diät', 'diaet'],
+      medicalValues: ['blutdruck', 'cholesterin', 'blutzucker', 'labor', 'mein wert', 'werte'],
+      coach: ['coach', 'app', 'begleit', 'weiter'],
+      improve: ['verbesser', 'besser werden'],
+    }),
+    en: Object.freeze({
+      emergency: ['emergency', 'acute', 'chest pain', 'shortness of breath', 'cannot breathe', "can't breathe", 'heart attack', 'stroke', 'unconscious', 'severe bleeding', 'suicide', 'suicidal', 'self-harm', "don't want to live", '144', '143'],
+      score: ['score', 'overall', 'points', 'how am i doing', 'how good'],
+      firstStep: ['start', 'begin', 'first', 'where do i start'],
+      breathing: ['breath', 'stress', 'relax', 'calm', 'tension', 'burnout', 'overwhelm'],
+      sleep: ['sleep', 'tired', 'fall asleep', 'sleeping badly'],
+      protein: ['protein'],
+      fitness: ['move', 'exercise', 'sport', 'train', 'run', 'steps', 'fitness', 'strength'],
+      nutrition: ['nutrition', 'food', 'eat', 'weight loss', 'weight', 'diet'],
+      medicalValues: ['blood pressure', 'cholesterol', 'blood sugar', 'laboratory', 'lab result', 'my value', 'my values'],
+      coach: ['coach', 'app', 'support', 'continue'],
+      improve: ['improve', 'get better'],
+    }),
+    fr: Object.freeze({
+      emergency: ['urgence', 'aigu', 'douleur thoracique', 'douleur à la poitrine', 'difficulté respiratoire', 'essoufflement', "n'arrive pas à respirer", 'infarctus', 'crise cardiaque', 'avc', 'inconscient', 'hémorragie', 'suicide', 'suicidaire', 'automutilation', 'ne plus vivre', '144', '143'],
+      score: ['score', 'total', 'points', 'où en suis', 'résultat'],
+      firstStep: ['commencer', 'début', 'premier', 'par quoi commencer'],
+      breathing: ['respir', 'stress', 'détendre', 'calme', 'tension', 'burn-out', 'épuis', 'débord'],
+      sleep: ['sommeil', 'dormir', 'fatigu', 'endormir', 'dors mal'],
+      protein: ['protéine'],
+      fitness: ['bouger', 'mouvement', 'exercice', 'sport', 'entraîn', 'courir', 'pas', 'fitness', 'force'],
+      nutrition: ['nutrition', 'alimentation', 'manger', 'maigrir', 'poids', 'régime'],
+      medicalValues: ['tension artérielle', 'pression artérielle', 'cholestérol', 'glycémie', 'laboratoire', 'ma valeur', 'mes valeurs'],
+      coach: ['coach', 'app', 'accompagn', 'continuer'],
+      improve: ['amélior', 'progresser'],
+    }),
+    it: Object.freeze({
+      emergency: ['emergenza', 'acuto', 'dolore al petto', 'dolore toracico', 'difficoltà respiratoria', 'fiato corto', 'non riesco a respirare', 'infarto', 'ictus', 'incosciente', 'emorragia', 'suicidio', 'suicida', 'autolesionismo', 'non voglio vivere', '144', '143'],
+      score: ['punteggio', 'totale', 'punti', 'come sto andando', 'risultato'],
+      firstStep: ['iniziare', 'cominciare', 'primo', 'da dove comincio'],
+      breathing: ['respir', 'stress', 'rilass', 'calma', 'tensione', 'burnout', 'esaur', 'sopraffatt'],
+      sleep: ['sonno', 'dormire', 'stanc', 'addorment', 'dormo male'],
+      protein: ['proteina', 'proteine'],
+      fitness: ['muover', 'movimento', 'esercizio', 'sport', 'allen', 'correre', 'passi', 'fitness', 'forza'],
+      nutrition: ['nutrizione', 'alimentazione', 'mangiare', 'dimagrire', 'peso', 'dieta'],
+      medicalValues: ['pressione sanguigna', 'pressione arteriosa', 'colesterolo', 'glicemia', 'laboratorio', 'mio valore', 'miei valori'],
+      coach: ['coach', 'app', 'accompagn', 'continuare'],
+      improve: ['miglior', 'progredire'],
+    }),
+  });
+
+  function activeLanguage() {
+    const localeApi = window.HealthLocale;
+    let locale = null;
+    try {
+      locale = localeApi && typeof localeApi.getLocale === 'function'
+        ? localeApi.getLocale()
+        : (localeApi && localeApi.current);
+      if (localeApi && typeof localeApi.normalize === 'function') locale = localeApi.normalize(locale);
+    } catch (error) { locale = null; }
+    if (!locale && window.__RESULT_COPY_BUNDLE__) locale = window.__RESULT_COPY_BUNDLE__.locale;
+    const language = String(locale || 'de-CH').toLowerCase().split('-')[0];
+    return Object.prototype.hasOwnProperty.call(INTENT_LEXICONS, language) ? language : 'de';
+  }
+
   /* ---------- Phase 1: kleiner Umsetzungsplan pro Empfehlung ---------- */
   // Jede Empfehlung bringt ihren konkreten, teils antwortabhängigen 4-Wochen-Plan
   // aus js/recommendations.js mit (zentrale Quelle: PLANS + withPlan). Pläne können
@@ -120,21 +189,18 @@
     const w = ctx.weakest || { id: '', title: copy.get('coach.context.weakest_title_fallback'), score: 0 };
     const s = ctx.strongest || { title: copy.get('coach.context.strongest_title_fallback'), score: 0 };
     const first = ctx.top && ctx.top[0];
-    const has = function () {
-      for (var i = 0; i < arguments.length; i++) if (q.indexOf(arguments[i]) !== -1) return true;
-      return false;
+    const hasIntent = function (intent, allLanguages) {
+      const languages = allLanguages ? Object.keys(INTENT_LEXICONS) : [activeLanguage()];
+      return languages.some((language) => (INTENT_LEXICONS[language][intent] || [])
+        .some((keyword) => q.indexOf(keyword) !== -1));
     };
 
     // Akute Begriffe immer vor Stress-/Atemübungsrouten prüfen. Dies ist keine
     // Diagnose, sondern leitet konservativ auf den bestehenden Notfallhinweis.
-    if (has(
-      'notfall', 'akut', 'brust ', 'brustschmerz', 'atemnot', 'luftnot', 'keine luft',
-      'herzinfarkt', 'schlaganfall', 'bewusstlos', 'starke blutung', 'suizid',
-      'selbstmord', 'selbstverletz', 'nicht mehr leben', '144', '143'
-    ))
+    if (hasIntent('emergency', true))
       return copy.get('coach.answer.emergency');
 
-    if (has('score', 'gesamt', 'punkte', 'wie stehe', 'wie gut'))
+    if (hasIntent('score'))
       return copy.format('coach.answer.overall_score', {
         overallScore: ctx.overall,
         statusLabel: ctx.statusLabel,
@@ -144,7 +210,7 @@
         weakestScore: w.score,
       });
 
-    if (has('fang', 'anfang', 'starten', 'zuerst', 'beginn', 'erst'))
+    if (hasIntent('firstStep'))
       return first
         ? copy.format('coach.answer.first_step.with_plan', {
           recommendationTitle: first.title,
@@ -152,30 +218,30 @@
         })
         : copy.get('coach.answer.first_step.without_plan');
 
-    if (has('atem', 'stress', 'entspann', 'runter', 'ruhe', 'anspannung', 'burnout', 'überforder', 'ueberforder'))
+    if (hasIntent('breathing'))
       return copy.get('coach.answer.breathing');
 
-    if (has('schlaf', 'müde', 'muede', 'einschlaf', 'schlecht schlaf'))
+    if (hasIntent('sleep'))
       return copy.format('coach.answer.sleep', { sleepScore: scoreFor(ctx, 'schlaf') });
 
     // Vor der allgemeinen Fitnessroute prüfen, damit «Protein beim Krafttraining»
     // nicht fälschlich nur eine Bewegungsantwort erhält.
-    if (has('protein', 'eiweiss', 'eiweiß'))
+    if (hasIntent('protein'))
       return copy.get('coach.answer.protein');
 
-    if (has('beweg', 'sport', 'trainier', 'laufen', 'schritte', 'fitness', 'kraft'))
+    if (hasIntent('fitness'))
       return copy.format('coach.answer.fitness', { fitnessScore: scoreFor(ctx, 'fitness') });
 
-    if (has('ernähr', 'ernaehr', 'essen', 'abnehm', 'gewicht', 'diät', 'diaet'))
+    if (hasIntent('nutrition'))
       return copy.format('coach.answer.nutrition', { nutritionScore: scoreFor(ctx, 'ernaehrung') });
 
-    if (has('blutdruck', 'cholesterin', 'blutzucker', 'labor', 'mein wert', 'werte'))
+    if (hasIntent('medicalValues'))
       return copy.get('coach.answer.medical_values');
 
-    if (has('coach', 'app', 'begleit', 'weiter'))
+    if (hasIntent('coach'))
       return copy.get('coach.answer.coach_app');
 
-    if (has('verbesser', 'besser werden', (w.title || '').toLowerCase()))
+    if (hasIntent('improve') || (w.title && q.indexOf(w.title.toLowerCase()) !== -1))
       return improveDim(ctx, w);
 
     return copy.format('coach.answer.fallback', {

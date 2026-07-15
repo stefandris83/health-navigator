@@ -1,40 +1,43 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#9a0941" />
+  <meta name="apple-mobile-web-app-title" content="Gesundheitscheck" data-copy-content="shell.meta.app_title" />
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
   <meta name="referrer" content="no-referrer" />
-  <meta name="description" content="Wissenschaftliche Quellen und fachliche Grundlagen des Gesundheitschecks: Empfehlungen von WHO, CDC und medizinischen Fachgesellschaften." />
-  <title>Wissenschaftliche Quellen &amp; Grundlagen – Gesundheitscheck</title>
+  <meta name="description" content="Wissenschaftliche Quellen und fachliche Grundlagen des Gesundheitschecks: Empfehlungen von WHO, CDC und medizinischen Fachgesellschaften." data-copy-content="sources.meta.description" />
+  <title data-copy="sources.meta.title">Wissenschaftliche Quellen &amp; Grundlagen – Gesundheitscheck</title>
+  <link rel="manifest" href="manifest.de-CH.webmanifest" data-locale-manifest />
+  <script src="js/locale.js"></script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#content">Zum Inhalt springen</a>
+  <a class="skip-link" href="#content" data-copy="shell.skip_to_content">Zum Inhalt springen</a>
 
   <div class="util-bar">
     <div class="container util-inner">
       <details class="util-dropdown">
         <summary class="util-dd-toggle">
-          <span>Helsana-Gruppe</span>
+          <span data-copy="shell.utility.group">Helsana-Gruppe</span>
           <svg class="util-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
         <div class="util-dd-menu">
-          <a href="https://www.helsana.ch/de/private.html" target="_blank" rel="noopener noreferrer">Für Private</a>
-          <a href="https://www.helsana.ch/de/unternehmen.html" target="_blank" rel="noopener noreferrer">Für Unternehmen</a>
-          <a href="https://www.helsana.ch/de/helsana-gruppe.html" target="_blank" rel="noopener noreferrer" aria-current="page">Helsana-Gruppe</a>
+          <a href="https://www.helsana.ch/de/private.html" data-locale-href="helsana.private" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.private">Für Private</a>
+          <a href="https://www.helsana.ch/de/unternehmen.html" data-locale-href="helsana.business" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.business">Für Unternehmen</a>
+          <a href="https://www.helsana.ch/de/helsana-gruppe.html" data-locale-href="helsana.group" target="_blank" rel="noopener noreferrer" aria-current="page" data-copy="shell.utility.group">Helsana-Gruppe</a>
         </div>
       </details>
-      <nav class="util-right" aria-label="Helsana Verweise">
-        <a class="util-item" href="https://www.helsana.ch/de/blog.html" target="_blank" rel="noopener noreferrer">
+      <nav class="util-right" aria-label="Helsana Verweise" data-copy-aria-label="shell.utility.nav_aria">
+        <a class="util-item" href="https://www.helsana.ch/de/blog.html" data-locale-href="helsana.blog" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg>
-          Blog
+          <span data-copy="shell.utility.blog">Blog</span>
         </a>
-        <a class="util-item" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" target="_blank" rel="noopener noreferrer">
+        <a class="util-item" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" data-locale-href="helsana.myhelsana" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-          myHelsana
+          <span data-copy="shell.utility.myhelsana">myHelsana</span>
         </a>
       </nav>
     </div>
@@ -42,219 +45,273 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="index.html" aria-label="Helsana – Gesundheitscheck">
+      <a class="brand" href="index.html" data-locale-route="index.html" aria-label="Helsana – Gesundheitscheck" data-copy-aria-label="shell.header.brand_aria">
         <img
           class="brand-logo"
           src="assets/helsana-logo.svg"
           alt="Helsana"
+          data-copy-alt="shell.header.logo_alt"
           width="180"
           height="34"
           decoding="async"
           loading="eager"
         />
       </a>
-      <p class="header-tag">Ihr Gesundheitscheck</p>
+      <p class="header-tag" data-copy="shell.header.tagline">Ihr Gesundheitscheck</p>
     </div>
   </header>
 
   <main id="content" class="container" tabindex="-1">
-    <p class="src-back"><a href="index.html">← Zurück zum Check</a></p>
+    <p class="src-back"><a href="index.html" data-locale-route="index.html" data-copy="sources.back_to_check">← Zurück zum Check</a></p>
 
     <section class="src-hero">
-      <p class="eyebrow">Transparenz &amp; Evidenz</p>
-      <h1>Wissenschaftliche Quellen &amp; Grundlagen</h1>
-      <p class="lead">
+      <p class="eyebrow" data-copy="sources.hero.eyebrow">Transparenz &amp; Evidenz</p>
+      <h1 data-copy="sources.hero.title">Wissenschaftliche Quellen &amp; Grundlagen</h1>
+      <p class="lead" data-copy="sources.hero.lead">
         Die Empfehlungen des Gesundheitschecks orientieren sich an anerkannten
         Public-Health-Institutionen und medizinischen Fachgesellschaften. Hier finden Sie
         die fachlichen Grundlagen je Themenbereich.
       </p>
-      <p class="src-stand">Stand der Recherche: Juli 2026</p>
+      <p class="src-stand" data-copy="sources.hero.research_date">Stand der Recherche: Juli 2026</p>
     </section>
 
     <div class="note-card">
       <span>
-        <strong>Hinweis:</strong> Die Inhalte sind präventiv formuliert und stellen keine Diagnose,
-        Therapie oder medizinische Beratung dar. Orientierungswerte sind grobe Richtwerte, keine
-        Diagnosegrenzen.
+        <strong data-copy="sources.notice.label">Hinweis:</strong>
+        <span data-copy="sources.notice.text">Die Inhalte sind präventiv formuliert und stellen keine Diagnose, Therapie oder medizinische Beratung dar. Orientierungswerte sind grobe Richtwerte, keine Diagnosegrenzen.</span>
       </span>
     </div>
 
     <div class="src-grid">
       <article class="card src-card">
-        <span class="src-num">1</span>
-        <h2>Bewegung &amp; körperliche Leistungsfähigkeit</h2>
-        <p class="src-ref">WHO – Physical activity · WHO Guidelines on physical activity and sedentary behaviour (2020)
-          <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener noreferrer">who.int</a></p>
+        <span class="src-num" data-copy="sources.card.1.number">1</span>
+        <h2 data-copy="sources.physical.title">Bewegung &amp; körperliche Leistungsfähigkeit</h2>
+        <p class="src-ref"><span data-copy="sources.physical.reference">WHO – Physical activity · WHO Guidelines on physical activity and sedentary behaviour (2020)</span>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/physical-activity" target="_blank" rel="noopener noreferrer" data-copy="sources.link.who">who.int</a></p>
         <ul>
-          <li>150–300 Min./Woche moderate oder 75–150 Min./Woche intensive Ausdaueraktivität.</li>
-          <li>Muskelkräftigung an ≥ 2 Tagen/Woche.</li>
-          <li>Sitzzeit reduzieren – jede Bewegung zählt.</li>
-          <li>Senkt Risiko für Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, einige Krebsarten, Stürze; verbessert mentale Gesundheit, Schlaf, Körperzusammensetzung.</li>
+          <li data-copy="sources.physical.point.1">150–300 Min./Woche moderate oder 75–150 Min./Woche intensive Ausdaueraktivität.</li>
+          <li data-copy="sources.physical.point.2">Muskelkräftigung an ≥ 2 Tagen/Woche.</li>
+          <li data-copy="sources.physical.point.3">Sitzzeit reduzieren – jede Bewegung zählt.</li>
+          <li data-copy="sources.physical.point.4">Senkt Risiko für Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, einige Krebsarten, Stürze; verbessert mentale Gesundheit, Schlaf, Körperzusammensetzung.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">2</span>
-        <h2>Ernährung</h2>
-        <p class="src-ref">WHO – Healthy diet
-          <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener noreferrer">who.int</a></p>
-        <p class="src-ref">Protein &amp; Krafttraining – Morton et al., Meta-Analyse
-          <a href="https://pubmed.ncbi.nlm.nih.gov/28698222/" target="_blank" rel="noopener noreferrer">pubmed.ncbi.nlm.nih.gov</a></p>
-        <p class="src-ref">Protein &amp; Training – ISSN Position Stand
-          <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8" target="_blank" rel="noopener noreferrer">jissn.biomedcentral.com</a></p>
-        <p class="src-ref">Protein im Alter – ESPEN Practical Guideline
-          <a href="https://www.espen.org/files/ESPEN-Guidelines/ESPEN_practical_guideline_Clinical_nutrition_and_hydration_in_geriatrics.pdf" target="_blank" rel="noopener noreferrer">espen.org</a></p>
+        <span class="src-num" data-copy="sources.card.2.number">2</span>
+        <h2 data-copy="sources.nutrition.title">Ernährung</h2>
+        <p class="src-ref"><span data-copy="sources.nutrition.reference.who">WHO – Healthy diet</span>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/healthy-diet" target="_blank" rel="noopener noreferrer" data-copy="sources.link.who">who.int</a></p>
+        <p class="src-ref"><span data-copy="sources.nutrition.reference.morton">Protein &amp; Krafttraining – Morton et al., Meta-Analyse</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/28698222/" target="_blank" rel="noopener noreferrer" data-copy="sources.link.pubmed">pubmed.ncbi.nlm.nih.gov</a></p>
+        <p class="src-ref"><span data-copy="sources.nutrition.reference.issn">Protein &amp; Training – ISSN Position Stand</span>
+          <a href="https://jissn.biomedcentral.com/articles/10.1186/s12970-017-0177-8" target="_blank" rel="noopener noreferrer" data-copy="sources.link.jissn">jissn.biomedcentral.com</a></p>
+        <p class="src-ref"><span data-copy="sources.nutrition.reference.espen">Protein im Alter – ESPEN Practical Guideline</span>
+          <a href="https://www.espen.org/files/ESPEN-Guidelines/ESPEN_practical_guideline_Clinical_nutrition_and_hydration_in_geriatrics.pdf" target="_blank" rel="noopener noreferrer" data-copy="sources.link.espen">espen.org</a></p>
         <ul>
-          <li>≥ 400 g Gemüse &amp; Früchte/Tag (rund fünf Portionen).</li>
-          <li>≥ 25 g Ballaststoffe/Tag (Hülsenfrüchte, Vollkorn).</li>
-          <li>Freie Zucker &lt; 10 % der Energie (~50 g), idealerweise &lt; 5 %.</li>
-          <li>Salz &lt; 5 g/Tag; gesättigte Fette &lt; 10 % der Energie.</li>
-          <li>Bei regelmässigem Krafttraining sind für gesunde Erwachsene 1,4–1,6 g Protein/kg/Tag eine praktische Orientierung; zusätzliche Vorteile flachen im Mittel ab rund 1,6 g/kg/Tag deutlich ab.</li>
-          <li>Bis etwa 2,0 g/kg/Tag sind nur ein möglicher individueller Spielraum bei sehr hoher Trainingsbelastung oder gezieltem Energiedefizit – kein allgemeines Ziel und nicht allein durch das Alter begründet.</li>
-          <li>Die Proteinfrage misst die Regelmässigkeit von Proteinquellen, nicht die tatsächliche Tagesmenge.</li>
-          <li>Mehr pflanzliche und weniger stark verarbeitete Lebensmittel.</li>
+          <li data-copy="sources.nutrition.point.1">≥ 400 g Gemüse &amp; Früchte/Tag (rund fünf Portionen).</li>
+          <li data-copy="sources.nutrition.point.2">≥ 25 g Ballaststoffe/Tag (Hülsenfrüchte, Vollkorn).</li>
+          <li data-copy="sources.nutrition.point.3">Freie Zucker unter 10 % der Energie (~50 g), idealerweise unter 5 %.</li>
+          <li data-copy="sources.nutrition.point.4">Salz unter 5 g/Tag; gesättigte Fette unter 10 % der Energie.</li>
+          <li data-copy="sources.nutrition.point.5">Bei regelmässigem Krafttraining sind für gesunde Erwachsene 1,4–1,6 g Protein/kg/Tag eine praktische Orientierung; zusätzliche Vorteile flachen im Mittel ab rund 1,6 g/kg/Tag deutlich ab.</li>
+          <li data-copy="sources.nutrition.point.6">Bis etwa 2,0 g/kg/Tag sind nur ein möglicher individueller Spielraum bei sehr hoher Trainingsbelastung oder gezieltem Energiedefizit – kein allgemeines Ziel und nicht allein durch das Alter begründet.</li>
+          <li data-copy="sources.nutrition.point.7">Die Proteinfrage misst die Regelmässigkeit von Proteinquellen, nicht die tatsächliche Tagesmenge.</li>
+          <li data-copy="sources.nutrition.point.8">Mehr pflanzliche und weniger stark verarbeitete Lebensmittel.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">3</span>
-        <h2>Blutdruck &amp; Herz-Kreislauf-Prävention</h2>
-        <p class="src-ref">WHO – Hypertension
-          <a href="https://www.who.int/news-room/fact-sheets/detail/hypertension" target="_blank" rel="noopener noreferrer">who.int</a></p>
+        <span class="src-num" data-copy="sources.card.3.number">3</span>
+        <h2 data-copy="sources.blood_pressure.title">Blutdruck &amp; Herz-Kreislauf-Prävention</h2>
+        <p class="src-ref"><span data-copy="sources.blood_pressure.reference">WHO – Hypertension</span>
+          <a href="https://www.who.int/news-room/fact-sheets/detail/hypertension" target="_blank" rel="noopener noreferrer" data-copy="sources.link.who">who.int</a></p>
         <ul>
-          <li>Bluthochdruck ab 140/90 mmHg (an zwei Tagen gemessen).</li>
-          <li>Sehr hohe Werte (~180/120 mmHg) → zeitnahe ärztliche Abklärung.</li>
-          <li>Zielwert oft &lt; 130/80 mmHg bei erhöhtem Risiko, sonst &lt; 140/90.</li>
-          <li>Lebensstil senkt Blutdruck; Alkohol max. 1 (Frauen) bzw. 2 (Männer) Glas/Tag.</li>
+          <li data-copy="sources.blood_pressure.point.1">Bluthochdruck ab 140/90 mmHg (an zwei Tagen gemessen).</li>
+          <li data-copy="sources.blood_pressure.point.2">Sehr hohe Werte (~180/120 mmHg) → zeitnahe ärztliche Abklärung.</li>
+          <li data-copy="sources.blood_pressure.point.3">Zielwert oft unter 130/80 mmHg bei erhöhtem Risiko, sonst unter 140/90.</li>
+          <li data-copy="sources.blood_pressure.point.4">Lebensstil senkt Blutdruck; Alkohol max. 1 (Frauen) bzw. 2 (Männer) Glas/Tag.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">4</span>
-        <h2>Blutfette, ApoB, LDL, Non-HDL &amp; Lp(a)</h2>
-        <p class="src-ref">Konsens medizinischer Fachgesellschaften (u. a. ESC/EAS-Leitlinien zur Dyslipidämie) · Schweizerische Herzstiftung –
-          <a href="https://swissheart.ch/wissen-und-support/dossiers/diese-werte-muessen-sie-kennen" target="_blank" rel="noopener noreferrer">Diese Werte müssen Sie kennen</a></p>
+        <span class="src-num" data-copy="sources.card.4.number">4</span>
+        <h2 data-copy="sources.lipids.title">Blutfette, ApoB, LDL, Non-HDL &amp; Lp(a)</h2>
+        <p class="src-ref"><span data-copy="sources.lipids.reference">Konsens medizinischer Fachgesellschaften (u. a. ESC/EAS-Leitlinien zur Dyslipidämie) · Schweizerische Herzstiftung –</span>
+          <a href="https://swissheart.ch/wissen-und-support/dossiers/diese-werte-muessen-sie-kennen" target="_blank" rel="noopener noreferrer" data-copy="sources.lipids.link_label">Diese Werte müssen Sie kennen</a></p>
         <ul>
-          <li>ApoB ≈ Anzahl gefässschädigender Partikel; bildet Risiko oft genauer ab als LDL allein.</li>
-          <li>LDL-Cholesterin: zentraler Faktor der Atherosklerose; Non-HDL als einfacher Kombinationswert.</li>
-          <li>ApoB wünschenswert ca. &lt; 90–100 mg/dL (grobe Einordnung).</li>
-          <li>Lp(a) genetisch bestimmt, einmalige Messung; erhöht ab &gt; 50 mg/dL bzw. &gt; 125 nmol/L.</li>
+          <li data-copy="sources.lipids.point.1">ApoB ≈ Anzahl gefässschädigender Partikel; bildet Risiko oft genauer ab als LDL allein.</li>
+          <li data-copy="sources.lipids.point.2">LDL-Cholesterin: zentraler Faktor der Atherosklerose; Non-HDL als einfacher Kombinationswert.</li>
+          <li data-copy="sources.lipids.point.3">ApoB wünschenswert ca. unter 90–100 mg/dL (grobe Einordnung).</li>
+          <li data-copy="sources.lipids.point.4">Lp(a) genetisch bestimmt, einmalige Messung; erhöht über 50 mg/dL bzw. über 125 nmol/L.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">5</span>
-        <h2>Metabolische Gesundheit, Blutzucker &amp; HbA1c</h2>
-        <p class="src-ref">WHO/ADA-Kriterien zu (Prä-)Diabetes</p>
+        <span class="src-num" data-copy="sources.card.5.number">5</span>
+        <h2 data-copy="sources.metabolic.title">Metabolische Gesundheit, Blutzucker &amp; HbA1c</h2>
+        <p class="src-ref" data-copy="sources.metabolic.reference">WHO/ADA-Kriterien zu (Prä-)Diabetes</p>
         <ul>
-          <li>HbA1c: normal &lt; 5,7 %; Prädiabetes 5,7–6,4 %; Diabetes ≥ 6,5 %.</li>
-          <li>Nüchternblutzucker: normal &lt; 5,6; Prädiabetes 5,6–6,9; Diabetes ≥ 7,0 mmol/L.</li>
-          <li>Triglyceride: normal &lt; 1,7 mmol/L (&lt; 150 mg/dL).</li>
-          <li>Prädiabetes oft reversibel durch Bewegung, Gewichtsmanagement, Ernährung.</li>
+          <li data-copy="sources.metabolic.point.1">HbA1c: normal unter 5,7 %; Prädiabetes 5,7–6,4 %; Diabetes ab 6,5 %.</li>
+          <li data-copy="sources.metabolic.point.2">Nüchternblutzucker: normal unter 5,6; Prädiabetes 5,6–6,9; Diabetes ab 7,0 mmol/L.</li>
+          <li data-copy="sources.metabolic.point.3">Triglyceride: normal unter 1,7 mmol/L (unter 150 mg/dL).</li>
+          <li data-copy="sources.metabolic.point.4">Prädiabetes oft reversibel durch Bewegung, Gewichtsmanagement, Ernährung.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">6</span>
-        <h2>Bauchfett &amp; Taillenumfang</h2>
-        <p class="src-ref">WHO/IDF-Schwellenwerte zum Taillenumfang ·
-          <a href="https://www.who.int/publications/i/item/9789241501491" target="_blank" rel="noopener noreferrer">WHO-Expert Consultation</a> ·
-          <a href="https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity" target="_blank" rel="noopener noreferrer">NICE NG246</a></p>
+        <span class="src-num" data-copy="sources.card.6.number">6</span>
+        <h2 data-copy="sources.waist.title">Bauchfett &amp; Taillenumfang</h2>
+        <p class="src-ref"><span data-copy="sources.waist.reference">WHO/IDF-Schwellenwerte zum Taillenumfang ·</span>
+          <a href="https://www.who.int/publications/i/item/9789241501491" target="_blank" rel="noopener noreferrer" data-copy="sources.waist.link_who">WHO-Expert Consultation</a> <span data-copy="sources.separator">·</span>
+          <a href="https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity" target="_blank" rel="noopener noreferrer" data-copy="sources.waist.link_nice">NICE NG246</a></p>
         <ul>
-          <li>Normalbereich: Männer &lt; 94 cm, Frauen &lt; 80 cm.</li>
-          <li>Erhöhter Referenzbereich: Männer 94 bis &lt; 102 cm, Frauen 80 bis &lt; 88 cm.</li>
-          <li>Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.</li>
-          <li>BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.</li>
+          <li data-copy="sources.waist.point.1">Normalbereich: Männer unter 94 cm, Frauen unter 80 cm.</li>
+          <li data-copy="sources.waist.point.2">Erhöhter Referenzbereich: Männer 94 bis unter 102 cm, Frauen 80 bis unter 88 cm.</li>
+          <li data-copy="sources.waist.point.3">Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.</li>
+          <li data-copy="sources.waist.point.4">BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">7</span>
-        <h2>Krafttraining, Muskelmasse &amp; gesundes Altern</h2>
-        <p class="src-ref">WHO-Bewegungsleitlinie · EWGSOP2 zu Muskelkraft und Sarkopenie · Studien zu funktionellen Kurztests
-          <a href="https://academic.oup.com/ageing/article/48/1/16/5126243" target="_blank" rel="noopener noreferrer">EWGSOP2</a> ·
-          <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2724778" target="_blank" rel="noopener noreferrer">Liegestütz-Studie</a> ·
-          <a href="https://pubmed.ncbi.nlm.nih.gov/41252651/" target="_blank" rel="noopener noreferrer">Wandsitz-Sicherheit</a></p>
+        <span class="src-num" data-copy="sources.card.7.number">7</span>
+        <h2 data-copy="sources.strength.title">Krafttraining, Muskelmasse &amp; gesundes Altern</h2>
+        <p class="src-ref"><span data-copy="sources.strength.reference">WHO-Bewegungsleitlinie · EWGSOP2 zu Muskelkraft und Sarkopenie · Studien zu funktionellen Kurztests</span>
+          <a href="https://academic.oup.com/ageing/article/48/1/16/5126243" target="_blank" rel="noopener noreferrer" data-copy="sources.strength.link_ewgsop">EWGSOP2</a> <span data-copy="sources.separator">·</span>
+          <a href="https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2724778" target="_blank" rel="noopener noreferrer" data-copy="sources.strength.link_pushup">Liegestütz-Studie</a> <span data-copy="sources.separator">·</span>
+          <a href="https://pubmed.ncbi.nlm.nih.gov/41252651/" target="_blank" rel="noopener noreferrer" data-copy="sources.strength.link_wall_sit">Wandsitz-Sicherheit</a></p>
         <ul>
-          <li>Muskelkraft und körperliche Funktion sind wichtige Bausteine für Belastbarkeit und Selbstständigkeit.</li>
-          <li>Einstieg auch mit Körpergewichtsübungen möglich.</li>
-          <li>Einbeinstand, Liegestütze und Wandsitz zeigen nur Teilbereiche der Leistungsfähigkeit; sie sind keine persönlichen Krankheitsrisiko-Tests.</li>
-          <li>Für den beidbeinigen Wandsitz fehlen klinisch validierte Altersnormen. Ein maximaler Test kann den Blutdruck akut stark erhöhen.</li>
+          <li data-copy="sources.strength.point.1">Muskelkraft und körperliche Funktion sind wichtige Bausteine für Belastbarkeit und Selbstständigkeit.</li>
+          <li data-copy="sources.strength.point.2">Einstieg auch mit Körpergewichtsübungen möglich.</li>
+          <li data-copy="sources.strength.point.3">Einbeinstand, Liegestütze und Wandsitz zeigen nur Teilbereiche der Leistungsfähigkeit; sie sind keine persönlichen Krankheitsrisiko-Tests.</li>
+          <li data-copy="sources.strength.point.4">Für den beidbeinigen Wandsitz wird ab 18 Jahren eine harmonisierte Trainingsorientierung verwendet; sie ist keine klinische Norm oder Diagnosegrenze. Ein maximaler Test kann den Blutdruck akut stark erhöhen.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">8</span>
-        <h2>Schlaf &amp; Regeneration</h2>
-        <p class="src-ref">CDC – About Sleep
-          <a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer">cdc.gov</a></p>
+        <span class="src-num" data-copy="sources.card.8.number">8</span>
+        <h2 data-copy="sources.sleep.title">Schlaf &amp; Regeneration</h2>
+        <p class="src-ref"><span data-copy="sources.sleep.reference">CDC – About Sleep</span>
+          <a href="https://www.cdc.gov/sleep/about/index.html" target="_blank" rel="noopener noreferrer" data-copy="sources.link.cdc">cdc.gov</a></p>
         <ul>
-          <li>Erwachsene: ≥ 7 Stunden (Orientierung 7–9 Stunden).</li>
-          <li>Schlafhygiene: feste Zeiten, kühl/dunkel/ruhig, Bildschirme ~30 Min. vorher aus.</li>
-          <li>Anhaltende Probleme, Schnarchen oder Atemaussetzer ärztlich abklären.</li>
+          <li data-copy="sources.sleep.point.1">Erwachsene: ≥ 7 Stunden (Orientierung 7–9 Stunden).</li>
+          <li data-copy="sources.sleep.point.2">Schlafhygiene: feste Zeiten, kühl/dunkel/ruhig, Bildschirme ~30 Min. vorher aus.</li>
+          <li data-copy="sources.sleep.point.3">Anhaltende Probleme, Schnarchen oder Atemaussetzer ärztlich abklären.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">9</span>
-        <h2>Mentale Gesundheit, Stress &amp; soziale Ressourcen</h2>
-        <p class="src-ref">WHO zu mentaler Gesundheit · Evidenz zu sozialer Verbundenheit</p>
+        <span class="src-num" data-copy="sources.card.9.number">9</span>
+        <h2 data-copy="sources.mental.title">Mentale Gesundheit, Stress &amp; soziale Ressourcen</h2>
+        <p class="src-ref" data-copy="sources.mental.reference">WHO zu mentaler Gesundheit · Evidenz zu sozialer Verbundenheit</p>
         <ul>
-          <li>Chronischer Stress wirkt auf Schlaf, Blutdruck, Stoffwechsel, Stimmung.</li>
-          <li>Soziale Verbundenheit schützt; Einsamkeit ist ein Risikofaktor.</li>
-          <li>Akute Krise: CH Tel. 143 (Dargebotene Hand), Notruf 144.</li>
+          <li data-copy="sources.mental.point.1">Chronischer Stress wirkt auf Schlaf, Blutdruck, Stoffwechsel, Stimmung.</li>
+          <li data-copy="sources.mental.point.2">Soziale Verbundenheit schützt; Einsamkeit ist ein Risikofaktor.</li>
+          <li data-copy="sources.mental.point.3">Akute Krise: CH Tel. 143 (Dargebotene Hand), Notruf 144.</li>
         </ul>
       </article>
 
       <article class="card src-card">
-        <span class="src-num">10</span>
-        <h2>Rauchen / Nikotin</h2>
-        <p class="src-ref">WHO – Herz-Kreislauf-Erkrankungen &amp; Hypertension</p>
+        <span class="src-num" data-copy="sources.card.10.number">10</span>
+        <h2 data-copy="sources.smoking.title">Rauchen / Nikotin</h2>
+        <p class="src-ref" data-copy="sources.smoking.reference">WHO – Herz-Kreislauf-Erkrankungen &amp; Hypertension</p>
         <ul>
-          <li>Tabak/Nikotin ist ein zentraler, gut beeinflussbarer Risikofaktor.</li>
-          <li>Rauchstopp senkt das kardiovaskuläre Risiko bereits nach kurzer Zeit.</li>
+          <li data-copy="sources.smoking.point.1">Tabak/Nikotin ist ein zentraler, gut beeinflussbarer Risikofaktor.</li>
+          <li data-copy="sources.smoking.point.2">Rauchstopp senkt das kardiovaskuläre Risiko bereits nach kurzer Zeit.</li>
         </ul>
       </article>
     </div>
 
     <section class="card src-scoring">
-      <h2>Umsetzung im Scoring</h2>
+      <h2 data-copy="sources.scoring.title">Umsetzung im Scoring</h2>
       <ul>
-        <li>Jede Dimension erhält einen Score 0–100 (gewichteter Mittelwert der beantworteten Items).</li>
-        <li>Optionale Fitness-Kurztests ergänzen den jeweils passenden Fitness-Teilbereich. Medizinisch freigegeben ist: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte des Teilbereichs Muskulatur; der Wandsitz zählt nicht zur Kondition. Der Einbeinstand bildet die Testhälfte von Balance/Beweglichkeit. Sichtbar wird eine Referenzstufe nur bei passendem Alter und Testprotokoll; der Wandsitz wird mangels klinisch validierter Altersnormen als persönliche Ausgangsmessung ausgewiesen.</li>
-        <li>Statusstufen: 80–100 Stark, 60–79 Solide Basis, 40–59 Ausbaufähig, 0–39 Erhöhte Aufmerksamkeit.</li>
-        <li>Risikosignale werden in Lebensstilpotenzial vs. medizinische Abklärungsrelevanz unterschieden.</li>
-        <li>Stärken, Handlungsfelder und die Top-3-Schritte werden aus denselben antwortbasierten Hebeln abgeleitet (inkl. dimensionsübergreifender Risikomuster, z.&nbsp;B. kardiovaskulär); kritische Signale sind immer vorrangig.</li>
+        <li data-copy="sources.scoring.point.1">Jede Dimension erhält einen Score 0–100 (gewichteter Mittelwert der beantworteten Items).</li>
+        <li data-copy="sources.scoring.point.2">Optionale Fitness-Kurztests ergänzen den jeweils passenden Fitness-Teilbereich. Medizinisch freigegeben ist: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte des Teilbereichs Muskulatur; der Wandsitz zählt nicht zur Kondition. Der Einbeinstand bildet die Testhälfte von Balance/Beweglichkeit. Sichtbar wird eine Einordnung nur bei passendem Alter, Geschlecht und Testprotokoll; beim Wandsitz beruht sie ab 18 Jahren auf einer harmonisierten Trainingsorientierung und ist keine klinische Norm.</li>
+        <li data-copy="sources.scoring.point.3">Statusstufen: 80–100 Stark, 60–79 Solide Basis, 40–59 Ausbaufähig, 0–39 Erhöhte Aufmerksamkeit.</li>
+        <li data-copy="sources.scoring.point.4">Risikosignale werden in Lebensstilpotenzial vs. medizinische Abklärungsrelevanz unterschieden.</li>
+        <li data-copy="sources.scoring.point.5">Stärken, Handlungsfelder und die Top-3-Schritte werden aus denselben antwortbasierten Hebeln abgeleitet (inkl. dimensionsübergreifender Risikomuster, z. B. kardiovaskulär); kritische Signale sind immer vorrangig.</li>
       </ul>
     </section>
 
-    <p class="src-disclaimer">
+    <p class="src-disclaimer" data-copy="sources.review_disclaimer">
       Vor produktivem Einsatz sollten die fachlichen Inhalte und Orientierungswerte durch
       medizinische Fachpersonen von Helsana final geprüft und freigegeben werden.
     </p>
   </main>
 
   <footer class="site-footer">
-    <div class="container">
-      <div>
-        <span aria-hidden="true">
-          <img
-            class="brand-logo"
-            src="assets/helsana-logo.svg"
-            alt=""
-            width="180"
-            height="34"
-            decoding="async"
-            loading="lazy"
-          />
-        </span>
-        <span>Engagiert für das Leben.</span>
+    <div id="footer-global">
+      <nav class="footer-nav" aria-label="Weitere Helsana-Links" data-copy-aria-label="shell.footer.nav_aria">
+        <div class="container footer-nav-grid">
+          <div class="footer-link-group">
+            <p class="footer-link-heading" data-copy="shell.footer.services_heading">Services</p>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.submit_invoice">Rechnung einsenden</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.change_address">Adresse ändern</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.all_services">Alle Services</span>
+          </div>
+          <div class="footer-link-group">
+            <p class="footer-link-heading" data-copy="shell.footer.areas_heading">Bereiche</p>
+            <a class="footer-link" href="https://www.helsana.ch/de/private.html" data-locale-href="helsana.private" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.private">Für Private</a>
+            <a class="footer-link" href="https://www.helsana.ch/de/unternehmen.html" data-locale-href="helsana.business" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.business">Für Unternehmen</a>
+            <a class="footer-link" href="https://www.helsana.ch/de/helsana-gruppe.html" data-locale-href="helsana.group" target="_blank" rel="noopener noreferrer" data-copy="shell.footer.helsana_group">Helsana Gruppe</a>
+          </div>
+          <div class="footer-link-group">
+            <p class="footer-link-heading" data-copy="shell.footer.helsana_heading">Helsana</p>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.about">Über uns</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.jobs">Jobs &amp; Karriere</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.media">Medien &amp; Publikationen</span>
+          </div>
+          <div class="footer-link-group footer-action-links">
+            <a class="action-link" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" data-locale-href="helsana.myhelsana" target="_blank" rel="noopener noreferrer">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <span data-copy="shell.utility.myhelsana">myHelsana</span>
+            </a>
+            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <span data-copy="shell.footer.premium_calculator">Prämienrechner</span>
+            </span>
+            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+              <span data-copy="shell.footer.newsletter">Newsletter</span>
+            </span>
+          </div>
+        </div>
+      </nav>
+      <div class="footer-bottom">
+        <div class="container">
+          <div class="lang-switch" role="group" aria-label="Sprache wählen" data-copy-aria-label="shell.language.group_aria">
+            <button type="button" class="lang-item is-active" data-locale="de-CH" data-copy="shell.language.de_short" aria-label="Deutsch" data-copy-aria-label="shell.language.de_label" aria-current="true" aria-pressed="true">DE</button>
+            <button type="button" class="lang-item" data-locale="en-CH" data-copy="shell.language.en_short" aria-label="English" data-copy-aria-label="shell.language.en_label" aria-pressed="false">EN</button>
+            <button type="button" class="lang-item" data-locale="fr-CH" data-copy="shell.language.fr_short" aria-label="Français" data-copy-aria-label="shell.language.fr_label" aria-pressed="false">FR</button>
+            <button type="button" class="lang-item" data-locale="it-CH" data-copy="shell.language.it_short" aria-label="Italiano" data-copy-aria-label="shell.language.it_label" aria-pressed="false">IT</button>
+          </div>
+          <div class="legal-links">
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.imprint">Impressum</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.privacy">Datenschutz</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.legal_notice">Rechtliche Hinweise</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.terms">Nutzungsbedingungen</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.cookies">Cookie-Einstellungen</span>
+          </div>
+          <div class="social-icons">
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="Facebook (Platzhalter)" data-copy-aria-label="shell.social.facebook_aria">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5h2.5V5.2c-.43-.06-1.9-.2-3.6-.2-3.57 0-6 2.24-6 6.36V15H3.5v3.7H7V23h3.7v-4.3h3.36l.53-3.7h-3.9v-2.9c0-1.07.29-1.8 1.8-1.8z"/></svg>
+            </span>
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="Instagram (Platzhalter)" data-copy-aria-label="shell.social.instagram_aria">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="YouTube (Platzhalter)" data-copy-aria-label="shell.social.youtube_aria">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10.5 9.3v5.4l4.7-2.7z" fill="currentColor" stroke="none"/></svg>
+            </span>
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="LinkedIn (Platzhalter)" data-copy-aria-label="shell.social.linkedin_aria">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38zM5.25 3.2A1.96 1.96 0 1 0 5.28 7.1a1.96 1.96 0 0 0-.03-3.9zM20.5 20h-3.38v-6.06c0-1.45-.03-3.31-2.02-3.31-2.02 0-2.33 1.58-2.33 3.2V20H9.4V8.5h3.24v1.57h.05c.45-.86 1.56-1.77 3.21-1.77 3.43 0 4.6 2.26 4.6 5.2z"/></svg>
+            </span>
+          </div>
+          <p class="footer-placeholder-note" data-copy="shell.footer.placeholder_note">Grau markierte Links sind Platzhalter und werden vor Go-live final verlinkt.</p>
+        </div>
       </div>
-      <p>
-        Dieser Check dient der Orientierung und ersetzt keine ärztliche Diagnose, Beratung oder Behandlung.
-        Bei auffälligen Werten, bestehenden Diagnosen oder Unsicherheit wenden Sie sich an eine medizinische Fachperson.
-      </p>
     </div>
   </footer>
+  <script src="js/config.js"></script>
+  <script src="js/result-copy.generated.js"></script>
+  <script src="js/result-copy.js"></script>
+  <script src="js/page-i18n.js"></script>
 </body>
 </html>

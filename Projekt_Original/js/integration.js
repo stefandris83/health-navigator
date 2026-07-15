@@ -179,29 +179,29 @@
     anonym: null, // entspricht «nicht eingeloggt»
     grund: {
       isAuthenticated: true,
-      displayName: 'Demo-Profil «Nur Grundversicherung»',
+      displayName: window.ResultCopy.get('service.demo_profile.basic.display_name'),
       products: [
-        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: 'Grundversicherung (Demo)' },
+        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: window.ResultCopy.get('service.demo_profile.product.basic') },
       ],
       source: 'mock',
     },
     'zusatz-praevention': {
       isAuthenticated: true,
-      displayName: 'Demo-Profil «Grund + Prävention»',
+      displayName: window.ResultCopy.get('service.demo_profile.prevention.display_name'),
       products: [
-        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: 'Grundversicherung (Demo)' },
-        { id: 'demo-prev', category: PRODUCT_CATEGORIES.SUPP_PREVENTION, label: 'Zusatzversicherung Prävention (Demo)' },
+        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: window.ResultCopy.get('service.demo_profile.product.basic') },
+        { id: 'demo-prev', category: PRODUCT_CATEGORIES.SUPP_PREVENTION, label: window.ResultCopy.get('service.demo_profile.product.prevention') },
       ],
       source: 'mock',
     },
     'zusatz-komplett': {
       isAuthenticated: true,
-      displayName: 'Demo-Profil «Grund + Zusatz ambulant/Spital/Prävention»',
+      displayName: window.ResultCopy.get('service.demo_profile.complete.display_name'),
       products: [
-        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: 'Grundversicherung (Demo)' },
-        { id: 'demo-amb', category: PRODUCT_CATEGORIES.SUPP_AMBULANT, label: 'Zusatzversicherung ambulant (Demo)' },
-        { id: 'demo-hosp', category: PRODUCT_CATEGORIES.SUPP_HOSPITAL, label: 'Spital-Zusatzversicherung (Demo)' },
-        { id: 'demo-prev', category: PRODUCT_CATEGORIES.SUPP_PREVENTION, label: 'Zusatzversicherung Prävention (Demo)' },
+        { id: 'demo-basic', category: PRODUCT_CATEGORIES.BASIC, label: window.ResultCopy.get('service.demo_profile.product.basic') },
+        { id: 'demo-amb', category: PRODUCT_CATEGORIES.SUPP_AMBULANT, label: window.ResultCopy.get('service.demo_profile.product.ambulant') },
+        { id: 'demo-hosp', category: PRODUCT_CATEGORIES.SUPP_HOSPITAL, label: window.ResultCopy.get('service.demo_profile.product.hospital') },
+        { id: 'demo-prev', category: PRODUCT_CATEGORIES.SUPP_PREVENTION, label: window.ResultCopy.get('service.demo_profile.product.prevention') },
       ],
       source: 'mock',
     },

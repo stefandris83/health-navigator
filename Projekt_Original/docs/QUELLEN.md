@@ -247,7 +247,7 @@ Schutzfaktor.
 
 Der Fragebogen folgt dem offiziellen, rechtlich geprüften Fragenset **«Fragebogen HN»**
 mit **sechs Abschnitten**: *Persönliche Angaben, Einflussfaktoren, Körperliche Fitness,
-Ernährung, Schlaf, Mentale und emotionale Gesundheit*. Die *Persönlichen Angaben* liefern
+Ernährung, Schlaf, Mentale Gesundheit*. Die *Persönlichen Angaben* liefern
 nur Kennzahlen (Alter, Geschlecht, BMI, Taille-Grösse-Verhältnis) und erhalten **keinen**
 Score; bewertet werden die **fünf** übrigen Dimensionen gemäss Score-Dokument
 (S-1 … S-5).

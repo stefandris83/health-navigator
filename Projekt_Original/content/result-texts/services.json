@@ -749,7 +749,7 @@
       "context": "shared_quiz_and_results: DIMENSIONS.mental, vollständiger Bereichstitel",
       "kind": "title",
       "reviewers": "Marketing, Medizin",
-      "text": "Mentale und emotionale Gesundheit",
+      "text": "Mentale Gesundheit",
       "reviewStatus": "",
       "comment": ""
     },
@@ -772,6 +772,76 @@
       "text": "Ihre mentale und emotionale Gesundheit ist genauso wichtig wie Ihre körperliche. Was Sie fühlen, denken und erleben, wirkt sich auf Ihren Körper aus und umgekehrt.",
       "reviewStatus": "",
       "comment": ""
+    },
+    {
+      "id": "service.demo_profile.basic.display_name",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Kundenprofil, nur Grundversicherung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Demo-Profil «Nur Grundversicherung»",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.prevention.display_name",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Kundenprofil, Grundversicherung und Prävention",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Demo-Profil «Grund + Prävention»",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.complete.display_name",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Kundenprofil, vollständiger Zusatzversicherungs-Mix",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Demo-Profil «Grund + Zusatz ambulant/Spital/Prävention»",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.product.basic",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Produkt, Grundversicherung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Grundversicherung (Demo)",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.product.prevention",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Produkt, Präventionszusatz",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Zusatzversicherung Prävention (Demo)",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.product.ambulant",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Produkt, ambulanter Zusatz",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Zusatzversicherung ambulant (Demo)",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
+    },
+    {
+      "id": "service.demo_profile.product.hospital",
+      "section": "Demo-Kundenkontext",
+      "context": "Demo-Produkt, Spitalzusatz",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Spital-Zusatzversicherung (Demo)",
+      "reviewStatus": "",
+      "comment": "Nur im expliziten Mock-Modus sichtbar."
     }
   ]
 }

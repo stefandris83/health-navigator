@@ -1,0 +1,679 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr-CH",
+  "domain": "services",
+  "entries": [
+    {
+      "id": "service.offer.bewegung.label",
+      "text": "Offres et guides sur l’activité physique",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "21a3e21c1c7588c820deca9556dc6beedd6e64924f26c587e7dc8bb07a37bf71"
+    },
+    {
+      "id": "service.offer.bewegung.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana sur l’activité physique]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3ca2074bd8e09e2de208f1981498bce416c665cd2b01454ae4ee73ae4697be1f"
+    },
+    {
+      "id": "service.offer.bewegung.fit",
+      "text": "Des idées faciles d’accès pour bouger davantage au quotidien.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4ccc12b40da0f7f3405fed943071423661c6a39581e76206071c155f44c97d41"
+    },
+    {
+      "id": "service.offer.kraft.label",
+      "text": "Débuter la musculation et plans d’entraînement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a14d5add64868ec1393ae767d53ea7f79f785b8830bbc4bf4ca4135f52ccff7b"
+    },
+    {
+      "id": "service.offer.kraft.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana de musculation ou d’entraînement]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6782eb1fd0b73ce93478153155d83a112b29d1b7e16c685ad0ccd777484f0624"
+    },
+    {
+      "id": "service.offer.kraft.fit",
+      "text": "Vous aide à commencer la musculation de manière ciblée et sûre.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dcc48261dec436ba2fb126da844fbe5d6c50e371cfa29648e67c358205158804"
+    },
+    {
+      "id": "service.offer.plus.label",
+      "text": "Offres des partenaires Helsana+",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7883eaa49ecc0a189b168a81ea96a7f837d4a594ab430e7be287cd17c478155b"
+    },
+    {
+      "id": "service.offer.plus.placeholder",
+      "text": "[Ajouter un lien vers une offre partenaire Helsana+ adaptée]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "101ebf981326924e558477dc62400c43965fb1f5df64ea7e4e0254af3bce1cae"
+    },
+    {
+      "id": "service.offer.plus.fit",
+      "text": "Récompense vos actions positives et vous aide à persévérer.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8f89638ee47786085520e91166db749c29ec9d4c04f41134f3e860f80a4f5e90"
+    },
+    {
+      "id": "service.offer.ernaehrung.label",
+      "text": "Conseils et guides sur l’alimentation",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "def6c138a501b84fbc945125622caf4d2180cc6e679282057b0b6e7d593327e0"
+    },
+    {
+      "id": "service.offer.ernaehrung.placeholder",
+      "text": "[Ajouter un lien vers les conseils nutritionnels Helsana]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7361f5d11984b265f387f1c9f3078c5aef5de477793ecec16144607e388c6bb0"
+    },
+    {
+      "id": "service.offer.ernaehrung.fit",
+      "text": "Un accompagnement personnalisé pour une alimentation saine et adaptée au quotidien.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4228a9133a771f65c1af4d878adfa318286188bb73cb28a155c556650015bef8"
+    },
+    {
+      "id": "service.offer.metabolisch.label",
+      "text": "Contenus sur le métabolisme et le poids santé",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c5444227095d738da4d0c28041a7f2f1b20ace26d4a6748d8aa36ecd076c212e"
+    },
+    {
+      "id": "service.offer.metabolisch.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana sur la santé métabolique]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7d6c43cb231718093e6045e15c06b3f4be9e208c3c765c408d533098abc43999"
+    },
+    {
+      "id": "service.offer.metabolisch.fit",
+      "text": "Vous accompagne sur les thèmes de la glycémie, du poids et de l’énergie.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0cdda151c03d7031370139ba171d216ad92f86e8803119106500c8419dda4f7a"
+    },
+    {
+      "id": "service.offer.schlaf.label",
+      "text": "Guide du sommeil et récupération",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "28d7dd35631d6173fd65d4928a814f4a557e61087d2049cdcbcada65bb497353"
+    },
+    {
+      "id": "service.offer.schlaf.placeholder",
+      "text": "[Ajouter un lien vers le guide du sommeil Helsana]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b1de0b3cfb5155b60d0b9c3e9324cf4a22e6d36e50021ef12acc46613a4838d4"
+    },
+    {
+      "id": "service.offer.schlaf.fit",
+      "text": "Des conseils pratiques pour un sommeil meilleur et plus réparateur.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c12ebdf8f58be744962daf2aecb24e5b7cd29f0dc2008bd79713a677b64b60df"
+    },
+    {
+      "id": "service.offer.stress.label",
+      "text": "Gestion du stress et santé mentale",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2b39ece02ece7e9d0a9e6b9a6744fb14165ac89f3132a532229451bb09fc4011"
+    },
+    {
+      "id": "service.offer.stress.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana de gestion du stress]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6eada0d71c02873c9c0a3f59f48b9db3c724a2dffc9ced9189e7d08ec94ddc5f"
+    },
+    {
+      "id": "service.offer.stress.fit",
+      "text": "Un accompagnement et des exercices pour réduire la charge et refaire le plein d’énergie.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86912ffcfcda962b3ba49b3838879bacbf84f78af36fded6dd7ca838d297c577"
+    },
+    {
+      "id": "service.offer.mentale_hilfe.label",
+      "text": "Offres de soutien en cas de difficultés psychiques",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5f0ba87bb8393939b2bbbef6f482da04d372b26d88555f916e819584a4a60139"
+    },
+    {
+      "id": "service.offer.mentale_hilfe.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana de santé psychique ou de conseil]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "444f4eb9ad216d944c3bc9513b82f99691b08bcd4a369f368884ab6b4d03bc65"
+    },
+    {
+      "id": "service.offer.mentale_hilfe.fit",
+      "text": "Une aide confidentielle lorsque la charge devient importante.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a095c7feb924728fcabf3f940cff7375c03b5a13d2b9571551e3cb48f684fb0e"
+    },
+    {
+      "id": "service.offer.vorsorge.label",
+      "text": "Informations sur la prévention et les check-up",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f0b6f604eb7d38520e17ed352930a0ec6f367f6f75f8e490c7d97ac42fd2f6ef"
+    },
+    {
+      "id": "service.offer.vorsorge.placeholder",
+      "text": "[Ajouter un lien vers une offre de prévention Helsana]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e76bd40f6c0aeee768b4cb2375f5ef59bcd8d8c9e6cdd3b72c3e0fa84f6b40f7"
+    },
+    {
+      "id": "service.offer.vorsorge.fit",
+      "text": "Des repères sur les examens de prévention et de contrôle pertinents.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "425c1486a15d9a501c1eb77f6e10fcd3b2f9b6cb1f64ccb3d53c6cd8e10d3749"
+    },
+    {
+      "id": "service.offer.blutdruck.label",
+      "text": "Contenus sur la tension artérielle et la santé cardiaque",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "20e36dbf51e13c5f9ec1733c6508e69481531b551057982037c4573dbf86fcda"
+    },
+    {
+      "id": "service.offer.blutdruck.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana sur la tension artérielle ou la santé cardiaque]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3719113ac1eb0b0001864c2a518df19e739ee675d8ecb5768658f0dfc3df327d"
+    },
+    {
+      "id": "service.offer.blutdruck.fit",
+      "text": "Des connaissances et des pistes d’action concernant la tension artérielle et le système cardiovasculaire.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7b5fb93408253486420fa9c65506176338daad551d913446da83bf02fb0719e3"
+    },
+    {
+      "id": "service.offer.wissen_kardio.label",
+      "text": "Explications claires : ApoB, Lp(a) et prévention cardiovasculaire moderne",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7085a8b803e08ca85d43aae274d290d3ff9706629e4c1b46722d9b7360102e70"
+    },
+    {
+      "id": "service.offer.wissen_kardio.placeholder",
+      "text": "[Ajouter un lien vers un contenu Helsana sur les marqueurs cardiovasculaires et la prévention – p. ex. un article ou une vidéo expliquant comment le LDL-C, l’ApoB et la Lp(a) reflètent différents aspects du risque cardiovasculaire et quand des mesures supplémentaires sont utiles]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "13d0de421a0251c8c795c3bee7422b10da327f0996648fa0d97eeaf75ec7f346"
+    },
+    {
+      "id": "service.offer.wissen_kardio.fit",
+      "text": "Des explications simples sur l’importance de ces valeurs et l’efficacité d’une action précoce.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91d20e55ca4450b5fe99cfcbe0675aeaa23d0c7d0867058d76f31fd6db8e7f59"
+    },
+    {
+      "id": "service.offer.rauchstopp.label",
+      "text": "Offres et conseils pour arrêter de fumer",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c8574cfad885b0d1cf48b058a40a5b91883351abde4941a94302d5384c0a9bc4"
+    },
+    {
+      "id": "service.offer.rauchstopp.placeholder",
+      "text": "[Ajouter un lien vers une offre Helsana d’aide à l’arrêt du tabac]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "681305a4102e40303d2191459123e17dc978b92b8cbf7f9d5d6910ed48fbde3b"
+    },
+    {
+      "id": "service.offer.rauchstopp.fit",
+      "text": "Un accompagnement et des méthodes pour réussir à arrêter de fumer.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "713e58a72505f5a3c731e094b4fa717baad1ea7107cb7a99440c966865ee4a12"
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.label",
+      "text": "Explications claires : ce qui se passe dans le corps après l’arrêt du tabac",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7c1e9d1542a8ae1f83f1b8f937061b02ef121f7555095c2a53077190c30ca8e6"
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.placeholder",
+      "text": "[Ajouter un lien vers un contenu Helsana sur l’arrêt du tabac – p. ex. une chronologie de la récupération (de 20 min à 15 ans), la gestion du sevrage et des rechutes, et les raisons pour lesquelles l’accompagnement et les substituts nicotiniques multiplient les chances de réussite]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2c887d9c30487eb94d0f7d65f08b1793d24aa55f09e68b56293bf721ec3e6a51"
+    },
+    {
+      "id": "service.offer.wissen_rauchstopp.fit",
+      "text": "La chronologie de la récupération et les raisons pour lesquelles un accompagnement professionnel fait la différence.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5b0f378ebe9845c140f349bd47a92696658c916ab16bc00656a0a55bfa7ecdf8"
+    },
+    {
+      "id": "service.offer.wissen_bewegung.label",
+      "text": "Explications claires : pourquoi une activité physique courte et intense est déjà très bénéfique",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5ccc64cbfadf6b296d9b4a9b77eb80596f244b58f560db0477cbb41751656f22"
+    },
+    {
+      "id": "service.offer.wissen_bewegung.placeholder",
+      "text": "[Ajouter un lien vers un contenu Helsana sur l’activité physique – p. ex. les raisons pour lesquelles commencer apporte le plus grand bénéfice, le concept de courtes activités quotidiennes intenses (VILPA : monter les escaliers ou une pente pendant 1–2 min) et la condition physique comme indicateur important de l’espérance de vie]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8368d4569be36e43e87fc460a3f9db350131fb8198ae9aab86c2d8de38d2af44"
+    },
+    {
+      "id": "service.offer.wissen_bewegung.fit",
+      "text": "Pourquoi commencer apporte le plus grand bénéfice et pourquoi de courtes activités intenses sont particulièrement efficaces.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3fb70dc9a4e19b85b1d1b29b57df8de409f4a50414149a1f8dbcb71bdabe160a"
+    },
+    {
+      "id": "service.offer.plus_entdecken.label",
+      "text": "Découvrir Helsana+",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91b5e829c4f3d886c34bef0f4924a01ec3bd8f149f72b267a3c3ca3a2eb5e49e"
+    },
+    {
+      "id": "service.offer.plus_entdecken.placeholder",
+      "text": "[Ajouter un lien vers la page du programme Helsana+]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f20455701d14efcf719300f4a80e6b342877aa1427e5e5e0686c3e409bf86093"
+    },
+    {
+      "id": "service.offer.feedback.label",
+      "text": "Accéder au formulaire",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4408ce0bf40c5846f722bf202b9e89ec6850db1e478bb626fe615eb5beccbffc"
+    },
+    {
+      "id": "service.offer.feedback.placeholder",
+      "text": "[Ajouter un lien vers le formulaire de feed-back]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d7867aa870d30fe62aa672d71e09e64fe1c995868c1d6fb7a7b44e83423bdc21"
+    },
+    {
+      "id": "service.offer.coach_app.label",
+      "text": "Ouvrir Helsana Coach",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9124c2bb93472b29188c06176f3196f6a045f6cdcc1cd89f3b301836929814bd"
+    },
+    {
+      "id": "service.offer.coach_app.placeholder",
+      "text": "[Ajouter un lien vers l’application Helsana Coach ou un lien profond]",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "316b1d2bf6dcf3c93566233435197e6b79d7fdf7d0b4ac83c0cf37f085437c36"
+    },
+    {
+      "id": "service.coverage.ernaehrung.hint",
+      "text": "Potentiellement pertinent avec votre assurance complémentaire : la prise en charge et son étendue dépendent de votre produit concret.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "64f0cf0702dda98be8e7933079036a664cba83ebed5ff207b641174659876b09"
+    },
+    {
+      "id": "service.coverage.bewegung.hint",
+      "text": "Selon votre assurance complémentaire, des offres de prévention comme celle-ci peuvent être prises en charge.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "03f8f367c683f6970365dd005f70e0406aa44dc3fffed5ae1c21c5c3ce8d4ec8"
+    },
+    {
+      "id": "service.coverage.kraft.hint",
+      "text": "Selon votre assurance complémentaire, des offres d’entraînement et de prévention peuvent être prises en charge.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd0a1f63edd3a3b4904f2a0a7e2d09a23f39cc14e30120c3cc2edfb1fece7476"
+    },
+    {
+      "id": "service.coverage.rauchstopp.hint",
+      "text": "Potentiellement pertinent avec votre assurance complémentaire : la prise en charge et son étendue dépendent de votre produit concret.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a12d0661f5c8901a75a69eb74645d2a06bee6eb0850de76fb760ae9d2b213618"
+    },
+    {
+      "id": "service.coverage.stress.hint",
+      "text": "Potentiellement pertinent avec votre assurance complémentaire : la prise en charge et son étendue dépendent de votre produit concret.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "faaeb130af12b9a01f5aaa435c7d27a5eff64722b7a1ba459430da6aecfc6ec3"
+    },
+    {
+      "id": "service.coverage.mentale_hilfe.hint",
+      "text": "Potentiellement pertinent avec votre assurance complémentaire : la prise en charge et son étendue dépendent de votre produit concret.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f82442d0f031d1a89f09237591d32d9bfb59b590bcf0d722510b45814de2078f"
+    },
+    {
+      "id": "service.coverage.vorsorge.hint",
+      "text": "Selon votre assurance complémentaire, certains examens de prévention peuvent être pris en charge. Pour les détails, adressez-vous directement à Helsana.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "99d9e89e2fb2ffeee00354c813680e3dad233ee59b3f501910b3d8b1fed7c9ed"
+    },
+    {
+      "id": "service.status_band.stark.label",
+      "text": "Fort",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "80b35b0d8b113e96cc49344de44bb696ee029a5299196cab91bf9fc88f89ecdf"
+    },
+    {
+      "id": "service.status_band.solide.label",
+      "text": "Base solide",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6d7fb85328de7de296631190e8266d50420b497b23edf716ffb5affb877e17bb"
+    },
+    {
+      "id": "service.status_band.ausbau.label",
+      "text": "À améliorer",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1fa7eae188cebefbfa1b58393da13321049130f8449f8795d5eaa18fd6640c94"
+    },
+    {
+      "id": "service.status_band.aufmerksam.label",
+      "text": "Attention accrue",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "901c5d6e5ae9e6e70ae7913880818fcee83a205f95fc944fcf55e79dc6eb15a5"
+    },
+    {
+      "id": "service.dimension.grund.title",
+      "text": "Informations personnelles",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "22cbad5f6021f5022ff9592de4bc5aecab941a679e2fe8d43dfbccb48e22c4e1"
+    },
+    {
+      "id": "service.dimension.grund.short",
+      "text": "Informations de base",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "90788af6f936ccbc7eec1d0c8d9dc849a0f92d756834c9bec707b83f7660a01c"
+    },
+    {
+      "id": "service.dimension.grund.intro",
+      "text": "Vos informations personnelles constituent un profil de réponses pour cette orientation et les recommandations individuelles. Elles sont traitées de manière confidentielle et restent anonymes.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "224d4434d4130539d1d47dac7e8c25aed5d38c3fd8ab51615472d5343fc26ce0"
+    },
+    {
+      "id": "service.dimension.einfluss.title",
+      "text": "Facteurs d’influence",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c2dac5a7549564535fe7991c7cbe6498fe2e82483565b42b6de705031892c388"
+    },
+    {
+      "id": "service.dimension.einfluss.short",
+      "text": "Facteurs",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "29cfcf4fcfaadb13e1f5abdb61960f08d8e175fb7e24897d47de0ba9f0055bfb"
+    },
+    {
+      "id": "service.dimension.einfluss.intro",
+      "text": "Une réflexion sincère sur votre santé, vos habitudes et vos antécédents familiaux vous aide à mieux évaluer les facteurs qui influencent votre santé.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2a6a484ac752c5c96d113452e2215cc8578e9f64b18c112b232126882dd77e04"
+    },
+    {
+      "id": "service.dimension.fitness.title",
+      "text": "Condition physique",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "62514d94d5cafbb84df7ac9bbae84311f92ca80477ac396068f3a007d6cb2f8a"
+    },
+    {
+      "id": "service.dimension.fitness.short",
+      "text": "Condition physique",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c91573d99d8bd1cd55fc69b0a3ec4e52c983ffa9b8ef397b92b2c8f841d5970b"
+    },
+    {
+      "id": "service.dimension.fitness.intro",
+      "text": "Votre condition physique est l’un des meilleurs indicateurs de votre santé.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7446e4a7f80e4765042c6e8f8215e8757607dce7edc9b9f59b2689f8ca2a15a2"
+    },
+    {
+      "id": "service.dimension.ernaehrung.title",
+      "text": "Alimentation",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "050b24190d408a6fed584e8809fff8fbbd7184ef3885b807295511afd955b844"
+    },
+    {
+      "id": "service.dimension.ernaehrung.short",
+      "text": "Alimentation",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "585828c8a87fde1a204a8799b12c409c007be462a7c6a7c90b74d7174a9aa454"
+    },
+    {
+      "id": "service.dimension.ernaehrung.intro",
+      "text": "Vos habitudes alimentaires influencent directement votre santé et votre bien-être.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7bada718bf191d86e24881c47f18f8d6b2df37d902c3932881f7780f1d06750"
+    },
+    {
+      "id": "service.dimension.schlaf.title",
+      "text": "Sommeil",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1fc50eacd3c8c2254273439420d18d4283486b480131e99857edabdc44b933b7"
+    },
+    {
+      "id": "service.dimension.schlaf.short",
+      "text": "Sommeil",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ce3b544724caa0aa0e7dba4e68faef6c6825d4caa4887cad310e930fffd7acad"
+    },
+    {
+      "id": "service.dimension.schlaf.intro",
+      "text": "Un sommeil de qualité est essentiel à votre santé. Pendant votre sommeil, les cellules se réparent, le système immunitaire se renforce et la mémoire se consolide.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dbf9c27e5eac3ea235488a4d261c9adefe4d0878277d390d715532a8909521df"
+    },
+    {
+      "id": "service.dimension.mental.title",
+      "text": "Santé mentale",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9a1ed98b08f78dc6b3210e97a8971b420f4da7056721f222d796a954a5e26dec"
+    },
+    {
+      "id": "service.dimension.mental.short",
+      "text": "Santé mentale",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ce047bf9e38513f78f231fd81ba6e3dc436ea6be8f934089173744d355e31b43"
+    },
+    {
+      "id": "service.dimension.mental.intro",
+      "text": "Votre santé mentale et émotionnelle est aussi importante que votre santé physique. Ce que vous ressentez, pensez et vivez agit sur votre corps, et inversement.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "85099cb3ecf7c32de0a37ca9cb4bd49801b3b9a2ce66a4beeb27701fe34b333f"
+    },
+    {
+      "id": "service.demo_profile.basic.display_name",
+      "text": "Profil de démonstration « Assurance de base uniquement »",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "80e8e20ccd237cd2b25b650f28756ab48092308610c6cd2cd69b25fd9842253f"
+    },
+    {
+      "id": "service.demo_profile.prevention.display_name",
+      "text": "Profil de démonstration « Base + prévention »",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c12c142aa6ec067dd7e8b36be0aa7a322914551d737d3ab42dafbdd86e879dbf"
+    },
+    {
+      "id": "service.demo_profile.complete.display_name",
+      "text": "Profil de démonstration « Base + complémentaire ambulatoire/hospitalisation/prévention »",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fecbd9790e9a89543b7c7dcd794fc575b6a8a937e2fa335efc1a2fa4c71fee9c"
+    },
+    {
+      "id": "service.demo_profile.product.basic",
+      "text": "Assurance de base (démo)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "600ca7b3611fddc2c060599cb45f9263a1d9e7b50bca0b1c19b5d8a0eafe6a63"
+    },
+    {
+      "id": "service.demo_profile.product.prevention",
+      "text": "Assurance complémentaire prévention (démo)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9905be06696a7cd3f896ce1a0be037d9a8d7348deaba2f3b79078197da855d2e"
+    },
+    {
+      "id": "service.demo_profile.product.ambulant",
+      "text": "Assurance complémentaire ambulatoire (démo)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d06dc1f533713608cc378e2160913a3b41b887b5aaf87708a15cd5d6d7efe1e4"
+    },
+    {
+      "id": "service.demo_profile.product.hospital",
+      "text": "Assurance complémentaire hospitalisation (démo)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "18cefb85a93e263d5b1470122a0606f19c171e93f9e96eee0756a9a07921c701"
+    }
+  ]
+}

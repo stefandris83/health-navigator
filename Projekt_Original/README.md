@@ -25,6 +25,22 @@ SVG aus `assets/helsana-logo.svg` geladen; der zentrale Ablauf ist daher nicht v
 einer externen Logo-Quelle abhängig. Nur externe Fach- und Angebotslinks benötigen
 eine Internetverbindung.
 
+## Sprachen
+
+Die Anwendung unterstützt die vier Schweizer Sprachvarianten `de-CH`, `en-CH`,
+`fr-CH` und `it-CH`. Die Sprachschalter DE, EN, FR und IT laden dieselbe statische
+App mit dem erlaubten Parameter `?lang=<locale>` neu. Die Sprachwahl wird unter
+`health-navigator.locale.v1` getrennt von Antworten und Plandaten gespeichert;
+sie enthält keine Gesundheitsinformation. Ein Wechsel auf der Ergebnisseite
+kehrt nach dem Reload wieder zur Ergebnisansicht zurück. Auch die Navigation zur
+Quellenseite und zurück bewahrt die gewählte Sprache.
+
+Die Locale bestimmt ausschliesslich sichtbare Texte, Metadaten und das
+Installationsmanifest. Frage-IDs, Antwortwerte, Scores, Risikosignale und
+Empfehlungsprioritäten sind in allen Sprachen identisch und werden durch einen
+eigenen Regressionstest abgesichert. Ergebnislinks übernehmen nur den validierten
+`lang`-Parameter; andere Query-Parameter werden nicht in einen Ergebnislink kopiert.
+
 ## Datenschutz und lokaler Zustand
 
 Antworten und abgehakte Planschritte werden ausschliesslich im Browser gespeichert.
@@ -45,7 +61,7 @@ entfernt.
 
 ```text
 index.html / quellen.html        Statische Einstiegs- und Quellenseite
-manifest.webmanifest             Installationsvertrag für Android und andere PWA-Browser
+manifest*.webmanifest            Deutscher Kompatibilitäts- und vier Sprach-Manifeste
 assets/helsana-logo.svg          Lokal eingebundenes Helsana-Markenasset
 assets/app-icon.*                Lokales Helsana-rotes App-Icon (SVG und PNGs für Mobilgeräte)
 css/styles.css                   Bestehendes Helsana-Look-and-Feel
@@ -59,9 +75,11 @@ js/integration.js                Minimaler, nicht persistierter CustomerContext
 js/coach.js / js/radar.js        Regelbasierte Vorschau und SVG-Radar
 js/result-copy.js                Sichere Runtime-Copy-API
 js/result-copy.generated.js      Generiertes, eingechecktes Runtime-Bundle
+js/locale.js / js/page-i18n.js   Locale-Vertrag und statische Seitenübersetzung
 js/url-safety.js                 Gemeinsame HTTPS-Allowlist
 js/app.js                        UI, Navigation und Lebenszyklus
-content/result-texts/*.json      Kanonische Ergebnistexte
+content/result-texts/*.json      Kanonische deutsche App-Texte und Struktur
+content/result-texts/locales/    Schlanke EN-/FR-/IT-Übersetzungs-Overlays
 scripts/result-content.js        Validierung, Exporte und sicherer Reimport
 exports/                         Generierte Review-Artefakte
 tests/                           Dependency-freie Node-Regressionssuiten
@@ -134,7 +152,7 @@ Nach der einmaligen Aktivierung von GitHub Pages veröffentlicht der Workflow
 manuell über den Tab «Actions» gestartet werden.
 
 Veröffentlicht werden nur die Dateien, die der Check zur Laufzeit benötigt:
-`index.html`, `quellen.html`, `manifest.webmanifest`, `assets/`, `css/` und `js/`. Tests,
+`index.html`, `quellen.html`, alle `manifest*.webmanifest`, `assets/`, `css/` und `js/`. Tests,
 Dokumentation, Marketing-Exporte und Content-Arbeitsdateien sind nicht Teil der
 öffentlichen Website. Die Anwendung speichert Antworten weiterhin nur lokal im
 Browser.
@@ -180,11 +198,14 @@ Angebotsziele werden zentral in `js/helsana.js`, Fachquellen in `SOURCE_CONFIG` 
 Zugangsdaten sein. `href: '#'` bleibt ein sichtbarer, nicht interaktiver Platzhalter.
 Labels und übrige sichtbare Ergebnis-Copy liegen im Content-Katalog.
 
-## Ergebnis-Texte prüfen und zurückspielen
+## App-Texte in vier Sprachen prüfen und zurückspielen
 
-`content/result-texts/*.json` ist die einzige kanonische Quelle der zentral gepflegten
-Ergebnis-Kommunikation. Das Runtime-Bundle, die CSV und die Markdown-Übersicht werden
-deterministisch erzeugt und nie manuell bearbeitet.
+`content/result-texts/*.json` ist die kanonische deutsche Struktur- und Textquelle;
+EN, FR und IT liegen als vollständige schlanke Overlays unter `locales/`. Das
+gemeinsame Runtime-Bundle, die vier CSV-Dateien, Markdown-Übersichten und
+sprachspezifischen Web-App-Manifeste werden deterministisch erzeugt und nie
+manuell bearbeitet. Damit sind auch Installationsname und -beschreibung im
+Marketing-Workflow enthalten.
 
 CSV und Markdown verwenden dieselbe redaktionelle Gruppierung nach Gesundheitsbereich
 und Thema. Die CSV stellt aktuelle und neue Texte an den Anfang, zeigt verständliche
@@ -194,9 +215,9 @@ und Recht werden separat als `Review-Kommentar` zurückgespielt.
 
 ```bash
 node scripts/result-content.js validate
-node scripts/result-content.js review-report
-node scripts/result-content.js overview exports/result-texte-uebersicht.md
-node scripts/result-content.js export exports/result-texte-de-CH.csv
+node scripts/result-content.js review-report --all
+node scripts/result-content.js overview --all
+node scripts/result-content.js export --all
 node scripts/result-content.js import exports/result-texte-review.csv --dry-run
 node scripts/result-content.js import exports/result-texte-review.csv
 node scripts/result-content.js check
@@ -204,7 +225,7 @@ node scripts/result-content.js check
 
 Ein echter Import prüft IDs, Metadaten, Platzhalter, geschützte Begriffe, Quellhashes
 und Konflikte, legt bei Text-, Kommentar- oder Statusänderungen ein Backup an und
-aktualisiert JSON, Bundle, CSV sowie Übersicht gemeinsam. Details:
+aktualisiert JSON, Bundle, CSV, Übersicht sowie App-Manifest gemeinsam. Details:
 [docs/TEXTPFLEGE.md](docs/TEXTPFLEGE.md).
 
 ## Tests
@@ -216,6 +237,8 @@ node tests/content-workflow.test.js
 node tests/integration.test.js
 node tests/robustness.test.js
 node tests/ui-lifecycle.test.js
+node tests/i18n-static.test.js
+node tests/i18n-runtime.test.js
 ```
 
 Die Tests benötigen nur Node.js und keine Installation. Fachliche und rechtliche

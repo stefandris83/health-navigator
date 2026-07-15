@@ -1,0 +1,2197 @@
+{
+  "schemaVersion": 1,
+  "locale": "de-CH",
+  "domain": "questionnaire",
+  "entries": [
+    {
+      "id": "questionnaire.common.agreement.fully",
+      "section": "Fragebogen",
+      "context": "Mentale Gesundheit, gemeinsame Zustimmungsskala",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Stimme völlig zu",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.agreement.mostly",
+      "section": "Fragebogen",
+      "context": "Mentale Gesundheit, gemeinsame Zustimmungsskala",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Stimme eher zu",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.agreement.mostly_not",
+      "section": "Fragebogen",
+      "context": "Mentale Gesundheit, gemeinsame Zustimmungsskala",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Stimme eher nicht zu",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.agreement.neutral",
+      "section": "Fragebogen",
+      "context": "Mentale Gesundheit, gemeinsame Zustimmungsskala",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weder noch",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.agreement.not_at_all",
+      "section": "Fragebogen",
+      "context": "Mentale Gesundheit, gemeinsame Zustimmungsskala",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Stimme gar nicht zu",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.dont_know",
+      "section": "Fragebogen",
+      "context": "Allgemeine Antwortoption für unterstützte Fragen",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weiss ich nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.common.fitness_test_safety_note",
+      "section": "Fragebogen",
+      "context": "Optionale Fitness-Kurztests, Sicherheitshinweis",
+      "kind": "safety_note",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bei körperlichen Einschränkungen oder Verletzungsrisiken sollte dieser Test nicht durchgeführt werden.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.help",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Die Vorstellung, dass ein Glas Wein pro Tag gesund sei, ist ein Mythos, der auf fehlerhaften Studien beruht. Bereits in geringen Mengen erhöht Alkohol das Risiko für Krebs und Herz-Kreislauf-Erkrankungen. Auch das Suchtpotential von Alkohol, selbst bei geringen Mengen und regelmässigem Konsum, wird stark unterschätzt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.help_title",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.keine_angabe",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, Antwortoption keine_angabe",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Keine Angaben",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.m1_4",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, Antwortoption m1_4",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2–4 x pro Monat",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.nie_selten",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, Antwortoption nie_selten",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nie oder selten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.w2_3",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, Antwortoption w2_3",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2–3 x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.w4plus",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, Antwortoption w4plus",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "4 x oder öfter pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alkohol.text",
+      "section": "Fragebogen",
+      "context": "Frage alkohol, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie häufig haben Sie im letzten Monat alkoholische Getränke konsumiert?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alter.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage alter, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 45",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alter.text",
+      "section": "Fragebogen",
+      "context": "Frage alter, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bitte geben Sie Ihr Alter in Jahren an.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.alter.unit",
+      "section": "Fragebogen",
+      "context": "Frage alter, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "Jahre",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.help",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Sie geraten ins Schwitzen und können nur noch wenige Worte oder gar nicht mehr sprechen (z. B. Joggen, schnelles Radfahren, intensives Schwimmen).\n\n<b>WHO-Empfehlung:</b> Mindestens 75 Minuten intensive Aktivität pro Woche, wobei jede Aktivitätsdauer zählt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.help_title",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was bedeutet intensive Ausdaueraktivität?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.keine",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, Antwortoption keine",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Keine",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.m30_75",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, Antwortoption m30_75",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "30 min – 1 h 15 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.m75_150",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, Antwortoption m75_150",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1 h 15 min – 2 h 30 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.u30",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, Antwortoption u30",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weniger als 30 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.ue150",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, Antwortoption ue150",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2 h 30 min oder mehr",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.text",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_intensiv, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele Stunden intensive Ausdaueraktivität machen Sie pro Woche?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.help",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Sie atmen schneller als normal, können sich aber noch unterhalten (z. B. zügiges Gehen, langsames Radfahren, Schwimmen in mässigem Tempo).\n\n<b>WHO-Empfehlung:</b> Mindestens 150 Minuten moderate Aktivität pro Woche, wobei jede Aktivitätsdauer zählt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.help_title",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was bedeutet moderate Ausdaueraktivität?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m150_300",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, Antwortoption m150_300",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2 h 30 min – 5 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m30_75",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, Antwortoption m30_75",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "30 min – 1 h 15 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m75_150",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, Antwortoption m75_150",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1 h 15 min – 2 h 30 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.u30",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, Antwortoption u30",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weniger als 30 min",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.ue300",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, Antwortoption ue300",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "5 h oder mehr",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.text",
+      "section": "Fragebogen",
+      "context": "Frage ausdauer_moderat, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele Stunden moderate Ausdaueraktivität machen Sie pro Woche?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.help",
+      "section": "Fragebogen",
+      "context": "Frage bauchumfang, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage bauchumfang, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 92",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.text",
+      "section": "Fragebogen",
+      "context": "Frage bauchumfang, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Kennen Sie Ihren Taillenumfang?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.unit",
+      "section": "Fragebogen",
+      "context": "Frage bauchumfang, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "cm",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.belastbarkeit.text",
+      "section": "Fragebogen",
+      "context": "Frage belastbarkeit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich bewahre auch in schwierigen Situationen den Überblick und Ruhe.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.gar_nicht",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, Antwortoption gar_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Überhaupt nicht schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.maessig",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, Antwortoption maessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mässig schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.nicht",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, Antwortoption nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Unmöglich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.wenig",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, Antwortoption wenig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Wenig schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.ziemlich",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, Antwortoption ziemlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.text",
+      "section": "Fragebogen",
+      "context": "Frage beweglichkeit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie schwer fällt es Ihnen, ohne Hilfe vom Boden aufzustehen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.help",
+      "section": "Fragebogen",
+      "context": "Frage bluthochdruck, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bluthochdruck (ab ca. 140/90 mmHg) verläuft oft unbemerkt, lässt sich aber gut behandeln. Wenn Sie unsicher sind, lohnt sich eine Messung.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.ja",
+      "section": "Fragebogen",
+      "context": "Frage bluthochdruck, Antwortoption ja",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.nein",
+      "section": "Fragebogen",
+      "context": "Frage bluthochdruck, Antwortoption nein",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nein",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.weiss_nicht",
+      "section": "Fragebogen",
+      "context": "Frage bluthochdruck, Antwortoption weiss_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weiss ich nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.text",
+      "section": "Fragebogen",
+      "context": "Frage bluthochdruck, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wurde bei Ihnen ärztlich Bluthochdruck festgestellt oder nehmen Sie Blutdruckmedikamente?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.coping.text",
+      "section": "Fragebogen",
+      "context": "Frage coping, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich finde auch in belastenden Situationen Wege, die mir helfen, klarzukommen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.help",
+      "section": "Fragebogen",
+      "context": "Frage einbeinstand, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "1 – Stellen Sie sich aufrecht hin, Füsse hüftbreit.\n2 – Fixieren Sie Ihre Augen auf einen Punkt.\n3 – Heben Sie ein Bein so an, dass der Fuss den Boden nicht berührt.\n4 – Halten Sie das Gleichgewicht so lange wie möglich.\n\nStoppen Sie die Zeit, sobald der angehobene Fuss den Boden berührt.\n\nWiederholen Sie den Test mit jedem Bein und notieren Sie Ihren besten Wert. Ein grosser Unterschied zwischen den Beinen kann auf einen trainierbaren Unterschied hinweisen.\n\n<b>Was der Einbeinstand-Test verrät:</b>\nDer Test gibt unter den beschriebenen Bedingungen mit offenen Augen einen orientierenden Hinweis auf Ihr statisches Gleichgewicht und Ihre Koordination. Regelmässiges Üben kann die Balance verbessern und zu sicheren Alltagsbewegungen beitragen. Der Test ersetzt keine medizinische Untersuchung.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.help_title",
+      "section": "Fragebogen",
+      "context": "Frage einbeinstand, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "So führen Sie den Einbeinstand-Test korrekt aus",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage einbeinstand, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 30",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.text",
+      "section": "Fragebogen",
+      "context": "Frage einbeinstand, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie lange können Sie auf einem Bein stehen, ohne sich festzuhalten? (optional)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.unit",
+      "section": "Fragebogen",
+      "context": "Frage einbeinstand, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "Sekunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.gar_nicht",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, Antwortoption gar_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Überhaupt nicht schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.maessig",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, Antwortoption maessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mässig schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.nicht",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, Antwortoption nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Unmöglich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.wenig",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, Antwortoption wenig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Wenig schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.ziemlich",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, Antwortoption ziemlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr schwer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.text",
+      "section": "Fragebogen",
+      "context": "Frage einkaufstaschen, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie schwer fällt es Ihnen, zwei volle Einkaufstaschen zu tragen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.help",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Besonders relevant sind früh aufgetretene Erkrankungen (Männer vor 55, Frauen vor 65 Jahren). Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.ja",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, Antwortoption ja",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.nein",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, Antwortoption nein",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nein",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.weiss_nicht",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, Antwortoption weiss_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weiss ich nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.text",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Gibt es in Ihrer nahen Familie (Eltern, Geschwister) Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.help",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Das Bewusstsein über familiäre Krebs- und Herz-Kreislauferkrankungen macht eine gezielte Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung fördern.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.help_title",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.gar_nicht",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, Antwortoption gar_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Gar nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.gut",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, Antwortoption gut",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Gut",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.sehr_gut",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, Antwortoption sehr_gut",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr gut",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.teilweise",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, Antwortoption teilweise",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Teilweise",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.wenig",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, Antwortoption wenig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Wenig",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familienwissen.text",
+      "section": "Fragebogen",
+      "context": "Frage familienwissen, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie gut wissen Sie über mögliche Krebs- oder Herz-Kreislauferkrankungen in Ihrer Familie Bescheid?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.intersex",
+      "section": "Fragebogen",
+      "context": "Frage geschlecht, Antwortoption intersex",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Intersex",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.maennlich",
+      "section": "Fragebogen",
+      "context": "Frage geschlecht, Antwortoption maennlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Männlich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.weiblich",
+      "section": "Fragebogen",
+      "context": "Frage geschlecht, Antwortoption weiblich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weiblich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.geschlecht.text",
+      "section": "Fragebogen",
+      "context": "Frage geschlecht, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bitte wählen Sie Ihr biologisches Geschlecht aus.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.gewicht.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage gewicht, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 78",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.gewicht.text",
+      "section": "Fragebogen",
+      "context": "Frage gewicht, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bitte geben Sie Ihr Gewicht in Kilogramm an.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.gewicht.unit",
+      "section": "Fragebogen",
+      "context": "Frage gewicht, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "kg",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.groesse.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage groesse, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 175",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.groesse.text",
+      "section": "Fragebogen",
+      "context": "Frage groesse, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bitte geben Sie Ihre Grösse in Zentimetern an.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.groesse.unit",
+      "section": "Fragebogen",
+      "context": "Frage groesse, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "cm",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.help",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Muskelkräftigende Übungen mit Gewichten, Geräten oder dem eigenen Körpergewicht (z. B. Liegestütze, Kniebeugen oder Hanteltraining).\n\n<b>WHO-Empfehlung:</b> Mindestens zweimal pro Woche für alle wichtigen Muskelgruppen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.help_title",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was ist Krafttraining?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage0",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, Antwortoption tage0",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "0 Tage",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage1",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, Antwortoption tage1",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1 Tag",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage2",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, Antwortoption tage2",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2 Tage",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage3plus",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, Antwortoption tage3plus",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "3 Tage oder mehr",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.krafttraining.text",
+      "section": "Fragebogen",
+      "context": "Frage krafttraining, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "An wie vielen Tagen pro Woche machen Sie Krafttraining?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.help",
+      "section": "Fragebogen",
+      "context": "Frage liegestuetze, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "1 – Auf den Bauch legen, Hände unter die Schultern.\n2 – Arme strecken und Körper vom Boden abheben.\n3 – Körper, Hüfte und Beine in einer Linie halten.\n4 – Körper absenken, bis die Brust fast den Boden berührt.\n5 – Wieder hochdrücken in die Ausgangsposition.\n\nOhne Pause wiederholen, bis es nicht mehr geht.\n\n<b>Was der Liegestütz-Test verrät:</b>\nLiegestütze messen die Kraft von Brust, Schultern, Armen und Rumpf. Starke Oberkörpermuskeln sind wichtig für Alltagstätigkeiten wie Tragen oder Aufstehen und helfen, Sturzverletzungen zu vermeiden.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.help_title",
+      "section": "Fragebogen",
+      "context": "Frage liegestuetze, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "So führen Sie den Liegestütz-Test korrekt aus",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage liegestuetze, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 15",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.text",
+      "section": "Fragebogen",
+      "context": "Frage liegestuetze, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele Liegestütze können Sie ohne Unterbrechung korrekt ausführen? (optional)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.unit",
+      "section": "Fragebogen",
+      "context": "Frage liegestuetze, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "Wiederholungen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.help",
+      "section": "Fragebogen",
+      "context": "Frage omega3, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Omega-3-Fettsäuren aus maritimen Quellen unterstützen Ihr Gehirn, Ihr Herz und wirken stark entzündungshemmend im ganzen Körper. Da der Körper sie nicht ausreichend selbst bildet, ist ihre regelmässige Zufuhr über Lebensmittel entscheidend. Algenöl ist eine sehr gute vegane Alternative zu Fisch. Ihr Körper kann diese sofort nutzen, im Gegensatz zu Omega-3-Vorstufen aus anderen Pflanzenölen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.help_title",
+      "section": "Fragebogen",
+      "context": "Frage omega3, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Warum ist Omega-3 wichtig?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.option.nie",
+      "section": "Fragebogen",
+      "context": "Frage omega3, Antwortoption nie",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nie",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.option.u1woche",
+      "section": "Fragebogen",
+      "context": "Frage omega3, Antwortoption u1woche",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Seltener als 1x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.option.ue2",
+      "section": "Fragebogen",
+      "context": "Frage omega3, Antwortoption ue2",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mehr als 2x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.option.w1",
+      "section": "Fragebogen",
+      "context": "Frage omega3, Antwortoption w1",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.option.w2",
+      "section": "Fragebogen",
+      "context": "Frage omega3, Antwortoption w2",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "2x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.omega3.text",
+      "section": "Fragebogen",
+      "context": "Frage omega3, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie oft pro Woche essen Sie fettreichen Fisch (z. B. Lachs, Makrele, Hering) oder nehmen Omega-3 als Nahrungsergänzung ein?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.help",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "<b>Gemüse &amp; Salate:</b> Spinat, Brokkoli, Karotten, Tomaten, Gurken, Paprika, Zwiebeln, Knoblauch\n<b>Früchte:</b> Äpfel, Bananen, Beeren, Orangen, Trauben, Avocado\n<b>Getreide &amp; Pseudogetreide:</b> Hafer, Quinoa, Hirse, Buchweizen, Gerste, Vollkornreis\n<b>Samen:</b> Chiasamen, Leinsamen, Kürbiskerne, Sonnenblumenkerne, Sesam\n<b>Hülsenfrüchte &amp; Nüsse:</b> Linsen, Kichererbsen, Bohnen, Mandeln, Walnüsse\n<b>Gewürze &amp; Kräuter:</b> Basilikum, Oregano, Kurkuma, Ingwer, Zimt, Pfeffer\n<b>Pilze:</b> Champignons, Shiitake, Austernpilze\n\n<b>Warum ist pflanzliche Vielfalt wichtig?</b>\nEine bunte Auswahl an Pflanzen liefert Nährstoffe, Antioxidantien und Ballaststoffe. Jede Pflanze enthält eigene bioaktive Stoffe, die verschiedene Funktionen im Körper unterstützen. Vielfalt stärkt besonders das Darmmikrobiom und fördert so eine gesunde Darmflora.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.help_title",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was zählt beispielsweise als pflanzliches Lebensmittel?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.u10",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, Antwortoption u10",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weniger als 10",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.ue35",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, Antwortoption ue35",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "35 oder mehr",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v10_17",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, Antwortoption v10_17",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "10–17",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v18_25",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, Antwortoption v18_25",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "18–25",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v26_34",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, Antwortoption v26_34",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "26–34",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.text",
+      "section": "Fragebogen",
+      "context": "Frage pflanzenvielfalt, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele verschiedene pflanzliche Lebensmittel haben Sie in der letzten Woche gegessen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.positive_emotionen.text",
+      "section": "Fragebogen",
+      "context": "Frage positive_emotionen, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich erlebe in meinem Alltag regelmässig Momente der Freude oder Dankbarkeit.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.help",
+      "section": "Fragebogen",
+      "context": "Frage protein, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Diese Frage erfasst, wie regelmässig Sie Proteinquellen einbauen. Sie berechnet <b>nicht</b>, wie viele Gramm Protein Sie tatsächlich pro Tag und Kilogramm Körpergewicht aufnehmen.\n\n<b>Geeignete Proteinquellen sind zum Beispiel:</b>\n• Hülsenfrüchte wie Linsen, Bohnen oder Kichererbsen\n• Tofu, Tempeh, Eier, Quark, Joghurt oder Hüttenkäse\n• Fisch oder Fleisch\n<b>Orientierung bei regelmässigem Krafttraining:</b>\nFür gesunde Erwachsene sind etwa 1,4–1,6 g Protein pro kg Körpergewicht und Tag eine praktische Orientierung. In einer grossen Meta-Analyse flachten die durchschnittlichen zusätzlichen Vorteile für den Aufbau fettfreier Masse ab rund 1,6 g/kg/Tag deutlich ab. Das ist keine harte biologische Grenze.\n\nBis etwa 2,0 g/kg/Tag können bei sehr hoher Trainingsbelastung oder einem gezielten Energiedefizit als individueller Spielraum sinnvoll sein. Für die meisten Menschen ist diese Menge nicht nötig; das Alter allein begründet kein Ziel von 2,0 g/kg/Tag. Krafttraining setzt den Trainingsreiz, Protein liefert die Bausteine. Proteinpulver ist nicht automatisch erforderlich.\n\nFür Personen unter 18 Jahren sowie bei einer Nierenerkrankung oder medizinisch verordneter Ernährung sollte die passende Menge fachlich geklärt werden.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.help_title",
+      "section": "Fragebogen",
+      "context": "Frage protein, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was misst diese Frage – und welche Menge ist sinnvoll?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.option.fast_immer",
+      "section": "Fragebogen",
+      "context": "Frage protein, Antwortoption fast_immer",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Fast immer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.option.haelfte",
+      "section": "Fragebogen",
+      "context": "Frage protein, Antwortoption haelfte",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Etwa die Hälfte der Zeit",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.option.manchmal",
+      "section": "Fragebogen",
+      "context": "Frage protein, Antwortoption manchmal",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Manchmal",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.option.meistens",
+      "section": "Fragebogen",
+      "context": "Frage protein, Antwortoption meistens",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Meistens",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.option.selten",
+      "section": "Fragebogen",
+      "context": "Frage protein, Antwortoption selten",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Selten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.protein.text",
+      "section": "Fragebogen",
+      "context": "Frage protein, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie häufig gelingt es Ihnen, über den Tag verteilt zu mindestens drei Mahlzeiten oder Snacks eine klare Proteinquelle einzuplanen (z. B. Hülsenfrüchte, Tofu, Eier, Milchprodukte, Fisch oder Fleisch)?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.help",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ein Rauchstopp lohnt sich immer und in jedem Alter. Bereits nach einem Tag werden Atemwegsreizungen reduziert, in wenigen Monaten verbessert sich Ihr Kreislauf und Ihre Lungenfunktion. Nach etwa einem Jahr ist das Risiko für eine koronare Herzkrankheit ungefähr halb so hoch wie bei weiterem Rauchen. Ausserdem erholt sich Ihr Geruchssinn, das Essen schmeckt besser und Sie fühlen sich leistungsfähiger.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.help_title",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.frueher",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, Antwortoption frueher",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nicht mehr",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.ja_gelegentlich",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, Antwortoption ja_gelegentlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja, manchmal",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.ja_regelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, Antwortoption ja_regelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja, regelmässig",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.keine_angabe",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, Antwortoption keine_angabe",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Keine Angaben",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.nie",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, Antwortoption nie",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nein, nie",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.rauchen.text",
+      "section": "Fragebogen",
+      "context": "Frage rauchen, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Rauchen Sie oder haben Sie in der Vergangenheit geraucht? (z. B. Zigaretten, Vapes, Shisha)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.fast_immer",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, Antwortoption fast_immer",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Fast immer",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.manchmal",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, Antwortoption manchmal",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Manchmal",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.nie",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, Antwortoption nie",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nie",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.oft",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, Antwortoption oft",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Oft",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.selten",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, Antwortoption selten",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Selten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.saettigung.text",
+      "section": "Fragebogen",
+      "context": "Frage saettigung, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie häufig fühlen Sie sich nach Ihren Hauptmahlzeiten für etwa vier Stunden satt, ohne Bedürfnis nach einem Snack?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.deutlich",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, Antwortoption deutlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Deutlich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.gar_nicht",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, Antwortoption gar_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Gar nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.kaum",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, Antwortoption kaum",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Minimal",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.massiv",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, Antwortoption massiv",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Massiv",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.spuerbar",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, Antwortoption spuerbar",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Spürbar",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.text",
+      "section": "Fragebogen",
+      "context": "Frage schlaf_auswirkung, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie stark hat Ihr Schlaf im letzten Monat Ihren Alltag beeinträchtigt? (z. B. reduzierte Leistungsfähigkeit, Konzentration, Stimmung, Energie, soziale Aktivitäten)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s5_6",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, Antwortoption s5_6",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "5–6 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s6_7",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, Antwortoption s6_7",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "6–7 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s7_9",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, Antwortoption s7_9",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "7–9 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.u5",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, Antwortoption u5",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weniger als 5 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.ue9",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, Antwortoption ue9",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mehr als 9 h",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.text",
+      "section": "Fragebogen",
+      "context": "Frage schlafdauer, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele Stunden haben Sie im letzten Monat durchschnittlich pro Nacht geschlafen (ohne Wachphasen)?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.durchschnittlich",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, Antwortoption durchschnittlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Durchschnittlich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.gut",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, Antwortoption gut",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Gut",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.schlecht",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, Antwortoption schlecht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Schlecht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.sehr_gut",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, Antwortoption sehr_gut",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr gut",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.sehr_schlecht",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, Antwortoption sehr_schlecht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr schlecht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.text",
+      "section": "Fragebogen",
+      "context": "Frage schlafqualitaet, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie gut oder schlecht haben Sie im letzten Monat insgesamt geschlafen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.etwas_unregelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, Antwortoption etwas_unregelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Etwas unregelmässig (±1 h Abweichung)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.regelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, Antwortoption regelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Regelmässig (±45 min Abweichung)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.sehr_regelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, Antwortoption sehr_regelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr regelmässig (±30 min Abweichung)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.sehr_unregelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, Antwortoption sehr_unregelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr unregelmässig (mehr als 2 h Abweichung)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.unregelmaessig",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, Antwortoption unregelmaessig",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Unregelmässig (±1,5 h Abweichung)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.text",
+      "section": "Fragebogen",
+      "context": "Frage schlafrhythmus, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Stehen Sie jeden Tag, auch am Wochenende, ungefähr zur gleichen Zeit auf und gehen zur gleichen Zeit ins Bett? (z. B. Sie gehen jeden Tag um 22 Uhr ins Bett und stehen um 6 Uhr auf)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.selbstfuersorge.text",
+      "section": "Fragebogen",
+      "context": "Frage selbstfuersorge, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich finde auch in hektischen Zeiten Momente der Ruhe und Erholung.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.selbstwirksamkeit.text",
+      "section": "Fragebogen",
+      "context": "Frage selbstwirksamkeit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich fühle mich meinem Alltag gewachsen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sinnhaftigkeit.text",
+      "section": "Fragebogen",
+      "context": "Frage sinnhaftigkeit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich erlebe mein Leben als sinnvoll und erfüllend.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.help",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Langes Sitzen oder Liegen (ohne Schlaf) erhöht das Risiko für Herz-Kreislauf-Erkrankungen und Diabetes. Bereits eine kurze stündliche Pause (aufstehen, strecken, ein paar Schritte gehen oder die Treppe nehmen) senkt dieses Risiko deutlich.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.help_title",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s4_6",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, Antwortoption s4_6",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "4–6 Stunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s7_8",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, Antwortoption s7_8",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "7–8 Stunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s9_10",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, Antwortoption s9_10",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "9–10 Stunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.u4",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, Antwortoption u4",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weniger als 4 Stunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.ue10",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, Antwortoption ue10",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mehr als 10 Stunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.text",
+      "section": "Fragebogen",
+      "context": "Frage sitzzeit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie viele Stunden verbringen Sie an einem typischen Tag im Sitzen oder Liegen? (z. B. Arbeit/Ausbildung, Essen, Verkehr, Medien/Freizeit, Entspannung, aber ohne Schlaf/Nickerchen)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.help",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Social Media kann ein Suchtpotenzial darstellen und sowohl die psychische als auch die allgemeine Gesundheit beeinträchtigen. Dazu zählen Schlafstörungen, Depressionen, Angstzustände und soziale Konflikte.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.help_title",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.manchmal",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, Antwortoption manchmal",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Manchmal",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.nein",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, Antwortoption nein",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nein",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.oft",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, Antwortoption oft",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Oft",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.sehr_oft",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, Antwortoption sehr_oft",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr oft",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.selten",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, Antwortoption selten",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Selten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.socialmedia.text",
+      "section": "Fragebogen",
+      "context": "Frage socialmedia, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Verbringen Sie mehr Zeit mit Social Media als Ihnen lieb ist?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.help",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wer einmal gestürzt ist, hat ein hohes Risiko für weitere Stürze. Daher zählen Stürze zu den häufigsten Gesundheitsrisiken im Alter. Schon ein Sturz kann die Selbstständigkeit und Lebensqualität aufgrund von Verletzungen stark beeinträchtigen. Die gute Nachricht: Mit gezieltem Training von Gleichgewicht, Kraft und Beweglichkeit sinkt das Risiko erheblich.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.help_title",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sehr_sicher",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, Antwortoption sehr_sicher",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr sicher",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sehr_unsicher",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, Antwortoption sehr_unsicher",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr unsicher",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sicher",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, Antwortoption sicher",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sicher",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.unsicher",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, Antwortoption unsicher",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Unsicher",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.weder",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, Antwortoption weder",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weder noch",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.text",
+      "section": "Fragebogen",
+      "context": "Frage stabilitaet, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie sicher fühlen Sie sich bei alltäglichen Bewegungen? (z. B. beim Aufstehen vom Boden, beim Gehen auf Waldwegen, beim Heruntersteigen von einem Hocker)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.option.deutlich",
+      "section": "Fragebogen",
+      "context": "Frage treppen, Antwortoption deutlich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Deutlich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.option.etwas",
+      "section": "Fragebogen",
+      "context": "Frage treppen, Antwortoption etwas",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Etwas",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.option.gar_nicht",
+      "section": "Fragebogen",
+      "context": "Frage treppen, Antwortoption gar_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Überhaupt nicht",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.option.kaum",
+      "section": "Fragebogen",
+      "context": "Frage treppen, Antwortoption kaum",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Kaum",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.option.sehr_stark",
+      "section": "Fragebogen",
+      "context": "Frage treppen, Antwortoption sehr_stark",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Sehr stark",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.treppen.text",
+      "section": "Fragebogen",
+      "context": "Frage treppen, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Kommen Sie ausser Atem, wenn Sie zwei Stockwerke Treppen steigen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.help",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "• Fertiggerichte, Tiefkühlpizza\n• Süssigkeiten, Cookies, Chips\n• Softdrinks, Energy-Drinks\n• Wurst und verarbeitetes Fleisch\n• Weissbrot, süsse Backwaren\n<b>Praktische Regel:</b>\nMehr als fünf Zutaten oder schwer aussprechbare Namen = meist stark verarbeitet.\n\n<b>Warum sind verarbeitete Lebensmittel problematisch?</b>\nViele stark verarbeitete Produkte enthalten viel Zucker, Salz, ungünstige Fette und Zusatzstoffe, während Ballaststoffe und wichtige Nährstoffe fehlen. Nicht jedes verarbeitete Lebensmittel ist gleich problematisch. Entscheidend ist, den Anteil stark verarbeiteter Produkte zu reduzieren und schrittweise mehr frische, nährstoffreiche Lebensmittel in den Alltag einzubauen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.help_title",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Was gilt als stark verarbeitet?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.fast_taeglich",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, Antwortoption fast_taeglich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Fast täglich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.mehrmals_taeglich",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, Antwortoption mehrmals_taeglich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Mehrmals täglich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.nie",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, Antwortoption nie",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nie",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.u1woche",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, Antwortoption u1woche",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Seltener als 1x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.w1_2",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, Antwortoption w1_2",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1–2x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.text",
+      "section": "Fragebogen",
+      "context": "Frage verarbeitet, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie häufig greifen Sie in einer typischen Woche zu stark verarbeiteten Lebensmitteln?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.verbundenheit.text",
+      "section": "Fragebogen",
+      "context": "Frage verbundenheit, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich fühle mich von den Menschen in meinem Umfeld akzeptiert und eingebunden.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.help",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für Herz-Kreislauf-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs- oder ersten Anzeichen von Typ-2-Diabetes kann sich je nach Alter, Lebensstil oder Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im Alltag lassen sich Risiken und Auswirkungen senken.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.help_title",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "Haben Sie gewusst?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.ja",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, Antwortoption ja",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.nein",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, Antwortoption nein",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nein",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.text",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ-2-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.wandsitz.help",
+      "section": "Fragebogen",
+      "context": "Frage wandsitz, help",
+      "kind": "help",
+      "reviewers": "Marketing, Medizin",
+      "text": "1 – Rücken und Becken vollständig an eine gerade Wand legen.\n2 – Füsse parallel und ungefähr hüftbreit aufstellen.\n3 – Nach unten rutschen, bis Hüfte und Knie ungefähr einen 90°-Winkel bilden.\n4 – Beide Beine gleichmässig belasten. Hände und Arme dürfen weder Beine noch Wand abstützen.\n5 – Normal weiteratmen und die Position so lange wie möglich halten.\n\nMachen Sie zuerst einen kurzen Übungsversuch und danach einen gewerteten Versuch. Die Zeit beginnt in der korrekten Position. Beenden Sie den Test, sobald Becken oder Rücken den Wandkontakt verlieren, Sie deutlich hochrutschen oder sich mit den Händen abstützen. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.\n\n<b>Was der Wandsitz-Test verrät:</b>\nEr misst die lokale Kraftausdauer von Beinen und Gesäss. Diese Muskeln sind wichtig für Stabilität, Beweglichkeit und Sicherheit. Wer sie trainiert, bleibt länger aktiv, mobil und selbstständig.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.wandsitz.help_title",
+      "section": "Fragebogen",
+      "context": "Frage wandsitz, helpTitle",
+      "kind": "help_title",
+      "reviewers": "Marketing",
+      "text": "So führen Sie den Wandsitz-Test korrekt aus",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.wandsitz.placeholder",
+      "section": "Fragebogen",
+      "context": "Frage wandsitz, placeholder",
+      "kind": "placeholder",
+      "reviewers": "Marketing",
+      "text": "z. B. 45",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.wandsitz.text",
+      "section": "Fragebogen",
+      "context": "Frage wandsitz, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie lange können Sie maximal in einer sitzenden Haltung (90°-Winkel) mit dem Rücken an der Wand bleiben? (optional)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.wandsitz.unit",
+      "section": "Fragebogen",
+      "context": "Frage wandsitz, unit",
+      "kind": "unit",
+      "reviewers": "Marketing",
+      "text": "Sekunden",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.nie",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, Antwortoption nie",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Nie",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.taeglich",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, Antwortoption taeglich",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Täglich oder mehrmals täglich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.u1woche",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, Antwortoption u1woche",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Seltener als 1x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.w1_3",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, Antwortoption w1_3",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "1–3x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.w4_6",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, Antwortoption w4_6",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "4–6x pro Woche",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.text",
+      "section": "Fragebogen",
+      "context": "Frage zuckergetraenke, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Wie häufig trinken Sie zuckerhaltige Getränke oder reine Fruchtsäfte?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.zukunft.text",
+      "section": "Fragebogen",
+      "context": "Frage zukunft, text",
+      "kind": "question",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ich schaue zuversichtlich in meine Zukunft.",
+      "reviewStatus": "",
+      "comment": ""
+    }
+  ]
+}

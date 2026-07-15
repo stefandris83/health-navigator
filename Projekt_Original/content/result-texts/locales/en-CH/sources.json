@@ -1,0 +1,815 @@
+{
+  "schemaVersion": 1,
+  "locale": "en-CH",
+  "domain": "sources",
+  "entries": [
+    {
+      "id": "sources.meta.description",
+      "text": "Scientific sources and professional foundations of the Health Check: recommendations from the WHO, CDC and medical professional societies.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3ed3b618d78a639453edadcd92f8d0ecdad27acebc73d69801936988dc3bf229"
+    },
+    {
+      "id": "sources.meta.title",
+      "text": "Scientific Sources & Foundations – Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e9ba53be9ade1194110616218ac62b148b28985fbfcd77000773c04f1a99b2f8"
+    },
+    {
+      "id": "sources.back_to_check",
+      "text": "← Back to the check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dff074c9971825e9d43ad63785a6575f4033585e783a4d8381096020bcaa949a"
+    },
+    {
+      "id": "sources.hero.eyebrow",
+      "text": "Transparency & evidence",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3054e9a76f500a0d68049242c0eea36e803a29d19cb5f9d03c01da8c2fb26321"
+    },
+    {
+      "id": "sources.hero.title",
+      "text": "Scientific Sources & Foundations",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "347ec2740c85327d0cee87d09929039137fff2465f166cf137c32dad3e69d441"
+    },
+    {
+      "id": "sources.hero.lead",
+      "text": "The Health Check recommendations are based on recognised public health institutions and medical professional societies. Here you can find the professional foundations for each topic area.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bb834bbc20fc2456db038d20a517ebe30f008a1656216e4698931db3989c18ba"
+    },
+    {
+      "id": "sources.hero.research_date",
+      "text": "Research last updated: July 2026",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "babe4dab6cb1f60fdbc77279e8525ee16231eea4a4340fef0ab473094a75f7e7"
+    },
+    {
+      "id": "sources.notice.label",
+      "text": "Please note:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3ca2b82f01faeaaf7385e97f6ffe26b50f03259c61a665e39a6192d40360dc65"
+    },
+    {
+      "id": "sources.notice.text",
+      "text": "The content focuses on prevention and does not constitute a diagnosis, treatment or medical advice. Reference values are broad guides, not diagnostic thresholds.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "055f1b29b074fffc6d1b4d75f92000aeae3ad672b4ad4a2e2ed40e30f5542777"
+    },
+    {
+      "id": "sources.card.1.number",
+      "text": "1",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f6ea97dc3c0eaf897f8f7efdad01064b30b43840de2315885047d5573cf77471"
+    },
+    {
+      "id": "sources.physical.title",
+      "text": "Physical activity & physical performance",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0d89e408822b3939920f3f9691e4842869454d9b96198740ce44e40d6a75ccc4"
+    },
+    {
+      "id": "sources.physical.reference",
+      "text": "WHO – Physical activity · WHO Guidelines on physical activity and sedentary behaviour (2020)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "414eb35b349619c5fdbafeeacca1e2d3f307bed17ffe597a64960bac69d0dd0e"
+    },
+    {
+      "id": "sources.link.who",
+      "text": "who.int",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "88709bcd0907640d7a4f6d08653460ddb3f05381ed0e2b0bae897bba75363e60"
+    },
+    {
+      "id": "sources.separator",
+      "text": "·",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "088dc112c4b08156c431fab1cc32eeef376ed3c9e9aa5e524708713f9ff652ce"
+    },
+    {
+      "id": "sources.physical.point.1",
+      "text": "150–300 min/week of moderate-intensity or 75–150 min/week of vigorous-intensity aerobic activity.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3a5db32328af91158c2e36e07a1d8f4d8744f13c4bfb8e3a2fc8b2efcc4317f2"
+    },
+    {
+      "id": "sources.physical.point.2",
+      "text": "Muscle-strengthening activity on at least 2 days/week.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5cf5c7f8f721ec807fa87659483f315dd10142c7ef96432ae26a0b0cd817cb03"
+    },
+    {
+      "id": "sources.physical.point.3",
+      "text": "Reduce sedentary time – every movement counts.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dee34785f6f7e547939a709a0906e6583962c8cb33c0204500f1f2a84594b4b5"
+    },
+    {
+      "id": "sources.physical.point.4",
+      "text": "Reduces the risk of cardiovascular disease, type 2 diabetes, some cancers and falls; improves mental health, sleep and body composition.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "87cecd5ccb1b8da14bde678cbc5108c6ab08c7eb46935d7452c7caa7e1ab7cf5"
+    },
+    {
+      "id": "sources.card.2.number",
+      "text": "2",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2fd4abb1b0c99fd32598a6a6994866d35f30484c31060d18143454398b8a60d5"
+    },
+    {
+      "id": "sources.nutrition.title",
+      "text": "Nutrition",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "82c697187300e868bf1bc6f004cab98713b6437d6629a82fad3ef0cae9a52436"
+    },
+    {
+      "id": "sources.nutrition.reference.who",
+      "text": "WHO – Healthy diet",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a2d40032d89f219aa86afd20995e6a252a799d322d9206c6f57134fb93558da0"
+    },
+    {
+      "id": "sources.nutrition.reference.morton",
+      "text": "Protein & strength training – Morton et al., meta-analysis",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6b2ab591f65176f1b35ff3bca51ada4d9322efa142baf92ef67fa54a921012e9"
+    },
+    {
+      "id": "sources.link.pubmed",
+      "text": "pubmed.ncbi.nlm.nih.gov",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4563e341d4493cb3911fc509404db768c9f0bac85b430cb9dbab72000eb10e18"
+    },
+    {
+      "id": "sources.nutrition.reference.issn",
+      "text": "Protein & training – ISSN Position Stand",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "df9691c2d314e0b25819d69e11ef103ab2b254d51c445dd322aae15fd2c5ee93"
+    },
+    {
+      "id": "sources.link.jissn",
+      "text": "jissn.biomedcentral.com",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b30e99313d8a2b8aba7f8b9ca870afe5bacf1878ff692ad28cfe988969c9c72d"
+    },
+    {
+      "id": "sources.nutrition.reference.espen",
+      "text": "Protein in older age – ESPEN Practical Guideline",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "75ef79a32849d230f526d0a47cab4da75672cef9215db4796ee287e1efbd1f38"
+    },
+    {
+      "id": "sources.link.espen",
+      "text": "espen.org",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0fdc75c76beca7414e674a140db5503f6688b170c51beaf4216d9e669ea14aaf"
+    },
+    {
+      "id": "sources.nutrition.point.1",
+      "text": "At least 400 g of vegetables & fruit per day (around five portions).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "317d2c2d044768d8c6b79f5a6adb159835cb1227c5b29362d2484b07cc4c151f"
+    },
+    {
+      "id": "sources.nutrition.point.2",
+      "text": "At least 25 g of fibre per day (pulses, whole grains).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a61294fbada9551c93d636476c77b2ac443c6a44519454ad19161fd7d0670a47"
+    },
+    {
+      "id": "sources.nutrition.point.3",
+      "text": "Free sugars below 10% of total energy intake (~50 g), ideally below 5%.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ea701a30330e2c6f984f0052c957daba02b4c82db16d4a850386aab143f8f7bd"
+    },
+    {
+      "id": "sources.nutrition.point.4",
+      "text": "Salt below 5 g/day; saturated fats below 10% of total energy intake.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "690d697414fe9a56162431868d56862d6d6d735df57ba92b27f7015fe3224452"
+    },
+    {
+      "id": "sources.nutrition.point.5",
+      "text": "For healthy adults who strength-train regularly, 1.4–1.6 g of protein/kg/day is a practical guide; on average, additional benefits level off markedly at around 1.6 g/kg/day.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bc8412661a241472e27724f9663f99d676a9131ed08f5fc3ab801db1049b354a"
+    },
+    {
+      "id": "sources.nutrition.point.6",
+      "text": "Up to around 2.0 g/kg/day is only a possible individual range during very high training loads or a planned energy deficit. It is not a general target and is not justified by age alone.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e834d8588eec8f696328c371679723c7ae05b5372b1662ee29563a13e34e8fdd"
+    },
+    {
+      "id": "sources.nutrition.point.7",
+      "text": "The protein question measures how regularly protein sources are included, not the actual daily amount.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4a2debb6e884717677330934ec73e1432e4da9b2941c20d56c6914744604ba2d"
+    },
+    {
+      "id": "sources.nutrition.point.8",
+      "text": "Eat more plant-based and fewer highly processed foods.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3783877709f216a6995fc2a12ba25ccc61ae25e1b6b13cc8fbd312a82acf922c"
+    },
+    {
+      "id": "sources.card.3.number",
+      "text": "3",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9990fe18c755e44259245308aede547e0f80396e01adfd8f6f5ede3918e354fe"
+    },
+    {
+      "id": "sources.blood_pressure.title",
+      "text": "Blood pressure & cardiovascular prevention",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "422fe0f86f4d112ff20c4d5cb1692c009784de4c1e463cbc3dd463da1e991d3f"
+    },
+    {
+      "id": "sources.blood_pressure.reference",
+      "text": "WHO – Hypertension",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7169c054062038a20550f2d3dfed8dab77c3852236da9f72c808ffe1f30a796"
+    },
+    {
+      "id": "sources.blood_pressure.point.1",
+      "text": "Hypertension is defined as 140/90 mmHg or higher when measured on two different days.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "07bcf0343656dbc82cf103b27e1a8b172ee444f27ebd1fb2c282a30fabfff7a2"
+    },
+    {
+      "id": "sources.blood_pressure.point.2",
+      "text": "Very high readings (~180/120 mmHg) → prompt medical assessment.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d6d0400ea587bb025bc1ca08c4b875676f10ab4071ae1337602e99f16b078e3d"
+    },
+    {
+      "id": "sources.blood_pressure.point.3",
+      "text": "The target is often below 130/80 mmHg for people at higher risk, and otherwise below 140/90.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5836c0387c5c9506a0334132846e917658edb57f26c0e1311521ffda25bfd2ba"
+    },
+    {
+      "id": "sources.blood_pressure.point.4",
+      "text": "Lifestyle changes can lower blood pressure; alcohol: no more than 1 drink/day for women or 2 for men.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "decc0b0e4f8581fa9e5778b1f2e9d8c1378122964274c00b69c4e0ed6fabaa52"
+    },
+    {
+      "id": "sources.card.4.number",
+      "text": "4",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8892209899c7fed480a6cec225f8cfa37ba301c3c1a21bfce0558391eef182db"
+    },
+    {
+      "id": "sources.lipids.title",
+      "text": "Blood lipids, ApoB, LDL, non-HDL & Lp(a)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7cd6adcc3eeb115cf7a9eefb8e08102029ba3a1b84a7e24e04cab6469147250"
+    },
+    {
+      "id": "sources.lipids.reference",
+      "text": "Consensus of medical professional societies (including ESC/EAS guidelines on dyslipidaemia) · Swiss Heart Foundation –",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d6534a76c97b1e999429348b19d2d0822b0264ba7fc55933e021d7884df05429"
+    },
+    {
+      "id": "sources.lipids.link_label",
+      "text": "The values you need to know",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "592cb9b089ff942af0bd66db9151f545749fc484b9d64cf1901bfac95ce97a31"
+    },
+    {
+      "id": "sources.lipids.point.1",
+      "text": "ApoB ≈ number of atherogenic particles; it often reflects risk more accurately than LDL alone.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f0a27cbd60524823da0f29546c0bfbdf47232ac3997f75c0aad8686ebce36204"
+    },
+    {
+      "id": "sources.lipids.point.2",
+      "text": "LDL cholesterol: a central factor in atherosclerosis; non-HDL is a simple combined measure.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "55f86250b9869ed20e0a78a259b45fcd9794ff36f868ddad2b61c8444c21e5d5"
+    },
+    {
+      "id": "sources.lipids.point.3",
+      "text": "A desirable ApoB level is approximately below 90–100 mg/dL (broad guide).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "50ab164052ebe070354fe2c2a787fba3e1c526a54e375091a6c2de645372efff"
+    },
+    {
+      "id": "sources.lipids.point.4",
+      "text": "Lp(a) is genetically determined and usually measured once; elevated above 50 mg/dL or 125 nmol/L.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "72c05b0311cb1cbe151b5cf79df5245167e500aceec3a7ce26d32f2877667bd4"
+    },
+    {
+      "id": "sources.card.5.number",
+      "text": "5",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9a3dde3c2b67edfd8d5fced8ec7957e59aa194c07c3bada1f2b91e1c4094b77a"
+    },
+    {
+      "id": "sources.metabolic.title",
+      "text": "Metabolic health, blood glucose & HbA1c",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "081741ccdd659d7dee2e40db0b4388319fcd5cdc400bbb0479a32dba5cc53232"
+    },
+    {
+      "id": "sources.metabolic.reference",
+      "text": "WHO/ADA criteria for (pre)diabetes",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9c023b7b1d0e63222356a680dcdbd1062dad4c0a327e3d52dd21ccf8ca44782d"
+    },
+    {
+      "id": "sources.metabolic.point.1",
+      "text": "HbA1c: normal below 5.7%; prediabetes 5.7–6.4%; diabetes from 6.5%.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a0c0178c409c7c3c46f9d6788fd6eddaa7af703c85b6ecad177bc3eb862edd5d"
+    },
+    {
+      "id": "sources.metabolic.point.2",
+      "text": "Fasting blood glucose: normal below 5.6; prediabetes 5.6–6.9; diabetes from 7.0 mmol/L.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "60bcbcae1d34daf603623f78ca831b5dae5ddf2e6a075cf530e2591e0dcd4125"
+    },
+    {
+      "id": "sources.metabolic.point.3",
+      "text": "Triglycerides: normal below 1.7 mmol/L (below 150 mg/dL).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2e0424e317534f7d8cccc36efb23388468267e28ae5413b4b3c53de61bb95e17"
+    },
+    {
+      "id": "sources.metabolic.point.4",
+      "text": "Prediabetes can often be reversed through physical activity, weight management and nutrition.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9d48a11fbdafd1adcb3118ec1e88ed2dc383e91998e923969b81e752a84df823"
+    },
+    {
+      "id": "sources.card.6.number",
+      "text": "6",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "84ffe8654772a0e5881b10e307364a3dbff1ce749af3802d97eb43dc7126148a"
+    },
+    {
+      "id": "sources.waist.title",
+      "text": "Abdominal fat & waist circumference",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a6b01b463aef6d5b6d770aca772b3d2567ce7304d6d70c6c1e1742d6987f076b"
+    },
+    {
+      "id": "sources.waist.reference",
+      "text": "WHO/IDF waist circumference thresholds ·",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "64e2f37f12aaa12a9175d9a164e2865510db9eae29ce31a4aed18a9ad1fdeead"
+    },
+    {
+      "id": "sources.waist.link_who",
+      "text": "WHO Expert Consultation",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ad43ec284f8ccd66bdf6f6a44bd4cfab4dade932944be7c0347328e2e4c451e5"
+    },
+    {
+      "id": "sources.waist.link_nice",
+      "text": "NICE NG246",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7ac417bfc1527828fb392a30cfc0e9a9f47cbee3733dfe09ed2f6fb68d3b796a"
+    },
+    {
+      "id": "sources.waist.point.1",
+      "text": "Normal range: men below 94 cm, women below 80 cm.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1aeef487b94b73c1a255a3891baf04429b735601bbc5b2fbe4be7072e01da3ca"
+    },
+    {
+      "id": "sources.waist.point.2",
+      "text": "Elevated reference range: men 94 to below 102 cm, women 80 to below 88 cm.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1e2af50ef9051b9bd58a87d15cb4a1309e8578ed7d7adf5ef91c7b192b7caa55"
+    },
+    {
+      "id": "sources.waist.point.3",
+      "text": "Markedly elevated reference range: men 102 cm or above, women 88 cm or above.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f2cd280c9684a740a307aad84d43a31b7abad73874c44b8e883b71506d716d79"
+    },
+    {
+      "id": "sources.waist.point.4",
+      "text": "BMI and waist circumference are guides and complement each other.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4f03b9eb16c58e275d56e10522b695b78b94902cec8c422fda799f28a5f1f9e2"
+    },
+    {
+      "id": "sources.card.7.number",
+      "text": "7",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dda056965e65363e1e2f406e7de846f3496057001a7b25cfd03e7a52e87f991e"
+    },
+    {
+      "id": "sources.strength.title",
+      "text": "Strength training, muscle mass & healthy ageing",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "369246598ce75be84c70b1ff1aeb096eba205b4405ccad497df97f769d89cd18"
+    },
+    {
+      "id": "sources.strength.reference",
+      "text": "WHO physical activity guidelines · EWGSOP2 on muscle strength and sarcopenia · studies on short functional tests",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c46b43273d6ae7b9c1c1974f84abe336ca15e9e44be63f204af52cbeb2dc796d"
+    },
+    {
+      "id": "sources.strength.link_ewgsop",
+      "text": "EWGSOP2",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c7e5fe3a285d71f94cb3ee1355fb9b95281f04997dcc18ec2b7c2c2dc27900cc"
+    },
+    {
+      "id": "sources.strength.link_pushup",
+      "text": "Push-up study",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1ca9d8b049fc040e778133709e3f8931c1f546b91ef4b72fafe2933a43d4aa36"
+    },
+    {
+      "id": "sources.strength.link_wall_sit",
+      "text": "Wall-sit safety",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01ba14a3135b3b57fdd4c1b7cedadbbb0c04e610466aa355fc32a6327aab3836"
+    },
+    {
+      "id": "sources.strength.point.1",
+      "text": "Muscle strength and physical function are important building blocks for resilience and independence.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8581a33457a75641c53b4cf0cb9cf48a7a7c2d5eb771ecb078a216cd7787f526"
+    },
+    {
+      "id": "sources.strength.point.2",
+      "text": "You can also start with bodyweight exercises.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "614e28e04cf6848b92db258a0d530dd42d77089f17ce907b85848c5781229615"
+    },
+    {
+      "id": "sources.strength.point.3",
+      "text": "The single-leg stance, push-up and wall-sit tests each show only part of physical performance; they are not tests of your personal disease risk.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4582d8e3a4ac95a48d8403157054e3b44ba161d8ef0d795710f00376116f0d51"
+    },
+    {
+      "id": "sources.strength.point.4",
+      "text": "From age 18, a harmonised training guide is used for the bilateral wall sit; it is not a clinical norm or diagnostic threshold. A maximal test can cause a marked acute rise in blood pressure.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd5b964e60dfdce254d2614580088373a27894eacaa154f9deedb65536641d88"
+    },
+    {
+      "id": "sources.card.8.number",
+      "text": "8",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5cf13e96c0bda66ce8dfa7fc80ae0d3a8f9bbce75b0f59d88cf4bf3dd76f268d"
+    },
+    {
+      "id": "sources.sleep.title",
+      "text": "Sleep & recovery",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "96b21c5ede806d7f3002d136233d3c5a6b38330b683c6bdf6eb9c8943795952b"
+    },
+    {
+      "id": "sources.sleep.reference",
+      "text": "CDC – About Sleep",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "811f42c1acef44bde82a4a77dd0d60493d391a69d4256e6b835396e851899a1a"
+    },
+    {
+      "id": "sources.link.cdc",
+      "text": "cdc.gov",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4702bc2b19fd4b280c446d01c650193cb5304c01748afc410b5ab26acf3efd05"
+    },
+    {
+      "id": "sources.sleep.point.1",
+      "text": "Adults: at least 7 hours (a guide of 7–9 hours).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4951036a9d30555bd1ef8ab9642ace4ec504d983242370d935c4527f7f69517e"
+    },
+    {
+      "id": "sources.sleep.point.2",
+      "text": "Sleep hygiene: keep regular times, make the room cool/dark/quiet, and switch off screens around 30 minutes beforehand.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "21bbc69028d00fddd76f0588bba972908cb544a0264653351515dca591833942"
+    },
+    {
+      "id": "sources.sleep.point.3",
+      "text": "Seek medical advice for persistent problems, snoring or pauses in breathing.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cbbde1d39aec21e7af05d9dfc0a9172ae80fd36adedf0dc907d4b72ba3097648"
+    },
+    {
+      "id": "sources.card.9.number",
+      "text": "9",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5ed161ca5bd28b968565d8dfef2bb37e770500a68bd74d207180bc5c26338ab6"
+    },
+    {
+      "id": "sources.mental.title",
+      "text": "Mental health, stress & social resources",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ca96125b4f37b05df9599732e717fb36e1c7d9fca2e04ec4c7b60844d184c23e"
+    },
+    {
+      "id": "sources.mental.reference",
+      "text": "WHO on mental health · evidence on social connection",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "448c6b1cfbae153bc3f264a9cc465260e345e0b9e472186603cf0fba2d340167"
+    },
+    {
+      "id": "sources.mental.point.1",
+      "text": "Chronic stress affects sleep, blood pressure, metabolism and mood.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f10fa2d829e158ea8a3caf11508b85caaad129f1b3cc9e0ca2f48fbd6c4a39d8"
+    },
+    {
+      "id": "sources.mental.point.2",
+      "text": "Social connection is protective; loneliness is a risk factor.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2801506764b1a2d216d0a47634be00087f7f33a3c352b210a3eb98fc8f5aa322"
+    },
+    {
+      "id": "sources.mental.point.3",
+      "text": "English-language emotional support in Switzerland: Heart2Heart on 0800 143 000, daily from 6 to 11 p.m.; emergency services on 144.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3a988acffcd69a1b027ecc4c1d80d3aa117ee061053ea26350fe9eb2cf881e86"
+    },
+    {
+      "id": "sources.card.10.number",
+      "text": "10",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "996130cf302d4b82fc2adda8fd5ae83e76a5de963ba0b25a01b091975b10f068"
+    },
+    {
+      "id": "sources.smoking.title",
+      "text": "Smoking / nicotine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "32b6141f2f89ae6886cab6be0e9939e9c2b837074053761b9b77543a5a6d8064"
+    },
+    {
+      "id": "sources.smoking.reference",
+      "text": "WHO – Cardiovascular diseases & hypertension",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6b07755385d75f1c6bc91cf87e6f4ab0422289523e1f55f6d70c713c9d65c625"
+    },
+    {
+      "id": "sources.smoking.point.1",
+      "text": "Tobacco/nicotine is a major modifiable risk factor.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e5e0c4a6fbdd5bbb3b0abf4041e6907500d455642f1061fbe7ab2ecda2a74a0e"
+    },
+    {
+      "id": "sources.smoking.point.2",
+      "text": "Stopping smoking reduces cardiovascular risk within a short time.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b5aac21710a8363faa99df48f99c2ba73dee787f34e50210cd07f8f5059334e5"
+    },
+    {
+      "id": "sources.scoring.title",
+      "text": "How the scoring works",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a7fb05056f9e255ed6ca1bc54b4fb94a5285c0e7339eed4490ba19c87cfeb9d3"
+    },
+    {
+      "id": "sources.scoring.point.1",
+      "text": "Each dimension receives a score from 0–100 (the weighted average of answered items).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "92a7207df58fac7453e571870efe2e21f43d6cd90fdba0740d6f352736b0b1b1"
+    },
+    {
+      "id": "sources.scoring.point.2",
+      "text": "Optional short fitness tests complement the relevant fitness sub-area. The medically approved allocation is as follows: push-ups and wall sits together form the test half of the muscular fitness sub-area; the wall sit does not count towards cardiovascular endurance. The single-leg stance forms the test half of balance/mobility. A category is only shown when age, sex and test protocol match; from age 18, the wall-sit category is based on a harmonised training guide and is not a clinical norm.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0080c8de0852f912011477dc573da2aa4e5540f811b66d647515b0ecda0c0853"
+    },
+    {
+      "id": "sources.scoring.point.3",
+      "text": "Status levels: 80–100 Strong, 60–79 Solid foundation, 40–59 Room for improvement, 0–39 Needs attention.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2bba7e25cec03bbbfeaa90956bb1eaf1b61da58b8d1f8692904ca3300437fae8"
+    },
+    {
+      "id": "sources.scoring.point.4",
+      "text": "Risk signals are separated into lifestyle potential and the need for medical assessment.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e13fa36378a229abf92fee82a3f0f2620d2c457a156a5eb6f863c907df8d5688"
+    },
+    {
+      "id": "sources.scoring.point.5",
+      "text": "Strengths, areas for action and the top 3 steps are derived from the same answer-based levers (including cross-dimensional risk patterns such as cardiovascular patterns); critical signals always take priority.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1da67216dca62c31c9248266c2cfa85f4a6b6677e0196d9d8d79f3e9b505de90"
+    },
+    {
+      "id": "sources.review_disclaimer",
+      "text": "Before the product is used in practice, Helsana medical professionals should complete a final review and approval of the specialist content and reference values.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c212cfcd5997f91e6232c5a7f799cccdb21c96f03cc23fab049a5af6d72070b2"
+    }
+  ]
+}

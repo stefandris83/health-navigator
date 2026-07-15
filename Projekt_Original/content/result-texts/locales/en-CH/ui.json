@@ -1,0 +1,1891 @@
+{
+  "schemaVersion": 1,
+  "locale": "en-CH",
+  "domain": "ui",
+  "entries": [
+    {
+      "id": "ui.offer.placeholder_prefix",
+      "text": "Placeholder: {{placeholder}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cdc684120ee1e63cbae009ac3da0166f902cae639b73bdea473427ae49c6b00f"
+    },
+    {
+      "id": "ui.customer_context.fallback_name",
+      "text": "Signed in",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f86146af69e480db7bec830f20f1aa31e986dcc109f9c3bb83ef81ce89713a35"
+    },
+    {
+      "id": "ui.customer_context.chip",
+      "text": "<b>{{displayName}}</b> – suitable services are assessed with your insurance products in mind.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ea9cf96259ab4967373c894d9592eacc8563ba51c026c5a2b29391ed1b12623a"
+    },
+    {
+      "id": "ui.recommendation.label.why",
+      "text": "Why this is relevant for you:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6688824b56538f66e2b1f261ad63f89b58e6099c1830619806222cf73c9635cb"
+    },
+    {
+      "id": "ui.recommendation.label.step",
+      "text": "Specific next step:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "35c925a2bda2cd33b284c618cabcecc459a1f84c73a0c2c9c1e1186378a76606"
+    },
+    {
+      "id": "ui.recommendation.label.benefit",
+      "text": "Expected benefit:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8e03f173b6159c38577de6dc440e38ac69b89dfacc0cd1a97725058863e8f56e"
+    },
+    {
+      "id": "ui.hero.dimension.einfluss.nominative",
+      "text": "Your influencing factors",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4bf44bf7b594ad861cf90dd4b04a862ee7845b744514735772f10fd6ea0f1e92"
+    },
+    {
+      "id": "ui.hero.dimension.einfluss.prepositional",
+      "text": "in your influencing factors",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6db56538924c0ad3d95c0f937f33c7c2d07f7b1308ac0224307f1bec9c1a2cab"
+    },
+    {
+      "id": "ui.hero.dimension.fitness.nominative",
+      "text": "Your physical fitness",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "07429d91028d3a7b6327c5e924510b72634c38fabdcf62959ac71c184912e1ba"
+    },
+    {
+      "id": "ui.hero.dimension.fitness.prepositional",
+      "text": "in your physical fitness",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "38e7ff60052dacb22e1cda93d12de630f102dc9eae5eec613ae481c0af9083a3"
+    },
+    {
+      "id": "ui.hero.dimension.ernaehrung.nominative",
+      "text": "Your nutrition",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9cf282cbe8ae2d9b938f641de8305ca09f1536b79e540a5def7e5f42d0235e03"
+    },
+    {
+      "id": "ui.hero.dimension.ernaehrung.prepositional",
+      "text": "in your nutrition",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "552908394a3787615599d4c7921a49b000a5815cb49837869e669e1cec750954"
+    },
+    {
+      "id": "ui.hero.dimension.schlaf.nominative",
+      "text": "Your sleep",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "db2553136613495f34764b08de1cf99da5c870529e96c2704c7bc97b752ce122"
+    },
+    {
+      "id": "ui.hero.dimension.schlaf.prepositional",
+      "text": "in your sleep",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8a4f256ca138cfbac574b37e4ec53fa1b622316f60fc22614a0d5fb8d8720a38"
+    },
+    {
+      "id": "ui.hero.dimension.mental.nominative",
+      "text": "Your mental wellbeing",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d53fd3241b27945bd0caae7aaaa5810a2de59c7458437890126fe658dced07e7"
+    },
+    {
+      "id": "ui.hero.dimension.mental.prepositional",
+      "text": "in your mental wellbeing",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "502ea05d900036ee166addf714dcc9fb8764aacb503b4970876b0d0936c37e15"
+    },
+    {
+      "id": "ui.hero.dimension.fallback.nominative",
+      "text": "this dimension",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "666c555dba6b4bd7d938e294332bf4f0262148d736e1c5c1a8b8d6029c27140b"
+    },
+    {
+      "id": "ui.hero.dimension.fallback.prepositional",
+      "text": "in this dimension",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d7274570def047390c9cd47157c65fe17203ff2e11d814bedcf8e5c69eef03d5"
+    },
+    {
+      "id": "ui.hero.topic.stabilitaet",
+      "text": "confidence in everyday movement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "eaa70cf8c39ae75dec13be40ce729bd501acaad6d44e99ec2bca0bbedf013b18"
+    },
+    {
+      "id": "ui.hero.topic.sitzzeit",
+      "text": "time spent sitting",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "88605441beecd3ba451ff57aee5494f9815d32ba3ed87c9a54f7e8e621e032d3"
+    },
+    {
+      "id": "ui.hero.topic.familienwissen",
+      "text": "knowledge of your family history",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7d68021b4c1c7dc5fb7bd53649eed2028b108db2948c437a03bb46be56f3543"
+    },
+    {
+      "id": "ui.hero.topic.rauchen",
+      "text": "smoking",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dbf3d14daa2e7878d7b679365327dd045a18aaccbfd70503d36e0730ed7d3d70"
+    },
+    {
+      "id": "ui.hero.topic.alkohol",
+      "text": "alcohol",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "93b60db9f6da8f5cd458d0b3656ddb95787cf5d273a04769c65629dff78657bc"
+    },
+    {
+      "id": "ui.hero.topic.socialmedia",
+      "text": "time on social media",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "924c70a4879233f95e956749346988c4bb5ca1558e3d4af2b38d4fb816243a4b"
+    },
+    {
+      "id": "ui.hero.topic.ausdauer_moderat",
+      "text": "moderate-intensity aerobic activity",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "aed3480bd236b1153fa749795641ce3bead186d03a0576d717ad97447c95eb90"
+    },
+    {
+      "id": "ui.hero.topic.ausdauer_intensiv",
+      "text": "vigorous-intensity aerobic activity",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c9321b77368012450ed549788dd190063fd4602a6d96be9afddefaadc23461b0"
+    },
+    {
+      "id": "ui.hero.topic.krafttraining",
+      "text": "strength training",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "926205b1fca018ae96f92bbd94a08b71a706f72f8156093dac3a41a71f563743"
+    },
+    {
+      "id": "ui.hero.topic.beweglichkeit",
+      "text": "mobility",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c5fdf87749815f9c1af01cbc23206ba16cb5c2052a64a218dbcd4bfdcf0e83cb"
+    },
+    {
+      "id": "ui.hero.topic.treppen",
+      "text": "climbing stairs",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2e932b7fd923ef800b823da1384f8cec751fb512b4eba0636a18ed3cf77ad9ac"
+    },
+    {
+      "id": "ui.hero.topic.einkaufstaschen",
+      "text": "carrying strength in daily life",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f7b1e0bdc632f33d2f0ea000c8b4cb9020bd478242c18c25c12f94096583eb9d"
+    },
+    {
+      "id": "ui.hero.topic.protein",
+      "text": "protein routine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f3a03f4f0ece37d56a51f1d8ce8a543a4daa050e036188d8fcc863b91af9cba6"
+    },
+    {
+      "id": "ui.hero.topic.pflanzenvielfalt",
+      "text": "plant diversity",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0ef8ed67df5f15f7d8e4804a5f00fb6bbc405b4c59cf8693a56b26e155efe130"
+    },
+    {
+      "id": "ui.hero.topic.saettigung",
+      "text": "feeling full after meals",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01793db6d84c80880310c29fad2295b4179551c407e086c585d8cf7ff6ef3fe9"
+    },
+    {
+      "id": "ui.hero.topic.verarbeitet",
+      "text": "highly processed foods",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fbc40d68ed9feed349e3ea55df5116e6d74c6e4f4160d3341c33574df75e9711"
+    },
+    {
+      "id": "ui.hero.topic.omega3",
+      "text": "omega-3",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1771c3b632855b3b4b81e77fa40b92ea722a75dfbe4af1fee5c3d7d481696a66"
+    },
+    {
+      "id": "ui.hero.topic.zuckergetraenke",
+      "text": "sugar-sweetened beverages",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "836dedde7f35b61795391e5803964018c6524da50058c16ffa6f0b4598331bc0"
+    },
+    {
+      "id": "ui.hero.topic.schlafqualitaet",
+      "text": "sleep quality",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "53c4d3f5e0805111c79cf7941f3a2a12a858a937150d8ffa32a147810a3d12b0"
+    },
+    {
+      "id": "ui.hero.topic.schlafdauer",
+      "text": "sleep duration",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b181bfd1b3a002eb108c15deea2b12bace3af2c5a82485ea756288b5e79183f2"
+    },
+    {
+      "id": "ui.hero.topic.schlafrhythmus",
+      "text": "sleep schedule",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7c745bb8b42b870f636e8856d2207ef9c1fa842616919e9edd58436f7e36c150"
+    },
+    {
+      "id": "ui.hero.topic.schlaf_auswirkung",
+      "text": "effects on daily life",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d882ec5e8c2c97ad096d0c565d1f99d37c7cfa3ca250c715fa1651479e8bbf6d"
+    },
+    {
+      "id": "ui.hero.topic.belastbarkeit",
+      "text": "resilience",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "847d208a62af11d1155330eabdb3f6f6109cb2e354db7056260818e2eee1159f"
+    },
+    {
+      "id": "ui.hero.topic.selbstwirksamkeit",
+      "text": "self-efficacy",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7a294bd5b677a77486b8278cd11d501e93c427b8feb9bd01cf04f534b1984986"
+    },
+    {
+      "id": "ui.hero.topic.sinnhaftigkeit",
+      "text": "sense of purpose",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "28a04a55f8f63f0b231b2b09a330d8af370d36d468ed0150a9222439d6833c5d"
+    },
+    {
+      "id": "ui.hero.topic.coping",
+      "text": "coping with stress",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "52c8060d86e2e78ee043bf7b4d65c3c5bcb8c4c7ba3e7027c8fa086f0d63ba44"
+    },
+    {
+      "id": "ui.hero.topic.verbundenheit",
+      "text": "social connectedness",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "02e19f578b53cadbde3c825fe92c075dc68a6301abbde5afa90b548e242f89bf"
+    },
+    {
+      "id": "ui.hero.topic.selbstfuersorge",
+      "text": "self-care",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "21a1a437662f6a31d7bbbe4488b7d054090e876496d0a3a4a5855155d0001441"
+    },
+    {
+      "id": "ui.hero.topic.zukunft",
+      "text": "confidence about the future",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c44ff783ee606043c861d3b0d423973d4be8136b8a68321d3d87c41fe66e8dd7"
+    },
+    {
+      "id": "ui.hero.topic.positive_emotionen",
+      "text": "positive moments in daily life",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "81c89be566e6f1467ab0118cc3b010a88facc62d2464c0cabfaeb8eef38c6916"
+    },
+    {
+      "id": "ui.hero.topic.koerperzusammensetzung",
+      "text": "body composition",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "31957375bc65c59c70006bc82012a4b21073cc8f326ca95d59a57072fd86cc9a"
+    },
+    {
+      "id": "ui.hero.topic_suffix.one",
+      "text": " – focus: {{topicOne}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "620b0c8d2bbc4c6dd8d7589816623181efc16e107792f68fc656264c773293ce"
+    },
+    {
+      "id": "ui.hero.topic_suffix.two",
+      "text": " – focus: {{topicOne}} and {{topicTwo}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d93ee375cfdf5a7d06256fb43fd2fbbca58ac6c856985685b83c9fdfcc42c692"
+    },
+    {
+      "id": "ui.hero.lead.balanced.stark",
+      "text": "Strong: your answers show a very positive and notably balanced picture across all five dimensions. Stay on course. If you would like to fine-tune something, start <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c67619d18f3c4c66eb720fe3156944a3ef59f6091ee36a3983db18e5622a8d1d"
+    },
+    {
+      "id": "ui.hero.lead.balanced.solide",
+      "text": "For you, “Solid foundation” means a remarkably balanced profile, with no dimension falling behind. Choose the starting point that motivates you most, for example <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "add385fb1f399ae7e7ad7b399ba656f1e482aef8a3d6d29b199df95d4763dc60"
+    },
+    {
+      "id": "ui.hero.lead.balanced.ausbau",
+      "text": "For you, “Room for improvement” means a balanced profile with potential to improve in all five dimensions. Choose the starting point that motivates you most, for example <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "94e18fded874e51ecea6758097b213e37791718df49510657daf13d8309c39f3"
+    },
+    {
+      "id": "ui.hero.lead.balanced.aufmerksam",
+      "text": "Your result needs attention across all five dimensions. See it as a starting point, not a judgement. Choose the starting point that motivates you most, for example <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e95f54987093f5ffc1f97471066cd3d18a0f84f42c85b7ebbff43b8b05e186d5"
+    },
+    {
+      "id": "ui.hero.lead.spread.stark",
+      "text": "Strong: your answers show a very positive overall picture, led by <b>{{strongestNominative}}</b> ({{strongestScore}}). Your greatest opportunity lies <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6aad92dd4ad36910f8aad5c0d037ee18b95a399e6917dfe84104cc7748600ceb"
+    },
+    {
+      "id": "ui.hero.lead.spread.solide",
+      "text": "For you, “Solid foundation” means that many things are already supporting your health, led by <b>{{strongestNominative}}</b> ({{strongestScore}}). Your next steps can now make the greatest difference <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6f2a29c3841acfd299bb6b89450b4c5d0aa33fab7a7724e667501511e0ee9db4"
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_strong.singular",
+      "text": "For you, “Room for improvement” means the foundation is there and there are clear opportunities. You can currently make the greatest difference <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}. A positive sign is that <b>{{strongestNominative}}</b> ({{strongestScore}}) already supports you.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "303d8353e3a64000bdb89c01be954baf47fa2a181debb263fb2783400ea81067"
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_strong.plural",
+      "text": "For you, “Room for improvement” means the foundation is there and there are clear opportunities. You can currently make the greatest difference <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}. A positive sign is that <b>{{strongestNominative}}</b> ({{strongestScore}}) already supports you.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a913a83dce269f7931b87e08c54ca695ea49e8d7c0aa3fc8fc6509befd808194"
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_stable.singular",
+      "text": "For you, “Room for improvement” means the foundation is there and there are clear opportunities. You can currently make the greatest difference <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}. Your most stable area is <b>{{strongestNominative}}</b> ({{strongestScore}}), which gives you something to build on.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3a2476fa9d493dc7f7cdec2cd945a55497e880bf48cb76bdae03e56e16c77610"
+    },
+    {
+      "id": "ui.hero.lead.spread.ausbau.anchor_stable.plural",
+      "text": "For you, “Room for improvement” means the foundation is there and there are clear opportunities. You can currently make the greatest difference <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}. Your most stable areas are <b>{{strongestNominative}}</b> ({{strongestScore}}), which gives you something to build on.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8f972342123ad95dfc72428d2b014ec2e5d9ab87886931c75dba9b70e89f40eb"
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.no_wind",
+      "text": "Your result needs some attention. See it as a starting point, not a judgement. Begin <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}; {{actionPlanReference}} below {{actionPlanVerb}} exactly there.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a27245ade6a311a08aecda1ced7b58eb931195b54db68ce9b58316e4947507fc"
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.with_wind.singular",
+      "text": "Your result needs some attention. See it as a starting point, not a judgement. Begin <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}; {{actionPlanReference}} below {{actionPlanVerb}} exactly there. <b>{{strongestNominative}}</b> ({{strongestScore}}) gives you useful momentum.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ee36a114f353083f860d4c6c275c8487de4d129343ea0a2d60985fc9b7117345"
+    },
+    {
+      "id": "ui.hero.lead.spread.aufmerksam.with_wind.plural",
+      "text": "Your result needs some attention. See it as a starting point, not a judgement. Begin <b>{{weakestPrepositional}}</b> ({{weakestScore}} out of 100){{topicSuffix}}; {{actionPlanReference}} below {{actionPlanVerb}} exactly there. <b>{{strongestNominative}}</b> ({{strongestScore}}) gives you useful momentum.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6521e0bb9bc22260578ddd2403926d88b6e9fa66c9542e7e327929ba4c8a5525"
+    },
+    {
+      "id": "ui.dimension.classification.stark",
+      "text": "This is a clear strength, which is good to see.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "89b8476cdeb3b2232cd97ae8893aff063e3196d5abfeb75ae2bf801d9d9deb1a"
+    },
+    {
+      "id": "ui.dimension.classification.solide",
+      "text": "Overall, you have a solid foundation here.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9e224b30711149ec58d5e60a341d45bc9f168ce1988811625851aa4dfe8d492e"
+    },
+    {
+      "id": "ui.dimension.classification.ausbau",
+      "text": "There is room for improvement in this area.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "196bc4c91a50f2065e42d27b248c0c8984effa3e14f25f932ed8f8365ca0c522"
+    },
+    {
+      "id": "ui.dimension.classification.aufmerksam",
+      "text": "This area currently needs a little more attention.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "59a1c9b79c7642380cd3078dccea8df6b0e1b345721185ff80b07d40b76fcb88"
+    },
+    {
+      "id": "ui.dimension.classification.open_signal",
+      "text": "There is also an indication in this area that takes priority in the assessment.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2ae24f711211c851611e86cedb95c3c6c4d8fcb37380af405b4b95ee705b9e38"
+    },
+    {
+      "id": "ui.metrics.bmi_class.untergewicht",
+      "text": "Underweight",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "093965fd7e5102249a135f0658e5ad26dd96c672709a72db4b1a59fd0aa45ae1"
+    },
+    {
+      "id": "ui.metrics.bmi_class.normal",
+      "text": "Healthy range",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e386c4d9b87eb131902c6888313c9e8295b7008211b9da1c0776183c3f3c4aa4"
+    },
+    {
+      "id": "ui.metrics.bmi_class.uebergewicht",
+      "text": "Overweight",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e7eff846fd0f741f4e6fb6295fcaad79b021a4fa3757e632d3b36cc6628a5f9b"
+    },
+    {
+      "id": "ui.metrics.bmi_class.adipositas1",
+      "text": "Obesity",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ea788515c1df9c69363e003998ef0a42d1835388700113249798e5b450643c1e"
+    },
+    {
+      "id": "ui.metrics.bmi_class.adipositas2",
+      "text": "Obesity",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f3bcba7b84b03b7ea9aad7b613ed30182349a0bead7fd26e508a4b0892e20121"
+    },
+    {
+      "id": "ui.metrics.waist_status.normal",
+      "text": "within the normal range",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "61782937db8142eb7b52c9a9374e85269982378438e7c853493f2dcbbd3f824f"
+    },
+    {
+      "id": "ui.metrics.waist_status.erhoeht",
+      "text": "within the elevated range",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bcc2d34e0347b4bacb57f6876deba34559cb47007b10d87ce83816ce5784f3d0"
+    },
+    {
+      "id": "ui.metrics.waist_status.hoch",
+      "text": "within the clearly elevated range",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b6d52d0dd1e61ecbcef849331e7745f2802b97f8e8d093d5258799cc60d9f560"
+    },
+    {
+      "id": "ui.metrics.bmi",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}})",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f1480041f1bf2a15eb4303cd3e26ac07636cf40413d3ed5bef86534c3a5303f6"
+    },
+    {
+      "id": "ui.metrics.waist",
+      "text": "Waist circumference {{waist}} cm ({{waistStatusLabel}})",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01fadf84417558853e24aa19ddcef4b0e56909303ebc41204ebb888c77d4a418"
+    },
+    {
+      "id": "ui.metrics.line",
+      "text": "Your personal assessment: {{metrics}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "20a028c2c31d1c3400353d2a1d57198c80a6cab92bca32ef45ab1cb096a4e9d9"
+    },
+    {
+      "id": "ui.metrics.separator",
+      "text": " · ",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cdd35492715f193969ceea86170f482d5cfc76f82df1d5fe54ce3d0bc760c1a8"
+    },
+    {
+      "id": "ui.urgent.title",
+      "text": "Please seek prompt medical advice",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "30ee342beb6f26e4109fa95e8ede4986aed43681af320876206ed382bd40d939"
+    },
+    {
+      "id": "ui.urgent.body",
+      "text": "Some of your answers should be discussed promptly with a healthcare professional. For sudden or severe symptoms, call the emergency number <b>144</b>. For English-language emotional support, call <b>Heart2Heart on 0800 143 000</b> daily from 6 to 11 p.m.",
+      "requiredTerms": [
+        "144",
+        "0800 143 000",
+        "6 to 11 p.m."
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8cbf0acb8d347061db3a0cf550bf37d76739831ad7afa7a877b72b8b098bdd04"
+    },
+    {
+      "id": "ui.action_card.label.why",
+      "text": "Why:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2a69f90aabe3ecb09101865869f246ba7c5a767150778096c49046f1eca96a96"
+    },
+    {
+      "id": "ui.action_card.label.step",
+      "text": "Your first step:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "68b96a529b11572aae7fe01ffe3f8e7f2fb5c0fef34a52c4960eaa905f955a6a"
+    },
+    {
+      "id": "ui.action_card.label.benefit",
+      "text": "The benefit:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ce94642c6468708309fcb681723eb2023e6edce694d7cab7cfe4115c497a7ef9"
+    },
+    {
+      "id": "ui.action_card.plan_title",
+      "text": "My 4-week plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1b4140b08dd1c70b9b5a9fa6f6895fa03d11984ed29cc701a4caffd23bc49282"
+    },
+    {
+      "id": "ui.action_card.progress",
+      "text": "{{done}}/{{total}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "126149bcb3ed356246376e58b92336ba9f82005b747176c99e77220fef462deb"
+    },
+    {
+      "id": "ui.action_plan.heading.one",
+      "text": "Your next step",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2c55e580c40177f67ea7966b5513d6c442d60247e1b281ffcf42d2cf9e94fc21"
+    },
+    {
+      "id": "ui.action_plan.heading.two",
+      "text": "Your next two steps",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3cc40a3523ea91c0e0f91b71e36d0fad3f39919dd7cda073f845277fea6b23c6"
+    },
+    {
+      "id": "ui.action_plan.heading.three",
+      "text": "Your next three steps",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "796aa984dd1169050df74f92bb22d53b58912e23dd9327fd4ab50f28ba9df488"
+    },
+    {
+      "id": "ui.action_plan.heading.empty",
+      "text": "Your personal starting point",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fe36607329ec51e4de3c2a13f8cd1ffa18155ba15f8889ec14f2cfa547281ab1"
+    },
+    {
+      "id": "ui.action_plan.intro.one",
+      "text": "Start small and keep going: this action can make a particularly meaningful difference for you now. Open your 4-week plan for the step and tick off what you have completed.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "49c46ee2871bef13d57b22a664533874ef8323d4435cb1dd2db377e8fc331b77"
+    },
+    {
+      "id": "ui.action_plan.intro.multiple",
+      "text": "Start small and keep going: these actions can make a particularly meaningful difference for you now. Open the 4-week plan for each step and tick off what you have completed.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9024908f57799eebdc2c673c8d0cdb6439f1517689d724d2352c521ab4d01531"
+    },
+    {
+      "id": "ui.action_plan.intro.empty",
+      "text": "No single area for action currently stands out clearly. The five dimensions below show where you can maintain what is working well or choose a suitable small step.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "92b1ffb3fd204b3432e9973adb9ee72b5c72ac571666e87489c1316e5b8b8a33"
+    },
+    {
+      "id": "ui.action_plan.empty.title",
+      "text": "No clear top-priority step",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c7f9cbec4dad4f7c061efa39cb9c261882e8bc941c236701d868480078682292"
+    },
+    {
+      "id": "ui.action_plan.empty.body",
+      "text": "Your answers do not currently indicate one clearly prioritised step. Keep doing what works well. If you would like to make a change, the dimension details and Digital Coach can help you choose.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0dc3b80a4662365372b251ac800ff423bb065b8d9904e47b3e91056a7e8a0ab1"
+    },
+    {
+      "id": "ui.action_plan.total_progress",
+      "text": "{{done}} of {{total}} steps completed – it is worth keeping going!",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c234dca7665180f9b024ccab853eacdcb5db3a7c169cc40e18e7f8df43d52eac"
+    },
+    {
+      "id": "ui.recommendation.action_plan_badge",
+      "text": "Step {{planStep}} in your action plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c7a48c63354e38915a5f057951326696e631067ec267942f3e760bfe97258e2b"
+    },
+    {
+      "id": "ui.dimension.empty.neutral",
+      "text": "Your current answers do not indicate a single prioritised step here. Use the guide value as a starting point and observe what changes in daily life.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c481fe236fe1771729bf5f19928e5ea710c28350251abb47ac9949ffc3ba0d2c"
+    },
+    {
+      "id": "ui.dimension.empty.open_signal",
+      "text": "The guide value reflects only the scored answers. Also take the related indication in the results overview into account.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "eec8019bc23f984eee57607b39ab6e931ba5cf9fd24ec812057939c55f7ecfc2"
+    },
+    {
+      "id": "ui.breathing.eyebrow",
+      "text": "A technique you can use now",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "10759fbb8400a00eb5b29a1af790f3629ed241e579e70805b91db5ba8ee892b1"
+    },
+    {
+      "id": "ui.breathing.title",
+      "text": "A short breathing exercise to help you relax",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3b9d383589df3ea5951a2717c5a0d7c33e52791c4995afefacceac202634fb3b"
+    },
+    {
+      "id": "ui.breathing.stress_hint",
+      "text": " – especially if you are experiencing the increased tension suggested by your answers",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c2a0375a9d742ba800094403fdf061112dca2c3ab6ec759e5f4043ea8a9c8f93"
+    },
+    {
+      "id": "ui.breathing.description",
+      "text": "4-7-8 breathing can reduce tension within a few minutes{{stressHint}}. Simply breathe along with the circle.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "98b8c14ffe20566b058dd1f2277fbfa1ea892e6b831b4933be89bd31dfa9924d"
+    },
+    {
+      "id": "ui.breathing.cue.ready",
+      "text": "Ready?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c6c535b3293a807c6f8faca0531341c5ed4b44d359c112b06e4e074bfbe89c66"
+    },
+    {
+      "id": "ui.breathing.cue.inhale",
+      "text": "Breathe in",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1b681c17fdd364e22790b3c088e1b4b56061180af38ba70c88ccb2192f681c90"
+    },
+    {
+      "id": "ui.breathing.cue.hold",
+      "text": "Hold",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fcfa7015d6dfb2a81cbe425de5e6595c6eb7500383da00d414b7ef183ac1e47e"
+    },
+    {
+      "id": "ui.breathing.cue.exhale",
+      "text": "Breathe out",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f9be3bdcc8873e8701812a5cf35b8a4263ad119ac4516cebee754a6df4fc445f"
+    },
+    {
+      "id": "ui.breathing.cycles.initial",
+      "text": "0 cycles",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b9c3bf4174b48fa4b380dcc24cdd527c39d679dae53cda77e17498b6e2c69949"
+    },
+    {
+      "id": "ui.breathing.cycles.one",
+      "text": "{{cycleCount}} cycle",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "893f90eb60d7b8e426b4d1435f87b9a61482f46f5cfa1612c609f01b2be4f3a5"
+    },
+    {
+      "id": "ui.breathing.cycles.multiple",
+      "text": "{{cycleCount}} cycles",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "393a80edc5450a5be196ee5573e721ea9fa6252d26fd9990e0f2107c384ac5e5"
+    },
+    {
+      "id": "ui.breathing.button.start",
+      "text": "Start exercise",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9e77536e7872a3bfd8f9d4f57c29d350278d2d67fba7e61e8c9aea0da2dacedd"
+    },
+    {
+      "id": "ui.breathing.button.stop",
+      "text": "End exercise",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "df8c49a7818b2c2ec36196c3ee9d1e984ec94c7a0b1cb22778baf19412ec22e4"
+    },
+    {
+      "id": "ui.breathing.instructions",
+      "text": "Breathe in for <b>4s</b> · hold for <b>7s</b> · breathe out for <b>8s</b>. You can stop at any time.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "573ca6612543f40ccd09d90a1aa2e6e2f76613ec78bc282807c4a6a39ce25b6b"
+    },
+    {
+      "id": "ui.chat.greeting",
+      "text": "Hello! I know your results: overall score <b>{{overallScore}}/100</b> (“{{statusLabel}}”). Ask me how to approach your next steps, or select one of the suggestions below.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cd1a825060c9ce2efe38e9b05ab20c1d1e0bca8dd0a2b3cec599e0f3fcbe4342"
+    },
+    {
+      "id": "ui.chat.greeting.empty",
+      "text": "Hello! I know your results: overall score <b>{{overallScore}}/100</b> (“{{statusLabel}}”). Ask me how to interpret the result or find a suitable next step, or select one of the suggestions below.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e4576b4c235d71760ec028229e0a128a63b5ef32aba438123d02bef075bb110e"
+    },
+    {
+      "id": "ui.chat.eyebrow",
+      "text": "Your Health Coach",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6cb667a750d2ed25a8a5e9b506ac0babfba41ef243af729de8610b5a0d629db2"
+    },
+    {
+      "id": "ui.chat.badge",
+      "text": "Preview · Demo",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "80d28934cba1dacfb2ba9441b90bdc84360d02cc386da8cd0f8a7c6c57890edf"
+    },
+    {
+      "id": "ui.chat.title",
+      "text": "Do you have any questions? The Helsana Digital Coach is here for you.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9a613041d0f674d8280bcf81ecfe928ba82545bba198f5f7738a2a2dde2c0617"
+    },
+    {
+      "id": "ui.chat.description",
+      "text": "The Coach knows your results, including your score, dimensions and recommendations. This preview shows sample answers. No data is sent; everything remains on your device.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9f7473e1c8baa4993f74685043f1670313e904248f042b2130c6c33ebf8e27cd"
+    },
+    {
+      "id": "ui.chat.input_placeholder",
+      "text": "Ask your Coach …",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2c45d05a22ab1b4ac6519cbfd043fb9cacefae5764e902a964a6e8fa85f14fde"
+    },
+    {
+      "id": "ui.chat.disclaimer",
+      "text": "Concept preview with sample answers. A live Coach would use an AI model hosted in the EU or Switzerland, and only after you have given your express consent. This is not medical advice. In an emergency, call <b>144</b>.",
+      "requiredTerms": [
+        "144"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "911271fb5b28861e1d99fd76d7a628b75961e8fbf16e983c7b32e02de1ba388f"
+    },
+    {
+      "id": "ui.coach_handoff.focus_fallback",
+      "text": "are derived from your results",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9533a445ee6661087ff63791f237cfb20e4b2c70061b3a62cb7ac55d3603588f"
+    },
+    {
+      "id": "ui.coach_handoff.eyebrow",
+      "text": "Continue with support",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8ecde6fcf628144487f5fd393978f00eaa95fccc63bd8889ca0fed2a2cdbb240"
+    },
+    {
+      "id": "ui.coach_handoff.title",
+      "text": "Take your results with you into the Coach app",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "78e40fcf6346ad4c6f9a38b9dfa1f747d461b3570a6a4625e3f02b40b9b892d1"
+    },
+    {
+      "id": "ui.coach_handoff.description",
+      "text": "The Helsana Coach app helps you stay on track every day with personalised plans, reminders and exercises. Your Health Check can provide the starting point.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "767dbc58a9d0823bb9f94ff7f6264c40228bf88ba7c9a62970615942338a41aa"
+    },
+    {
+      "id": "ui.coach_handoff.consent_title",
+      "text": "The following would be transferred, and only with your consent:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5c32e307cf38141a0af81a9ddb155bf04db7cc4abf591e08eafff424d581318b"
+    },
+    {
+      "id": "ui.coach_handoff.profile",
+      "text": "Your overall profile: <b>{{overallScore}}/100</b> ({{statusLabel}})",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "11e4097a3187799b061cdde54e6368a56f46208e0c8fc49da68ba9749e81ba7f"
+    },
+    {
+      "id": "ui.coach_handoff.focus",
+      "text": "Your focus areas: {{focusTitles}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b8e45c7dd2313a62e92ea98577061c35b40a6971c38cc0fc9ded172dcc7f4d54"
+    },
+    {
+      "id": "ui.coach_handoff.plan.one",
+      "text": "Your next step as a ready-to-use starter plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7587f9fa2093ec23384fba1e6610bf846b7ba5d7408925fb8ceda37abfdf2c6"
+    },
+    {
+      "id": "ui.coach_handoff.plan.two",
+      "text": "Your next two steps as a ready-to-use starter plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91d6cecd3a18735ed40fc78612fb366a682f7cff1d127cdf8f0aaf82ca4b9202"
+    },
+    {
+      "id": "ui.coach_handoff.plan.three",
+      "text": "Your next three steps as a ready-to-use starter plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1d7c26d80ab764065e5f8b756e24657257dba8dfa621c6d924fbde294ad6a649"
+    },
+    {
+      "id": "ui.coach_handoff.plan.empty",
+      "text": "No single prioritised step; define a focus together using the five dimensions",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "19cedd09e22c3f7402313a140437ed98d5f615a19626e05d782a87125dd86cb9"
+    },
+    {
+      "id": "ui.coach_handoff.cta",
+      "text": "Open Helsana Coach",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "146d04d0e88c2aa96a022ac3f4fa69140858269fa34be38a38dd623852d1ff10"
+    },
+    {
+      "id": "ui.coach_handoff.note",
+      "text": "Concept: the transfer uses a short-lived, single-use token, so your answers are not exposed in the link.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a026599fd4fda96f66aaec8030d7667f3f296c2fec5851be2795d97fddadbb27"
+    },
+    {
+      "id": "ui.result.score_max",
+      "text": "out of 100",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d4d49e1f667da187e6cd3bd30f1aecef613e63bed6b87f33796999261e0ebeaf"
+    },
+    {
+      "id": "ui.result.eyebrow",
+      "text": "Result",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "65fb3f2a8dbe1012ab29fb5e0f3fb34ddcb09764b0c46997dc1dab061ab00b35"
+    },
+    {
+      "id": "ui.result.title",
+      "text": "Your health snapshot",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0a62ad981f5b0ea070c049b03835662b8c2a50ffda0bd988e3895509b603119e"
+    },
+    {
+      "id": "ui.result.legend_item",
+      "text": "{{statusLabel}} ({{minimumScore}}+)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "40b33c4b69ea999152cf3114311e8bfcc378a78335025e41bebd0e98f37436ff"
+    },
+    {
+      "id": "ui.overview.eyebrow",
+      "text": "At a glance",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "354ffa53a1e03b166addcd51d57a059f67aeb95e0a01ba3ca87eeee38a84015c"
+    },
+    {
+      "id": "ui.overview.title",
+      "text": "Your strengths and areas for action",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5e668f4c350f338a1c02b5850848e3ba03a5ffb7b4fb072414022d2ac657cfac"
+    },
+    {
+      "id": "ui.overview.strengths_title",
+      "text": "Your strengths",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0297745e44c1253a19f5b8cad8500962789642da3e703944188ebd3be7602778"
+    },
+    {
+      "id": "ui.overview.strengths_empty",
+      "text": "Every dimension currently offers potential – a good starting point.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7416109a11fe66dd7e7a7f8eae3d1c56911f7ac4409114281de31fa8d8cb2794"
+    },
+    {
+      "id": "ui.overview.fields_title",
+      "text": "Main areas for action",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e8a7b8fb75a2c5da33d714a1ca6e3533e544e3ff3c5fb9d7e6378bc98758712f"
+    },
+    {
+      "id": "ui.overview.fields_empty",
+      "text": "No urgent area for action at present – stay on course.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fb44551d02f02a11e67c29b783ac869395f633b24858eae420312e12bfa346c2"
+    },
+    {
+      "id": "ui.action_plan.eyebrow",
+      "text": "Your action plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "127ba09401c7dea2a21947e76addf53229ec34107cb96dffc788e2a1460bbd86"
+    },
+    {
+      "id": "ui.details.eyebrow",
+      "text": "In detail",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0fbf224034e40554947c58f44b045ee3aa36a2ec11bd839a210a90b4cbedce73"
+    },
+    {
+      "id": "ui.details.title",
+      "text": "Your five dimensions",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d0b50f925c7f92128b0c2a3c4b17d62dc9982b5dd17e5bfef1db5e8461c62a75"
+    },
+    {
+      "id": "ui.details.description",
+      "text": "Select a dimension to see the assessment, personalised recommendations and further specific steps or indications that require medical clarification.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "53bbddad38a46267ecd1c8e217961fcd697189d39b88cb695f5be0fb84f9b776"
+    },
+    {
+      "id": "ui.medical_notice.title",
+      "text": "Medical information and next steps",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2d2471f2548973f81967e675427f74916d3e131b3955d37aaf1eb88081d4cc5b"
+    },
+    {
+      "id": "ui.medical_notice.disclaimer",
+      "text": "This check is not a diagnosis and does not replace an examination or treatment. It cannot and should not replace a healthcare professional. Use the results as a basis for discussion, not as a final assessment.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b0e05c7e973061dd7ebda1c857acca107ee186d25f364710f65e1b9ea6a3f830"
+    },
+    {
+      "id": "ui.medical_notice.steps_title",
+      "text": "Useful next steps:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8c5d0da3a8473cfba0cb222399adb45aeb3dd05a6343a523fee920aa12054f66"
+    },
+    {
+      "id": "ui.medical_notice.step.discuss",
+      "text": "Discuss unusual values, existing diagnoses or a family history with a healthcare professional.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c272164952eb1fe6a4453e302ff378178f443e8e2516b874052ed5d1bda76c49"
+    },
+    {
+      "id": "ui.medical_notice.step.measure",
+      "text": "At an appropriate opportunity, have any unknown baseline values measured, such as blood pressure, blood glucose/HbA1c or blood lipids.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "83f791d8b77f2ef63db86f7c77e9d6d479b411655a2c4e278536bcc33d40393a"
+    },
+    {
+      "id": "ui.medical_notice.step.choose",
+      "text": "Choose one small step from your action plan for this week.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5fb0e710927d581037b496d595040ae5234f708b13202cabab27ab8087f9f86c"
+    },
+    {
+      "id": "ui.medical_notice.step.emergency",
+      "text": "For sudden, severe or acute symptoms, call the emergency number <b>144</b>. For English-language emotional support, call <b>Heart2Heart on 0800 143 000</b> daily from 6 to 11 p.m.",
+      "requiredTerms": [
+        "144",
+        "0800 143 000",
+        "6 to 11 p.m."
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "63b3a6bb54eda29ca03550d3a91a2b01d7159d7e0a9d37032e53e9bd09d3aed5"
+    },
+    {
+      "id": "ui.contact.title",
+      "text": "Our health advice team is happy to help",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5ff8843cc2cc159c4bd644b239c303962c1684b96df7355663543a3d0d3fd099"
+    },
+    {
+      "id": "ui.contact.phone",
+      "text": "058 340 15 69",
+      "requiredTerms": [
+        "058 340 15 69"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "afa0f2c5cd2ea7b8a7ec7c2cc4b2a9d24acc9d6ebf6b9a39c2a9f89e51409d79"
+    },
+    {
+      "id": "ui.contact.availability_legal",
+      "text": "Monday to Friday, 8 a.m. to 6 p.m. (local rate). By calling, you agree to the terms of use and privacy policy of Helsana health advice.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a0c3338d013d6e0fe222d09cce4197db8b070cc9b25136c65e83d185c99917a1"
+    },
+    {
+      "id": "ui.contact.cta",
+      "text": "Call now",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0df33d34560e6104baf5a68bae5a46692d98e31174db703601ab95b6922681d4"
+    },
+    {
+      "id": "ui.promo.title",
+      "text": "Earn points",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bc94b45754bd8f4571547f5c90007a053fb88a7bf9e52ebfec514ef224cb5b6f"
+    },
+    {
+      "id": "ui.promo.description",
+      "text": "Earn Plus points with your health-conscious lifestyle and benefit from attractive discounts and cash payments.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "70478c1429a39b01ed918a8efdd219a6818d50864b469c752e51f8388857dedb"
+    },
+    {
+      "id": "ui.feedback.eyebrow",
+      "text": "Your feedback matters to us",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9dcf9c84064852debd10b6b8bc2f5af91e635ffda3c6d96be9ed22b12d38b90f"
+    },
+    {
+      "id": "ui.feedback.title",
+      "text": "How was your Health Check?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "457c4f9fc8e34e8a5676d37c4d249df762f60432ba964fc9aa2854705f4bd153"
+    },
+    {
+      "id": "ui.feedback.description",
+      "text": "Your feedback helps us continuously improve the check. It takes only two minutes to complete.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cfb47287b36774d07014fb8bdebe9afbb60163647b3d2a224bf9b4208091a3df"
+    },
+    {
+      "id": "ui.result_action.edit",
+      "text": "Edit answers",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ab068d5133d2aeea4321395009415caec3f9815dd89ed68879f6098e48eaafb7"
+    },
+    {
+      "id": "ui.result_action.save_link",
+      "text": "Save results as a link",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d8995899929ef6f35778e7367069c5315b9d4968a8f35930b70a01c352061567"
+    },
+    {
+      "id": "ui.result_action.restart",
+      "text": "New check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "726f2edf4b4232eff42f0448560e570b5e58849dc8751d03574c70f5d03d2714"
+    },
+    {
+      "id": "ui.result_action.restart_confirm",
+      "text": "Do you really want to start a new check? Your previous answers will be deleted.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3f92f0d1b6f13131cf0e8e29239af3ce1b484879f9fa72e0aade12d3f2166d85"
+    },
+    {
+      "id": "ui.result_action.restart_modal.title",
+      "text": "Start a new check?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b32c7a782d0847e83187f9f1fd89c546fc996b8160006a97b52a24e0b967f710"
+    },
+    {
+      "id": "ui.result_action.restart_modal.continue",
+      "text": "Continue check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d5b5f11a0aa532fb510b2bdd00f08198c15f3d00ec422f31494a284217e30b83"
+    },
+    {
+      "id": "ui.result_action.home_modal.title",
+      "text": "Back to the home page",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1660739da0d25efce71eb3ca3b046d0dcf05fa5771cf29dbb3a2521d48cc6507"
+    },
+    {
+      "id": "ui.result_action.home_modal.message",
+      "text": "Would you like to keep your previous entries or start the check again from the beginning?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a875e1a89821fb2758b6ca53e65bf7b509542eb59a22a1cea7cc0eb007578e34"
+    },
+    {
+      "id": "ui.result_action.home_modal.keep",
+      "text": "Keep entries",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "234921ac6ba4e8a956250883e3f5de7f5d88329acb3412cb9f1bddbdc06c715b"
+    },
+    {
+      "id": "ui.result_action.home_modal.restart",
+      "text": "Start again",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "42d2580e027c41986e56edb8a0787d1eba5749ddfbec129edb92062b97400789"
+    },
+    {
+      "id": "ui.share_modal.title",
+      "text": "Your personal results link",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "37116892ba6106efd60dd1ce4f86b96612da3f441453ca4570bf02501ae92681"
+    },
+    {
+      "id": "ui.share_modal.description",
+      "text": "Save or share this link. You can reopen your result later, edit your answers or start a new check.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "98874be45348d091aa71907a8471275c3125642c653a1d9176e4620d27e9dfb0"
+    },
+    {
+      "id": "ui.share_modal.local_file_warning",
+      "text": "Note for local use: the link contains the local file path. It works only on this device and while the application remains in the same location.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8884ccdd03237e21a00ce864c3426646a5276d6a2028af27a7539ffbbca68781"
+    },
+    {
+      "id": "ui.share_modal.copy",
+      "text": "Copy",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "09b7b3a831320d6397c71d7d7f66ff1fa5030b58b40fe9e988a623ab54cadcde"
+    },
+    {
+      "id": "ui.share_modal.status.copied",
+      "text": "Link copied to the clipboard.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8d087056eba4ecf592c56e89d0303d343001c8a4f60ca38c2d67a061a3295d92"
+    },
+    {
+      "id": "ui.share_modal.status.prompt",
+      "text": "Select “Copy” to save the link.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "93bd37bb4ca1c15c599f67ab70367353da49bd83940e9f41517eed2a4bc17ae9"
+    },
+    {
+      "id": "ui.share_modal.status.manual",
+      "text": "Please copy the selected link manually (Ctrl/Cmd + C).",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a33e01a73da0340f4d5230370b0009008b96d1aa819e3b79794de0fcb99ee422"
+    },
+    {
+      "id": "ui.share_modal.close",
+      "text": "Close",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c43b16ea6c0c002ca8983bcca4567d9bcefb7e4addcdb4ab7a052216d1143309"
+    },
+    {
+      "id": "ui.hero.action_plan_reference.empty",
+      "text": "the detailed results",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "97504f826a36990b2a36f0163700d9ae06434535d7df97a51d52698ff2cf8b88"
+    },
+    {
+      "id": "ui.hero.action_plan_verb.singular",
+      "text": "starts",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "68427659c7ff7378fbbebd00432299ec741d198e11cf9f65b46c61260fb82446"
+    },
+    {
+      "id": "ui.hero.action_plan_verb.plural",
+      "text": "start",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "02a4f0ce0919f35562603b3335e2dd9baef0b2020eaffb52086ad3eaa086aa0e"
+    },
+    {
+      "id": "ui.result.score_aria",
+      "text": "Overall score {{overallScore}} out of 100",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d280146c4e4ae3f8b4ddf58f020918f2f92b3a815607fe77009e56e4069b3083"
+    },
+    {
+      "id": "ui.chat.send_aria",
+      "text": "Send",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bc70d3bbe9bb4ec126cbd1837b883c403e1212a85f4c4608bd39e1051104f71d"
+    },
+    {
+      "id": "ui.share_modal.input_aria",
+      "text": "Results link",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a9305169083efb8e96d6eab80b55c41ee07fc3ab8d02152f304db073a40294c7"
+    },
+    {
+      "id": "ui.radar.aria_label",
+      "text": "Radar chart of your health profile across the assessed dimensions",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "28b139a02c92ca988e2c0bfc33c6a57bf2a61c712584f0f6142002d779561fd5"
+    },
+    {
+      "id": "ui.radar.dimension_detail_aria",
+      "text": "Open details for {{dimensionShort}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8496bd281a5813f8aaa34016dccaf8ed321b304a653d6b973b438d8e27226e2c"
+    },
+    {
+      "id": "ui.share_modal.privacy_warning",
+      "text": "This link contains your answers in encoded, but not encrypted, form. Share it only with people you trust with this health information.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3f112c3aab0f80b82a2878437589a4f0f10aa5c951fe481d970290b07b6541cf"
+    },
+    {
+      "id": "ui.fitness_tests.title",
+      "text": "Your completed short fitness tests",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "09c1b97be8f53e0a33897be6b7a4a54db998016b186799646e13152e74abc4fe"
+    },
+    {
+      "id": "ui.fitness_tests.description",
+      "text": "These short tests show individual aspects of your current physical performance. They do not replace a medical examination and cannot on their own indicate your personal risk of disease.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd9406a930a6c976f55a0c96e71a8c8fe48461454592f0065027a9b756a56cf1"
+    },
+    {
+      "id": "ui.fitness_tests.personal_baseline",
+      "text": "No reliable assessment possible",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "62b84798f76417699c807ca22fd4267891ba4e4930809002bea0b752c777ed78"
+    },
+    {
+      "id": "ui.fitness_tests.meaning_label",
+      "text": "What this means:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "706ebb3d7e4946c45635ceb144fad4ab9947ed7f4a7c98c4c5ff314fe4646a5c"
+    },
+    {
+      "id": "ui.fitness_tests.relevance_label",
+      "text": "Why this is relevant:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a1bc6d9ef7653d9c326aca7828856cb46ce60d17767c62e3df5dc8c7056fb9d7"
+    },
+    {
+      "id": "ui.fitness_tests.next_reference_label",
+      "text": "Next guide value:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "49ed0c3ba50e5362f241006db780cffaa2245d77f982c2a589498abbd2cb7826"
+    },
+    {
+      "id": "ui.fitness_tests.next_reference",
+      "text": "The next comparison value is {{nextThreshold}} {{unit}}. It is not a medical threshold or a promised result after four weeks.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1e618e4be37a546e8bbc953d7afe5ab7b3e1a6e03750c9cda9393bd6f04ffea0"
+    },
+    {
+      "id": "ui.fitness_tests.unit.seconds",
+      "text": "seconds",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "021763490b3514d08fadddd402f63c79411254014286f38f2fb8a1fee0cf2047"
+    },
+    {
+      "id": "ui.fitness_tests.unit.repetitions",
+      "text": "repetitions",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c48afd9d77384d7332cacee5d8b5855e2674d5aa70779668abe05fd8c766aaee"
+    },
+    {
+      "id": "ui.fitness_tests.related_recommendation.top_step",
+      "text": "Related recommendation: {{recommendationTitle}} – step {{planStep}} in your action plan",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "74fe27d476577756f8ae1caf7a01c4965137f3b7eaf6701f71509f10632cd831"
+    },
+    {
+      "id": "ui.fitness_tests.related_recommendation.detail",
+      "text": "Related recommendation: {{recommendationTitle}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8489a50520989984f3b07377be60e793d0268b8130f3910c0ad44318f6f41cb2"
+    },
+    {
+      "id": "ui.fitness_tests.retest_label",
+      "text": "Your final check:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8b3504818ad285d528bdf4b33f2838201b72b1bdd8c690257922b15226bf0bfb"
+    },
+    {
+      "id": "ui.start.eyebrow",
+      "text": "Your personal Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "694fe9632af78827fc55534ba51fe3673dfb68628c349ac2c2cd9703f3f7f23d"
+    },
+    {
+      "id": "ui.start.title",
+      "text": "Understand your health and discover where action can make the greatest difference.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "805bb7e878954f671fbba107e5cb4e3c83cea89f33629636b3e43d4acbe2e9a4"
+    },
+    {
+      "id": "ui.start.lead",
+      "text": "In just a few minutes, you will receive an encouraging snapshot across five health dimensions, personalised recommendations and your most effective next steps.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2551f67371757d1412b53f062db9012337ed8afc59d44d409bddcb3a6baf55d0"
+    },
+    {
+      "id": "ui.start.point.personal.title",
+      "text": "Personalised",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2d108ef268ffd9c0c0865aa0e0aa6ce9f2714e98931b6fd2b42a159c4d006e62"
+    },
+    {
+      "id": "ui.start.point.personal.detail",
+      "text": "Assessment based on your answers",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "feb9b23d087c6eb06c6ba0e7e46ae0f741364b9094ef13c4f9d9a685cb2e53bd"
+    },
+    {
+      "id": "ui.start.point.evidence.title",
+      "text": "Evidence-based",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8de959b2966d2d8d102acf4dab252e3fd4721a4aa339939bb9099c258aff2e32"
+    },
+    {
+      "id": "ui.start.point.evidence.detail",
+      "text": "Guided by recognised recommendations",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "95f86742ba6adec3122cc6a47601699b28028a41d2d3b9fc5ca440f597f062c7"
+    },
+    {
+      "id": "ui.start.point.private.title",
+      "text": "Private",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "350a81e60eb1981ebf46d08da65f6c5e2f26a0ac2a8eeb18db789d3811f91c2e"
+    },
+    {
+      "id": "ui.start.point.private.detail",
+      "text": "Your answers remain on your device",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "058b59abd89bce23ee1995c0ed2a6a9865d2d1b388a9e50ade2924cf7300a9b2"
+    },
+    {
+      "id": "ui.start.button.continue",
+      "text": "Continue check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "204e205c6d10fc5bec44bfef6c9de3afe4077c1b1ab6882399fc285d8e54da22"
+    },
+    {
+      "id": "ui.start.button.begin",
+      "text": "Start check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2a5a4f06781ae1328c15bbf4a0b4b2b2c746b677d9057fac0522519672c8afa7"
+    },
+    {
+      "id": "ui.start.button.restart",
+      "text": "Start again",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "322764a50e3f7d9971e6177adc1e841e0445e2c1bb4acb8de7c22477e942b800"
+    },
+    {
+      "id": "ui.start.disclaimer.title",
+      "text": "Important:",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c1e8a599336fff5dca0461b33de921142687cb1e09a92ef6a0083f6d5d43b6d9"
+    },
+    {
+      "id": "ui.start.disclaimer.body",
+      "text": "This check is not a medical diagnosis and does not replace medical advice. It helps you identify strengths and areas for action. If any values are unusual, we recommend consulting a healthcare professional.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7ffabd4481392b49a628bdd643bc0cf8b58d82a6e505a905b213630e111ff893"
+    },
+    {
+      "id": "ui.start.sources_link",
+      "text": "View the scientific basis",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "75e188d0fe3bba57b51fe5a341e9903b4c9e0db4a194273b43807e68b7c8a8cc"
+    },
+    {
+      "id": "ui.quiz.number_error.between",
+      "text": "Please enter a valid value between {{min}} and {{max}}{{unit}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5a81df79fa5988f5ab31e19b0c397f01146a7b5ad29ee424e707da382d75df78"
+    },
+    {
+      "id": "ui.quiz.number_error.minimum",
+      "text": "Please enter a valid value of at least {{min}}{{unit}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6f731c2badd5aeabab8a09d8c848a58f5a72541205ac2e9d679006c477fba901"
+    },
+    {
+      "id": "ui.quiz.number_error.maximum",
+      "text": "Please enter a valid value of no more than {{max}}{{unit}}.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4f58aaa27c99d31084316f495cc7cac27dbee912f33c9f608a69661c0628e8d0"
+    },
+    {
+      "id": "ui.quiz.optional_hint",
+      "text": "Optional – you may also leave this field blank.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "730037fa42cb3f4734972479364e2ec64bc5d2dcc3de87e24e812f635a7994a4"
+    },
+    {
+      "id": "ui.quiz.help_fallback",
+      "text": "What does this mean?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4da585dc09a93b0333db127868cdd3e64fb6dbcb583c37cdd1cd9dff08947823"
+    },
+    {
+      "id": "ui.quiz.step_state.done",
+      "text": " (completed)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "48bb0b9c8e60852287a6aa40cd23e5a82abba09efdf902149d1a49617016ae46"
+    },
+    {
+      "id": "ui.quiz.step_state.current",
+      "text": " (current)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "236d53e471b441bd90b777a7ca028088527de5798a947e22b800928a6ef8b4f6"
+    },
+    {
+      "id": "ui.quiz.step_aria",
+      "text": "Dimension {{current}} of {{total}}: {{dimensionShort}}{{stateLabel}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4640b6d905832195842f20b3f4cae4ebdae9475e07d4639068bac222f0ba5b25"
+    },
+    {
+      "id": "ui.quiz.progress_aria",
+      "text": "Progress",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "da03dffdcca4913734517b52bfe2463f707b9b0915ebaf29b675707d6130b6d9"
+    },
+    {
+      "id": "ui.quiz.dimension_count",
+      "text": "Dimension {{current}} of {{total}}",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a149f4d63d713723133e7e785603b62396b0946e84e635a514319fbe6f8b8f2d"
+    },
+    {
+      "id": "ui.quiz.button.results",
+      "text": "Show results",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d8d629bb17a2253f6b2007ef7dd33df42354d185db0227c094d698542bb23f98"
+    },
+    {
+      "id": "ui.quiz.button.continue",
+      "text": "Continue",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b2d1f7500446666ad4edaeec341ea42c549ee6d1c7c1f380b2ac61bf7622e433"
+    },
+    {
+      "id": "ui.quiz.button.back",
+      "text": "Back",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "651e00214e2e670175c719c0490fe6c1f09ddf63006be40a7ccb67905c9eefce"
+    },
+    {
+      "id": "ui.quiz.incomplete_hint",
+      "text": "Please answer all non-optional questions in this dimension to continue.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "15fb051df98bdd470666701040788d4cbf17608c8a246448d8e3ca977188a559"
+    }
+  ]
+}

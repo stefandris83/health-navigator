@@ -27,6 +27,7 @@ function loadModule(rel) {
   eval(fs.readFileSync(path.join(ROOT, rel), 'utf8'));
 }
 
+loadModule('js/locale.js');
 loadModule('js/config.js');
 loadModule('js/url-safety.js');
 loadModule('js/result-copy.generated.js');
@@ -70,6 +71,45 @@ test('Coach priorisiert akute Begriffe vor Atemübungs- und Stressantworten', ()
   assert.strictEqual(W.Coach.mockAnswer('Ich habe plötzlich Atemnot', ctx), W.ResultCopy.get('coach.answer.emergency'));
   assert.strictEqual(W.Coach.mockAnswer('Verdacht auf Herzinfarkt', ctx), W.ResultCopy.get('coach.answer.emergency'));
   assert.strictEqual(W.Coach.mockAnswer('Zeig mir die Atemübung', ctx), W.ResultCopy.get('coach.answer.breathing'));
+});
+
+test('Coach erkennt akute und thematische Begriffe in allen unterstützten Sprachen', () => {
+  const ctx = {
+    overall: 50,
+    statusLabel: 'Test',
+    byId: {},
+    weakest: null,
+    strongest: null,
+    signals: [],
+    top: [],
+  };
+  const previousLocale = W.HealthLocale;
+  let current = 'de-CH';
+  W.HealthLocale = {
+    current,
+    getLocale() { return current; },
+    normalize(value) { return ['de-CH', 'en-CH', 'fr-CH', 'it-CH'].includes(value) ? value : null; },
+  };
+  const cases = [
+    ['en-CH', 'I have sudden chest pain', 'coach.answer.emergency', null],
+    ['fr-CH', "J'ai une difficulté respiratoire", 'coach.answer.emergency', null],
+    ['it-CH', 'Ho un dolore al petto improvviso', 'coach.answer.emergency', null],
+    ['en-CH', 'Can you show me a breathing exercise?', 'coach.answer.breathing', null],
+    ['fr-CH', 'Comment améliorer mon sommeil?', 'coach.answer.sleep', { sleepScore: W.ResultCopy.get('coach.context.score_unknown') }],
+    ['it-CH', 'Vorrei migliorare la mia alimentazione', 'coach.answer.nutrition', { nutritionScore: W.ResultCopy.get('coach.context.score_unknown') }],
+  ];
+  try {
+    cases.forEach(([locale, question, expectedId, variables]) => {
+      current = locale;
+      W.HealthLocale.current = locale;
+      const expected = variables
+        ? W.ResultCopy.format(expectedId, variables)
+        : W.ResultCopy.get(expectedId);
+      assert.strictEqual(W.Coach.mockAnswer(question, ctx), expected, locale + ': ' + question);
+    });
+  } finally {
+    W.HealthLocale = previousLocale;
+  }
 });
 
 /* ---------------- Integrationsschicht ---------------- */
