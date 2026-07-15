@@ -59,6 +59,37 @@ function withTempFixture(entries, fn) {
   }
 }
 
+function writeTranslationFixture(paths, locale, transform) {
+  const base = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'de-CH' });
+  const localeDir = path.join(paths.contentDir, 'locales', locale);
+  fs.mkdirSync(localeDir, { recursive: true });
+  base.files.forEach((file) => {
+    const records = base.entries.filter((record) => record.domain === file.data.domain);
+    const entries = records.map((record) => {
+      const translated = {
+        id: record.id,
+        text: locale + ': ' + record.entry.text,
+        requiredTerms: (record.entry.requiredTerms || []).slice(),
+        reviewStatus: 'needs-review',
+        translationState: 'translated',
+        reviewComment: '',
+        sourceContractHash: Workflow.computeTranslationSourceContractHash(record),
+      };
+      return transform ? transform(translated, record) || translated : translated;
+    });
+    fs.writeFileSync(path.join(localeDir, file.name), JSON.stringify({
+      schemaVersion: 1,
+      locale,
+      domain: file.data.domain,
+      entries,
+    }, null, 2) + '\n', 'utf8');
+  });
+}
+
+function writeAllTranslationFixtures(paths) {
+  ['en-CH', 'fr-CH', 'it-CH'].forEach((locale) => writeTranslationFixture(paths, locale));
+}
+
 function csvWithReplacement(catalog, id, replacement, comment) {
   const rows = Workflow.catalogToCsvRows(catalog);
   const row = rows.find((item) => item['ID (technisch)'] === id);
@@ -71,10 +102,27 @@ function csvWithReplacement(catalog, id, replacement, comment) {
 test('Echter Katalog ist valide und alle generierten Artefakte sind aktuell', () => {
   const catalog = Workflow.loadCatalog();
   const summary = Workflow.validateCatalog(catalog);
-  assert.strictEqual(summary.domains, 4, 'vier klar getrennte Text-Domains erwartet');
+  assert.ok(summary.domains >= 7, 'vollstaendiger mehrsprachiger Text-Domain-Vertrag erwartet');
   assert.ok(summary.entries >= 700, 'vollstaendiger Ergebnis-Textkatalog erwartet');
   const checked = Workflow.checkGenerated();
   assert.strictEqual(checked.entries, summary.entries);
+});
+
+test('Installationsmanifeste werden deterministisch aus dem jeweiligen Sprachkatalog erzeugt', () => {
+  Workflow.SUPPORTED_LOCALES.forEach((locale) => {
+    const catalog = Workflow.loadCatalog({ locale });
+    const expected = Workflow.renderWebManifest(catalog);
+    const manifestFile = path.join(PROJECT_ROOT, 'manifest.' + locale + '.webmanifest');
+    assert.strictEqual(fs.readFileSync(manifestFile, 'utf8'), expected, locale + ': Manifest-Katalogbindung');
+    const manifest = JSON.parse(expected);
+    assert.strictEqual(manifest.lang, locale);
+    assert.strictEqual(manifest.start_url, './?lang=' + locale);
+  });
+  assert.strictEqual(
+    fs.readFileSync(path.join(PROJECT_ROOT, 'manifest.webmanifest'), 'utf8'),
+    fs.readFileSync(path.join(PROJECT_ROOT, 'manifest.de-CH.webmanifest'), 'utf8'),
+    'deutscher Kompatibilitaetsalias'
+  );
 });
 
 test('Alle statischen und variantenbasierten Runtime-Text-IDs existieren', () => {
@@ -98,6 +146,26 @@ test('Alle statischen und variantenbasierten Runtime-Text-IDs existieren', () =>
       let match;
       while ((match = literalReference.exec(source)) !== null) requireId(match[1]);
     });
+
+  // Statische Seitenkopie wird generisch über data-copy-Attribute ausgelesen;
+  // die konkrete ID steht deshalb im HTML und nicht als ResultCopy-Literal in
+  // page-i18n.js. Auch diese IDs gehören zum nachweisbaren Runtime-Vertrag.
+  ['index.html', 'quellen.html'].forEach((name) => {
+    const source = fs.readFileSync(path.join(PROJECT_ROOT, name), 'utf8');
+    const attributeReference = /data-copy(?:-[a-z-]+)?="([a-z][a-z0-9._-]+)"/g;
+    let match;
+    while ((match = attributeReference.exec(source)) !== null) requireId(match[1]);
+  });
+
+  // Bei diesen beiden Ternaries wird die ID erst aus dem UI-Zustand gewählt;
+  // der Literal-Scanner oben kann die beiden Äste nicht direkt zuordnen.
+  [
+    'ui.start.button.continue', 'ui.start.button.begin',
+    'ui.quiz.button.results', 'ui.quiz.button.continue',
+    Workflow.MANIFEST_COPY_IDS.name,
+    Workflow.MANIFEST_COPY_IDS.shortName,
+    Workflow.MANIFEST_COPY_IDS.description,
+  ].forEach(requireId);
 
   const recommendationSource = fs.readFileSync(path.join(jsDir, 'recommendations.js'), 'utf8');
   const between = (start, end) => {
@@ -328,7 +396,7 @@ test('ResultCopy bleibt trotz UI-Fehlergrenze bei unbekannten IDs und fehlenden 
   );
   assert.deepStrictEqual(
     Object.keys(sandbox.window.ResultCopy).sort(),
-    ['format', 'get', 'sourceHash', 'version'],
+    ['format', 'get', 'locale', 'sourceHash', 'version'],
     'öffentliche ResultCopy-API bleibt minimal und dokumentiert'
   );
   assert.throws(() => sandbox.window.ResultCopy.get('ui.absichtlich.unbekannt'), /unbekannte Text-ID/);
@@ -922,6 +990,32 @@ test('Review-Report zaehlt offene Freigaben je Status und Reviewer', () => {
   });
 });
 
+test('Review-Report kann alle vier Sprachen als gemeinsamen Release-Gate zusammenfassen', () => {
+  withTempFixture(null, (paths) => {
+    writeAllTranslationFixtures(paths);
+    const report = Workflow.reviewReport({ contentDir: paths.contentDir, all: true });
+
+    assert.strictEqual(report.all, true);
+    assert.deepStrictEqual(report.locales.map((item) => item.locale), Workflow.SUPPORTED_LOCALES);
+    assert.strictEqual(report.total, 4);
+    assert.strictEqual(report.approved, 1);
+    assert.strictEqual(report.open, 3);
+    assert.deepStrictEqual(report.byStatus, { 'not-set': 0, 'needs-review': 3, approved: 1 });
+    assert.strictEqual(report.locales.find((item) => item.locale === 'de-CH').open, 0);
+    ['en-CH', 'fr-CH', 'it-CH'].forEach((locale) => {
+      assert.strictEqual(report.locales.find((item) => item.locale === locale).open, 1, locale);
+    });
+    assert.deepStrictEqual(
+      report.byReviewer.find((item) => item.reviewer === 'Medizin'),
+      { reviewer: 'Medizin', total: 4, approved: 1, open: 3 }
+    );
+    assert.deepStrictEqual(
+      report.openEntries.map((item) => item.locale).sort(),
+      ['en-CH', 'fr-CH', 'it-CH']
+    );
+  });
+});
+
 test('Datenschutz-, Consent- und Coverage-Texte besitzen Legal-Gate und offenen Status', () => {
   const catalog = Workflow.loadCatalog();
   Workflow.validateCatalog(catalog);
@@ -983,6 +1077,278 @@ test('check prueft Runtime-Bundle, Standard-CSV und Review-Uebersicht bytegenau'
       );
       fs.writeFileSync(file, current, 'utf8');
     });
+  });
+});
+
+test('Uebersetzungs-Overlays sind schlank, vollstaendig und strukturell identisch zu de-CH', () => {
+  withTempFixture(null, (paths) => {
+    writeTranslationFixture(paths, 'en-CH');
+    const catalog = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'en-CH' });
+    const summary = Workflow.validateCatalog(catalog, {
+      requireCurrentSource: true,
+      requireTranslations: true,
+    });
+    assert.strictEqual(summary.entries, 1);
+    assert.strictEqual(summary.locale, 'en-CH');
+    assert.strictEqual(catalog.entries[0].entry.section, fixtureEntry().section, 'Struktur kommt aus de-CH');
+    assert.strictEqual(catalog.entries[0].translationEntry.section, undefined, 'Overlay bleibt schlank');
+
+    const rows = Workflow.catalogToCsvRows(catalog);
+    assert.strictEqual(rows[0]['Sprache (technisch)'], 'en-CH');
+    assert.strictEqual(rows[0]['Deutscher Ausgangstext'], fixtureEntry().text);
+    assert.strictEqual(rows[0]['Austauschformat (technisch)'], '3');
+    const csv = Workflow.exportCsvText(catalog);
+    assert.deepStrictEqual(Workflow.parseCsv(csv)[0], Workflow.LOCALIZED_CSV_COLUMNS);
+    const overview = Workflow.renderReviewOverview(catalog);
+    assert.ok(overview.includes('Sprache: `en-CH`'));
+    assert.ok(overview.includes('**Deutscher Ausgangstext**'));
+  });
+});
+
+test('Multi-Locale-Bundle enthaelt exakt vier vollstaendige Bundles und behaelt den DE-Kompatibilitaetszeiger', () => {
+  withTempFixture(null, (paths) => {
+    writeAllTranslationFixtures(paths);
+    const catalogs = Workflow.loadCatalogs({ contentDir: paths.contentDir, all: true });
+    const registry = Workflow.buildBundleRegistry(catalogs);
+    assert.deepStrictEqual(registry.supportedLocales, ['de-CH', 'en-CH', 'fr-CH', 'it-CH']);
+    assert.deepStrictEqual(Object.keys(registry.bundles), registry.supportedLocales);
+    registry.supportedLocales.forEach((locale) => {
+      assert.strictEqual(Object.keys(registry.bundles[locale].texts).length, 1, locale);
+    });
+
+    const sandbox = { window: {} };
+    vm.runInNewContext(Workflow.renderGeneratedRegistry(registry), sandbox);
+    assert.strictEqual(sandbox.window.__RESULT_COPY_BUNDLES__.defaultLocale, 'de-CH');
+    assert.strictEqual(
+      sandbox.window.__RESULT_COPY_BUNDLE__.texts['result.test.primary'],
+      fixtureEntry().text
+    );
+  });
+});
+
+test('Vier-Sprachen-Build und alle Review-Artefakte sind gemeinsam deterministisch pruefbar', () => {
+  withTempFixture(null, (paths) => {
+    writeAllTranslationFixtures(paths);
+    Workflow.buildGenerated({ contentDir: paths.contentDir, generatedFile: paths.generatedFile, all: true });
+    Workflow.exportCsvAll({ contentDir: paths.contentDir });
+    Workflow.exportOverviewAll({ contentDir: paths.contentDir });
+    const checked = Workflow.checkGenerated({
+      contentDir: paths.contentDir,
+      generatedFile: paths.generatedFile,
+      all: true,
+    });
+    assert.deepStrictEqual(checked.locales, ['de-CH', 'en-CH', 'fr-CH', 'it-CH']);
+  });
+});
+
+test('Overlay-Validierung verwirft fehlende IDs, HTML-Abweichungen und Attribute oder aktive Tags', () => {
+  withTempFixture(null, (paths) => {
+    writeTranslationFixture(paths, 'fr-CH');
+    const overlayFile = path.join(paths.contentDir, 'locales', 'fr-CH', 'test.json');
+    const valid = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
+
+    const missing = JSON.parse(JSON.stringify(valid));
+    missing.entries = [];
+    fs.writeFileSync(overlayFile, JSON.stringify(missing, null, 2) + '\n', 'utf8');
+    assert.throws(
+      () => Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'fr-CH' }),
+      /Uebersetzungsvalidierung/
+    );
+
+    [
+      'FR: Zeile; "Zitat"\n<i>Hallo {{name}}</i>',
+      'FR: Zeile; "Zitat"\n<b class="x">Hallo {{name}}</b>',
+      'FR: Zeile; "Zitat"\n<script>Hallo {{name}}</script>',
+      'FR: Zeile; "Zitat"\n<b onclick="x">Hallo {{name}}</b>',
+    ].forEach((text) => {
+      const invalid = JSON.parse(JSON.stringify(valid));
+      invalid.entries[0].text = text;
+      fs.writeFileSync(overlayFile, JSON.stringify(invalid, null, 2) + '\n', 'utf8');
+      assert.throws(
+        () => Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'fr-CH' }),
+        Workflow.ContentWorkflowError
+      );
+    });
+  });
+});
+
+test('Fertige Uebersetzungen duerfen geschuetzte Ausgangskonzepte nicht vollstaendig verlieren', () => {
+  withTempFixture(null, (paths) => {
+    writeTranslationFixture(paths, 'en-CH');
+    const overlayFile = path.join(paths.contentDir, 'locales', 'en-CH', 'test.json');
+    const overlay = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
+    overlay.entries[0].requiredTerms = [];
+    fs.writeFileSync(overlayFile, JSON.stringify(overlay, null, 2) + '\n', 'utf8');
+    assert.throws(
+      () => Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'en-CH' }),
+      (error) => error instanceof Workflow.ContentWorkflowError &&
+        error.details.some((detail) => /geschuetzte Begriffe des deutschen Ausgangstexts/.test(detail))
+    );
+  });
+});
+
+test('Alle fertigen Sprachfassungen schuetzen medizinisch relevante Nummern und Begriffe', () => {
+  const german = Workflow.loadCatalog({ locale: 'de-CH' });
+  const protectedIds = german.entries
+    .filter((record) => (record.entry.requiredTerms || []).length)
+    .map((record) => record.id);
+  assert.ok(protectedIds.length > 0, 'DE-Katalog enthaelt geschuetzte Texte');
+
+  const criticalTerms = {
+    'en-CH': {
+      'coach.answer.emergency': ['144', '0800 143 000', '6 to 11 p.m.'],
+      'recommendation.plan.act_kardio.this_week': ['ApoB', 'Lp(a)'],
+      'recommendation.plan.ei_rauchstopp.this_week': ['0848 000 181'],
+      'ui.contact.phone': ['058 340 15 69'],
+    },
+    'fr-CH': {
+      'coach.answer.emergency': ['144', '143'],
+      'recommendation.plan.act_kardio.this_week': ['ApoB', 'Lp(a)'],
+      'recommendation.plan.ei_rauchstopp.this_week': ['0848 000 181'],
+      'ui.contact.phone': ['058 340 15 69'],
+    },
+    'it-CH': {
+      'coach.answer.emergency': ['144', '143'],
+      'recommendation.plan.act_kardio.this_week': ['ApoB', 'Lp(a)'],
+      'recommendation.plan.ei_rauchstopp.this_week': ['0848 000 181'],
+      'ui.contact.phone': ['058 340 15 69'],
+    },
+  };
+
+  ['en-CH', 'fr-CH', 'it-CH'].forEach((locale) => {
+    const translated = Workflow.loadCatalog({ locale });
+    const byId = new Map(translated.entries.map((record) => [record.id, record.translationEntry]));
+    protectedIds.forEach((id) => {
+      const entry = byId.get(id);
+      assert.ok(entry, locale + '/' + id + ': Uebersetzung fehlt');
+      assert.ok(entry.requiredTerms.length > 0, locale + '/' + id + ': Schutzbegriffe fehlen');
+    });
+    Object.entries(criticalTerms[locale]).forEach(([id, terms]) => {
+      const entry = byId.get(id);
+      terms.forEach((term) => {
+        assert.ok(entry.requiredTerms.includes(term), locale + '/' + id + ': Pflichtbegriff fehlt: ' + term);
+      });
+    });
+  });
+});
+
+test('sync-locales erzeugt idempotente, klar unvollstaendige Skelette und ueberschreibt nichts', () => {
+  withTempFixture(null, (paths) => {
+    const first = Workflow.syncLocales({ contentDir: paths.contentDir, locale: 'it-CH' });
+    assert.strictEqual(first[0].added, 1);
+    const overlayFile = path.join(paths.contentDir, 'locales', 'it-CH', 'test.json');
+    let overlay = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
+    assert.strictEqual(overlay.entries[0].translationState, 'missing');
+    assert.strictEqual(overlay.entries[0].reviewStatus, 'needs-review');
+    assert.strictEqual(overlay.entries[0].reviewComment, '', 'Review-Kommentar bleibt fuer echte Rueckmeldungen leer');
+    assert.throws(
+      () => Workflow.validate({ contentDir: paths.contentDir, locale: 'it-CH' }),
+      (error) => error instanceof Workflow.ContentWorkflowError &&
+        error.details.some((detail) => /noch nicht uebersetzt/.test(detail))
+    );
+
+    overlay.entries[0].text = 'IT: Zeile 1; "Zitat"\n<b>Ciao {{name}}</b>';
+    overlay.entries[0].translationState = 'translated';
+    fs.writeFileSync(overlayFile, JSON.stringify(overlay, null, 2) + '\n', 'utf8');
+    const second = Workflow.syncLocales({ contentDir: paths.contentDir, locale: 'it-CH' });
+    assert.strictEqual(second[0].added, 0);
+    overlay = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
+    assert.ok(overlay.entries[0].text.startsWith('IT:'), 'bestehende Uebersetzung bleibt erhalten');
+  });
+});
+
+test('Fehlende Uebersetzung kann nicht durch Status-only umgangen, aber explizit identisch bestaetigt werden', () => {
+  withTempFixture(null, (paths) => {
+    Workflow.syncLocales({ contentDir: paths.contentDir, locale: 'it-CH' });
+    const catalog = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'it-CH' });
+    const statusOnlyRows = Workflow.catalogToCsvRows(catalog);
+    statusOnlyRows[0]['Freigabestatus'] = 'Freigegeben';
+    assert.throws(
+      () => Workflow.planImport(
+        Workflow.serializeCsv(statusOnlyRows, Workflow.LOCALIZED_CSV_COLUMNS),
+        catalog
+      ),
+      /nicht allein über den Freigabestatus bestätigt/
+    );
+
+    const explicitRows = Workflow.catalogToCsvRows(catalog);
+    explicitRows[0]['Neuer Text'] = explicitRows[0]['Aktueller Text'];
+    const plan = Workflow.planImport(
+      Workflow.serializeCsv(explicitRows, Workflow.LOCALIZED_CSV_COLUMNS),
+      catalog
+    );
+    assert.strictEqual(plan.changes.length, 1);
+    assert.strictEqual(plan.changes[0].translationConfirmed, true);
+    assert.strictEqual(plan.nextCatalog.entries[0].translationEntry.translationState, 'translated');
+    assert.deepStrictEqual(plan.nextCatalog.missingTranslationIds, []);
+    assert.doesNotThrow(() => Workflow.validateCatalog(plan.nextCatalog, {
+      requireCurrentSource: true,
+      requireTranslations: true,
+    }));
+  });
+});
+
+test('Locale-Import aktualisiert nur das Ziel-Overlay und lehnt Sprachmanipulation ab', () => {
+  withTempFixture(null, (paths, root) => {
+    writeTranslationFixture(paths, 'en-CH');
+    const catalog = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'en-CH' });
+    const rows = Workflow.catalogToCsvRows(catalog);
+    rows[0]['Neuer Text'] = 'EN final: line; "Zitat"\n<b>Hello {{name}}</b>';
+    const csv = Workflow.serializeCsv(rows, Workflow.LOCALIZED_CSV_COLUMNS);
+    const plan = Workflow.planImport(csv, catalog);
+    const result = Workflow.persistImport(plan, {
+      contentDir: paths.contentDir,
+      locale: 'en-CH',
+      generatedFile: paths.generatedFile,
+      now: new Date('2026-01-02T03:04:05.000Z'),
+    });
+    const overlay = JSON.parse(fs.readFileSync(
+      path.join(paths.contentDir, 'locales', 'en-CH', 'test.json'),
+      'utf8'
+    ));
+    const german = JSON.parse(fs.readFileSync(paths.jsonFile, 'utf8'));
+    assert.strictEqual(overlay.entries[0].text, rows[0]['Neuer Text']);
+    assert.strictEqual(overlay.entries[0].translationState, 'translated');
+    assert.strictEqual(german.entries[0].text, fixtureEntry().text);
+    assert.ok(result.backupDir.startsWith(path.join(root, 'exports', 'import-backups', 'en-CH')));
+
+    rows[0]['Sprache (technisch)'] = 'fr-CH';
+    assert.throws(
+      () => Workflow.planImport(Workflow.serializeCsv(rows, Workflow.LOCALIZED_CSV_COLUMNS), catalog),
+      /CSV-Sprache/
+    );
+  });
+});
+
+test('Geaenderter DE-Ausgangsvertrag macht Uebersetzungen sichtbar veraltet und erneut pruefpflichtig', () => {
+  withTempFixture(null, (paths) => {
+    writeTranslationFixture(paths, 'fr-CH', (entry) => {
+      entry.reviewStatus = 'approved';
+      return entry;
+    });
+    const baseData = JSON.parse(fs.readFileSync(paths.jsonFile, 'utf8'));
+    baseData.entries[0].comment = 'Neuer fachlicher Ausgangshinweis';
+    fs.writeFileSync(paths.jsonFile, JSON.stringify(baseData, null, 2) + '\n', 'utf8');
+
+    const stale = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'fr-CH' });
+    assert.deepStrictEqual(stale.staleSourceIds, ['result.test.primary']);
+    assert.strictEqual(stale.entries[0].entry.reviewStatus, 'needs-review');
+    assert.throws(
+      () => Workflow.validate({ contentDir: paths.contentDir, locale: 'fr-CH' }),
+      (error) => error.details.some((detail) => /geänderten deutschen Ausgangstext|geaenderten deutschen Ausgangstext/.test(detail))
+    );
+
+    const rows = Workflow.catalogToCsvRows(stale);
+    rows[0]['Freigabestatus'] = 'Freigegeben';
+    const plan = Workflow.planImport(
+      Workflow.serializeCsv(rows, Workflow.LOCALIZED_CSV_COLUMNS),
+      stale
+    );
+    assert.deepStrictEqual(plan.nextCatalog.staleSourceIds, []);
+    assert.strictEqual(
+      plan.nextCatalog.entries[0].translationEntry.sourceContractHash,
+      Workflow.computeTranslationSourceContractHash(stale.entries[0].baseRecord)
+    );
   });
 });
 

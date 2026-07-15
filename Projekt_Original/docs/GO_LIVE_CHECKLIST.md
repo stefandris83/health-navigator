@@ -19,6 +19,9 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Seiten mit lokal verarbeiteten Gesundheitsangaben.
 - [ ] Das lokal eingebundene `assets/helsana-logo.svg` durch Brand/Recht als korrektes,
   für diesen Einsatzzweck freigegebenes Markenasset bestätigen.
+- [ ] `de-CH`, `en-CH`, `fr-CH` und `it-CH` auf der Ziel-URL inklusive
+  Sprachwechsel, interner Navigation, Cache-Invalidierung und der vier
+  Installationsmanifeste testen.
 
 ## Datenschutz und Recht
 
@@ -61,8 +64,17 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 
 ## Medizin, Content und Brand
 
-- [ ] Den offenen Review-Bericht (`review-report`) abarbeiten; technische Validität
-  bedeutet nicht fachliche Freigabe. Den gemeinsamen Status `approved` erst setzen,
+- [ ] Die KI-gestützten Erstübersetzungen für EN, FR und IT muttersprachlich
+  prüfen und alle jeweils zugeordneten medizinischen sowie rechtlichen Texte
+  freigeben. Bis dahin bleibt jeder Zielsprachtext auf `needs-review`.
+- [ ] Für verbleibende externe Helsana-Navigationen ohne bestätigten Sprachpfad
+  (aktuell das myHelsana-Portal) entscheiden, ob der dokumentierte deutsche
+  Zielseiten-Fallback bestehen darf oder durch einen freigegebenen
+  sprachspezifischen Link ersetzt wird. Private, Unternehmen, Helsana-Gruppe und
+  Blog besitzen bereits bestätigte DE-/EN-/FR-/IT-Ziele.
+- [ ] Den offenen Vier-Sprachen-Review-Bericht (`review-report --all`) abarbeiten;
+  technische Validität bedeutet nicht fachliche Freigabe. Den gemeinsamen Status
+  `approved` erst setzen,
   wenn alle beim Text genannten Reviewer zugestimmt haben; personenbezogene
   Freigabeevidenz ausserhalb der CSV revisionsfähig führen.
 - [ ] Medizinische Schwellen, Normtabellen, Risikosignale, Notfalltexte und sämtliche

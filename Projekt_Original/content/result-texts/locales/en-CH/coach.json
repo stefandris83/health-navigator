@@ -1,0 +1,244 @@
+{
+  "schemaVersion": 1,
+  "locale": "en-CH",
+  "domain": "coach",
+  "entries": [
+    {
+      "id": "coach.week_plan.fallback.label.this_week",
+      "text": "This week",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ac9aa2ef0a2de23b1e33169471ac984862d5bbfda5c5562aa0f0d606ce5af0b5"
+    },
+    {
+      "id": "coach.week_plan.fallback.label.weeks_two_three",
+      "text": "Weeks 2–3",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "03565a3a212e8baff96a988b03ef93f56481f66766f67ce0dd7608c5a948a7a0"
+    },
+    {
+      "id": "coach.week_plan.fallback.label.week_four",
+      "text": "Week 4",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "202c96474fd1e068b5c39474ef9834e1af751a770daf7dba4e1c7a814f1f37a2"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.this_week",
+      "text": "Choose one small first step.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0998fe3138c162312663ed34c2dc11175402ded19c7d3db086bf5ddd99c697e4"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.weeks_two_three",
+      "text": "Repeat the step regularly and build up slowly.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "efe7a94ec30da6c669727bfc1c0aa893cc357c249bc71cd3f62cc9084afeff2a"
+    },
+    {
+      "id": "coach.week_plan.fallback.step.week_four",
+      "text": "Make the step a regular habit.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3d88159681e2c8bd70c711d57aac380af8b39cb8032fbfdc8ffc051575fdd8ab"
+    },
+    {
+      "id": "coach.context.score_unknown",
+      "text": "not yet determined",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "751d4f0c80d28614098f0e2c42d918fb411e4807753fc7167a235d71c81911a6"
+    },
+    {
+      "id": "coach.context.weakest_title_fallback",
+      "text": "this area",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d85dc7e361f14928486beb598b62cf82d7538fec22ecf528b2ea99bcee950d6e"
+    },
+    {
+      "id": "coach.context.strongest_title_fallback",
+      "text": "—",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0bc3b82d02b8195bd58dc943f7fc1c45076ef959325b707c38a6b991895d7ffd"
+    },
+    {
+      "id": "coach.prompt.overall_score",
+      "text": "What does my overall score mean?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6b8a9bb0e6cebec3ce05dd5ebb961fe909a99a0f05af4349330d0ac301609fb3"
+    },
+    {
+      "id": "coach.prompt.first_step",
+      "text": "What is the best way to get started?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f6061238108201f73a347febadbf612f0a4a7028c3ae756c611034103296bbe1"
+    },
+    {
+      "id": "coach.prompt.improve_dimension",
+      "text": "How can I improve “{{dimensionTitle}}”?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "40a985ef6aa4523458e9aad7642576cddd8abfdcd5afbefdcacaf2b42267b7a8"
+    },
+    {
+      "id": "coach.prompt.breathing",
+      "text": "Show me a breathing exercise",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3ed5f9e15d0d8160c3410c828de9b82dee944cce8c7d608a66ef6d8826fffd4d"
+    },
+    {
+      "id": "coach.prompt.coach_app",
+      "text": "What can the Coach app do for me?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "16e2bfd5448a8d5535a9ddec367a2064a94414a1ac25ea4586676f7449b43be3"
+    },
+    {
+      "id": "coach.improve_dimension.with_recommendation",
+      "text": "For <b>{{dimensionTitle}}</b>, your most effective step is: {{recommendationStep}} Starting small and staying consistent beats perfection.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "edd9c7d1959844fa4ebb65c16e54fbee378f27d344626b0f75c3c5992e97d988"
+    },
+    {
+      "id": "coach.improve_dimension.without_recommendation",
+      "text": "For <b>{{dimensionTitle}}</b> ({{dimensionScore}}/100), your current answers do not point to one specific recommendation. Use the assessment in the detailed section and, if helpful, choose a small adjustment that fits into your everyday life.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "94cf18856d9e7d5bfcb9e97472f493241d5af9cdeaeab554ae7eaaaaba5a470c"
+    },
+    {
+      "id": "coach.answer.emergency",
+      "text": "If the situation is urgent, do not wait: call emergency services on <b>144</b> for severe or sudden symptoms. For English-language emotional support, call <b>Heart2Heart on 0800 143 000</b> daily from 6 to 11 p.m. I am only a preview and cannot provide medical assistance.",
+      "requiredTerms": [
+        "144",
+        "0800 143 000",
+        "6 to 11 p.m."
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ba1aead2e4383820e0d4dfad4d72b4a75e3368e853c7449aba875e1b365692d1"
+    },
+    {
+      "id": "coach.answer.overall_score",
+      "text": "Your overall score is <b>{{overallScore}}/100</b> (“{{statusLabel}}”). Your strongest area is <b>{{strongestTitle}}</b> ({{strongestScore}}/100), while <b>{{weakestTitle}}</b> ({{weakestScore}}/100) offers the most room for improvement. This is a snapshot, not a medical assessment.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fb50def82f1caabf73ea450375bba9c9d3e4f036809e809e6aca46b1e634b90c"
+    },
+    {
+      "id": "coach.answer.first_step.with_plan",
+      "text": "The best way to start is small: <b>{{recommendationTitle}}</b>. Your first step: {{recommendationStep}} Focus on this one step for this week.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "68ca95dc27131bee6e4ec2037a8de4304a2be8cae3e21c9c3d200b06e8d3d7e9"
+    },
+    {
+      "id": "coach.answer.first_step.without_plan",
+      "text": "Your answers do not currently point to one prioritised first step. Use the dimension scores and guidance to understand your results, then choose a small step that fits into your everyday life.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dad9bd8b4dd8aa68159f7ff098bebb95879989d1d2be19578919e69a89403dac"
+    },
+    {
+      "id": "coach.answer.breathing",
+      "text": "Try the breathing exercise a little further up this page (breathe in for 4s · hold for 7s · breathe out for 8s). Even a few minutes may help reduce tension. If the strain continues, Helsana is here for you: Health Consultation on <b>058 340 15 69</b>. For English-language emotional support, call <b>Heart2Heart on 0800 143 000</b> daily from 6 to 11 p.m.; in an emergency call 144.",
+      "requiredTerms": [
+        "058 340 15 69",
+        "0800 143 000",
+        "6 to 11 p.m.",
+        "144"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bebf98d3a6b297cfb70c799ca9931b03d61b837cc65ec7a986ad0400087f15c0"
+    },
+    {
+      "id": "coach.answer.sleep",
+      "text": "A calm, consistent evening routine often helps with sleep: switch off screens 30–60 minutes beforehand, avoid caffeine in the evening and keep your wake-up time as regular as possible. Your sleep score: <b>{{sleepScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "06b54c63589c45d07e6e6c00cd44e30952cf488b52b21fb890adb0e884a4994b"
+    },
+    {
+      "id": "coach.answer.fitness",
+      "text": "Fitness is one of the most effective levers: even 3 × 20–30 minutes of brisk walking per week plus 2 short strength sessions can make a difference. Build up slowly and schedule fixed times. Your fitness score: <b>{{fitnessScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "adda211d953a93f49ef008268a4395d95e66abcb76535c447567a4ea6d4a5d77"
+    },
+    {
+      "id": "coach.answer.nutrition",
+      "text": "Small changes can make a difference: add an extra portion of vegetables, pulses or whole grains each day and cut back on sweetened drinks. Your nutrition score: <b>{{nutritionScore}}</b>.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b7a247f58958ce602435020f5d2f75dffd04e80d8de0023228da77e675155130"
+    },
+    {
+      "id": "coach.answer.protein",
+      "text": "For healthy adults who strength-train regularly, around <b>1.4–1.6 g/kg/day</b> is a practical guide. On average, the additional benefits for building lean body mass level off markedly at around <b>1.6 g/kg/day</b>. Up to around <b>2.0 g/kg/day</b> may be a reasonable individual range during very high training loads or a planned energy deficit. Most people do not need this amount, and age alone does not justify this target. People under 18, or anyone with kidney disease or a medically prescribed diet, should discuss the appropriate amount with a healthcare professional.",
+      "requiredTerms": [
+        "1.4–1.6 g/kg/day",
+        "1.6 g/kg/day",
+        "2.0 g/kg/day"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2e1b7e4df19f3b798ec9dad90a3943fba3f532c30f15ac8e812f3fbc492269d9"
+    },
+    {
+      "id": "coach.answer.medical_values",
+      "text": "Specific values should be assessed by a doctor. I cannot and must not assess them. If your baseline values are unknown, it may be useful to have your blood pressure, blood glucose/HbA1c and blood lipids measured when convenient.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d3ef155bf2d1a4a20655a16921bf9b82f01f25e4b6a07ced9fd6c59b3bf28b44"
+    },
+    {
+      "id": "coach.answer.coach_app",
+      "text": "The Helsana Coach app helps you stay on track each day with plans, reminders and exercises. With your consent, your profile (score, focus areas and next steps) could be transferred directly. You will find the link further down this page.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "96cd347d9f18d9f0eca24f9e05b801b96ba4ebd78e2370c1fc7ec7eeecbb688d"
+    },
+    {
+      "id": "coach.answer.fallback",
+      "text": "I am a preview assistant and provide sample answers about your results. The area where you can currently make the biggest difference is <b>{{weakestTitle}}</b> ({{weakestScore}}/100). Ask me, for example, “Where should I start?” or select one of the suggestions above.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3d43417a94cf0fa00110d628f159b3aa868ce9e1ff069cd0db8975f01852e1b9"
+    }
+  ]
+}

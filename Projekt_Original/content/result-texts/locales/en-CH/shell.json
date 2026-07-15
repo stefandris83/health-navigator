@@ -1,0 +1,391 @@
+{
+  "schemaVersion": 1,
+  "locale": "en-CH",
+  "domain": "shell",
+  "entries": [
+    {
+      "id": "shell.meta.app_title",
+      "text": "Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "41c5508a0b023cf6894ab913303dd81764e6ab6cf65f8f6864207a1a83815ce7"
+    },
+    {
+      "id": "shell.manifest.name",
+      "text": "Helsana Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b873cc8fb04c54da86890080c5973f6caee1a4ddd8c3a6ae49b90e2400fd7d35"
+    },
+    {
+      "id": "shell.manifest.description",
+      "text": "Your personal health check from Helsana.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c0e55737f3cb98ed8a03a40e164d498f43a27d478a75c71976f3209f3a300dfe"
+    },
+    {
+      "id": "shell.meta.index_description",
+      "text": "Digital health check: your personal healthspan and prevention check. Not a diagnosis, but a motivating snapshot of your current health.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ba3bdf169f5f47395073fb7419de62a25c92e20e8570d3d508880adbcd10096f"
+    },
+    {
+      "id": "shell.meta.index_title",
+      "text": "Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "42c2ce27a66f4f57fee2fb3ebf0f6a2ba0431f079e4474b40bdab181a6bedb1e"
+    },
+    {
+      "id": "shell.skip_to_content",
+      "text": "Skip to content",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ffc3a5c66942e5b96223953012aea027db0fd9e5629c22abfb6f5a7e6741f4f4"
+    },
+    {
+      "id": "shell.utility.group",
+      "text": "Helsana Group",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "726747136bc589eae42192f9278a472e347d55d48db949665201a8b3913d4fa8"
+    },
+    {
+      "id": "shell.utility.private",
+      "text": "For individuals",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "89ca2ed8c194b80413372915ad3fdd7e6c7be3dd0539a6282280158287e89819"
+    },
+    {
+      "id": "shell.utility.business",
+      "text": "For companies",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ee63fc6c83dd04da82752b91e092d9092a7ea538b38be7d68ddf0464295bf212"
+    },
+    {
+      "id": "shell.utility.nav_aria",
+      "text": "Helsana links",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d43bb72a3f4a9076cb12805b02b3deb145e55761f87e6c5bbf240f23db93e068"
+    },
+    {
+      "id": "shell.utility.blog",
+      "text": "Blog",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "967ab9354b9b4682ff38c22b8aab01613f0f156761f067485e55a972302e1d0d"
+    },
+    {
+      "id": "shell.utility.myhelsana",
+      "text": "myHelsana",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "34f5dde21ec2b8dac99c01b1de53758426b36ead22310c2545ce060d08a63a15"
+    },
+    {
+      "id": "shell.header.brand_aria",
+      "text": "Helsana – Health Check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "39e3ea6b41bfa889df0a539782a30eccba3e844e29311150e074b661f568ea06"
+    },
+    {
+      "id": "shell.header.logo_alt",
+      "text": "Helsana",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a884e20447880d58fe07b3b2807b0616fd6d59728e02b9c2354c511f9224f178"
+    },
+    {
+      "id": "shell.header.tagline",
+      "text": "Your health check",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b5660e80e4e8be43d9f574b50876989a444da70a4ac19c19b13e45c069966491"
+    },
+    {
+      "id": "shell.footer.nav_aria",
+      "text": "More Helsana links",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8c4acb5eee4816c2dabf6db1c540dcf02d0cc563ffaf84f6f504f9c45888b699"
+    },
+    {
+      "id": "shell.footer.services_heading",
+      "text": "Services",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bc250f568d244e73f401e8eb899a3b3dc45896198818070842d451b5b98e5b2f"
+    },
+    {
+      "id": "shell.footer.submit_invoice",
+      "text": "Submit an invoice",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "024384576f97bace96d4237cabf98a63619f53497e3df1e2723593499930e09a"
+    },
+    {
+      "id": "shell.footer.change_address",
+      "text": "Change your address",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "173e8532adfc725b2cbf5684d2e1127181d661790d1251460980359a6b35802c"
+    },
+    {
+      "id": "shell.footer.all_services",
+      "text": "All services",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9040e4cff2fa8c1a05b129cfb27f0db421079f030edeb292eac0aad83d2a3435"
+    },
+    {
+      "id": "shell.footer.areas_heading",
+      "text": "Areas",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd3b822bad3fed94e7e29c8dcd042ac2f04c23ddb243a73a7ec4da3ed4a18931"
+    },
+    {
+      "id": "shell.footer.helsana_group",
+      "text": "Helsana Group",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e5eda2e3acb02a6cdfe81b4dfafea4f6eaf238f85f817745d174f5459e555a16"
+    },
+    {
+      "id": "shell.footer.helsana_heading",
+      "text": "Helsana",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5260744432e63cd4d793e0fc3edae0f1da02d1271c01e7e3fbc02ccaa50bab6e"
+    },
+    {
+      "id": "shell.footer.about",
+      "text": "About us",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6b65e29e8028945ac3042764e114254569e4e9c199a1f5df80734ffb2cbfe60e"
+    },
+    {
+      "id": "shell.footer.jobs",
+      "text": "Jobs & careers",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "48b5df6129bbfe40bfbd5b16ffc9b96652f62ca612b2f13526cef7da65abb9d1"
+    },
+    {
+      "id": "shell.footer.media",
+      "text": "Media & publications",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "77b68ae9f35836d5645f2455458038818c96216478829bcb2ebb71b187af118a"
+    },
+    {
+      "id": "shell.footer.premium_calculator",
+      "text": "Premium calculator",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "96eb86820d751925e7b7df9fd1b111bfa01df92e4cdb9a1a94ac397b275ccff2"
+    },
+    {
+      "id": "shell.footer.newsletter",
+      "text": "Newsletter",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2633e4453d9adb967957e9452a94abcc252b1176d1453ced5ed670c1939d7aff"
+    },
+    {
+      "id": "shell.placeholder.link_title",
+      "text": "Placeholder – add final link",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd0603bcb6f61bc61ea754b25eb3ee29897e775e9f15bece8efbc025ee969392"
+    },
+    {
+      "id": "shell.language.group_aria",
+      "text": "Choose language",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "69f92e1e8a4e3b7fd2efacbf80bb82d4b5b8f3ad426b8a4468b71706a4766aed"
+    },
+    {
+      "id": "shell.language.de_short",
+      "text": "DE",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fe565cb9132e1ac573212261975d0129e9ce89dccbc0dd9e7e111eebf5887444"
+    },
+    {
+      "id": "shell.language.en_short",
+      "text": "EN",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2c59f29d47077b8abfb87b5aa365e57b5d6e43a57f27640dff635bf039f53e49"
+    },
+    {
+      "id": "shell.language.fr_short",
+      "text": "FR",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0b601b67d3239e4073cfeab3c181979a471c404d2c97ff1ab6eed88dc2bb456f"
+    },
+    {
+      "id": "shell.language.it_short",
+      "text": "IT",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3b146f29339f871266da6cbeda5904266ac77a476cc44a1e397be4d0f7919788"
+    },
+    {
+      "id": "shell.language.de_label",
+      "text": "Deutsch",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "472493e43a144f0bacc34e8285596b29170529a4cf73692535f6a60afa09fda2"
+    },
+    {
+      "id": "shell.language.en_label",
+      "text": "English",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9263faf8d7c6b0b1c5d1d8aff02ffb3cf305ffd29bcb5595814b3f8f37c6eb50"
+    },
+    {
+      "id": "shell.language.fr_label",
+      "text": "Français",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5bd8977e76fef913cc33b197aa0fa4bd94bb9aa18b3bf5470b6aff87c839d0aa"
+    },
+    {
+      "id": "shell.language.it_label",
+      "text": "Italiano",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "623f6a8dba8a19e47560aa24e2aeefcecd72cec3115d013e0240a48703705f4e"
+    },
+    {
+      "id": "shell.legal.imprint",
+      "text": "Legal notice",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3c1707230bee4e802571123fc7c49508ea68e79558bcbcad515ca2a38ddded8f"
+    },
+    {
+      "id": "shell.legal.privacy",
+      "text": "Privacy",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bb111a76b2275517eb67cc0bda095d7ff0f5bfd3a489b7d55909500199c9bbc7"
+    },
+    {
+      "id": "shell.legal.legal_notice",
+      "text": "Legal information",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2e4cbcd5afd148cbc5a1bf3a46a681af6a83492bada172da7a4e8030a3c21726"
+    },
+    {
+      "id": "shell.legal.terms",
+      "text": "Terms of use",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c808f95d2a5b5a27755a47475c541d57e7190bd4ec52e3ec9af215a2de390938"
+    },
+    {
+      "id": "shell.legal.cookies",
+      "text": "Cookie settings",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4ae71b95df08e369c51291f69decab02c09d3a2b2ece8a10e43613b120afbf03"
+    },
+    {
+      "id": "shell.social.facebook_aria",
+      "text": "Facebook (placeholder)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "28c0b7f7a74bbe145da01a323dc448c6b51dec9978960e93cda6d4c0692702ef"
+    },
+    {
+      "id": "shell.social.instagram_aria",
+      "text": "Instagram (placeholder)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "df669da52aa0d230871fe14e7c5bd47fa438ec4944a90b4c4b566646b194be7f"
+    },
+    {
+      "id": "shell.social.youtube_aria",
+      "text": "YouTube (placeholder)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6e595efb619833c14c7369362ea8a8e6ac246ed6102523e7edc08415799f4766"
+    },
+    {
+      "id": "shell.social.linkedin_aria",
+      "text": "LinkedIn (placeholder)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4afa1be96309ee9742cd2ca345ab02c0f7a3414061cac38f2531810b322b12ec"
+    },
+    {
+      "id": "shell.footer.placeholder_note",
+      "text": "Links shown in grey are placeholders and will be linked before go-live.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "12c53a18f766b91c64c004cc9c9d21dbefc117d19ed0bb511290f987507e986e"
+    }
+  ]
+}

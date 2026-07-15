@@ -25,6 +25,9 @@
   }
   const copyGet = (id) => ResultCopy.get(id);
   const copyFormat = (id, variables) => ResultCopy.format(id, variables);
+  const formatDecimal = (value) => window.HealthLocale && typeof window.HealthLocale.formatDecimal === 'function'
+    ? window.HealthLocale.formatDecimal(value)
+    : String(value);
 
   /* Katalog: Reihenfolge innerhalb einer Dimension = inhaltliche Priorität. */
   const CATALOG_RULES = [
@@ -726,7 +729,7 @@
       prio: (c) => oneOf(c.a.schlaf_auswirkung, 'deutlich', 'massiv') ? 5.5 : 5,
     },
 
-    /* ---- Mentale und emotionale Gesundheit ---- */
+    /* ---- Mentale Gesundheit ---- */
     {
       id: 'lv_mental_support', dim: 'mental', topic: 'mental_support',
       rec: 'me_unterstuetzung',
@@ -1245,14 +1248,14 @@
         });
       } else if (hasWaist && hasHighBmi) {
         item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist', {
-          bmi: metrics.bmi,
+          bmi: formatDecimal(metrics.bmi),
           bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
           waist: metrics.waist,
           waistStatusLabel: copyGet('ui.metrics.waist_status.' + metrics.waistStatus),
         });
       } else if (hasHighBmi) {
         item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist', {
-          bmi: metrics.bmi,
+          bmi: formatDecimal(metrics.bmi),
           bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
         });
       }

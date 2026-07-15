@@ -163,9 +163,11 @@ test('Bootstrap- und Renderfehler zeigen einen katalogunabhängigen Reload-Zusta
 
 test('Ergebnislinks bleiben produktiv HTTPS-beschränkt und erlauben file nur im Standalone-Mock', () => {
   const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
-  assert.ok(source.includes('const current = new URL(location.href);'));
-  assert.ok(source.includes("current.search = '';"));
-  assert.ok(source.includes("current.hash = '';"));
+  assert.ok(source.includes('const current = cleanResultLinkBase(new URL(location.href));'));
+  assert.ok(source.includes("parsed.search = '';"));
+  assert.ok(source.includes("parsed.hash = '';"));
+  assert.ok(source.includes("parsed.searchParams.set('lang', locale)"));
+  assert.ok(source.includes("typeof localeApi.normalize !== 'function'"));
   assert.ok(source.includes("current.protocol === 'file:' && config.integrationMode === 'mock'"));
   assert.ok(source.includes('return safeHttps(current.href);'));
   assert.ok(source.includes('config.resultLinkEnabled && resultLinkBaseUrl()'));

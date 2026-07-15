@@ -2066,6 +2066,296 @@
       "text": "Ihr Abschluss-Check:",
       "reviewStatus": "needs-review",
       "comment": "Retest ist eine Verlaufskontrolle und kein Wirksamkeitsnachweis."
+    },
+    {
+      "id": "ui.start.eyebrow",
+      "section": "Startseite",
+      "context": "Startseite, Einleitung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Ihr persönlicher Gesundheitscheck",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.title",
+      "section": "Startseite",
+      "context": "Startseite, Haupttitel",
+      "kind": "title",
+      "reviewers": "Marketing",
+      "text": "Verstehen Sie Ihren Gesundheitszustand – und erkennen Sie, wo sich Handeln am meisten lohnt.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.lead",
+      "section": "Startseite",
+      "context": "Startseite, Einleitungstext",
+      "kind": "explanation",
+      "reviewers": "Marketing",
+      "text": "In wenigen Minuten erhalten Sie eine motivierende Standortbestimmung über fünf Gesundheitsdimensionen, persönliche Empfehlungen und Ihre wirkungsvollsten nächsten Schritte.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.personal.title",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil persönlich",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Persönlich",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.personal.detail",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil persönlich, Erläuterung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Auswertung auf Basis Ihrer Antworten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.evidence.title",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil evidenzbasiert",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Evidenzbasiert",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.evidence.detail",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil evidenzbasiert, Erläuterung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Orientiert an anerkannten Empfehlungen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.private.title",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil Datenschutz",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Privat",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.point.private.detail",
+      "section": "Startseite",
+      "context": "Startseite, Vorteil Datenschutz, Erläuterung",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Antworten bleiben auf Ihrem Gerät",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.button.continue",
+      "section": "Startseite",
+      "context": "Startseite, Check mit vorhandenem Fortschritt fortsetzen",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Check fortsetzen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.button.begin",
+      "section": "Startseite",
+      "context": "Startseite, neuen Check starten",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Check starten",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.button.restart",
+      "section": "Startseite",
+      "context": "Startseite, vorhandenen Check neu beginnen",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Neu beginnen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.disclaimer.title",
+      "section": "Startseite",
+      "context": "Startseite, medizinischer Hinweis, Label",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Wichtig:",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.disclaimer.body",
+      "section": "Startseite",
+      "context": "Startseite, medizinischer Hinweis",
+      "kind": "disclaimer",
+      "reviewers": "Marketing, Medizin, Recht",
+      "text": "Dieser Check ist keine medizinische Diagnose und ersetzt keine ärztliche Beratung. Er hilft Ihnen, Stärken und Handlungsfelder zu erkennen. Bei auffälligen Werten empfehlen wir, eine medizinische Fachperson einzubeziehen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.start.sources_link",
+      "section": "Startseite",
+      "context": "Startseite, Link zur Quellenseite",
+      "kind": "link_label",
+      "reviewers": "Marketing",
+      "text": "Wissenschaftliche Grundlagen anzeigen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.number_error.between",
+      "section": "Fragebogen",
+      "context": "Fragebogen, ungültiger Zahlenwert mit Mindest- und Höchstwert",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Bitte geben Sie einen gültigen Wert zwischen {{min}} und {{max}}{{unit}} ein.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.number_error.minimum",
+      "section": "Fragebogen",
+      "context": "Fragebogen, ungültiger Zahlenwert mit Mindestwert",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Bitte geben Sie einen gültigen Wert ab {{min}}{{unit}} ein.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.number_error.maximum",
+      "section": "Fragebogen",
+      "context": "Fragebogen, ungültiger Zahlenwert mit Höchstwert",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Bitte geben Sie einen gültigen Wert bis {{max}}{{unit}} ein.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.optional_hint",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Hinweis bei optionalem Zahlenfeld",
+      "kind": "hint",
+      "reviewers": "Marketing",
+      "text": "Optional – Sie können das Feld auch leer lassen.",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.help_fallback",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Ersatztitel für eine Hilfe ohne eigenen Titel",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Was bedeutet das?",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.step_state.done",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Screenreader-Zusatz für erledigten Bereich",
+      "kind": "aria_label",
+      "reviewers": "Marketing",
+      "text": " (erledigt)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.step_state.current",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Screenreader-Zusatz für aktuellen Bereich",
+      "kind": "aria_label",
+      "reviewers": "Marketing",
+      "text": " (aktuell)",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.step_aria",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Screenreader-Label eines Fortschrittsschritts",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Bereich {{current}} von {{total}}: {{dimensionShort}}{{stateLabel}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.progress_aria",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Screenreader-Label der Bereichsnavigation",
+      "kind": "aria_label",
+      "reviewers": "Marketing",
+      "text": "Fortschritt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.dimension_count",
+      "section": "Fragebogen",
+      "context": "Fragebogen, sichtbare Bereichsnummer",
+      "kind": "template",
+      "reviewers": "Marketing",
+      "text": "Bereich {{current}} von {{total}}",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.button.results",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Ergebnisse anzeigen",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Auswertung anzeigen",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.button.continue",
+      "section": "Fragebogen",
+      "context": "Fragebogen, zum nächsten Bereich",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Weiter",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.button.back",
+      "section": "Fragebogen",
+      "context": "Fragebogen, zum vorherigen Bereich",
+      "kind": "button",
+      "reviewers": "Marketing",
+      "text": "Zurück",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "ui.quiz.incomplete_hint",
+      "section": "Fragebogen",
+      "context": "Fragebogen, Pflichtfeldvalidierung beim Bereichswechsel",
+      "kind": "validation",
+      "reviewers": "Marketing",
+      "text": "Bitte beantworten Sie alle nicht optionalen Fragen in diesem Bereich, um fortzufahren.",
+      "reviewStatus": "",
+      "comment": ""
     }
   ]
 }

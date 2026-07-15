@@ -1,7 +1,8 @@
-# Textpflege der Ergebnisseite
+# Textpflege in vier Sprachen
 
 Dieses Dokument beschreibt den sicheren Austausch aller zentral gepflegten
-Ergebnis-Texte mit Marketing, Medizin und Recht. Der Workflow benötigt für die
+App-Texte in Deutsch, Englisch, Französisch und Italienisch mit Marketing,
+Medizin und Recht. Der Workflow benötigt für die
 Pflegebefehle nur Node.js und keine zusätzlichen npm-Pakete; die Empfehlungslogik
 verändert er nicht.
 
@@ -9,11 +10,15 @@ verändert er nicht.
 
 Die Verantwortlichkeiten sind getrennt:
 
-- `content/result-texts/*.json` ist die **kanonische Quelle** der Texte.
+- `content/result-texts/*.json` ist die **kanonische deutsche Struktur- und Textquelle** (`de-CH`).
+- `content/result-texts/locales/{en-CH,fr-CH,it-CH}/*.json` enthält schlanke
+  Übersetzungs-Overlays. Struktur, IDs, Reviewer und Kontexte werden nicht dupliziert.
 - Bedingungen, Scores und Prioritäten bleiben in den JavaScript-Regeln.
 - `js/result-copy.generated.js` ist ein automatisch erzeugtes Runtime-Bundle.
-- `exports/result-texte-uebersicht.md` ist eine gruppierte **Lesefassung** für
-  die vollständige inhaltliche Prüfung.
+- `manifest.<locale>.webmanifest` und der deutsche Kompatibilitätsalias
+  `manifest.webmanifest` werden aus den zentralen Installations-Texten erzeugt.
+- `exports/result-texte-uebersicht.md` bleibt die deutsche gruppierte
+  **Lesefassung**. Zusätzlich gibt es `result-texte-uebersicht-<locale>.md`.
 - Eine CSV ist nur das **Austauschformat** mit Marketing, nie die Source of Truth.
 - Vor jedem echten Import mit Änderungen entsteht unter `exports/import-backups/`
   eine neue, zeitgestempelte Sicherung des vorherigen Katalog- und Artefaktstands.
@@ -23,10 +28,65 @@ Die Verantwortlichkeiten sind getrennt:
 Das Runtime-Bundle wird eingecheckt. Dadurch kann die App weiterhin ohne
 Build-Schritt direkt über `index.html` gestartet werden.
 
+## Übersetzungs-Overlays und Vollständigkeit
+
+Jede Übersetzungsdatei besitzt denselben Domain- und ID-Bestand wie Deutsch,
+enthält pro Eintrag aber nur:
+
+- `id` und den übersetzten `text`,
+- sprachspezifische `requiredTerms`, `reviewStatus` und optional `reviewComment`,
+- `translationState` (`missing` oder `translated`),
+- `sourceContractHash` als Bindung an den deutschen Ausgangsvertrag.
+
+Fehlende oder zusätzliche IDs/Domains, abweichende Platzhalter oder HTML-Tags,
+unbekannte Sprachen und gemischte CSV-Sprachen werden hart abgelehnt. Es gibt
+absichtlich keinen stillen Rückfall einzelner Texte auf Deutsch. Nur ein
+vollständiger, aktueller Locale-Katalog gelangt durch `validate`, `build` und
+`check`. Davon getrennt bleibt das bereits im HTML vorhandene deutsche
+Grundgerüst sichtbar, falls das gesamte Runtime-Bundle in einem fehlerhaften
+Deployment fehlt oder beschädigt ist. Dieser enge Bootstrap-Notfallfallback
+ersetzt keinen fehlenden Katalogeintrag und wird im normalen Sprachbetrieb nie
+verwendet.
+
+Besitzt der deutsche Ausgangseintrag `requiredTerms`, muss auch jede fertige
+Übersetzung sprachspezifische Schutzbegriffe festlegen. Dabei werden nicht
+blind die deutschen Wörter kopiert, sondern die tatsächlich sichtbaren
+Entsprechungen der Zielsprache geschützt. Nicht übersetzbare Werte wie
+Notrufnummern, Telefonnummern, Einheiten und Platzhalter bleiben unverändert.
+Eine als `translated` markierte Fassung darf diese Schutzliste nicht leer
+lassen; der Import prüft anschliessend, dass jeder geschützte Wert im neuen Text
+erhalten bleibt.
+
+Die mit dieser Version bereitgestellten EN-, FR- und IT-Texte sind
+**KI-gestützte Erstübersetzungen**. Sie bleiben vollständig auf
+`needs-review`, bis eine muttersprachliche Prüfung und – abhängig von den
+zugeordneten Reviewern – die medizinische beziehungsweise rechtliche Freigabe
+erfolgt ist. Dieser allgemeine Hinweis steht einmal in jeder übersetzten
+Markdown-Übersicht. Das editierbare Feld `Review-Kommentar` bleibt dagegen leer,
+damit es ausschliesslich für echte Rückmeldungen der Prüfstellen zur Verfügung
+steht.
+
+Neue IDs werden sicher als unvollständige Skelette ergänzt:
+
+```bash
+node scripts/result-content.js sync-locales
+# oder nur eine Sprache
+node scripts/result-content.js sync-locales --locale it-CH
+```
+
+Der Befehl überschreibt keine bestehende Übersetzung. Neue Einträge enthalten
+vorübergehend den deutschen Text, `translationState: missing` und
+`reviewStatus: needs-review`; dadurch schlagen die Release-Prüfungen bewusst
+fehl, bis der Text wirklich übersetzt und als `translated` gekennzeichnet ist.
+Wenn sich der deutsche Text oder sein fachlicher Vertrag ändert, wird der
+`sourceContractHash` veraltet und die Übersetzung automatisch wieder
+prüfpflichtig. Ein geänderter Text darf nie automatisch als freigegeben gelten.
+
 ## Umfang des Marketing-Exports
 
-Der Export enthält sämtliche zentral gepflegten, sichtbaren Texte der
-**Ergebnisseite** – auch antwortabhängige Varianten und kleine Textfragmente:
+Der Export enthält sämtliche zentral gepflegten, sichtbaren Texte von
+Startseite, Fragebogen, Ergebnissen, globaler Navigation und Quellenseite –
+einschliesslich antwortabhängiger Varianten und kleiner Textfragmente:
 
 - Ergebnis-Hero, Status, Stärken und Handlungsfelder,
 - Empfehlungskarten und sämtliche 4-Wochen-Planvarianten,
@@ -34,15 +94,15 @@ Der Export enthält sämtliche zentral gepflegten, sichtbaren Texte der
   Fitness-Kurztests,
 - Risikosignale, dimensionsbezogene Handlungsschritte und medizinische Klärungshinweise,
 - Chat-/Coach-Texte, Angebots- und Versicherungs-Hinweise,
-- Modals, Aktionen sowie barrierefreie Beschriftungen.
+- Modals, Aktionen, barrierefreie Beschriftungen sowie Name und Beschreibung
+  der installierbaren Web-App.
 
-Bewusst nicht enthalten sind Startseite, Fragebogen, globaler Header/Footer,
-Demo-Kundennamen sowie URLs und Entscheidungslogik. Ebenfalls ausgenommen ist der
+Bewusst nicht enthalten sind URLs und Entscheidungslogik. Ausgenommen ist der
 minimale statische Render-/Bootstrap-Fehlertext: Er muss gerade dann funktionieren,
 wenn das generierte Textbundle fehlt oder beschädigt ist. Diese Trennung hält den
-Marketing-Auszug auf die personalisierte Ergebnis-Kommunikation fokussiert.
-Fragebogen-Texte folgen dem separat freigegebenen Fragenset; Demo-Namen sind
-Testdaten. Angebots- und Quellen-URLs bleiben als strukturierte Konfiguration im
+Textauszug vollständig pflegbar, ohne sicherheits- oder fachkritische Logik in eine
+Tabellendatei zu verlagern. Demo-Namen und neutrale Demo-Produktlabels sind als
+sichtbare Testtexte enthalten. Angebots- und Quellen-URLs bleiben als strukturierte Konfiguration im
 Code, damit sie nicht versehentlich als Freitext geändert werden.
 
 Bewusste Ausnahme sind die Einträge `service.dimension.*`: Bereichstitel,
@@ -75,13 +135,13 @@ Formulierung genau einmal statt eine Zeile pro Zahlenkombination.
 Alle Befehle werden im Projektordner `Projekt_Original` ausgeführt.
 
 ```bash
-# 1. Katalog und generiertes Bundle prüfen
+# 1. Alle vier Sprachen und alle generierten Artefakte prüfen
 node scripts/result-content.js validate
 node scripts/result-content.js check
 
-# 2. Lesefassung und editierbaren Marketing-Auszug erzeugen
-node scripts/result-content.js overview exports/result-texte-uebersicht.md
-node scripts/result-content.js export exports/result-texte-de-CH.csv
+# 2. Alle Lesefassungen und editierbaren Auszüge erzeugen
+node scripts/result-content.js overview --all
+node scripts/result-content.js export --all
 
 # 3. Zurückerhaltene Datei prüfen, ohne etwas zu ändern
 node scripts/result-content.js import exports/result-texte-review.csv --dry-run
@@ -90,19 +150,29 @@ node scripts/result-content.js import exports/result-texte-review.csv --dry-run
 node scripts/result-content.js import exports/result-texte-review.csv
 
 # 5. Freigabestand und alle generierten Artefakte abschliessend prüfen
-node scripts/result-content.js review-report
+node scripts/result-content.js review-report --all
 node scripts/result-content.js validate
 node scripts/result-content.js check
 node tests/content-workflow.test.js
 node tests/integration.test.js
 node tests/robustness.test.js
 node tests/ui-lifecycle.test.js
+node tests/i18n-static.test.js
+node tests/i18n-runtime.test.js
 ```
 
+`build` und `check` sind absichtlich gemeinsame Vier-Sprachen-Gates und
+akzeptieren keine Sprachoption. So kann nie versehentlich ein einsprachiges
+Bundle an die Stelle des gemeinsamen Runtime-Bundles geschrieben werden. Für
+die Arbeit an einer einzelnen Sprache dient `validate --locale en-CH` (analog
+`fr-CH`, `it-CH`, `de-CH`). `export` und `overview` bleiben ohne Option
+rückwärtskompatibel bei Deutsch; für alle Sprachen wird `--all` verwendet.
+
 Ein erfolgreicher Import aktualisiert die betroffenen JSON-Dateien und erzeugt
-`js/result-copy.generated.js`, die Standard-CSV und die Markdown-Übersicht
-automatisch neu. Damit bleiben alle eingecheckten Artefakte auf derselben
-Quellversion. Schlägt ein Schreibvorgang innerhalb dieses Mehrdateiensatzes fehl,
+`js/result-copy.generated.js`, die Standard-CSV, die Markdown-Übersicht und das
+sprachspezifische Web-App-Manifest automatisch neu. Damit bleiben alle
+eingecheckten Artefakte auf derselben Quellversion. Schlägt ein Schreibvorgang
+innerhalb dieses Mehrdateiensatzes fehl,
 stellt das Werkzeug die bereits ersetzten Ziele automatisch auf ihren vorherigen
 Stand zurück; die vollständige Importsicherung bleibt zusätzlich erhalten.
 
@@ -119,8 +189,9 @@ Für konkrete Änderungen erhalten Marketing, Medizin und Recht zusätzlich die 
 Sie verwendet dieselbe Gruppierung und Sortierung, stellt die redaktionellen Spalten
 an den Anfang und verschiebt technische IDs und Hashes ans Ende. Nur die CSV enthält
 die geschützte Austauschstruktur für den Rückimport. Nach einem Import werden
-Markdown-Übersicht und Standard-CSV automatisch erneut erzeugt, damit Lesefassung,
-CSV, JSON und Runtime-Bundle denselben Katalogstand ausweisen.
+Markdown-Übersicht, Standard-CSV und App-Manifest automatisch erneut erzeugt,
+damit Lesefassung, CSV, JSON, Runtime-Bundle und Installationsmetadaten denselben
+Katalogstand ausweisen.
 
 ## Was im Review bearbeitet werden darf
 
@@ -149,7 +220,7 @@ Gesundheitsdaten noch Namen einzelner Reviewer hinein.
    `Review-Kommentar` eintragen; den bisherigen Text nicht überschreiben.
 4. Filter dürfen verwendet werden, aber **keine gefilterten, ausgeblendeten oder
    unveränderten Zeilen löschen**. Für den sicheren Import muss die vollständige
-   Datei mit allen 786 Textzeilen zurückgegeben werden.
+   Datei mit allen exportierten Textzeilen zurückgegeben werden.
 5. `Freigegeben` erst setzen, wenn alle unter `Freigabe durch` genannten Stellen
    dem aktuellen beziehungsweise neuen Text zugestimmt haben.
 6. Die zurückerhaltene Gesamtdatei zuerst per Dry Run prüfen und erst danach
@@ -162,6 +233,7 @@ Gesundheitsdaten noch Namen einzelner Reviewer hinein.
 | `Seitenelement` | Element der Ergebnisseite, z. B. Empfehlungskarte, Dimensionsdetail oder 4-Wochen-Plan |
 | `Textfunktion` | Verständliche Funktion des Textes, z. B. Überschrift, Begründung, nächster Schritt oder Nutzen |
 | `Kontext / Variante` | Genaue Ausspielung bzw. antwortabhängige Variante |
+| `Deutscher Ausgangstext` | Nur in Übersetzungsdateien: unveränderliche Referenz für fachliche Kontrolle |
 | `Aktueller Text` | Text des exportierten Katalogstands |
 | `Neuer Text` | Einzige Spalte für den Ersatztext; leer = unverändert |
 | `Review-Kommentar` | Optionale gemeinsame Rückmeldung aus Marketing, Medizin oder Recht |
@@ -172,7 +244,8 @@ Gesundheitsdaten noch Namen einzelner Reviewer hinein.
 | `Geschützte Begriffe` | Zwingend unverändert zu übernehmende Begriffe oder Nummern |
 | `ID (technisch)` | Dauerhaft stabile, globale Content-ID |
 | `Domain (technisch)` | Technische Quelldomain im Katalog |
-| `Austauschformat (technisch)` | Version des CSV-Spaltenvertrags; aktuell `2` |
+| `Sprache (technisch)` | Nur in Übersetzungsdateien: unveränderlicher Sprachcode |
+| `Austauschformat (technisch)` | Deutsches Format `2`; Übersetzungsformat `3` |
 | `Quellversion (technisch)` | Hash des vollständigen Katalogstands beim Export |
 | `Zeilen-Hash (technisch)` | Hash der konkreten Ausgangszeile für Konfliktschutz |
 
@@ -186,7 +259,18 @@ Bereits vor Einführung des Austauschformats 2 versandte CSV-Dateien im alten
 12-Spalten-Format können weiterhin importiert werden. Dabei bleibt ein bestehender
 alter `Marketing-Kommentar`, der identisch mit dem Prüfhinweis ist, unverändert;
 nur eine tatsächlich neue Rückmeldung wird als `Review-Kommentar` übernommen.
-Für neue Review-Runden soll immer ein frischer Export im Format 2 verwendet werden.
+Für neue Review-Runden soll immer ein frischer Export im Format 2 (Deutsch)
+oder Format 3 (Übersetzungen) verwendet werden. Ein Format-3-Import wird anhand
+der unveränderlichen Sprache automatisch in das richtige Overlay geschrieben;
+Legacy-Formate 1 und 2 dürfen ausschliesslich nach `de-CH` importiert werden.
+
+Ein Freigabestatus allein darf ein mit `sync-locales` erzeugtes, noch deutsches
+Übersetzungs-Skelett niemals als übersetzt markieren. Der Import weist diesen
+Fall ausdrücklich zurück. Soll ein Text in der Zielsprache absichtlich exakt
+gleich bleiben (beispielsweise ein Markenname), wird derselbe Text bewusst in
+`Neuer Text` kopiert; erst diese explizite Bestätigung setzt
+`translationState: translated`. Damit bleibt das Vollständigkeits-Gate streng,
+ohne sprachunabhängige Begriffe künstlich verändern zu müssen.
 
 Wichtig beim Speichern in Excel:
 
@@ -224,16 +308,22 @@ genannten verschachtelten Familien sind als Klartext vertraglich getestet. Im
 Zweifel bestehendes Markup nicht neu einführen, sondern den Ausspielungskontext
 mit der Entwicklung klären.
 
-Für Hervorhebungen sind ausschliesslich diese Tags erlaubt:
+Für kontrollierte Formatierung sind ausschliesslich diese attributlosen Tags erlaubt:
 
 ```html
 <b>fett</b>
 <i>kursiv</i>
+<br>
+<ul><li>Listenpunkt</li></ul>
 ```
 
 Attribute, Links, andere Tags und fehlerhaft verschachteltes HTML werden
 abgelehnt. URLs und Angebots-/Quellenreferenzen gehören nicht in den Text,
 sondern in die dafür vorgesehene Fachlogik.
+
+Bei Übersetzungen müssen Platzhalter und die Abfolge der erlaubten HTML-Tags
+exakt dem deutschen Ausgangstext entsprechen. `requiredTerms` ist dagegen
+bewusst sprachspezifisch und wird nicht aus Deutsch geerbt.
 
 `requiredTerms` im JSON schützt sicherheits- oder fachkritische Bestandteile,
 zum Beispiel Notfallnummern. Jeder geschützte Begriff muss im neuen Text
@@ -285,18 +375,20 @@ Unmittelbar vor einem echten Import mit Text-, Review-Kommentar- oder Statusänd
 erstellt das Werkzeug einen neuen Ordner unter:
 
 ```text
-exports/import-backups/<ISO-Zeitstempel>/
+exports/import-backups/<locale>/<ISO-Zeitstempel>/
 ```
 
-Die Sicherung enthält den bisherigen kanonischen JSON-Katalog, das bisherige
-Runtime-Bundle, die Standard-CSV, die Markdown-Übersicht und `manifest.json`.
+Die Sicherung enthält die bisherigen deutschen JSON-Dateien oder das betroffene
+Locale-Overlay, das bisherige Runtime-Bundle, die zugehörige CSV,
+Markdown-Übersicht, das zugehörige Web-App-Manifest und `manifest.json`.
 Das Manifest dokumentiert Quell- und Zielversion, betroffene IDs, automatisch
 zurückgesetzte Freigaben und SHA-256-Hashes der gesicherten Dateien. Frühere
 Sicherungen werden nie überschrieben. Ein Dry Run und ein No-op-Import erzeugen
 keine Sicherung.
 
-Für ein manuelles Rollback werden die Dateien aus `content/result-texts/`, `js/`
-und `exports/` des gewünschten Sicherungsordners an ihre gleichnamigen
+Für ein manuelles Rollback werden die Dateien aus `content/result-texts/`, `js/`,
+`exports/` und gegebenenfalls das Web-App-Manifest im Projektstamm aus dem
+gewünschten Sicherungsordner an ihre gleichnamigen
 Projektpfade zurückkopiert. Anschliessend immer `validate` und `check` ausführen.
 
 ## Fachliche Freigaben
@@ -333,20 +425,26 @@ mit medizinischem oder rechtlichem Reviewbedarf zurück, hat der
 Sicherheitsmechanismus Vorrang und setzt den Status unabhängig vom CSV-Wert auf
 `needs-review`.
 
-Der aktuelle Freigabestand lässt sich ohne Schreibzugriff ausgeben:
+Der aktuelle Freigabestand aller vier Sprachen lässt sich ohne Schreibzugriff
+kompakt ausgeben:
 
 ```bash
-node scripts/result-content.js review-report
+node scripts/result-content.js review-report --all
 ```
 
-Für eine Release-Pipeline steht zusätzlich ein bewusster Gate-Modus bereit:
+Für die offenen technischen IDs einer einzelnen Sprache dient beispielsweise
+`node scripts/result-content.js review-report --locale fr-CH`.
+
+Für eine Release-Pipeline steht zusätzlich ein gemeinsamer Gate-Modus bereit:
 
 ```bash
-node scripts/result-content.js review-report --fail-on-open
+node scripts/result-content.js review-report --all --fail-on-open
 ```
 
-Dieser Befehl beendet sich mit Exit-Code 1, solange mindestens ein Text nicht
-`approved` ist. Er verändert keine Dateien.
+Dieser Befehl beendet sich mit Exit-Code 1, solange in einer der vier Sprachen
+mindestens ein Text nicht `approved` ist. Er verändert keine Dateien. Ohne
+`--all` bleibt `review-report` aus Rückwärtskompatibilitätsgründen bei `de-CH`;
+mit `--locale` kann gezielt eine Sprache geprüft werden.
 
 ## Kanonisches JSON-Schema
 
@@ -376,7 +474,7 @@ Jede Datei unter `content/result-texts/` bildet eine Domain:
 Pflichtfelder pro Eintrag:
 
 - `id`: global eindeutig und dauerhaft stabil
-- `section`: Bereich der Ergebnisseite
+- `section`: Bereich der App
 - `context`: verständliche Beschreibung der Ausspielung/Variante
 - `kind`: Textart
 - `reviewers`: kommaseparierte Zeichenkette oder Array
@@ -398,12 +496,15 @@ sowie unsichtbare Bidi-Steuerzeichen werden abgelehnt.
 
 IDs werden nie aus dem Text abgeleitet und nach einer Umformulierung nicht
 umbenannt. Neue IDs müssen über alle Domain-Dateien hinweg eindeutig sein.
+Das schlanke Overlay-Schema ist im Abschnitt «Übersetzungs-Overlays und
+Vollständigkeit» beschrieben; strukturelle Felder dürfen dort nicht dupliziert
+werden.
 
 ## Befehlsreferenz
 
 ### `validate`
 
-Prüft sämtliche JSON-Dateien auf:
+Prüft ohne Option sämtliche JSON-Dateien aller vier Sprachen auf:
 
 - exakte Schema-Version und Locale,
 - fehlende oder unbekannte Felder,
@@ -414,10 +515,15 @@ Prüft sämtliche JSON-Dateien auf:
 - erlaubtes und korrekt verschachteltes HTML,
 - `requiredTerms`.
 
+Bei Übersetzungen werden zusätzlich exakte Domain-/ID-Parität,
+`translationState`, `sourceContractHash` sowie Platzhalter- und HTML-Parität
+gegen Deutsch geprüft.
+
 ### `build`
 
 Validiert den Katalog und erzeugt deterministisch
-`js/result-copy.generated.js`.
+`js/result-copy.generated.js`, die vier sprachspezifischen Web-App-Manifeste und
+den deutschen Kompatibilitätsalias `manifest.webmanifest`.
 
 ```bash
 node scripts/result-content.js build
@@ -427,14 +533,17 @@ Die generierte Datei darf nie manuell editiert werden.
 
 ### `check`
 
-Erzeugt Runtime-Bundle, Standard-CSV und Markdown-Übersicht im Speicher und
-vergleicht alle drei bytegenau mit den eingecheckten Dateien. Der Befehl schlägt
+Erzeugt das Multi-Locale-Runtime-Bundle, alle vier CSV-Dateien, alle
+Markdown-Übersichten und alle Web-App-Manifeste im Speicher und vergleicht sie
+bytegenau mit den eingecheckten Dateien. Der Befehl schlägt
 fehl, sobald nach einer JSON-Änderung eines der generierten Artefakte veraltet ist.
 
 ### `export`
 
 ```bash
 node scripts/result-content.js export [ausgabe.csv]
+node scripts/result-content.js export --locale fr-CH [ausgabe.csv]
+node scripts/result-content.js export --all
 ```
 
 Ohne Pfad wird nach `exports/result-texte-de-CH.csv` exportiert.
@@ -443,6 +552,8 @@ Ohne Pfad wird nach `exports/result-texte-de-CH.csv` exportiert.
 
 ```bash
 node scripts/result-content.js overview [ausgabe.md]
+node scripts/result-content.js overview --locale it-CH [ausgabe.md]
+node scripts/result-content.js overview --all
 ```
 
 Ohne Pfad wird nach `exports/result-texte-uebersicht.md` exportiert. Die Ausgabe
@@ -452,12 +563,13 @@ ist eine gruppierte, nicht importierbare Lesefassung. Textänderungen kommen imm
 ### `review-report`
 
 ```bash
-node scripts/result-content.js review-report [--fail-on-open]
+node scripts/result-content.js review-report [--locale de-CH|en-CH|fr-CH|it-CH|--all] [--fail-on-open]
 ```
 
-Zeigt die Anzahl freigegebener und offener Texte pro Status und Reviewer.
-`--fail-on-open` macht den Report zu einem optionalen Release-Gate, ohne den
-Katalog oder generierte Dateien zu verändern.
+Zeigt die Anzahl freigegebener und offener Texte pro Status und Reviewer. Mit
+`--all` enthält der kompakte Bericht jede Sprache und eine Gesamtsumme.
+`--all --fail-on-open` macht den Report zu einem gemeinsamen Release-Gate für
+alle vier Sprachen, ohne den Katalog oder generierte Dateien zu verändern.
 
 ### `import`
 
@@ -465,8 +577,9 @@ Katalog oder generierte Dateien zu verändern.
 node scripts/result-content.js import <datei.csv> [--dry-run] [--allow-stale]
 ```
 
-Der Import verlangt exakt dieselbe Menge eindeutiger IDs wie der aktuelle
-Katalog und lehnt fehlende, unbekannte oder doppelte Zeilen ab.
+Der Import erkennt Format-3-Dateien anhand der unveränderlichen Locale-Spalte,
+verlangt exakt dieselbe Menge eindeutiger IDs wie der Zielkatalog und lehnt
+fehlende, unbekannte, doppelte oder sprachlich gemischte Zeilen ab.
 
 ## Tests
 
@@ -481,12 +594,17 @@ Die Tests decken unter anderem ab:
 - No-op-Reimport,
 - Dry Run ohne Schreibzugriff,
 - Platzhalter-, HTML- und Pflichtbegriffsvalidierung,
+- vollständige Locale-Overlays, Quellvertrags-Drift und fehlende Übersetzungen,
+- unveränderliche CSV-Sprache sowie deutsche Referenzspalte,
+- deterministisches Vier-Sprachen-Bundle ohne ID-Fallback,
 - veraltete Exporte und zeilenweise Base-Hash-Konflikte,
 - deterministische und vollständige Markdown-Review-Übersicht,
 - Freigabereport nach Status und Reviewer,
+- gemeinsamer Vier-Sprachen-Freigabereport und Release-Gate,
 - Klartext-Invariante für verschachtelte Hero-Copy und fail-fast Runtime-Copy,
 - Aktualität von Runtime-Bundle, Standard-CSV und Markdown-Übersicht,
-- Sicherung aller drei generierten Artefakte vor einem Import,
+- Aktualität und Katalogbindung der sprachspezifischen App-Manifeste,
+- Sicherung aller zum importierten Locale gehörenden generierten Artefakte,
 - automatischer Gesamt-Rollback bei einem simulierten Schreibfehler.
 
 `node tests/integration.test.js` prüft zusätzlich, dass Auswahl, Priorisierung,
@@ -500,6 +618,11 @@ veralteten Adapterantworten sowie zentrale A11y-, Datenschutz- und
 Doppelklick-Portabilitätsverträge. `node tests/ui-lifecycle.test.js` prüft die
 sichtbare Fehlergrenze, optionale Zahlenfelder, URL-/Platzhalterausgabe,
 Kontext-Refresh und Cleanup-Verträge.
+
+`node tests/i18n-static.test.js` prüft den Locale-, Navigations-, Manifest- und
+statischen Seitenvertrag. `node tests/i18n-runtime.test.js` stellt sicher, dass
+Frage-IDs, Antwortwerte, Scores, Risikosignale und Empfehlungen in allen vier
+Sprachen technisch identisch bleiben.
 
 ## Fehlerbehebung
 

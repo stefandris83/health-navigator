@@ -111,44 +111,57 @@ test('URL-Allowlist akzeptiert nur absolute HTTPS-Ziele ohne Zugangsdaten', () =
 
 test('Ergebnislink-Basis erlaubt file nur im Standalone-Mock und bevorzugt kanonisches HTTPS', () => {
   const appSource = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
-  const match = appSource.match(/function resultLinkBaseUrl\(\) \{([\s\S]*?)\n  \}\n  function clearShareHash/);
-  assert.ok(match, 'resultLinkBaseUrl() muss extrahierbar bleiben');
+  const match = appSource.match(/(function resultLinkLocale\(\) \{[\s\S]*?\n  \}\n)  function clearShareHash/);
+  assert.ok(match, 'Locale- und resultLinkBaseUrl()-Vertrag muss extrahierbar bleiben');
   const resolve = new Function(
     'safeHttps',
     'config',
     'location',
-    `function resultLinkBaseUrl() {${match[1]}\n  }\nreturn resultLinkBaseUrl();`
+    'window',
+    `${match[1]}\nreturn resultLinkBaseUrl();`
   );
   const safeHttps = makeCore().HealthUrlSafety.safeHttps;
   const baseConfig = { integrationMode: 'mock', resultLinkBaseUrl: null };
+  const noLocale = {};
 
   assert.strictEqual(
-    resolve(safeHttps, baseConfig, { href: 'file:///Users/demo/Health/index.html?kunde=grund#alt' }),
+    resolve(safeHttps, baseConfig, { href: 'file:///Users/demo/Health/index.html?kunde=grund#alt' }, noLocale),
     'file:///Users/demo/Health/index.html'
   );
   assert.strictEqual(
-    resolve(safeHttps, { ...baseConfig, integrationMode: 'live' }, { href: 'file:///Users/demo/Health/index.html' }),
+    resolve(safeHttps, { ...baseConfig, integrationMode: 'live' }, { href: 'file:///Users/demo/Health/index.html' }, noLocale),
     null
   );
   assert.strictEqual(
-    resolve(safeHttps, { ...baseConfig, integrationMode: 'anonymous' }, { href: 'file:///Users/demo/Health/index.html' }),
+    resolve(safeHttps, { ...baseConfig, integrationMode: 'anonymous' }, { href: 'file:///Users/demo/Health/index.html' }, noLocale),
     null
   );
   assert.strictEqual(
-    resolve(safeHttps, baseConfig, { href: 'https://navigator.example/check/?kunde=x#alt' }),
+    resolve(safeHttps, baseConfig, { href: 'https://navigator.example/check/?kunde=x#alt' }, noLocale),
     'https://navigator.example/check/'
   );
   assert.strictEqual(
-    resolve(safeHttps, baseConfig, { href: 'http://navigator.example/check/' }),
+    resolve(safeHttps, baseConfig, { href: 'http://navigator.example/check/' }, noLocale),
     null
   );
   assert.strictEqual(
     resolve(
       safeHttps,
       { integrationMode: 'live', resultLinkBaseUrl: 'https://health.example/navigator/?secret=x#old' },
-      { href: 'file:///Users/demo/Health/index.html' }
+      { href: 'file:///Users/demo/Health/index.html' },
+      noLocale
     ),
     'https://health.example/navigator/'
+  );
+  assert.strictEqual(
+    resolve(safeHttps, baseConfig, { href: 'file:///Users/demo/Health/index.html?kunde=x#alt' }, {
+      HealthLocale: {
+        current: 'fr-CH',
+        supported: ['de-CH', 'en-CH', 'fr-CH', 'it-CH'],
+        normalize: (value) => value === 'fr-CH' ? value : null,
+      },
+    }),
+    'file:///Users/demo/Health/index.html?lang=fr-CH'
   );
 });
 
@@ -470,7 +483,7 @@ test('Doppelklick-Portabilität: lokale Assets existieren und klassische Script-
   const pageFiles = ['index.html', 'quellen.html'];
   pageFiles.forEach((pageFile) => {
     const page = fs.readFileSync(path.join(ROOT, pageFile), 'utf8');
-    const refs = [...page.matchAll(/\b(?:src|href)="([^"]+)"/g)].map((match) => match[1]);
+    const refs = [...page.matchAll(/(?:^|[\s<])(?:src|href)="([^"]+)"/g)].map((match) => match[1]);
     refs.forEach((ref) => {
       if (!ref || ref.startsWith('#') || /^[a-z][a-z0-9+.-]*:/i.test(ref) || ref.startsWith('//')) return;
       assert.ok(!ref.startsWith('/'), pageFile + ': lokaler Pfad muss relativ sein: ' + ref);
@@ -486,9 +499,11 @@ test('Doppelklick-Portabilität: lokale Assets existieren und klassische Script-
   const scripts = [...indexSource.matchAll(/<script\s+src="([^"]+)"\s*><\/script>/g)]
     .map((match) => match[1]);
   assert.deepStrictEqual(scripts, [
+    'js/locale.js',
     'js/config.js',
     'js/result-copy.generated.js',
     'js/result-copy.js',
+    'js/page-i18n.js',
     'js/url-safety.js',
     'js/questions.js',
     'js/persistence.js',
@@ -504,23 +519,35 @@ test('Doppelklick-Portabilität: lokale Assets existieren und klassische Script-
 
 test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollständig und sicher', () => {
   const indexSource = fs.readFileSync(path.join(ROOT, 'index.html'), 'utf8');
-  const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, 'manifest.webmanifest'), 'utf8'));
   const expectedIcons = [
     ['assets/app-icon.svg', 'any', 'image/svg+xml'],
     ['assets/app-icon-192.png', '192x192', 'image/png'],
     ['assets/app-icon-512.png', '512x512', 'image/png'],
   ];
 
-  assert.ok(indexSource.includes('rel="manifest" href="manifest.webmanifest"'));
+  assert.ok(indexSource.includes('rel="manifest" href="manifest.de-CH.webmanifest" data-locale-manifest'));
   assert.ok(indexSource.includes('rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180"'));
-  assert.strictEqual(manifest.start_url, './');
-  assert.strictEqual(manifest.scope, './');
-  assert.strictEqual(manifest.display, 'standalone');
-  assert.strictEqual(manifest.theme_color, '#9A0941');
-  assert.deepStrictEqual(
-    manifest.icons.map((icon) => [icon.src, icon.sizes, icon.type]),
-    expectedIcons,
-  );
+  ['manifest.webmanifest', 'manifest.de-CH.webmanifest', 'manifest.en-CH.webmanifest',
+    'manifest.fr-CH.webmanifest', 'manifest.it-CH.webmanifest'].forEach((name) => {
+    const manifest = JSON.parse(fs.readFileSync(path.join(ROOT, name), 'utf8'));
+    const expectedLocale = name === 'manifest.webmanifest'
+      ? 'de-CH'
+      : name.replace(/^manifest\.|\.webmanifest$/g, '');
+    assert.strictEqual(manifest.lang, expectedLocale, name + ': Sprache');
+    assert.strictEqual(
+      new URL(manifest.start_url, 'https://example.test/app/').searchParams.get('lang'),
+      expectedLocale,
+      name + ': Startsprache'
+    );
+    assert.strictEqual(manifest.scope, './');
+    assert.strictEqual(manifest.display, 'standalone');
+    assert.strictEqual(manifest.theme_color, '#9A0941');
+    assert.deepStrictEqual(
+      manifest.icons.map((icon) => [icon.src, icon.sizes, icon.type]),
+      expectedIcons,
+      name + ': Icons'
+    );
+  });
 
   const svg = fs.readFileSync(path.join(ROOT, 'assets', 'app-icon.svg'), 'utf8');
   assert.ok(/^<svg\b/.test(svg));
@@ -539,7 +566,7 @@ test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollstän
   });
 
   const pagesWorkflow = fs.readFileSync(path.join(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml'), 'utf8');
-  assert.ok(pagesWorkflow.includes('cp index.html quellen.html manifest.webmanifest ../_site/'));
+  assert.ok(pagesWorkflow.includes('cp index.html quellen.html manifest*.webmanifest ../_site/'));
 });
 
 test('Helsana-Logo ist lokal, unverändert und frei von aktiven SVG-Inhalten', () => {
@@ -548,7 +575,7 @@ test('Helsana-Logo ist lokal, unverändert und frei von aktiven SVG-Inhalten', (
   const logoRefs = pages.flatMap((page) => [...page.matchAll(/<img\b[^>]*class="brand-logo"[^>]*src="([^"]+)"[^>]*>/gsi)]
     .map((match) => match[1]));
 
-  assert.deepStrictEqual(logoRefs, [expectedLogoPath, expectedLogoPath, expectedLogoPath]);
+  assert.deepStrictEqual(logoRefs, [expectedLogoPath, expectedLogoPath]);
   assert.ok(!pages.join('\n').includes('www.helsana.ch/content/dam/system/helsana/resources/helsana-logo.svg'));
 
   const svg = fs.readFileSync(path.join(ROOT, expectedLogoPath), 'utf8');

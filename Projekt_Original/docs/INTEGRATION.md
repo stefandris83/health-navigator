@@ -29,6 +29,12 @@ Herkunft (`none`, `mock`, `live`). Gesundheitsantworten werden nie an den Adapte
 Storage zugreifen; deshalb ist ein isolierter, kontrollierter Origin ohne unkontrollierte
 Drittanbieter-Skripte eine Go-live-Voraussetzung.
 
+Davon getrennt speichert `js/locale.js` ausschliesslich die nicht sensible
+Oberflächensprache unter `health-navigator.locale.v1`. `?lang=` akzeptiert nur
+`de-CH`, `en-CH`, `fr-CH` und `it-CH`; dieser Parameter aktiviert keinen
+Kundenkontext. Beim Erzeugen eines Ergebnislinks werden alle Query-Parameter bis
+auf diese validierte Sprache entfernt.
+
 ## 2. Betriebsmodi und Bootstrap-Reihenfolge
 
 Vor `js/config.js` setzt der Host die validierte Laufzeitkonfiguration:
@@ -55,6 +61,9 @@ Live-Modus niemals ein Demo-Profil aktivieren und wird nicht an den Live-Adapter
 weitergereicht. `anonymous` ist eine harte Datenschutzgrenze: Bootstrap-Kontext und
 -Adapter werden ignoriert, `setAdapter()` liefert `false`, `setContext()` bleibt
 anonym und `init()` ruft keinen Live-/Mock-Adapter auf.
+
+Die Sprachwahl `?lang=…` bleibt in allen drei Betriebsmodi zulässig und ist vom
+Mock-Profilparameter `?kunde=…` unabhängig.
 
 ### Empfohlener One-shot-Bootstrap
 

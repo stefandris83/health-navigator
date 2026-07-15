@@ -1,44 +1,45 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="de-CH">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="theme-color" content="#9a0941" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-  <meta name="apple-mobile-web-app-title" content="Gesundheitscheck" />
+  <meta name="apple-mobile-web-app-title" content="Gesundheitscheck" data-copy-content="shell.meta.app_title" />
   <meta name="referrer" content="no-referrer" />
-  <meta name="description" content="Digitaler Gesundheitscheck: Ihr persönlicher Healthspan- und Präventions-Check. Keine Diagnose, sondern eine motivierende Standortbestimmung." />
-  <title>Gesundheitscheck</title>
+  <meta name="description" content="Digitaler Gesundheitscheck: Ihr persönlicher Healthspan- und Präventions-Check. Keine Diagnose, sondern eine motivierende Standortbestimmung." data-copy-content="shell.meta.index_description" />
+  <title data-copy="shell.meta.index_title">Gesundheitscheck</title>
   <link rel="icon" href="assets/app-icon.svg" type="image/svg+xml" />
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png" sizes="180x180" />
-  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="manifest" href="manifest.de-CH.webmanifest" data-locale-manifest />
+  <script src="js/locale.js"></script>
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
-  <a class="skip-link" href="#app">Zum Inhalt springen</a>
+  <a class="skip-link" href="#app" data-copy="shell.skip_to_content">Zum Inhalt springen</a>
 
   <div class="util-bar">
     <div class="container util-inner">
       <details class="util-dropdown">
         <summary class="util-dd-toggle">
-          <span>Helsana-Gruppe</span>
+          <span data-copy="shell.utility.group">Helsana-Gruppe</span>
           <svg class="util-chevron" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
         </summary>
         <div class="util-dd-menu">
-          <a href="https://www.helsana.ch/de/private.html" target="_blank" rel="noopener noreferrer">Für Private</a>
-          <a href="https://www.helsana.ch/de/unternehmen.html" target="_blank" rel="noopener noreferrer">Für Unternehmen</a>
-          <a href="https://www.helsana.ch/de/helsana-gruppe.html" target="_blank" rel="noopener noreferrer" aria-current="page">Helsana-Gruppe</a>
+          <a href="https://www.helsana.ch/de/private.html" data-locale-href="helsana.private" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.private">Für Private</a>
+          <a href="https://www.helsana.ch/de/unternehmen.html" data-locale-href="helsana.business" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.business">Für Unternehmen</a>
+          <a href="https://www.helsana.ch/de/helsana-gruppe.html" data-locale-href="helsana.group" target="_blank" rel="noopener noreferrer" aria-current="page" data-copy="shell.utility.group">Helsana-Gruppe</a>
         </div>
       </details>
-      <nav class="util-right" aria-label="Helsana Verweise">
-        <a class="util-item" href="https://www.helsana.ch/de/blog.html" target="_blank" rel="noopener noreferrer">
+      <nav class="util-right" aria-label="Helsana Verweise" data-copy-aria-label="shell.utility.nav_aria">
+        <a class="util-item" href="https://www.helsana.ch/de/blog.html" data-locale-href="helsana.blog" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 11.5a8.5 8.5 0 0 1-8.5 8.5 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8A8.5 8.5 0 0 1 12.5 3 8.5 8.5 0 0 1 21 11.5z"/></svg>
-          Blog
+          <span data-copy="shell.utility.blog">Blog</span>
         </a>
-        <a class="util-item" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" target="_blank" rel="noopener noreferrer">
+        <a class="util-item" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" data-locale-href="helsana.myhelsana" target="_blank" rel="noopener noreferrer">
           <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-8 9 8"/><path d="M5 10v10h14V10"/></svg>
-          myHelsana
+          <span data-copy="shell.utility.myhelsana">myHelsana</span>
         </a>
       </nav>
     </div>
@@ -46,18 +47,19 @@
 
   <header class="site-header">
     <div class="container header-inner">
-      <a class="brand" href="#app" aria-label="Helsana – Gesundheitscheck">
+      <a class="brand" href="#app" aria-label="Helsana – Gesundheitscheck" data-copy-aria-label="shell.header.brand_aria">
         <img
           class="brand-logo"
           src="assets/helsana-logo.svg"
           alt="Helsana"
+          data-copy-alt="shell.header.logo_alt"
           width="180"
           height="34"
           decoding="async"
           loading="eager"
         />
       </a>
-      <p class="header-tag">Ihr Gesundheitscheck</p>
+      <p class="header-tag" data-copy="shell.header.tagline">Ihr Gesundheitscheck</p>
     </div>
   </header>
 
@@ -69,38 +71,38 @@
     <!-- Footer Navigation + Footer (Figma "04 -- Ergebnisseite HiFi Skizze"). Wird während des
          Fragebogens per JS (body[data-screen="quiz"]) ausgeblendet. -->
     <div id="footer-global">
-      <nav class="footer-nav" aria-label="Weitere Helsana-Links">
+      <nav class="footer-nav" aria-label="Weitere Helsana-Links" data-copy-aria-label="shell.footer.nav_aria">
         <div class="container footer-nav-grid">
           <div class="footer-link-group">
-            <p class="footer-link-heading">Services</p>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Rechnung einsenden</span>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Adresse ändern</span>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Alle Services</span>
+            <p class="footer-link-heading" data-copy="shell.footer.services_heading">Services</p>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.submit_invoice">Rechnung einsenden</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.change_address">Adresse ändern</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.all_services">Alle Services</span>
           </div>
           <div class="footer-link-group">
-            <p class="footer-link-heading">Bereiche</p>
-            <a class="footer-link" href="https://www.helsana.ch/de/private.html" target="_blank" rel="noopener noreferrer">Für Private</a>
-            <a class="footer-link" href="https://www.helsana.ch/de/unternehmen.html" target="_blank" rel="noopener noreferrer">Für Unternehmen</a>
-            <a class="footer-link" href="https://www.helsana.ch/de/helsana-gruppe.html" target="_blank" rel="noopener noreferrer">Helsana Gruppe</a>
+            <p class="footer-link-heading" data-copy="shell.footer.areas_heading">Bereiche</p>
+            <a class="footer-link" href="https://www.helsana.ch/de/private.html" data-locale-href="helsana.private" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.private">Für Private</a>
+            <a class="footer-link" href="https://www.helsana.ch/de/unternehmen.html" data-locale-href="helsana.business" target="_blank" rel="noopener noreferrer" data-copy="shell.utility.business">Für Unternehmen</a>
+            <a class="footer-link" href="https://www.helsana.ch/de/helsana-gruppe.html" data-locale-href="helsana.group" target="_blank" rel="noopener noreferrer" data-copy="shell.footer.helsana_group">Helsana Gruppe</a>
           </div>
           <div class="footer-link-group">
-            <p class="footer-link-heading">Helsana</p>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Über uns</span>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Jobs &amp; Karriere</span>
-            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Medien &amp; Publikationen</span>
+            <p class="footer-link-heading" data-copy="shell.footer.helsana_heading">Helsana</p>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.about">Über uns</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.jobs">Jobs &amp; Karriere</span>
+            <span class="footer-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.footer.media">Medien &amp; Publikationen</span>
           </div>
           <div class="footer-link-group footer-action-links">
-            <a class="action-link" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" target="_blank" rel="noopener noreferrer">
+            <a class="action-link" href="https://portal.helsana.ch/helsana-login/myhelsana?language=de" data-locale-href="helsana.myhelsana" target="_blank" rel="noopener noreferrer">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              <span>myHelsana</span>
+              <span data-copy="shell.utility.myhelsana">myHelsana</span>
             </a>
-            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">
+            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              <span>Prämienrechner</span>
+              <span data-copy="shell.footer.premium_calculator">Prämienrechner</span>
             </span>
-            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">
+            <span class="action-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
-              <span>Newsletter</span>
+              <span data-copy="shell.footer.newsletter">Newsletter</span>
             </span>
           </div>
         </div>
@@ -108,34 +110,34 @@
 
       <div class="footer-bottom">
         <div class="container">
-          <div class="lang-switch" role="group" aria-label="Sprache wählen">
-            <span class="lang-item is-active" aria-current="true">DE</span>
-            <span class="lang-item is-placeholder" role="link" aria-disabled="true" title="Platzhalter – Sprachversion noch nicht verfügbar">EN</span>
-            <span class="lang-item is-placeholder" role="link" aria-disabled="true" title="Platzhalter – Sprachversion noch nicht verfügbar">FR</span>
-            <span class="lang-item is-placeholder" role="link" aria-disabled="true" title="Platzhalter – Sprachversion noch nicht verfügbar">IT</span>
+          <div class="lang-switch" role="group" aria-label="Sprache wählen" data-copy-aria-label="shell.language.group_aria">
+            <button type="button" class="lang-item is-active" data-locale="de-CH" data-copy="shell.language.de_short" aria-label="Deutsch" data-copy-aria-label="shell.language.de_label" aria-current="true" aria-pressed="true">DE</button>
+            <button type="button" class="lang-item" data-locale="en-CH" data-copy="shell.language.en_short" aria-label="English" data-copy-aria-label="shell.language.en_label" aria-pressed="false">EN</button>
+            <button type="button" class="lang-item" data-locale="fr-CH" data-copy="shell.language.fr_short" aria-label="Français" data-copy-aria-label="shell.language.fr_label" aria-pressed="false">FR</button>
+            <button type="button" class="lang-item" data-locale="it-CH" data-copy="shell.language.it_short" aria-label="Italiano" data-copy-aria-label="shell.language.it_label" aria-pressed="false">IT</button>
           </div>
           <div class="legal-links">
-            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Impressum</span>
-            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Datenschutz</span>
-            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Rechtliche Hinweise</span>
-            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Nutzungsbedingungen</span>
-            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen">Cookie-Einstellungen</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.imprint">Impressum</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.privacy">Datenschutz</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.legal_notice">Rechtliche Hinweise</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.terms">Nutzungsbedingungen</span>
+            <span class="footer-legal-link is-placeholder" role="link" aria-disabled="true" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" data-copy="shell.legal.cookies">Cookie-Einstellungen</span>
           </div>
           <div class="social-icons">
-            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" aria-label="Facebook (Platzhalter)">
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="Facebook (Platzhalter)" data-copy-aria-label="shell.social.facebook_aria">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M14 8.5h2.5V5.2c-.43-.06-1.9-.2-3.6-.2-3.57 0-6 2.24-6 6.36V15H3.5v3.7H7V23h3.7v-4.3h3.36l.53-3.7h-3.9v-2.9c0-1.07.29-1.8 1.8-1.8z"/></svg>
             </span>
-            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" aria-label="Instagram (Platzhalter)">
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="Instagram (Platzhalter)" data-copy-aria-label="shell.social.instagram_aria">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.3" cy="6.7" r="1.1" fill="currentColor" stroke="none"/></svg>
             </span>
-            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" aria-label="YouTube (Platzhalter)">
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="YouTube (Platzhalter)" data-copy-aria-label="shell.social.youtube_aria">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><rect x="2.5" y="5.5" width="19" height="13" rx="3.5"/><path d="M10.5 9.3v5.4l4.7-2.7z" fill="currentColor" stroke="none"/></svg>
             </span>
-            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" aria-label="LinkedIn (Platzhalter)">
+            <span class="social-icon is-placeholder" role="img" title="Platzhalter – echten Link ergänzen" data-copy-title="shell.placeholder.link_title" aria-label="LinkedIn (Platzhalter)" data-copy-aria-label="shell.social.linkedin_aria">
               <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.94 8.5H3.56V20h3.38zM5.25 3.2A1.96 1.96 0 1 0 5.28 7.1a1.96 1.96 0 0 0-.03-3.9zM20.5 20h-3.38v-6.06c0-1.45-.03-3.31-2.02-3.31-2.02 0-2.33 1.58-2.33 3.2V20H9.4V8.5h3.24v1.57h.05c.45-.86 1.56-1.77 3.21-1.77 3.43 0 4.6 2.26 4.6 5.2z"/></svg>
             </span>
           </div>
-          <p class="footer-placeholder-note">Grau markierte Links sind Platzhalter und werden vor Go-live final verlinkt.</p>
+          <p class="footer-placeholder-note" data-copy="shell.footer.placeholder_note">Grau markierte Links sind Platzhalter und werden vor Go-live final verlinkt.</p>
         </div>
       </div>
     </div>
@@ -144,6 +146,7 @@
   <script src="js/config.js"></script>
   <script src="js/result-copy.generated.js"></script>
   <script src="js/result-copy.js"></script>
+  <script src="js/page-i18n.js"></script>
   <script src="js/url-safety.js"></script>
   <script src="js/questions.js"></script>
   <script src="js/persistence.js"></script>

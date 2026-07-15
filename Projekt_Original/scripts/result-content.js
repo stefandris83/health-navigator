@@ -4,7 +4,8 @@
 /*
  * Dependency-freier Workflow fuer die Texte der Ergebnisseite.
  *
- * Kanonische Quelle: content/result-texts/*.json
+ * Kanonische DE-Quelle: content/result-texts/*.json
+ * Uebersetzungen:       content/result-texts/locales/<locale>/*.json
  * Austauschformat:   UTF-8-BOM, Semikolon, RFC-4180-Quoting
  * Runtime-Artefakt:  js/result-copy.generated.js
  *
@@ -23,8 +24,16 @@ const DEFAULT_EXPORT_FILE = path.join(PROJECT_ROOT, 'exports', 'result-texte-de-
 const DEFAULT_OVERVIEW_FILE = path.join(PROJECT_ROOT, 'exports', 'result-texte-uebersicht.md');
 const DEFAULT_BACKUP_ROOT = path.join(PROJECT_ROOT, 'exports', 'import-backups');
 const SCHEMA_VERSION = 1;
-const LOCALE = 'de-CH';
+const DEFAULT_LOCALE = 'de-CH';
+const LOCALE = DEFAULT_LOCALE;
+const SUPPORTED_LOCALES = Object.freeze(['de-CH', 'en-CH', 'fr-CH', 'it-CH']);
+const MANIFEST_COPY_IDS = Object.freeze({
+  name: 'shell.manifest.name',
+  shortName: 'shell.meta.app_title',
+  description: 'shell.manifest.description',
+});
 const CSV_FORMAT_VERSION = '2';
+const LOCALIZED_CSV_FORMAT_VERSION = '3';
 
 const ALLOWED_REVIEWERS = Object.freeze(['Marketing', 'Medizin', 'Recht']);
 const ALLOWED_REVIEW_STATUSES = Object.freeze(['', 'needs-review', 'approved']);
@@ -49,6 +58,15 @@ const FORBIDDEN_CONTROL_RE = /[\u0000-\u0008\u000B\u000C\u000E-\u001F\u007F\u202
 const TOP_LEVEL_FIELDS = ['schemaVersion', 'locale', 'domain', 'entries'];
 const ENTRY_REQUIRED_FIELDS = ['id', 'section', 'context', 'kind', 'reviewers', 'text'];
 const ENTRY_OPTIONAL_FIELDS = ['requiredTerms', 'reviewStatus', 'comment', 'reviewComment'];
+const TRANSLATION_ENTRY_REQUIRED_FIELDS = [
+  'id',
+  'text',
+  'requiredTerms',
+  'reviewStatus',
+  'translationState',
+  'sourceContractHash',
+];
+const TRANSLATION_ENTRY_OPTIONAL_FIELDS = ['reviewComment'];
 
 const CSV_COLUMNS = [
   'Gesundheitsbereich',
@@ -66,6 +84,32 @@ const CSV_COLUMNS = [
   'Geschützte Begriffe',
   'ID (technisch)',
   'Domain (technisch)',
+  'Austauschformat (technisch)',
+  'Quellversion (technisch)',
+  'Zeilen-Hash (technisch)',
+];
+
+// Format 3 wird ausschliesslich fuer Uebersetzungen verwendet. Die deutsche
+// Referenz und die unveraenderliche Sprache machen die Datei fuer Reviews
+// selbsterklaerend und verhindern versehentliche Cross-Locale-Importe.
+const LOCALIZED_CSV_COLUMNS = [
+  'Gesundheitsbereich',
+  'Thema',
+  'Seitenelement',
+  'Textfunktion',
+  'Kontext / Variante',
+  'Deutscher Ausgangstext',
+  'Aktueller Text',
+  'Neuer Text',
+  'Review-Kommentar',
+  'Freigabe durch',
+  'Freigabestatus',
+  'Prüfhinweis',
+  'Platzhalter',
+  'Geschützte Begriffe',
+  'ID (technisch)',
+  'Domain (technisch)',
+  'Sprache (technisch)',
   'Austauschformat (technisch)',
   'Quellversion (technisch)',
   'Zeilen-Hash (technisch)',
@@ -108,6 +152,15 @@ const REVIEW_KIND_LABELS = Object.freeze({
   legal_notice: 'Rechtlicher Hinweis',
   medical_notice: 'Medizinischer Hinweis',
   plan_step: '4-Wochen-Plan',
+  question: 'Frage',
+  option_label: 'Antwortoption',
+  help: 'Hilfetext',
+  help_title: 'Titel des Hilfetexts',
+  safety_note: 'Sicherheitshinweis',
+  unit: 'Einheit',
+  placeholder: 'Eingabehinweis',
+  navigation: 'Navigation',
+  metadata: 'Metadaten',
   positive_feedback: 'Positive Rückmeldung',
   signal_label: 'Risikosignal',
   solid_feedback: 'Solide Rückmeldung',
@@ -117,6 +170,7 @@ const REVIEW_KIND_LABELS = Object.freeze({
 });
 
 const REVIEW_AREA_ORDER = Object.freeze([
+  'Fragebogen',
   'Einflussfaktoren',
   'Körperliche Fitness',
   'Ernährung',
@@ -125,6 +179,8 @@ const REVIEW_AREA_ORDER = Object.freeze([
   'Digital Coach',
   'Helsana-Angebote & Versicherung',
   'Medizin & Sicherheit',
+  'Globale Navigation',
+  'Quellen & Transparenz',
   'Übergreifende Ergebnisdarstellung',
 ]);
 
@@ -254,15 +310,22 @@ function validateAllowedHtml(text, location, errors) {
     }
 
     const token = match[0];
-    const parsed = token.match(/^<(\/)?(b|i)>$/);
+    const parsed = token.match(/^<(\/)?(b|i|ul|li|br)>$/);
     if (!parsed) {
-      errors.push(location + ': nur <b>, </b>, <i> und </i> ohne Attribute sind erlaubt (gefunden: ' + token + ').');
+      errors.push(
+        location + ': nur <b>, <i>, <ul>, <li> und <br> ohne Attribute sind erlaubt (gefunden: ' + token + ').'
+      );
       return;
     }
 
     const closing = !!parsed[1];
     const name = parsed[2];
-    if (!closing) {
+    if (name === 'br') {
+      if (closing) {
+        errors.push(location + ': </br> ist nicht erlaubt; verwenden Sie <br>.');
+        return;
+      }
+    } else if (!closing) {
       stack.push(name);
     } else if (stack.pop() !== name) {
       errors.push(location + ': HTML-Tags sind nicht korrekt verschachtelt.');
@@ -279,6 +342,10 @@ function validateAllowedHtml(text, location, errors) {
   if (stack.length) errors.push(location + ': nicht geschlossener <' + stack[stack.length - 1] + '>-Tag.');
 }
 
+function htmlTagOccurrences(text) {
+  return String(text).match(/<\/?(?:b|i|ul|li|br)>/g) || [];
+}
+
 function validateTextAgainstEntry(text, entry, location, errors) {
   if (!validateEditorialString(text, 'Text', FIELD_LIMITS.text, location, errors, false)) return;
   if (typeof text !== 'string' || text.trim() === '') return;
@@ -289,7 +356,9 @@ function validateTextAgainstEntry(text, entry, location, errors) {
   });
 }
 
-function makeCatalog(files, contentDir) {
+function makeCatalog(files, contentDir, options) {
+  const opts = options || {};
+  const catalogLocale = opts.locale || (files[0] && files[0].data && files[0].data.locale) || DEFAULT_LOCALE;
   const entries = [];
   files.forEach((file) => {
     const data = file.data;
@@ -301,14 +370,34 @@ function makeCatalog(files, contentDir) {
           entryIndex,
           domain: data.domain,
           file,
+          locale: catalogLocale,
         });
       });
     }
   });
-  return { contentDir, files, entries };
+  return {
+    contentDir,
+    files,
+    entries,
+    locale: catalogLocale,
+    isTranslation: !!opts.isTranslation,
+    baseCatalog: opts.baseCatalog || null,
+    translationFiles: opts.translationFiles || [],
+    staleSourceIds: opts.staleSourceIds || [],
+    missingTranslationIds: opts.missingTranslationIds || [],
+  };
 }
 
-function loadCatalog(options) {
+function assertSupportedLocale(locale) {
+  if (!SUPPORTED_LOCALES.includes(locale)) {
+    throw new ContentWorkflowError(
+      'Nicht unterstuetzte Sprache "' + locale + '". Erlaubt: ' + SUPPORTED_LOCALES.join(', ') + '.'
+    );
+  }
+  return locale;
+}
+
+function loadBaseCatalog(options) {
   const opts = options || {};
   const contentDir = path.resolve(opts.contentDir || DEFAULT_CONTENT_DIR);
   if (!fs.existsSync(contentDir)) {
@@ -332,10 +421,236 @@ function loadCatalog(options) {
     }
     return { name, path: filePath, data };
   });
-  return makeCatalog(files, contentDir);
+  return makeCatalog(files, contentDir, { locale: DEFAULT_LOCALE });
 }
 
-function validateCatalog(catalog) {
+function translationSourceContract(record) {
+  const entry = record.entry;
+  return {
+    schemaVersion: SCHEMA_VERSION,
+    locale: DEFAULT_LOCALE,
+    domain: record.domain,
+    id: record.id,
+    text: entry.text,
+    kind: entry.kind,
+    reviewers: reviewersAsArray(entry.reviewers),
+    requiredTerms: (entry.requiredTerms || []).slice(),
+    comment: entry.comment || '',
+  };
+}
+
+function computeTranslationSourceContractHash(record) {
+  return sha256(stableStringify(translationSourceContract(record)));
+}
+
+function readJsonFile(filePath, displayName) {
+  try {
+    return JSON.parse(fs.readFileSync(filePath, 'utf8'));
+  } catch (error) {
+    throw new ContentWorkflowError((displayName || filePath) + ': ungueltiges JSON: ' + error.message);
+  }
+}
+
+function loadTranslationCatalog(baseCatalog, locale, options) {
+  const opts = options || {};
+  const contentDir = baseCatalog.contentDir;
+  const localeDir = path.resolve(opts.localeDir || path.join(contentDir, 'locales', locale));
+  if (!fs.existsSync(localeDir)) {
+    throw new ContentWorkflowError('Uebersetzungsverzeichnis fehlt: ' + localeDir);
+  }
+
+  const errors = [];
+  const staleSourceIds = [];
+  const missingTranslationIds = [];
+  const translationFiles = [];
+  const baseDomains = new Map(baseCatalog.files.map((file) => [file.data.domain, file]));
+  const overlayNames = fs.readdirSync(localeDir)
+    .filter((name) => name.endsWith('.json'))
+    .sort((a, b) => a.localeCompare(b, 'de'));
+  const overlayByDomain = new Map();
+
+  overlayNames.forEach((name) => {
+    const filePath = path.join(localeDir, name);
+    const data = readJsonFile(filePath, path.join('locales', locale, name));
+    const at = path.join('locales', locale, name);
+    if (!isPlainObject(data)) {
+      errors.push(at + ': Wurzel muss ein Objekt sein.');
+      return;
+    }
+    assertKnownFields(data, TOP_LEVEL_FIELDS, at, errors);
+    TOP_LEVEL_FIELDS.forEach((field) => {
+      if (!own(data, field)) errors.push(at + ': Pflichtfeld "' + field + '" fehlt.');
+    });
+    if (data.schemaVersion !== SCHEMA_VERSION) errors.push(at + ': schemaVersion muss ' + SCHEMA_VERSION + ' sein.');
+    if (data.locale !== locale) errors.push(at + ': locale muss "' + locale + '" sein.');
+    if (typeof data.domain !== 'string' || !/^[a-z][a-z0-9_-]*$/.test(data.domain)) {
+      errors.push(at + ': domain muss einer stabilen ID entsprechen.');
+    } else if (overlayByDomain.has(data.domain)) {
+      errors.push(at + ': domain "' + data.domain + '" ist doppelt definiert.');
+    } else {
+      overlayByDomain.set(data.domain, { name, path: filePath, data });
+    }
+    if (!Array.isArray(data.entries) || !data.entries.length) {
+      errors.push(at + ': entries muss ein nicht-leeres Array sein.');
+    }
+  });
+
+  const missingDomains = [...baseDomains.keys()].filter((domain) => !overlayByDomain.has(domain));
+  const extraDomains = [...overlayByDomain.keys()].filter((domain) => !baseDomains.has(domain));
+  if (missingDomains.length) errors.push(locale + ': fehlende Domains: ' + missingDomains.join(', ') + '.');
+  if (extraDomains.length) errors.push(locale + ': unbekannte Domains: ' + extraDomains.join(', ') + '.');
+
+  const mergedFiles = [];
+  baseCatalog.files.forEach((baseFile) => {
+    const overlayFile = overlayByDomain.get(baseFile.data.domain);
+    if (!overlayFile || !Array.isArray(overlayFile.data.entries)) return;
+    translationFiles.push(overlayFile);
+    const baseById = new Map(baseFile.data.entries.map((entry) => [entry.id, entry]));
+    const overlayById = new Map();
+
+    overlayFile.data.entries.forEach((entry, index) => {
+      const fallback = overlayFile.name + ':entries[' + index + ']';
+      if (!isPlainObject(entry)) {
+        errors.push(fallback + ': Eintrag muss ein Objekt sein.');
+        return;
+      }
+      const location = entry.id ? overlayFile.name + ':' + entry.id : fallback;
+      assertKnownFields(
+        entry,
+        TRANSLATION_ENTRY_REQUIRED_FIELDS.concat(TRANSLATION_ENTRY_OPTIONAL_FIELDS),
+        location,
+        errors
+      );
+      TRANSLATION_ENTRY_REQUIRED_FIELDS.forEach((field) => {
+        if (!own(entry, field)) errors.push(location + ': Pflichtfeld "' + field + '" fehlt.');
+      });
+      if (typeof entry.id !== 'string') errors.push(location + ': id muss eine Zeichenkette sein.');
+      else if (overlayById.has(entry.id)) errors.push(location + ': ID ist im Overlay doppelt.');
+      else overlayById.set(entry.id, entry);
+    });
+
+    const missing = [...baseById.keys()].filter((id) => !overlayById.has(id));
+    const extra = [...overlayById.keys()].filter((id) => !baseById.has(id));
+    if (missing.length) errors.push(locale + '/' + baseFile.data.domain + ': fehlende IDs: ' + missing.join(', ') + '.');
+    if (extra.length) errors.push(locale + '/' + baseFile.data.domain + ': unbekannte IDs: ' + extra.join(', ') + '.');
+
+    const mergedEntries = baseFile.data.entries.map((baseEntry) => {
+      const translated = overlayById.get(baseEntry.id);
+      if (!translated) return cloneJson(baseEntry);
+      const baseRecord = { id: baseEntry.id, domain: baseFile.data.domain, entry: baseEntry };
+      const location = overlayFile.name + ':' + baseEntry.id;
+      const expectedHash = computeTranslationSourceContractHash(baseRecord);
+      const translatedTerms = translated.requiredTerms;
+      if (!Array.isArray(translatedTerms)) {
+        errors.push(location + ': requiredTerms muss ein Array sein.');
+      } else if (translated.translationState === 'translated' &&
+          Array.isArray(baseEntry.requiredTerms) && baseEntry.requiredTerms.length && !translatedTerms.length) {
+        errors.push(
+          location + ': geschuetzte Begriffe des deutschen Ausgangstexts duerfen in einer fertigen Uebersetzung nicht vollstaendig entfallen.'
+        );
+      }
+      if (!ALLOWED_REVIEW_STATUSES.includes(translated.reviewStatus)) {
+        errors.push(location + ': unbekannter reviewStatus "' + translated.reviewStatus + '".');
+      }
+      if (!['missing', 'translated'].includes(translated.translationState)) {
+        errors.push(location + ': translationState muss "missing" oder "translated" sein.');
+      } else if (translated.translationState === 'missing') {
+        missingTranslationIds.push(baseEntry.id);
+      }
+      if (typeof translated.sourceContractHash !== 'string' || !/^[a-f0-9]{64}$/.test(translated.sourceContractHash)) {
+        errors.push(location + ': sourceContractHash muss ein SHA-256-Hash sein.');
+      } else if (translated.sourceContractHash !== expectedHash) {
+        staleSourceIds.push(baseEntry.id);
+      }
+      const expectedPlaceholders = placeholderOccurrences(baseEntry.text);
+      const actualPlaceholders = placeholderOccurrences(translated.text);
+      if (expectedPlaceholders.join('|') !== actualPlaceholders.join('|')) {
+        errors.push(location + ': Platzhalter muessen exakt dem deutschen Ausgangstext entsprechen.');
+      }
+      const expectedTags = htmlTagOccurrences(baseEntry.text);
+      const actualTags = htmlTagOccurrences(translated.text);
+      if (expectedTags.join('|') !== actualTags.join('|')) {
+        errors.push(location + ': erlaubte HTML-Tags muessen exakt dem deutschen Ausgangstext entsprechen.');
+      }
+      const translatedForValidation = {
+        text: translated.text,
+        requiredTerms: Array.isArray(translatedTerms) ? translatedTerms : [],
+      };
+      validateTextAgainstEntry(translated.text, translatedForValidation, location, errors);
+      if (translated.reviewComment !== undefined) {
+        validateEditorialString(
+          translated.reviewComment,
+          'reviewComment',
+          FIELD_LIMITS.reviewComment,
+          location,
+          errors,
+          true
+        );
+      }
+      const merged = cloneJson(baseEntry);
+      merged.text = translated.text;
+      merged.requiredTerms = Array.isArray(translatedTerms) ? translatedTerms.slice() : [];
+      merged.reviewStatus = translated.sourceContractHash === expectedHash
+        ? (translated.translationState === 'missing' ? 'needs-review' : translated.reviewStatus)
+        : 'needs-review';
+      if (translated.reviewComment !== undefined) merged.reviewComment = translated.reviewComment;
+      else delete merged.reviewComment;
+      return merged;
+    });
+
+    mergedFiles.push({
+      name: baseFile.name,
+      path: overlayFile.path,
+      data: {
+        schemaVersion: SCHEMA_VERSION,
+        locale,
+        domain: baseFile.data.domain,
+        entries: mergedEntries,
+      },
+      overlayData: overlayFile.data,
+      baseFile,
+    });
+  });
+
+  if (errors.length) {
+    throw new ContentWorkflowError(
+      'Uebersetzungsvalidierung fuer ' + locale + ' fehlgeschlagen (' + errors.length + ' Fehler).',
+      errors
+    );
+  }
+
+  const catalog = makeCatalog(mergedFiles, contentDir, {
+    locale,
+    isTranslation: true,
+    baseCatalog,
+    translationFiles,
+    staleSourceIds,
+    missingTranslationIds,
+  });
+  const baseIndex = recordIndex(baseCatalog);
+  const overlayIndex = new Map();
+  translationFiles.forEach((file) => {
+    file.data.entries.forEach((entry) => overlayIndex.set(entry.id, entry));
+  });
+  catalog.entries.forEach((record) => {
+    record.baseRecord = baseIndex.get(record.id);
+    record.translationEntry = overlayIndex.get(record.id);
+    record.locale = locale;
+  });
+  return catalog;
+}
+
+function loadCatalog(options) {
+  const opts = options || {};
+  const locale = assertSupportedLocale(opts.locale || DEFAULT_LOCALE);
+  const baseCatalog = loadBaseCatalog(opts);
+  validateCatalog(baseCatalog);
+  if (locale === DEFAULT_LOCALE) return baseCatalog;
+  return loadTranslationCatalog(baseCatalog, locale, opts);
+}
+
+function validateCatalog(catalog, options) {
+  const opts = options || {};
   const errors = [];
   const ids = new Map();
   const domains = new Map();
@@ -361,7 +676,12 @@ function validateCatalog(catalog) {
     if (data.schemaVersion !== SCHEMA_VERSION) {
       errors.push(at + ': schemaVersion muss ' + SCHEMA_VERSION + ' sein.');
     }
-    if (data.locale !== LOCALE) errors.push(at + ': locale muss "' + LOCALE + '" sein.');
+    const expectedLocale = catalog.locale || DEFAULT_LOCALE;
+    if (!SUPPORTED_LOCALES.includes(data.locale)) {
+      errors.push(at + ': locale ist nicht unterstuetzt: "' + data.locale + '".');
+    } else if (data.locale !== expectedLocale) {
+      errors.push(at + ': locale muss "' + expectedLocale + '" sein.');
+    }
     if (schemaVersion == null) schemaVersion = data.schemaVersion;
     if (locale == null) locale = data.locale;
 
@@ -497,6 +817,20 @@ function validateCatalog(catalog) {
     });
   });
 
+  if (opts.requireCurrentSource && catalog.staleSourceIds && catalog.staleSourceIds.length) {
+    errors.push(
+      catalog.locale + ': ' + catalog.staleSourceIds.length +
+      ' Uebersetzung(en) basieren auf einem geaenderten deutschen Ausgangstext: ' +
+      catalog.staleSourceIds.join(', ') + '.'
+    );
+  }
+  if (opts.requireTranslations && catalog.missingTranslationIds && catalog.missingTranslationIds.length) {
+    errors.push(
+      catalog.locale + ': ' + catalog.missingTranslationIds.length +
+      ' Text(e) sind noch nicht uebersetzt: ' + catalog.missingTranslationIds.join(', ') + '.'
+    );
+  }
+
   if (errors.length) {
     throw new ContentWorkflowError(
       'Content-Validierung fehlgeschlagen (' + errors.length + ' Fehler).',
@@ -510,6 +844,8 @@ function validateCatalog(catalog) {
     entries: ids.size,
     schemaVersion: schemaVersion,
     locale: locale,
+    staleSourceEntries: catalog.staleSourceIds ? catalog.staleSourceIds.length : 0,
+    missingTranslations: catalog.missingTranslationIds ? catalog.missingTranslationIds.length : 0,
   };
 }
 
@@ -520,11 +856,21 @@ function sortedRecords(catalog) {
 function canonicalSnapshot(catalog) {
   return {
     schemaVersion: SCHEMA_VERSION,
-    locale: LOCALE,
+    locale: catalog.locale || DEFAULT_LOCALE,
     domains: catalog.files
       .map((file) => ({
         domain: file.data.domain,
-        entries: file.data.entries.slice().sort((a, b) => a.id.localeCompare(b.id, 'de')).map(normalized),
+        entries: file.data.entries.slice().sort((a, b) => a.id.localeCompare(b.id, 'de')).map((entry) => {
+          const snapshot = normalized(entry);
+          if (file.overlayData) {
+            const translation = file.overlayData.entries.find((item) => item.id === entry.id);
+            snapshot.translationContract = translation ? {
+              translationState: translation.translationState,
+              sourceContractHash: translation.sourceContractHash,
+            } : null;
+          }
+          return snapshot;
+        }),
       }))
       .sort((a, b) => a.domain.localeCompare(b.domain, 'de')),
   };
@@ -539,12 +885,19 @@ function computeSourceVersion(catalog) {
 }
 
 function computeRowHash(record) {
-  return sha256(stableStringify({
+  const snapshot = {
     schemaVersion: SCHEMA_VERSION,
-    locale: LOCALE,
+    locale: record.locale || (record.file && record.file.data && record.file.data.locale) || DEFAULT_LOCALE,
     domain: record.domain,
     entry: record.entry,
-  }));
+  };
+  if (record.translationEntry) {
+    snapshot.translationContract = {
+      translationState: record.translationEntry.translationState,
+      sourceContractHash: record.translationEntry.sourceContractHash,
+    };
+  }
+  return sha256(stableStringify(snapshot));
 }
 
 function buildBundle(catalog) {
@@ -554,10 +907,45 @@ function buildBundle(catalog) {
   sortedRecords(catalog).forEach((record) => { texts[record.id] = record.entry.text; });
   return {
     schemaVersion: SCHEMA_VERSION,
-    locale: LOCALE,
+    locale: catalog.locale || DEFAULT_LOCALE,
     version: 'v' + SCHEMA_VERSION + ':' + sourceHash,
     sourceHash,
     texts,
+  };
+}
+
+function buildBundleRegistry(catalogs, options) {
+  const opts = options || {};
+  if (!Array.isArray(catalogs) || !catalogs.length) {
+    throw new ContentWorkflowError('Fuer das Multi-Locale-Bundle fehlt der Content-Katalog.');
+  }
+  const byLocale = new Map();
+  catalogs.forEach((catalog) => {
+    validateCatalog(catalog, {
+      requireCurrentSource: opts.allowIncomplete ? false : true,
+      requireTranslations: opts.allowIncomplete ? false : true,
+    });
+    byLocale.set(catalog.locale, buildBundle(catalog));
+  });
+  const missing = SUPPORTED_LOCALES.filter((locale) => !byLocale.has(locale));
+  if (missing.length) {
+    throw new ContentWorkflowError('Multi-Locale-Bundle unvollstaendig. Fehlend: ' + missing.join(', ') + '.');
+  }
+  const bundles = {};
+  SUPPORTED_LOCALES.forEach((locale) => { bundles[locale] = byLocale.get(locale); });
+  const sourceHash = sha256(stableStringify({
+    schemaVersion: 2,
+    defaultLocale: DEFAULT_LOCALE,
+    supportedLocales: SUPPORTED_LOCALES,
+    bundles,
+  }));
+  return {
+    schemaVersion: 2,
+    defaultLocale: DEFAULT_LOCALE,
+    supportedLocales: SUPPORTED_LOCALES.slice(),
+    version: 'v2:' + sourceHash,
+    sourceHash,
+    bundles,
   };
 }
 
@@ -576,6 +964,29 @@ function renderGenerated(bundle) {
   ].join('\n');
 }
 
+function renderGeneratedRegistry(registry) {
+  const json = JSON.stringify(registry, null, 2).replace(/<\//g, '<\\/');
+  return [
+    '/* AUTO-GENERATED by scripts/result-content.js. DO NOT EDIT. */',
+    '(function () {',
+    "  'use strict';",
+    '  const registry = ' + json.replace(/\n/g, '\n  ') + ';',
+    '  Object.keys(registry.bundles).forEach(function (locale) {',
+    '    Object.freeze(registry.bundles[locale].texts);',
+    '    Object.freeze(registry.bundles[locale]);',
+    '  });',
+    '  Object.freeze(registry.bundles);',
+    '  Object.freeze(registry.supportedLocales);',
+    '  Object.freeze(registry);',
+    "  if (typeof window !== 'undefined') {",
+    '    window.__RESULT_COPY_BUNDLES__ = registry;',
+    '    window.__RESULT_COPY_BUNDLE__ = registry.bundles[registry.defaultLocale];',
+    '  }',
+    '})();',
+    '',
+  ].join('\n');
+}
+
 function atomicWriteFile(filePath, contents) {
   fs.mkdirSync(path.dirname(filePath), { recursive: true });
   const temporary = filePath + '.tmp-' + process.pid + '-' + crypto.randomBytes(5).toString('hex');
@@ -588,8 +999,12 @@ function atomicWriteFile(filePath, contents) {
 }
 
 function expectedGenerated(options) {
-  const catalog = loadCatalog(options);
-  validateCatalog(catalog);
+  const opts = options || {};
+  const catalog = loadCatalog(Object.assign({}, opts, { locale: opts.locale || DEFAULT_LOCALE }));
+  validateCatalog(catalog, {
+    requireCurrentSource: catalog.locale !== DEFAULT_LOCALE,
+    requireTranslations: catalog.locale !== DEFAULT_LOCALE,
+  });
   const bundle = buildBundle(catalog);
   return {
     catalog,
@@ -597,6 +1012,33 @@ function expectedGenerated(options) {
     contents: renderGenerated(bundle),
     csvContents: exportCsvText(catalog),
     overviewContents: renderReviewOverview(catalog),
+  };
+}
+
+function requestedLocales(options, defaultAll) {
+  const opts = options || {};
+  if (opts.locale) return [assertSupportedLocale(opts.locale)];
+  if (Array.isArray(opts.locales) && opts.locales.length) {
+    return [...new Set(opts.locales.map(assertSupportedLocale))];
+  }
+  if (opts.all || (defaultAll && !opts.contentDir)) return SUPPORTED_LOCALES.slice();
+  return [DEFAULT_LOCALE];
+}
+
+function loadCatalogs(options, defaultAll) {
+  const opts = options || {};
+  return requestedLocales(opts, defaultAll).map((locale) => loadCatalog(Object.assign({}, opts, { locale })));
+}
+
+function expectedAllGenerated(options) {
+  const opts = options || {};
+  const catalogs = loadCatalogs(Object.assign({}, opts, { all: true }), true);
+  catalogs.forEach((catalog) => validateCatalog(catalog));
+  const registry = buildBundleRegistry(catalogs);
+  return {
+    catalogs,
+    registry,
+    contents: renderGeneratedRegistry(registry),
   };
 }
 
@@ -610,46 +1052,166 @@ function inferredProjectRoot(options) {
 function generatedArtifactFiles(options) {
   const opts = options || {};
   const root = inferredProjectRoot(opts);
+  const locale = opts.locale || DEFAULT_LOCALE;
   return {
     generatedFile: path.resolve(opts.generatedFile || path.join(root, 'js', 'result-copy.generated.js')),
-    exportFile: path.resolve(opts.exportFile || path.join(root, 'exports', 'result-texte-de-CH.csv')),
-    overviewFile: path.resolve(opts.overviewFile || path.join(root, 'exports', 'result-texte-uebersicht.md')),
+    exportFile: path.resolve(opts.exportFile || path.join(root, 'exports', 'result-texte-' + locale + '.csv')),
+    overviewFile: path.resolve(opts.overviewFile || path.join(
+      root,
+      'exports',
+      locale === DEFAULT_LOCALE ? 'result-texte-uebersicht.md' : 'result-texte-uebersicht-' + locale + '.md'
+    )),
+    localeOverviewFile: path.resolve(path.join(root, 'exports', 'result-texte-uebersicht-' + locale + '.md')),
+    manifestFile: path.resolve(path.join(root, 'manifest.' + locale + '.webmanifest')),
+    legacyManifestFile: path.resolve(path.join(root, 'manifest.webmanifest')),
   };
 }
 
-function validate(options) {
-  const catalog = loadCatalog(options);
-  const summary = validateCatalog(catalog);
-  return Object.assign({}, summary, {
-    sourceHash: computeSourceHash(catalog),
-    version: computeSourceVersion(catalog),
-    catalog,
+function managesManifests(options) {
+  const opts = options || {};
+  if (opts.manifests === false) return false;
+  if (opts.manifests === true) return true;
+  // Kleine Test-/Integrationskataloge besitzen bewusst kein komplettes
+  // Seitengeruest. Im echten Projekt (kein abweichendes contentDir) gehoeren
+  // die sprachspezifischen Web-App-Manifeste dagegen zum Generierungsvertrag.
+  return !opts.contentDir;
+}
+
+function catalogText(catalog, id) {
+  const record = catalog.entries.find((item) => item.id === id);
+  if (!record || typeof record.entry.text !== 'string' || !record.entry.text.trim()) {
+    throw new ContentWorkflowError('Manifest-Text fehlt im Content-Katalog: ' + id + '.');
+  }
+  return record.entry.text;
+}
+
+function renderWebManifest(catalog) {
+  const locale = assertSupportedLocale(catalog.locale || DEFAULT_LOCALE);
+  const manifest = {
+    name: catalogText(catalog, MANIFEST_COPY_IDS.name),
+    short_name: catalogText(catalog, MANIFEST_COPY_IDS.shortName),
+    description: catalogText(catalog, MANIFEST_COPY_IDS.description),
+    lang: locale,
+    id: './',
+    start_url: './?lang=' + locale,
+    scope: './',
+    display: 'standalone',
+    background_color: '#9A0941',
+    theme_color: '#9A0941',
+    icons: [
+      { src: 'assets/app-icon.svg', sizes: 'any', type: 'image/svg+xml', purpose: 'any' },
+      { src: 'assets/app-icon-192.png', sizes: '192x192', type: 'image/png', purpose: 'any maskable' },
+      { src: 'assets/app-icon-512.png', sizes: '512x512', type: 'image/png', purpose: 'any maskable' },
+    ],
+  };
+  return JSON.stringify(manifest, null, 2) + '\n';
+}
+
+function manifestTargets(catalogs, options) {
+  if (!managesManifests(options)) return [];
+  const targets = [];
+  catalogs.forEach((catalog) => {
+    const files = generatedArtifactFiles(Object.assign({}, options, { locale: catalog.locale }));
+    const contents = renderWebManifest(catalog);
+    targets.push({ file: files.manifestFile, contents });
+    if (catalog.locale === DEFAULT_LOCALE) {
+      targets.push({ file: files.legacyManifestFile, contents });
+    }
   });
+  return targets;
+}
+
+function validate(options) {
+  const opts = options || {};
+  const catalogs = loadCatalogs(opts, true);
+  const results = catalogs.map((catalog) => {
+    const summary = validateCatalog(catalog, {
+      requireCurrentSource: true,
+      requireTranslations: catalog.locale !== DEFAULT_LOCALE,
+    });
+    return Object.assign({}, summary, {
+      sourceHash: computeSourceHash(catalog),
+      version: computeSourceVersion(catalog),
+      catalog,
+    });
+  });
+  return results.length === 1 ? results[0] : { locales: results, entries: results[0].entries };
 }
 
 function buildGenerated(options) {
   const opts = options || {};
   const generatedFile = path.resolve(opts.generatedFile || DEFAULT_GENERATED_FILE);
-  const expected = expectedGenerated(opts);
+  const locales = requestedLocales(opts, true);
+  if (locales.length === 1) {
+    const expected = expectedGenerated(Object.assign({}, opts, { locale: locales[0] }));
+    atomicWriteFile(generatedFile, expected.contents);
+    const manifests = manifestTargets([expected.catalog], opts);
+    manifests.forEach((target) => atomicWriteFile(target.file, target.contents));
+    return {
+      generatedFile,
+      entries: expected.catalog.entries.length,
+      sourceHash: expected.bundle.sourceHash,
+      version: expected.bundle.version,
+      locales,
+      manifestFiles: manifests.map((target) => target.file),
+    };
+  }
+  const expected = expectedAllGenerated(opts);
   atomicWriteFile(generatedFile, expected.contents);
+  const manifests = manifestTargets(expected.catalogs, opts);
+  manifests.forEach((target) => atomicWriteFile(target.file, target.contents));
   return {
     generatedFile,
-    entries: expected.catalog.entries.length,
-    sourceHash: expected.bundle.sourceHash,
-    version: expected.bundle.version,
+    entries: expected.catalogs[0].entries.length,
+    sourceHash: expected.registry.sourceHash,
+    version: expected.registry.version,
+    locales,
+    manifestFiles: manifests.map((target) => target.file),
   };
 }
 
 function checkGenerated(options) {
   const opts = options || {};
-  const artifactFiles = generatedArtifactFiles(opts);
-  const generatedFile = artifactFiles.generatedFile;
-  const expected = expectedGenerated(opts);
-  const checks = [
-    { file: generatedFile, expected: expected.contents, command: 'build' },
-    { file: artifactFiles.exportFile, expected: expected.csvContents, command: 'export' },
-    { file: artifactFiles.overviewFile, expected: expected.overviewContents, command: 'overview' },
-  ];
+  const locales = requestedLocales(opts, true);
+  const generatedFile = path.resolve(opts.generatedFile || DEFAULT_GENERATED_FILE);
+  const checks = [];
+  let entries;
+  let sourceHash;
+  let version;
+  if (locales.length === 1) {
+    const locale = locales[0];
+    const artifactFiles = generatedArtifactFiles(Object.assign({}, opts, { locale }));
+    const expected = expectedGenerated(Object.assign({}, opts, { locale }));
+    checks.push(
+      { file: generatedFile, expected: expected.contents, command: 'build --locale ' + locale },
+      { file: artifactFiles.exportFile, expected: expected.csvContents, command: 'export --locale ' + locale },
+      { file: artifactFiles.overviewFile, expected: expected.overviewContents, command: 'overview --locale ' + locale }
+    );
+    entries = expected.catalog.entries.length;
+    sourceHash = expected.bundle.sourceHash;
+    version = expected.bundle.version;
+  } else {
+    const expected = expectedAllGenerated(opts);
+    checks.push({ file: generatedFile, expected: expected.contents, command: 'build' });
+    expected.catalogs.forEach((catalog) => {
+      const locale = catalog.locale;
+      const files = generatedArtifactFiles(Object.assign({}, opts, { locale, exportFile: undefined, overviewFile: undefined }));
+      checks.push({ file: files.exportFile, expected: exportCsvText(catalog), command: 'export --all' });
+      checks.push({ file: files.localeOverviewFile, expected: renderReviewOverview(catalog), command: 'overview --all' });
+      if (locale === DEFAULT_LOCALE) {
+        checks.push({ file: files.overviewFile, expected: renderReviewOverview(catalog), command: 'overview --all' });
+      }
+    });
+    entries = expected.catalogs[0].entries.length;
+    sourceHash = expected.registry.sourceHash;
+    version = expected.registry.version;
+  }
+  if (managesManifests(opts)) {
+    const catalogs = locales.map((locale) => loadCatalog(Object.assign({}, opts, { locale })));
+    manifestTargets(catalogs, opts).forEach((target) => {
+      checks.push({ file: target.file, expected: target.contents, command: 'build' });
+    });
+  }
   checks.forEach((check) => {
     if (!fs.existsSync(check.file)) {
       throw new ContentWorkflowError(
@@ -665,11 +1227,10 @@ function checkGenerated(options) {
   });
   return {
     generatedFile,
-    exportFile: artifactFiles.exportFile,
-    overviewFile: artifactFiles.overviewFile,
-    entries: expected.catalog.entries.length,
-    sourceHash: expected.bundle.sourceHash,
-    version: expected.bundle.version,
+    entries,
+    sourceHash,
+    version,
+    locales,
   };
 }
 
@@ -725,6 +1286,59 @@ function reviewDimensionLabel(dimension) {
 
 function reviewContextLabel(record, facet) {
   let context = String(record.entry.context || '');
+  if (record.domain === 'questionnaire') {
+    const match = context.match(/^Frage ([a-z0-9_]+),\s*(.+)$/);
+    if (match) {
+      const question = match[1].replace(/_/g, ' ');
+      const detail = match[2];
+      let readable = 'Frage «' + question.charAt(0).toUpperCase() + question.slice(1) + '»';
+      if (/^Antwortoption\b/.test(detail)) readable += ' · Antwortoption';
+      else if (detail === 'help') readable += ' · Hilfetext';
+      else if (detail === 'helpTitle') readable += ' · Titel des Hilfetexts';
+      else if (detail === 'placeholder') readable += ' · Eingabehinweis';
+      else if (detail === 'unit') readable += ' · Einheit';
+      else if (detail === 'text') readable += ' · Fragetext';
+      else readable += ' · ' + detail.replace(/_/g, ' ');
+      return readable;
+    }
+  }
+  if (record.domain === 'sources' && /^Quellenseite, statischer Inhalt:/.test(context)) {
+    const parts = String(record.id).split('.').slice(1);
+    const sectionLabels = {
+      blood_pressure: 'Blutdruck',
+      lipids: 'Blutfette',
+      mental: 'Mentale Gesundheit',
+      metabolic: 'Stoffwechsel',
+      nutrition: 'Ernährung',
+      physical: 'Körperliche Aktivität',
+      scoring: 'Scoring',
+      sleep: 'Schlaf',
+      smoking: 'Rauchen',
+      strength: 'Muskelkraft',
+      waist: 'Taillenumfang',
+      hero: 'Einstieg',
+      footer: 'Seitenabschluss',
+      notice: 'Hinweis',
+      meta: 'Seitendaten',
+      card: 'Quellenkarte',
+      link: 'Externer Quellenlink',
+    };
+    const detailLabels = {
+      title: 'Überschrift',
+      reference: 'Quellenangabe',
+      point: 'Fachlicher Punkt',
+      link_label: 'Linkbeschriftung',
+      research_date: 'Stand der Recherche',
+      review_disclaimer: 'Prüfhinweis',
+      back_to_check: 'Zurück-Navigation',
+    };
+    const section = sectionLabels[parts[0]] || 'Allgemeine Quellenseite';
+    const detailToken = parts.slice(1).join('_') || parts[0];
+    const detail = detailLabels[detailToken] ||
+      (parts.includes('point') ? 'Fachlicher Punkt' :
+        parts.some((part) => part.startsWith('link')) ? 'Linkbeschriftung' : 'Inhalt');
+    return section + ' · ' + detail;
+  }
   context = context.replace(
     /^shared_quiz_and_results: DIMENSIONS\.([a-z]+),\s*/,
     (_, dimension) => 'Gemeinsam in Fragebogen und Ergebnis · ' + reviewDimensionLabel(dimension) + ' · '
@@ -776,6 +1390,16 @@ function idContainsAny(id, tokens) {
  */
 function reviewFacetFor(record) {
   const id = String(record.id || '');
+
+  if (record.domain === 'questionnaire') {
+    return { area: 'Fragebogen', topic: reviewSectionLabel(record.entry.section) || 'Fragen & Antworten' };
+  }
+  if (record.domain === 'shell') {
+    return { area: 'Globale Navigation', topic: 'Navigation, Sprache & Installation' };
+  }
+  if (record.domain === 'sources') {
+    return { area: 'Quellen & Transparenz', topic: 'Fachquellen & Quellenverzeichnis' };
+  }
 
   if (id.startsWith('service.coverage.')) {
     return { area: 'Helsana-Angebote & Versicherung', topic: 'Leistungs- und Deckungshinweise' };
@@ -1094,15 +1718,21 @@ function csvRowsToObjects(parsedRows) {
   const matches = (columns) =>
     header.length === columns.length && columns.every((column) => header.includes(column));
   const isCurrentFormat = matches(CSV_COLUMNS);
+  const isLocalizedFormat = matches(LOCALIZED_CSV_COLUMNS);
   const isLegacyFormat = matches(LEGACY_CSV_COLUMNS);
-  if (!isCurrentFormat && !isLegacyFormat || duplicateColumns.length) {
+  if (!isCurrentFormat && !isLocalizedFormat && !isLegacyFormat || duplicateColumns.length) {
+    const supportedColumns = [...new Set(CSV_COLUMNS.concat(LOCALIZED_CSV_COLUMNS))];
     const missingColumns = CSV_COLUMNS.filter((column) => !header.includes(column));
-    const extraColumns = header.filter((column) => !CSV_COLUMNS.includes(column));
+    const extraColumns = header.filter((column) => !supportedColumns.includes(column));
     const details = [];
     if (missingColumns.length) details.push('Fehlende Spalten: ' + missingColumns.join(', '));
     if (extraColumns.length) details.push('Unbekannte Spalten: ' + extraColumns.join(', '));
     if (duplicateColumns.length) details.push('Doppelte Spalten: ' + [...new Set(duplicateColumns)].join(', '));
-    details.push('Erwartet wird das aktuelle Austauschformat ' + CSV_FORMAT_VERSION + ' oder das unterstützte Legacy-Format 1.');
+    details.push(
+      'Erwartet wird das deutsche Austauschformat ' + CSV_FORMAT_VERSION +
+      ', das Uebersetzungsformat ' + LOCALIZED_CSV_FORMAT_VERSION +
+      ' oder das unterstuetzte Legacy-Format 1.'
+    );
     throw new ContentWorkflowError('CSV-Kopfzeile entspricht keinem unterstützten Format.', details);
   }
 
@@ -1128,36 +1758,48 @@ function csvObjectsFromText(input) {
 function catalogToCsvRows(catalog) {
   validateCatalog(catalog);
   const sourceVersion = computeSourceVersion(catalog);
-  return buildReviewRecords(catalog).map((item) => ({
-    'Gesundheitsbereich': item.area,
-    'Thema': item.topic,
-    'Seitenelement': item.section,
-    'Textfunktion': item.textFunction,
-    'Kontext / Variante': item.context,
-    'Aktueller Text': item.entry.text,
-    'Neuer Text': '',
-    'Review-Kommentar': item.entry.reviewComment || '',
-    'Freigabe durch': reviewersAsArray(item.entry.reviewers).join(', '),
-    'Freigabestatus': reviewStatusLabel(item.entry.reviewStatus),
-    'Prüfhinweis': item.entry.comment || '',
-    'Platzhalter': placeholderList(item.entry),
-    'Geschützte Begriffe': requiredTermList(item.entry),
-    'ID (technisch)': item.id,
-    'Domain (technisch)': item.domain,
-    'Austauschformat (technisch)': CSV_FORMAT_VERSION,
-    'Quellversion (technisch)': sourceVersion,
-    'Zeilen-Hash (technisch)': computeRowHash(item.record),
-  }));
+  const localized = catalog.locale !== DEFAULT_LOCALE;
+  return buildReviewRecords(catalog).map((item) => {
+    const row = {
+      'Gesundheitsbereich': item.area,
+      'Thema': item.topic,
+      'Seitenelement': item.section,
+      'Textfunktion': item.textFunction,
+      'Kontext / Variante': item.context,
+      'Aktueller Text': item.entry.text,
+      'Neuer Text': '',
+      'Review-Kommentar': item.entry.reviewComment || '',
+      'Freigabe durch': reviewersAsArray(item.entry.reviewers).join(', '),
+      'Freigabestatus': reviewStatusLabel(item.entry.reviewStatus),
+      'Prüfhinweis': item.entry.comment || '',
+      'Platzhalter': placeholderList(item.entry),
+      'Geschützte Begriffe': requiredTermList(item.entry),
+      'ID (technisch)': item.id,
+      'Domain (technisch)': item.domain,
+      'Austauschformat (technisch)': localized ? LOCALIZED_CSV_FORMAT_VERSION : CSV_FORMAT_VERSION,
+      'Quellversion (technisch)': sourceVersion,
+      'Zeilen-Hash (technisch)': computeRowHash(item.record),
+    };
+    if (localized) {
+      row['Deutscher Ausgangstext'] = item.record.baseRecord.entry.text;
+      row['Sprache (technisch)'] = catalog.locale;
+    }
+    return row;
+  });
 }
 
 function exportCsvText(catalog) {
-  return serializeCsv(catalogToCsvRows(catalog));
+  return serializeCsv(
+    catalogToCsvRows(catalog),
+    catalog.locale === DEFAULT_LOCALE ? CSV_COLUMNS : LOCALIZED_CSV_COLUMNS
+  );
 }
 
 function exportCsv(options) {
   const opts = options || {};
-  const outputFile = path.resolve(opts.outputFile || DEFAULT_EXPORT_FILE);
-  const catalog = loadCatalog(opts);
+  const locale = assertSupportedLocale(opts.locale || DEFAULT_LOCALE);
+  const outputFile = path.resolve(opts.outputFile || generatedArtifactFiles(Object.assign({}, opts, { locale })).exportFile);
+  const catalog = loadCatalog(Object.assign({}, opts, { locale }));
   validateCatalog(catalog);
   const contents = exportCsvText(catalog);
   atomicWriteFile(outputFile, contents);
@@ -1166,7 +1808,16 @@ function exportCsv(options) {
     entries: catalog.entries.length,
     sourceHash: computeSourceHash(catalog),
     version: computeSourceVersion(catalog),
+    locale,
   };
+}
+
+function exportCsvAll(options) {
+  const opts = options || {};
+  return SUPPORTED_LOCALES.map((locale) => exportCsv(Object.assign({}, opts, {
+    locale,
+    outputFile: undefined,
+  })));
 }
 
 function markdownMeta(value) {
@@ -1209,12 +1860,18 @@ function markdownAnchor(value) {
   return slug || 'abschnitt';
 }
 
+function markdownQuoteLine(value) {
+  const line = String(value == null ? '' : value).replace(/[ \t]+$/g, '');
+  return line ? '> ' + line : '>';
+}
+
 /**
  * Erzeugt eine lesefreundliche, nicht importierbare Review-Ansicht. Die CSV
  * bleibt bewusst das einzige Austauschformat für Änderungen.
  */
 function renderReviewOverview(catalog) {
   validateCatalog(catalog);
+  const localized = catalog.locale !== DEFAULT_LOCALE;
   const review = buildReviewReport(catalog);
   const records = buildReviewRecords(catalog);
   const areas = new Map();
@@ -1238,9 +1895,13 @@ function renderReviewOverview(catalog) {
     '',
     '**Wichtig:** `Freigegeben` ist ein gemeinsamer Gesamtstatus. Er darf erst gesetzt werden, wenn alle unter `Freigabe durch` genannten Stellen zugestimmt haben.',
     '',
+    ...(localized ? [
+      '**Übersetzungsstatus:** Diese Fassung ist eine KI-gestützte Erstübersetzung. `Prüfung erforderlich` bleibt gesetzt, bis die Texte muttersprachlich sowie – je nach Inhalt – medizinisch und rechtlich freigegeben wurden. Die CSV-Spalte `Review-Kommentar` ist bewusst leer für die Rückmeldungen der prüfenden Stellen.',
+      '',
+    ] : []),
     '## Freigabestand',
     '',
-    '- Sprache: `' + LOCALE + '`',
+    '- Sprache: `' + catalog.locale + '`',
     '- Quellversion: `' + computeSourceVersion(catalog) + '`',
     '- Gesamtbestand: **' + catalog.entries.length + ' Texte**',
     '- Freigegeben: **' + review.approved + '** · Offen: **' + review.open + '**',
@@ -1299,8 +1960,14 @@ function renderReviewOverview(catalog) {
         if (requiredTerms) lines.push('- Geschützte Begriffe: ' + markdownMeta(requiredTerms));
         if (entry.comment) lines.push('- Prüfhinweis: ' + markdownMeta(entry.comment));
         if (entry.reviewComment) lines.push('- Review-Kommentar: ' + markdownMeta(entry.reviewComment));
+        if (localized) {
+          lines.push('', '**Deutscher Ausgangstext**', '');
+          markdownPreview(item.record.baseRecord.entry.text)
+            .split(/\r?\n/)
+            .forEach((textLine) => lines.push(markdownQuoteLine(textLine)));
+        }
         lines.push('', '**Aktueller Text**', '');
-        markdownPreview(entry.text).split(/\r?\n/).forEach((textLine) => lines.push('> ' + textLine));
+        markdownPreview(entry.text).split(/\r?\n/).forEach((textLine) => lines.push(markdownQuoteLine(textLine)));
         lines.push('');
       });
     });
@@ -1310,8 +1977,9 @@ function renderReviewOverview(catalog) {
 
 function exportOverview(options) {
   const opts = options || {};
-  const outputFile = path.resolve(opts.outputFile || DEFAULT_OVERVIEW_FILE);
-  const catalog = loadCatalog(opts);
+  const locale = assertSupportedLocale(opts.locale || DEFAULT_LOCALE);
+  const outputFile = path.resolve(opts.outputFile || generatedArtifactFiles(Object.assign({}, opts, { locale })).overviewFile);
+  const catalog = loadCatalog(Object.assign({}, opts, { locale }));
   const contents = renderReviewOverview(catalog);
   atomicWriteFile(outputFile, contents);
   return {
@@ -1319,7 +1987,33 @@ function exportOverview(options) {
     entries: catalog.entries.length,
     sourceHash: computeSourceHash(catalog),
     version: computeSourceVersion(catalog),
+    locale,
   };
+}
+
+function exportOverviewAll(options) {
+  const opts = options || {};
+  const results = [];
+  SUPPORTED_LOCALES.forEach((locale) => {
+    const files = generatedArtifactFiles(Object.assign({}, opts, {
+      locale,
+      outputFile: undefined,
+      overviewFile: undefined,
+    }));
+    results.push(exportOverview(Object.assign({}, opts, {
+      locale,
+      outputFile: files.localeOverviewFile,
+      overviewFile: undefined,
+    })));
+    if (locale === DEFAULT_LOCALE) {
+      results.push(exportOverview(Object.assign({}, opts, {
+        locale,
+        outputFile: files.overviewFile,
+        overviewFile: undefined,
+      })));
+    }
+  });
+  return results;
 }
 
 function buildReviewReport(catalog) {
@@ -1359,6 +2053,7 @@ function buildReviewReport(catalog) {
   const total = catalog.entries.length;
   const approved = byStatus.approved || 0;
   return {
+    locale: catalog.locale || DEFAULT_LOCALE,
     total,
     approved,
     open: total - approved,
@@ -1370,12 +2065,78 @@ function buildReviewReport(catalog) {
 }
 
 function reviewReport(options) {
-  const catalog = loadCatalog(options);
-  return buildReviewReport(catalog);
+  const opts = options || {};
+  if (!opts.all) {
+    const catalog = loadCatalog(opts);
+    return buildReviewReport(catalog);
+  }
+
+  const locales = SUPPORTED_LOCALES.map((locale) => {
+    const localeOptions = Object.assign({}, opts, { all: false, locale });
+    return buildReviewReport(loadCatalog(localeOptions));
+  });
+  const byStatus = {};
+  ALLOWED_REVIEW_STATUSES.forEach((status) => { byStatus[status || 'not-set'] = 0; });
+  const byReviewer = ALLOWED_REVIEWERS.map((reviewer) => ({
+    reviewer,
+    total: 0,
+    approved: 0,
+    open: 0,
+  }));
+  const reviewerIndex = new Map(byReviewer.map((summary) => [summary.reviewer, summary]));
+  const openEntries = [];
+
+  locales.forEach((report) => {
+    Object.keys(report.byStatus).forEach((status) => {
+      byStatus[status] = (byStatus[status] || 0) + report.byStatus[status];
+    });
+    report.byReviewer.forEach((summary) => {
+      const aggregate = reviewerIndex.get(summary.reviewer);
+      aggregate.total += summary.total;
+      aggregate.approved += summary.approved;
+      aggregate.open += summary.open;
+    });
+    report.openEntries.forEach((entry) => {
+      openEntries.push(Object.assign({ locale: report.locale }, entry));
+    });
+  });
+
+  const total = locales.reduce((sum, report) => sum + report.total, 0);
+  const approved = locales.reduce((sum, report) => sum + report.approved, 0);
+  return {
+    all: true,
+    locales,
+    total,
+    approved,
+    open: total - approved,
+    byStatus,
+    byReviewer,
+    openEntries,
+  };
 }
 
 function printReviewReport(report) {
-  console.log('Review-Report: ' + report.approved + '/' + report.total +
+  if (report.all && Array.isArray(report.locales)) {
+    console.log('Review-Report alle Sprachen: ' + report.approved + '/' + report.total +
+      ' Texte freigegeben; ' + report.open + ' offen.');
+    report.locales.forEach((localeReport) => {
+      console.log('  - ' + localeReport.locale + ': ' + localeReport.approved + '/' + localeReport.total +
+        ' freigegeben; ' + localeReport.open + ' offen; Quellversion ' + localeReport.version);
+    });
+    console.log('Status gesamt: nicht gesetzt=' + (report.byStatus['not-set'] || 0) +
+      ', needs-review=' + (report.byStatus['needs-review'] || 0) +
+      ', approved=' + (report.byStatus.approved || 0));
+    report.byReviewer.forEach((summary) => {
+      console.log('  - ' + summary.reviewer + ': ' + summary.approved + '/' + summary.total +
+        ' mit Gesamtstatus approved; ' + summary.open + ' offen');
+    });
+    if (report.open) {
+      console.log('Offene IDs je Sprache: review-report --locale <de-CH|en-CH|fr-CH|it-CH>');
+    }
+    return;
+  }
+
+  console.log('Review-Report ' + report.locale + ': ' + report.approved + '/' + report.total +
     ' Texte freigegeben; ' + report.open + ' offen.');
   console.log('Quellversion: ' + report.version);
   console.log('Status: nicht gesetzt=' + (report.byStatus['not-set'] || 0) +
@@ -1407,8 +2168,29 @@ function cloneCatalog(catalog) {
     name: file.name,
     path: file.path,
     data: cloneJson(file.data),
+    overlayData: file.overlayData ? cloneJson(file.overlayData) : undefined,
+    baseFile: file.baseFile || null,
   }));
-  return makeCatalog(files, catalog.contentDir);
+  const clone = makeCatalog(files, catalog.contentDir, {
+    locale: catalog.locale,
+    isTranslation: catalog.isTranslation,
+    baseCatalog: catalog.baseCatalog,
+    translationFiles: files,
+    staleSourceIds: (catalog.staleSourceIds || []).slice(),
+    missingTranslationIds: (catalog.missingTranslationIds || []).slice(),
+  });
+  if (clone.isTranslation) {
+    const baseIndex = recordIndex(catalog.baseCatalog);
+    const overlayIndex = new Map();
+    files.forEach((file) => {
+      (file.overlayData && file.overlayData.entries || []).forEach((entry) => overlayIndex.set(entry.id, entry));
+    });
+    clone.entries.forEach((record) => {
+      record.baseRecord = baseIndex.get(record.id);
+      record.translationEntry = overlayIndex.get(record.id);
+    });
+  }
+  return clone;
 }
 
 function legacyImmutableCsvValues(record, sourceVersion) {
@@ -1427,7 +2209,7 @@ function legacyImmutableCsvValues(record, sourceVersion) {
 
 function immutableCsvValues(record, sourceVersion) {
   const facet = reviewFacetFor(record);
-  return {
+  const values = {
     'Gesundheitsbereich': facet.area,
     'Thema': facet.topic,
     'Seitenelement': reviewSectionLabel(record.entry.section),
@@ -1440,14 +2222,25 @@ function immutableCsvValues(record, sourceVersion) {
     'Geschützte Begriffe': requiredTermList(record.entry),
     'ID (technisch)': record.id,
     'Domain (technisch)': record.domain,
-    'Austauschformat (technisch)': CSV_FORMAT_VERSION,
+    'Austauschformat (technisch)': record.locale === DEFAULT_LOCALE
+      ? CSV_FORMAT_VERSION
+      : LOCALIZED_CSV_FORMAT_VERSION,
     'Quellversion (technisch)': sourceVersion,
     'Zeilen-Hash (technisch)': computeRowHash(record),
   };
+  if (record.locale !== DEFAULT_LOCALE) {
+    values['Deutscher Ausgangstext'] = record.baseRecord.entry.text;
+    values['Sprache (technisch)'] = record.locale;
+  }
+  return values;
 }
 
 function isLegacyCsvRow(row) {
   return own(row, 'ID') && !own(row, 'ID (technisch)');
+}
+
+function isLocalizedCsvRow(row) {
+  return own(row, 'Sprache (technisch)');
 }
 
 function csvRowId(row) {
@@ -1482,7 +2275,7 @@ function assertExactImportIds(rows, catalog) {
   }
 }
 
-function validateReplacementText(newText, entry, id) {
+function validateReplacementText(newText, entry, id, structuralEntry) {
   const errors = [];
   validateTextAgainstEntry(newText, entry, 'CSV:' + id + ':Neuer Text', errors);
 
@@ -1497,6 +2290,13 @@ function validateReplacementText(newText, entry, id) {
       '; gefunden: ' + (after.length ? after.map((name) => '{{' + name + '}}').join(', ') : '(keine)') + '.'
     );
   }
+  if (structuralEntry) {
+    const expectedTags = htmlTagOccurrences(structuralEntry.text);
+    const actualTags = htmlTagOccurrences(newText);
+    if (expectedTags.join('|') !== actualTags.join('|')) {
+      errors.push('CSV:' + id + ': HTML-Tags muessen dem deutschen Ausgangstext entsprechen.');
+    }
+  }
   if (errors.length) throw new ContentWorkflowError('Neuer Text fuer "' + id + '" ist ungueltig.', errors);
 }
 
@@ -1509,13 +2309,28 @@ function planImport(csvText, catalog, options) {
   const formatValues = [...new Set(rows.map((row) =>
     isLegacyCsvRow(row) ? '1' : row['Austauschformat (technisch)']
   ))];
-  if (formatValues.length !== 1 || !['1', CSV_FORMAT_VERSION].includes(formatValues[0])) {
+  if (formatValues.length !== 1 || !['1', CSV_FORMAT_VERSION, LOCALIZED_CSV_FORMAT_VERSION].includes(formatValues[0])) {
     throw new ContentWorkflowError(
       'CSV enthaelt mehrere oder unbekannte Austauschformat-Versionen. Erwartet: ' +
-      CSV_FORMAT_VERSION + ' oder Legacy-Format 1.'
+      CSV_FORMAT_VERSION + ', ' + LOCALIZED_CSV_FORMAT_VERSION + ' oder Legacy-Format 1.'
     );
   }
   const csvFormat = formatValues[0];
+  const localizedRows = rows.filter(isLocalizedCsvRow);
+  if (catalog.locale === DEFAULT_LOCALE && csvFormat === LOCALIZED_CSV_FORMAT_VERSION) {
+    throw new ContentWorkflowError('Uebersetzungs-CSV kann nicht in den deutschen Katalog importiert werden.');
+  }
+  if (catalog.locale !== DEFAULT_LOCALE && csvFormat !== LOCALIZED_CSV_FORMAT_VERSION) {
+    throw new ContentWorkflowError('Legacy- und DE-CSV-Formate duerfen nur in de-CH importiert werden.');
+  }
+  if (csvFormat === LOCALIZED_CSV_FORMAT_VERSION) {
+    const rowLocales = [...new Set(localizedRows.map((row) => row['Sprache (technisch)']))];
+    if (localizedRows.length !== rows.length || rowLocales.length !== 1 || rowLocales[0] !== catalog.locale) {
+      throw new ContentWorkflowError(
+        'CSV-Sprache ist gemischt oder passt nicht zum Zielkatalog ' + catalog.locale + '.'
+      );
+    }
+  }
 
   const versions = [...new Set(rows.map(csvRowSourceVersion))];
   if (versions.length !== 1) {
@@ -1548,6 +2363,17 @@ function planImport(csvText, catalog, options) {
     const next = nextIndex.get(id);
     const replacement = row['Neuer Text'];
     const hasTextChange = replacement !== '' && replacement !== current.entry.text;
+    const translationWasMissing = !!(
+      current.translationEntry && current.translationEntry.translationState === 'missing'
+    );
+    // Falls eine Bezeichnung sprachunabhängig wirklich identisch bleiben soll
+    // (z. B. ein Markenname), bestätigt ein bewusst in "Neuer Text" kopierter
+    // identischer Wert die Übersetzung. Ein bloss geänderter Freigabestatus darf
+    // dagegen nie ein noch deutsches Skeleton unbemerkt als übersetzt markieren.
+    const hasTranslationConfirmation = !!(
+      translationWasMissing && replacement !== '' && replacement === current.entry.text
+    );
+    const hasTextUpdate = hasTextChange || hasTranslationConfirmation;
     const currentComment = current.entry.reviewComment || '';
     // In Format 1 enthielt die Spalte "Marketing-Kommentar" gleichzeitig den
     // bestehenden Prüfhinweis. Ein unveränderter Wert bleibt deshalb ein
@@ -1568,7 +2394,7 @@ function planImport(csvText, catalog, options) {
     }
     const currentReviewStatus = current.entry.reviewStatus || '';
     const hasRequestedStatusChange = importedReviewStatus !== currentReviewStatus;
-    const wantsChange = hasTextChange || hasCommentChange || hasRequestedStatusChange;
+    const wantsChange = hasTextUpdate || hasCommentChange || hasRequestedStatusChange;
     const currentRowHash = computeRowHash(current);
 
     // Bei einer aktuellen Quellversion muss jede Zeile unverändert auf ihrer
@@ -1592,31 +2418,62 @@ function planImport(csvText, catalog, options) {
       });
     }
 
-    if (hasTextChange) {
-      validateReplacementText(replacement, current.entry, id);
+    if (translationWasMissing && hasRequestedStatusChange && !hasTextUpdate) {
+      throw new ContentWorkflowError(
+        'CSV:' + id + ': eine fehlende Übersetzung kann nicht allein über den Freigabestatus bestätigt werden. ' +
+        'Tragen Sie die Übersetzung unter "Neuer Text" ein; bei absichtlich identischem Text kopieren Sie ihn dort bewusst ein.'
+      );
+    }
+
+    if (hasTextUpdate) {
+      validateReplacementText(
+        replacement,
+        current.entry,
+        id,
+        current.baseRecord ? current.baseRecord.entry : null
+      );
       next.entry.text = replacement;
+      if (next.translationEntry) next.translationEntry.text = replacement;
       let reviewReset = false;
       if (reviewersNeedExpertApproval(next.entry.reviewers)) {
         next.entry.reviewStatus = 'needs-review';
+        if (next.translationEntry) next.translationEntry.reviewStatus = 'needs-review';
         reviewReset = currentReviewStatus !== 'needs-review';
       } else {
         next.entry.reviewStatus = importedReviewStatus;
+        if (next.translationEntry) next.translationEntry.reviewStatus = importedReviewStatus;
       }
       changes.push({
         id,
         oldText: current.entry.text,
         newText: replacement,
+        translationConfirmed: hasTranslationConfirmation,
         reviewReset,
         previousReviewStatus: currentReviewStatus,
         nextReviewStatus: next.entry.reviewStatus || '',
       });
     } else if (hasRequestedStatusChange) {
       next.entry.reviewStatus = importedReviewStatus;
+      if (next.translationEntry) next.translationEntry.reviewStatus = importedReviewStatus;
     }
 
     if (hasCommentChange) {
       next.entry.reviewComment = importedComment;
+      if (next.translationEntry) next.translationEntry.reviewComment = importedComment;
       commentChanges.push({ id, oldComment: currentComment, newComment: importedComment });
+    }
+
+    if (next.translationEntry && hasTextUpdate) {
+      next.translationEntry.translationState = 'translated';
+      next.translationEntry.sourceContractHash = computeTranslationSourceContractHash(current.baseRecord);
+      nextCatalog.staleSourceIds = nextCatalog.staleSourceIds.filter((staleId) => staleId !== id);
+      nextCatalog.missingTranslationIds = nextCatalog.missingTranslationIds.filter((missingId) => missingId !== id);
+    } else if (next.translationEntry && hasRequestedStatusChange) {
+      // Bei einer bereits vorhandenen Übersetzung kann der Review eine nach
+      // deutschem Quelldrift weiterhin passende Fassung ohne Wortänderung
+      // bestätigen. Missing-Skelette werden oben ausdrücklich abgewiesen.
+      next.translationEntry.sourceContractHash = computeTranslationSourceContractHash(current.baseRecord);
+      nextCatalog.staleSourceIds = nextCatalog.staleSourceIds.filter((staleId) => staleId !== id);
     }
 
     const nextReviewStatus = next.entry.reviewStatus || '';
@@ -1675,9 +2532,10 @@ function createImportBackup(plan, options) {
   const createdAt = opts.now instanceof Date ? opts.now : new Date();
   const stamp = createdAt.toISOString().replace(/[:.]/g, '-');
   const backupRoot = backupRootFor(opts);
-  let backupDir = path.join(backupRoot, stamp);
+  const backupLocaleRoot = path.join(backupRoot, plan.nextCatalog.locale || DEFAULT_LOCALE);
+  let backupDir = path.join(backupLocaleRoot, stamp);
   let suffix = 1;
-  while (fs.existsSync(backupDir)) backupDir = path.join(backupRoot, stamp + '-' + suffix++);
+  while (fs.existsSync(backupDir)) backupDir = path.join(backupLocaleRoot, stamp + '-' + suffix++);
   fs.mkdirSync(backupDir, { recursive: true });
 
   const files = [];
@@ -1690,17 +2548,26 @@ function createImportBackup(plan, options) {
   }
 
   plan.nextCatalog.files.forEach((file) => {
-    saveFile(file.path, path.join('content', 'result-texts', file.name));
+    saveFile(file.path, plan.nextCatalog.locale === DEFAULT_LOCALE
+      ? path.join('content', 'result-texts', file.name)
+      : path.join('content', 'result-texts', 'locales', plan.nextCatalog.locale, file.name));
   });
   saveFile(generatedFile, path.join('js', path.basename(generatedFile)));
   saveFile(artifactFiles.exportFile, path.join('exports', path.basename(artifactFiles.exportFile)));
   saveFile(artifactFiles.overviewFile, path.join('exports', path.basename(artifactFiles.overviewFile)));
+  if (managesManifests(opts)) {
+    saveFile(artifactFiles.manifestFile, path.basename(artifactFiles.manifestFile));
+    if ((plan.nextCatalog.locale || DEFAULT_LOCALE) === DEFAULT_LOCALE) {
+      saveFile(artifactFiles.legacyManifestFile, path.basename(artifactFiles.legacyManifestFile));
+    }
+  }
 
   const manifest = {
     schemaVersion: 1,
     type: 'result-content-import-backup',
     createdAt: createdAt.toISOString(),
     inputFile: opts.inputFile ? path.basename(opts.inputFile) : null,
+    locale: plan.nextCatalog.locale || DEFAULT_LOCALE,
     sourceVersion: plan.currentVersion,
     targetVersion: computeSourceVersion(plan.nextCatalog),
     changes: {
@@ -1766,7 +2633,8 @@ function transactionalWriteFiles(targets, options) {
 
 function persistImport(plan, options) {
   const opts = options || {};
-  const artifactFiles = generatedArtifactFiles(opts);
+  const locale = plan.nextCatalog.locale || DEFAULT_LOCALE;
+  const artifactFiles = generatedArtifactFiles(Object.assign({}, opts, { locale }));
   const generatedFile = artifactFiles.generatedFile;
   const changedFiles = [];
   const writes = [];
@@ -1774,7 +2642,7 @@ function persistImport(plan, options) {
   const backup = hasChanges ? createImportBackup(plan, Object.assign({}, opts, { generatedFile })) : null;
 
   plan.nextCatalog.files.forEach((file) => {
-    const nextContents = jsonFileContents(file.data);
+    const nextContents = jsonFileContents(file.overlayData || file.data);
     const currentContents = fs.existsSync(file.path) ? fs.readFileSync(file.path, 'utf8') : '';
     if (nextContents !== currentContents) {
       writes.push({ file: file.path, contents: nextContents });
@@ -1783,12 +2651,35 @@ function persistImport(plan, options) {
   });
 
   if (hasChanges) {
-    const bundle = buildBundle(plan.nextCatalog);
-    writes.push(
-      { file: generatedFile, contents: renderGenerated(bundle) },
-      { file: artifactFiles.exportFile, contents: exportCsvText(plan.nextCatalog) },
-      { file: artifactFiles.overviewFile, contents: renderReviewOverview(plan.nextCatalog) }
-    );
+    const rebuildAll = !!opts.all || !opts.contentDir;
+    if (rebuildAll) {
+      const catalogs = SUPPORTED_LOCALES.map((catalogLocale) => catalogLocale === locale
+        ? plan.nextCatalog
+        : loadCatalog(Object.assign({}, opts, { locale: catalogLocale })));
+      const registry = buildBundleRegistry(catalogs, { allowIncomplete: true });
+      writes.push({ file: generatedFile, contents: renderGeneratedRegistry(registry) });
+      catalogs.forEach((catalog) => {
+        const files = generatedArtifactFiles(Object.assign({}, opts, {
+          locale: catalog.locale,
+          exportFile: undefined,
+          overviewFile: undefined,
+        }));
+        writes.push({ file: files.exportFile, contents: exportCsvText(catalog) });
+        writes.push({ file: files.localeOverviewFile, contents: renderReviewOverview(catalog) });
+        if (catalog.locale === DEFAULT_LOCALE) {
+          writes.push({ file: files.overviewFile, contents: renderReviewOverview(catalog) });
+        }
+      });
+      writes.push(...manifestTargets(catalogs, opts));
+    } else {
+      const bundle = buildBundle(plan.nextCatalog);
+      writes.push(
+        { file: generatedFile, contents: renderGenerated(bundle) },
+        { file: artifactFiles.exportFile, contents: exportCsvText(plan.nextCatalog) },
+        { file: artifactFiles.overviewFile, contents: renderReviewOverview(plan.nextCatalog) }
+      );
+      writes.push(...manifestTargets([plan.nextCatalog], opts));
+    }
   }
   transactionalWriteFiles(writes, opts);
   return {
@@ -1807,15 +2698,110 @@ function importCsv(options) {
   const inputFile = path.resolve(opts.inputFile);
   if (!fs.existsSync(inputFile)) throw new ContentWorkflowError('CSV-Datei fehlt: ' + inputFile);
 
-  const catalog = loadCatalog(opts);
-  validateCatalog(catalog);
   const csvText = fs.readFileSync(inputFile, 'utf8');
+  const previewRows = csvObjectsFromText(csvText);
+  const localized = previewRows.length && previewRows.every(isLocalizedCsvRow);
+  const detectedLocales = localized
+    ? [...new Set(previewRows.map((row) => row['Sprache (technisch)']))]
+    : [DEFAULT_LOCALE];
+  if (detectedLocales.length !== 1) {
+    throw new ContentWorkflowError('CSV enthaelt mehrere oder keine Sprachen.');
+  }
+  const locale = assertSupportedLocale(detectedLocales[0]);
+  if (opts.locale && opts.locale !== locale) {
+    throw new ContentWorkflowError('CSV-Sprache ' + locale + ' passt nicht zu --locale ' + opts.locale + '.');
+  }
+  const catalog = loadCatalog(Object.assign({}, opts, { locale }));
+  validateCatalog(catalog);
   const plan = planImport(csvText, catalog, { allowStale: !!opts.allowStale });
-  const persisted = opts.dryRun ? { changedFiles: [], generatedFile: null } : persistImport(plan, opts);
+  const persisted = opts.dryRun
+    ? { changedFiles: [], generatedFile: null }
+    : persistImport(plan, Object.assign({}, opts, { locale }));
   return Object.assign({}, plan, persisted, {
     inputFile,
+    locale,
     dryRun: !!opts.dryRun,
   });
+}
+
+/**
+ * Erzeugt oder ergaenzt schlanke Uebersetzungs-Overlays deterministisch.
+ * Bestehende Eintraege werden nie inhaltlich ueberschrieben. Neue Platzhalter
+ * tragen translationState=missing und blockieren damit validate/build/check.
+ */
+function syncLocales(options) {
+  const opts = options || {};
+  const locales = opts.locale
+    ? [assertSupportedLocale(opts.locale)]
+    : SUPPORTED_LOCALES.filter((locale) => locale !== DEFAULT_LOCALE);
+  if (locales.includes(DEFAULT_LOCALE)) {
+    throw new ContentWorkflowError('sync-locales ist nur fuer Uebersetzungssprachen vorgesehen.');
+  }
+  const baseCatalog = loadBaseCatalog(opts);
+  validateCatalog(baseCatalog);
+  const results = [];
+
+  locales.forEach((locale) => {
+    const localeDir = path.join(baseCatalog.contentDir, 'locales', locale);
+    let added = 0;
+    const changedFiles = [];
+    baseCatalog.files.forEach((baseFile) => {
+      const filePath = path.join(localeDir, baseFile.name);
+      let overlay = {
+        schemaVersion: SCHEMA_VERSION,
+        locale,
+        domain: baseFile.data.domain,
+        entries: [],
+      };
+      if (fs.existsSync(filePath)) {
+        overlay = readJsonFile(filePath, path.join('locales', locale, baseFile.name));
+        if (!isPlainObject(overlay) || overlay.locale !== locale || overlay.domain !== baseFile.data.domain ||
+            !Array.isArray(overlay.entries)) {
+          throw new ContentWorkflowError(filePath + ': bestehendes Overlay hat einen ungueltigen Datei-Vertrag.');
+        }
+      }
+      const existing = new Map();
+      overlay.entries.forEach((entry) => {
+        if (entry && typeof entry.id === 'string') existing.set(entry.id, entry);
+      });
+      const baseIds = new Set(baseFile.data.entries.map((entry) => entry.id));
+      const extra = [...existing.keys()].filter((id) => !baseIds.has(id));
+      if (extra.length) {
+        throw new ContentWorkflowError(
+          filePath + ': unbekannte Overlay-IDs werden aus Sicherheitsgruenden nicht automatisch entfernt.',
+          extra
+        );
+      }
+      const nextEntries = baseFile.data.entries.map((baseEntry) => {
+        if (existing.has(baseEntry.id)) return existing.get(baseEntry.id);
+        added++;
+        const baseRecord = { id: baseEntry.id, domain: baseFile.data.domain, entry: baseEntry };
+        return {
+          id: baseEntry.id,
+          text: baseEntry.text,
+          requiredTerms: [],
+          reviewStatus: 'needs-review',
+          translationState: 'missing',
+          reviewComment: '',
+          sourceContractHash: computeTranslationSourceContractHash(baseRecord),
+        };
+      });
+      const nextOverlay = {
+        schemaVersion: SCHEMA_VERSION,
+        locale,
+        domain: baseFile.data.domain,
+        entries: nextEntries,
+      };
+      const contents = jsonFileContents(nextOverlay);
+      const current = fs.existsSync(filePath) ? fs.readFileSync(filePath, 'utf8') : '';
+      if (current !== contents) {
+        atomicWriteFile(filePath, contents);
+        changedFiles.push(filePath);
+      }
+    });
+    results.push({ locale, added, changedFiles });
+  });
+  return results;
 }
 
 function usage() {
@@ -1823,13 +2809,18 @@ function usage() {
     'Result-Content-Workflow',
     '',
     'Befehle:',
-    '  node scripts/result-content.js validate',
+    '  node scripts/result-content.js validate [--locale de-CH|en-CH|fr-CH|it-CH]',
     '  node scripts/result-content.js check',
     '  node scripts/result-content.js build',
-    '  node scripts/result-content.js export [ausgabe.csv]',
-    '  node scripts/result-content.js overview [ausgabe.md]',
-    '  node scripts/result-content.js review-report [--fail-on-open]',
-    '  node scripts/result-content.js import <marketing.csv> [--dry-run] [--allow-stale]',
+    '  node scripts/result-content.js export [ausgabe.csv] [--locale ...|--all]',
+    '  node scripts/result-content.js overview [ausgabe.md] [--locale ...|--all]',
+    '  node scripts/result-content.js review-report [--locale ...|--all] [--fail-on-open]',
+    '  node scripts/result-content.js import <review.csv> [--locale ...] [--dry-run] [--allow-stale]',
+    '  node scripts/result-content.js sync-locales [--locale en-CH|fr-CH|it-CH]',
+    '',
+    'build/check sind absichtlich gemeinsame Vier-Sprachen-Gates.',
+    'validate kann mit --locale gezielt nur eine Sprache pruefen.',
+    'export/overview bleiben ohne Sprachoption rueckwaertskompatibel bei de-CH.',
     '',
     'Optionen fuer import:',
     '  --dry-run       Nur pruefen und Diff anzeigen; keine Dateien schreiben.',
@@ -1837,8 +2828,30 @@ function usage() {
     '                  weiterhin strikt ueber ihren Base-Hash geschuetzt.',
     '',
     'Optionen fuer review-report:',
+    '  --all           Alle vier Sprachen zusammenfassen und gemeinsam gaten.',
     '  --fail-on-open  Exit-Code 1, solange mindestens ein Text nicht approved ist.',
   ].join('\n');
+}
+
+function parseLocaleFlags(args) {
+  const rest = [];
+  let locale = null;
+  let all = false;
+  for (let index = 0; index < args.length; index++) {
+    const arg = args[index];
+    if (arg === '--locale') {
+      if (locale || index + 1 >= args.length) {
+        throw new ContentWorkflowError('--locale erwartet genau einen Sprachcode.');
+      }
+      locale = assertSupportedLocale(args[++index]);
+    } else if (arg === '--all') {
+      all = true;
+    } else {
+      rest.push(arg);
+    }
+  }
+  if (locale && all) throw new ContentWorkflowError('--locale und --all koennen nicht kombiniert werden.');
+  return { locale, all, rest };
 }
 
 function printError(error) {
@@ -1848,12 +2861,14 @@ function printError(error) {
 
 function printImportResult(result) {
   const mode = result.dryRun ? 'Dry Run' : 'Import';
-  console.log(mode + ': ' + result.changes.length + ' Textaenderung(en), ' +
+  console.log(mode + ': ' + result.changes.length + ' Text-/Uebersetzungsaktualisierung(en), ' +
     result.commentChanges.length + ' Kommentaraenderung(en), ' +
     result.statusChanges.length + ' Statusaenderung(en).');
   if (result.stale) console.log('Hinweis: veralteter Export wurde zeilenweise per Base-Hash geprueft.');
   result.changes.forEach((change) => {
-    console.log('  - ' + change.id + (change.reviewReset ? ' [fachliche Freigabe zurueckgesetzt]' : ''));
+    console.log('  - ' + change.id +
+      (change.translationConfirmed ? ' [identische Uebersetzung bestaetigt]' : '') +
+      (change.reviewReset ? ' [fachliche Freigabe zurueckgesetzt]' : ''));
   });
   result.commentChanges
     .filter((change) => !result.changes.some((textChange) => textChange.id === change.id))
@@ -1864,7 +2879,7 @@ function printImportResult(result) {
   if (result.dryRun) console.log('Keine Dateien wurden geschrieben.');
   else if (!result.changes.length && !result.commentChanges.length && !result.statusChanges.length) console.log('No-op: keine Dateien wurden veraendert.');
   else {
-    console.log('Kanonische JSON-Dateien, Runtime-Bundle, CSV und Review-Uebersicht wurden aktualisiert.');
+    console.log('Kanonische JSON-Dateien, Runtime-Bundle, CSV, Review-Uebersicht und App-Manifest wurden aktualisiert.');
     if (result.backupDir) console.log('Sicherung des vorherigen Stands: ' + result.backupDir);
   }
 }
@@ -1878,62 +2893,104 @@ function runCli(argv) {
   }
 
   if (command === 'validate') {
-    const catalog = loadCatalog();
-    const summary = validateCatalog(catalog);
-    console.log('OK: ' + summary.entries + ' Texte in ' + summary.domains + ' Domain(s) sind valide.');
-    console.log('Quellversion: ' + computeSourceVersion(catalog));
+    const parsed = parseLocaleFlags(args);
+    if (parsed.all || parsed.rest.length) throw new ContentWorkflowError('validate akzeptiert nur --locale.');
+    const result = validate(parsed.locale ? { locale: parsed.locale } : { all: true });
+    const summaries = result.locales || [result];
+    summaries.forEach((summary) => {
+      console.log('OK ' + summary.locale + ': ' + summary.entries + ' Texte in ' + summary.domains + ' Domain(s) sind valide.');
+      console.log('Quellversion: ' + summary.version);
+    });
     return 0;
   }
 
   if (command === 'check') {
-    const result = checkGenerated();
-    console.log('OK: Runtime-Bundle, CSV und Review-Uebersicht sind aktuell (' +
+    const parsed = parseLocaleFlags(args);
+    if (parsed.locale || parsed.all || parsed.rest.length) throw new ContentWorkflowError('check akzeptiert keine Optionen und prueft immer alle vier Sprachen.');
+    const result = checkGenerated({ all: true });
+    console.log('OK: Runtime-Bundle, CSV, Review-Uebersicht und App-Manifeste sind aktuell (' +
       result.entries + ' Texte, ' + result.sourceHash + ').');
     return 0;
   }
 
   if (command === 'build') {
-    const result = buildGenerated();
+    const parsed = parseLocaleFlags(args);
+    if (parsed.locale || parsed.all || parsed.rest.length) throw new ContentWorkflowError('build akzeptiert keine Optionen und erzeugt immer das gemeinsame Vier-Sprachen-Bundle.');
+    const result = buildGenerated({ all: true });
     console.log('Erstellt: ' + result.generatedFile);
+    (result.manifestFiles || []).forEach((file) => console.log('Erstellt: ' + file));
     console.log(result.entries + ' Texte, Quellversion ' + result.version);
     return 0;
   }
 
   if (command === 'export') {
-    const positional = args.filter((arg) => !arg.startsWith('--'));
-    const result = exportCsv({ outputFile: positional[0] || DEFAULT_EXPORT_FILE });
+    const parsed = parseLocaleFlags(args);
+    const unknown = parsed.rest.filter((arg) => arg.startsWith('--'));
+    const positional = parsed.rest.filter((arg) => !arg.startsWith('--'));
+    if (unknown.length || positional.length > 1 || parsed.all && positional.length) {
+      throw new ContentWorkflowError('export: ungueltige Optionen oder Ausgabedatei.');
+    }
+    if (parsed.all) {
+      exportCsvAll({});
+      console.log('Exportiert: ' + SUPPORTED_LOCALES.join(', '));
+      return 0;
+    }
+    const result = exportCsv({ locale: parsed.locale || DEFAULT_LOCALE, outputFile: positional[0] });
     console.log('Exportiert: ' + result.outputFile);
     console.log(result.entries + ' Texte, Quellversion ' + result.version);
     return 0;
   }
 
   if (command === 'overview') {
-    const positional = args.filter((arg) => !arg.startsWith('--'));
-    const result = exportOverview({ outputFile: positional[0] || DEFAULT_OVERVIEW_FILE });
+    const parsed = parseLocaleFlags(args);
+    const unknown = parsed.rest.filter((arg) => arg.startsWith('--'));
+    const positional = parsed.rest.filter((arg) => !arg.startsWith('--'));
+    if (unknown.length || positional.length > 1 || parsed.all && positional.length) {
+      throw new ContentWorkflowError('overview: ungueltige Optionen oder Ausgabedatei.');
+    }
+    if (parsed.all) {
+      exportOverviewAll({});
+      console.log('Review-Uebersichten exportiert: ' + SUPPORTED_LOCALES.join(', '));
+      return 0;
+    }
+    const result = exportOverview({ locale: parsed.locale || DEFAULT_LOCALE, outputFile: positional[0] });
     console.log('Review-Uebersicht exportiert: ' + result.outputFile);
     console.log(result.entries + ' Texte, Quellversion ' + result.version);
     return 0;
   }
 
   if (command === 'review-report') {
-    const unknownOptions = args.filter((arg) => arg.startsWith('--') && arg !== '--fail-on-open');
-    const positional = args.filter((arg) => !arg.startsWith('--'));
+    const parsed = parseLocaleFlags(args);
+    const unknownOptions = parsed.rest.filter((arg) => arg.startsWith('--') && arg !== '--fail-on-open');
+    const positional = parsed.rest.filter((arg) => !arg.startsWith('--'));
     if (unknownOptions.length) throw new ContentWorkflowError('Unbekannte Option(en): ' + unknownOptions.join(', '));
     if (positional.length) throw new ContentWorkflowError('review-report erwartet keine Datei.\n\n' + usage());
-    const result = reviewReport();
+    const result = reviewReport(parsed.all ? { all: true } : { locale: parsed.locale || DEFAULT_LOCALE });
     printReviewReport(result);
-    return args.includes('--fail-on-open') && result.open > 0 ? 1 : 0;
+    return parsed.rest.includes('--fail-on-open') && result.open > 0 ? 1 : 0;
   }
 
   if (command === 'import') {
-    const dryRun = args.includes('--dry-run');
-    const allowStale = args.includes('--allow-stale');
-    const unknownOptions = args.filter((arg) => arg.startsWith('--') && !['--dry-run', '--allow-stale'].includes(arg));
+    const parsed = parseLocaleFlags(args);
+    if (parsed.all) throw new ContentWorkflowError('import akzeptiert --all nicht.');
+    const dryRun = parsed.rest.includes('--dry-run');
+    const allowStale = parsed.rest.includes('--allow-stale');
+    const unknownOptions = parsed.rest.filter((arg) => arg.startsWith('--') && !['--dry-run', '--allow-stale'].includes(arg));
     if (unknownOptions.length) throw new ContentWorkflowError('Unbekannte Option(en): ' + unknownOptions.join(', '));
-    const positional = args.filter((arg) => !arg.startsWith('--'));
+    const positional = parsed.rest.filter((arg) => !arg.startsWith('--'));
     if (positional.length !== 1) throw new ContentWorkflowError('Import erwartet genau eine CSV-Datei.\n\n' + usage());
-    const result = importCsv({ inputFile: positional[0], dryRun, allowStale });
+    const result = importCsv({ inputFile: positional[0], locale: parsed.locale || undefined, dryRun, allowStale });
     printImportResult(result);
+    return 0;
+  }
+
+  if (command === 'sync-locales' || command === 'init-locales') {
+    const parsed = parseLocaleFlags(args);
+    if (parsed.all || parsed.rest.length) throw new ContentWorkflowError('sync-locales akzeptiert nur --locale.');
+    const results = syncLocales(parsed.locale ? { locale: parsed.locale } : {});
+    results.forEach((result) => console.log(
+      result.locale + ': ' + result.added + ' Platzhalter ergaenzt, ' + result.changedFiles.length + ' Datei(en) aktualisiert.'
+    ));
     return 0;
   }
 
@@ -1948,26 +3005,38 @@ module.exports = {
   DEFAULT_OVERVIEW_FILE,
   DEFAULT_BACKUP_ROOT,
   SCHEMA_VERSION,
+  DEFAULT_LOCALE,
   LOCALE,
+  SUPPORTED_LOCALES,
+  MANIFEST_COPY_IDS,
   CSV_FORMAT_VERSION,
+  LOCALIZED_CSV_FORMAT_VERSION,
   ALLOWED_REVIEWERS,
   ALLOWED_REVIEW_STATUSES,
   FIELD_LIMITS,
   CSV_COLUMNS,
+  LOCALIZED_CSV_COLUMNS,
   LEGACY_CSV_COLUMNS,
   ContentWorkflowError,
   stableStringify,
   sha256,
   placeholderNames,
+  htmlTagOccurrences,
   validateAllowedHtml,
   validate,
   validateCatalog,
   loadCatalog,
+  loadBaseCatalog,
+  loadCatalogs,
+  computeTranslationSourceContractHash,
   computeSourceHash,
   computeSourceVersion,
   computeRowHash,
   buildBundle,
+  buildBundleRegistry,
   renderGenerated,
+  renderGeneratedRegistry,
+  renderWebManifest,
   buildGenerated,
   checkGenerated,
   protectSpreadsheetCell,
@@ -1980,8 +3049,10 @@ module.exports = {
   catalogToCsvRows,
   exportCsvText,
   exportCsv,
+  exportCsvAll,
   renderReviewOverview,
   exportOverview,
+  exportOverviewAll,
   buildReviewReport,
   reviewReport,
   planImport,
@@ -1989,6 +3060,7 @@ module.exports = {
   transactionalWriteFiles,
   persistImport,
   importCsv,
+  syncLocales,
   check: checkGenerated,
   build: buildGenerated,
   export: exportCsv,

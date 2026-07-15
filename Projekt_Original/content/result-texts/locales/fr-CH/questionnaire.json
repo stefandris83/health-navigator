@@ -1,0 +1,1759 @@
+{
+  "schemaVersion": 1,
+  "locale": "fr-CH",
+  "domain": "questionnaire",
+  "entries": [
+    {
+      "id": "questionnaire.common.agreement.fully",
+      "text": "Tout à fait d’accord",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dcd32b8bef19cc74468d2cdd4320a0b206df1d9803aa05770c37c236c02d7a8c"
+    },
+    {
+      "id": "questionnaire.common.agreement.mostly",
+      "text": "Plutôt d’accord",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "04ea08735a4b88359d0fa1e962861527fcf4201d6dc4164fef5448a1d222a8dd"
+    },
+    {
+      "id": "questionnaire.common.agreement.mostly_not",
+      "text": "Plutôt pas d’accord",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1ab6df9d19891fa5cfeba455f340bc7d8b352af929e9562bdba656cddf547e1e"
+    },
+    {
+      "id": "questionnaire.common.agreement.neutral",
+      "text": "Ni l’un ni l’autre",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "af2dfa1cd03a338758325d63b6cccd1c3759043d3b3285c0683802cfbe38bf78"
+    },
+    {
+      "id": "questionnaire.common.agreement.not_at_all",
+      "text": "Pas du tout d’accord",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1e273008656d5d5f574100dd35b7c4bc98cf5b269c6287c2c198163b6c0a72e7"
+    },
+    {
+      "id": "questionnaire.common.dont_know",
+      "text": "Je ne sais pas",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91d9bb46d2459f9ed88f5d459434eddcebcebcfe9eb5e67fae55f8a20ea9a11b"
+    },
+    {
+      "id": "questionnaire.common.fitness_test_safety_note",
+      "text": "N’effectuez pas ce test si vous avez des limitations physiques ou s’il présente un risque de blessure.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "eec8eee49171c68d14583a1b1e23187e47ed6b7962b530013871038dfa1613d5"
+    },
+    {
+      "id": "questionnaire.question.alkohol.help",
+      "text": "L’idée selon laquelle un verre de vin par jour serait bon pour la santé est un mythe fondé sur des études erronées. Même en petite quantité, l’alcool augmente le risque de cancer et de maladies cardiovasculaires. Le potentiel de dépendance de l’alcool, même à faible dose et en cas de consommation régulière, est lui aussi fortement sous-estimé.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "66d8a10df54e3f98b8bc78c40e5a2966e3bf06a77700bae0aa979dd63392da8c"
+    },
+    {
+      "id": "questionnaire.question.alkohol.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3d29a80c675092adfe28cd7b8a2ad3a1bd305342791a24118d6adfdeff40eb48"
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.keine_angabe",
+      "text": "Aucune indication",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b9f65177e56a11ad371eebd3324712fcbf6ea7a4285c976ecae1c646d06f33a8"
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.m1_4",
+      "text": "2 à 4 fois par mois",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "61371bdd60d174811290035088d8fbf03c5efeadeef4329b68010e95da3f827b"
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.nie_selten",
+      "text": "Jamais ou rarement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "745e2f24146302e809a2a71f7ff5c740f67a40c49f9c56ac0cb62ee17bbc1a94"
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.w2_3",
+      "text": "2 à 3 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d7fa72876284f7048532b63d885e344d44d95e1b52fc9e2388d3ef05ab9a0af9"
+    },
+    {
+      "id": "questionnaire.question.alkohol.option.w4plus",
+      "text": "4 fois ou plus par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3517ed981b86289e4c4b5d95a4eb0048b2bbb44a74b52a5058b8e58262c285ef"
+    },
+    {
+      "id": "questionnaire.question.alkohol.text",
+      "text": "À quelle fréquence avez-vous consommé des boissons alcoolisées au cours du dernier mois ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "72ea98698b86210fcdf267b54ba0d8f115b32242eeb07cebcd3ce5aa1107364d"
+    },
+    {
+      "id": "questionnaire.question.alter.placeholder",
+      "text": "p. ex. 45",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6d3c2f87224e7285ca24a8b45db8007f4daa817bb495cbb0520b9833a1e37b08"
+    },
+    {
+      "id": "questionnaire.question.alter.text",
+      "text": "Veuillez indiquer votre âge en années.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fed0670184296a4310e176302a9c39cc16c470c70d68d787fd4d9c05d2a0f889"
+    },
+    {
+      "id": "questionnaire.question.alter.unit",
+      "text": "ans",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "58f4b5c9c3b94d29b1adcf20b8adcd15edacb83952b33782f83b40fdbecfd616"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.help",
+      "text": "Vous transpirez et ne pouvez plus prononcer que quelques mots, voire plus parler du tout (p. ex. jogging, vélo rapide, natation intensive).\n\n<b>Recommandation de l’OMS :</b> au moins 75 minutes d’activité intense par semaine, chaque durée d’activité étant prise en compte.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b6751982ab5fb56c662da34ed1b37884daefede9b2e3fc5c473ba8e9186cc76a"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.help_title",
+      "text": "Qu’est-ce qu’une activité d’endurance intense ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7a4c2b6e124d0ef8e7f8f1532eb6745e6406c80ecd283dba509b686e69d670e4"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.keine",
+      "text": "Aucune",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d649b500ec0605b5e8c4b0ab1ce7d5c12891e664e565ced66068e3e1c323b449"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.m30_75",
+      "text": "30 min – 1 h 15 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86000b5387cf1594b32b1d527841dff5233e4d8a7393a1ad38bd8331d63bd8fc"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.m75_150",
+      "text": "1 h 15 min – 2 h 30 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "225b4bbb460b194d258d0d9048e09df398841f03d25400acb0213551ef3b8d3b"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.u30",
+      "text": "Moins de 30 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8a6755228ffd2fe7bdc8f6d8a8bafd65afe1e71aa3f636a4b2f120a1e0d59a1b"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.option.ue150",
+      "text": "2 h 30 min ou plus",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b32ea4f483348c4a2d206e856350a3af0366577590ba3b96b55c38239bee6980"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_intensiv.text",
+      "text": "Combien d’heures d’activité d’endurance intense pratiquez-vous par semaine ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d65679b65130f374134b28993724119b4f7bcefcb2f474a351ac3223cd561b40"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.help",
+      "text": "Vous respirez plus vite que d’habitude, mais pouvez encore tenir une conversation (p. ex. marche rapide, vélo lent, natation à rythme modéré).\n\n<b>Recommandation de l’OMS :</b> au moins 150 minutes d’activité modérée par semaine, chaque durée d’activité étant prise en compte.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86e4490a6010bb1cab829f1d618cd8f31f14296856875afc6bf9ec5c7d46bdc8"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.help_title",
+      "text": "Qu’est-ce qu’une activité d’endurance modérée ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d73503847955d30249badba71c1bf67d4c2f7af87c8108a6877b3ccfa058de11"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m150_300",
+      "text": "2 h 30 min – 5 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7790bfbc0efa0275f8059446b001bf260f434600c9579a028642d78ae1efa049"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m30_75",
+      "text": "30 min – 1 h 15 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d18de48fc214eb26f95798b55ca41b96875fde7df02040568ed91bbf1cc9fcdb"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.m75_150",
+      "text": "1 h 15 min – 2 h 30 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c6190130259cb164956477e05c732c23fef7ef802981b9a5ffada3e378c002c2"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.u30",
+      "text": "Moins de 30 min",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86e82464491dbba6b23fcf69ebad99e722211a4d459da551270de00005633fc0"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.option.ue300",
+      "text": "5 h ou plus",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "85eee5a7761e4a7ebae8ce118d5d52fec97dc1403f05654ce95b5e40f9f4933d"
+    },
+    {
+      "id": "questionnaire.question.ausdauer_moderat.text",
+      "text": "Combien d’heures d’activité d’endurance modérée pratiquez-vous par semaine ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b3bef69d1b1ca44f7060327efb58306e8e821a0af07c9d386edc8ee009b51825"
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.help",
+      "text": "Mesurez après une expiration normale, approximativement à mi-distance entre la dernière côte palpable et le bord supérieur de la crête iliaque. La graisse abdominale est métaboliquement active : le rapport entre le tour de taille et la taille du corps est souvent plus parlant que le poids seul. Si vous ne connaissez pas la valeur, laissez simplement le champ vide.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b82013ac7e7ec42ba3e3632a8d4d20f9ee008b05d7c41b689ba91b495f509dc3"
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.placeholder",
+      "text": "p. ex. 92",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "474238ba2326712f0791a0fb9592312d41f184a3d0075529a6436140f54aa887"
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.text",
+      "text": "Connaissez-vous votre tour de taille ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a03b56939e48edb318a243b2192aa4d0dd8352a1968cb9a8cd49e32a8d162f13"
+    },
+    {
+      "id": "questionnaire.question.bauchumfang.unit",
+      "text": "cm",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "87234a7b037d381c29049f45769a52ec00b7c56417959feffc122252e298eae1"
+    },
+    {
+      "id": "questionnaire.question.belastbarkeit.text",
+      "text": "Même dans les situations difficiles, je garde une vue d’ensemble et mon calme.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8da9bd352b328eea6d3f81a158929905d1fd97ad12bca89e3f3856f4d3a7c7b3"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.gar_nicht",
+      "text": "Pas du tout difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7feca57334c9afb84df2f0b2643e0f97141986205170ba50dc1676d8b23d788f"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.maessig",
+      "text": "Moyennement difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c3408d9536ba0d755ec24dbc49cf179849dc65731ae8cc583abb501191b26524"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.nicht",
+      "text": "Impossible",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "34eadbbab330ed027a6b961e7fbd00d5370388136a0cabaad8b4e3e021b27157"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.wenig",
+      "text": "Un peu difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "771af1932262ada9a826f7f32b918e25f738f8f6acd8d578e023231c0e37df3b"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.option.ziemlich",
+      "text": "Très difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "780a1d26421e1f7732ff661b762da1242c671dd6511298779eed08826e5e1862"
+    },
+    {
+      "id": "questionnaire.question.beweglichkeit.text",
+      "text": "Dans quelle mesure avez-vous de la difficulté à vous relever du sol sans aide ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "345c35c545a226b83797e97c8197185e165c9c82386b35f35a648049390b3e43"
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.help",
+      "text": "L’hypertension (à partir d’environ 140/90 mmHg) passe souvent inaperçue, mais se traite bien. Si vous avez un doute, une mesure est utile.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "da7d68289a1e330ab86f9504cf84814ca4546054e88aaf36315c02c7bec57871"
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.ja",
+      "text": "Oui",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cfe2d29ab885fd14c8b80993a92e6037057a1cd4ee62a556c10ebce000eaf291"
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.nein",
+      "text": "Non",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "266d9ccd6310fb1787501ca143d811c6e2c90121b4c547497ce9ebd85b8c0208"
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.option.weiss_nicht",
+      "text": "Je ne sais pas",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f737d593530cf872dba224f4b14b551e2652f4eaea52d3866b4e382fe5384e9f"
+    },
+    {
+      "id": "questionnaire.question.bluthochdruck.text",
+      "text": "Un médecin a-t-il diagnostiqué une hypertension chez vous ou prenez-vous des médicaments contre l’hypertension ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7c8533ff90c4f67aa3f45fb810844f70d30e416cfc2f35861f04c43988e8a79a"
+    },
+    {
+      "id": "questionnaire.question.coping.text",
+      "text": "Même dans les situations éprouvantes, je trouve des moyens qui m’aident à y faire face.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "45b8e4a9c22dc868935f28c56dc04c9cdf66854f7f888b004a52b129f48b0e21"
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.help",
+      "text": "1 – Tenez-vous droit, les pieds écartés à la largeur des hanches.\n2 – Fixez du regard un point devant vous.\n3 – Levez une jambe de manière à ce que le pied ne touche plus le sol.\n4 – Gardez l’équilibre aussi longtemps que possible.\n\nArrêtez le chronomètre dès que le pied levé touche le sol.\n\nRépétez le test avec chaque jambe et notez votre meilleure valeur. Une grande différence entre les jambes peut indiquer une différence susceptible d’être entraînée.\n\n<b>Ce que révèle le test d’équilibre sur une jambe :</b>\nDans les conditions décrites, les yeux ouverts, ce test donne une indication sur votre équilibre statique et votre coordination. Une pratique régulière peut améliorer l’équilibre et contribuer à des mouvements quotidiens plus sûrs. Le test ne remplace pas un examen médical.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2440f2bff40735f80c80ad34f6d78a4543f1a348a0f7ce08c7616eb22e3d1ec0"
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.help_title",
+      "text": "Comment effectuer correctement le test d’équilibre sur une jambe",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "04a1dd245258a278a16ca4625816fc4f0bf738f31f0dd91ef968ac0dd99c5e0a"
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.placeholder",
+      "text": "p. ex. 30",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fcf638956f778afe439e1d7c5238f692f4d8470f95165d7a9fc25040a7ec5c89"
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.text",
+      "text": "Combien de temps pouvez-vous tenir sur une jambe sans vous appuyer ? (facultatif)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7ac27d3167b00ee65c8b882b5c1561596865b6890a94ff4e66ba0725c2203282"
+    },
+    {
+      "id": "questionnaire.question.einbeinstand.unit",
+      "text": "secondes",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "297aa5983bb7f4e1833588fa7b625c3d7d992ace3ec964510bce381f7b999793"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.gar_nicht",
+      "text": "Pas du tout difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "22d53065d87a5aa02d1e0c3874c08ecb5e0dd9f497894ec524c19085fe0baa25"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.maessig",
+      "text": "Moyennement difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "046e22a49d8dd04648e80971c8df15191e0a366331363f4906833d291ce5f0ac"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.nicht",
+      "text": "Impossible",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a1ff36cfc3d066735862509c93897aaedfba7cefb1d099379c846d4ede66de39"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.wenig",
+      "text": "Un peu difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4e7f5b33ad6f9930b0c7dd1506fbbdb22e466bbb2a08fc2d4f2ff1426bebb477"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.option.ziemlich",
+      "text": "Très difficile",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c4c223fe83b5e4ce51ead266b1e8d0c7db6f7feb80f88721e27365ad82cdfb16"
+    },
+    {
+      "id": "questionnaire.question.einkaufstaschen.text",
+      "text": "Dans quelle mesure avez-vous de la difficulté à porter deux sacs de courses pleins ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d1f6072c0712a65208cb2b490a1ff9ff808dfbb7278627cea589d086969992aa"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.help",
+      "text": "Les maladies survenues précocement sont particulièrement pertinentes (avant 55 ans chez les hommes et avant 65 ans chez les femmes). Une prédisposition familiale n’est pas une fatalité : c’est une raison de prendre la prévention au sérieux.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "80aa5333544b8ba16c30f9e650c94b5188ea0fe6a203eb2ba855eca5ac100892"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.ja",
+      "text": "Oui",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0af684d592d8682f467fe94152a86a11beabf41f3c66cf4bf5fbc66c8656692d"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.nein",
+      "text": "Non",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7c92673fe47ee925e5541cf8de5b8eac9c02c579c11186324880378a48a74aec"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.weiss_nicht",
+      "text": "Je ne sais pas",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "065a081916bca67a8e7db77e76a294fb0b78ed8da143b12639b9e41856037096"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.text",
+      "text": "Y a-t-il, dans votre famille proche (parents, frères et sœurs), des maladies cardiovasculaires, du diabète ou des maladies héréditaires ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "234179ecbb522fe3ca1839a36ab9d2e27887769ecb414b0e0632b52f20da59ea"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.help",
+      "text": "Connaître les cas de cancer et de maladies cardiovasculaires dans sa famille permet une prévention ciblée. Une personne qui connaît ses prédispositions familiales peut agir tôt sur ses facteurs de risque personnels et favoriser le dépistage précoce grâce à des examens de prévention ciblés.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01b094e7b21828e8a0a15768edd0a6bcbcf49b3f558b86cf7d43b1615c7236bf"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2915c2151902391448333cd56183bca280c2585430cdb3ea7b6435e78bd327cd"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.gar_nicht",
+      "text": "Pas du tout",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "816da7b3e2c5e42fbf5c30355f042d87a6b5ae78c3144fe26b22ea54c2f2c69e"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.gut",
+      "text": "Bien",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2f3afe4d0833de336fa6111b43eae62741f5fd828cb3855d14ee295c5b996df4"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.sehr_gut",
+      "text": "Très bien",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7ad1e82df6694dd2b4a3d27933b02dc06bd3d7ccb277273e5af27e55cb6e4187"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.teilweise",
+      "text": "Partiellement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6951d8ca066f4d807b5ccc4d1e1e7c8bc7f822296772473f76773d1cf3405539"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.option.wenig",
+      "text": "Peu",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "494467ea91e357087abf6b273a06795b13b1c3a8bde2f0922f7e6c272665fb11"
+    },
+    {
+      "id": "questionnaire.question.familienwissen.text",
+      "text": "Dans quelle mesure connaissez-vous les éventuels cas de cancer ou de maladies cardiovasculaires dans votre famille ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ec5dc7b7446bc44196b320f739d379d0ee3b4b75636be91431f2f32aff26ae89"
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.intersex",
+      "text": "Intersexe",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9f4bf7834f48cd96601953a1aa5267d2210c3fb8e4b51a2d429758651471c642"
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.maennlich",
+      "text": "Masculin",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d4ef894da1d64214c7f8408ed3a42329a11a0d862ce0a7ab56305679f041f29c"
+    },
+    {
+      "id": "questionnaire.question.geschlecht.option.weiblich",
+      "text": "Féminin",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f272415da030f648d93d87352a043d0f8175faf6479293b2288211bdd4661140"
+    },
+    {
+      "id": "questionnaire.question.geschlecht.text",
+      "text": "Veuillez sélectionner votre sexe biologique.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7d5040ef87fa56d2e0ba85e642317468c9c590558d751308f864bc98cc494652"
+    },
+    {
+      "id": "questionnaire.question.gewicht.placeholder",
+      "text": "p. ex. 78",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cb83240c2184789fd654bb6c8ae8403181d8eadcc8142d321d8fdaf9cfbcfa66"
+    },
+    {
+      "id": "questionnaire.question.gewicht.text",
+      "text": "Veuillez indiquer votre poids en kilogrammes.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5d32224ba7a176605752ffcfe73eff578059b30f61b3f56d0ccf2fbcafe7b930"
+    },
+    {
+      "id": "questionnaire.question.gewicht.unit",
+      "text": "kg",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0e6b0e2f9187b28fe89a0486c27c0de049f474f5099c5846d8ee9e70b6672abf"
+    },
+    {
+      "id": "questionnaire.question.groesse.placeholder",
+      "text": "p. ex. 175",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "40449d859648479454ca2941f985d48cc912e2f5d97001c0e2c665a53088926b"
+    },
+    {
+      "id": "questionnaire.question.groesse.text",
+      "text": "Veuillez indiquer votre taille en centimètres.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "16465ebf4d74ef99fa9d64a3ee2600edbaab99acceec0b52f7052ac3bc9106a3"
+    },
+    {
+      "id": "questionnaire.question.groesse.unit",
+      "text": "cm",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bd9e5394c917811757bec97fc5d64c34f851a67ec3e18a1c819e6271b9a3b85a"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.help",
+      "text": "Exercices de renforcement musculaire avec des poids, des appareils ou le poids du corps (p. ex. pompes, squats ou entraînement avec des haltères).\n\n<b>Recommandation de l’OMS :</b> au moins deux fois par semaine pour tous les principaux groupes musculaires.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "18139b503b04b84119d9d78fff2f314437632520db5762ab0160ccfd361890b6"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.help_title",
+      "text": "Qu’est-ce que la musculation ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "49d7b35768c6ad60941c7e56422d8e5dea0ef3b168cf98089fde923250a5407c"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage0",
+      "text": "0 jour",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d808f7861dadf0dbe98bda92f80b7f12352bd670aa82946630848e7342570627"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage1",
+      "text": "1 jour",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "97cae3f9405ab09df6a39c7e230c653439d4c9a5d22f9e464272fc5a01f1716b"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage2",
+      "text": "2 jours",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5569ff2f10f2d901c588472afa95aba1c90e81be20f815557bf7a1159b13264a"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.option.tage3plus",
+      "text": "3 jours ou plus",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "02da701c186d76c02c0ad3c2eae47eb2cc875728a364a813e7fca386c8244eb1"
+    },
+    {
+      "id": "questionnaire.question.krafttraining.text",
+      "text": "Combien de jours par semaine faites-vous de la musculation ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d42572164265082a2eebdd3ec23907d94711e6c85bbceeb5e636636adf33f8d7"
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.help",
+      "text": "1 – Allongez-vous sur le ventre, les mains sous les épaules.\n2 – Tendez les bras et soulevez le corps du sol.\n3 – Gardez le corps, les hanches et les jambes alignés.\n4 – Abaissez le corps jusqu’à ce que la poitrine touche presque le sol.\n5 – Repoussez-vous vers le haut pour revenir à la position de départ.\n\nRépétez sans pause jusqu’à ce que vous ne puissiez plus continuer.\n\n<b>Ce que révèle le test des pompes :</b>\nLes pompes mesurent la force de la poitrine, des épaules, des bras et du tronc. Des muscles du haut du corps solides sont importants pour les activités quotidiennes telles que porter des objets ou se relever et contribuent à prévenir les blessures dues aux chutes.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d3689a0cc6df33f233823ff6389c03d94f82a78f12fda69e587094879b09598d"
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.help_title",
+      "text": "Comment effectuer correctement le test des pompes",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6a07d23d1259c28623c4557c84c0874ab36482aeac205975c72e0973e25369e3"
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.placeholder",
+      "text": "p. ex. 15",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "20b72d73f745a89635860d802bd08d2fd345972e68234d0c0c1089d5382abd0f"
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.text",
+      "text": "Combien de pompes pouvez-vous effectuer correctement sans interruption ? (facultatif)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0a30e6743bf303b2e388a36ed53b8d14a308a6f7ffa260b15ac1a32556ef356f"
+    },
+    {
+      "id": "questionnaire.question.liegestuetze.unit",
+      "text": "répétitions",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "270af81ec940aef98bacf5340c48446c6d15bc207e208aa7d0d3ade0d46f3cbf"
+    },
+    {
+      "id": "questionnaire.question.omega3.help",
+      "text": "Les acides gras oméga-3 d’origine marine soutiennent le cerveau et le cœur et exercent un puissant effet anti-inflammatoire dans tout le corps. Comme l’organisme n’en produit pas suffisamment lui-même, un apport régulier par l’alimentation est essentiel. L’huile d’algues est une très bonne alternative végane au poisson. Votre organisme peut l’utiliser immédiatement, contrairement aux précurseurs d’oméga-3 provenant d’autres huiles végétales.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bccf1c9db99f58007b7ba9b4ac6140ca21dc31a318bedf58b7115b1f1a1d364b"
+    },
+    {
+      "id": "questionnaire.question.omega3.help_title",
+      "text": "Pourquoi les oméga-3 sont-ils importants ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0d63b776181b7bc20787da454bf15bbd8b6a20870c9d8b63bfe217f4aaf9ec95"
+    },
+    {
+      "id": "questionnaire.question.omega3.option.nie",
+      "text": "Jamais",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "749760873e5cacca1b9e8697fca5537c9f2430d5ea244c92e043a21d6311485c"
+    },
+    {
+      "id": "questionnaire.question.omega3.option.u1woche",
+      "text": "Moins d’une fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "891c57997dc611c18fbf30c2ea4bc4b5fa4d63bab5b1b550baa379d4d3676a51"
+    },
+    {
+      "id": "questionnaire.question.omega3.option.ue2",
+      "text": "Plus de 2 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "87c5f91900382bc9b1ea77f1d2805387d93e8c5048947ba6a1ea0050e269ef29"
+    },
+    {
+      "id": "questionnaire.question.omega3.option.w1",
+      "text": "1 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8b9eecf929f8bb66f1386c7b95d78c36e2f2ab3300bde011e8eebf12ce40f589"
+    },
+    {
+      "id": "questionnaire.question.omega3.option.w2",
+      "text": "2 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c88e97776acbc7029084a813e6e3c5e0e8a4b4e1dd079d39703de920513f2533"
+    },
+    {
+      "id": "questionnaire.question.omega3.text",
+      "text": "Combien de fois par semaine mangez-vous du poisson gras (p. ex. saumon, maquereau, hareng) ou prenez-vous un complément alimentaire d’oméga-3 ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d2d672027e971d6c809de79436ba6409cf2d5d27ad54c26f7ccd3a9457454cc8"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.help",
+      "text": "<b>Légumes et salades :</b> épinards, brocolis, carottes, tomates, concombres, poivrons, oignons, ail\n<b>Fruits :</b> pommes, bananes, baies, oranges, raisin, avocat\n<b>Céréales et pseudo-céréales :</b> avoine, quinoa, millet, sarrasin, orge, riz complet\n<b>Graines :</b> graines de chia, de lin, de courge, de tournesol, sésame\n<b>Légumineuses et fruits à coque :</b> lentilles, pois chiches, haricots, amandes, noix\n<b>Épices et herbes :</b> basilic, origan, curcuma, gingembre, cannelle, poivre\n<b>Champignons :</b> champignons de Paris, shiitakés, pleurotes\n\n<b>Pourquoi la diversité végétale est-elle importante ?</b>\nUne sélection variée de végétaux apporte des nutriments, des antioxydants et des fibres alimentaires. Chaque plante contient des substances bioactives qui soutiennent différentes fonctions de l’organisme. La diversité renforce notamment le microbiome intestinal et favorise ainsi une flore intestinale saine.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "47c879a4043168f7564ef6e1be817a3c5816d7f6a59be829e9f6c4fd4596b9ba"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.help_title",
+      "text": "Quels aliments comptent par exemple comme aliments végétaux ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7592f8b726a720b03dda986e611f92806e1629a8ca613b33d589a27daa5ce34d"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.u10",
+      "text": "Moins de 10",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8ada5b271e74d8b7b5dc7289f518d9ccce24212c681bad54a31050dfa713f86b"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.ue35",
+      "text": "35 ou plus",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2f856f44813a6d0ba8bd120e1c150ded23ff776d1f08adcc99fd889da4f3b3fb"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v10_17",
+      "text": "10–17",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4ce923e264f0854a526be0a758fec21f13e0c8c4f593b1adbef1c4ecb7bced70"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v18_25",
+      "text": "18–25",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86f2e11d91bfed7d6a1fd779ac2ceac3753aad80a548f4addfbc6908cae21081"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.option.v26_34",
+      "text": "26–34",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "48148cc124067e4a9ea54cda83ec46c79becccee5c4d5e076209567f630c401a"
+    },
+    {
+      "id": "questionnaire.question.pflanzenvielfalt.text",
+      "text": "Combien d’aliments végétaux différents avez-vous mangés au cours de la semaine écoulée ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01a5e61493c7b4d1567259b0d46434473d3202eb086a68cdcedc2ea86be37def"
+    },
+    {
+      "id": "questionnaire.question.positive_emotionen.text",
+      "text": "Dans mon quotidien, je vis régulièrement des moments de joie ou de gratitude.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "bcf645fde433d72f8936980aae24387ba56ab3c2f97c7de460344e5c76833ad2"
+    },
+    {
+      "id": "questionnaire.question.protein.help",
+      "text": "Cette question évalue la régularité avec laquelle vous intégrez des sources de protéines. Elle ne calcule <b>pas</b> combien de grammes de protéines vous consommez réellement chaque jour par kilogramme de poids corporel.\n\n<b>Exemples de sources de protéines appropriées :</b>\n• Légumineuses telles que lentilles, haricots ou pois chiches\n• Tofu, tempeh, œufs, séré, yogourt ou cottage cheese\n• Poisson ou viande\n<b>Repère en cas de musculation régulière :</b>\nPour les adultes en bonne santé, environ 1,4–1,6 g de protéines par kg de poids corporel et par jour constitue un repère pratique. Dans une vaste méta-analyse, les bénéfices supplémentaires moyens pour le développement de la masse maigre diminuaient nettement à partir d’environ 1,6 g/kg/jour. Il ne s’agit pas d’une limite biologique stricte.\n\nUne quantité allant jusqu’à environ 2,0 g/kg/jour peut offrir une marge individuelle en cas de charge d’entraînement très élevée ou de déficit énergétique ciblé. Cette quantité n’est pas nécessaire pour la plupart des personnes ; l’âge seul ne justifie pas un objectif de 2,0 g/kg/jour. La musculation fournit le stimulus d’entraînement et les protéines apportent les éléments constitutifs. Les protéines en poudre ne sont pas automatiquement nécessaires.\n\nPour les moins de 18 ans, ainsi qu’en cas de maladie rénale ou d’alimentation prescrite médicalement, la quantité appropriée doit être déterminée avec une personne qualifiée.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f046e891a9abadaae08e54da07a0e00d614dc9af102e64c063cc05951f305f8b"
+    },
+    {
+      "id": "questionnaire.question.protein.help_title",
+      "text": "Que mesure cette question et quelle quantité est appropriée ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0c85d4ab1d523193bb969f4cc18b02a9dab135dab5bd6c86684c89acc173d2c4"
+    },
+    {
+      "id": "questionnaire.question.protein.option.fast_immer",
+      "text": "Presque toujours",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "08a88ddd1c8bade6432497b5296cd7027d5b7bfe8a32c3cc200f9853cf29ceff"
+    },
+    {
+      "id": "questionnaire.question.protein.option.haelfte",
+      "text": "Environ la moitié du temps",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8f51c6b7e3e4ffa2fa8cdd67878a23268e27bd5b63a331820c8fb1eeeae8952e"
+    },
+    {
+      "id": "questionnaire.question.protein.option.manchmal",
+      "text": "Parfois",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7f86eeee4d2ebbbbbbd14cc38f2284a4ca5025a771720dd07450251010f3e738"
+    },
+    {
+      "id": "questionnaire.question.protein.option.meistens",
+      "text": "La plupart du temps",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1427e004879617c044e9d29c684448c865003a804dd11547f786f99833c791e3"
+    },
+    {
+      "id": "questionnaire.question.protein.option.selten",
+      "text": "Rarement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f470caf5637c4d9e3af95a8ef1ba2ad694e6f48297178f4754980183af88b1fc"
+    },
+    {
+      "id": "questionnaire.question.protein.text",
+      "text": "À quelle fréquence parvenez-vous à prévoir une source claire de protéines dans au moins trois repas ou collations répartis sur la journée (p. ex. légumineuses, tofu, œufs, produits laitiers, poisson ou viande) ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "954528def2ea55486a23cb13fad4cd397da6de93ee6c88f7d8d4eb2bf391d36a"
+    },
+    {
+      "id": "questionnaire.question.rauchen.help",
+      "text": "Arrêter de fumer est toujours bénéfique, à tout âge. Après un jour déjà, les irritations des voies respiratoires diminuent ; en quelques mois, la circulation et la fonction pulmonaire s’améliorent. Après environ un an, le risque de maladie coronarienne est réduit d’environ 50 % par rapport à celui d’une personne qui continue de fumer. Votre odorat se rétablit également, les aliments ont meilleur goût et vous vous sentez plus performant.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b6530b3ccc322657652a2c057be6baec0dc20f6cab768dcf6d5d357742460467"
+    },
+    {
+      "id": "questionnaire.question.rauchen.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c48a899df41c5757ab0f261d4df61e39a69767609c0ed1a6fb69aeb67e754b5e"
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.frueher",
+      "text": "Plus maintenant",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1a29ce034c4db0fcc119d65f9675feb89b69a20d5fda4109e4339eb38bca1a68"
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.ja_gelegentlich",
+      "text": "Oui, parfois",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3cc16ed01c06f9244fd18c084ca571aef5d1eb972734adabe3b35bac435d737e"
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.ja_regelmaessig",
+      "text": "Oui, régulièrement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5aa8b4e19b57eea34223ea723c29b2e97987e17502e12726877d57d8380de343"
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.keine_angabe",
+      "text": "Aucune indication",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "038b3011bd36ee6f4fb369b27463dca728088b6be36051b04420e5d886df047b"
+    },
+    {
+      "id": "questionnaire.question.rauchen.option.nie",
+      "text": "Non, jamais",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e395030f74a1d8d485a0c0864e6a162e55c6681cdcd7a35424c29b09650b136b"
+    },
+    {
+      "id": "questionnaire.question.rauchen.text",
+      "text": "Fumez-vous ou avez-vous fumé par le passé ? (p. ex. cigarettes, vapoteuses, chicha)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2da4444c6281479f9d647acba47a01f7edea57a285cb76458177a484b23727e2"
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.fast_immer",
+      "text": "Presque toujours",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "383b88540958d5763074a98027518be78c212a134116abac8e80d86670bf566e"
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.manchmal",
+      "text": "Parfois",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7bc1806a39d956e1b1af9cbb8513ec6f90e8a9b7a6b2227d2cebce3168126c40"
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.nie",
+      "text": "Jamais",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7cdfe40cc0af7dc371b7d664db5decce496df3fd6d1e06fbcc81a706a4f16265"
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.oft",
+      "text": "Souvent",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "9531743111cff9003717a424e14c5f0ead964ab5c75b4fc815dc106f79f4b3f7"
+    },
+    {
+      "id": "questionnaire.question.saettigung.option.selten",
+      "text": "Rarement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "286ad4c6b6702ae09b59bfda331d41aa5b9cd078ebc6e8aad880b6b683f1abdd"
+    },
+    {
+      "id": "questionnaire.question.saettigung.text",
+      "text": "À quelle fréquence vous sentez-vous rassasié pendant environ quatre heures après vos repas principaux, sans avoir envie de prendre une collation ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91340395e328d191e64af3c10a43333837a9ab7d4fe270b76ba4abd3adb70676"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.deutlich",
+      "text": "Nettement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8421a65bd6bf53d45950a7fb87bc1dbcdc5d7ede2a944ad41766e69c4b3653b4"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.gar_nicht",
+      "text": "Pas du tout",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a47cfb0e29df53ed9cec97380d8d7398bf7bd5937dafd49175849d507e668267"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.kaum",
+      "text": "Très peu",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "f41bc92ea99f4119566ed98d240aed1f3784517ea0218318fc3f098890675f07"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.massiv",
+      "text": "Très fortement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d75d809eea31b9181ce72eaf3d0f28a1b7fcabcc832d38ec8a54fc7ce45c6311"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.option.spuerbar",
+      "text": "De manière perceptible",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "02384baf2fabbacdf302082fdf12615493094191c7c6b26f8898ce86e00b0189"
+    },
+    {
+      "id": "questionnaire.question.schlaf_auswirkung.text",
+      "text": "Dans quelle mesure votre sommeil a-t-il perturbé votre quotidien au cours du dernier mois ? (p. ex. baisse des performances, de la concentration, de l’humeur ou de l’énergie, réduction des activités sociales)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "375e571979a65e97c396d827710676e38be519adf9fea5957b6a3e29d5965e63"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s5_6",
+      "text": "5–6 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5a61d1f1ae173145dd3810aa88eb7539833ba3bb8460b4aa0aea43f8d1360f8e"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s6_7",
+      "text": "6–7 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fece16d27ca50906bd89d087045408776f7eadee62156917b8e27df4c49f99a8"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.s7_9",
+      "text": "7–9 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6f6085a50e79809185dab3f187dfb7cb7d8492d9c0ae6874d54dbec20d78ae8d"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.u5",
+      "text": "Moins de 5 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "27e44a7d9844813762cb48795e0dc713e0d428af734b90e16997abc82b4c4b9f"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.option.ue9",
+      "text": "Plus de 9 h",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2cdff162b68d569c7f76c9143d524429d7069b5e7ecf460636567aaa96a59d82"
+    },
+    {
+      "id": "questionnaire.question.schlafdauer.text",
+      "text": "Au cours du dernier mois, combien d’heures avez-vous dormi en moyenne par nuit, sans compter les phases d’éveil ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "440b01e239d3f6535f2a50138a6ea920e5a5945c4adde1c102c259d516bffdf8"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.durchschnittlich",
+      "text": "Moyennement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d968abe0d29d9e1867f9d7d7beb642864fd197e412bb70912763264d68731349"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.gut",
+      "text": "Bien",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3028153306668f5f8bcae62c383286975516e6e28d9e19f4eff48ff705f592bf"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.schlecht",
+      "text": "Mal",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8b7c9d78132c136347a6211f91ccac4e6fa49e6704eb12f416004462a0cc8e76"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.sehr_gut",
+      "text": "Très bien",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "264613045b9b24b01d3a0406c43833d6633961c7840e5ee97ff1079f0461a9ea"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.option.sehr_schlecht",
+      "text": "Très mal",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2cfb183fc0cfa08e0f3fd1bb1307e1a63bff516bb0f2940bd1851f292e55024e"
+    },
+    {
+      "id": "questionnaire.question.schlafqualitaet.text",
+      "text": "Globalement, comment avez-vous dormi au cours du dernier mois ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "712c12dff89a36b8e83f6acd047a3b8a7969d83feedfbfa26aeb4d44bd81d7a3"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.etwas_unregelmaessig",
+      "text": "Plutôt irrégulier (écart de ±1 h)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0ef57b46e8f48ced418b0911108c22bd4db08b481fc090d943a551b8ffcf56b0"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.regelmaessig",
+      "text": "Régulier (écart de ±45 min)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "91d87cbcf3575ff08a05d506133824239bdad8460f38480cc6c1cb2af69e00f3"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.sehr_regelmaessig",
+      "text": "Très régulier (écart de ±30 min)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "66ef0f26b805e51eadc10f472d5a938c0a8bc30ca06c82365dbddf405acce075"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.sehr_unregelmaessig",
+      "text": "Très irrégulier (écart de plus de 2 h)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "47d12df931d1ece54bbd0517cb5f550bcb932f7ad6f83dad5118e718cdd0c1fb"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.option.unregelmaessig",
+      "text": "Irrégulier (écart de ±1,5 h)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1104a1afeeffde969bbc1ec6539e5ba66a462299fe64a9efc69b8c3b9b09636d"
+    },
+    {
+      "id": "questionnaire.question.schlafrhythmus.text",
+      "text": "Vous levez-vous et vous couchez-vous à peu près à la même heure chaque jour, y compris le week-end ? (p. ex. vous vous couchez tous les jours à 22 h et vous levez à 6 h)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "be252acc12391b911d575a2f19b03efc715c3866643dbd95f930cd403e0bfa89"
+    },
+    {
+      "id": "questionnaire.question.selbstfuersorge.text",
+      "text": "Même pendant les périodes mouvementées, je trouve des moments de calme et de récupération.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "267202c7e07f1d277246751dd86cdcdd8129bdd4bf5e35b9936f81a405a8d084"
+    },
+    {
+      "id": "questionnaire.question.selbstwirksamkeit.text",
+      "text": "Je me sens à la hauteur de mon quotidien.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "11c951c7e0fbb6fd5cfd3faf3a016100688319387a352add28964ecacd0aa9a8"
+    },
+    {
+      "id": "questionnaire.question.sinnhaftigkeit.text",
+      "text": "Je trouve que ma vie a du sens et m’épanouit.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d49bbcebe86dd2106fe3c0bb42c51bdb6b36a206c671bc3e2479868d8fae6c28"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.help",
+      "text": "Rester longtemps assis ou couché, sans dormir, augmente le risque de maladies cardiovasculaires et de diabète. Une courte pause chaque heure, par exemple se lever, s’étirer, faire quelques pas ou prendre les escaliers, réduit déjà nettement ce risque.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "43d9d3a8af653a8377a7efda2ee2049d417430317655b602fdda2239281ed4c0"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "af41b1157a7deae77890e8c8722c3f889b011c2f8415ef298e32a2461b074a2f"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s4_6",
+      "text": "4–6 heures",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2edc2e7521a8a621bf278bce88c5b95bad3e3962c8984a06d9a71b712eb4ecc0"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s7_8",
+      "text": "7–8 heures",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "6a33f73552f6eea3344faba91e8c354f613721b2534b4f609f8dbde30089405a"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.s9_10",
+      "text": "9–10 heures",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "11d62e160e0f044d69c658cf99e5c529c6cac4eb90e7a370b0ece091c077886a"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.u4",
+      "text": "Moins de 4 heures",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8883cb1d8741e663ce42cc4d74fa2e245e7f269e6386178db2d7475dcaab75d5"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.option.ue10",
+      "text": "Plus de 10 heures",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1c50ce23d986b3c92f29649b17652eeb9e567d62607eab51a73bde45a5e08997"
+    },
+    {
+      "id": "questionnaire.question.sitzzeit.text",
+      "text": "Combien d’heures passez-vous assis ou couché pendant une journée type ? (p. ex. travail/formation, repas, transports, médias/loisirs, détente, sans compter le sommeil ou les siestes)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "897707bad3d6ada6d2ac4e02ddb86dca4d54857f51560127535226f0071fb818"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.help",
+      "text": "Les réseaux sociaux peuvent créer un potentiel de dépendance et nuire tant à la santé psychique qu’à la santé générale. Les conséquences possibles comprennent des troubles du sommeil, des dépressions, des états anxieux et des conflits sociaux.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c8f8a9261fd24cb05ebfc5119334b16569fdcdf67f26a0426b2d97323ae76ae2"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d33dad3250fbe13ae54b0106e7fd3abff689ba1ab91155c95d84a7488a8f1e1d"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.manchmal",
+      "text": "Parfois",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c7cac3b35b26a59386215e2c879e504701d54ccaf2c6989654c605a34f185ec8"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.nein",
+      "text": "Non",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8138361c1efc74e0ccd614528747ba07711cfdb577ea4bb2bf6401fda5a6d625"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.oft",
+      "text": "Souvent",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "589a7ca8ae7df9b8fe7d30ff01e3e1bd01e445097f0737fce1db0db78c680558"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.sehr_oft",
+      "text": "Très souvent",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "fe7d336d859ebbc4e979ff1a7ad46b46eeab86e4c76c102217f6325a4777e4c6"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.option.selten",
+      "text": "Rarement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "47f51883d13190456e8be2bec0097f0c31fe4a1127b3349448f0336ef7f87e2c"
+    },
+    {
+      "id": "questionnaire.question.socialmedia.text",
+      "text": "Passez-vous plus de temps sur les réseaux sociaux que vous ne le souhaiteriez ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "5387a8e9bee2dfccffc46122278236f6836f527289bc416fda8303ac2698a5a8"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.help",
+      "text": "Une personne qui a déjà chuté présente un risque élevé de chuter à nouveau. Les chutes font donc partie des risques de santé les plus fréquents avec l’avancée en âge. Une seule chute peut déjà fortement nuire à l’autonomie et à la qualité de vie en raison des blessures. La bonne nouvelle : un entraînement ciblé de l’équilibre, de la force et de la mobilité réduit considérablement le risque.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2d5b21aebb6ca953fc0e5a7fcf87007110c1af14b5abd5f560bb384f63f3a55e"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d2016a3e9e4920907a24da13fa661d82cef8a4fea3db836e24f6235eddcf1493"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sehr_sicher",
+      "text": "Très sûr",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "12cb49025702b79b74238ef5388fb780f3e5b77cb45200eac0c8beadcc4271f1"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sehr_unsicher",
+      "text": "Très peu sûr",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "03a81f9cdc1eb1705e184a722aa66295b573f24babf7498c6cd1e72f129b2fd6"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.sicher",
+      "text": "Sûr",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "45fc43ecb1b39eb3285171e08694876b62e9a251bf1b92340e669a32c6cfee9b"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.unsicher",
+      "text": "Peu sûr",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d99675b7055c8fb635c8f988bf01f4df913c79961479ad29607b0bdfb78fb1a4"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.option.weder",
+      "text": "Ni l’un ni l’autre",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d884f96378d64944bdabdae0a667c3399606e58f6d11f1692bc451f4380fae24"
+    },
+    {
+      "id": "questionnaire.question.stabilitaet.text",
+      "text": "Dans quelle mesure vous sentez-vous en sécurité lors des mouvements du quotidien ? (p. ex. vous relever du sol, marcher sur des chemins forestiers, descendre d’un tabouret)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2ee9f79cecdbc926609ccd36a3770190338b748baf3aeeb78ef326834487214b"
+    },
+    {
+      "id": "questionnaire.question.treppen.option.deutlich",
+      "text": "Nettement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d2ac718cd6d795d38fae8bee83913393182ce0dbb66afd0c89c65324078a0365"
+    },
+    {
+      "id": "questionnaire.question.treppen.option.etwas",
+      "text": "Un peu",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "01566c1fb8c6541e7a92014dd8269308ae0515833d86eb9aa108a0fb2f7f4a80"
+    },
+    {
+      "id": "questionnaire.question.treppen.option.gar_nicht",
+      "text": "Pas du tout",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c025f2f520452af4f413362ed84b82e2dde58c969ac615d56b8831fa993ffae2"
+    },
+    {
+      "id": "questionnaire.question.treppen.option.kaum",
+      "text": "À peine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "30c3ad825c8dc4f2e59c79dc30a249ebd388e1e41a1372d82c1218c631b9195a"
+    },
+    {
+      "id": "questionnaire.question.treppen.option.sehr_stark",
+      "text": "Très fortement",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "377dc34d5a839aae04cba41bce6ac7dfad7f406492afc3936efcd9c5a574afd9"
+    },
+    {
+      "id": "questionnaire.question.treppen.text",
+      "text": "Êtes-vous essoufflé après avoir monté deux étages ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0a8b79ae3df79e10e7bf4b9312b7cc2afcd54df233933fcfedb73e773a0ac1b2"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.help",
+      "text": "• Plats préparés, pizzas surgelées\n• Sucreries, biscuits, chips\n• Sodas, boissons énergisantes\n• Charcuterie et viande transformée\n• Pain blanc, pâtisseries sucrées\n<b>Règle pratique :</b>\nPlus de cinq ingrédients ou des noms difficiles à prononcer = généralement fortement transformé.\n\n<b>Pourquoi les aliments transformés posent-ils problème ?</b>\nDe nombreux produits fortement transformés contiennent beaucoup de sucre, de sel, de graisses défavorables et d’additifs, alors qu’ils manquent de fibres alimentaires et de nutriments importants. Tous les aliments transformés ne sont pas aussi problématiques. L’essentiel est de réduire la part des produits fortement transformés et d’intégrer progressivement davantage d’aliments frais et riches en nutriments dans le quotidien.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "cffb9f66f9ed82e2d2d2456f6433773a45a0217c3f3b7569734a0b8bb20918ac"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.help_title",
+      "text": "Qu’est-ce qui est considéré comme fortement transformé ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "dec55684518c53e3b37f471fec8ff77158f2e1abd8a9bb64e31c062feb18a18f"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.fast_taeglich",
+      "text": "Presque tous les jours",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "893129dce734e767cce7c70b3203b1daf19b31a447c37ad1ad8709162ccc0d04"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.mehrmals_taeglich",
+      "text": "Plusieurs fois par jour",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "af0e4aceeeaa534f041bc8c9770d84f5d8bae925042be9cd052d61a83e0f3698"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.nie",
+      "text": "Jamais",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d397990efda13edb3dd0f3be1cbd2aa299a39bbf5978919933ef9b2d1050e12d"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.u1woche",
+      "text": "Moins d’une fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d48be471caa1d6e57f0d2e29932c7021169aa9d2be73cad52a44c773d3991d75"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.option.w1_2",
+      "text": "1 à 2 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "e7a7bc79ed2cbef23ea4d66a6c060fa9ee28dcdd4237c1f21e2345be8a5e5e60"
+    },
+    {
+      "id": "questionnaire.question.verarbeitet.text",
+      "text": "À quelle fréquence consommez-vous des aliments fortement transformés pendant une semaine type ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "51769a367424cb76f77fe9ab9dc041d3485adc1ffe44bf278a1bdc8e8d30b2fb"
+    },
+    {
+      "id": "questionnaire.question.verbundenheit.text",
+      "text": "Je me sens accepté et intégré par les personnes qui m’entourent.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "1588b138eb4ec58fdc4845a18c4b36a9583f626bdab333a8e53db731b87d1a29"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.help",
+      "text": "L’hypertension passe souvent inaperçue, mais constitue un facteur de risque central de maladies cardiovasculaires. Selon l’âge, le mode de vie ou les antécédents familiaux, il peut aussi être utile de faire évaluer son risque personnel de cancer ou de premiers signes de diabète de type 2. Une détection précoce et de petits changements au quotidien permettent de réduire les risques et leurs conséquences.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "8d811ab8a526d6aee87d2fe373c82299d0da9b9ab8c0dd809dd3dcdbdf1ea92f"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.help_title",
+      "text": "Le saviez-vous ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "d5801252eb6fad44eea284356c059c68fc51cb8eec39f2dc961d153b037f44e1"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.ja",
+      "text": "Oui",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7a751d8a1e3b4c35527ddc18bc224e050b0f56f32f007668b28f53aaff2b7984"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.nein",
+      "text": "Non",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0072e505c59304a43701f3400fe470bfb67df5e11c0e0f9eb074eee5f8b64517"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.text",
+      "text": "Vous êtes-vous informé sur des maladies telles que le cancer, l’hypertension et le diabète de type 2 et avez-vous fait évaluer votre risque personnel ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "86cb66dbd7f84117071d0e8103d2078c61f5e00aa4760d5ee62ebfad1ae9d0e7"
+    },
+    {
+      "id": "questionnaire.question.wandsitz.help",
+      "text": "1 – Placez entièrement le dos et le bassin contre un mur droit.\n2 – Posez les pieds parallèles, écartés approximativement à la largeur des hanches.\n3 – Glissez vers le bas jusqu’à ce que les hanches et les genoux forment un angle d’environ 90°.\n4 – Répartissez le poids de manière égale sur les deux jambes. Ne prenez appui avec les mains ou les bras ni sur les jambes ni sur le mur.\n5 – Continuez à respirer normalement et maintenez la position aussi longtemps que possible.\n\nFaites d’abord un bref essai, puis un essai chronométré. Le temps commence lorsque vous êtes dans la position correcte. Arrêtez le test dès que le bassin ou le dos perd le contact avec le mur, que vous remontez nettement ou que vous prenez appui avec les mains. Interrompez le test en cas de douleurs, de vertiges ou de difficultés respiratoires.\n\n<b>Ce que révèle le test de la chaise contre un mur :</b>\nIl mesure l’endurance de force locale des jambes et des fessiers. Ces muscles sont importants pour la stabilité, la mobilité et la sécurité. Les entraîner aide à rester actif, mobile et autonome plus longtemps.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "c7792db8935cd95c5289c1488f1c7511bc0985c664f3dc180544684864308ab4"
+    },
+    {
+      "id": "questionnaire.question.wandsitz.help_title",
+      "text": "Comment effectuer correctement le test de la chaise contre un mur",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "0a4e0ed9e909c1d4d9cb2d567165433a661b19be93432a11d375705803bbc7e7"
+    },
+    {
+      "id": "questionnaire.question.wandsitz.placeholder",
+      "text": "p. ex. 45",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "4b43ea83fac22d112ad0ac2e54bd1a763de4dcbaf012d28730fd006c3ecbdba2"
+    },
+    {
+      "id": "questionnaire.question.wandsitz.text",
+      "text": "Combien de temps pouvez-vous rester au maximum en position assise contre un mur, avec un angle de 90° ? (facultatif)",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ea1a7ae6e0e1a3a26574245830d9d0fff7301f5bd986a6b04d8a445f5b072cfc"
+    },
+    {
+      "id": "questionnaire.question.wandsitz.unit",
+      "text": "secondes",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "ae6a65c5367b2fd7f0b0189d3802aacc064d8331975f5c34c904c52ea32d49a6"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.nie",
+      "text": "Jamais",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "7fdf5112db7ca04f83c473aed17d52eadb9ff5b8bb3e2d0409be1d8e3eed30a6"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.taeglich",
+      "text": "Tous les jours ou plusieurs fois par jour",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "3daebe66ea46956ce0fbe3de7c1571c6c0b070e68577b8579e2aa7cb996c7e63"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.u1woche",
+      "text": "Moins d’une fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "2df73f3b0903c13209e63828c99dce4660958ff53b24490ac0fb37a34df400b5"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.w1_3",
+      "text": "1 à 3 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "23f44197d760cd427a8e068e32660e97b7ab67a97ed6e9135cf79857dd29aa48"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.option.w4_6",
+      "text": "4 à 6 fois par semaine",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "a85bfa6f4cfe8689b24247ea9d1ae359d35f034bd99abf82fe84f78094c50474"
+    },
+    {
+      "id": "questionnaire.question.zuckergetraenke.text",
+      "text": "À quelle fréquence buvez-vous des boissons sucrées ou des jus de fruits purs ?",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "71e2ee9139052c82b42f7fa108defcc96ca37d0bb22950ed82d0a7e8708f9c35"
+    },
+    {
+      "id": "questionnaire.question.zukunft.text",
+      "text": "J’envisage mon avenir avec confiance.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "sourceContractHash": "b41bc0d143aa0474e1d4eb91e66db683bb87437bd058ef261ffa2a793b4d96ff"
+    }
+  ]
+}

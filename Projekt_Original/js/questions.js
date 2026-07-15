@@ -36,16 +36,18 @@
 (function () {
   'use strict';
 
-const DK = { value: 'unbekannt', label: 'Weiss ich nicht' };
+const copy = window.ResultCopy;
+
+const DK = { value: 'unbekannt', label: copy.get('questionnaire.common.dont_know') };
 
 // Zustimmungsskala für die Aussagen im Bereich «Mentales Wohlbefinden».
 // Fragenset: Stimme völlig zu (+2) … Stimme gar nicht zu (−2), Mitte «Weder noch».
 const AGREE = [
-  { value: 'voll', label: 'Stimme völlig zu' },
-  { value: 'eher', label: 'Stimme eher zu' },
-  { value: 'teils', label: 'Weder noch' },
-  { value: 'eher_nicht', label: 'Stimme eher nicht zu' },
-  { value: 'gar_nicht', label: 'Stimme gar nicht zu' },
+  { value: 'voll', label: copy.get('questionnaire.common.agreement.fully') },
+  { value: 'eher', label: copy.get('questionnaire.common.agreement.mostly') },
+  { value: 'teils', label: copy.get('questionnaire.common.agreement.neutral') },
+  { value: 'eher_nicht', label: copy.get('questionnaire.common.agreement.mostly_not') },
+  { value: 'gar_nicht', label: copy.get('questionnaire.common.agreement.not_at_all') },
 ];
 
 const DIMENSIONS = [
@@ -62,55 +64,52 @@ const DIMENSIONS = [
     questions: [
       {
         id: 'alter',
-        text: 'Bitte geben Sie Ihr Alter in Jahren an.', // F-0.1
+        text: copy.get('questionnaire.question.alter.text'), // F-0.1
         type: 'number',
-        unit: 'Jahre',
+        unit: copy.get('questionnaire.question.alter.unit'),
         min: 12,
         max: 119,
-        placeholder: 'z. B. 45',
+        placeholder: copy.get('questionnaire.question.alter.placeholder'),
       },
       {
         id: 'geschlecht',
-        text: 'Bitte wählen Sie Ihr biologisches Geschlecht aus.', // F-0.2
+        text: copy.get('questionnaire.question.geschlecht.text'), // F-0.2
         type: 'single',
         options: [
-          { value: 'maennlich', label: 'Männlich' },
-          { value: 'weiblich', label: 'Weiblich' },
-          { value: 'intersex', label: 'Intersex' },
+          { value: 'maennlich', label: copy.get('questionnaire.question.geschlecht.option.maennlich')},
+          { value: 'weiblich', label: copy.get('questionnaire.question.geschlecht.option.weiblich')},
+          { value: 'intersex', label: copy.get('questionnaire.question.geschlecht.option.intersex')},
         ],
       },
       {
         id: 'groesse',
-        text: 'Bitte geben Sie Ihre Grösse in Zentimetern an.', // F-0.3
+        text: copy.get('questionnaire.question.groesse.text'), // F-0.3
         type: 'number',
-        unit: 'cm',
+        unit: copy.get('questionnaire.question.groesse.unit'),
         min: 100,
         max: 299,
-        placeholder: 'z. B. 175',
+        placeholder: copy.get('questionnaire.question.groesse.placeholder'),
       },
       {
         id: 'gewicht',
-        text: 'Bitte geben Sie Ihr Gewicht in Kilogramm an.', // F-0.4
+        text: copy.get('questionnaire.question.gewicht.text'), // F-0.4
         type: 'number',
-        unit: 'kg',
+        unit: copy.get('questionnaire.question.gewicht.unit'),
         min: 30,
         max: 399,
-        placeholder: 'z. B. 78',
+        placeholder: copy.get('questionnaire.question.gewicht.placeholder'),
       },
       {
         // Nicht im finalen Fragenset enthalten – bleibt unverändert (optional).
         id: 'bauchumfang',
-        text: 'Kennen Sie Ihren Taillenumfang?',
+        text: copy.get('questionnaire.question.bauchumfang.text'),
         help:
-          'Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten ' +
-          'tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das ' +
-          'Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht ' +
-          'allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.',
+          copy.get('questionnaire.question.bauchumfang.help'),
         type: 'number',
-        unit: 'cm',
+        unit: copy.get('questionnaire.question.bauchumfang.unit'),
         min: 40,
         max: 250,
-        placeholder: 'z. B. 92',
+        placeholder: copy.get('questionnaire.question.bauchumfang.placeholder'),
         optional: true,
       },
     ],
@@ -129,161 +128,134 @@ const DIMENSIONS = [
       {
         id: 'stabilitaet', // F-1.1 «Stabilität im Alltag» (Sicherheitsgefühl bei Bewegungen)
         text:
-          'Wie sicher fühlen Sie sich bei alltäglichen Bewegungen? (z. B. beim Aufstehen vom ' +
-          'Boden, beim Gehen auf Waldwegen, beim Heruntersteigen von einem Hocker)',
-        helpTitle: 'Haben Sie gewusst?',
+          copy.get('questionnaire.question.stabilitaet.text'),
+        helpTitle: copy.get('questionnaire.question.stabilitaet.help_title'),
         help:
-          'Wer einmal gestürzt ist, hat ein hohes Risiko für weitere Stürze. Daher zählen Stürze ' +
-          'zu den häufigsten Gesundheitsrisiken im Alter. Schon ein Sturz kann die Selbstständigkeit ' +
-          'und Lebensqualität aufgrund von Verletzungen stark beeinträchtigen. Die gute Nachricht: ' +
-          'Mit gezieltem Training von Gleichgewicht, Kraft und Beweglichkeit sinkt das Risiko erheblich.',
+          copy.get('questionnaire.question.stabilitaet.help'),
         type: 'single',
         options: [
-          { value: 'sehr_sicher', label: 'Sehr sicher' },
-          { value: 'sicher', label: 'Sicher' },
-          { value: 'weder', label: 'Weder noch' },
-          { value: 'unsicher', label: 'Unsicher' },
-          { value: 'sehr_unsicher', label: 'Sehr unsicher' },
+          { value: 'sehr_sicher', label: copy.get('questionnaire.question.stabilitaet.option.sehr_sicher')},
+          { value: 'sicher', label: copy.get('questionnaire.question.stabilitaet.option.sicher')},
+          { value: 'weder', label: copy.get('questionnaire.question.stabilitaet.option.weder')},
+          { value: 'unsicher', label: copy.get('questionnaire.question.stabilitaet.option.unsicher')},
+          { value: 'sehr_unsicher', label: copy.get('questionnaire.question.stabilitaet.option.sehr_unsicher')},
         ],
       },
       {
         id: 'sitzzeit', // F-1.2
         text:
-          'Wie viele Stunden verbringen Sie an einem typischen Tag im Sitzen oder Liegen? ' +
-          '(z. B. Arbeit/Ausbildung, Essen, Verkehr, Medien/Freizeit, Entspannung, aber ohne ' +
-          'Schlaf/Nickerchen)',
-        helpTitle: 'Haben Sie gewusst?',
+          copy.get('questionnaire.question.sitzzeit.text'),
+        helpTitle: copy.get('questionnaire.question.sitzzeit.help_title'),
         help:
-          'Langes Sitzen oder Liegen (ohne Schlaf) erhöht das Risiko für Herz-Kreislauf-Erkrankungen ' +
-          'und Diabetes. Bereits eine kurze stündliche Pause (aufstehen, strecken, ein paar Schritte ' +
-          'gehen oder die Treppe nehmen) senkt dieses Risiko deutlich.',
+          copy.get('questionnaire.question.sitzzeit.help'),
         type: 'single',
         options: [
-          { value: 'u4', label: 'Weniger als 4 Stunden' },
-          { value: 's4_6', label: '4–6 Stunden' },
-          { value: 's7_8', label: '7–8 Stunden' },
-          { value: 's9_10', label: '9–10 Stunden' },
-          { value: 'ue10', label: 'Mehr als 10 Stunden' },
+          { value: 'u4', label: copy.get('questionnaire.question.sitzzeit.option.u4')},
+          { value: 's4_6', label: copy.get('questionnaire.question.sitzzeit.option.s4_6')},
+          { value: 's7_8', label: copy.get('questionnaire.question.sitzzeit.option.s7_8')},
+          { value: 's9_10', label: copy.get('questionnaire.question.sitzzeit.option.s9_10')},
+          { value: 'ue10', label: copy.get('questionnaire.question.sitzzeit.option.ue10')},
         ],
       },
       {
         id: 'familienwissen', // F-1.3 «Familiäre Krankheitsgeschichte»
-        text: 'Wie gut wissen Sie über mögliche Krebs- oder Herz-Kreislauferkrankungen in Ihrer Familie Bescheid?',
-        helpTitle: 'Haben Sie gewusst?',
+        text: copy.get('questionnaire.question.familienwissen.text'),
+        helpTitle: copy.get('questionnaire.question.familienwissen.help_title'),
         help:
-          'Das Bewusstsein über familiäre Krebs- und Herz-Kreislauferkrankungen macht eine gezielte ' +
-          'Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen ' +
-          'Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung ' +
-          'fördern.',
+          copy.get('questionnaire.question.familienwissen.help'),
         type: 'single',
         options: [
-          { value: 'sehr_gut', label: 'Sehr gut' },
-          { value: 'gut', label: 'Gut' },
-          { value: 'teilweise', label: 'Teilweise' },
-          { value: 'wenig', label: 'Wenig' },
-          { value: 'gar_nicht', label: 'Gar nicht' },
+          { value: 'sehr_gut', label: copy.get('questionnaire.question.familienwissen.option.sehr_gut')},
+          { value: 'gut', label: copy.get('questionnaire.question.familienwissen.option.gut')},
+          { value: 'teilweise', label: copy.get('questionnaire.question.familienwissen.option.teilweise')},
+          { value: 'wenig', label: copy.get('questionnaire.question.familienwissen.option.wenig')},
+          { value: 'gar_nicht', label: copy.get('questionnaire.question.familienwissen.option.gar_nicht')},
         ],
       },
       {
         id: 'vorsorge', // F-1.4 «Regelmässige Vorsorgeuntersuchung» – ohne Score-Einfluss (Ø)
         text:
-          'Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ-2-Diabetes informiert ' +
-          'und Ihr persönliches Risiko einschätzen lassen?',
-        helpTitle: 'Haben Sie gewusst?',
+          copy.get('questionnaire.question.vorsorge.text'),
+        helpTitle: copy.get('questionnaire.question.vorsorge.help_title'),
         help:
-          'Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für ' +
-          'Herz-Kreislauf-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs- oder ' +
-          'ersten Anzeichen von Typ-2-Diabetes kann sich je nach Alter, Lebensstil oder ' +
-          'Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im ' +
-          'Alltag lassen sich Risiken und Auswirkungen senken.',
+          copy.get('questionnaire.question.vorsorge.help'),
         type: 'single',
         options: [
-          { value: 'ja', label: 'Ja' },
-          { value: 'nein', label: 'Nein' },
+          { value: 'ja', label: copy.get('questionnaire.question.vorsorge.option.ja')},
+          { value: 'nein', label: copy.get('questionnaire.question.vorsorge.option.nein')},
         ],
       },
       {
         id: 'rauchen', // F-1.5
-        text: 'Rauchen Sie oder haben Sie in der Vergangenheit geraucht? (z. B. Zigaretten, Vapes, Shisha)',
-        helpTitle: 'Haben Sie gewusst?',
+        text: copy.get('questionnaire.question.rauchen.text'),
+        helpTitle: copy.get('questionnaire.question.rauchen.help_title'),
         help:
-          'Ein Rauchstopp lohnt sich immer und in jedem Alter. Bereits nach einem Tag werden ' +
-          'Atemwegsreizungen reduziert, in wenigen Monaten verbessert sich Ihr Kreislauf und Ihre ' +
-          'Lungenfunktion. Nach etwa einem Jahr ist das Risiko für eine koronare Herzkrankheit ' +
-          'ungefähr halb so hoch wie bei weiterem Rauchen. Ausserdem ' +
-          'erholt sich Ihr Geruchssinn, das Essen schmeckt besser und Sie fühlen sich leistungsfähiger.',
+          copy.get('questionnaire.question.rauchen.help'),
         type: 'single',
         options: [
-          { value: 'ja_regelmaessig', label: 'Ja, regelmässig' },
-          { value: 'ja_gelegentlich', label: 'Ja, manchmal' },
-          { value: 'nie', label: 'Nein, nie' },
-          { value: 'frueher', label: 'Nicht mehr' },
-          { value: 'keine_angabe', label: 'Keine Angaben' },
+          { value: 'ja_regelmaessig', label: copy.get('questionnaire.question.rauchen.option.ja_regelmaessig')},
+          { value: 'ja_gelegentlich', label: copy.get('questionnaire.question.rauchen.option.ja_gelegentlich')},
+          { value: 'nie', label: copy.get('questionnaire.question.rauchen.option.nie')},
+          { value: 'frueher', label: copy.get('questionnaire.question.rauchen.option.frueher')},
+          { value: 'keine_angabe', label: copy.get('questionnaire.question.rauchen.option.keine_angabe')},
         ],
       },
       {
         id: 'alkohol', // F-1.6
-        text: 'Wie häufig haben Sie im letzten Monat alkoholische Getränke konsumiert?',
-        helpTitle: 'Haben Sie gewusst?',
+        text: copy.get('questionnaire.question.alkohol.text'),
+        helpTitle: copy.get('questionnaire.question.alkohol.help_title'),
         help:
-          'Die Vorstellung, dass ein Glas Wein pro Tag gesund sei, ist ein Mythos, der auf ' +
-          'fehlerhaften Studien beruht. Bereits in geringen Mengen erhöht Alkohol das Risiko für ' +
-          'Krebs und Herz-Kreislauf-Erkrankungen. Auch das Suchtpotential von Alkohol, selbst bei ' +
-          'geringen Mengen und regelmässigem Konsum, wird stark unterschätzt.',
+          copy.get('questionnaire.question.alkohol.help'),
         type: 'single',
         options: [
-          { value: 'nie_selten', label: 'Nie oder selten' },
-          { value: 'm1_4', label: '2–4 x pro Monat' },
-          { value: 'w2_3', label: '2–3 x pro Woche' },
-          { value: 'w4plus', label: '4 x oder öfter pro Woche' },
-          { value: 'keine_angabe', label: 'Keine Angaben' },
+          { value: 'nie_selten', label: copy.get('questionnaire.question.alkohol.option.nie_selten')},
+          { value: 'm1_4', label: copy.get('questionnaire.question.alkohol.option.m1_4')},
+          { value: 'w2_3', label: copy.get('questionnaire.question.alkohol.option.w2_3')},
+          { value: 'w4plus', label: copy.get('questionnaire.question.alkohol.option.w4plus')},
+          { value: 'keine_angabe', label: copy.get('questionnaire.question.alkohol.option.keine_angabe')},
         ],
       },
       {
         id: 'socialmedia', // F-1.7
-        text: 'Verbringen Sie mehr Zeit mit Social Media als Ihnen lieb ist?',
-        helpTitle: 'Haben Sie gewusst?',
+        text: copy.get('questionnaire.question.socialmedia.text'),
+        helpTitle: copy.get('questionnaire.question.socialmedia.help_title'),
         help:
-          'Social Media kann ein Suchtpotenzial darstellen und sowohl die psychische als auch die ' +
-          'allgemeine Gesundheit beeinträchtigen. Dazu zählen Schlafstörungen, Depressionen, ' +
-          'Angstzustände und soziale Konflikte.',
+          copy.get('questionnaire.question.socialmedia.help'),
         type: 'single',
         options: [
-          { value: 'nein', label: 'Nein' },
-          { value: 'selten', label: 'Selten' },
-          { value: 'manchmal', label: 'Manchmal' },
-          { value: 'oft', label: 'Oft' },
-          { value: 'sehr_oft', label: 'Sehr oft' },
+          { value: 'nein', label: copy.get('questionnaire.question.socialmedia.option.nein')},
+          { value: 'selten', label: copy.get('questionnaire.question.socialmedia.option.selten')},
+          { value: 'manchmal', label: copy.get('questionnaire.question.socialmedia.option.manchmal')},
+          { value: 'oft', label: copy.get('questionnaire.question.socialmedia.option.oft')},
+          { value: 'sehr_oft', label: copy.get('questionnaire.question.socialmedia.option.sehr_oft')},
         ],
       },
       {
         // Nicht im finalen Fragenset enthalten – bleibt unverändert.
         // Fliesst NICHT in den Score ein, nur als Risikosignal/Hinweis.
         id: 'familie_hk',
-        text: 'Gibt es in Ihrer nahen Familie (Eltern, Geschwister) Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?',
+        text: copy.get('questionnaire.question.familie_hk.text'),
         help:
-          'Besonders relevant sind früh aufgetretene Erkrankungen (Männer vor 55, Frauen vor 65 Jahren). ' +
-          'Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.',
+          copy.get('questionnaire.question.familie_hk.help'),
         type: 'single',
         options: [
-          { value: 'nein', label: 'Nein' },
-          { value: 'ja', label: 'Ja' },
-          { value: 'weiss_nicht', label: 'Weiss ich nicht' },
+          { value: 'nein', label: copy.get('questionnaire.question.familie_hk.option.nein')},
+          { value: 'ja', label: copy.get('questionnaire.question.familie_hk.option.ja')},
+          { value: 'weiss_nicht', label: copy.get('questionnaire.question.familie_hk.option.weiss_nicht')},
         ],
       },
       {
         // Nicht im finalen Fragenset enthalten – bleibt unverändert.
         // Fliesst NICHT in den Score ein, nur als Risikosignal/Hinweis.
         id: 'bluthochdruck',
-        text: 'Wurde bei Ihnen ärztlich Bluthochdruck festgestellt oder nehmen Sie Blutdruckmedikamente?',
+        text: copy.get('questionnaire.question.bluthochdruck.text'),
         help:
-          'Bluthochdruck (ab ca. 140/90 mmHg) verläuft oft unbemerkt, lässt sich aber gut behandeln. ' +
-          'Wenn Sie unsicher sind, lohnt sich eine Messung.',
+          copy.get('questionnaire.question.bluthochdruck.help'),
         type: 'single',
         options: [
-          { value: 'nein', label: 'Nein' },
-          { value: 'ja', label: 'Ja' },
-          { value: 'weiss_nicht', label: 'Weiss ich nicht' },
+          { value: 'nein', label: copy.get('questionnaire.question.bluthochdruck.option.nein')},
+          { value: 'ja', label: copy.get('questionnaire.question.bluthochdruck.option.ja')},
+          { value: 'weiss_nicht', label: copy.get('questionnaire.question.bluthochdruck.option.weiss_nicht')},
         ],
       },
     ],
@@ -301,164 +273,125 @@ const DIMENSIONS = [
     questions: [
       {
         id: 'ausdauer_moderat', // F-2.1
-        text: 'Wie viele Stunden moderate Ausdaueraktivität machen Sie pro Woche?',
-        helpTitle: 'Was bedeutet moderate Ausdaueraktivität?',
+        text: copy.get('questionnaire.question.ausdauer_moderat.text'),
+        helpTitle: copy.get('questionnaire.question.ausdauer_moderat.help_title'),
         help:
-          'Sie atmen schneller als normal, können sich aber noch unterhalten (z. B. zügiges Gehen, ' +
-          'langsames Radfahren, Schwimmen in mässigem Tempo).' +
-          '<br><br><b>WHO-Empfehlung:</b> Mindestens 150 Minuten moderate Aktivität pro Woche, ' +
-          'wobei jede Aktivitätsdauer zählt.',
+          copy.get('questionnaire.question.ausdauer_moderat.help'),
         type: 'single',
         options: [
-          { value: 'u30', label: 'Weniger als 30 min' },
-          { value: 'm30_75', label: '30 min – 1 h 15 min' },
-          { value: 'm75_150', label: '1 h 15 min – 2 h 30 min' },
-          { value: 'm150_300', label: '2 h 30 min – 5 h' },
-          { value: 'ue300', label: '5 h oder mehr' },
+          { value: 'u30', label: copy.get('questionnaire.question.ausdauer_moderat.option.u30')},
+          { value: 'm30_75', label: copy.get('questionnaire.question.ausdauer_moderat.option.m30_75')},
+          { value: 'm75_150', label: copy.get('questionnaire.question.ausdauer_moderat.option.m75_150')},
+          { value: 'm150_300', label: copy.get('questionnaire.question.ausdauer_moderat.option.m150_300')},
+          { value: 'ue300', label: copy.get('questionnaire.question.ausdauer_moderat.option.ue300')},
         ],
       },
       {
         id: 'ausdauer_intensiv', // F-2.2
-        text: 'Wie viele Stunden intensive Ausdaueraktivität machen Sie pro Woche?',
-        helpTitle: 'Was bedeutet intensive Ausdaueraktivität?',
+        text: copy.get('questionnaire.question.ausdauer_intensiv.text'),
+        helpTitle: copy.get('questionnaire.question.ausdauer_intensiv.help_title'),
         help:
-          'Sie geraten ins Schwitzen und können nur noch wenige Worte oder gar nicht mehr sprechen ' +
-          '(z. B. Joggen, schnelles Radfahren, intensives Schwimmen).' +
-          '<br><br><b>WHO-Empfehlung:</b> Mindestens 75 Minuten intensive Aktivität pro Woche, ' +
-          'wobei jede Aktivitätsdauer zählt.',
+          copy.get('questionnaire.question.ausdauer_intensiv.help'),
         type: 'single',
         options: [
-          { value: 'keine', label: 'Keine' },
-          { value: 'u30', label: 'Weniger als 30 min' },
-          { value: 'm30_75', label: '30 min – 1 h 15 min' },
-          { value: 'm75_150', label: '1 h 15 min – 2 h 30 min' },
-          { value: 'ue150', label: '2 h 30 min oder mehr' },
+          { value: 'keine', label: copy.get('questionnaire.question.ausdauer_intensiv.option.keine')},
+          { value: 'u30', label: copy.get('questionnaire.question.ausdauer_intensiv.option.u30')},
+          { value: 'm30_75', label: copy.get('questionnaire.question.ausdauer_intensiv.option.m30_75')},
+          { value: 'm75_150', label: copy.get('questionnaire.question.ausdauer_intensiv.option.m75_150')},
+          { value: 'ue150', label: copy.get('questionnaire.question.ausdauer_intensiv.option.ue150')},
         ],
       },
       {
         id: 'krafttraining', // F-2.3
-        text: 'An wie vielen Tagen pro Woche machen Sie Krafttraining?',
-        helpTitle: 'Was ist Krafttraining?',
+        text: copy.get('questionnaire.question.krafttraining.text'),
+        helpTitle: copy.get('questionnaire.question.krafttraining.help_title'),
         help:
-          'Muskelkräftigende Übungen mit Gewichten, Geräten oder dem eigenen Körpergewicht ' +
-          '(z. B. Liegestütze, Kniebeugen oder Hanteltraining).' +
-          '<br><br><b>WHO-Empfehlung:</b> Mindestens zweimal pro Woche für alle wichtigen Muskelgruppen.',
+          copy.get('questionnaire.question.krafttraining.help'),
         type: 'single',
         options: [
-          { value: 'tage0', label: '0 Tage' },
-          { value: 'tage1', label: '1 Tag' },
-          { value: 'tage2', label: '2 Tage' },
-          { value: 'tage3plus', label: '3 Tage oder mehr' },
+          { value: 'tage0', label: copy.get('questionnaire.question.krafttraining.option.tage0')},
+          { value: 'tage1', label: copy.get('questionnaire.question.krafttraining.option.tage1')},
+          { value: 'tage2', label: copy.get('questionnaire.question.krafttraining.option.tage2')},
+          { value: 'tage3plus', label: copy.get('questionnaire.question.krafttraining.option.tage3plus')},
         ],
       },
       {
         id: 'beweglichkeit', // F-2.4
-        text: 'Wie schwer fällt es Ihnen, ohne Hilfe vom Boden aufzustehen?',
+        text: copy.get('questionnaire.question.beweglichkeit.text'),
         type: 'single',
         options: [
-          { value: 'gar_nicht', label: 'Überhaupt nicht schwer' },
-          { value: 'wenig', label: 'Wenig schwer' },
-          { value: 'maessig', label: 'Mässig schwer' },
-          { value: 'ziemlich', label: 'Sehr schwer' },
-          { value: 'nicht', label: 'Unmöglich' },
+          { value: 'gar_nicht', label: copy.get('questionnaire.question.beweglichkeit.option.gar_nicht')},
+          { value: 'wenig', label: copy.get('questionnaire.question.beweglichkeit.option.wenig')},
+          { value: 'maessig', label: copy.get('questionnaire.question.beweglichkeit.option.maessig')},
+          { value: 'ziemlich', label: copy.get('questionnaire.question.beweglichkeit.option.ziemlich')},
+          { value: 'nicht', label: copy.get('questionnaire.question.beweglichkeit.option.nicht')},
         ],
       },
       {
         id: 'treppen', // F-2.5
-        text: 'Kommen Sie ausser Atem, wenn Sie zwei Stockwerke Treppen steigen?',
+        text: copy.get('questionnaire.question.treppen.text'),
         type: 'single',
         options: [
-          { value: 'gar_nicht', label: 'Überhaupt nicht' },
-          { value: 'kaum', label: 'Kaum' },
-          { value: 'etwas', label: 'Etwas' },
-          { value: 'deutlich', label: 'Deutlich' },
-          { value: 'sehr_stark', label: 'Sehr stark' },
+          { value: 'gar_nicht', label: copy.get('questionnaire.question.treppen.option.gar_nicht')},
+          { value: 'kaum', label: copy.get('questionnaire.question.treppen.option.kaum')},
+          { value: 'etwas', label: copy.get('questionnaire.question.treppen.option.etwas')},
+          { value: 'deutlich', label: copy.get('questionnaire.question.treppen.option.deutlich')},
+          { value: 'sehr_stark', label: copy.get('questionnaire.question.treppen.option.sehr_stark')},
         ],
       },
       {
         id: 'einkaufstaschen', // F-2.6
-        text: 'Wie schwer fällt es Ihnen, zwei volle Einkaufstaschen zu tragen?',
+        text: copy.get('questionnaire.question.einkaufstaschen.text'),
         type: 'single',
         options: [
-          { value: 'gar_nicht', label: 'Überhaupt nicht schwer' },
-          { value: 'wenig', label: 'Wenig schwer' },
-          { value: 'maessig', label: 'Mässig schwer' },
-          { value: 'ziemlich', label: 'Sehr schwer' },
-          { value: 'nicht', label: 'Unmöglich' },
+          { value: 'gar_nicht', label: copy.get('questionnaire.question.einkaufstaschen.option.gar_nicht')},
+          { value: 'wenig', label: copy.get('questionnaire.question.einkaufstaschen.option.wenig')},
+          { value: 'maessig', label: copy.get('questionnaire.question.einkaufstaschen.option.maessig')},
+          { value: 'ziemlich', label: copy.get('questionnaire.question.einkaufstaschen.option.ziemlich')},
+          { value: 'nicht', label: copy.get('questionnaire.question.einkaufstaschen.option.nicht')},
         ],
       },
       {
         id: 'einbeinstand', // F-2.7 (optional)
-        text: 'Wie lange können Sie auf einem Bein stehen, ohne sich festzuhalten? (optional)',
-        note: 'Bei körperlichen Einschränkungen oder Verletzungsrisiken sollte dieser Test nicht durchgeführt werden.',
-        helpTitle: 'So führen Sie den Einbeinstand-Test korrekt aus',
+        text: copy.get('questionnaire.question.einbeinstand.text'),
+        note: copy.get('questionnaire.common.fitness_test_safety_note'),
+        helpTitle: copy.get('questionnaire.question.einbeinstand.help_title'),
         help:
-          '1 – Stellen Sie sich aufrecht hin, Füsse hüftbreit.<br>' +
-          '2 – Fixieren Sie Ihre Augen auf einen Punkt.<br>' +
-          '3 – Heben Sie ein Bein so an, dass der Fuss den Boden nicht berührt.<br>' +
-          '4 – Halten Sie das Gleichgewicht so lange wie möglich.<br><br>' +
-          'Stoppen Sie die Zeit, sobald das Bein den Boden berührt.<br><br>' +
-          'Wiederholen Sie den Test mit jedem Bein und notieren Sie Ihren besten Wert. Ein grosser ' +
-          'Unterschied zwischen den Beinen deutet auf ein Ungleichgewicht hin, das Sie mit gezieltem ' +
-          'Training verbessern können.' +
-          '<br><br><b>Was der Einbeinstand-Test verrät:</b><br>' +
-          'Der Test misst Gleichgewicht und Koordination. Die Fähigkeit, auch mit geschlossenen ' +
-          'Augen zu balancieren, zeigt, wie gut Ihr Körper die Sinneswahrnehmungen (z. B. aus ' +
-          'Gelenken und Muskeln) nutzt. Regelmässiges Üben hilft, Balance zu stärken und ' +
-          'Verletzungen vorzubeugen.',
+          copy.get('questionnaire.question.einbeinstand.help'),
         type: 'number',
-        unit: 'Sekunden',
+        unit: copy.get('questionnaire.question.einbeinstand.unit'),
         min: 0,
         max: 1000,
-        placeholder: 'z. B. 30',
+        placeholder: copy.get('questionnaire.question.einbeinstand.placeholder'),
         optional: true,
       },
       {
         id: 'liegestuetze', // F-2.8 (optional)
-        text: 'Wie viele Liegestütze können Sie ohne Unterbrechung korrekt ausführen? (optional)',
-        note: 'Bei körperlichen Einschränkungen oder Verletzungsrisiken sollte dieser Test nicht durchgeführt werden.',
-        helpTitle: 'So führen Sie den Liegestütz-Test korrekt aus',
+        text: copy.get('questionnaire.question.liegestuetze.text'),
+        note: copy.get('questionnaire.common.fitness_test_safety_note'),
+        helpTitle: copy.get('questionnaire.question.liegestuetze.help_title'),
         help:
-          '1 – Auf den Bauch legen, Hände unter die Schultern.<br>' +
-          '2 – Arme strecken und Körper vom Boden abheben.<br>' +
-          '3 – Körper, Hüfte und Beine in einer Linie halten.<br>' +
-          '4 – Körper absenken, bis die Brust fast den Boden berührt.<br>' +
-          '5 – Wieder hochdrücken in die Ausgangsposition.<br><br>' +
-          'Ohne Pause wiederholen, bis es nicht mehr geht.' +
-          '<br><br><b>Was der Liegestütz-Test verrät:</b><br>' +
-          'Liegestütze messen die Kraft von Brust, Schultern, Armen und Rumpf. Starke ' +
-          'Oberkörpermuskeln sind wichtig für Alltagstätigkeiten wie Tragen oder Aufstehen und ' +
-          'helfen, Sturzverletzungen zu vermeiden.',
+          copy.get('questionnaire.question.liegestuetze.help'),
         type: 'number',
-        unit: 'Wiederholungen',
+        unit: copy.get('questionnaire.question.liegestuetze.unit'),
         min: 0,
         max: 150,
-        placeholder: 'z. B. 15',
+        placeholder: copy.get('questionnaire.question.liegestuetze.placeholder'),
         optional: true,
       },
       {
         id: 'wandsitz', // F-2.9 (optional)
         text:
-          'Wie lange können Sie maximal in einer sitzenden Haltung (90°-Winkel) mit dem Rücken ' +
-          'an der Wand bleiben? (optional)',
-        note: 'Bei körperlichen Einschränkungen oder Verletzungsrisiken sollte dieser Test nicht durchgeführt werden.',
-        helpTitle: 'So führen Sie den Wandsitz-Test korrekt aus',
+          copy.get('questionnaire.question.wandsitz.text'),
+        note: copy.get('questionnaire.common.fitness_test_safety_note'),
+        helpTitle: copy.get('questionnaire.question.wandsitz.help_title'),
         help:
-          '1 – Rücken und Becken vollständig an eine gerade Wand legen.<br>' +
-          '2 – Füsse parallel und ungefähr hüftbreit aufstellen.<br>' +
-          '3 – Nach unten rutschen, bis Hüfte und Knie ungefähr einen 90°-Winkel bilden.<br>' +
-          '4 – Beide Beine gleichmässig belasten. Hände und Arme dürfen weder Beine noch Wand abstützen.<br>' +
-          '5 – Normal weiteratmen und die Position so lange wie möglich halten.<br><br>' +
-          'Machen Sie zuerst einen kurzen Übungsversuch und danach einen gewerteten Versuch. Die Zeit beginnt in der korrekten Position. Beenden Sie den Test, sobald Becken oder Rücken den Wandkontakt verlieren, Sie deutlich hochrutschen oder sich mit den Händen abstützen. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.' +
-          '<br><br><b>Was der Wandsitz-Test verrät:</b><br>' +
-          'Er misst die lokale Kraftausdauer von Beinen und Gesäss. Diese Muskeln sind wichtig ' +
-          'für Stabilität, Beweglichkeit und Sicherheit. Wer sie trainiert, bleibt länger aktiv, ' +
-          'mobil und selbstständig.',
+          copy.get('questionnaire.question.wandsitz.help'),
         type: 'number',
-        unit: 'Sekunden',
+        unit: copy.get('questionnaire.question.wandsitz.unit'),
         min: 0,
         max: 1000,
-        placeholder: 'z. B. 45',
+        placeholder: copy.get('questionnaire.question.wandsitz.placeholder'),
         optional: true,
       },
     ],
@@ -477,138 +410,88 @@ const DIMENSIONS = [
       {
         id: 'protein', // F-3.1
         text:
-          'Wie häufig gelingt es Ihnen, über den Tag verteilt zu mindestens drei Mahlzeiten ' +
-          'oder Snacks eine klare Proteinquelle einzuplanen (z. B. Hülsenfrüchte, Tofu, ' +
-          'Eier, Milchprodukte, Fisch oder Fleisch)?',
-        helpTitle: 'Was misst diese Frage – und welche Menge ist sinnvoll?',
+          copy.get('questionnaire.question.protein.text'),
+        helpTitle: copy.get('questionnaire.question.protein.help_title'),
         help:
-          'Diese Frage erfasst, wie regelmässig Sie Proteinquellen einbauen. Sie berechnet ' +
-          '<b>nicht</b>, wie viele Gramm Protein Sie tatsächlich pro Tag und Kilogramm ' +
-          'Körpergewicht aufnehmen.<br><br>' +
-          '<b>Geeignete Proteinquellen sind zum Beispiel:</b>' +
-          '<ul><li>Hülsenfrüchte wie Linsen, Bohnen oder Kichererbsen</li>' +
-          '<li>Tofu, Tempeh, Eier, Quark, Joghurt oder Hüttenkäse</li>' +
-          '<li>Fisch oder Fleisch</li></ul>' +
-          '<b>Orientierung bei regelmässigem Krafttraining:</b><br>' +
-          'Für gesunde Erwachsene sind etwa 1,4–1,6 g Protein pro kg Körpergewicht und Tag ' +
-          'eine praktische Orientierung. In einer grossen Meta-Analyse flachten die ' +
-          'durchschnittlichen zusätzlichen Vorteile für den Aufbau fettfreier Masse ab rund ' +
-          '1,6 g/kg/Tag deutlich ab. Das ist keine harte biologische Grenze.<br><br>' +
-          'Bis etwa 2,0 g/kg/Tag können bei sehr hoher Trainingsbelastung oder einem gezielten ' +
-          'Energiedefizit als individueller Spielraum sinnvoll sein. Für die meisten Menschen ' +
-          'ist diese Menge nicht nötig; das Alter allein begründet kein Ziel von 2,0 g/kg/Tag. ' +
-          'Krafttraining setzt den Trainingsreiz, Protein liefert die Bausteine. Proteinpulver ' +
-          'ist nicht automatisch erforderlich.<br><br>' +
-          'Für Personen unter 18 Jahren sowie bei einer Nierenerkrankung oder medizinisch ' +
-          'verordneter Ernährung sollte die passende Menge fachlich geklärt werden.',
+          copy.get('questionnaire.question.protein.help'),
         type: 'single',
         options: [
-          { value: 'selten', label: 'Selten' },
-          { value: 'manchmal', label: 'Manchmal' },
-          { value: 'haelfte', label: 'Etwa die Hälfte der Zeit' },
-          { value: 'meistens', label: 'Meistens' },
-          { value: 'fast_immer', label: 'Fast immer' },
+          { value: 'selten', label: copy.get('questionnaire.question.protein.option.selten')},
+          { value: 'manchmal', label: copy.get('questionnaire.question.protein.option.manchmal')},
+          { value: 'haelfte', label: copy.get('questionnaire.question.protein.option.haelfte')},
+          { value: 'meistens', label: copy.get('questionnaire.question.protein.option.meistens')},
+          { value: 'fast_immer', label: copy.get('questionnaire.question.protein.option.fast_immer')},
         ],
       },
       {
         id: 'pflanzenvielfalt', // F-3.2
-        text: 'Wie viele verschiedene pflanzliche Lebensmittel haben Sie in der letzten Woche gegessen?',
-        helpTitle: 'Was zählt beispielsweise als pflanzliches Lebensmittel?',
+        text: copy.get('questionnaire.question.pflanzenvielfalt.text'),
+        helpTitle: copy.get('questionnaire.question.pflanzenvielfalt.help_title'),
         help:
-          '<b>Gemüse &amp; Salate:</b> Spinat, Brokkoli, Karotten, Tomaten, Gurken, Paprika, ' +
-          'Zwiebeln, Knoblauch<br>' +
-          '<b>Früchte:</b> Äpfel, Bananen, Beeren, Orangen, Trauben, Avocado<br>' +
-          '<b>Getreide &amp; Pseudogetreide:</b> Hafer, Quinoa, Hirse, Buchweizen, Gerste, Vollkornreis<br>' +
-          '<b>Samen:</b> Chiasamen, Leinsamen, Kürbiskerne, Sonnenblumenkerne, Sesam<br>' +
-          '<b>Hülsenfrüchte &amp; Nüsse:</b> Linsen, Kichererbsen, Bohnen, Mandeln, Walnüsse<br>' +
-          '<b>Gewürze &amp; Kräuter:</b> Basilikum, Oregano, Kurkuma, Ingwer, Zimt, Pfeffer<br>' +
-          '<b>Pilze:</b> Champignons, Shiitake, Austernpilze' +
-          '<br><br><b>Warum ist pflanzliche Vielfalt wichtig?</b><br>' +
-          'Eine bunte Auswahl an Pflanzen liefert Nährstoffe, Antioxidantien und Ballaststoffe. ' +
-          'Jede Pflanze enthält eigene bioaktive Stoffe, die verschiedene Funktionen im Körper ' +
-          'unterstützen. Vielfalt stärkt besonders das Darmmikrobiom und fördert so eine gesunde ' +
-          'Darmflora.',
+          copy.get('questionnaire.question.pflanzenvielfalt.help'),
         type: 'single',
         options: [
-          { value: 'u10', label: 'Weniger als 10' },
-          { value: 'v10_17', label: '10–17' },
-          { value: 'v18_25', label: '18–25' },
-          { value: 'v26_34', label: '26–34' },
-          { value: 'ue35', label: '35 oder mehr' },
+          { value: 'u10', label: copy.get('questionnaire.question.pflanzenvielfalt.option.u10')},
+          { value: 'v10_17', label: copy.get('questionnaire.question.pflanzenvielfalt.option.v10_17')},
+          { value: 'v18_25', label: copy.get('questionnaire.question.pflanzenvielfalt.option.v18_25')},
+          { value: 'v26_34', label: copy.get('questionnaire.question.pflanzenvielfalt.option.v26_34')},
+          { value: 'ue35', label: copy.get('questionnaire.question.pflanzenvielfalt.option.ue35')},
         ],
       },
       {
         id: 'saettigung', // F-3.3 – Gegencheck, kein Blauer Kasten im Fragenset
         text:
-          'Wie häufig fühlen Sie sich nach Ihren Hauptmahlzeiten für etwa vier Stunden satt, ' +
-          'ohne Bedürfnis nach einem Snack?',
+          copy.get('questionnaire.question.saettigung.text'),
         type: 'single',
         options: [
-          { value: 'nie', label: 'Nie' },
-          { value: 'selten', label: 'Selten' },
-          { value: 'manchmal', label: 'Manchmal' },
-          { value: 'oft', label: 'Oft' },
-          { value: 'fast_immer', label: 'Fast immer' },
+          { value: 'nie', label: copy.get('questionnaire.question.saettigung.option.nie')},
+          { value: 'selten', label: copy.get('questionnaire.question.saettigung.option.selten')},
+          { value: 'manchmal', label: copy.get('questionnaire.question.saettigung.option.manchmal')},
+          { value: 'oft', label: copy.get('questionnaire.question.saettigung.option.oft')},
+          { value: 'fast_immer', label: copy.get('questionnaire.question.saettigung.option.fast_immer')},
         ],
       },
       {
         id: 'verarbeitet', // F-3.4
-        text: 'Wie häufig greifen Sie in einer typischen Woche zu stark verarbeiteten Lebensmitteln?',
-        helpTitle: 'Was gilt als stark verarbeitet?',
+        text: copy.get('questionnaire.question.verarbeitet.text'),
+        helpTitle: copy.get('questionnaire.question.verarbeitet.help_title'),
         help:
-          '<ul><li>Fertiggerichte, Tiefkühlpizza</li>' +
-          '<li>Süssigkeiten, Cookies, Chips</li>' +
-          '<li>Softdrinks, Energy-Drinks</li>' +
-          '<li>Wurst und verarbeitetes Fleisch</li>' +
-          '<li>Weissbrot, süsse Backwaren</li></ul>' +
-          '<b>Praktische Regel:</b><br>' +
-          'Mehr als fünf Zutaten oder schwer aussprechbare Namen = meist stark verarbeitet.' +
-          '<br><br><b>Warum sind verarbeitete Lebensmittel problematisch?</b><br>' +
-          'Viele stark verarbeitete Produkte enthalten viel Zucker, Salz, ungünstige Fette und ' +
-          'Zusatzstoffe, während Ballaststoffe und wichtige Nährstoffe fehlen. Nicht jedes ' +
-          'verarbeitete Lebensmittel ist gleich problematisch. Entscheidend ist, den Anteil stark ' +
-          'verarbeiteter Produkte zu reduzieren und schrittweise mehr frische, nährstoffreiche ' +
-          'Lebensmittel in den Alltag einzubauen.',
+          copy.get('questionnaire.question.verarbeitet.help'),
         type: 'single',
         options: [
-          { value: 'nie', label: 'Nie' },
-          { value: 'u1woche', label: 'Seltener als 1x pro Woche' },
-          { value: 'w1_2', label: '1–2x pro Woche' },
-          { value: 'fast_taeglich', label: 'Fast täglich' },
-          { value: 'mehrmals_taeglich', label: 'Mehrmals täglich' },
+          { value: 'nie', label: copy.get('questionnaire.question.verarbeitet.option.nie')},
+          { value: 'u1woche', label: copy.get('questionnaire.question.verarbeitet.option.u1woche')},
+          { value: 'w1_2', label: copy.get('questionnaire.question.verarbeitet.option.w1_2')},
+          { value: 'fast_taeglich', label: copy.get('questionnaire.question.verarbeitet.option.fast_taeglich')},
+          { value: 'mehrmals_taeglich', label: copy.get('questionnaire.question.verarbeitet.option.mehrmals_taeglich')},
         ],
       },
       {
         id: 'omega3', // F-3.5
         text:
-          'Wie oft pro Woche essen Sie fettreichen Fisch (z. B. Lachs, Makrele, Hering) oder ' +
-          'nehmen Omega-3 als Nahrungsergänzung ein?',
-        helpTitle: 'Warum ist Omega-3 wichtig?',
+          copy.get('questionnaire.question.omega3.text'),
+        helpTitle: copy.get('questionnaire.question.omega3.help_title'),
         help:
-          'Omega-3-Fettsäuren aus maritimen Quellen unterstützen Ihr Gehirn, Ihr Herz und wirken ' +
-          'stark entzündungshemmend im ganzen Körper. Da der Körper sie nicht ausreichend selbst ' +
-          'bildet, ist ihre regelmässige Zufuhr über Lebensmittel entscheidend. Algenöl ist eine ' +
-          'sehr gute vegane Alternative zu Fisch. Ihr Körper kann diese sofort nutzen, im Gegensatz ' +
-          'zu Omega-3-Vorstufen aus anderen Pflanzenölen.',
+          copy.get('questionnaire.question.omega3.help'),
         type: 'single',
         options: [
-          { value: 'nie', label: 'Nie' },
-          { value: 'u1woche', label: 'Seltener als 1x pro Woche' },
-          { value: 'w1', label: '1x pro Woche' },
-          { value: 'w2', label: '2x pro Woche' },
-          { value: 'ue2', label: 'Mehr als 2x pro Woche' },
+          { value: 'nie', label: copy.get('questionnaire.question.omega3.option.nie')},
+          { value: 'u1woche', label: copy.get('questionnaire.question.omega3.option.u1woche')},
+          { value: 'w1', label: copy.get('questionnaire.question.omega3.option.w1')},
+          { value: 'w2', label: copy.get('questionnaire.question.omega3.option.w2')},
+          { value: 'ue2', label: copy.get('questionnaire.question.omega3.option.ue2')},
         ],
       },
       {
         id: 'zuckergetraenke', // F-3.6 – kein Blauer Kasten im Fragenset
-        text: 'Wie häufig trinken Sie zuckerhaltige Getränke oder reine Fruchtsäfte?',
+        text: copy.get('questionnaire.question.zuckergetraenke.text'),
         type: 'single',
         options: [
-          { value: 'nie', label: 'Nie' },
-          { value: 'u1woche', label: 'Seltener als 1x pro Woche' },
-          { value: 'w1_3', label: '1–3x pro Woche' },
-          { value: 'w4_6', label: '4–6x pro Woche' },
-          { value: 'taeglich', label: 'Täglich oder mehrmals täglich' },
+          { value: 'nie', label: copy.get('questionnaire.question.zuckergetraenke.option.nie')},
+          { value: 'u1woche', label: copy.get('questionnaire.question.zuckergetraenke.option.u1woche')},
+          { value: 'w1_3', label: copy.get('questionnaire.question.zuckergetraenke.option.w1_3')},
+          { value: 'w4_6', label: copy.get('questionnaire.question.zuckergetraenke.option.w4_6')},
+          { value: 'taeglich', label: copy.get('questionnaire.question.zuckergetraenke.option.taeglich')},
         ],
       },
     ],
@@ -626,57 +509,53 @@ const DIMENSIONS = [
     questions: [
       {
         id: 'schlafqualitaet', // F-4.1
-        text: 'Wie gut oder schlecht haben Sie im letzten Monat insgesamt geschlafen?',
+        text: copy.get('questionnaire.question.schlafqualitaet.text'),
         type: 'single',
         options: [
-          { value: 'sehr_gut', label: 'Sehr gut' },
-          { value: 'gut', label: 'Gut' },
-          { value: 'durchschnittlich', label: 'Durchschnittlich' },
-          { value: 'schlecht', label: 'Schlecht' },
-          { value: 'sehr_schlecht', label: 'Sehr schlecht' },
+          { value: 'sehr_gut', label: copy.get('questionnaire.question.schlafqualitaet.option.sehr_gut')},
+          { value: 'gut', label: copy.get('questionnaire.question.schlafqualitaet.option.gut')},
+          { value: 'durchschnittlich', label: copy.get('questionnaire.question.schlafqualitaet.option.durchschnittlich')},
+          { value: 'schlecht', label: copy.get('questionnaire.question.schlafqualitaet.option.schlecht')},
+          { value: 'sehr_schlecht', label: copy.get('questionnaire.question.schlafqualitaet.option.sehr_schlecht')},
         ],
       },
       {
         id: 'schlafdauer', // F-4.2
         text:
-          'Wie viele Stunden haben Sie im letzten Monat durchschnittlich pro Nacht geschlafen ' +
-          '(ohne Wachphasen)?',
+          copy.get('questionnaire.question.schlafdauer.text'),
         type: 'single',
         options: [
-          { value: 'u5', label: 'Weniger als 5 h' },
-          { value: 's5_6', label: '5–6 h' },
-          { value: 's6_7', label: '6–7 h' },
-          { value: 's7_9', label: '7–9 h' },
-          { value: 'ue9', label: 'Mehr als 9 h' },
+          { value: 'u5', label: copy.get('questionnaire.question.schlafdauer.option.u5')},
+          { value: 's5_6', label: copy.get('questionnaire.question.schlafdauer.option.s5_6')},
+          { value: 's6_7', label: copy.get('questionnaire.question.schlafdauer.option.s6_7')},
+          { value: 's7_9', label: copy.get('questionnaire.question.schlafdauer.option.s7_9')},
+          { value: 'ue9', label: copy.get('questionnaire.question.schlafdauer.option.ue9')},
         ],
       },
       {
         id: 'schlafrhythmus', // F-4.3
         text:
-          'Stehen Sie jeden Tag, auch am Wochenende, ungefähr zur gleichen Zeit auf und gehen ' +
-          'zur gleichen Zeit ins Bett? (z. B. Sie gehen jeden Tag um 22 Uhr ins Bett und stehen ' +
-          'um 6 Uhr auf)',
+          copy.get('questionnaire.question.schlafrhythmus.text'),
         type: 'single',
         options: [
-          { value: 'sehr_regelmaessig', label: 'Sehr regelmässig (±30 min Abweichung)' },
-          { value: 'regelmaessig', label: 'Regelmässig (±45 min Abweichung)' },
-          { value: 'etwas_unregelmaessig', label: 'Etwas unregelmässig (±1 h Abweichung)' },
-          { value: 'unregelmaessig', label: 'Unregelmässig (±1.5 h Abweichung)' },
-          { value: 'sehr_unregelmaessig', label: 'Sehr unregelmässig (mehr als 2 h Abweichung)' },
+          { value: 'sehr_regelmaessig', label: copy.get('questionnaire.question.schlafrhythmus.option.sehr_regelmaessig')},
+          { value: 'regelmaessig', label: copy.get('questionnaire.question.schlafrhythmus.option.regelmaessig')},
+          { value: 'etwas_unregelmaessig', label: copy.get('questionnaire.question.schlafrhythmus.option.etwas_unregelmaessig')},
+          { value: 'unregelmaessig', label: copy.get('questionnaire.question.schlafrhythmus.option.unregelmaessig')},
+          { value: 'sehr_unregelmaessig', label: copy.get('questionnaire.question.schlafrhythmus.option.sehr_unregelmaessig')},
         ],
       },
       {
         id: 'schlaf_auswirkung', // F-4.4 – Gegencheck
         text:
-          'Wie stark hat Ihr Schlaf im letzten Monat Ihren Alltag beeinträchtigt? ' +
-          '(z. B. reduzierte Leistungsfähigkeit, Konzentration, Stimmung, Energie, soziale Aktivitäten)',
+          copy.get('questionnaire.question.schlaf_auswirkung.text'),
         type: 'single',
         options: [
-          { value: 'gar_nicht', label: 'Gar nicht' },
-          { value: 'kaum', label: 'Minimal' },
-          { value: 'spuerbar', label: 'Spürbar' },
-          { value: 'deutlich', label: 'Deutlich' },
-          { value: 'massiv', label: 'Massiv' },
+          { value: 'gar_nicht', label: copy.get('questionnaire.question.schlaf_auswirkung.option.gar_nicht')},
+          { value: 'kaum', label: copy.get('questionnaire.question.schlaf_auswirkung.option.kaum')},
+          { value: 'spuerbar', label: copy.get('questionnaire.question.schlaf_auswirkung.option.spuerbar')},
+          { value: 'deutlich', label: copy.get('questionnaire.question.schlaf_auswirkung.option.deutlich')},
+          { value: 'massiv', label: copy.get('questionnaire.question.schlaf_auswirkung.option.massiv')},
         ],
       },
     ],
@@ -694,49 +573,49 @@ const DIMENSIONS = [
     questions: [
       {
         id: 'belastbarkeit', // F-5.1 Belastbarkeit
-        text: 'Ich bewahre auch in schwierigen Situationen den Überblick und Ruhe.',
+        text: copy.get('questionnaire.question.belastbarkeit.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'selbstwirksamkeit', // F-5.2 Selbstwirksamkeit
-        text: 'Ich fühle mich meinem Alltag gewachsen.',
+        text: copy.get('questionnaire.question.selbstwirksamkeit.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'sinnhaftigkeit', // F-5.3 Sinnhaftigkeit
-        text: 'Ich erlebe mein Leben als sinnvoll und erfüllend.',
+        text: copy.get('questionnaire.question.sinnhaftigkeit.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'coping', // F-5.4 Coping-Kompetenz
-        text: 'Ich finde auch in belastenden Situationen Wege, die mir helfen, klarzukommen.',
+        text: copy.get('questionnaire.question.coping.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'verbundenheit', // F-5.5 Soziale Verbundenheit
-        text: 'Ich fühle mich von den Menschen in meinem Umfeld akzeptiert und eingebunden.',
+        text: copy.get('questionnaire.question.verbundenheit.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'selbstfuersorge', // F-5.6 Selbstfürsorge
-        text: 'Ich finde auch in hektischen Zeiten Momente der Ruhe und Erholung.',
+        text: copy.get('questionnaire.question.selbstfuersorge.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'zukunft', // F-5.7 Zukunftsorientierung
-        text: 'Ich schaue zuversichtlich in meine Zukunft.',
+        text: copy.get('questionnaire.question.zukunft.text'),
         type: 'single',
         options: AGREE,
       },
       {
         id: 'positive_emotionen', // F-5.8 Positive Emotionen
-        text: 'Ich erlebe in meinem Alltag regelmässig Momente der Freude oder Dankbarkeit.',
+        text: copy.get('questionnaire.question.positive_emotionen.text'),
         type: 'single',
         options: AGREE,
       },
