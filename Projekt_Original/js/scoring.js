@@ -117,8 +117,10 @@ function norm(qid, value) {
  * Eine exakte Kombination beider Intensitäten ist mit den breiten Antwort-
  * intervallen nicht belastbar berechenbar und bleibt fachlich zu entscheiden.
  * `needsEntry` bezeichnet nur die Kombination aus sehr wenig moderater und
- * keiner bzw. sehr wenig intensiver Aktivität. Score-Gewichte bleiben davon
- * unberührt; der Helper hält Signale, Empfehlungen und Stärken kohärent. */
+ * keiner bzw. sehr wenig intensiver Aktivität. Die Scoreformel nutzt separat
+ * den besseren der beiden kalibrierten Normwerte als gemeinsames
+ * Aktivitätskomposit; dieser Helper hält Zielstatus, Empfehlungen und Stärken
+ * kohärent. */
 function activityStatus(a) {
   const answers = a || {};
   const moderate = answers.ausdauer_moderat;
@@ -187,6 +189,7 @@ function computeMetrics(a) {
     else if (a.geschlecht === 'weiblich') m.waistStatus = waist < 80 ? 'normal' : waist < 88 ? 'erhoeht' : 'hoch';
     else m.waistStatus = m.whtr < 0.5 ? 'normal' : m.whtr < 0.6 ? 'erhoeht' : 'hoch';
   }
+  m.bodyRisk = bodyRiskStatus(m, a);
   return m;
 }
 
@@ -203,7 +206,7 @@ function whtrNorm(r) {
   if (r < 0.34) return 0;
   if (r <= 0.45) return 2;
   if (r <= 0.51) return 0;
-  if (r <= 0.6) return -1;
+  if (r < 0.6) return -1;
   return -2;
 }
 /* Geschlechtsspezifische Taillenumfang-Norm (WHO-Schwellen), cm. */
@@ -225,11 +228,38 @@ function waistNormBySex(waist, geschlecht) {
  *   Frau/Mann  → geschlechtsspezifischer Taillenumfang (WHO), sonst BMI
  *   intersex/andere → geschlechtsneutrales Taille-Grösse-Verhältnis, sonst BMI
  */
+function bodyRiskStatus(m, a) {
+  const metrics = m || {};
+  const bySex = waistNormBySex(metrics.waist, a && a.geschlecht);
+  if (bySex != null) {
+    return {
+      source: 'waist',
+      norm: bySex,
+      severity: metrics.waistStatus === 'hoch'
+        ? 'mittel'
+        : (metrics.waistStatus === 'erhoeht' ? 'tief' : null),
+    };
+  }
+  if (metrics.whtr != null) {
+    const whtr = whtrNorm(metrics.whtr);
+    return {
+      source: 'whtr',
+      norm: whtr,
+      severity: metrics.waistStatus === 'hoch'
+        ? 'mittel'
+        : (metrics.waistStatus === 'erhoeht' ? 'tief' : null),
+    };
+  }
+  const bmi = bmiNorm(metrics.bmi);
+  return {
+    source: 'bmi',
+    norm: bmi,
+    severity: bmi === -2 ? 'mittel' : null,
+  };
+}
+
 function bodyNorm(m, a) {
-  const bySex = waistNormBySex(m.waist, a && a.geschlecht);
-  if (bySex != null) return bySex;
-  if (m.whtr != null) return whtrNorm(m.whtr);
-  return bmiNorm(m.bmi);
+  return (m && m.bodyRisk ? m.bodyRisk : bodyRiskStatus(m, a)).norm;
 }
 
 /* ---------- Fitness-Kurztests → Norm (-2…+2) ----------
@@ -363,6 +393,7 @@ function nextFourLevelThreshold(thresholds, normValue) {
 }
 
 function fitnessTestReferenceStatus(id, age, geschlecht) {
+  if (!Number.isFinite(age)) return 'age_outside_reference';
   if (id === 'einbeinstand') return age >= 18 ? 'supported' : 'age_outside_reference';
   if (id === 'liegestuetze') {
     if (age < 20 || age > 69) return 'age_outside_reference';
@@ -383,7 +414,13 @@ function fitnessTestReferenceStatus(id, age, geschlecht) {
  * Empfehlungen. Nur tatsaechlich ausgefuellte optionale Tests erscheinen;
  * der numerische Wert 0 ist dabei ein gueltiges Ergebnis. */
 function evaluateFitnessTests(a) {
-  const age = Number(a.alter) || 40;
+  const age = numOrNull(a.alter);
+  // Ohne ein valides Alter darf kein optionaler Kurztest versehentlich über
+  // den bisherigen 40-Jahre-Fallback gescort oder als Empfehlung verwendet
+  // werden. Die interne Bandwahl dient in diesem Fall nur dazu, den Rohwert im
+  // einheitlichen Ergebnisvertrag zu halten; der Referenzstatus sperrt Score,
+  // Statusfarbe und Empfehlung.
+  const bandAge = Number.isFinite(age) ? age : 40;
   const sex = sexKey(a);
   const configs = [
     {
@@ -403,7 +440,7 @@ function evaluateFitnessTests(a) {
   return configs.reduce((out, config) => {
     const value = numOrNull(a[config.id]);
     if (value == null) return out;
-    const thresholds = pickBand(config.bands[sex], age).slice();
+    const thresholds = pickBand(config.bands[sex], bandAge).slice();
     const normValue = config.fourLevel
       ? fourLevelBandNorm(value, thresholds)
       : bandNorm(value, thresholds);
@@ -455,11 +492,24 @@ function scoreEinfluss(a, m) {
 function scoreFitness(a, fitnessTests) {
   const tests = fitnessTests || evaluateFitnessTests(a);
 
-  const kondition = avgNorms([
+  // Moderate und intensive Aktivitaet sind zwei gleichwertige Wege zum
+  // Bewegungsziel, keine voneinander unabhaengigen Gesundheitsfaktoren. Der
+  // bessere der beiden kalibrierten Werte bildet deshalb einen gemeinsamen
+  // Aktivitaetswert. Sein bisheriges Gesamtgewicht von 2/3 des Konditionsblocks
+  // bleibt erhalten; die alltagsnahe Treppenleistung bildet das restliche 1/3.
+  const activityValues = [
     norm('ausdauer_moderat', a.ausdauer_moderat),
     norm('ausdauer_intensiv', a.ausdauer_intensiv),
-    norm('treppen', a.treppen),
-  ]);
+  ].filter((value) => value != null && !Number.isNaN(value));
+  const activity = activityValues.length ? Math.max(...activityValues) : null;
+  const conditioningParts = [];
+  if (activity != null) conditioningParts.push({ v: activity, w: 2 });
+  const stairs = norm('treppen', a.treppen);
+  if (stairs != null) conditioningParts.push({ v: stairs, w: 1 });
+  const conditioningWeight = conditioningParts.reduce((sum, part) => sum + part.w, 0);
+  const kondition = conditioningWeight
+    ? conditioningParts.reduce((sum, part) => sum + part.v * part.w, 0) / conditioningWeight
+    : null;
 
   let muskulatur = avgNorms([
     norm('krafttraining', a.krafttraining),
@@ -494,17 +544,13 @@ function scoreFitness(a, fitnessTests) {
 
 // S-3 Ernährung
 function scoreErnaehrung(a) {
-  let n = avgNorms([
+  return avgNorms([
     norm('protein', a.protein),
     norm('pflanzenvielfalt', a.pflanzenvielfalt),
     norm('verarbeitet', a.verarbeitet),
     norm('omega3', a.omega3),
     norm('zuckergetraenke', a.zuckergetraenke),
   ]);
-  if (n == null) return null;
-  const sat = norm('saettigung', a.saettigung);
-  if (sat != null && sat <= 0 && n > 0) n = 0; // Gegencheck Sättigung
-  return n;
 }
 
 // S-4 Schlaf
@@ -516,18 +562,27 @@ function scoreSchlaf(a) {
   ]);
   if (n == null) return null;
   const aus = norm('schlaf_auswirkung', a.schlaf_auswirkung);
-  if (aus != null && aus <= 0 && n > 0) n = 0; // Gegencheck Alltagsbeeinträchtigung
+  // Alltagsbeeintraechtigung wirkt abgestuft: «spuerbar» verhindert eine
+  // unpassende starke Einordnung, deutlich/massiv deckeln weiter auf neutral.
+  if (aus === 0 && n > 1) n = 1;
+  else if (aus != null && aus < 0 && n > 0) n = 0;
   return n;
 }
 
 // S-5 Mentales Wohlbefinden
 const MENTAL_IDS = ['belastbarkeit', 'selbstwirksamkeit', 'sinnhaftigkeit', 'coping', 'verbundenheit', 'selbstfuersorge', 'zukunft', 'positive_emotionen'];
+function severeMental(a) {
+  const belast = norm('belastbarkeit', a.belastbarkeit);
+  const coping = norm('coping', a.coping);
+  const selbstw = norm('selbstwirksamkeit', a.selbstwirksamkeit);
+  const sinn = norm('sinnhaftigkeit', a.sinnhaftigkeit);
+  const pos = norm('positive_emotionen', a.positive_emotionen);
+  return belast === -2 || coping === -2 || selbstw === -2 || (sinn === -2 && pos === -2);
+}
 function scoreMental(a) {
   let n = avgNorms(MENTAL_IDS.map((id) => norm(id, a[id])));
   if (n == null) return null;
-  const sinn = norm('sinnhaftigkeit', a.sinnhaftigkeit);
-  const pos = norm('positive_emotionen', a.positive_emotionen);
-  if ((sinn === -2 || pos === -2) && n > 0) n = 0; // Gegencheck Sinn/positive Emotionen
+  if (severeMental(a) && n > 0) n = 0;
   return n;
 }
 
@@ -568,8 +623,7 @@ function detectRiskSignals(a, m, fitnessTests) {
   const sinn = norm('sinnhaftigkeit', a.sinnhaftigkeit);
   const pos = norm('positive_emotionen', a.positive_emotionen);
   const verb = norm('verbundenheit', a.verbundenheit);
-  const severeMental = belast === -2 || coping === -2 || selbstw === -2 || (sinn === -2 && pos === -2);
-  if (severeMental) {
+  if (severeMental(a)) {
     add('hohe_belastung', 'medizinisch', 'hoch');
   } else if (belast <= -1 || coping <= -1 || selbstw <= -1 || (pos != null && pos <= -1)) {
     add('belastung', 'lebensstil', 'mittel');
@@ -601,13 +655,9 @@ function detectRiskSignals(a, m, fitnessTests) {
   if (a.alkohol === 'w4plus') {
     add('alkohol', 'lebensstil', 'mittel');
   }
-  if (m.bmiClass === 'adipositas1' || m.bmiClass === 'adipositas2' || m.waistStatus === 'hoch') {
-    add('koerperzusammensetzung', 'lebensstil', 'mittel');
-  } else if (m.waistStatus === 'erhoeht') {
-    // Auch das erste erhöhte Referenzband wird sichtbar eingeordnet. Es bleibt
-    // bewusst ein Hinweis niedriger Priorität und wird nicht mit dem höheren
-    // Risikoband oder einer Diagnose gleichgesetzt.
-    add('koerperzusammensetzung', 'lebensstil', 'tief');
+  const bodyRisk = m.bodyRisk || bodyRiskStatus(m, a);
+  if (bodyRisk.severity) {
+    add('koerperzusammensetzung', 'lebensstil', bodyRisk.severity);
   }
   const activity = activityStatus(a);
   const kraftN = norm('krafttraining', a.krafttraining);
@@ -623,12 +673,18 @@ function detectRiskSignals(a, m, fitnessTests) {
     add('stabilitaet', 'lebensstil', 'mittel');
   }
   const legstandTest = (fitnessTests || []).find((test) => test.id === 'einbeinstand');
-  const legstand = legstandTest ? legstandTest.norm : null;
+  // Ein intern berechneter Vergleichswert ist nur dann fachlich verwertbar,
+  // wenn für Alter und Referenzgruppe ein freigegebener Scorevertrag besteht.
+  // Insbesondere dürfen 16- und 17-Jährige durch ihren sichtbaren Rohwert
+  // keine automatische Balance-Empfehlung erhalten.
+  const legstand = legstandTest && legstandTest.scorable ? legstandTest.norm : null;
   if (a.beweglichkeit === 'nicht' || a.beweglichkeit === 'ziemlich' || legstand === -2) {
     add('balance', 'lebensstil', 'mittel');
   }
-  if (a.schlafqualitaet === 'schlecht' || a.schlafqualitaet === 'sehr_schlecht'
-      || a.schlafdauer === 'u5' || a.schlaf_auswirkung === 'massiv') {
+  if (a.schlaf_auswirkung === 'massiv') {
+    add('schlaf', 'medizinisch', 'mittel');
+  } else if (a.schlafqualitaet === 'schlecht' || a.schlafqualitaet === 'sehr_schlecht'
+      || a.schlafdauer === 'u5') {
     add('schlaf', 'lebensstil', 'mittel');
   }
   if (a.socialmedia === 'sehr_oft' || a.socialmedia === 'oft') {
@@ -671,7 +727,10 @@ function computeResults(answers) {
 
   const signals = detectRiskSignals(cleanAnswers, metrics, fitnessTests);
 
-  return { metrics, scores, norms, overall, status: statusForScore(overall), signals, fitnessTests };
+  const hasCriticalDimension = vals.some((score) => score < 40);
+  const status = statusForScore(hasCriticalDimension && overall >= 80 ? 79 : overall);
+
+  return { metrics, scores, norms, overall, status, signals, fitnessTests };
 }
 
 if (typeof window !== 'undefined') {
@@ -683,6 +742,7 @@ if (typeof window !== 'undefined') {
     STATUS_BANDS,
     questionNorm: norm,
     activityStatus,
+    bodyRiskStatus,
   });
 }
 })();

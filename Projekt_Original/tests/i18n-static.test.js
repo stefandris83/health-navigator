@@ -68,6 +68,16 @@ test('Erlaubter lang-Parameter hat Vorrang vor separat gespeicherter Locale', ()
   assert.strictEqual(makeLocale({ search: '?lang=xx', stored: 'it-CH' }).api.current, 'it-CH');
 });
 
+test('Runtime-Fallback setzt nur den Seitenaufruf auf DE und bewahrt die gespeicherte Sprachwahl', () => {
+  const runtime = makeLocale({ stored: 'fr-CH' });
+  assert.strictEqual(runtime.api.current, 'fr-CH');
+  runtime.api.useRuntimeFallback('de-CH');
+  assert.strictEqual(runtime.api.current, 'de-CH');
+  assert.strictEqual(runtime.api.getLocale(), 'de-CH');
+  assert.strictEqual(runtime.stored(), 'fr-CH');
+  assert.throws(() => runtime.api.useRuntimeFallback('it-CH'), /nur fuer de-CH/);
+});
+
 test('Sprachwechsel erhält bei file:// alle anderen Parameter und den Hash', () => {
   const runtime = makeLocale({
     href: 'file:///Users/demo/Health/index.html?kunde=grund&foo=bar#result=abc',
@@ -195,13 +205,13 @@ test('Navigation zwischen Check und Quellen bewahrt die Locale explizit', () => 
   assert.strictEqual((sources.match(/data-locale-route="index\.html"/g) || []).length, 2);
 });
 
-test('Lokalisierte Manifeste sind vollständig und öffnen ihre Locale', () => {
+test('Lokalisierte Manifeste sind vollständig und bewahren die zuletzt gewählte Locale', () => {
   ['de-CH', 'en-CH', 'fr-CH', 'it-CH'].forEach((locale) => {
     const manifest = JSON.parse(
       fs.readFileSync(path.join(ROOT, 'manifest.' + locale + '.webmanifest'), 'utf8')
     );
     assert.strictEqual(manifest.lang, locale);
-    assert.strictEqual(new URL(manifest.start_url, 'https://example.test/app/').searchParams.get('lang'), locale);
+    assert.strictEqual(manifest.start_url, './');
     assert.strictEqual(manifest.id, './', 'Alle Sprachen bleiben dieselbe installierbare App');
     manifest.icons.forEach((icon) => assert.ok(fs.existsSync(path.join(ROOT, icon.src)), icon.src));
   });
@@ -222,6 +232,27 @@ test('Statische Übersetzung verwendet nur ResultCopy und schreibt keine HTML-Fr
   assert.ok(source.includes('window.ResultCopy.get(id)'));
   assert.ok(!source.includes('innerHTML'));
   assert.ok(!/StaticCopyCatalog|fetch\s*\(/.test(source));
+});
+
+test('ResultCopy faellt bei einem unvollstaendigen Zielbundle geschlossen auf DE zurueck', () => {
+  let fallbackLocale = null;
+  const windowObject = {
+    HealthLocale: {
+      getLocale() { return 'fr-CH'; },
+      useRuntimeFallback(locale) { fallbackLocale = locale; },
+    },
+    __RESULT_COPY_BUNDLES__: {
+      bundles: {
+        'de-CH': { locale: 'de-CH', version: 'de', sourceHash: 'de', texts: { a: 'Deutsch', b: 'Sicher' } },
+        'fr-CH': { locale: 'fr-CH', version: 'fr', sourceHash: 'fr', texts: { a: 'Français' } },
+      },
+    },
+  };
+  runScript(windowObject, 'js/result-copy.js');
+  assert.strictEqual(fallbackLocale, 'de-CH');
+  assert.strictEqual(windowObject.ResultCopy.locale, 'de-CH');
+  assert.strictEqual(windowObject.ResultCopy.get('a'), 'Deutsch');
+  assert.strictEqual(windowObject.ResultCopy.get('b'), 'Sicher');
 });
 
 test('Page-I18n setzt Texte, Metadaten und den aktiven Sprachschalter über ResultCopy', () => {
@@ -289,6 +320,91 @@ test('Page-I18n setzt Texte, Metadaten und den aktiven Sprachschalter über Resu
   assert.strictEqual(french.attrs['aria-pressed'], 'false');
   french.click();
   assert.strictEqual(switchedTo, 'fr-CH');
+});
+
+test('Page-I18n schreibt nie Teiluebersetzungen und verwendet bei Defekt geschlossen das DE-Bundle', () => {
+  function element(attributes, textContent) {
+    const attrs = { ...attributes };
+    return {
+      textContent,
+      getAttribute(name) { return attrs[name] == null ? null : attrs[name]; },
+      setAttribute(name, value) { attrs[name] = String(value); },
+      removeAttribute(name) { delete attrs[name]; },
+      classList: { toggle() {} },
+      addEventListener() {},
+      attrs,
+    };
+  }
+
+  const title = element({ 'data-copy': 'shell.meta.index_title' }, 'Deutscher Titel');
+  const description = element(
+    { 'data-copy-content': 'shell.meta.index_description', content: 'Deutsche Beschreibung' },
+    ''
+  );
+  const selectors = {
+    '[data-copy]': [title],
+    '[data-copy-aria-label]': [],
+    '[data-copy-title]': [],
+    '[data-copy-content]': [description],
+    '[data-copy-alt]': [],
+    '[data-copy-placeholder]': [],
+    '[data-locale]': [],
+  };
+  const documentObject = {
+    readyState: 'complete',
+    querySelectorAll(selector) { return selectors[selector] || []; },
+  };
+  let fallback = false;
+  let effectiveLocale = 'fr-CH';
+  const french = { 'shell.meta.index_title': 'Titre français' };
+  const german = {
+    'shell.meta.index_title': 'Deutscher Titel',
+    'shell.meta.index_description': 'Deutsche Beschreibung',
+  };
+  const windowObject = {
+    document: documentObject,
+    ResultCopy: {
+      get(id) {
+        const values = fallback ? german : french;
+        if (!Object.prototype.hasOwnProperty.call(values, id)) throw new Error('fehlend');
+        return values[id];
+      },
+      __useDefaultFallback() { fallback = true; effectiveLocale = 'de-CH'; return true; },
+    },
+    HealthLocale: {
+      get current() { return effectiveLocale; },
+      normalize(value) { return value; },
+      syncDocument() {},
+      switchTo() {},
+    },
+  };
+
+  runScript(windowObject, 'js/page-i18n.js');
+  assert.strictEqual(fallback, true);
+  assert.strictEqual(effectiveLocale, 'de-CH');
+  assert.strictEqual(title.textContent, 'Deutscher Titel');
+  assert.strictEqual(description.attrs.content, 'Deutsche Beschreibung');
+});
+
+test('Page-I18n markiert auch das reine HTML-Notfallgeruest korrekt als Deutsch', () => {
+  let effectiveLocale = 'it-CH';
+  const documentObject = {
+    readyState: 'complete',
+    querySelectorAll() { return []; },
+  };
+  const windowObject = {
+    document: documentObject,
+    HealthLocale: {
+      get current() { return effectiveLocale; },
+      normalize(value) { return value; },
+      syncDocument() {},
+      switchTo() {},
+      useRuntimeFallback(locale) { effectiveLocale = locale; },
+    },
+  };
+  runScript(windowObject, 'js/page-i18n.js');
+  assert.strictEqual(effectiveLocale, 'de-CH');
+  assert.strictEqual(windowObject.HealthPageI18n.apply(), false);
 });
 
 (async () => {

@@ -90,7 +90,7 @@
     }
   }
 
-  const current = queryLocale() || storedLocale() || DEFAULT_LOCALE;
+  let current = queryLocale() || storedLocale() || DEFAULT_LOCALE;
 
   function remember(locale) {
     try {
@@ -107,6 +107,20 @@
 
   function manifestHref(locale) {
     return MANIFESTS[normalize(locale) || DEFAULT_LOCALE];
+  }
+
+  // Ein unvollstaendiges Sprachbundle darf nie zu einer gemischten Seite
+  // fuehren. ResultCopy kann fuer den aktuellen Seitenaufruf deshalb auf das
+  // vollstaendige deutsche Notfallbundle umschalten. Die gespeicherte
+  // Sprachpraeferenz bleibt bewusst unangetastet und wird nach einem behobenen
+  // Deployment beim naechsten Aufruf wieder versucht.
+  function useRuntimeFallback(locale) {
+    const selected = normalize(locale);
+    if (selected !== DEFAULT_LOCALE) {
+      throw new RangeError('Runtime-Fallback ist nur fuer ' + DEFAULT_LOCALE + ' erlaubt.');
+    }
+    current = selected;
+    return current;
   }
 
   function externalHref(key, locale) {
@@ -198,10 +212,11 @@
     STORAGE_KEY,
     RETURN_VIEW_STORAGE_KEY,
     QUERY_PARAMETER,
-    current,
+    get current() { return current; },
     getLocale: () => current,
     normalize,
     manifestHref,
+    useRuntimeFallback,
     externalHref,
     formatDecimal,
     urlForLocale,

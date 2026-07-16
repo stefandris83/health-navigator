@@ -9,7 +9,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ac9aa2ef0a2de23b1e33169471ac984862d5bbfda5c5562aa0f0d606ce5af0b5"
+      "sourceContractHash": "cf9f19fba73021b8f457194f010604ac6a18b0667459221d088954008ad7e645"
     },
     {
       "id": "coach.week_plan.fallback.label.weeks_two_three",
@@ -17,7 +17,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "03565a3a212e8baff96a988b03ef93f56481f66766f67ce0dd7608c5a948a7a0"
+      "sourceContractHash": "3462d53da0b8c1de65260f864accf58d53de5b12c75510b20dbbd257625d0f8c"
     },
     {
       "id": "coach.week_plan.fallback.label.week_four",
@@ -25,7 +25,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "202c96474fd1e068b5c39474ef9834e1af751a770daf7dba4e1c7a814f1f37a2"
+      "sourceContractHash": "10f00b434ced4b0f1df52bbb8fe4f136cec22eeb09e25a00251b995e73d982e9"
     },
     {
       "id": "coach.week_plan.fallback.step.this_week",
@@ -33,7 +33,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0998fe3138c162312663ed34c2dc11175402ded19c7d3db086bf5ddd99c697e4"
+      "sourceContractHash": "4a10de54ddce51902fdbc7855be6e9bc2e0d658f6d06a1a9ed3e52e086855ee0"
     },
     {
       "id": "coach.week_plan.fallback.step.weeks_two_three",
@@ -41,7 +41,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "efe7a94ec30da6c669727bfc1c0aa893cc357c249bc71cd3f62cc9084afeff2a"
+      "sourceContractHash": "f8d16580b52bbb4b8ef45eb26b04037eb1b2491f2e547a31e74a16e8767af063"
     },
     {
       "id": "coach.week_plan.fallback.step.week_four",
@@ -49,7 +49,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3d88159681e2c8bd70c711d57aac380af8b39cb8032fbfdc8ffc051575fdd8ab"
+      "sourceContractHash": "483cba15d173a4243e2a327d2245ab4c15425e03abbc9d24cf17022c26ce6d46"
     },
     {
       "id": "coach.context.score_unknown",
@@ -57,7 +57,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "751d4f0c80d28614098f0e2c42d918fb411e4807753fc7167a235d71c81911a6"
+      "sourceContractHash": "10d2e07e17103ff4d6b78467c5a0fdd07a4f74234b7b9f719ae484124e02abf0"
     },
     {
       "id": "coach.context.weakest_title_fallback",
@@ -65,7 +65,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d85dc7e361f14928486beb598b62cf82d7538fec22ecf528b2ea99bcee950d6e"
+      "sourceContractHash": "738ac3f05f9f316230fb6dab44b046cf262e8cf9e04f200c341f1249e6936ece"
     },
     {
       "id": "coach.context.strongest_title_fallback",
@@ -73,7 +73,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0bc3b82d02b8195bd58dc943f7fc1c45076ef959325b707c38a6b991895d7ffd"
+      "sourceContractHash": "7ab72858b6dbb511a0d465eb5289c766a057ddf25a388de05366e19baa124c7b"
     },
     {
       "id": "coach.prompt.overall_score",
@@ -81,7 +81,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "6b8a9bb0e6cebec3ce05dd5ebb961fe909a99a0f05af4349330d0ac301609fb3"
+      "sourceContractHash": "d8f8539f721b92b500602e12dae8459d0fc7aed18b7e38661fbe2331ac903f39"
     },
     {
       "id": "coach.prompt.first_step",
@@ -89,7 +89,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f6061238108201f73a347febadbf612f0a4a7028c3ae756c611034103296bbe1"
+      "sourceContractHash": "149655c9e0397b7207edea26906bf566ec042f719be8ca7bae789234df5c9225"
     },
     {
       "id": "coach.prompt.improve_dimension",
@@ -97,7 +97,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "40a985ef6aa4523458e9aad7642576cddd8abfdcd5afbefdcacaf2b42267b7a8"
+      "sourceContractHash": "8aaffc834120233d6304bfe58f5b49139c028c60ff9afa47a46af714c21c2661"
     },
     {
       "id": "coach.prompt.breathing",
@@ -105,7 +105,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3ed5f9e15d0d8160c3410c828de9b82dee944cce8c7d608a66ef6d8826fffd4d"
+      "sourceContractHash": "bc62df810d89a42dcaf3d8e42b5e7d890fc7b7a0a34b5765bd877acf04edcda9"
     },
     {
       "id": "coach.prompt.coach_app",
@@ -113,7 +113,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "16e2bfd5448a8d5535a9ddec367a2064a94414a1ac25ea4586676f7449b43be3"
+      "sourceContractHash": "6c3dc058282523064687a181f7a06fe3b228ad1193658f43e7c47bbfd08d4801"
     },
     {
       "id": "coach.improve_dimension.with_recommendation",
@@ -121,7 +121,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "edd9c7d1959844fa4ebb65c16e54fbee378f27d344626b0f75c3c5992e97d988"
+      "sourceContractHash": "8289ef83d3be63923803f5853533c089d71dabb8c40578eb9db7a2ea7bf491b9"
     },
     {
       "id": "coach.improve_dimension.without_recommendation",
@@ -129,7 +129,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "94cf18856d9e7d5bfcb9e97472f493241d5af9cdeaeab554ae7eaaaaba5a470c"
+      "sourceContractHash": "2d0057d8c932ecaaf000380851d22d9867a181d2814738f2778a7e2c61062acd"
     },
     {
       "id": "coach.answer.emergency",
@@ -141,7 +141,7 @@
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ba1aead2e4383820e0d4dfad4d72b4a75e3368e853c7449aba875e1b365692d1"
+      "sourceContractHash": "eecb93f06c53a341ac2f8b0523d6db63e2327f602042814ad020c3e4e03ab699"
     },
     {
       "id": "coach.answer.overall_score",
@@ -149,7 +149,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "fb50def82f1caabf73ea450375bba9c9d3e4f036809e809e6aca46b1e634b90c"
+      "sourceContractHash": "7652e90fd5f4745559802392648bd66e769d1126064e25f54bf3fbbb70a16eef"
     },
     {
       "id": "coach.answer.first_step.with_plan",
@@ -157,7 +157,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "68ca95dc27131bee6e4ec2037a8de4304a2be8cae3e21c9c3d200b06e8d3d7e9"
+      "sourceContractHash": "fcf57c7b8d7c39ee8af75b0288826416c674a5c3de43ae540f72188fdd3d4039"
     },
     {
       "id": "coach.answer.first_step.without_plan",
@@ -165,7 +165,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dad9bd8b4dd8aa68159f7ff098bebb95879989d1d2be19578919e69a89403dac"
+      "sourceContractHash": "6110b02edd84a846159f0db25c2c451eda6677cde141e2852a3eb6da6f61d2b5"
     },
     {
       "id": "coach.answer.breathing",
@@ -178,7 +178,7 @@
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "bebf98d3a6b297cfb70c799ca9931b03d61b837cc65ec7a986ad0400087f15c0"
+      "sourceContractHash": "ef157fce948194e9d8cfa7c72f6930b0fe85ba14e33b9df3b08e2c296d5e3a10"
     },
     {
       "id": "coach.answer.sleep",
@@ -186,7 +186,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "06b54c63589c45d07e6e6c00cd44e30952cf488b52b21fb890adb0e884a4994b"
+      "sourceContractHash": "39aab3efd28e1ac5dd44f5e3e91be90294bad7a3c0e3a44dc3180da25b584c86"
     },
     {
       "id": "coach.answer.fitness",
@@ -194,7 +194,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "adda211d953a93f49ef008268a4395d95e66abcb76535c447567a4ea6d4a5d77"
+      "sourceContractHash": "d3f026cca14d76bfaf9f34b04534d07db862629f0b4ae5f2e5aa46e470a909b7"
     },
     {
       "id": "coach.answer.nutrition",
@@ -202,7 +202,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b7a247f58958ce602435020f5d2f75dffd04e80d8de0023228da77e675155130"
+      "sourceContractHash": "75d36a945210ae26fd74e804f156c42415cade4e17978234853ace42732619c0"
     },
     {
       "id": "coach.answer.protein",
@@ -214,7 +214,7 @@
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2e1b7e4df19f3b798ec9dad90a3943fba3f532c30f15ac8e812f3fbc492269d9"
+      "sourceContractHash": "f80d56c1d98e46c72b5c94785bf57c10bad039a8c3e5b4238ca5cdc2c9414392"
     },
     {
       "id": "coach.answer.medical_values",
@@ -222,7 +222,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d3ef155bf2d1a4a20655a16921bf9b82f01f25e4b6a07ced9fd6c59b3bf28b44"
+      "sourceContractHash": "446927ab65ae8965f01280259b1249d38d9fdc3da19e2e200138400265a4f017"
     },
     {
       "id": "coach.answer.coach_app",
@@ -230,7 +230,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "96cd347d9f18d9f0eca24f9e05b801b96ba4ebd78e2370c1fc7ec7eeecbb688d"
+      "sourceContractHash": "d485ede9e7b2cf1c8ed642cdb2bad1cc7db2fc84c65f9e4649a8c3168ac2e4e0"
     },
     {
       "id": "coach.answer.fallback",
@@ -238,7 +238,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3d43417a94cf0fa00110d628f159b3aa868ce9e1ff069cd0db8975f01852e1b9"
+      "sourceContractHash": "11162ca328784e0ffcb24b83625b6c88d43c5b608a94043ffe6b3155f590eb24"
     }
   ]
 }

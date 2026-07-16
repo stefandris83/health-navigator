@@ -9,7 +9,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3ed3b618d78a639453edadcd92f8d0ecdad27acebc73d69801936988dc3bf229"
+      "sourceContractHash": "4fa182167e9c68cc2004145e50e84af6751ded6f8cd79e334e432fdb3104411c"
     },
     {
       "id": "sources.meta.title",
@@ -17,7 +17,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e9ba53be9ade1194110616218ac62b148b28985fbfcd77000773c04f1a99b2f8"
+      "sourceContractHash": "27f336868432e759f9392a1923a3605bed51fe495a52abb3a814aef6d626ff8a"
     },
     {
       "id": "sources.back_to_check",
@@ -25,7 +25,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dff074c9971825e9d43ad63785a6575f4033585e783a4d8381096020bcaa949a"
+      "sourceContractHash": "1f6fbe6570226c235e4a7603000788b493482bcb85dd82f53776aad18815bb4d"
     },
     {
       "id": "sources.hero.eyebrow",
@@ -33,7 +33,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3054e9a76f500a0d68049242c0eea36e803a29d19cb5f9d03c01da8c2fb26321"
+      "sourceContractHash": "7e76a0354ca826e17b4cc34456928b6e564c4e71a800e593339349e67c7245dc"
     },
     {
       "id": "sources.hero.title",
@@ -41,7 +41,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "347ec2740c85327d0cee87d09929039137fff2465f166cf137c32dad3e69d441"
+      "sourceContractHash": "05684f357b3d799d93e7b50b660122f28ddd790449c935f15f7b5b2c99bc4b42"
     },
     {
       "id": "sources.hero.lead",
@@ -49,7 +49,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "bb834bbc20fc2456db038d20a517ebe30f008a1656216e4698931db3989c18ba"
+      "sourceContractHash": "07f86505ef7beb58254bd5901f426021068cf5470d243021b2cfc2e068c76200"
     },
     {
       "id": "sources.hero.research_date",
@@ -57,7 +57,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "babe4dab6cb1f60fdbc77279e8525ee16231eea4a4340fef0ab473094a75f7e7"
+      "sourceContractHash": "b8c7a283af8578bc8c40da2f4447d69fb0a8394bb152a0960458c6f445f25294"
     },
     {
       "id": "sources.notice.label",
@@ -65,7 +65,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3ca2b82f01faeaaf7385e97f6ffe26b50f03259c61a665e39a6192d40360dc65"
+      "sourceContractHash": "3973c758559439ae2e028469a9ac01636effb4bfe64884e5383a6646bd41d1f9"
     },
     {
       "id": "sources.notice.text",
@@ -73,7 +73,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "055f1b29b074fffc6d1b4d75f92000aeae3ad672b4ad4a2e2ed40e30f5542777"
+      "sourceContractHash": "b22d1f1d8bb228010876be56be968dbc8f06bb1ffefafb5619e3a0992440ddff"
     },
     {
       "id": "sources.card.1.number",
@@ -81,7 +81,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f6ea97dc3c0eaf897f8f7efdad01064b30b43840de2315885047d5573cf77471"
+      "sourceContractHash": "1d35b4f55464d86441865efe0f72c4b8f35884bbb29aa5b79c696aff279b92ef"
     },
     {
       "id": "sources.physical.title",
@@ -89,7 +89,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0d89e408822b3939920f3f9691e4842869454d9b96198740ce44e40d6a75ccc4"
+      "sourceContractHash": "6c89231c0c8c65e9bbefb767ddea658d3e88fedb3e81fad338d7211ded015b97"
     },
     {
       "id": "sources.physical.reference",
@@ -97,7 +97,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "414eb35b349619c5fdbafeeacca1e2d3f307bed17ffe597a64960bac69d0dd0e"
+      "sourceContractHash": "fb2995582913bda8b4006917530121573b82edfa80712a8e15ed4430f361b74e"
     },
     {
       "id": "sources.link.who",
@@ -105,7 +105,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "88709bcd0907640d7a4f6d08653460ddb3f05381ed0e2b0bae897bba75363e60"
+      "sourceContractHash": "c6cbc4b950daef6426350154ad973d3b26869648a1789b4aec0340b58adf2a03"
     },
     {
       "id": "sources.separator",
@@ -113,7 +113,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "088dc112c4b08156c431fab1cc32eeef376ed3c9e9aa5e524708713f9ff652ce"
+      "sourceContractHash": "a45fd340e015635d4cbb00c8a9fabb3e09c7d51452cc56230344d237e5e012fb"
     },
     {
       "id": "sources.physical.point.1",
@@ -121,7 +121,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3a5db32328af91158c2e36e07a1d8f4d8744f13c4bfb8e3a2fc8b2efcc4317f2"
+      "sourceContractHash": "88db9ed813a3da89bb81eb7c6840e01292f2f0c900917d0ee84e121389cd982d"
     },
     {
       "id": "sources.physical.point.2",
@@ -129,7 +129,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5cf5c7f8f721ec807fa87659483f315dd10142c7ef96432ae26a0b0cd817cb03"
+      "sourceContractHash": "4b7006d07a0cb53b9b8d9dab80ef035ce05558311c20cf44db80eafb5ecd9528"
     },
     {
       "id": "sources.physical.point.3",
@@ -137,7 +137,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dee34785f6f7e547939a709a0906e6583962c8cb33c0204500f1f2a84594b4b5"
+      "sourceContractHash": "c9292d54946bb1c684d8ed0ef48ad61fb7345f87b518da9aa545375506b9b2ad"
     },
     {
       "id": "sources.physical.point.4",
@@ -145,7 +145,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "87cecd5ccb1b8da14bde678cbc5108c6ab08c7eb46935d7452c7caa7e1ab7cf5"
+      "sourceContractHash": "fcc4ed35e1d56096661b18b34cc309455bce36f93acaac25a44f6b15e93df6cd"
     },
     {
       "id": "sources.card.2.number",
@@ -153,7 +153,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2fd4abb1b0c99fd32598a6a6994866d35f30484c31060d18143454398b8a60d5"
+      "sourceContractHash": "6ef8a3f5a26137b8bf44251586a8ca8b3c68c75efa8ad574a6a9e81f39db486b"
     },
     {
       "id": "sources.nutrition.title",
@@ -161,7 +161,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "82c697187300e868bf1bc6f004cab98713b6437d6629a82fad3ef0cae9a52436"
+      "sourceContractHash": "2acb6cad29de9d78eaf79125b7076335c7e4653c7ded6f82fe759c52cc5ac248"
     },
     {
       "id": "sources.nutrition.reference.who",
@@ -169,7 +169,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a2d40032d89f219aa86afd20995e6a252a799d322d9206c6f57134fb93558da0"
+      "sourceContractHash": "ae3ea8592385e8fe9046e672808255eba2d0bb2263fe460f0106b9c64c2c6feb"
     },
     {
       "id": "sources.nutrition.reference.morton",
@@ -177,7 +177,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "6b2ab591f65176f1b35ff3bca51ada4d9322efa142baf92ef67fa54a921012e9"
+      "sourceContractHash": "558c1ba50829980617d7bb93987d64f154294b6aad1ae112a3c2a96e5cdcb883"
     },
     {
       "id": "sources.link.pubmed",
@@ -185,7 +185,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4563e341d4493cb3911fc509404db768c9f0bac85b430cb9dbab72000eb10e18"
+      "sourceContractHash": "d8d8350d45aa797a37c91adec1986ba935680ff43e1488fc057ba3958af564c5"
     },
     {
       "id": "sources.nutrition.reference.issn",
@@ -193,7 +193,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "df9691c2d314e0b25819d69e11ef103ab2b254d51c445dd322aae15fd2c5ee93"
+      "sourceContractHash": "bd6f7b3e329f09d266b4606fbf7d33767503df97f1e3b25e52ee5abbcc00c72d"
     },
     {
       "id": "sources.link.jissn",
@@ -201,7 +201,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b30e99313d8a2b8aba7f8b9ca870afe5bacf1878ff692ad28cfe988969c9c72d"
+      "sourceContractHash": "9bcbd433c102646043ae8cfc397947e7dfe1bc52ad4874cd9b09760ac0c088e8"
     },
     {
       "id": "sources.nutrition.reference.espen",
@@ -209,7 +209,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "75ef79a32849d230f526d0a47cab4da75672cef9215db4796ee287e1efbd1f38"
+      "sourceContractHash": "67a03a3a4a57860fb1ad4258bc7fe3dd1d36ed5cceaed83a0da920d2bfbae313"
     },
     {
       "id": "sources.link.espen",
@@ -217,7 +217,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0fdc75c76beca7414e674a140db5503f6688b170c51beaf4216d9e669ea14aaf"
+      "sourceContractHash": "863f826de82bc85e9a6bca6ca2733c8731edec924f5d95e55709cc7e203a6421"
     },
     {
       "id": "sources.nutrition.point.1",
@@ -225,7 +225,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "317d2c2d044768d8c6b79f5a6adb159835cb1227c5b29362d2484b07cc4c151f"
+      "sourceContractHash": "2d1d7a4764ed1e2f32d7047538e0695b74df290365e8fd6a80c625088fa49e68"
     },
     {
       "id": "sources.nutrition.point.2",
@@ -233,7 +233,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a61294fbada9551c93d636476c77b2ac443c6a44519454ad19161fd7d0670a47"
+      "sourceContractHash": "7489d230b5481c096d3d22d17f9b74b1464065cb91f144c82329d8deb1493f80"
     },
     {
       "id": "sources.nutrition.point.3",
@@ -241,7 +241,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ea701a30330e2c6f984f0052c957daba02b4c82db16d4a850386aab143f8f7bd"
+      "sourceContractHash": "e99c9102588913dff4e5a026884792fa1c0e93093213cf8223adcbb784148ce6"
     },
     {
       "id": "sources.nutrition.point.4",
@@ -249,7 +249,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "690d697414fe9a56162431868d56862d6d6d735df57ba92b27f7015fe3224452"
+      "sourceContractHash": "d748b6515cb436d4a2bb28be74a14a31d9fac5150572eb308828f854deb1bf99"
     },
     {
       "id": "sources.nutrition.point.5",
@@ -257,7 +257,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "bc8412661a241472e27724f9663f99d676a9131ed08f5fc3ab801db1049b354a"
+      "sourceContractHash": "85dd42d4b1da4bdaa8c44fc101528dc41024b7e596a806d449614c083fa9cf24"
     },
     {
       "id": "sources.nutrition.point.6",
@@ -265,7 +265,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e834d8588eec8f696328c371679723c7ae05b5372b1662ee29563a13e34e8fdd"
+      "sourceContractHash": "a6a99f17051aaa80d804060056d6440bd20f6c9f209a51070fe48204c701f0ca"
     },
     {
       "id": "sources.nutrition.point.7",
@@ -273,7 +273,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4a2debb6e884717677330934ec73e1432e4da9b2941c20d56c6914744604ba2d"
+      "sourceContractHash": "7d29e0bf3608b485409a0b0e7a04af34ad09f552a5949387e02ad304654d44b0"
     },
     {
       "id": "sources.nutrition.point.8",
@@ -281,7 +281,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3783877709f216a6995fc2a12ba25ccc61ae25e1b6b13cc8fbd312a82acf922c"
+      "sourceContractHash": "5e63add512f10a22d92682a44653790206433ab4ef548b3c134e4d0f81eb4a3c"
     },
     {
       "id": "sources.card.3.number",
@@ -289,7 +289,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9990fe18c755e44259245308aede547e0f80396e01adfd8f6f5ede3918e354fe"
+      "sourceContractHash": "e465f888320e7d09357fd65f8ba92185956795746a9d3fb57d7d43be8d2e4047"
     },
     {
       "id": "sources.blood_pressure.title",
@@ -297,7 +297,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "422fe0f86f4d112ff20c4d5cb1692c009784de4c1e463cbc3dd463da1e991d3f"
+      "sourceContractHash": "5ce8d1a6bea11a8592c93ca3fb57cfaafd5e622dc2bbf8759e7bc93e69a0b94f"
     },
     {
       "id": "sources.blood_pressure.reference",
@@ -305,7 +305,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b7169c054062038a20550f2d3dfed8dab77c3852236da9f72c808ffe1f30a796"
+      "sourceContractHash": "4f17f4aca2d5987ad333cd22d01255e1b39b6176a5999f31c8a7d816b7f08883"
     },
     {
       "id": "sources.blood_pressure.point.1",
@@ -313,7 +313,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "07bcf0343656dbc82cf103b27e1a8b172ee444f27ebd1fb2c282a30fabfff7a2"
+      "sourceContractHash": "e2d066f6957ad49dd6080b0afe1c0c154f2c1593d05df11db824f0184de324ac"
     },
     {
       "id": "sources.blood_pressure.point.2",
@@ -321,7 +321,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d6d0400ea587bb025bc1ca08c4b875676f10ab4071ae1337602e99f16b078e3d"
+      "sourceContractHash": "fc91aeb8844323a71e04f248aa8bcd511de071ed088a452d27dcc6576dd896dd"
     },
     {
       "id": "sources.blood_pressure.point.3",
@@ -329,7 +329,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5836c0387c5c9506a0334132846e917658edb57f26c0e1311521ffda25bfd2ba"
+      "sourceContractHash": "a42cae2b4d270ef4188d808325ba0505a7f3a20891267a22b9c0e1e2a62f103f"
     },
     {
       "id": "sources.blood_pressure.point.4",
@@ -337,7 +337,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "decc0b0e4f8581fa9e5778b1f2e9d8c1378122964274c00b69c4e0ed6fabaa52"
+      "sourceContractHash": "f0898f65a1a64856e415b6460f593752c347a05645402129547051d8e675cb23"
     },
     {
       "id": "sources.card.4.number",
@@ -345,7 +345,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8892209899c7fed480a6cec225f8cfa37ba301c3c1a21bfce0558391eef182db"
+      "sourceContractHash": "eeee034973e1e377ce8a27228591a5c0efec7acc6047741b7795f5908e3cc83d"
     },
     {
       "id": "sources.lipids.title",
@@ -353,7 +353,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b7cd6adcc3eeb115cf7a9eefb8e08102029ba3a1b84a7e24e04cab6469147250"
+      "sourceContractHash": "3cb907f81a09838567c9664de7d1755a50e7f035155f9322261c20dc055fe497"
     },
     {
       "id": "sources.lipids.reference",
@@ -361,7 +361,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d6534a76c97b1e999429348b19d2d0822b0264ba7fc55933e021d7884df05429"
+      "sourceContractHash": "85b0580170c152625f6f8d8411b7834becbe2da4de969da0c3cb03012e3e23ee"
     },
     {
       "id": "sources.lipids.link_label",
@@ -369,7 +369,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "592cb9b089ff942af0bd66db9151f545749fc484b9d64cf1901bfac95ce97a31"
+      "sourceContractHash": "f01ce6d539d89ed0c3890068938d714f478b4b24650e80f11d6c57cd5fc0cf65"
     },
     {
       "id": "sources.lipids.point.1",
@@ -377,7 +377,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f0a27cbd60524823da0f29546c0bfbdf47232ac3997f75c0aad8686ebce36204"
+      "sourceContractHash": "67c6f99567a89f79a8ad8ba8b407752ade8180fc2e85e2461f11adf01ecadfbb"
     },
     {
       "id": "sources.lipids.point.2",
@@ -385,7 +385,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "55f86250b9869ed20e0a78a259b45fcd9794ff36f868ddad2b61c8444c21e5d5"
+      "sourceContractHash": "ebab5e3dbe23d15070411b4d11e6a37d74a5e81d4047958c80c6f6cb5d2aab93"
     },
     {
       "id": "sources.lipids.point.3",
@@ -393,7 +393,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "50ab164052ebe070354fe2c2a787fba3e1c526a54e375091a6c2de645372efff"
+      "sourceContractHash": "d8ccf167ce4e4fd54969501b32284bec5ed22c25e07a924bb2625a8e0e370421"
     },
     {
       "id": "sources.lipids.point.4",
@@ -401,7 +401,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "72c05b0311cb1cbe151b5cf79df5245167e500aceec3a7ce26d32f2877667bd4"
+      "sourceContractHash": "8d158a60b8bb8545bcaf3155004dafadf1a83aed646398a704fd06be7087d197"
     },
     {
       "id": "sources.card.5.number",
@@ -409,7 +409,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9a3dde3c2b67edfd8d5fced8ec7957e59aa194c07c3bada1f2b91e1c4094b77a"
+      "sourceContractHash": "e4d6fdc80858469e75210f13fabc703062ef19fd1b82bfcef16cd84418ac326e"
     },
     {
       "id": "sources.metabolic.title",
@@ -417,7 +417,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "081741ccdd659d7dee2e40db0b4388319fcd5cdc400bbb0479a32dba5cc53232"
+      "sourceContractHash": "10f7635af427083d6757d5fde4144d6f7e9ad24bde01ac23138760331ae98d0c"
     },
     {
       "id": "sources.metabolic.reference",
@@ -425,7 +425,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9c023b7b1d0e63222356a680dcdbd1062dad4c0a327e3d52dd21ccf8ca44782d"
+      "sourceContractHash": "d129722f1e629c24eb4cfef1ed189aab2933ba838decba9b61b97f6c80223825"
     },
     {
       "id": "sources.metabolic.point.1",
@@ -433,7 +433,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a0c0178c409c7c3c46f9d6788fd6eddaa7af703c85b6ecad177bc3eb862edd5d"
+      "sourceContractHash": "e69b055710dde9d3be45a18afe3427379ecc10ad11cfe873a46318a3d7afd887"
     },
     {
       "id": "sources.metabolic.point.2",
@@ -441,7 +441,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "60bcbcae1d34daf603623f78ca831b5dae5ddf2e6a075cf530e2591e0dcd4125"
+      "sourceContractHash": "cda43d60cb3a569aaf76a2f97c78debba9fc8a6d4638fa3f317b2870ac6cfe9e"
     },
     {
       "id": "sources.metabolic.point.3",
@@ -449,7 +449,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2e0424e317534f7d8cccc36efb23388468267e28ae5413b4b3c53de61bb95e17"
+      "sourceContractHash": "a420cbb8626e67abfbaf5f7ce92325d24944baebb820acff848d1b341d52d928"
     },
     {
       "id": "sources.metabolic.point.4",
@@ -457,7 +457,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9d48a11fbdafd1adcb3118ec1e88ed2dc383e91998e923969b81e752a84df823"
+      "sourceContractHash": "010d6734f73a7ae22130ed6541820956d591f4e1ca780309609a229c21313277"
     },
     {
       "id": "sources.card.6.number",
@@ -465,7 +465,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "84ffe8654772a0e5881b10e307364a3dbff1ce749af3802d97eb43dc7126148a"
+      "sourceContractHash": "37b0f031be7ef497f3c378529a413f4cfd5d995bf534a0cb5bb4dff3fc669dde"
     },
     {
       "id": "sources.waist.title",
@@ -473,7 +473,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a6b01b463aef6d5b6d770aca772b3d2567ce7304d6d70c6c1e1742d6987f076b"
+      "sourceContractHash": "fd8065f9842f61de374b21eaa1fe6671c10d3303c7c5858a120ce0535c657658"
     },
     {
       "id": "sources.waist.reference",
@@ -481,7 +481,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "64e2f37f12aaa12a9175d9a164e2865510db9eae29ce31a4aed18a9ad1fdeead"
+      "sourceContractHash": "da9615b40429099fffafb3b5b51f3f7034cc1b15f40adef80004afbe84e83df2"
     },
     {
       "id": "sources.waist.link_who",
@@ -489,7 +489,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ad43ec284f8ccd66bdf6f6a44bd4cfab4dade932944be7c0347328e2e4c451e5"
+      "sourceContractHash": "5b67729001efbeb57e204528c44e62297e4b977b3b18c7b4051a3048fd06409f"
     },
     {
       "id": "sources.waist.link_nice",
@@ -497,7 +497,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7ac417bfc1527828fb392a30cfc0e9a9f47cbee3733dfe09ed2f6fb68d3b796a"
+      "sourceContractHash": "1b1e08865c367f133692209b0e74ee909253f749c5ac5d292c51fe43397602fe"
     },
     {
       "id": "sources.waist.point.1",
@@ -505,7 +505,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1aeef487b94b73c1a255a3891baf04429b735601bbc5b2fbe4be7072e01da3ca"
+      "sourceContractHash": "5c1ea27d9c4a9429db40c91409fff1f7c4c6b98d86230d30176e6438b94e8816"
     },
     {
       "id": "sources.waist.point.2",
@@ -513,7 +513,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1e2af50ef9051b9bd58a87d15cb4a1309e8578ed7d7adf5ef91c7b192b7caa55"
+      "sourceContractHash": "567b1b38e5477c87123d00a922129e071515e8322cc7d1f2934ce92db19f6d31"
     },
     {
       "id": "sources.waist.point.3",
@@ -521,7 +521,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f2cd280c9684a740a307aad84d43a31b7abad73874c44b8e883b71506d716d79"
+      "sourceContractHash": "cd10bfeac5f82eeba28f6dbf3a48d3e0edb3e5d53a103790cf1b8cba70c3f3da"
     },
     {
       "id": "sources.waist.point.4",
@@ -529,7 +529,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4f03b9eb16c58e275d56e10522b695b78b94902cec8c422fda799f28a5f1f9e2"
+      "sourceContractHash": "90dd37008d853a31572219b22547424d3c8a1cefbf626dfac2aa13f9d0b74ceb"
     },
     {
       "id": "sources.card.7.number",
@@ -537,7 +537,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dda056965e65363e1e2f406e7de846f3496057001a7b25cfd03e7a52e87f991e"
+      "sourceContractHash": "b13ae0b6672e093996bf78565b82749904270370e0ae10c33fe21895bdcb5768"
     },
     {
       "id": "sources.strength.title",
@@ -545,7 +545,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "369246598ce75be84c70b1ff1aeb096eba205b4405ccad497df97f769d89cd18"
+      "sourceContractHash": "4de4a9e1c17356247ddf3102f931efae5ece515cba19241658527bb4e4ac42f5"
     },
     {
       "id": "sources.strength.reference",
@@ -553,7 +553,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "c46b43273d6ae7b9c1c1974f84abe336ca15e9e44be63f204af52cbeb2dc796d"
+      "sourceContractHash": "c07897990be91571e848cd1f36f20085b7106c28349eb630665e8d1937c5190c"
     },
     {
       "id": "sources.strength.link_ewgsop",
@@ -561,7 +561,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "c7e5fe3a285d71f94cb3ee1355fb9b95281f04997dcc18ec2b7c2c2dc27900cc"
+      "sourceContractHash": "77c0d3095d189cf90e19781839ea479e8d40ef431726981955372e178aee718a"
     },
     {
       "id": "sources.strength.link_pushup",
@@ -569,7 +569,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1ca9d8b049fc040e778133709e3f8931c1f546b91ef4b72fafe2933a43d4aa36"
+      "sourceContractHash": "f4d07e3225672e8e1402163de2cb50ac03e24e25b78efc0d6d493652c96de0c6"
     },
     {
       "id": "sources.strength.link_wall_sit",
@@ -577,7 +577,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "01ba14a3135b3b57fdd4c1b7cedadbbb0c04e610466aa355fc32a6327aab3836"
+      "sourceContractHash": "b63a2ddb087e859672a55ce83c8cd045e025836535fe5030ba49239ba2a29a69"
     },
     {
       "id": "sources.strength.point.1",
@@ -585,7 +585,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8581a33457a75641c53b4cf0cb9cf48a7a7c2d5eb771ecb078a216cd7787f526"
+      "sourceContractHash": "927e0074761fffb41f4b3ba38760c62dc471d852379f9127e09aeb886d95de9d"
     },
     {
       "id": "sources.strength.point.2",
@@ -593,7 +593,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "614e28e04cf6848b92db258a0d530dd42d77089f17ce907b85848c5781229615"
+      "sourceContractHash": "a8e955a0e1dcff27f1022173b5da2698e093b2c01d2aa99952b620519443a455"
     },
     {
       "id": "sources.strength.point.3",
@@ -601,7 +601,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4582d8e3a4ac95a48d8403157054e3b44ba161d8ef0d795710f00376116f0d51"
+      "sourceContractHash": "fd95bfaf6950c0431f03f049aae64cb39a2a1f945831e020fb75fb605568b438"
     },
     {
       "id": "sources.strength.point.4",
@@ -609,7 +609,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "bd5b964e60dfdce254d2614580088373a27894eacaa154f9deedb65536641d88"
+      "sourceContractHash": "6032bfd65f56b4b5b6127ec18adab2431542422cfb5fa3d430cc4a7c3d116f89"
     },
     {
       "id": "sources.card.8.number",
@@ -617,7 +617,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5cf13e96c0bda66ce8dfa7fc80ae0d3a8f9bbce75b0f59d88cf4bf3dd76f268d"
+      "sourceContractHash": "a0cd16abb2a7d80073911c872aa382aace9192380c00289550c42dc48dd421d4"
     },
     {
       "id": "sources.sleep.title",
@@ -625,7 +625,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "96b21c5ede806d7f3002d136233d3c5a6b38330b683c6bdf6eb9c8943795952b"
+      "sourceContractHash": "e240fbdfc0078ddfc50ee1aeb55f61cdee2745a2ff6781741ec1099e43c52436"
     },
     {
       "id": "sources.sleep.reference",
@@ -633,7 +633,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "811f42c1acef44bde82a4a77dd0d60493d391a69d4256e6b835396e851899a1a"
+      "sourceContractHash": "fc0ed37b9c3789c059640ec4f531c213974ea0b3a80613d3e8df9c01196c6321"
     },
     {
       "id": "sources.link.cdc",
@@ -641,7 +641,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4702bc2b19fd4b280c446d01c650193cb5304c01748afc410b5ab26acf3efd05"
+      "sourceContractHash": "a21d69233d6e4bcdb8d1a8f213cdf25acb80822805f4b05b9ed320d8e4475325"
     },
     {
       "id": "sources.sleep.point.1",
@@ -649,7 +649,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4951036a9d30555bd1ef8ab9642ace4ec504d983242370d935c4527f7f69517e"
+      "sourceContractHash": "39ed3ce924371f45b07008110ac733b9445cfd86a982604d367b74148dd6a0e2"
     },
     {
       "id": "sources.sleep.point.2",
@@ -657,7 +657,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "21bbc69028d00fddd76f0588bba972908cb544a0264653351515dca591833942"
+      "sourceContractHash": "640b291694851427aeba3284064ad7b945795ca3d0b167f62fd8d1e0ecf6dada"
     },
     {
       "id": "sources.sleep.point.3",
@@ -665,7 +665,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "cbbde1d39aec21e7af05d9dfc0a9172ae80fd36adedf0dc907d4b72ba3097648"
+      "sourceContractHash": "552cb3658e2d92f22da5fe50d4511e01018461fe2eea72702f20da365459adf3"
     },
     {
       "id": "sources.card.9.number",
@@ -673,7 +673,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5ed161ca5bd28b968565d8dfef2bb37e770500a68bd74d207180bc5c26338ab6"
+      "sourceContractHash": "5b20c07c01ff6377aacb0cd60ecacd3fa1d09ebdb2b2bb5c5b7bb68284ae2c98"
     },
     {
       "id": "sources.mental.title",
@@ -681,7 +681,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ca96125b4f37b05df9599732e717fb36e1c7d9fca2e04ec4c7b60844d184c23e"
+      "sourceContractHash": "dc2a8736f95cbff17796be5a62eb067bfdf3d728faac7ed5c63aa0be4167fd65"
     },
     {
       "id": "sources.mental.reference",
@@ -689,7 +689,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "448c6b1cfbae153bc3f264a9cc465260e345e0b9e472186603cf0fba2d340167"
+      "sourceContractHash": "846cc58a90660c657c91e0e9aa12295b2fc9e02021d187a4cd9ec75fa9fd7908"
     },
     {
       "id": "sources.mental.point.1",
@@ -697,7 +697,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f10fa2d829e158ea8a3caf11508b85caaad129f1b3cc9e0ca2f48fbd6c4a39d8"
+      "sourceContractHash": "e7537193fecd296d895e7d0cf6111869bb6859ba3cb2b62f718f9c7f82c28a64"
     },
     {
       "id": "sources.mental.point.2",
@@ -705,7 +705,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2801506764b1a2d216d0a47634be00087f7f33a3c352b210a3eb98fc8f5aa322"
+      "sourceContractHash": "4b6e31156dd938bdea23b6bb9a11ee0a193edbc58ec667b34dc258e0700f4001"
     },
     {
       "id": "sources.mental.point.3",
@@ -713,7 +713,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3a988acffcd69a1b027ecc4c1d80d3aa117ee061053ea26350fe9eb2cf881e86"
+      "sourceContractHash": "20ca52f4329a6010c12a69ccc84f1cbc82b860814b494b53e9ba4d94a8dad666"
     },
     {
       "id": "sources.card.10.number",
@@ -721,7 +721,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "996130cf302d4b82fc2adda8fd5ae83e76a5de963ba0b25a01b091975b10f068"
+      "sourceContractHash": "58cafbb419c58011d7c5711cda6b8cb629eef5f183e71e339f10abb671a28aa5"
     },
     {
       "id": "sources.smoking.title",
@@ -729,7 +729,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "32b6141f2f89ae6886cab6be0e9939e9c2b837074053761b9b77543a5a6d8064"
+      "sourceContractHash": "cb2aef7519c28760493b64192314c791419960e4ca3115e0aa1dfd408c7680d2"
     },
     {
       "id": "sources.smoking.reference",
@@ -737,7 +737,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "6b07755385d75f1c6bc91cf87e6f4ab0422289523e1f55f6d70c713c9d65c625"
+      "sourceContractHash": "f13bfcc4cdf075178650b95ceb88586b44f74fd1faff56831e1c046ec0dbb201"
     },
     {
       "id": "sources.smoking.point.1",
@@ -745,7 +745,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e5e0c4a6fbdd5bbb3b0abf4041e6907500d455642f1061fbe7ab2ecda2a74a0e"
+      "sourceContractHash": "5583e05820e222b876a1dafec02cffbcb157d7df8c1a2ca6cddfa54c1bba3801"
     },
     {
       "id": "sources.smoking.point.2",
@@ -753,7 +753,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b5aac21710a8363faa99df48f99c2ba73dee787f34e50210cd07f8f5059334e5"
+      "sourceContractHash": "aa459c76e2d79637d292024473b0b4591a933e784d4e7e29c9fe399a23b496e9"
     },
     {
       "id": "sources.scoring.title",
@@ -761,7 +761,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a7fb05056f9e255ed6ca1bc54b4fb94a5285c0e7339eed4490ba19c87cfeb9d3"
+      "sourceContractHash": "e8f7aedcdabecbfb43b595a29db9b0c23cdde6b53fce65682137dbc2500508a4"
     },
     {
       "id": "sources.scoring.point.1",
@@ -769,7 +769,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "92a7207df58fac7453e571870efe2e21f43d6cd90fdba0740d6f352736b0b1b1"
+      "sourceContractHash": "cf35321f407340dbd3b723b06bec091a1e675121b17a6284e0a16e3e6b018b27"
     },
     {
       "id": "sources.scoring.point.2",
@@ -777,7 +777,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0080c8de0852f912011477dc573da2aa4e5540f811b66d647515b0ecda0c0853"
+      "sourceContractHash": "77c13a1be474c833dea0ecb09c7efac1d8dc424ded8389722b4d6e5eef4397f8"
     },
     {
       "id": "sources.scoring.point.3",
@@ -785,7 +785,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2bba7e25cec03bbbfeaa90956bb1eaf1b61da58b8d1f8692904ca3300437fae8"
+      "sourceContractHash": "a704e92809b724414c50819a4c79d107e4202e0f1eb18db6ee7a9da12824d9a6"
     },
     {
       "id": "sources.scoring.point.4",
@@ -793,7 +793,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e13fa36378a229abf92fee82a3f0f2620d2c457a156a5eb6f863c907df8d5688"
+      "sourceContractHash": "1541f4c67d20da904c5e8e282dd7c4e3520f4c0e10a07f552d6899e5427051f8"
     },
     {
       "id": "sources.scoring.point.5",
@@ -801,7 +801,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1da67216dca62c31c9248266c2cfa85f4a6b6677e0196d9d8d79f3e9b505de90"
+      "sourceContractHash": "6e3d769131330cde97096ce365c7d3fe2b33184fabc9108cb2f730dac41c088a"
     },
     {
       "id": "sources.review_disclaimer",
@@ -809,7 +809,7 @@
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "c212cfcd5997f91e6232c5a7f799cccdb21c96f03cc23fab049a5af6d72070b2"
+      "sourceContractHash": "f69bbe5530b24430d0c1c385465d83431764a08012017b0323103dad9e163e5a"
     }
   ]
 }

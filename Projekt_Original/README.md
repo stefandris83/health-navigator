@@ -83,7 +83,7 @@ content/result-texts/locales/    Schlanke EN-/FR-/IT-Übersetzungs-Overlays
 scripts/result-content.js        Validierung, Exporte und sicherer Reimport
 exports/                         Generierte Review-Artefakte
 tests/                           Dependency-freie Node-Regressionssuiten
-docs/                            Integration, Textpflege, Quellen und Reviews
+docs/                            Integration, Scoring, Textpflege, Quellen und Reviews
 ```
 
 Die klassischen Skripte und relativen Pfade sind Absicht: Sie erhalten die direkte
@@ -149,7 +149,9 @@ Nach der einmaligen Aktivierung von GitHub Pages veröffentlicht der Workflow
 `.github/workflows/deploy-pages.yml` die Anwendung unter
 `https://stefandris83.github.io/health-navigator/`. Jede Änderung an
 `Projekt_Original` auf `main` löst eine neue Veröffentlichung aus; sie kann auch
-manuell über den Tab «Actions» gestartet werden.
+manuell über den Tab «Actions» gestartet werden. Vor dem Erzeugen des
+Upload-Artefakts führt der Workflow die Content-Prüfungen und alle vorhandenen
+Tests aus; bei einem Fehler wird nicht veröffentlicht.
 
 Veröffentlicht werden nur die Dateien, die der Check zur Laufzeit benötigt:
 `index.html`, `quellen.html`, alle `manifest*.webmanifest`, `assets/`, `css/` und `js/`. Tests,
@@ -205,7 +207,10 @@ EN, FR und IT liegen als vollständige schlanke Overlays unter `locales/`. Das
 gemeinsame Runtime-Bundle, die vier CSV-Dateien, Markdown-Übersichten und
 sprachspezifischen Web-App-Manifeste werden deterministisch erzeugt und nie
 manuell bearbeitet. Damit sind auch Installationsname und -beschreibung im
-Marketing-Workflow enthalten.
+Marketing-Workflow enthalten. Die Manifeste starten sprachneutral; die zuletzt in
+der App gewählte Sprache bleibt deshalb auch bei einem früher installierten
+Homescreen-Icon massgeblich. Ein unvollständiges Sprachbundle führt geschlossen auf
+das vollständige deutsche Notfallbundle zurück und erzeugt keine Mischsprache.
 
 CSV und Markdown verwenden dieselbe redaktionelle Gruppierung nach Gesundheitsbereich
 und Thema. Die CSV stellt aktuelle und neue Texte an den Anfang, zeigt verständliche
@@ -244,5 +249,8 @@ node tests/i18n-runtime.test.js
 Die Tests benötigen nur Node.js und keine Installation. Fachliche und rechtliche
 Freigaben ersetzen sie nicht. Offene Entscheidungen sind zentral in
 [docs/GO_LIVE_CHECKLIST.md](docs/GO_LIVE_CHECKLIST.md) zusammengeführt;
+das vollständige, implementierte Bewertungs- und Empfehlungsmodell steht in
+[docs/SCORING_MODELL.md](docs/SCORING_MODELL.md). Die wissenschaftlichen Grundlagen
+und Aussagegrenzen sind in [docs/QUELLEN.md](docs/QUELLEN.md) dokumentiert;
 Reviewbefunde und getestete Architektur stehen in
 [docs/CODE_REVIEW.md](docs/CODE_REVIEW.md).

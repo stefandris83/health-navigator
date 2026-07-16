@@ -67,7 +67,7 @@ const DIMENSIONS = [
         text: copy.get('questionnaire.question.alter.text'), // F-0.1
         type: 'number',
         unit: copy.get('questionnaire.question.alter.unit'),
-        min: 12,
+        min: 16,
         max: 119,
         placeholder: copy.get('questionnaire.question.alter.placeholder'),
       },
@@ -105,6 +105,10 @@ const DIMENSIONS = [
         text: copy.get('questionnaire.question.bauchumfang.text'),
         help:
           copy.get('questionnaire.question.bauchumfang.help'),
+        illustrations: {
+          weiblich: 'assets/illustrations/taillenumfang-weiblich.png',
+          maennlich: 'assets/illustrations/taillenumfang-maennlich.png',
+        },
         type: 'number',
         unit: copy.get('questionnaire.question.bauchumfang.unit'),
         min: 40,
@@ -358,6 +362,10 @@ const DIMENSIONS = [
         helpTitle: copy.get('questionnaire.question.einbeinstand.help_title'),
         help:
           copy.get('questionnaire.question.einbeinstand.help'),
+        illustrations: {
+          weiblich: 'assets/illustrations/einbeinstand-weiblich.png',
+          maennlich: 'assets/illustrations/einbeinstand-maennlich.png',
+        },
         type: 'number',
         unit: copy.get('questionnaire.question.einbeinstand.unit'),
         min: 0,
@@ -372,6 +380,10 @@ const DIMENSIONS = [
         helpTitle: copy.get('questionnaire.question.liegestuetze.help_title'),
         help:
           copy.get('questionnaire.question.liegestuetze.help'),
+        illustrations: {
+          weiblich: 'assets/illustrations/liegestuetze-weiblich.png',
+          maennlich: 'assets/illustrations/liegestuetze-maennlich.png',
+        },
         type: 'number',
         unit: copy.get('questionnaire.question.liegestuetze.unit'),
         min: 0,
@@ -387,6 +399,10 @@ const DIMENSIONS = [
         helpTitle: copy.get('questionnaire.question.wandsitz.help_title'),
         help:
           copy.get('questionnaire.question.wandsitz.help'),
+        illustrations: {
+          weiblich: 'assets/illustrations/wandsitz-weiblich.png',
+          maennlich: 'assets/illustrations/wandsitz-maennlich.png',
+        },
         type: 'number',
         unit: copy.get('questionnaire.question.wandsitz.unit'),
         min: 0,

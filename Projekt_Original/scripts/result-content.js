@@ -431,12 +431,33 @@ function translationSourceContract(record) {
     locale: DEFAULT_LOCALE,
     domain: record.domain,
     id: record.id,
+    section: entry.section,
+    context: entry.context,
     text: entry.text,
     kind: entry.kind,
     reviewers: reviewersAsArray(entry.reviewers),
     requiredTerms: (entry.requiredTerms || []).slice(),
     comment: entry.comment || '',
   };
+}
+
+// Vor Juli 2026 waren section/context nicht Teil des Vertrags. Dieser exakt
+// abgegrenzte Altvertrag dient ausschliesslich dazu, bestehende, sonst aktuelle
+// Overlays beim sync-locales-Befehl verlustfrei auf den staerkeren Vertrag zu
+// migrieren. Wirklich veraltete Hashes werden weiterhin nicht ueberschrieben.
+function legacyTranslationSourceContractHash(record) {
+  const entry = record.entry;
+  return sha256(stableStringify({
+    schemaVersion: SCHEMA_VERSION,
+    locale: DEFAULT_LOCALE,
+    domain: record.domain,
+    id: record.id,
+    text: entry.text,
+    kind: entry.kind,
+    reviewers: reviewersAsArray(entry.reviewers),
+    requiredTerms: (entry.requiredTerms || []).slice(),
+    comment: entry.comment || '',
+  }));
 }
 
 function computeTranslationSourceContractHash(record) {
@@ -1093,7 +1114,10 @@ function renderWebManifest(catalog) {
     description: catalogText(catalog, MANIFEST_COPY_IDS.description),
     lang: locale,
     id: './',
-    start_url: './?lang=' + locale,
+    // Die gespeicherte Sprachwahl ist die Quelle fuer den App-Start. Ein fest
+    // sprachgebundener start_url wuerde eine spaeter gewaehlte Sprache beim
+    // Oeffnen eines aelteren Homescreen-Icons wieder zuruecksetzen.
+    start_url: './',
     scope: './',
     display: 'standalone',
     background_color: '#9A0941',
@@ -2744,6 +2768,7 @@ function syncLocales(options) {
   locales.forEach((locale) => {
     const localeDir = path.join(baseCatalog.contentDir, 'locales', locale);
     let added = 0;
+    let migrated = 0;
     const changedFiles = [];
     baseCatalog.files.forEach((baseFile) => {
       const filePath = path.join(localeDir, baseFile.name);
@@ -2773,9 +2798,18 @@ function syncLocales(options) {
         );
       }
       const nextEntries = baseFile.data.entries.map((baseEntry) => {
-        if (existing.has(baseEntry.id)) return existing.get(baseEntry.id);
-        added++;
         const baseRecord = { id: baseEntry.id, domain: baseFile.data.domain, entry: baseEntry };
+        if (existing.has(baseEntry.id)) {
+          const current = existing.get(baseEntry.id);
+          if (current.sourceContractHash === legacyTranslationSourceContractHash(baseRecord)) {
+            migrated++;
+            return Object.assign({}, current, {
+              sourceContractHash: computeTranslationSourceContractHash(baseRecord),
+            });
+          }
+          return current;
+        }
+        added++;
         return {
           id: baseEntry.id,
           text: baseEntry.text,
@@ -2799,7 +2833,7 @@ function syncLocales(options) {
         changedFiles.push(filePath);
       }
     });
-    results.push({ locale, added, changedFiles });
+    results.push({ locale, added, migrated, changedFiles });
   });
   return results;
 }
@@ -2989,7 +3023,8 @@ function runCli(argv) {
     if (parsed.all || parsed.rest.length) throw new ContentWorkflowError('sync-locales akzeptiert nur --locale.');
     const results = syncLocales(parsed.locale ? { locale: parsed.locale } : {});
     results.forEach((result) => console.log(
-      result.locale + ': ' + result.added + ' Platzhalter ergaenzt, ' + result.changedFiles.length + ' Datei(en) aktualisiert.'
+      result.locale + ': ' + result.added + ' Platzhalter ergaenzt, ' + result.migrated +
+      ' Vertrags-Hash(es) migriert, ' + result.changedFiles.length + ' Datei(en) aktualisiert.'
     ));
     return 0;
   }

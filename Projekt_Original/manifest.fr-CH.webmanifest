@@ -4,7 +4,7 @@
   "description": "Votre bilan de santé personnel proposé par Helsana.",
   "lang": "fr-CH",
   "id": "./",
-  "start_url": "./?lang=fr-CH",
+  "start_url": "./",
   "scope": "./",
   "display": "standalone",
   "background_color": "#9A0941",

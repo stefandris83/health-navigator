@@ -116,7 +116,7 @@ test('Installationsmanifeste werden deterministisch aus dem jeweiligen Sprachkat
     assert.strictEqual(fs.readFileSync(manifestFile, 'utf8'), expected, locale + ': Manifest-Katalogbindung');
     const manifest = JSON.parse(expected);
     assert.strictEqual(manifest.lang, locale);
-    assert.strictEqual(manifest.start_url, './?lang=' + locale);
+    assert.strictEqual(manifest.start_url, './');
   });
   assert.strictEqual(
     fs.readFileSync(path.join(PROJECT_ROOT, 'manifest.webmanifest'), 'utf8'),
@@ -1348,6 +1348,57 @@ test('Geaenderter DE-Ausgangsvertrag macht Uebersetzungen sichtbar veraltet und 
     assert.strictEqual(
       plan.nextCatalog.entries[0].translationEntry.sourceContractHash,
       Workflow.computeTranslationSourceContractHash(stale.entries[0].baseRecord)
+    );
+  });
+});
+
+test('Uebersetzungsvertrag bindet Text, section und context und migriert nur den exakten Altvertrag', () => {
+  withTempFixture(null, (paths) => {
+    writeTranslationFixture(paths, 'fr-CH');
+    const base = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'de-CH' });
+    const baseRecord = base.entries[0];
+    const legacyHash = Workflow.sha256(Workflow.stableStringify({
+      schemaVersion: Workflow.SCHEMA_VERSION,
+      locale: Workflow.DEFAULT_LOCALE,
+      domain: baseRecord.domain,
+      id: baseRecord.id,
+      text: baseRecord.entry.text,
+      kind: baseRecord.entry.kind,
+      reviewers: ['Marketing', 'Medizin'],
+      requiredTerms: baseRecord.entry.requiredTerms,
+      comment: baseRecord.entry.comment,
+    }));
+    const overlayFile = path.join(paths.contentDir, 'locales', 'fr-CH', 'test.json');
+    const overlay = JSON.parse(fs.readFileSync(overlayFile, 'utf8'));
+    overlay.entries[0].sourceContractHash = legacyHash;
+    fs.writeFileSync(overlayFile, JSON.stringify(overlay, null, 2) + '\n', 'utf8');
+
+    const migrated = Workflow.syncLocales({ contentDir: paths.contentDir, locale: 'fr-CH' });
+    assert.strictEqual(migrated[0].migrated, 1);
+    const before = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'fr-CH' });
+    assert.deepStrictEqual(before.staleSourceIds, []);
+    const initialHash = before.entries[0].translationEntry.sourceContractHash;
+    assert.strictEqual(initialHash, Workflow.computeTranslationSourceContractHash(baseRecord));
+
+    const baseData = JSON.parse(fs.readFileSync(paths.jsonFile, 'utf8'));
+    baseData.entries[0].context = 'Neuer fachlicher Kontext';
+    fs.writeFileSync(paths.jsonFile, JSON.stringify(baseData, null, 2) + '\n', 'utf8');
+    const stale = Workflow.loadCatalog({ contentDir: paths.contentDir, locale: 'fr-CH' });
+    assert.deepStrictEqual(stale.staleSourceIds, ['result.test.primary']);
+    assert.notStrictEqual(
+      Workflow.computeTranslationSourceContractHash(stale.entries[0].baseRecord),
+      initialHash,
+      'context muss den Quellvertrag veraendern'
+    );
+
+    const synced = Workflow.syncLocales({ contentDir: paths.contentDir, locale: 'fr-CH' });
+    assert.strictEqual(synced[0].migrated, 0, 'fachlich veralteter Hash darf nicht automatisch erneuert werden');
+    assert.deepStrictEqual(
+      JSON.parse(fs.readFileSync(
+        overlayFile,
+        'utf8'
+      )).entries[0].sourceContractHash,
+      initialHash
     );
   });
 });

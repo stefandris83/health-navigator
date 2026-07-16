@@ -296,13 +296,45 @@
     return !Number.isFinite(n) || n < (q.min ?? -Infinity) || n > (q.max ?? Infinity);
   }
 
-  function optionButton(q, opt) {
+  function optionButton(q, opt, optionIndex, selectedIndex) {
     const v = state.answers[q.id];
     const pressed = q.type === 'multi' ? (Array.isArray(v) && v.includes(opt.value)) : v === opt.value;
+    const rovingTabindex = q.type === 'multi' ? '' : ` tabindex="${optionIndex === Math.max(0, selectedIndex) ? '0' : '-1'}"`;
     return `<button type="button" class="option ${q.type === 'multi' ? 'multi' : ''}" role="${q.type === 'multi' ? 'checkbox' : 'radio'}"
       aria-checked="${pressed}" data-action="opt" data-q="${escAttr(q.id)}" data-type="${q.type}" data-value="${escAttr(opt.value)}"
-      ${opt.exclusive ? 'data-exclusive="1"' : ''}>
+      ${opt.exclusive ? 'data-exclusive="1"' : ''}${rovingTabindex}>
       <span class="opt-label">${opt.label}</span><span class="tick">${I.check}</span></button>`;
+  }
+
+  function questionIllustrationVariant(gender) {
+    if (gender === 'maennlich') return 'maennlich';
+    if (gender === 'weiblich' || gender === 'intersex') return 'weiblich';
+    return null;
+  }
+
+  function questionIllustrationHTML(q) {
+    if (!q.illustrations) return '';
+    const variant = questionIllustrationVariant(state.answers.geschlecht);
+    const src = variant ? q.illustrations[variant] : '';
+    return `<div class="q-illustration-wrap"${src ? '' : ' hidden'}>
+      <img class="q-illustration" data-question-illustration
+        data-src-weiblich="${escAttr(q.illustrations.weiblich)}" data-src-maennlich="${escAttr(q.illustrations.maennlich)}"
+        ${src ? `src="${escAttr(src)}" ` : ''}alt="" aria-hidden="true" width="1024" height="1024"
+        loading="lazy" decoding="async" />
+    </div>`;
+  }
+
+  function refreshQuestionIllustrations() {
+    const variant = questionIllustrationVariant(state.answers.geschlecht);
+    app.querySelectorAll('[data-question-illustration]').forEach((image) => {
+      const wrapper = image.closest('.q-illustration-wrap');
+      if (!variant) {
+        if (wrapper) wrapper.hidden = true;
+        return;
+      }
+      image.src = variant === 'maennlich' ? image.dataset.srcMaennlich : image.dataset.srcWeiblich;
+      if (wrapper) wrapper.hidden = false;
+    });
   }
 
   function questionHTML(q) {
@@ -312,11 +344,11 @@
       const v = state.answers[q.id] ?? '';
       const invalid = numberInputInvalid(q, v);
       const errorId = `q-error-${q.id}`;
-      const describedBy = [noteId, errorId].filter(Boolean).join(' ');
+      const describedBy = [noteId, invalid ? errorId : ''].filter(Boolean).join(' ');
       body = `<div class="num-field">
         <input type="number" inputmode="numeric" data-action="num" data-q="${escAttr(q.id)}"
           min="${q.min ?? ''}" max="${q.max ?? ''}" value="${escAttr(v)}" placeholder="${escAttr(q.placeholder || '')}"
-          aria-label="${escAttr(q.text)}" aria-describedby="${escAttr(describedBy)}"
+          aria-label="${escAttr(q.text)}"${describedBy ? ` aria-describedby="${escAttr(describedBy)}"` : ''}
           aria-required="${!q.optional}" aria-invalid="${invalid}" />
         ${q.unit ? `<span class="num-unit">${q.unit}</span>` : ''}
       </div>
@@ -326,13 +358,17 @@
       const opts = q.options.slice();
       if (q.dontKnow) opts.push(window.DONT_KNOW);
       const cols = opts.length > 3 && opts.every((o) => o.label.length < 28) ? 'cols-2' : '';
-      body = `<div class="options ${cols}" role="${q.type === 'multi' ? 'group' : 'radiogroup'}" aria-label="${escAttr(q.text)}"${noteId ? ` aria-describedby="${escAttr(noteId)}"` : ''}>${opts.map((o) => optionButton(q, o)).join('')}</div>`;
+      const selectedIndex = q.type === 'single'
+        ? opts.findIndex((option) => state.answers[q.id] === option.value)
+        : -1;
+      body = `<div class="options ${cols}" role="${q.type === 'multi' ? 'group' : 'radiogroup'}" aria-label="${escAttr(q.text)}"${noteId ? ` aria-describedby="${escAttr(noteId)}"` : ''}>${opts.map((o, index) => optionButton(q, o, index, selectedIndex)).join('')}</div>`;
     }
     return `<div class="question" data-qwrap="${escAttr(q.id)}">
       <div class="q-text">${q.text}</div>
       ${q.note ? `<div class="q-note" id="${escAttr(noteId)}">${q.note}</div>` : ''}
       ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle">${I.info} ${escHtml(q.helpTitle || copy.get('ui.quiz.help_fallback'))}</summary><div class="q-help">${String(q.help).replace(/\n/g, '<br>')}</div></details>` : ''}
       ${body}
+      ${questionIllustrationHTML(q)}
     </div>`;
   }
 
@@ -589,9 +625,11 @@
         if (n != null && n <= -1) out.push({ label, n });
       });
     }
-    // Körperzusammensetzung zählt zu den Einflussfaktoren (S-1.1), ist aber
-    // keine Frage-Norm – bei Adipositas-Einstufung als starkes Thema ergänzen.
-    if (dimId === 'einfluss' && results.metrics && String(results.metrics.bmiClass || '').indexOf('adipositas') === 0) {
+    // Körperzusammensetzung zählt zu den Einflussfaktoren, ist aber keine
+    // Frage-Norm. Score, Signal, Kardio-Muster und Zusammenfassung verwenden
+    // deshalb denselben zentral berechneten Körperrisiko-Vertrag.
+    if (dimId === 'einfluss' && results.metrics && results.metrics.bodyRisk
+        && results.metrics.bodyRisk.norm <= -1) {
       out.push({ label: copy.get('ui.hero.topic.koerperzusammensetzung'), n: -2 });
     }
     out.sort((a, b) => a.n - b.n);
@@ -1302,8 +1340,35 @@
     const wrap = t.closest('[data-qwrap]');
     const error = wrap && wrap.querySelector('[data-number-error]');
     if (error) error.hidden = !invalid;
+    const describedBy = [q && q.note ? `q-note-${id}` : '', invalid && error ? error.id : '']
+      .filter(Boolean)
+      .join(' ');
+    if (describedBy) t.setAttribute('aria-describedby', describedBy);
+    else t.removeAttribute('aria-describedby');
     save();
     updateNextState();
+  });
+
+  app.addEventListener('keydown', (event) => {
+    const radio = event.target.closest('.option[role="radio"][data-action="opt"]');
+    if (!radio) return;
+    const group = radio.closest('[role="radiogroup"]');
+    if (!group) return;
+    const radios = Array.from(group.querySelectorAll('.option[role="radio"][data-action="opt"]'));
+    const currentIndex = radios.indexOf(radio);
+    if (currentIndex < 0 || !radios.length) return;
+
+    let nextIndex = null;
+    if (event.key === 'ArrowRight' || event.key === 'ArrowDown') nextIndex = (currentIndex + 1) % radios.length;
+    else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') nextIndex = (currentIndex - 1 + radios.length) % radios.length;
+    else if (event.key === 'Home') nextIndex = 0;
+    else if (event.key === 'End') nextIndex = radios.length - 1;
+    if (nextIndex == null) return;
+
+    event.preventDefault();
+    const nextRadio = radios[nextIndex];
+    nextRadio.focus();
+    if (nextRadio.getAttribute('aria-checked') !== 'true') handleOption(nextRadio);
   });
 
   // 4-Wochen-Plan: Abhaken persistieren (bleibt auf dem Gerät)
@@ -1351,8 +1416,10 @@
         const v = state.answers[id];
         const pressed = type === 'multi' ? (Array.isArray(v) && v.includes(opt.dataset.value)) : v === opt.dataset.value;
         opt.setAttribute('aria-checked', pressed);
+        if (type === 'single') opt.tabIndex = pressed ? 0 : -1;
       });
     }
+    if (id === 'geschlecht') refreshQuestionIllustrations();
     updateNextState();
   }
 
@@ -1387,6 +1454,44 @@
     }
   }
 
+  function isolateModal(backdrop) {
+    const siblings = Array.from(document.body.children)
+      .filter((element) => element !== backdrop)
+      .map((element) => ({
+        element,
+        hadInert: element.hasAttribute('inert'),
+        ariaHidden: element.getAttribute('aria-hidden'),
+      }));
+    siblings.forEach(({ element }) => {
+      element.setAttribute('inert', '');
+      element.setAttribute('aria-hidden', 'true');
+    });
+
+    const guardFocus = (event) => {
+      if (backdrop.contains(event.target)) return;
+      const target = backdrop.querySelector('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+      if (target) target.focus();
+    };
+    document.addEventListener('focusin', guardFocus, true);
+
+    let released = false;
+    return () => {
+      if (released) return;
+      released = true;
+      document.removeEventListener('focusin', guardFocus, true);
+      siblings.forEach(({ element, hadInert, ariaHidden }) => {
+        if (!hadInert) element.removeAttribute('inert');
+        if (ariaHidden == null) element.removeAttribute('aria-hidden');
+        else element.setAttribute('aria-hidden', ariaHidden);
+      });
+    };
+  }
+
+  function restoreModalFocus(opener) {
+    if (!opener || !opener.isConnected || typeof opener.focus !== 'function') return;
+    try { opener.focus(); } catch (error) {}
+  }
+
   function showModal({ title, message, confirmText, cancelText }) {
     return new Promise((resolve) => {
       const opener = document.activeElement;
@@ -1403,16 +1508,18 @@
         </div>`;
       document.body.appendChild(back);
       requestAnimationFrame(() => back.classList.add('open'));
+      const cBtn = back.querySelector('[data-modal="confirm"]');
+      if (cBtn) cBtn.focus();
+      const releaseIsolation = isolateModal(back);
       let settled = false;
       const done = (val) => {
         if (settled) return;
         settled = true;
         document.removeEventListener('keydown', onKey);
         back.classList.remove('open');
+        releaseIsolation();
         setTimeout(() => back.remove(), 180);
-        if (opener && typeof opener.focus === 'function') {
-          try { opener.focus(); } catch (e) {}
-        }
+        restoreModalFocus(opener);
         resolve(val);
       };
       function onKey(event) {
@@ -1425,7 +1532,6 @@
         else if (e.target.closest('[data-modal="confirm"]')) done('confirm');
       });
       document.addEventListener('keydown', onKey);
-      const cBtn = back.querySelector('[data-modal="confirm"]'); if (cBtn) cBtn.focus();
     });
   }
 
@@ -1551,6 +1657,8 @@
     const input = back.querySelector('input');
     const status = back.querySelector('[data-status]');
     const opener = document.activeElement;
+    if (input) { input.focus(); input.select(); }
+    const releaseIsolation = isolateModal(back);
     let closed = false;
     let focusTimer = null;
     const close = () => {
@@ -1559,10 +1667,9 @@
       if (focusTimer) clearTimeout(focusTimer);
       document.removeEventListener('keydown', onKey);
       back.classList.remove('open');
+      releaseIsolation();
       setTimeout(() => back.remove(), 180);
-      if (opener && typeof opener.focus === 'function') {
-        try { opener.focus(); } catch (e) {}
-      }
+      restoreModalFocus(opener);
     };
     function onKey(event) {
       if (event.key === 'Escape') close();
