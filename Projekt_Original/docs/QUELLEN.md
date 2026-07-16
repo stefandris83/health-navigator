@@ -174,7 +174,7 @@ Taille-Grösse-Verhältnisses](https://www.nice.org.uk/guidance/ng246/chapter/Id
   0,50 bis < 0,60 erhöhter und ≥ 0,60 deutlich erhöhter Referenzbereich). Ohne
   Taillenangabe dient der BMI als Ersatzgrösse.
 - Die absoluten Umfangsschwellen stammen aus Erwachsenenreferenzen. Da der Check
-  derzeit Personen ab 12 Jahren zulässt, bleibt die Referenzwahl für 12- bis
+  Personen ab 16 Jahren zulässt, bleibt die Referenzwahl für 16- und
   17-Jährige eine offene medizinische Helsana-Entscheidung; der technische Stand
   wendet die gewählte Tabelle auch dort an und kennzeichnet die Texte zur Freigabe.
 - Das sichtbare Messprotokoll entspricht nun dem WHO-Protokoll: nach normalem
@@ -249,8 +249,9 @@ Der Fragebogen folgt dem offiziellen, rechtlich geprüften Fragenset **«Fragebo
 mit **sechs Abschnitten**: *Persönliche Angaben, Einflussfaktoren, Körperliche Fitness,
 Ernährung, Schlaf, Mentale Gesundheit*. Die *Persönlichen Angaben* liefern
 nur Kennzahlen (Alter, Geschlecht, BMI, Taille-Grösse-Verhältnis) und erhalten **keinen**
-Score; bewertet werden die **fünf** übrigen Dimensionen gemäss Score-Dokument
-(S-1 … S-5).
+Score; bewertet werden die **fünf** übrigen Dimensionen. Das vollständig
+implementierte Modell mit allen Gewichten, Gegenchecks, Signalen und
+Empfehlungsregeln steht in [`SCORING_MODELL.md`](SCORING_MODELL.md).
 
 **Normierung (−2 … +2 → 0–100).** Jede bewertete Antwort wird auf eine transparente
 interne Skala normiert: `+2` sehr gut, `0` neutral, `−2` kritisch (siehe Tabelle `NORMS`
@@ -264,25 +265,25 @@ score = round((norm + 2) / 4 × 100)      // −2 → 0, 0 → 50, +2 → 100
 Der **Gesamtscore** ist der gleichgewichtete Mittelwert der fünf Dimensionen. Fehlende
 Antworten werden neutral (50) behandelt.
 
-**Gegenchecks (Deckelung).** Eine gute Bewertung wird auf «neutral» begrenzt, wenn eine
-kritische Kernangabe vorliegt – z. B. regelmässiges Rauchen oder Adipositas
-(Einflussfaktoren), geringe Sättigungswahrnehmung (Ernährung), starke Alltags­beeinträchtigung
-durch Schlaf, oder fehlende Sinnhaftigkeit/positive Emotionen (Mentales Wohlbefinden).
-Seit dem Kohärenzreview Juli 2026 löst jede Antwort, die eine solche Deckelung auslöst,
-auch eine sichtbare, passende Empfehlung aus; die Ursache eines Scores von 50 bleibt
-damit nicht mehr unerklärt.
+**Gegenchecks (Deckelung).** Aktuelles Rauchen oder ein deutlich ungünstiges
+Körperprofil begrenzen die Einflussfaktoren auf höchstens 50. Beim Schlaf wirkt die
+Alltagsbeeinträchtigung abgestuft: «spürbar» begrenzt auf 75, «deutlich» oder
+«massiv» auf 50; «massiv» erzeugt zusätzlich ein medizinisches Signal. In der
+mentalen Dimension steuert eine gemeinsame kritische Definition sowohl das hohe
+medizinische Signal als auch die Begrenzung auf 50. Die Sättigungsfrage löst bei
+Bedarf eine Empfehlung aus, ist aber weder Scorebestandteil noch Scoredeckel.
 
-**Ausdauervertrag.** `activityStatus()` ist die gemeinsame Quelle für Zielerreichung,
-Stärken und Empfehlungen. Wer das moderate oder intensive WHO-Ziel erreicht, erhält
-keine widersprüchliche Ausbaukarte; alle übrigen vollständigen Kombinationen erhalten
-entweder einen Einstieg oder eine Ausbauempfehlung. Eine exakte Äquivalenzmischung aus
-beiden Intensitäten lässt sich aus den breiten Antwortintervallen nicht zuverlässig
-berechnen und bleibt eine offene Fragebogen-/Modellentscheidung.
+**Ausdauervertrag.** Moderate und intensive Aktivität bilden für den Score ein
+gemeinsames Aktivitätskomposit `A = max(Norm moderat, Norm intensiv)`; innerhalb
+der Kondition gilt `(2 × A + Treppenbelastung) / 3`. `activityStatus()` hält
+Zielerreichung, Stärken und Empfehlungen kohärent. Wer das moderate oder intensive
+WHO-Ziel erreicht, erhält keine widersprüchliche Ausbaukarte. Eine scheinpräzise
+Addition der breiten Antwortintervalle wird bewusst nicht vorgenommen.
 
 **Körperliche Fitness (Sub-Score-Modell 2/5 · 2/5 · 1/5).** Der Score setzt sich aus
-*Kondition* (Ausdauer moderat/intensiv, Treppen; 2/5), *Muskulatur* (Krafttraining,
-Tragen; 2/5) und *Balance/Beweglichkeit* (1/5) zusammen – entsprechend dem
-Score-Dokument. Die Gewichtung ist evidenzbasiert vertretbar: kardiorespiratorische
+*Kondition* (Aktivitätskomposit 2/3, Treppen 1/3; insgesamt 2/5), *Muskulatur*
+(Krafttraining, Tragen und optionale Krafttests; 2/5) und *Balance/Beweglichkeit*
+(1/5) zusammen. Die Gewichtung ist evidenzbasiert vertretbar: kardiorespiratorische
 Fitness ist der stärkste Einzelprädiktor der Gesamtmortalität (u. a. Mandsager et al.
 2018, JAMA Netw Open), Muskelkraft ein unabhängiger Prädiktor (u. a. Leong et al.
 2015, Lancet – Griffkraft; Yang et al. 2019, JAMA Netw Open – Liegestützkapazität),
@@ -444,8 +445,11 @@ verwendeten Schwellen oder Gewichtungen.
 **Kennzahlen der Körperzusammensetzung.** Für «weiblich»/«männlich» wird der
 **Taillenumfang geschlechtsspezifisch** (WHO-Schwellen) bewertet; für «intersex/andere»
 das geschlechtsneutrale **Taille-Grösse-Verhältnis** (WHtR, Ziel < 0,5). Ohne
-Taillenangabe dient der BMI als Ersatz. Diese Werte fliessen in die *Einflussfaktoren*
-ein und werden dort transparent ausgewiesen.
+Taillenangabe dient der BMI als Ersatz. Ein einziges zentrales Körperprofil steuert
+damit Score, Risikosignal, Ergebniszusammenfassung und kardiovaskuläres
+Antwortmuster; dieselbe Angabe kann nicht mehr je nach Ausgabekanal unterschiedlich
+eingeordnet werden. Diese Werte fliessen in die *Einflussfaktoren* ein und werden
+dort transparent ausgewiesen.
 
 **Signale statt Malus.** Nicht direkt beeinflussbare bzw. rein medizinische Angaben –
 **familiäres Risiko** und **Bluthochdruck** – ziehen **keine** Punkte ab, sondern
@@ -456,6 +460,11 @@ getrennt wird.
 
 **Statusstufen:** 80–100 *Stark*, 60–79 *Solide Basis*, 40–59 *Ausbaufähig*,
 0–39 *Erhöhte Aufmerksamkeit*.
+
+Der numerische Gesamtscore bleibt der gleichgewichtete Mittelwert. Liegt mindestens
+eine Dimension unter 40, kann der sichtbare Gesamtstatus jedoch höchstens
+*Solide Basis* sein. So wird eine Dimension mit erhöhter Aufmerksamkeit nicht durch
+vier hohe Werte sprachlich als insgesamt *Stark* überdeckt.
 
 **Darstellung der Dimensionsrückmeldung.** Eine grüne Erfolgsbox erscheint nur im
 Status *Stark* (ab 80), eine solide Rückmeldung zwischen 60 und 79 bewusst blau und
@@ -487,14 +496,14 @@ gerendert; bei Aktionsplanschritten wird dieselbe Aktionskarte gespiegelt.
 geklärt. Die frühere Sektion *«Selbst beeinflussen vs. ärztlich abklären»* wurde
 entfernt.
 
-Die kardiovaskuläre Top-Aktion fasst Familiengeschichte, bekannte Hypertonie,
-fehlende Vorsorge und unzureichendes Familienwissen gezielt zusammen. Ihre stabile
-`covers`-Liste verhindert deshalb die vier inhaltlich untergeordneten Detailkarten;
-die familienbezogene Copy nennt die Terminvorbereitung und relevante Angaben zur
-Familiengeschichte jetzt direkt in der Top-Aktion. Eine noch unbekannte
-Blutdrucksituation bleibt bewusst als ergänzende Messkarte sichtbar: Sie ist ein
-konkreter, noch nicht erledigter Messschritt und wird nicht durch die allgemeinere
-Kardio-Einordnung ersetzt.
+Die kardiovaskuläre Top-Aktion bündelt mehrere konkrete, veränderbare oder medizinisch
+einzuordnende Faktoren. Die breite Frage `familie_hk` umfasst neben Herz-Kreislauf-
+Erkrankungen auch Diabetes und andere erbliche Erkrankungen und zählt deshalb nicht
+mehr als kardiovaskulärer Musterfaktor. Eine Ja-Antwort bleibt als eigenständiges
+medizinisches Signal und als Familien-/Vorsorgehinweis sichtbar. Bekannter
+Bluthochdruck und fehlende Vorsorge werden durch die Top-Aktion weiterhin gezielt
+abgedeckt; eine unbekannte Blutdrucksituation bleibt als konkreter Messschritt
+sichtbar.
 
 **Textarchitektur.** Bedingungen, Gewichte und Zuordnungen bleiben in
 `js/scoring.js` und `js/recommendations.js`. Sämtliche sichtbaren Texte der
@@ -620,31 +629,28 @@ bleiben unverändert: *Taillenumfang*, *familiäre Erkrankungen (ja/nein)*, *Blu
   g/kg-Tageswerte ergibt und mehrere Beispiele die behauptete Menge nicht zuverlässig
   abbildeten. Score und Trigger bleiben unverändert als Gewohnheitsindikator.
 
+**Zielaltervertrag:** Der Check akzeptiert Personen ab 16 Jahren. Bei 16- und
+17-Jährigen bleiben eingegebene Fitness-Kurztests als persönliche Rohwerte sichtbar,
+werden wegen der erst später beginnenden Referenztabellen aber nicht eingestuft,
+gescort oder für automatische Empfehlungen verwendet. Der Einbeinstand und der
+Wandsitz werden ab 18 Jahren referenziert, der Liegestütz-Test ab 20 Jahren.
+
 ## Offene fachliche Entscheidungen vor Produktivgang
 
 Diese Punkte wurden bewusst **nicht** ohne medizinische bzw. Product-Entscheidung
 im Code verändert:
 
-1. **Zielalter:** Der Fragebogen akzeptiert aktuell Personen ab 12 Jahren, während
-   wesentliche Bewegungs-, BMI-, Vorsorge- und Fitnessreferenzen für Erwachsene
-   formuliert sind; die Liegestütz-Normtabellen beginnen fachlich erst bei 20.
-   Vor Produktivgang entweder das Mindestalter auf den Erwachsenenbereich begrenzen
-   oder ein fachlich freigegebenes Jugendmodell mit eigenen Texten und Normen ergänzen.
-2. **Liegestütz-Protokoll:** Die weibliche CSEP-Referenztabelle basiert auf der
+1. **Liegestütz-Protokoll:** Die weibliche CSEP-Referenztabelle basiert auf der
    Knie-Variante, die sichtbare Testanleitung beschreibt jedoch den
    Standard-Liegestütz. Anleitung, erfasste Variante und Referenztabelle müssen
    vor einer Freigabe dasselbe Protokoll abbilden.
-3. **Kardiovaskuläres Mustermodell:** Die Faktoren in `cvRiskPattern()` verwenden
-   nachvollziehbare, aber heuristische Gewichte (z. B. 2 für Rauchen/
-   Familiengeschichte/Bluthochdruck, 1,5 für Adipositas und 1 für weitere
-   Faktoren) sowie die Schwelle 3. Diese Werte benötigen eine benannte fachliche
+2. **Kardiovaskuläres Mustermodell:** Die Faktoren in `cvRiskPattern()` verwenden
+   nachvollziehbare, aber heuristische Gewichte (z. B. 2 für Rauchen oder
+   Bluthochdruck, 1,5 für ein Körperprofil mittlerer Signalstärke und 1 für
+   weitere Faktoren) sowie die Schwelle 3. Diese Werte benötigen eine benannte fachliche
    Eigentümerschaft, Versionierung und explizite medizinische Freigabe; sie sind
    kein validierter klinischer Risikoscore.
-4. **Gesamtscore und Status:** Der gleichgewichtete Mittelwert kann eine sehr schwache
-   Einzeldimension durch vier hohe Werte verdecken (z. B. viermal 100 und einmal 0
-   ergeben 80). Eine fachlich freigegebene Regel für Mindestdimension,
-   Streuungsstrafe oder Verzicht auf den Gesamtstatus ist vor Go-live nötig.
-5. **Optionale Fitnesstests:** Der technische Feedbackpfad für 1–3 ausgefüllte Tests,
+3. **Optionale Fitnesstests:** Der technische Feedbackpfad für 1–3 ausgefüllte Tests,
    vorsichtige Referenzhinweise, passende Empfehlungen und sichere Woche-4-Retests
    ist implementiert. Die Zuordnung des Wandsitzes zur Muskulatur sowie der
    gemeinsame Krafttestblock sind medizinisch freigegeben und technisch umgesetzt.
@@ -654,25 +660,26 @@ im Code verändert:
    Protokoll-/Referenzangleichung bei Liegestützen, die Produktivfreigabe der nur
    eingeschränkt belegten 60–69- und der extrapolierten 70+-Wandsitzbänder sowie der
    Sicherheitsvertrag für maximale Wandsitz-Retests.
-6. **Ernährungsmodell:** Die Grenzwerte für Pflanzenvielfalt, die Häufigkeit von drei
+4. **Ernährungsmodell:** Die Grenzwerte für Pflanzenvielfalt, die Häufigkeit von drei
    Gelegenheiten mit Proteinquellen, die Gleichsetzung von Fisch und
-   Omega-3-Supplement sowie die harte Sättigungsdeckelung sind kein validierter
-   Gesamt-Ernährungsscore. Die Proteintexte sind evidenzgerecht eingeordnet; für eine
+   Omega-3-Supplement sind kein validierter Gesamt-Ernährungsscore. Die
+   Sättigungsfrage wirkt nur noch auf Empfehlungen. Die Proteintexte sind
+   evidenzgerecht eingeordnet; für eine
    echte g/kg-Bewertung wären jedoch eine separate Mengenerfassung und ein
    medizinischer Sicherheitsvertrag nötig. Die WHO nennt als robuste Grundlagen unter
    anderem Vielfalt, mindestens 400 g Früchte/Gemüse und 25 g natürlich vorkommende
    Ballaststoffe pro Tag (ab 10 Jahren).
-7. **Alkohol:** Konsumtage allein erfassen weder Menge noch episodischen hohen Konsum.
+5. **Alkohol:** Konsumtage allein erfassen weder Menge noch episodischen hohen Konsum.
    Vor einer medizinischen Risikoeinstufung ein freigegebenes Kurzscreening oder
    zusätzliche Mengen-/Binge-Fragen prüfen.
-8. **Mentales Wohlbefinden:** Die acht Aussagen sind kein validiertes klinisches
+6. **Mentales Wohlbefinden:** Die acht Aussagen sind kein validiertes klinisches
    Instrument und besitzen keinen Bezugszeitraum. Entweder als nicht-klinisches
    Ressourcenprofil kennzeichnen oder ein geeignetes validiertes Instrument samt
    Lizenz-, Datenschutz- und Eskalationsprüfung wählen.
-9. **Familienfrage:** `familie_hk` umfasst neben Herz-Kreislauf und Diabetes auch
-   sonstige erbliche Erkrankungen, wird im Kardio-Muster aber als kardiovaskuläre
-   Familiengeschichte gewertet. Frage differenzieren oder den Faktor bis dahin aus
-   dem Kardio-Modell entfernen.
+7. **Familienfrage:** Die breite Antwort wird nicht mehr als kardiovaskuläre
+   Familiengeschichte gewichtet. Falls Helsana sie später wieder als eigenen
+   Kardio-Faktor verwenden will, braucht es eine entsprechend differenzierte Frage
+   und einen medizinisch freigegebenen Vertrag.
 
 > **Disclaimer für die Weiterentwicklung:** Vor produktivem Einsatz sollten die
 > fachlichen Inhalte und Orientierungswerte – insbesondere die verwendeten

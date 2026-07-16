@@ -13,14 +13,14 @@
 ## Freigabestand
 
 - Sprache: `de-CH`
-- Quellversion: `v1:bd9003cece6b6efd152eab3da44e703222345c4e212979a3de593f1bc1d2ad6d`
+- Quellversion: `v1:37eba5640573b54475b47ed07fff1c43b961e3ec96c9000ef8c2c4f12845db26`
 - Gesamtbestand: **1185 Texte**
 - Freigegeben: **0** · Offen: **1185**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
-| Nicht geprüft | 871 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 314 | Ausdrücklich erneut zu prüfen |
+| Nicht geprüft | 857 | Noch kein gemeinsamer Freigabestatus gesetzt |
+| Prüfung erforderlich | 328 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
@@ -3644,23 +3644,25 @@ Themen in diesem Bereich:
 
 - Seitenelement: Empfehlungskarten
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.ei_familie.why`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Basiswerte zu kennen.
+> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
 - Seitenelement: Empfehlungskarten
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.ei_familie.step`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit ärztlich und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen.
+> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -3677,23 +3679,25 @@ Themen in diesem Bereich:
 
 - Seitenelement: 4-Wochen-Pläne
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familie.this_week`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) wann erkrankt ist – **besonders relevant: Männer vor 55, Frauen vor 65 Jahren**. Diese Information verschiebt den sinnvollen Startzeitpunkt Ihrer Vorsorge oft um Jahre nach vorn.
+> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
 - Seitenelement: 4-Wochen-Pläne
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familie.weeks_2_3`
+- Prüfhinweis: Pauschale kardiovaskuläre Laborempfehlung aus der breiten Familienfrage entfernt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Lassen Sie Basiswerte \(Blutdruck, Blutzucker, Blutfette inkl. ApoB/Lp\(a\)\) bestimmen und Ihr Risiko einordnen.
+> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Klären Sie mit der Fachperson, welche Basiswerte oder gezielten Untersuchungen zu Ihrer Familiengeschichte passen.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -3754,12 +3758,13 @@ Themen in diesem Bereich:
 
 - Seitenelement: 4-Wochen-Pläne
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familienwissen.this_week`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), ob **Herz\-Kreislauf\-Erkrankungen, Diabetes oder Krebs früh aufgetreten** sind – besonders relevant: Männer vor 55, Frauen vor 65 Jahren.
+> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), welche Herz\-Kreislauf\- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -3876,23 +3881,25 @@ Themen in diesem Bereich:
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.familie_hk.insight`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge nach vorn – oft um Jahre.
+> Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.familie_hk.clarify`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Wer an welcher Erkrankung und in welchem Alter erkrankt ist – besonders relevant ist ein Beginn vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen – und ob eine genetische Abklärung sinnvoll ist.
+> Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -5248,12 +5255,13 @@ Themen in diesem Bereich:
 
 - Seitenelement: Empfehlungskarten
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.fi_ausdauer.why`
+- Prüfhinweis: Beide gleichwertigen Aktivitätswege des Scoring-Vertrags ergänzt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Sie sind bereits etwas aktiv – schön\! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten rund 150 Minuten pro Woche.
+> Sie sind bereits etwas aktiv – schön\! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten pro Woche rund 150 Minuten moderate oder 75 Minuten intensive Aktivität; beides lässt sich kombinieren.
 
 #### Nächster Schritt: Empfehlungskarte · Körperliche Fitness · konkreter nächster Schritt
 
@@ -5397,12 +5405,13 @@ Themen in diesem Bereich:
 
 - Seitenelement: Handlungsfelder
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_ausdauer.label`
+- Prüfhinweis: Einseitige Nennung nur des moderaten Aktivitätsziels entfernt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Ausdauer Schritt für Schritt aufbauen \(Ziel: 150 Min./Woche\)
+> Ausdauer Schritt für Schritt aufbauen
 
 #### Detailtext: Handlungsfeld · Körperliche Fitness · Standardvariante
 
@@ -7343,12 +7352,13 @@ Themen in diesem Bereich:
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.schlaf.title`
+- Prüfhinweis: Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Wenig erholsamer Schlaf
+> Schlaf mit Handlungsbedarf
 
 #### Beschriftung: Gemeinsam in Fragebogen und Ergebnis · Schlaf · Kurzlabel für Navigation und Ergebnisvisualisierung
 
@@ -7401,22 +7411,23 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.schlaf.action`
-- Prüfhinweis: Starre Zeitangabe und absoluten Taktgebervergleich entfernt; durch Marketing und Medizin freigeben\.
+- Prüfhinweis: Lifestyle- und medizinischen Signalpfad gemeinsam abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Halten Sie die Aufstehzeit möglichst konstant, auch am Wochenende, und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Beides unterstützt einen regelmässigen Schlaf\-Wach\-Rhythmus.
+> Halten Sie die Aufstehzeit möglichst konstant und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Wenn Ihr Schlaf den Alltag stark beeinträchtigt oder Beschwerden anhalten, lassen Sie dies ärztlich einordnen.
 
 #### Risikosignal: Ergebnisseite, Lebensstil-Signal Schlaf
 
 - Seitenelement: Risikosignale
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.risk_signal.schlaf.label`
+- Prüfhinweis: Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Ihr Schlaf erholt Sie aktuell wenig.
+> Ihre Angaben weisen auf möglichen Handlungsbedarf beim Schlaf hin.
 
 #### Beschriftung: Stärke · Schlaf · Kurzlabel
 
@@ -7713,23 +7724,25 @@ Themen in diesem Bereich:
 
 - Seitenelement: Handlungsfelder
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_schlaf_abklaerung.label`
+- Prüfhinweis: An den tatsächlichen Trigger «massive Alltagsbeeinträchtigung» angepasst; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Anhaltende Erschöpfung ärztlich abklären
+> Starke Schlafbeeinträchtigung ärztlich abklären
 
 #### Detailtext: Handlungsfeld · Schlaf · Detailtext
 
 - Seitenelement: Handlungsfelder
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_schlaf_abklaerung.detail`
+- Prüfhinweis: Nicht erhobene ausreichende Schlafdauer und Erschöpfung entfernt; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Sie schlafen lange genug, sind aber massiv beeinträchtigt – das kann körperliche Ursachen haben und gehört in ärztliche Hände.
+> Ihr Schlaf beeinträchtigt Ihren Alltag massiv. Das kann verschiedene Ursachen haben und sollte ärztlich eingeordnet werden.
 
 #### Beschriftung: Handlungsfeld · Schlaf · Kurzlabel
 
@@ -7768,12 +7781,13 @@ Themen in diesem Bereich:
 
 - Seitenelement: Empfehlungskarten
 - Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.sl_qualitaet.why`
+- Prüfhinweis: Disjunktiv an die tatsächliche Auslöseregel angepasst; durch Marketing und Medizin freigeben\.
 
 **Aktueller Text**
 
-> Ihr Schlaf erholt Sie aktuell wenig und beeinträchtigt Ihren Alltag. Oft helfen schon Anpassungen an Umgebung und Abendroutine.
+> Ihre Angaben zeigen, dass Ihre Schlafqualität oder die Auswirkungen auf Ihren Alltag ein Ansatzpunkt sind. Oft helfen schon Anpassungen an Umgebung und Abendroutine.
 
 #### Nächster Schritt: Empfehlungskarte · Schlaf · konkreter nächster Schritt
 
@@ -12842,7 +12856,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> «Solide Basis» heisst bei Ihnen: Vieles trägt bereits – allen voran **{{strongestNominative}}** \({{strongestScore}}\). Den grössten Unterschied machen jetzt die nächsten Schritte **{{weakestPrepositional}}** \({{weakestScore}} von 100\){{topicSuffix}}.
+> «Solide Basis» heisst bei Ihnen: Vieles ist bereits gut aufgestellt – allen voran **{{strongestNominative}}** \({{strongestScore}}\). Den grössten Unterschied machen jetzt die nächsten Schritte **{{weakestPrepositional}}** \({{weakestScore}} von 100\){{topicSuffix}}.
 
 #### Dynamischer Text: Profil mit deutlichem Unterschied zwischen Dimensionen, Status stark
 

@@ -198,7 +198,11 @@
 
   function attachCatalogCopy(rule) {
     const prefix = 'recommendation.catalog.' + rule.id + '.';
-    return Object.assign({}, rule, {
+    const copiedRule = Object.assign({}, rule);
+    if (Array.isArray(copiedRule.covers)) {
+      copiedRule.covers = Object.freeze(copiedRule.covers.slice());
+    }
+    return Object.assign(copiedRule, {
       title: copyGet(prefix + 'title'),
       why: copyGet(prefix + 'why'),
       step: copyGet(prefix + 'step'),
@@ -243,7 +247,7 @@
     hohe_belastung: { dimension: 'mental', relatedRecommendationIds: ['me_unterstuetzung'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     bluthochdruck: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bluthochdruck', 'act_kardio'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     blutdruck_unbekannt: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bd_messen', 'act_kardio'], fields: ['title', 'insight', 'clarify'] },
-    familie_hk: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio', 'ei_familie', 'ei_familienwissen'], fields: ['title', 'insight', 'clarify', 'deepen'] },
+    familie_hk: { dimension: 'einfluss', relatedRecommendationIds: ['ei_familie', 'ei_familienwissen'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     vorsorge: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio', 'ei_vorsorge'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     untergewicht: { dimension: 'einfluss', relatedRecommendationIds: [], fields: ['title', 'insight', 'clarify', 'benefit'] },
     rauchen: { dimension: 'einfluss', relatedRecommendationIds: ['ei_rauchstopp'], fields: ['title', 'insight', 'action', 'deepen'] },
@@ -376,11 +380,13 @@
   function cvRiskPattern(c) {
     let r = 0;
     const why = [];
-    if (c.a.familie_hk === 'ja') { r += 2; why.push(kardioFactor('family_history')); }
     if (c.a.bluthochdruck === 'ja') { r += 2; why.push(kardioFactor('hypertension')); }
     else if (c.a.bluthochdruck === 'weiss_nicht') { r += 0.5; }
     if (oneOf(c.a.rauchen, 'ja_regelmaessig', 'ja_gelegentlich')) { r += 2; why.push(kardioFactor('smoking')); }
-    if (String(c.m.bmiClass || '').indexOf('adipositas') === 0) { r += 1.5; why.push(kardioFactor('body_composition')); }
+    if (c.m.bodyRisk && c.m.bodyRisk.severity === 'mittel') {
+      r += 1.5;
+      why.push(kardioFactor('body_composition'));
+    }
     if (oneOf(c.a.sitzzeit, 's9_10', 'ue10')) { r += 1; why.push(kardioFactor('long_sitting')); }
     if (c.activity.needsEntry) { r += 1; why.push(kardioFactor('low_activity')); }
     if ((c.scores.ernaehrung ?? 50) < 45) { r += 1; why.push(kardioFactor('nutrition_pattern')); }
@@ -394,17 +400,12 @@
   function kardioAction(c) {
     const why = cvRiskPattern(c).why.slice(0, 4);
     const bd = c.a.bluthochdruck === 'ja';
-    const fam = c.a.familie_hk === 'ja';
     let stepVariant;
     if (c.a.vorsorge === 'nein') {
-      if (fam && bd) stepVariant = 'assessment_needed_family_history_hypertension';
-      else if (fam) stepVariant = 'assessment_needed_family_history';
-      else if (bd) stepVariant = 'assessment_needed_hypertension';
+      if (bd) stepVariant = 'assessment_needed_hypertension';
       else stepVariant = 'assessment_needed';
     } else {
-      if (fam && bd) stepVariant = 'already_assessed_family_history_hypertension';
-      else if (fam) stepVariant = 'already_assessed_family_history';
-      else if (bd) stepVariant = 'already_assessed_hypertension';
+      if (bd) stepVariant = 'already_assessed_hypertension';
       else stepVariant = 'already_assessed';
     }
     return {
@@ -564,7 +565,7 @@
       id: 'lv_kardio', dim: 'einfluss', topic: 'vorsorge',
       action: kardioAction,
       absorbs: ['blutdruck'],
-      covers: ['ei_bluthochdruck', 'ei_familie', 'ei_vorsorge', 'ei_familienwissen'],
+      covers: ['ei_bluthochdruck', 'ei_vorsorge'],
       when: (c) => cvRiskPattern(c).r >= 3,
       prio: (c) => Math.min(10, 4 + cvRiskPattern(c).r) + (c.a.vorsorge === 'nein' ? 0.5 : 0),
     },
@@ -657,7 +658,7 @@
       rec: 'er_getraenke',
       when: (c) => oneOf(c.a.zuckergetraenke, 'w4_6', 'taeglich'),
       prio: (c) => (c.a.zuckergetraenke === 'taeglich' ? 7 : 5.5)
-        + (String(c.m.bmiClass || '').indexOf('adipositas') === 0 || c.m.bmiClass === 'uebergewicht' ? 0.5 : 0),
+        + (c.m.bodyRisk && c.m.bodyRisk.norm <= 0 ? 0.5 : 0),
     },
     {
       id: 'lv_verarbeitet', dim: 'ernaehrung', topic: 'verarbeitet',
@@ -1095,7 +1096,10 @@
     me_unterstuetzung: [{}, {}, {}],
     ei_stabilitaet: [{}, {}, {}],
     ei_vorsorge: [{ source: 'swissheart_werte' }, {}, {}],
-    ei_familie: [{}, { source: 'swissheart_werte' }, {}],
+    // Die Frage umfasst neben Herz-Kreislauf-Erkrankungen auch Diabetes und
+    // andere erbliche Erkrankungen. Deshalb hier keine pauschale Herzquelle
+    // verlinken; die passende Abklärung hängt von der konkreten Familienanamnese ab.
+    ei_familie: [{}, {}, {}],
     fi_beweglichkeit: [{}, {}, {}],
     fi_kondition: [{}, { source: 'bag_bewegung' }, {}],
     er_omega3: [{}, {}, {}],

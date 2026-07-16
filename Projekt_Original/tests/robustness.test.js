@@ -463,6 +463,30 @@ test('Repository bleibt frei von Betriebssystemartefakten und lokalen Benutzerpf
   assert.ok(/^\.DS_Store$/m.test(gitignore));
 });
 
+test('GitHub-Pages-Deployment prüft Content, Laufzeit und alle vier Sprachen vor dem Upload', () => {
+  const workflowPath = path.resolve(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml');
+  assert.ok(fs.existsSync(workflowPath), 'Deployment-Workflow fehlt');
+  const workflow = fs.readFileSync(workflowPath, 'utf8');
+  const requiredCommands = [
+    'node scripts/result-content.js validate',
+    'node scripts/result-content.js check',
+    'node tests/content-workflow.test.js',
+    'node tests/integration.test.js',
+    'node tests/robustness.test.js',
+    'node tests/ui-lifecycle.test.js',
+    'node tests/i18n-static.test.js',
+    'node tests/i18n-runtime.test.js',
+  ];
+
+  assert.ok(workflow.includes('uses: actions/setup-node@v4'));
+  requiredCommands.forEach((command) => assert.ok(workflow.includes(command), command));
+  assert.ok(
+    workflow.indexOf('Anwendung vor der Veröffentlichung prüfen') <
+      workflow.indexOf('Öffentliche Anwendung vorbereiten'),
+    'Prüfungen müssen vor dem Erzeugen des Upload-Artefakts laufen'
+  );
+});
+
 test('Quellenseite schützt Referrer und verwendet nur den verifizierten Herzstiftungs-Pfad', () => {
   const page = fs.readFileSync(path.join(ROOT, 'quellen.html'), 'utf8');
   const sourceCode = fs.readFileSync(path.join(ROOT, 'js', 'recommendations.js'), 'utf8');
@@ -534,11 +558,7 @@ test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollstän
       ? 'de-CH'
       : name.replace(/^manifest\.|\.webmanifest$/g, '');
     assert.strictEqual(manifest.lang, expectedLocale, name + ': Sprache');
-    assert.strictEqual(
-      new URL(manifest.start_url, 'https://example.test/app/').searchParams.get('lang'),
-      expectedLocale,
-      name + ': Startsprache'
-    );
+    assert.strictEqual(manifest.start_url, './', name + ': neutrale Startadresse');
     assert.strictEqual(manifest.scope, './');
     assert.strictEqual(manifest.display, 'standalone');
     assert.strictEqual(manifest.theme_color, '#9A0941');
@@ -586,6 +606,30 @@ test('Helsana-Logo ist lokal, unverändert und frei von aktiven SVG-Inhalten', (
   assert.ok(/^<svg\b/.test(svg));
   assert.ok(svg.includes('viewBox="0 0 180 34"'));
   assert.ok(!/<script\b|<foreignObject\b|\son[a-z]+\s*=|\b(?:href|src)\s*=|javascript:/i.test(svg));
+});
+
+test('Alle Messillustrationen sind lokale quadratische PNG-Dateien und werden mit den Assets veröffentlicht', () => {
+  const slugs = ['taillenumfang', 'einbeinstand', 'liegestuetze', 'wandsitz'];
+  const variants = ['weiblich', 'maennlich'];
+  slugs.forEach((slug) => variants.forEach((variant) => {
+    const relativePath = `assets/illustrations/${slug}-${variant}.png`;
+    const png = fs.readFileSync(path.join(ROOT, relativePath));
+    assert.ok(
+      png.subarray(0, 8).equals(Buffer.from([137, 80, 78, 71, 13, 10, 26, 10])),
+      relativePath + ': PNG-Signatur fehlt'
+    );
+    assert.strictEqual(png.readUInt32BE(16), 1024, relativePath + ': falsche Breite');
+    assert.strictEqual(png.readUInt32BE(20), 1024, relativePath + ': falsche Höhe');
+  }));
+
+  const css = fs.readFileSync(path.join(ROOT, 'css/styles.css'), 'utf8');
+  assert.ok(css.includes('.q-illustration-wrap {'));
+  assert.ok(css.includes('width: min(100%, 420px)'));
+  assert.ok(css.includes('filter: grayscale(1)'));
+  assert.ok(css.includes('.q-illustration-wrap[hidden] { display: none; }'));
+
+  const pagesWorkflow = fs.readFileSync(path.join(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml'), 'utf8');
+  assert.ok(pagesWorkflow.includes('cp -R assets css js ../_site/'));
 });
 
 (async function run() {

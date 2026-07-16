@@ -19,12 +19,33 @@
     ? localeApi.getLocale()
     : 'de-CH';
 
+  const own = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
+
+  function hasCompleteTextContract(candidate, reference) {
+    if (!candidate || !candidate.texts || !reference || !reference.texts) return false;
+    const expectedIds = Object.keys(reference.texts);
+    const actualIds = Object.keys(candidate.texts);
+    return actualIds.length === expectedIds.length && expectedIds.every((id) =>
+      own(candidate.texts, id) && typeof candidate.texts[id] === 'string'
+    );
+  }
+
   let bundle = null;
+  let fallbackBundle = null;
   if (registry) {
-    if (!registry.bundles || !registry.bundles[requestedLocale]) {
-      throw new Error('ResultCopy: Text-Bundle fuer Sprache "' + requestedLocale + '" fehlt.');
+    fallbackBundle = registry.bundles && registry.bundles['de-CH'];
+    if (!hasCompleteTextContract(fallbackBundle, fallbackBundle)) {
+      throw new Error('ResultCopy: deutsches Notfall-Textbundle fehlt oder ist unvollstaendig.');
     }
-    bundle = registry.bundles[requestedLocale];
+    const requestedBundle = registry.bundles[requestedLocale];
+    if (hasCompleteTextContract(requestedBundle, fallbackBundle)) {
+      bundle = requestedBundle;
+    } else {
+      bundle = fallbackBundle;
+      if (localeApi && typeof localeApi.useRuntimeFallback === 'function') {
+        localeApi.useRuntimeFallback('de-CH');
+      }
+    }
   } else if (root && root.__RESULT_COPY_BUNDLE__) {
     // Rueckwaertskompatibilitaet fuer isolierte Integrations- und Unit-Tests.
     // Ein altes Einsprach-Bundle darf aber nie als stiller DE-Fallback fuer
@@ -37,8 +58,6 @@
   if (!bundle || !bundle.texts) {
     throw new Error('ResultCopy: js/result-copy.generated.js fehlt oder ist ungueltig.');
   }
-
-  const own = (obj, key) => Object.prototype.hasOwnProperty.call(obj, key);
 
   function escapeHtml(value) {
     return String(value == null ? '' : value)
@@ -72,13 +91,26 @@
     });
   }
 
+  function useDefaultFallback() {
+    if (!fallbackBundle || !hasCompleteTextContract(fallbackBundle, fallbackBundle)) return false;
+    bundle = fallbackBundle;
+    if (localeApi && typeof localeApi.useRuntimeFallback === 'function') {
+      localeApi.useRuntimeFallback('de-CH');
+    }
+    return true;
+  }
+
   if (root) {
-    root.ResultCopy = Object.freeze({
-      locale: bundle.locale || requestedLocale,
-      version: bundle.version,
-      sourceHash: bundle.sourceHash,
+    const api = {
+      get locale() { return bundle.locale || requestedLocale; },
+      get version() { return bundle.version; },
+      get sourceHash() { return bundle.sourceHash; },
       get,
       format,
-    });
+    };
+    // Interner Bootstrap-Hook fuer page-i18n; bewusst nicht Teil der
+    // dokumentierten oder enumerierbaren ResultCopy-API.
+    Object.defineProperty(api, '__useDefaultFallback', { value: useDefaultFallback });
+    root.ResultCopy = Object.freeze(api);
   }
 })();

@@ -569,7 +569,7 @@
       "context": "Profil mit deutlichem Unterschied zwischen Dimensionen, Status solide",
       "kind": "template",
       "reviewers": "Marketing, Medizin",
-      "text": "«Solide Basis» heisst bei Ihnen: Vieles trägt bereits – allen voran <b>{{strongestNominative}}</b> ({{strongestScore}}). Den grössten Unterschied machen jetzt die nächsten Schritte <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
+      "text": "«Solide Basis» heisst bei Ihnen: Vieles ist bereits gut aufgestellt – allen voran <b>{{strongestNominative}}</b> ({{strongestScore}}). Den grössten Unterschied machen jetzt die nächsten Schritte <b>{{weakestPrepositional}}</b> ({{weakestScore}} von 100){{topicSuffix}}.",
       "reviewStatus": "",
       "comment": ""
     },

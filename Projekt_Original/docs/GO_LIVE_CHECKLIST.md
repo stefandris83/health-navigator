@@ -79,15 +79,18 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Freigabeevidenz ausserhalb der CSV revisionsfähig führen.
 - [ ] Medizinische Schwellen, Normtabellen, Risikosignale, Notfalltexte und sämtliche
   personalisierten Empfehlungen freigeben.
-- [ ] Zielalter entscheiden: Der Fragebogen akzeptiert ab 12 Jahren, während Texte
-  und mehrere Referenz-/Normtabellen für Erwachsene formuliert sind und die
-  Liegestütznormen erst ab 20 beginnen.
+- [x] Mindestalter 16 technisch durchgängig umgesetzt: Jüngere Werte werden vom
+  zentralen Antwortschema verworfen. Bei 16- und 17-Jährigen bleiben optionale
+  Fitness-Kurztests als Rohwerte sichtbar, aber ohne Referenzstufe, Score-Einfluss
+  oder automatische Empfehlung; die Liegestütznorm beginnt weiterhin ab 20.
 - [ ] Referenzmodell der Körperzusammensetzung freigeben: absolute
   Taillenumfangsschwellen für Erwachsene versus einheitliches Taille-Grösse-Verhältnis,
-  insbesondere für 12- bis 17-Jährige sowie nahe den Grenzen 0,50 und 0,60.
-- [ ] Score-/Signalvertrag der Körperzusammensetzung entscheiden: Bei vorhandenem
-  Taillenumfang priorisiert der Score derzeit diesen Wert vor dem BMI, während das
-  Risikosignal auch durch einen BMI im Adipositasbereich ausgelöst werden kann.
+  insbesondere für 16- und 17-Jährige sowie nahe den Grenzen 0,50 und 0,60.
+- [x] Score-, Signal- und Kardio-Vertrag der Körperzusammensetzung vereinheitlichen:
+  Ein zentrales Körperprofil priorisiert bei Frau/Mann den Taillenumfang, bei
+  intersex/anderer Angabe das Taille-Grösse-Verhältnis und verwendet den BMI nur
+  ohne passende Taillenreferenz. Die medizinische Freigabe der Schwellen bleibt
+  davon getrennt offen.
 - [ ] Liegestütz-Protokoll vereinheitlichen: Die weibliche CSEP-Referenz nutzt die
   Knie-Variante, die aktuelle Anleitung beschreibt den Standard-Liegestütz.
 - [x] Die früheren praxisbasierten Wandsitz-Benchmarks ersetzen: Implementiert ist
@@ -102,17 +105,22 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 - [ ] Für das heuristische kardiovaskuläre Mustermodell (`cvRiskPattern`) fachliche
   Eigentümerschaft, Versionierung und medizinische Freigabe festlegen; es ist kein
   validierter Risikorechner.
-- [ ] Die Familienfrage fachlich vom Kardio-Mustermodell abgleichen: Sie umfasst
-  auch Diabetes und sonstige erbliche Erkrankungen, wird dort aber heute als
-  kardiovaskuläre Familiengeschichte gewichtet.
-- [ ] Entscheiden, wie der Gesamtstatus mit einer sehr schwachen Einzeldimension
-  umgeht. Der gleichgewichtete Mittelwert kann aktuell trotz eines Dimensionsscores
-  von 0 insgesamt 80 beziehungsweise «Stark» ergeben.
+- [x] Die breite Familienfrage vom Kardio-Mustermodell trennen: Sie umfasst auch
+  Diabetes und sonstige erbliche Erkrankungen und zählt deshalb nicht mehr als
+  kardiovaskulärer Musterfaktor. Eigenständiges medizinisches Signal und
+  Familienempfehlung bleiben erhalten.
+- [x] Gesamtstatus gegen das Überdecken einer sehr schwachen Dimension schützen:
+  Der numerische Wert bleibt der gleichgewichtete Mittelwert; liegt mindestens
+  eine Dimension unter 40, ist der sichtbare Status höchstens «Solide Basis».
+- [x] Moderate und intensive Aktivität im Fitnessscore als alternative Wege zum
+  Bewegungsziel behandeln: Der bessere Normwert bildet das gemeinsame
+  Aktivitätskomposit; die Treppenbelastung bleibt der alltagsnahe Gegenpart.
 - [x] Technischen Feedbackpfad für 1–3 ausgefüllte Fitness-Kurztests umsetzen:
   Rohwert, einheitliche vierstufige Statusbegriffe, passende Kraft-/Balance-
-  Empfehlung und persönlicher Woche-4-Retest sind vorhanden. Unpassende
-  Liegestützreferenzen sowie Wandsitzwerte unter 18 oder bei «intersex/andere»
-  bleiben ohne Kategorie, Statusfarbe, Score-Einfluss und automatische Empfehlung.
+  Empfehlung und persönlicher Woche-4-Retest sind vorhanden. Einbeinstand- und
+  Wandsitzwerte unter 18, Liegestützwerte ausserhalb von 20–69 sowie unpassende
+  geschlechtsspezifische Referenzen bleiben ohne Kategorie, Statusfarbe,
+  Score-Einfluss und automatische Empfehlung.
 - [x] Wandsitz im Fitness-Score medizinisch der Muskulatur zuordnen: Er misst lokale
   Bein-Kraftausdauer und bildet gemeinsam mit dem Liegestütz-Test die Testhälfte
   des Muskulatur-Sub-Scores; er wird nicht mehr der Kondition zugerechnet.
@@ -124,8 +132,9 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   g/kg/Tag als Orientierung, 2,0 g/kg/Tag nur als konditionalen Spielraum und
   berücksichtigt Minderjährige sowie medizinische Kontexte defensiv.
 - [ ] Verbleibendes Ernährungsmodell fachlich kalibrieren: Pflanzenvielfalt,
-  Fisch versus Supplement, Sättigungsdeckelung und die doppelte Gewichtung stark
-  verarbeiteter Lebensmittel benötigen eine explizite Begründung. Soll Protein
+  Fisch versus Supplement und die verwendeten Häufigkeitsschwellen benötigen eine
+  explizite Begründung. Die Sättigungsfrage ist scorefrei und löst nur noch eine
+  Empfehlung aus. Soll Protein
   künftig quantitativ bewertet werden, braucht es eine separate Mengenerfassung
   und einen medizinischen Sicherheitsvertrag; die heutige Frage leistet das nicht.
 - [ ] Alkoholerfassung um Menge und episodischen hohen Konsum ergänzen oder klar als
@@ -139,8 +148,9 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 - [ ] Den Ersatz der auffälligen Swissheart-Seite durch die geprüfte offizielle
   Werte-Seite medizinisch/redaktionell bestätigen und künftigen Linkrot-Prozess
   festlegen.
-- [ ] Kontrastbefunde bei gedämpften Texten und Statusfarben mit Brand/A11y
-  entscheiden. Im Review wurde keine sichtbare Markenfarbänderung vorgenommen.
+- [x] Gedämpfte Hilfstexte sowie kleine Status- und Fortschrittslabels erreichen
+  technisch mindestens WCAG-AA-Kontrast 4,5:1; Statushintergründe, Layout und
+  Abstände bleiben unverändert.
 
 ## Abnahme und Betrieb
 

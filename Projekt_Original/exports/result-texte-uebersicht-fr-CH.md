@@ -15,7 +15,7 @@
 ## Freigabestand
 
 - Sprache: `fr-CH`
-- Quellversion: `v1:28ba54385a7577cbafadf58edbab298a541df36a7584e2644bb5567649cbc4a3`
+- Quellversion: `v1:2753406ae033524b8a3a078df9e4ea8eea44d0672c1fdc016fcb1e0eef53b998`
 - Gesamtbestand: **1185 Texte**
 - Freigegeben: **0** · Offen: **1185**
 
@@ -4971,14 +4971,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.ei_familie.why`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Basiswerte zu kennen.
+> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.
 
 **Aktueller Text**
 
-> Des maladies cardiovasculaires, du diabète ou des maladies héréditaires sont présents dans votre famille proche. Ce n’est pas une fatalité, mais une bonne raison de connaître vos valeurs de base.
+> Des maladies cardiovasculaires, du diabète ou des maladies héréditaires sont présents dans votre famille proche. Ce n’est pas une fatalité, mais une bonne raison de faire évaluer vos antécédents familiaux par un ou une spécialiste de la santé.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -4986,14 +4987,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.ei_familie.step`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit ärztlich und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen.
+> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.
 
 **Aktueller Text**
 
-> À l’occasion, discutez de vos antécédents familiaux avec un médecin et faites mesurer des valeurs de base telles que la tension artérielle, la glycémie et les lipides sanguins.
+> À l’occasion, discutez de vos antécédents familiaux avec un ou une spécialiste de la santé et déterminez quels paramètres de base ou examens ciblés sont utiles dans votre cas.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5016,14 +5018,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familie.this_week`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) wann erkrankt ist – **besonders relevant: Männer vor 55, Frauen vor 65 Jahren**. Diese Information verschiebt den sinnvollen Startzeitpunkt Ihrer Vorsorge oft um Jahre nach vorn.
+> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
 
 **Aktueller Text**
 
-> Rassemblez les informations indiquant quels membres de votre famille proche, parents, frères et sœurs, ont été malades et à quel âge. Sont **particulièrement pertinents les hommes avant 55 ans et les femmes avant 65 ans**. Cette information avance souvent de plusieurs années le début pertinent de votre prévention.
+> Rassemblez les informations indiquant quels membres de votre famille proche, parents, frères et sœurs, ont développé quelle maladie et à quel âge. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5031,14 +5034,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familie.weeks_2_3`
+- Prüfhinweis: Pauschale kardiovaskuläre Laborempfehlung aus der breiten Familienfrage entfernt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Lassen Sie Basiswerte \(Blutdruck, Blutzucker, Blutfette inkl. ApoB/Lp\(a\)\) bestimmen und Ihr Risiko einordnen.
+> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Klären Sie mit der Fachperson, welche Basiswerte oder gezielten Untersuchungen zu Ihrer Familiengeschichte passen.
 
 **Aktueller Text**
 
-> Prenez rendez\-vous et apportez ces antécédents familiaux. Faites mesurer les valeurs de base, notamment la tension artérielle, la glycémie et les lipides sanguins, y compris l’ApoB et la Lp\(a\), et faites évaluer votre risque.
+> Prenez rendez\-vous et apportez ces antécédents familiaux. Déterminez avec le ou la spécialiste de la santé quels paramètres de base ou examens ciblés sont adaptés à vos antécédents familiaux.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5121,14 +5125,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familienwissen.this_week`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), ob **Herz\-Kreislauf\-Erkrankungen, Diabetes oder Krebs früh aufgetreten** sind – besonders relevant: Männer vor 55, Frauen vor 65 Jahren.
+> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), welche Herz\-Kreislauf\- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
 
 **Aktueller Text**
 
-> Demandez à vos proches, parents, frères et sœurs, si des **maladies cardiovasculaires, du diabète ou des cancers sont survenus précocement**. Sont particulièrement pertinents les hommes avant 55 ans et les femmes avant 65 ans.
+> Demandez à vos proches, parents, frères et sœurs, quelles maladies cardiovasculaires ou quels cancers sont survenus et à quel âge. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5287,14 +5292,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.familie_hk.insight`
+- Prüfhinweis: An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge nach vorn – oft um Jahre.
+> Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.
 
 **Aktueller Text**
 
-> Une prédisposition familiale n’est pas une fatalité, mais une information : elle avance le moment pertinent pour commencer la prévention, souvent de plusieurs années.
+> Une prédisposition familiale n’est pas une fatalité, mais une information importante. Elle aide les spécialistes de la santé à déterminer quelles mesures de prévention ou quels contrôles peuvent être utiles dans votre cas.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -5302,14 +5308,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.familie_hk.clarify`
+- Prüfhinweis: Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Wer an welcher Erkrankung und in welchem Alter erkrankt ist – besonders relevant ist ein Beginn vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen – und ob eine genetische Abklärung sinnvoll ist.
+> Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.
 
 **Aktueller Text**
 
-> La personne touchée et l’âge auquel la maladie est apparue, un début avant 55 ans chez les hommes ou avant 65 ans chez les femmes étant particulièrement pertinent, ainsi que l’utilité éventuelle d’une analyse génétique.
+> Les membres de votre famille touchés, la maladie concernée et l’âge auquel elle est apparue. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente. Le ou la spécialiste peut aussi déterminer si un conseil génétique est utile.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -7123,14 +7130,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.fi_ausdauer.why`
+- Prüfhinweis: Beide gleichwertigen Aktivitätswege des Scoring-Vertrags ergänzt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Sie sind bereits etwas aktiv – schön\! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten rund 150 Minuten pro Woche.
+> Sie sind bereits etwas aktiv – schön\! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten pro Woche rund 150 Minuten moderate oder 75 Minuten intensive Aktivität; beides lässt sich kombinieren.
 
 **Aktueller Text**
 
-> Vous êtes déjà un peu actif, c’est réjouissant. Davantage d’activité d’endurance renforce encore le cœur, la circulation et le métabolisme. Environ 150 minutes par semaine constituent un repère.
+> Vous êtes déjà un peu actif, c’est réjouissant. Davantage d’activité d’endurance renforce encore le cœur, la circulation et le métabolisme. À titre indicatif, comptez environ 150 minutes d’activité modérée ou 75 minutes d’activité intense par semaine; les deux peuvent être combinées.
 
 #### Nächster Schritt: Empfehlungskarte · Körperliche Fitness · konkreter nächster Schritt
 
@@ -7324,14 +7332,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_ausdauer.label`
+- Prüfhinweis: Einseitige Nennung nur des moderaten Aktivitätsziels entfernt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ausdauer Schritt für Schritt aufbauen \(Ziel: 150 Min./Woche\)
+> Ausdauer Schritt für Schritt aufbauen
 
 **Aktueller Text**
 
-> Développer votre endurance pas à pas \(objectif : 150 min/semaine\)
+> Développer votre endurance pas à pas
 
 #### Detailtext: Handlungsfeld · Körperliche Fitness · Standardvariante
 
@@ -9922,14 +9931,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.schlaf.title`
+- Prüfhinweis: Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Wenig erholsamer Schlaf
+> Schlaf mit Handlungsbedarf
 
 **Aktueller Text**
 
-> Sommeil peu réparateur
+> Sommeil nécessitant une attention particulière
 
 #### Beschriftung: Gemeinsam in Fragebogen und Ergebnis · Schlaf · Kurzlabel für Navigation und Ergebnisvisualisierung
 
@@ -9998,15 +10008,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.schlaf.action`
-- Prüfhinweis: Starre Zeitangabe und absoluten Taktgebervergleich entfernt; durch Marketing und Medizin freigeben\.
+- Prüfhinweis: Lifestyle- und medizinischen Signalpfad gemeinsam abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Halten Sie die Aufstehzeit möglichst konstant, auch am Wochenende, und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Beides unterstützt einen regelmässigen Schlaf\-Wach\-Rhythmus.
+> Halten Sie die Aufstehzeit möglichst konstant und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Wenn Ihr Schlaf den Alltag stark beeinträchtigt oder Beschwerden anhalten, lassen Sie dies ärztlich einordnen.
 
 **Aktueller Text**
 
-> Gardez une heure de lever aussi constante que possible, y compris le week\-end, et exposez\-vous à la lumière du jour dès que possible après le réveil. Ces deux mesures favorisent un rythme veille\-sommeil régulier.
+> Gardez une heure de lever aussi constante que possible et exposez\-vous à la lumière du jour dès que possible après le réveil. Si votre sommeil nuit fortement à votre quotidien ou si les troubles persistent, demandez un avis médical.
 
 #### Risikosignal: Ergebnisseite, Lebensstil-Signal Schlaf
 
@@ -10014,14 +10024,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.risk_signal.schlaf.label`
+- Prüfhinweis: Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ihr Schlaf erholt Sie aktuell wenig.
+> Ihre Angaben weisen auf möglichen Handlungsbedarf beim Schlaf hin.
 
 **Aktueller Text**
 
-> Votre sommeil vous apporte actuellement peu de récupération.
+> Vos réponses indiquent que votre sommeil mérite une attention particulière.
 
 #### Beschriftung: Stärke · Schlaf · Kurzlabel
 
@@ -10420,14 +10431,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_schlaf_abklaerung.label`
+- Prüfhinweis: An den tatsächlichen Trigger «massive Alltagsbeeinträchtigung» angepasst; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Anhaltende Erschöpfung ärztlich abklären
+> Starke Schlafbeeinträchtigung ärztlich abklären
 
 **Aktueller Text**
 
-> Faire examiner médicalement un épuisement persistant
+> Faire évaluer médicalement une forte gêne liée au sommeil
 
 #### Detailtext: Handlungsfeld · Schlaf · Detailtext
 
@@ -10435,14 +10447,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_schlaf_abklaerung.detail`
+- Prüfhinweis: Nicht erhobene ausreichende Schlafdauer und Erschöpfung entfernt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Sie schlafen lange genug, sind aber massiv beeinträchtigt – das kann körperliche Ursachen haben und gehört in ärztliche Hände.
+> Ihr Schlaf beeinträchtigt Ihren Alltag massiv. Das kann verschiedene Ursachen haben und sollte ärztlich eingeordnet werden.
 
 **Aktueller Text**
 
-> Vous dormez suffisamment longtemps, mais êtes fortement gêné au quotidien. Cela peut avoir des causes physiques qui nécessitent un contrôle médical.
+> Votre sommeil nuit fortement à votre quotidien. Cela peut avoir différentes causes et devrait faire l’objet d’une évaluation médicale.
 
 #### Beschriftung: Handlungsfeld · Schlaf · Kurzlabel
 
@@ -10495,14 +10508,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.catalog.sl_qualitaet.why`
+- Prüfhinweis: Disjunktiv an die tatsächliche Auslöseregel angepasst; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ihr Schlaf erholt Sie aktuell wenig und beeinträchtigt Ihren Alltag. Oft helfen schon Anpassungen an Umgebung und Abendroutine.
+> Ihre Angaben zeigen, dass Ihre Schlafqualität oder die Auswirkungen auf Ihren Alltag ein Ansatzpunkt sind. Oft helfen schon Anpassungen an Umgebung und Abendroutine.
 
 **Aktueller Text**
 
-> Votre sommeil vous apporte actuellement peu de récupération et nuit à votre quotidien. Des adaptations de l’environnement et de la routine du soir suffisent souvent déjà à améliorer la situation.
+> Vos réponses indiquent que la qualité de votre sommeil ou ses répercussions sur votre quotidien constituent un point de départ. Des adaptations de l’environnement et de la routine du soir suffisent souvent déjà à améliorer la situation.
 
 #### Nächster Schritt: Empfehlungskarte · Schlaf · konkreter nächster Schritt
 
@@ -17311,11 +17325,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> «Solide Basis» heisst bei Ihnen: Vieles trägt bereits – allen voran **{{strongestNominative}}** \({{strongestScore}}\). Den grössten Unterschied machen jetzt die nächsten Schritte **{{weakestPrepositional}}** \({{weakestScore}} von 100\){{topicSuffix}}.
+> «Solide Basis» heisst bei Ihnen: Vieles ist bereits gut aufgestellt – allen voran **{{strongestNominative}}** \({{strongestScore}}\). Den grössten Unterschied machen jetzt die nächsten Schritte **{{weakestPrepositional}}** \({{weakestScore}} von 100\){{topicSuffix}}.
 
 **Aktueller Text**
 
-> Pour vous, « Base solide » signifie que de nombreux éléments vous soutiennent déjà, en particulier **{{strongestNominative}}** \({{strongestScore}}\). Les prochaines étapes **{{weakestPrepositional}}** \({{weakestScore}} sur 100\){{topicSuffix}} feront maintenant la plus grande différence.
+> Pour vous, « Base solide » signifie que de nombreux aspects sont déjà bien en place, en particulier **{{strongestNominative}}** \({{strongestScore}}\). Les prochaines étapes **{{weakestPrepositional}}** \({{weakestScore}} sur 100\){{topicSuffix}} feront maintenant la plus grande différence.
 
 #### Dynamischer Text: Profil mit deutlichem Unterschied zwischen Dimensionen, Status stark
 

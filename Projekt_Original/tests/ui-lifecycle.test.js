@@ -67,6 +67,71 @@ test('Einbeinstand akzeptiert optionale Werte von 0 bis 1’000 Sekunden', () =>
   assert.strictEqual(schema.isDimensionComplete(dimension, { einbeinstand: 1001 }), false);
 });
 
+test('Messhilfen besitzen lokale Geschlechtsvarianten und Intersex verwendet die weibliche Illustration', () => {
+  const windowObject = makeQuestions();
+  const questions = Object.fromEntries(windowObject.DIMENSIONS
+    .flatMap((dimension) => dimension.questions)
+    .filter((question) => question.illustrations)
+    .map((question) => [question.id, question]));
+  const expectedSlugs = {
+    bauchumfang: 'taillenumfang',
+    einbeinstand: 'einbeinstand',
+    liegestuetze: 'liegestuetze',
+    wandsitz: 'wandsitz',
+  };
+
+  assert.deepStrictEqual(Object.keys(questions).sort(), Object.keys(expectedSlugs).sort());
+  Object.entries(expectedSlugs).forEach(([id, slug]) => {
+    assert.deepStrictEqual(questions[id].illustrations, {
+      weiblich: `assets/illustrations/${slug}-weiblich.png`,
+      maennlich: `assets/illustrations/${slug}-maennlich.png`,
+    });
+  });
+
+  const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+  const variantSource = source.match(/function questionIllustrationVariant\(gender\) \{[\s\S]*?\n  \}/);
+  assert.ok(variantSource, 'Geschlechtszuordnung der Illustrationen fehlt');
+  const variant = new Function(`${variantSource[0]}; return questionIllustrationVariant;`)();
+  assert.strictEqual(variant('maennlich'), 'maennlich');
+  assert.strictEqual(variant('weiblich'), 'weiblich');
+  assert.strictEqual(variant('intersex'), 'weiblich');
+  assert.strictEqual(variant(undefined), null);
+
+  const refreshSource = source.match(/function refreshQuestionIllustrations\(\) \{[\s\S]*?\n  \}/);
+  assert.ok(refreshSource, 'Dynamische Aktualisierung der Illustrationen fehlt');
+  const state = { answers: {} };
+  const image = {
+    dataset: { srcWeiblich: 'frau.png', srcMaennlich: 'mann.png' },
+    src: '',
+    closest() { return wrapper; },
+  };
+  const wrapper = { hidden: false };
+  const refresh = new Function(
+    'state',
+    'app',
+    `${variantSource[0]}; ${refreshSource[0]}; return refreshQuestionIllustrations;`
+  )(state, { querySelectorAll: () => [image] });
+  refresh();
+  assert.strictEqual(wrapper.hidden, true);
+  state.answers.geschlecht = 'maennlich';
+  refresh();
+  assert.strictEqual(image.src, 'mann.png');
+  assert.strictEqual(wrapper.hidden, false);
+  state.answers.geschlecht = 'weiblich';
+  refresh();
+  assert.strictEqual(image.src, 'frau.png');
+  state.answers.geschlecht = 'intersex';
+  refresh();
+  assert.strictEqual(image.src, 'frau.png');
+
+  assert.ok(source.includes('if (id === \'geschlecht\') refreshQuestionIllustrations();'));
+  assert.ok(source.includes('loading="lazy" decoding="async"'));
+  assert.ok(source.includes('alt="" aria-hidden="true"'));
+  assert.ok(source.includes("if (wrapper) wrapper.hidden = true;"));
+  assert.ok(source.includes('<div class="q-help">${String(q.help).replace(/\\n/g, \'<br>\')}</div>'));
+  assert.ok(source.includes('${body}\n      ${questionIllustrationHTML(q)}'));
+});
+
 test('URL-Allowlist akzeptiert nur absolute HTTPS-Ziele ohne Zugangsdaten', () => {
   const windowObject = {};
   runScript(windowObject, 'js/url-safety.js');
@@ -179,8 +244,91 @@ test('Ergebnislinks bleiben produktiv HTTPS-beschränkt und erlauben file nur im
 test('Formfelder und dynamische Statusbereiche besitzen belastbare ARIA-Verträge', () => {
   const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
   assert.ok(source.includes('aria-required="${!q.optional}" aria-invalid="${invalid}"'));
+  assert.ok(source.includes('const noteId = q.note ? `q-note-${q.id}` : \'\';'));
+  assert.ok(source.includes("const describedBy = [noteId, invalid ? errorId : ''].filter(Boolean).join(' ');"));
+  assert.ok(source.includes('describedBy ? ` aria-describedby="${escAttr(describedBy)}"` : \'\''));
+  assert.ok(source.includes("if (describedBy) t.setAttribute('aria-describedby', describedBy);"));
+  assert.ok(source.includes("else t.removeAttribute('aria-describedby');"));
+  assert.ok(source.includes('role="group" aria-label="${escAttr(copy.get(\'ui.quiz.progress_aria\'))}"'));
+  assert.ok(source.includes('<h1>${dim.title}</h1>'));
   assert.ok(source.includes('role="log" aria-live="polite" aria-relevant="additions"'));
   assert.ok(source.includes('role="status" aria-live="polite" aria-atomic="true"'));
+});
+
+test('Eigene Radio-Gruppen verwenden Roving-Tabindex und die vollständige Pfeiltastensteuerung', () => {
+  const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+
+  assert.ok(source.includes('const rovingTabindex = q.type === \'multi\' ? \'\' :'));
+  assert.ok(source.includes('opts.findIndex((option) => state.answers[q.id] === option.value)'));
+  assert.ok(source.includes('optionButton(q, o, index, selectedIndex)'));
+  assert.ok(source.includes("event.target.closest('.option[role=\"radio\"][data-action=\"opt\"]')"));
+  ['ArrowRight', 'ArrowDown', 'ArrowLeft', 'ArrowUp', 'Home', 'End'].forEach((key) => {
+    assert.ok(source.includes(`event.key === '${key}'`), key);
+  });
+  assert.ok(source.includes('nextRadio.focus();'));
+  assert.ok(source.includes("if (nextRadio.getAttribute('aria-checked') !== 'true') handleOption(nextRadio);"));
+  assert.ok(source.includes("if (type === 'single') opt.tabIndex = pressed ? 0 : -1;"));
+});
+
+test('Modals isolieren den Hintergrund und stellen ARIA-, Inert- und Fokuszustand wieder her', () => {
+  const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+
+  assert.ok(source.includes('function isolateModal(backdrop)'));
+  assert.ok(source.includes("hadInert: element.hasAttribute('inert')"));
+  assert.ok(source.includes("ariaHidden: element.getAttribute('aria-hidden')"));
+  assert.ok(source.includes("element.setAttribute('inert', '')"));
+  assert.ok(source.includes("element.setAttribute('aria-hidden', 'true')"));
+  assert.ok(source.includes("document.addEventListener('focusin', guardFocus, true)"));
+  assert.ok(source.includes("document.removeEventListener('focusin', guardFocus, true)"));
+  assert.ok(source.includes("if (!hadInert) element.removeAttribute('inert')"));
+  assert.ok(source.includes("if (ariaHidden == null) element.removeAttribute('aria-hidden')"));
+  assert.strictEqual((source.match(/const releaseIsolation = isolateModal\(back\);/g) || []).length, 2);
+  assert.strictEqual((source.match(/releaseIsolation\(\);/g) || []).length, 2);
+  assert.ok(source.includes('if (!opener || !opener.isConnected'));
+});
+
+test('Hilfstexte und kleine Ergebnis-Badges erfüllen mindestens WCAG AA bei Normalschrift', () => {
+  const css = fs.readFileSync(path.join(ROOT, 'css/styles.css'), 'utf8');
+  const scoring = fs.readFileSync(path.join(ROOT, 'js/scoring.js'), 'utf8');
+
+  function token(name) {
+    const match = css.match(new RegExp(`--${name}:\\s*(#[0-9a-f]{6})`, 'i'));
+    assert.ok(match, `CSS-Token --${name} fehlt`);
+    return match[1];
+  }
+  function luminance(hex) {
+    const channels = [1, 3, 5].map((offset) => parseInt(hex.slice(offset, offset + 2), 16) / 255)
+      .map((value) => value <= 0.04045 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4));
+    return (0.2126 * channels[0]) + (0.7152 * channels[1]) + (0.0722 * channels[2]);
+  }
+  function contrast(first, second) {
+    const values = [luminance(first), luminance(second)].sort((a, b) => b - a);
+    return (values[0] + 0.05) / (values[1] + 0.05);
+  }
+
+  const muted = token('muted');
+  assert.ok(contrast(muted, '#ffffff') >= 4.5);
+  assert.ok(contrast(muted, token('bg')) >= 4.5);
+  assert.ok(css.includes('color: var(--status-label-ink);'));
+  assert.ok(css.includes('.step-dot.done { background: var(--success); color: var(--status-label-ink); }'));
+  assert.ok(contrast(token('status-label-ink'), token('success')) >= 4.5);
+
+  const statusBlock = scoring.match(/const STATUS_BANDS = \[([\s\S]*?)\n\];/);
+  assert.ok(statusBlock, 'Statusfarben fehlen');
+  const statusColors = Array.from(statusBlock[1].matchAll(/color:\s*'(#[0-9a-f]{6})'/gi), (match) => match[1]);
+  assert.strictEqual(statusColors.length, 4);
+  statusColors.forEach((background) => {
+    assert.ok(contrast(token('status-label-ink'), background) >= 4.5, background);
+  });
+});
+
+test('Ergebnisse bearbeiten verwendet den zentralen Fokus- und Renderpfad', () => {
+  const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+  const editCase = source.match(/case 'edit':([^\n]*?)break;/);
+
+  assert.ok(editCase, 'Edit-Eventhandler fehlt');
+  assert.ok(editCase[1].includes("clearShareHash(); state.dimIndex = 0; go('quiz');"));
+  assert.ok(!editCase[1].includes('render()'));
 });
 
 test('Neu beginnen auf der Startseite verwendet das App-Modal statt eines nativen Browserdialogs', () => {

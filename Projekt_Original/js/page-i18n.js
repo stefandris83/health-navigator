@@ -10,27 +10,37 @@
 (function initPageI18n(window) {
   'use strict';
 
-  function getCopy(id) {
-    if (!id || !window.ResultCopy || typeof window.ResultCopy.get !== 'function') return null;
+  const COPY_BINDINGS = Object.freeze([
+    Object.freeze({ selector: '[data-copy]', dataAttribute: 'data-copy', targetAttribute: null }),
+    Object.freeze({ selector: '[data-copy-aria-label]', dataAttribute: 'data-copy-aria-label', targetAttribute: 'aria-label' }),
+    Object.freeze({ selector: '[data-copy-title]', dataAttribute: 'data-copy-title', targetAttribute: 'title' }),
+    Object.freeze({ selector: '[data-copy-content]', dataAttribute: 'data-copy-content', targetAttribute: 'content' }),
+    Object.freeze({ selector: '[data-copy-alt]', dataAttribute: 'data-copy-alt', targetAttribute: 'alt' }),
+    Object.freeze({ selector: '[data-copy-placeholder]', dataAttribute: 'data-copy-placeholder', targetAttribute: 'placeholder' }),
+  ]);
+
+  function collectCopies(documentObject) {
+    if (!window.ResultCopy || typeof window.ResultCopy.get !== 'function') return null;
+    const copies = [];
     try {
-      const value = window.ResultCopy.get(id);
-      return typeof value === 'string' ? value : null;
+      COPY_BINDINGS.forEach((binding) => {
+        documentObject.querySelectorAll(binding.selector).forEach((element) => {
+          const id = element.getAttribute(binding.dataAttribute);
+          const value = id ? window.ResultCopy.get(id) : null;
+          if (typeof value !== 'string') throw new Error('Ungueltiger statischer Text: ' + id);
+          copies.push({ element, targetAttribute: binding.targetAttribute, value });
+        });
+      });
+      return copies;
     } catch (error) {
       return null;
     }
   }
 
-  function applyTextCopies(documentObject) {
-    documentObject.querySelectorAll('[data-copy]').forEach((element) => {
-      const value = getCopy(element.getAttribute('data-copy'));
-      if (value !== null) element.textContent = value;
-    });
-  }
-
-  function applyAttributeCopies(documentObject, dataAttribute, targetAttribute) {
-    documentObject.querySelectorAll('[' + dataAttribute + ']').forEach((element) => {
-      const value = getCopy(element.getAttribute(dataAttribute));
-      if (value !== null) element.setAttribute(targetAttribute, value);
+  function applyCopies(copies) {
+    copies.forEach((copy) => {
+      if (copy.targetAttribute) copy.element.setAttribute(copy.targetAttribute, copy.value);
+      else copy.element.textContent = copy.value;
     });
   }
 
@@ -57,14 +67,23 @@
     if (!doc || !doc.querySelectorAll) return false;
 
     if (window.HealthLocale) window.HealthLocale.syncDocument(doc);
-    applyTextCopies(doc);
-    applyAttributeCopies(doc, 'data-copy-aria-label', 'aria-label');
-    applyAttributeCopies(doc, 'data-copy-title', 'title');
-    applyAttributeCopies(doc, 'data-copy-content', 'content');
-    applyAttributeCopies(doc, 'data-copy-alt', 'alt');
-    applyAttributeCopies(doc, 'data-copy-placeholder', 'placeholder');
+    let copies = collectCopies(doc);
+    if (!copies && window.ResultCopy && typeof window.ResultCopy.__useDefaultFallback === 'function' &&
+        window.ResultCopy.__useDefaultFallback()) {
+      if (window.HealthLocale) window.HealthLocale.syncDocument(doc);
+      copies = collectCopies(doc);
+    }
+    if (!copies && window.HealthLocale && typeof window.HealthLocale.useRuntimeFallback === 'function') {
+      window.HealthLocale.useRuntimeFallback('de-CH');
+      window.HealthLocale.syncDocument(doc);
+      copies = collectCopies(doc);
+    }
+    // Erst nach erfolgreicher Vollstaendigkeitspruefung schreiben. So bleibt
+    // bei einem Deployment-Fehler das komplette deutsche HTML-Grundgeruest
+    // erhalten, statt einzelne deutsche und uebersetzte Texte zu mischen.
+    if (copies) applyCopies(copies);
     bindLanguageSwitches(doc);
-    return true;
+    return !!copies;
   }
 
   const api = Object.freeze({ apply });

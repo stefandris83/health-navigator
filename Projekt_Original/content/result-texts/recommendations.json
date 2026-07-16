@@ -139,9 +139,9 @@
       "context": "Empfehlungskarte ei_familie in der Dimension einfluss, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "In Ihrer nahen Familie kommen Herz-Kreislauf-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Basiswerte zu kennen.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "In Ihrer nahen Familie kommen Herz-Kreislauf-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.",
+      "reviewStatus": "needs-review",
+      "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.catalog.ei_familie.step",
@@ -149,9 +149,9 @@
       "context": "Empfehlungskarte ei_familie in der Dimension einfluss, konkreter nächster Schritt",
       "kind": "action",
       "reviewers": "Marketing, Medizin",
-      "text": "Besprechen Sie Ihre Familiengeschichte bei Gelegenheit ärztlich und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.",
+      "reviewStatus": "needs-review",
+      "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.catalog.ei_familie.benefit",
@@ -499,9 +499,9 @@
       "context": "Empfehlungskarte fi_ausdauer in der Dimension fitness, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie sind bereits etwas aktiv – schön! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten rund 150 Minuten pro Woche.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Sie sind bereits etwas aktiv – schön! Mehr Ausdauerbewegung stärkt Herz, Kreislauf und Stoffwechsel zusätzlich. Als Orientierung gelten pro Woche rund 150 Minuten moderate oder 75 Minuten intensive Aktivität; beides lässt sich kombinieren.",
+      "reviewStatus": "needs-review",
+      "comment": "Beide gleichwertigen Aktivitätswege des Scoring-Vertrags ergänzt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.catalog.fi_ausdauer.step",
@@ -899,9 +899,9 @@
       "context": "Empfehlungskarte sl_qualitaet in der Dimension schlaf, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "Ihr Schlaf erholt Sie aktuell wenig und beeinträchtigt Ihren Alltag. Oft helfen schon Anpassungen an Umgebung und Abendroutine.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Ihre Angaben zeigen, dass Ihre Schlafqualität oder die Auswirkungen auf Ihren Alltag ein Ansatzpunkt sind. Oft helfen schon Anpassungen an Umgebung und Abendroutine.",
+      "reviewStatus": "needs-review",
+      "comment": "Disjunktiv an die tatsächliche Auslöseregel angepasst; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.catalog.sl_qualitaet.step",
@@ -1353,9 +1353,9 @@
       "context": "Handlungsfeld lv_ausdauer in der Dimension fitness, Kurzlabel",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "Ausdauer Schritt für Schritt aufbauen (Ziel: 150 Min./Woche)",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Ausdauer Schritt für Schritt aufbauen",
+      "reviewStatus": "needs-review",
+      "comment": "Einseitige Nennung nur des moderaten Aktivitätsziels entfernt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.lever.lv_ausdauer.detail.stairs_difficult",
@@ -1586,9 +1586,9 @@
       "context": "Handlungsfeld lv_schlaf_abklaerung in der Dimension schlaf, Kurzlabel",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "Anhaltende Erschöpfung ärztlich abklären",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Starke Schlafbeeinträchtigung ärztlich abklären",
+      "reviewStatus": "needs-review",
+      "comment": "An den tatsächlichen Trigger «massive Alltagsbeeinträchtigung» angepasst; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.lever.lv_schlaf_abklaerung.detail",
@@ -1596,9 +1596,9 @@
       "context": "Handlungsfeld lv_schlaf_abklaerung in der Dimension schlaf, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie schlafen lange genug, sind aber massiv beeinträchtigt – das kann körperliche Ursachen haben und gehört in ärztliche Hände.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Ihr Schlaf beeinträchtigt Ihren Alltag massiv. Das kann verschiedene Ursachen haben und sollte ärztlich eingeordnet werden.",
+      "reviewStatus": "needs-review",
+      "comment": "Nicht erhobene ausreichende Schlafdauer und Erschöpfung entfernt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.lever.lv_schlafdauer.label",
@@ -2896,9 +2896,9 @@
       "context": "Plan ei_familie, Diese Woche",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Tragen Sie zusammen, wer in Ihrer nahen Familie (Eltern, Geschwister) wann erkrankt ist – <b>besonders relevant: Männer vor 55, Frauen vor 65 Jahren</b>. Diese Information verschiebt den sinnvollen Startzeitpunkt Ihrer Vorsorge oft um Jahre nach vorn.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Tragen Sie zusammen, wer in Ihrer nahen Familie (Eltern, Geschwister) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.",
+      "reviewStatus": "needs-review",
+      "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
@@ -2906,9 +2906,9 @@
       "context": "Plan ei_familie, Woche 2–3",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Lassen Sie Basiswerte (Blutdruck, Blutzucker, Blutfette inkl. ApoB/Lp(a)) bestimmen und Ihr Risiko einordnen.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Klären Sie mit der Fachperson, welche Basiswerte oder gezielten Untersuchungen zu Ihrer Familiengeschichte passen.",
+      "reviewStatus": "needs-review",
+      "comment": "Pauschale kardiovaskuläre Laborempfehlung aus der breiten Familienfrage entfernt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",
@@ -3166,9 +3166,9 @@
       "context": "Plan ei_familienwissen, Diese Woche",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Fragen Sie nahe Angehörige (Eltern, Geschwister), ob <b>Herz-Kreislauf-Erkrankungen, Diabetes oder Krebs früh aufgetreten</b> sind – besonders relevant: Männer vor 55, Frauen vor 65 Jahren.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Fragen Sie nahe Angehörige (Eltern, Geschwister), welche Herz-Kreislauf- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.",
+      "reviewStatus": "needs-review",
+      "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.plan.ei_familienwissen.weeks_2_3",
@@ -3601,9 +3601,9 @@
       "context": "Dimensionsdetail familie_hk, Einordnung",
       "kind": "insight",
       "reviewers": "Marketing, Medizin",
-      "text": "Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge nach vorn – oft um Jahre.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.",
+      "reviewStatus": "needs-review",
+      "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.signal.familie_hk.clarify",
@@ -3611,9 +3611,9 @@
       "context": "Dimensionsdetail familie_hk, medizinischer Klärungshinweis",
       "kind": "clarify",
       "reviewers": "Marketing, Medizin",
-      "text": "Wer an welcher Erkrankung und in welchem Alter erkrankt ist – besonders relevant ist ein Beginn vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen – und ob eine genetische Abklärung sinnvoll ist.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.",
+      "reviewStatus": "needs-review",
+      "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.signal.familie_hk.deepen",
@@ -3974,9 +3974,9 @@
       "context": "Dimensionsdetail schlaf, Titel",
       "kind": "title",
       "reviewers": "Marketing, Medizin",
-      "text": "Wenig erholsamer Schlaf",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Schlaf mit Handlungsbedarf",
+      "reviewStatus": "needs-review",
+      "comment": "Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.signal.schlaf.insight",
@@ -3994,9 +3994,9 @@
       "context": "Dimensionsdetail schlaf, konkreter nächster Schritt",
       "kind": "action",
       "reviewers": "Marketing, Medizin",
-      "text": "Halten Sie die Aufstehzeit möglichst konstant, auch am Wochenende, und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Beides unterstützt einen regelmässigen Schlaf-Wach-Rhythmus.",
+      "text": "Halten Sie die Aufstehzeit möglichst konstant und suchen Sie nach dem Aufstehen möglichst bald Tageslicht. Wenn Ihr Schlaf den Alltag stark beeinträchtigt oder Beschwerden anhalten, lassen Sie dies ärztlich einordnen.",
       "reviewStatus": "needs-review",
-      "comment": "Starre Zeitangabe und absoluten Taktgebervergleich entfernt; durch Marketing und Medizin freigeben."
+      "comment": "Lifestyle- und medizinischen Signalpfad gemeinsam abgedeckt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.signal.socialmedia.title",
@@ -4421,9 +4421,9 @@
       "context": "Ergebnisseite, Lebensstil-Signal Schlaf",
       "kind": "signal_label",
       "reviewers": "Marketing, Medizin",
-      "text": "Ihr Schlaf erholt Sie aktuell wenig.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Ihre Angaben weisen auf möglichen Handlungsbedarf beim Schlaf hin.",
+      "reviewStatus": "needs-review",
+      "comment": "Gemeinsamen Lifestyle- und medizinischen Signalvertrag neutral abgedeckt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.risk_signal.socialmedia.label",

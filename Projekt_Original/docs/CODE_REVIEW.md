@@ -156,8 +156,9 @@ relative Dateiziele werden statisch getestet.
   Operationen teilen State, Render- und Eventdelegation eng. Eine Dateiaufteilung ohne
   Module würde vor allem Ladereihenfolge und Globals vermehren.
 - Keine Migration auf ES-Module, TypeScript, Framework, Bundler oder Testframework.
-- Keine sichtbaren Änderungen an Brandfarben trotz einzelner Kontrastbefunde; dies ist
-  eine Brand-/A11y-Entscheidung.
+- In diesem Review noch keine sichtbaren Änderungen an Brandfarben trotz einzelner
+  Kontrastbefunde; die spätere ausdrückliche Freigabe und Umsetzung ist in Abschnitt
+  18 dokumentiert.
 - Kein Backend, Login, Tokenhandling, `postMessage`-Kanal, Analytics oder echtes LLM.
 
 ## 4. Security- und Datenschutzreview
@@ -526,7 +527,7 @@ Der finale Stand umfasst 106/106 erfolgreiche Tests.
 Bewusst nicht autonom neu kalibriert wurde der Scorevertrag: Bei vorhandenem
 Taillenumfang priorisiert `bodyNorm()` diesen Wert vor dem BMI, während das Signal
 auch durch einen BMI im Adipositasbereich ausgelöst werden kann. Ebenfalls offen ist
-die medizinische Referenzwahl für 12- bis 17-Jährige. Beide Entscheide sind in der
+die medizinische Referenzwahl für 16- und 17-Jährige. Beide Entscheide sind in der
 Go-live-Checkliste festgehalten.
 
 ## 13. Evidenzbasierte Proteinempfehlungen
@@ -815,3 +816,127 @@ visuelle Mobile-Abnahme behauptet. Die direkte Dateinutzung, Script-Reihenfolge,
 Locale-Navigation, vier Manifeste, technische Sprachinvarianz und responsive
 Verträge sind automatisiert geprüft; ein manueller Smoke-Test jeder Sprache auf
 der Ziel-URL bleibt Bestandteil der Go-live-Checkliste.
+
+## 17. Konservativer Abschluss-Review ohne fachliche oder visuelle Änderung
+
+Der Stand wurde erneut vollständig gegen die Vorgabe geprüft, sichtbare Texte,
+Übersetzungen, Layout, Fragen, Scores, Signale, Empfehlungen und Angebotslogik
+unverändert zu lassen. Vor den Änderungen waren alle **152/152** vorhandenen Tests
+erfolgreich.
+
+Direkt umgesetzt wurden ausschliesslich technische Härtungen ohne neue sichtbare
+Copy oder fachliche Logik:
+
+- Hinweise zu den freiwilligen Fitness-Kurztests sind nun programmatisch mit dem
+  jeweiligen Eingabefeld verbunden. Eine Validierungsfehlermeldung wird über
+  `aria-describedby` nur referenziert, solange der Wert tatsächlich ungültig ist.
+- Der Fortschrittsbereich verwendet eine gültige Gruppen-Semantik; die aktive
+  Fragebogendimension ist die Seitenüberschrift. Die bisherige Darstellung bleibt
+  durch identische CSS-Deklarationen erhalten.
+- «Ergebnisse bearbeiten» verwendet den bereits bestehenden zentralen
+  Navigationspfad und stellt den Fokus nach dem Rendern wieder her.
+- Verschachtelte `covers`-Listen des öffentlichen Empfehlungskatalogs werden
+  defensiv kopiert und eingefroren. Auswahllogik und Kataloginhalt ändern sich
+  dadurch nicht.
+- GitHub Pages führt `validate`, `check` und alle sechs Testsuiten vor dem Erzeugen
+  des öffentlichen Artefakts aus. Die publizierte Dateiauswahl bleibt unverändert.
+- Ein veralteter Kommentar zur Altersgrenze der Liegestütz-Referenz wurde an den
+  bereits implementierten und dokumentierten Vertrag angepasst; Laufzeitcode wurde
+  dabei nicht verändert.
+
+Die folgenden Befunde wurden in diesem konservativen Review zunächst bewusst nicht
+umgesetzt, weil ihre Korrektur sichtbares, fachliches oder anderweitig
+nutzungsrelevantes Verhalten verändert hätte. Sie wurden anschliessend ausdrücklich
+freigegeben und sind im aktuellen Stand gemäss Abschnitt 18 umgesetzt:
+
+- Ein tiefer Einbeinstand kann bei Personen unter 18 trotz gesperrter Referenz eine
+  Balance-Empfehlung auslösen.
+- Der sprachgebundene PWA-`start_url` kann eine später gewählte Sprache beim Start
+  über ein älter installiertes Homescreen-Icon erneut setzen.
+- Der statische Seitenübersetzer kann bei einem teilweise beschädigten Bundle eine
+  Mischsprache zeigen.
+- Normale graue Hilfstexte und kleine Status-Badges erreichen teilweise nicht den
+  angestrebten WCAG-Kontrast.
+- Roving-Tabindex/Pfeiltasten für die eigenen Radio-Buttons und eine strengere
+  Modal-Isolation würden die Tastaturinteraktion verändern.
+- `context` und `section` waren noch nicht Bestandteil des deutschen
+  Übersetzungsvertragshashs.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 40/40, Integration 58/58, Robustheit 23/23,
+UI-Lifecycle 15/15, I18n-Static 14/14 und I18n-Runtime 4/4, insgesamt **154/154
+Tests**. Alle vier Kataloge mit je 1'185 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, CSV, Markdown und Manifeste bytegenau. Syntaxprüfung
+aller JavaScript-Dateien und `git diff --check` waren erfolgreich. Ein zusätzlicher
+Vergleich von 179 systematisch variierten vollständigen Antwortprofilen ergab vor
+und nach dem Review identische Scores, Signale, Empfehlungen, Pläne und Insights.
+
+Vor den Änderungen wurde der zentrale Ablauf über einen lokalen statischen Server
+real im Browser geprüft: Start, alle sechs Fragebogenbereiche und Ergebnisansicht
+mit Score, Radar, fünf Dimensionen und drei Aktionskarten; die Browser-Konsole blieb
+ohne Fehler oder Warnungen. Der direkte `file://`-Aufruf wurde von der
+Browser-Sicherheitsrichtlinie blockiert. Nach einer Unterbrechung blockierte dieselbe
+Steuerung auch das erneute Laden der lokalen URL. Deshalb werden weder ein realer
+interaktiver `file://`-Test noch ein vollständiger visueller Vorher-/Nachher-
+Vergleich, eine Browsermatrix, vier manuelle Sprachdurchläufe oder eine reale
+Mobile-Abnahme behauptet. Die dafür relevanten Struktur-, Locale-, responsive- und
+Portabilitätsverträge sind automatisiert grün.
+
+## 18. Freigegebene Alters-, I18n-, PWA- und Accessibility-Härtung
+
+In einem anschliessenden Auftrag wurden die in Abschnitt 17 zurückgestellten Punkte
+ausdrücklich freigegeben und mit Regressionstests umgesetzt:
+
+- Der Check akzeptiert Alter ab 16. Jüngere Werte werden auch aus gespeichertem,
+  geteiltem oder manipuliertem Zustand vom zentralen Antwortschema verworfen. Bei
+  16- und 17-Jährigen bleiben Fitness-Rohwerte sichtbar, erzeugen wegen fehlender
+  passender Referenztabellen aber keine Referenzstufe, Statusfarbe, Score-, Signal-
+  oder Empfehlungswirkung. Einbeinstand und Wandsitz werden ab 18, Liegestütze ab
+  20 Jahren referenziert. Das Balance-Signal verwendet nur noch auswertbare
+  Einbeinstand-Ergebnisse.
+- Alle App-Manifeste verwenden den neutralen `start_url` `./`. Die separat
+  gespeicherte aktuelle Sprachwahl wird dadurch beim Start über ein früher
+  installiertes Homescreen-Icon nicht mehr von dessen damaliger Sprache
+  überschrieben.
+- `ResultCopy` prüft ein Zielsprachbundle vollständig gegen den deutschen ID- und
+  Stringvertrag. Ein unvollständiges Bundle wechselt den gesamten Seitenaufruf auf
+  das vollständige deutsche Notfallbundle, ohne die gespeicherte Sprachpräferenz zu
+  überschreiben. `page-i18n` prüft alle statischen Kopien vor dem ersten DOM-Write;
+  Teilübersetzungen und Mischsprachen werden dadurch verhindert.
+- Gedämpfte Hilfstexte verwenden einen Neutralton mit mindestens 4,5:1 Kontrast auf
+  Weiss und dem App-Hintergrund. Kleine farbige Status- und Fortschrittslabels nutzen
+  eine dunkle Schrift, die auf allen verwendeten Statusfarben mindestens 4,5:1
+  erreicht. Layout, Abstände und Statushintergründe bleiben unverändert.
+- Eigene Radio-Gruppen verwenden Roving-Tabindex sowie Pfeiltasten, Home und End nach
+  dem ARIA-Radio-Pattern. Maus, Tab, Enter und Leertaste bleiben erhalten.
+- Beide Modalvarianten isolieren den Hintergrund mit `inert` und `aria-hidden`.
+  Ein `focusin`-Guard schützt ältere Umgebungen; Attribute, Listener und vorheriger
+  Fokus werden beim Schliessen wiederhergestellt.
+- `section` und `context` sind nun Teil des Übersetzungsvertragshashs. `sync-locales`
+  migriert ausschliesslich einen exakt passenden Altvertrag; bereits fachlich
+  veraltete Hashes bleiben veraltet. 3'555 Hashes in 21 Overlay-Dateien wurden
+  migriert. Ein automatischer Vergleich bestätigte, dass weder Übersetzungstexte
+  noch Reviewstatus oder sonstige Overlay-Felder verändert wurden.
+
+Die zusammengeführte Testsuite umfasst Content-Workflow 41/41, Integration 60/60,
+Robustheit 23/23, UI-Lifecycle 18/18, I18n-Static 18/18 und I18n-Runtime 4/4, damit
+insgesamt **164/164 Tests**. Alle vier Kataloge mit je 1'185 Texten sind valide;
+Bundle, CSV, Markdown und Manifeste sind aktuell. Eine erneute Overlay-Migration ist
+ein No-op. Der Vergleich der drei lokalisierten CSVs und aller vier Runtime-Textmaps
+gegen den Ausgangsstand bestätigte identische redaktionelle Inhalte; geändert wurden
+nur Vertrags- und Artefakthashes.
+
+Die freigegebenen Laufzeitänderungen wurden zusätzlich real im Browser über einen
+lokalen statischen HTTP-Server geprüft: Ein Alter von 15 wird mit `min="16"`,
+`aria-invalid="true"` und gesperrter Navigation abgewiesen; 16 wird akzeptiert.
+Pfeil-ab verschob Auswahl, Fokus und Roving-Tabindex innerhalb einer Radio-Gruppe
+gemeinsam. Beim Navigationsmodal waren alle Hintergrundgeschwister gleichzeitig
+`inert` und `aria-hidden`, Tab blieb im Dialog, Escape stellte den Fokus auf den
+Auslöser zurück und hinterliess nach der Schliessanimation keine Attribute oder
+Backdrop-Elemente. Ein Start ohne Sprachparameter behielt die zuvor gewählte
+französische Sprache; DE, EN, FR und IT luden mit passendem Dokument-Locale,
+Starttext und Manifest. Während dieser Prüfungen blieb die Browser-Konsole ohne
+Warnungen oder Fehler. Ein pixelgenauer visueller Vorher-/Nachher-Vergleich, eine
+Browsermatrix, Screenreader-Abnahme und ein interaktiver `file://`-Test wurden nicht
+durchgeführt und werden nicht behauptet.

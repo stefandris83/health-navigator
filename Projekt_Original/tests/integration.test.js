@@ -240,6 +240,26 @@ test('Regression: Scoring liefert vollständige, plausible Ergebnisse', () => {
   assert.ok(good.overall > bad.overall, 'Gesundes Profil muss besser abschneiden');
 });
 
+test('Gesamtstatus bezeichnet kein Profil mit kritischer Einzeldimension als stark', () => {
+  const criticalMental = { ...HEALTHY_ANSWERS };
+  ['belastbarkeit', 'selbstwirksamkeit', 'sinnhaftigkeit', 'coping', 'verbundenheit',
+    'selbstfuersorge', 'zukunft', 'positive_emotionen']
+    .forEach((id) => { criticalMental[id] = 'gar_nicht'; });
+  const critical = W.Scoring.computeResults(criticalMental);
+  assert.strictEqual(critical.scores.mental, 0);
+  assert.strictEqual(critical.overall, 80, 'Numerischer gleichgewichteter Mittelwert bleibt unverändert');
+  assert.strictEqual(critical.status.key, 'solide', 'Kritische Einzeldimension verhindert Gesamtstatus «Stark»');
+  assert.strictEqual(W.Scoring.statusForScore(80).key, 'stark', 'Allgemeine Bandfunktion bleibt unverändert');
+
+  const neutralMental = { ...HEALTHY_ANSWERS };
+  ['belastbarkeit', 'selbstwirksamkeit', 'sinnhaftigkeit', 'coping', 'verbundenheit',
+    'selbstfuersorge', 'zukunft', 'positive_emotionen']
+    .forEach((id) => { neutralMental[id] = 'teils'; });
+  const neutral = W.Scoring.computeResults(neutralMental);
+  assert.strictEqual(neutral.scores.mental, 50);
+  assert.strictEqual(neutral.status.key, 'stark', 'Guard greift ausschliesslich unterhalb 40');
+});
+
 test('Regression: Empfehlungs-Engine liefert Top-3 bei Defizitprofil', () => {
   const res = W.Scoring.computeResults(DEFICIT_ANSWERS);
   const ctx = W.Recommendations.buildContext(DEFICIT_ANSWERS, res);
@@ -278,6 +298,30 @@ test('Antwortschema: nur bekannte, gültige Werte; alle nicht optionalen Fragen 
   assert.strictEqual(Schema.areAnswersComplete(withoutOptional), true, 'Optionale Kurztests dürfen fehlen');
 });
 
+test('Zielalter: Der Check akzeptiert Personen ab 16 Jahren und verwirft jüngere Alterswerte', () => {
+  const Schema = W.HealthAnswerSchema;
+  const ageQuestion = W.DIMENSIONS
+    .flatMap((dimension) => dimension.questions)
+    .find((question) => question.id === 'alter');
+
+  assert.strictEqual(ageQuestion.min, 16, 'HTML- und Schemavertrag verwenden dieselbe Untergrenze');
+  assert.strictEqual(Schema.sanitizeAnswers({ alter: 15 }).alter, undefined);
+  assert.strictEqual(Schema.sanitizeAnswers({ alter: 16 }).alter, 16);
+  assert.strictEqual(Schema.areAnswersComplete({ ...HEALTHY_ANSWERS, alter: 15 }), false);
+  assert.strictEqual(Schema.areAnswersComplete({ ...HEALTHY_ANSWERS, alter: 16 }), true);
+
+  const underAgeResults = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS,
+    alter: 15,
+    beweglichkeit: 'gar_nicht',
+    einbeinstand: 0,
+  });
+  const underAgeLegstand = underAgeResults.fitnessTests.find((testResult) => testResult.id === 'einbeinstand');
+  assert.strictEqual(underAgeLegstand.referenceStatus, 'age_outside_reference');
+  assert.strictEqual(underAgeLegstand.scorable, false, 'ungültiges Alter darf nicht über einen Fallback scoren');
+  assert.ok(!underAgeResults.signals.some((signal) => signal.id === 'balance'));
+});
+
 test('Fragen- und Scoring-APIs sind gekapselt, unveränderlich und sanitizen an der Scoring-Grenze', () => {
   assert.strictEqual(Object.isFrozen(W.DIMENSIONS), true);
   assert.strictEqual(Object.isFrozen(W.DIMENSIONS[0]), true);
@@ -289,6 +333,9 @@ test('Fragen- und Scoring-APIs sind gekapselt, unveränderlich und sanitizen an 
   assert.strictEqual(Object.isFrozen(W.Recommendations), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.CATALOG), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.CATALOG[0]), true);
+  W.Recommendations.CATALOG.filter((record) => Array.isArray(record.covers)).forEach((record) => {
+    assert.strictEqual(Object.isFrozen(record.covers), true, record.id + ': covers muss unveränderlich sein');
+  });
   assert.strictEqual(Object.isFrozen(W.Recommendations.SOURCES), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.SOURCES.swissheart_werte), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.POSITIVES), true);
@@ -309,6 +356,33 @@ test('Fragen- und Scoring-APIs sind gekapselt, unveränderlich und sanitizen an 
   );
 });
 
+test('Scoring ist für alle bewerteten Einfachauswahlen monoton', () => {
+  W.DIMENSIONS.filter((dimension) => dimension.scored !== false).forEach((dimension) => {
+    dimension.questions.filter((question) => Array.isArray(question.options)).forEach((question) => {
+      const ranked = question.options
+        .map((option) => ({
+          value: option.value,
+          norm: W.Scoring.questionNorm(question.id, option.value),
+        }))
+        .filter((entry) => entry.norm != null)
+        .sort((left, right) => right.norm - left.norm);
+      if (!ranked.length) return;
+
+      let previousDimension = Infinity;
+      let previousOverall = Infinity;
+      ranked.forEach((entry) => {
+        const results = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, [question.id]: entry.value });
+        assert.ok(results.scores[dimension.id] <= previousDimension,
+          `${question.id}/${entry.value}: schlechtere Norm darf Dimension nicht verbessern`);
+        assert.ok(results.overall <= previousOverall,
+          `${question.id}/${entry.value}: schlechtere Norm darf Gesamtwert nicht verbessern`);
+        previousDimension = results.scores[dimension.id];
+        previousOverall = results.overall;
+      });
+    });
+  });
+});
+
 test('Ausdauer: Alle Antwortkombinationen nutzen denselben Ziel- und Empfehlungsvertrag', () => {
   const moderateValues = ['u30', 'm30_75', 'm75_150', 'm150_300', 'ue300'];
   const intensiveValues = ['keine', 'u30', 'm30_75', 'm75_150', 'ue150'];
@@ -326,6 +400,7 @@ test('Ausdauer: Alle Antwortkombinationen nutzen denselben Ziel- und Empfehlungs
 
     assert.strictEqual(activity.goalMet, expectedGoal, label + ': Zielstatus');
     if (expectedGoal) {
+      assert.ok(res.scores.fitness >= 90, label + ': erfüllter Intensitätsweg wird im Score nicht durch den anderen Weg bestraft');
       assert.ok(!recIds.includes('fi_einstieg') && !recIds.includes('fi_ausdauer'), label + ': keine widersprüchliche Ausdauerempfehlung');
       assert.ok(W.Recommendations.keyStrengths(ctx, 5).some((s) => s.id === 'st_bewegung'), label + ': Bewegungsstärke');
       assert.ok(!W.Recommendations.actionPlan(ctx).some((r) => r.id === 'fi_einstieg' || r.id === 'fi_ausdauer'), label + ': kein Ausdauerschritt');
@@ -339,15 +414,55 @@ test('Ausdauer: Alle Antwortkombinationen nutzen denselben Ziel- und Empfehlungs
   const low = { ...HEALTHY_ANSWERS, ausdauer_moderat: 'u30', ausdauer_intensiv: 'keine', krafttraining: 'tage0' };
   const lowRes = W.Scoring.computeResults(low);
   assert.ok(lowRes.signals.some((s) => s.id === 'bewegungsmangel'));
+
+  const moderateRoute = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, ausdauer_moderat: 'm150_300', ausdauer_intensiv: 'keine',
+  });
+  const intensiveRoute = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, ausdauer_moderat: 'u30', ausdauer_intensiv: 'm75_150',
+  });
+  assert.strictEqual(moderateRoute.scores.fitness, intensiveRoute.scores.fitness,
+    'äquivalente moderate und intensive Zielwege erhalten denselben Fitnessscore');
+  const enduranceWhy = W.ResultCopy.get('recommendation.catalog.fi_ausdauer.why');
+  assert.ok(enduranceWhy.includes('150 Minuten moderate'));
+  assert.ok(enduranceWhy.includes('75 Minuten intensive'));
+  assert.ok(!W.ResultCopy.get('recommendation.lever.lv_ausdauer.label').includes('150'),
+    'Das Kurzlabel darf nicht nur einen der beiden gleichwertigen Aktivitätswege nennen');
+
+  const neutralFitness = {
+    ...HEALTHY_ANSWERS,
+    ausdauer_moderat: 'm150_300',
+    ausdauer_intensiv: 'keine',
+    krafttraining: 'tage1',
+    einkaufstaschen: 'maessig',
+    beweglichkeit: 'maessig',
+    treppen: 'etwas',
+  };
+  delete neutralFitness.einbeinstand;
+  delete neutralFitness.liegestuetze;
+  delete neutralFitness.wandsitz;
+  const exactModerate = W.Scoring.computeResults(neutralFitness);
+  const exactIntensive = W.Scoring.computeResults({
+    ...neutralFitness,
+    ausdauer_moderat: 'u30',
+    ausdauer_intensiv: 'm75_150',
+  });
+  assert.strictEqual(exactModerate.scores.fitness, 57,
+    'Aktivitätskomposit behält exakt zwei Drittel des Konditionsblocks');
+  assert.strictEqual(exactIntensive.scores.fitness, 57,
+    'max()-Vertrag bewertet den äquivalenten intensiven Zielweg identisch');
 });
 
 test('Mentale Unterstützung: Signal, Handlungsfeld und kritische Aktionskarte nutzen dieselbe Schwelle', () => {
-  const severe = { ...HEALTHY_ANSWERS, selbstwirksamkeit: 'gar_nicht' };
-  const severeRes = W.Scoring.computeResults(severe);
-  const severeCtx = W.Recommendations.buildContext(severe, severeRes);
-  assert.ok(severeRes.signals.some((s) => s.id === 'hohe_belastung'));
-  assert.ok(W.Recommendations.keyLevers(severeCtx, 3).some((l) => l.id === 'lv_mental_support'));
-  assert.ok(W.Recommendations.actionPlan(severeCtx).some((r) => r.id === 'me_unterstuetzung'));
+  ['belastbarkeit', 'selbstwirksamkeit', 'coping'].forEach((id) => {
+    const severe = { ...HEALTHY_ANSWERS, [id]: 'gar_nicht' };
+    const severeRes = W.Scoring.computeResults(severe);
+    const severeCtx = W.Recommendations.buildContext(severe, severeRes);
+    assert.ok(severeRes.signals.some((s) => s.id === 'hohe_belastung'), id + ': hohes Signal');
+    assert.strictEqual(severeRes.scores.mental, 50, id + ': kritisches Signal deckelt dieselbe Dimension');
+    assert.ok(W.Recommendations.keyLevers(severeCtx, 3).some((l) => l.id === 'lv_mental_support'));
+    assert.ok(W.Recommendations.actionPlan(severeCtx).some((r) => r.id === 'me_unterstuetzung'));
+  });
 
   const lower = { ...HEALTHY_ANSWERS, sinnhaftigkeit: 'gar_nicht' };
   const lowerRes = W.Scoring.computeResults(lower);
@@ -355,6 +470,19 @@ test('Mentale Unterstützung: Signal, Handlungsfeld und kritische Aktionskarte n
   assert.ok(!lowerRes.signals.some((s) => s.id === 'hohe_belastung'));
   assert.ok(!W.Recommendations.actionPlan(lowerCtx).some((r) => r.id === 'me_unterstuetzung'), 'Keine kritische Karte ohne hohes Signal');
   assert.ok(W.Recommendations.actionPlan(lowerCtx).some((r) => r.id === 'me_sinn'), 'Niedrigschwellige Sinn-Empfehlung bleibt erhalten');
+  assert.strictEqual(lowerRes.scores.mental, 88, 'Ein einzelner Sinn-Tiefstwert löst ohne hohes Signal keinen separaten Deckel aus');
+
+  const positiveOnly = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, positive_emotionen: 'gar_nicht' });
+  assert.ok(!positiveOnly.signals.some((signal) => signal.id === 'hohe_belastung'));
+  assert.strictEqual(positiveOnly.scores.mental, 88,
+    'Ein einzelner Tiefstwert positiver Emotionen löst ohne Sinn-Kombination keinen harten Deckel aus');
+
+  const pairedMeaning = {
+    ...HEALTHY_ANSWERS, sinnhaftigkeit: 'gar_nicht', positive_emotionen: 'gar_nicht',
+  };
+  const pairedResults = W.Scoring.computeResults(pairedMeaning);
+  assert.ok(pairedResults.signals.some((s) => s.id === 'hohe_belastung'));
+  assert.strictEqual(pairedResults.scores.mental, 50);
 
   const lowSelfEfficacy = { ...HEALTHY_ANSWERS, selbstwirksamkeit: 'eher_nicht' };
   const lowSelfEfficacyResults = W.Scoring.computeResults(lowSelfEfficacy);
@@ -429,18 +557,50 @@ test('Detail-Fallback: Alle Dimensionen verwenden dieselben neutralen, soliden u
   });
 });
 
-test('Gegenchecks und Schlafdauer erzeugen eine passende sichtbare Empfehlung', () => {
-  const lowSatiety = { ...HEALTHY_ANSWERS, saettigung: 'manchmal' };
-  const lowSatietyResults = W.Scoring.computeResults(lowSatiety);
-  const lowSatietyCtx = W.Recommendations.buildContext(lowSatiety, lowSatietyResults);
-  assert.strictEqual(lowSatietyResults.scores.ernaehrung, 50);
-  assert.ok(W.Recommendations.recommendationsForDimension('ernaehrung', lowSatietyCtx).some((r) => r.id === 'er_saettigung'));
+test('Sättigungsempfehlung und abgestufter Schlaf-Gegencheck bleiben kohärent', () => {
+  const satietyRecommendationValues = new Set(['nie', 'selten', 'manchmal']);
+  ['nie', 'selten', 'manchmal', 'oft', 'fast_immer'].forEach((saettigung) => {
+    const answers = { ...HEALTHY_ANSWERS, saettigung };
+    const results = W.Scoring.computeResults(answers);
+    const context = W.Recommendations.buildContext(answers, results);
+    const hasRecommendation = W.Recommendations.recommendationsForDimension('ernaehrung', context)
+      .some((record) => record.id === 'er_saettigung');
+    assert.strictEqual(results.scores.ernaehrung, 100,
+      saettigung + ': Sättigung bleibt vollständig scorefrei');
+    assert.strictEqual(hasRecommendation, satietyRecommendationValues.has(saettigung),
+      saettigung + ': Empfehlung folgt weiterhin dem definierten Kontextvertrag');
+  });
 
   const impairedSleep = { ...HEALTHY_ANSWERS, schlaf_auswirkung: 'spuerbar' };
   const impairedSleepResults = W.Scoring.computeResults(impairedSleep);
   const impairedSleepCtx = W.Recommendations.buildContext(impairedSleep, impairedSleepResults);
-  assert.strictEqual(impairedSleepResults.scores.schlaf, 50);
+  assert.strictEqual(impairedSleepResults.scores.schlaf, 75, 'Spürbare Beeinträchtigung verhindert nur die starke Einordnung');
+  assert.strictEqual(W.Scoring.statusForScore(impairedSleepResults.scores.schlaf).key, 'solide');
   assert.ok(W.Recommendations.recommendationsForDimension('schlaf', impairedSleepCtx).some((r) => r.id === 'sl_qualitaet'));
+  const sleepQualityWhy = W.ResultCopy.get('recommendation.catalog.sl_qualitaet.why');
+  assert.ok(sleepQualityWhy.includes('Schlafqualität oder die Auswirkungen'),
+    'Die Empfehlung muss die disjunktive Auslöseregel wiedergeben');
+
+  const barelyImpaired = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, schlaf_auswirkung: 'kaum' });
+  assert.strictEqual(barelyImpaired.scores.schlaf, 100, 'Kaum beeinträchtigt verändert starke Kernwerte nicht');
+
+  ['deutlich', 'massiv'].forEach((impact) => {
+    const answers = { ...HEALTHY_ANSWERS, schlaf_auswirkung: impact };
+    const results = W.Scoring.computeResults(answers);
+    assert.strictEqual(results.scores.schlaf, 50, impact + ': deutliche Beeinträchtigung deckelt auf neutral');
+  });
+  const massiveResults = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, schlaf_auswirkung: 'massiv' });
+  assert.deepStrictEqual(
+    massiveResults.signals.find((signal) => signal.id === 'schlaf'),
+    {
+      id: 'schlaf', type: 'medizinisch', severity: 'mittel',
+      label: W.ResultCopy.get('recommendation.risk_signal.schlaf.label'),
+    },
+  );
+  assert.ok(W.ResultCopy.get('recommendation.lever.lv_schlaf_abklaerung.detail')
+    .startsWith('Ihr Schlaf beeinträchtigt Ihren Alltag massiv.'));
+  assert.ok(!W.ResultCopy.get('recommendation.lever.lv_schlaf_abklaerung.detail')
+    .includes('lange genug'), 'Die Empfehlung darf keine nicht erhobene ausreichende Schlafdauer behaupten');
 
   const sixToSeven = { ...HEALTHY_ANSWERS, schlafdauer: 's6_7' };
   const sixToSevenCtx = W.Recommendations.buildContext(sixToSeven, W.Scoring.computeResults(sixToSeven));
@@ -593,25 +753,26 @@ test('Kohärenz-Restprofile: Fitness, Schlaf, Bildschirmmuster und Taillenumfang
 
 test('Taillenumfang-Grenzen erzeugen klare Statusstufen und passende Signalpriorität', () => {
   const cases = [
-    ['weiblich', 170, 63, 79, 'normal', null],
-    ['weiblich', 170, 63, 80, 'erhoeht', 'tief'],
-    ['weiblich', 170, 63, 87, 'erhoeht', 'tief'],
-    ['weiblich', 170, 63, 88, 'hoch', 'mittel'],
-    ['maennlich', 170, 63, 93, 'normal', null],
-    ['maennlich', 170, 63, 94, 'erhoeht', 'tief'],
-    ['maennlich', 170, 63, 101, 'erhoeht', 'tief'],
-    ['maennlich', 170, 63, 102, 'hoch', 'mittel'],
-    ['intersex', 200, 80, 99, 'normal', null],
-    ['intersex', 200, 80, 100, 'erhoeht', 'tief'],
-    ['intersex', 200, 80, 119, 'erhoeht', 'tief'],
-    ['intersex', 200, 80, 120, 'hoch', 'mittel'],
+    ['weiblich', 170, 63, 79, 'normal', null, 2],
+    ['weiblich', 170, 63, 80, 'erhoeht', 'tief', 0],
+    ['weiblich', 170, 63, 87, 'erhoeht', 'tief', 0],
+    ['weiblich', 170, 63, 88, 'hoch', 'mittel', -2],
+    ['maennlich', 170, 63, 93, 'normal', null, 2],
+    ['maennlich', 170, 63, 94, 'erhoeht', 'tief', 0],
+    ['maennlich', 170, 63, 101, 'erhoeht', 'tief', 0],
+    ['maennlich', 170, 63, 102, 'hoch', 'mittel', -2],
+    ['intersex', 200, 80, 96, 'normal', null, 0],
+    ['intersex', 200, 80, 100, 'erhoeht', 'tief', 0],
+    ['intersex', 200, 80, 119, 'erhoeht', 'tief', -1],
+    ['intersex', 200, 80, 120, 'hoch', 'mittel', -2],
   ];
 
-  cases.forEach(([geschlecht, groesse, gewicht, bauchumfang, status, severity]) => {
+  cases.forEach(([geschlecht, groesse, gewicht, bauchumfang, status, severity, bodyNorm]) => {
     const results = W.Scoring.computeResults({
       ...HEALTHY_ANSWERS, geschlecht, groesse, gewicht, bauchumfang,
     });
     assert.strictEqual(results.metrics.waistStatus, status, `${geschlecht} ${bauchumfang} cm`);
+    assert.strictEqual(results.metrics.bodyRisk.norm, bodyNorm, `${geschlecht} ${bauchumfang} cm Norm`);
     const signal = results.signals.find((item) => item.id === 'koerperzusammensetzung');
     assert.strictEqual(signal ? signal.severity : null, severity, `${geschlecht} ${bauchumfang} cm Signal`);
     if (signal) {
@@ -627,6 +788,9 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
   const noWaist = { ...HEALTHY_ANSWERS, gewicht: 90 };
   delete noWaist.bauchumfang;
   const noWaistResults = W.Scoring.computeResults(noWaist);
+  assert.deepStrictEqual(noWaistResults.metrics.bodyRisk, {
+    source: 'bmi', norm: -2, severity: 'mittel',
+  });
   const noWaistInsight = W.Recommendations.dimensionInsights(noWaistResults, []).einfluss
     .find((item) => item.id === 'koerperzusammensetzung');
   assert.ok(noWaistInsight);
@@ -641,12 +805,43 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
 
   const normalWaistResults = W.Scoring.computeResults({ ...noWaist, bauchumfang: 70 });
   assert.strictEqual(normalWaistResults.metrics.waistStatus, 'normal');
+  assert.deepStrictEqual(normalWaistResults.metrics.bodyRisk, {
+    source: 'waist', norm: 2, severity: null,
+  });
+  assert.strictEqual(normalWaistResults.scores.einfluss, 100, 'Vorhandene Taille ist der zentrale Scorevertrag');
   const normalWaistInsight = W.Recommendations.dimensionInsights(normalWaistResults, []).einfluss
     .find((item) => item.id === 'koerperzusammensetzung');
-  assert.ok(normalWaistInsight);
-  assert.ok(normalWaistInsight.insight.includes('70'));
-  assert.ok(normalWaistInsight.insight.includes(W.ResultCopy.get('ui.metrics.waist_status.normal')));
-  assert.ok(!normalWaistInsight.insight.includes('erhöhten Taillenumfang'));
+  assert.strictEqual(normalWaistInsight, undefined, 'Normaler zentraler Körpervertrag erzeugt kein widersprüchliches BMI-Signal');
+
+  const normalWaistRiskPattern = {
+    ...HEALTHY_ANSWERS,
+    gewicht: 90,
+    bauchumfang: 79,
+    sitzzeit: 's9_10',
+    alkohol: 'w4plus',
+  };
+  const normalWaistRiskResults = W.Scoring.computeResults(normalWaistRiskPattern);
+  const normalWaistRiskContext = W.Recommendations.buildContext(normalWaistRiskPattern, normalWaistRiskResults);
+  assert.ok(!W.Recommendations.actionPlan(normalWaistRiskContext).some((record) => record.id === 'act_kardio'),
+    'Hoher BMI darf bei vorhandener normaler Taille nicht heimlich ins Kardio-Muster einfliessen');
+
+  const highWaistRiskPattern = { ...normalWaistRiskPattern, bauchumfang: 88 };
+  const highWaistRiskResults = W.Scoring.computeResults(highWaistRiskPattern);
+  const highWaistRiskContext = W.Recommendations.buildContext(highWaistRiskPattern, highWaistRiskResults);
+  assert.ok(W.Recommendations.actionPlan(highWaistRiskContext).some((record) => record.id === 'act_kardio'),
+    'Dasselbe Profil überschreitet mit hoher Taille nachvollziehbar die Kardio-Musterschwelle');
+
+  const highWaist = {
+    ...HEALTHY_ANSWERS, gewicht: 63, bauchumfang: 88, sitzzeit: 's9_10', alkohol: 'w4plus',
+  };
+  const highWaistResults = W.Scoring.computeResults(highWaist);
+  assert.deepStrictEqual(highWaistResults.metrics.bodyRisk, {
+    source: 'waist', norm: -2, severity: 'mittel',
+  });
+  assert.ok(highWaistResults.signals.some((signal) => signal.id === 'koerperzusammensetzung'));
+  const highWaistCtx = W.Recommendations.buildContext(highWaist, highWaistResults);
+  assert.ok(W.Recommendations.actionPlan(highWaistCtx).some((record) => record.id === 'act_kardio'),
+    'Derselbe hohe Taillenvertrag fliesst auch ins Kardio-Muster ein');
 });
 
 test('Alle eigenständigen Dimensionshinweise besitzen Relevanz, Schritt und Nutzen', () => {
@@ -690,7 +885,7 @@ test('Dimensionsdetails spiegeln jeden Top-Schritt in globaler Reihenfolge und o
   );
 });
 
-test('Kohärenz: Kardio-Check bündelt Familienrisiko, Vorsorge und Blutdruck ohne Detail-Doppelspur', () => {
+test('Kohärenz: Kardio-Check bündelt Vorsorge und Blutdruck, Familienhinweis bleibt eigenständig', () => {
   const answers = { ...DEFICIT_ANSWERS, familie_hk: 'ja', bluthochdruck: 'ja', vorsorge: 'ja' };
   const results = W.Scoring.computeResults(answers);
   const ctx = W.Recommendations.buildContext(answers, results);
@@ -699,23 +894,23 @@ test('Kohärenz: Kardio-Check bündelt Familienrisiko, Vorsorge und Blutdruck oh
   assert.ok(kardio, 'Kardio-Check muss im Aktionsplan liegen');
   assert.strictEqual(
     kardio.step,
-    W.ResultCopy.get('recommendation.special.act_kardio.step.already_assessed_family_history_hypertension'),
-    'Familienanamnese bleibt auch bei bereits erfolgter Vorsorge im Startschritt sichtbar'
+    W.ResultCopy.get('recommendation.special.act_kardio.step.already_assessed_hypertension'),
+    'Breite Familienfrage wird nicht als kardiovaskuläre Anamnese ausgegeben'
   );
 
   const detailIds = W.Recommendations.recommendationsForDimension('einfluss', ctx, plan)
     .map((record) => record.id);
   assert.ok(detailIds.includes('act_kardio'));
-  ['ei_familie', 'ei_vorsorge', 'ei_bluthochdruck'].forEach((id) => {
+  ['ei_vorsorge', 'ei_bluthochdruck'].forEach((id) => {
     assert.ok(!detailIds.includes(id), id + ' darf den gebündelten Kardio-Check nicht wiederholen');
   });
-  assert.ok(!detailIds.includes('ei_familienwissen'), 'Der Kardio-Plan enthält das Erheben der Familienanamnese bereits');
+  assert.ok(detailIds.includes('ei_familie'), 'Die allgemeine Familienkarte bleibt als eigenständiger Hinweis sichtbar');
+  assert.ok(!detailIds.includes('ei_familienwissen'), 'Die Familienkarte bündelt das Erheben der Details');
 
   const guidanceIds = W.Recommendations.dimensionInsights(results, plan).einfluss
     .map((item) => item.id);
-  ['familie_hk', 'bluthochdruck', 'vorsorge'].forEach((id) => {
-    assert.ok(!guidanceIds.includes(id), id + ' darf neben dem Kardio-Check keinen zweiten Hinweis erzeugen');
-  });
+  assert.ok(guidanceIds.includes('familie_hk'), 'Breites Familienrisiko wird nicht fälschlich durch Kardio-Check absorbiert');
+  assert.ok(!guidanceIds.includes('bluthochdruck'), 'Blutdrucksignal ist im Kardio-Check abgedeckt');
 });
 
 test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen beide neuen Varianten', () => {
@@ -723,21 +918,26 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
   const familyOnlyCtx = W.Recommendations.buildContext(familyOnly, W.Scoring.computeResults(familyOnly));
   const familyOnlyPlan = W.Recommendations.actionPlan(familyOnlyCtx);
   assert.ok(!familyOnlyPlan.some((record) => record.id === 'act_kardio'));
-  const familyOnlyIds = W.Recommendations.recommendationsForDimension('einfluss', familyOnlyCtx, familyOnlyPlan)
-    .map((record) => record.id);
+  const familyOnlyDetails = W.Recommendations.recommendationsForDimension('einfluss', familyOnlyCtx, familyOnlyPlan);
+  const familyOnlyIds = familyOnlyDetails.map((record) => record.id);
   assert.ok(familyOnlyIds.includes('ei_familie'));
   assert.ok(!familyOnlyIds.includes('ei_vorsorge'), 'Spezifische Familienkarte bündelt den generischen Check-up');
   assert.ok(!familyOnlyIds.includes('ei_familienwissen'), 'Der Familienrisiko-Plan enthält das Erheben der Details bereits');
+  const familyCard = familyOnlyDetails.find((record) => record.id === 'ei_familie');
+  assert.ok(familyCard);
+  assert.strictEqual(familyCard.plan[1].sourceRef, null,
+    'Die breite Familienfrage darf keine pauschale Herzquelle erhalten');
+  assert.ok(!familyCard.plan[1].text.includes('ApoB'));
+  assert.ok(familyCard.plan[0].text.includes('Bei Herz-Kreislauf-Erkrankungen'),
+    'Die Altersgrenzen müssen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt sein');
 
   const familyPattern = { ...HEALTHY_ANSWERS, familie_hk: 'ja', sitzzeit: 's9_10', vorsorge: 'ja' };
   const familyPatternCtx = W.Recommendations.buildContext(familyPattern, W.Scoring.computeResults(familyPattern));
   const familyKardio = W.Recommendations.actionPlan(familyPatternCtx)
     .find((record) => record.id === 'act_kardio');
-  assert.ok(familyKardio);
-  assert.strictEqual(
-    familyKardio.step,
-    W.ResultCopy.get('recommendation.special.act_kardio.step.already_assessed_family_history')
-  );
+  assert.strictEqual(familyKardio, undefined, 'Breite Familienfrage plus Sitzen ist kein Kardio-Risikomodell');
+  assert.ok(W.Recommendations.recommendationsForDimension('einfluss', familyPatternCtx)
+    .some((record) => record.id === 'ei_familie'));
 
   const unknownPressure = { ...DEFICIT_ANSWERS, familie_hk: 'ja', bluthochdruck: 'weiss_nicht' };
   const unknownCtx = W.Recommendations.buildContext(unknownPressure, W.Scoring.computeResults(unknownPressure));
@@ -794,7 +994,7 @@ test('Insights: Kardio-Muster wird dimensionsübergreifend erkannt (Beispielfall
   assert.strictEqual(levers[0].id, 'lv_kardio', 'Stabile Hebel-ID des kardiovaskulären Musters');
   assert.strictEqual(levers[0].label, W.ResultCopy.get('recommendation.lever.lv_kardio.label'));
   const factors = [
-    'family_history', 'hypertension', 'smoking',
+    'hypertension', 'smoking', 'body_composition',
   ].map((id) => W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.' + id));
   const factorList = W.ResultCopy.format('recommendation.special.act_kardio.risk_factor_list.many', {
     preceding: factors.slice(0, -1).join(', '),
@@ -835,7 +1035,7 @@ test('Kohärenz: Aktionsplan folgt den Hebeln (Kardio-Check #1, Rauchstopp #2)',
   assert.strictEqual(plan[0].id, 'act_kardio', 'Plan #1 = konkreter Vorsorge-Check');
   assert.strictEqual(
     plan[0].step,
-    W.ResultCopy.get('recommendation.special.act_kardio.step.assessment_needed_family_history_hypertension'),
+    W.ResultCopy.get('recommendation.special.act_kardio.step.assessment_needed_hypertension'),
     'Die passende Kardio-Variante wird über ihre stabile Text-ID aufgelöst'
   );
   assert.strictEqual(plan[1].id, 'ei_rauchstopp', 'Plan #2 = Rauchstopp (Top-Hebel derselben Dimension erlaubt)');
@@ -955,9 +1155,9 @@ test('Dimensionshinweise unterdrücken Plan-Doppelungen und behalten eigenständ
   const items = Object.values(grouped).flat();
   const ids = items.map((item) => item.id);
 
-  ['familie_hk', 'bluthochdruck', 'blutdruck_unbekannt', 'vorsorge', 'rauchen', 'bewegungsmangel', 'socialmedia']
+  ['bluthochdruck', 'blutdruck_unbekannt', 'vorsorge', 'rauchen', 'bewegungsmangel', 'socialmedia']
     .forEach((id) => assert.ok(!ids.includes(id), id + ' ist bereits durch den Aktionsplan abgedeckt'));
-  ['untergewicht', 'koerperzusammensetzung', 'stabilitaet', 'balance']
+  ['familie_hk', 'untergewicht', 'koerperzusammensetzung', 'stabilitaet', 'balance']
     .forEach((id) => assert.ok(ids.includes(id), id + ' muss als eigenständiger Dimensionshinweis bleiben'));
   assert.ok(grouped.einfluss.find((item) => item.id === 'untergewicht').clarify);
   assert.ok(grouped.einfluss.find((item) => item.id === 'koerperzusammensetzung').action);
@@ -966,7 +1166,7 @@ test('Dimensionshinweise unterdrücken Plan-Doppelungen und behalten eigenständ
   assert.strictEqual(new Set(ids).size, ids.length, 'kein Hinweis wird dimensionsübergreifend doppelt ausgegeben');
 });
 
-test('Kompatibilität: signalInsights behält Planverweis und Vertiefung für bestehende Consumer', () => {
+test('Kompatibilität: signalInsights trennt breites Familienrisiko vom Kardio-Plan', () => {
   const results = {
     metrics: {},
     signals: [{ id: 'familie_hk', type: 'medizinisch', severity: 'hoch' }],
@@ -976,12 +1176,12 @@ test('Kompatibilität: signalInsights behält Planverweis und Vertiefung für be
   assert.strictEqual(legacy.lifestyle.length, 0);
   assert.strictEqual(legacy.medical[0].id, 'familie_hk');
   assert.strictEqual(legacy.medical[0].dimension, 'einfluss');
-  assert.strictEqual(legacy.medical[0].planStep, 1);
+  assert.strictEqual(legacy.medical[0].planStep, null);
   assert.strictEqual(
     legacy.medical[0].deepen,
     W.ResultCopy.get('recommendation.signal.familie_hk.deepen'),
   );
-  assert.strictEqual(W.Recommendations.dimensionInsights(results, [{ id: 'act_kardio' }]).einfluss.length, 0);
+  assert.strictEqual(W.Recommendations.dimensionInsights(results, [{ id: 'act_kardio' }]).einfluss.length, 1);
 });
 
 test('Fitness-Kurztests: 0, 1, 2 oder 3 ausgefüllte Werte werden vollständig und stabil ausgegeben', () => {
@@ -1193,6 +1393,55 @@ test('Fitness-Kurztests: unpassende Vergleichsgruppen bleiben neutral, ungescort
     assert.ok(insight.referenceNote);
     assert.strictEqual(insight.recommendationId, null);
   });
+});
+
+test('Fitness-Kurztests: 16- und 17-Jährige behalten Rohwerte ohne Score- oder Empfehlungswirkung', () => {
+  [16, 17].forEach((alter) => {
+    const base = {
+      ...HEALTHY_ANSWERS,
+      alter,
+      geschlecht: 'maennlich',
+      krafttraining: 'tage3plus',
+      beweglichkeit: 'gar_nicht',
+    };
+    delete base.einbeinstand;
+    delete base.liegestuetze;
+    delete base.wandsitz;
+
+    const withoutTests = W.Scoring.computeResults(base);
+    const answers = { ...base, einbeinstand: 0, liegestuetze: 0, wandsitz: 0 };
+    const withTests = W.Scoring.computeResults(answers);
+    const byId = Object.fromEntries(withTests.fitnessTests.map((testResult) => [testResult.id, testResult]));
+
+    ['einbeinstand', 'liegestuetze', 'wandsitz'].forEach((id) => {
+      assert.strictEqual(byId[id].value, 0, alter + '/' + id + ': Rohwert bleibt erhalten');
+      assert.strictEqual(byId[id].referenceStatus, 'age_outside_reference', alter + '/' + id + ': keine Jugend-Scheinnorm');
+      assert.strictEqual(byId[id].scorable, false, alter + '/' + id + ': kein Score-Einfluss');
+    });
+    assert.strictEqual(withTests.scores.fitness, withoutTests.scores.fitness, alter + ': Fitness-Score bleibt unverändert');
+    assert.ok(!withTests.signals.some((signal) => signal.id === 'balance'), alter + ': kein Balance-Signal aus ungescortem Einbeinstand');
+
+    const context = W.Recommendations.buildContext(answers, withTests);
+    const recommendationIds = W.Recommendations
+      .recommendationsForDimension('fitness', context)
+      .map((recommendation) => recommendation.id);
+    assert.ok(!recommendationIds.includes('fi_beweglichkeit'), alter + ': keine Balance-Empfehlung aus ungescortem Einbeinstand');
+    assert.ok(!recommendationIds.includes('fi_kraft'), alter + ': keine Kraftempfehlung aus ungescorteten Kurztests');
+  });
+
+  const adultAnswers = {
+    ...HEALTHY_ANSWERS,
+    alter: 18,
+    geschlecht: 'maennlich',
+    krafttraining: 'tage3plus',
+    beweglichkeit: 'gar_nicht',
+    einbeinstand: 0,
+  };
+  const adultResults = W.Scoring.computeResults(adultAnswers);
+  const adultLegstand = adultResults.fitnessTests.find((testResult) => testResult.id === 'einbeinstand');
+  assert.strictEqual(adultLegstand.referenceStatus, 'supported', 'Einbeinstand-Vertrag beginnt weiterhin mit 18');
+  assert.strictEqual(adultLegstand.scorable, true);
+  assert.ok(adultResults.signals.some((signal) => signal.id === 'balance'));
 });
 
 test('Fitness-Kurztests: tiefe valide Werte führen exakt zur fachlich passenden Empfehlung', () => {

@@ -17,6 +17,8 @@ Die Verantwortlichkeiten sind getrennt:
 - `js/result-copy.generated.js` ist ein automatisch erzeugtes Runtime-Bundle.
 - `manifest.<locale>.webmanifest` und der deutsche Kompatibilitätsalias
   `manifest.webmanifest` werden aus den zentralen Installations-Texten erzeugt.
+  Alle Manifeste verwenden dieselbe neutrale Startadresse; die zuletzt in der
+  App gewählte und separat gespeicherte Sprache entscheidet beim Öffnen.
 - `exports/result-texte-uebersicht.md` bleibt die deutsche gruppierte
   **Lesefassung**. Zusätzlich gibt es `result-texte-uebersicht-<locale>.md`.
 - Eine CSV ist nur das **Austauschformat** mit Marketing, nie die Source of Truth.
@@ -36,17 +38,21 @@ enthält pro Eintrag aber nur:
 - `id` und den übersetzten `text`,
 - sprachspezifische `requiredTerms`, `reviewStatus` und optional `reviewComment`,
 - `translationState` (`missing` oder `translated`),
-- `sourceContractHash` als Bindung an den deutschen Ausgangsvertrag.
+- `sourceContractHash` als Bindung an den deutschen Ausgangsvertrag. Dieser
+  umfasst neben Text, Platzhaltern und Review-Metadaten ausdrücklich auch
+  `section` und `context`.
 
 Fehlende oder zusätzliche IDs/Domains, abweichende Platzhalter oder HTML-Tags,
 unbekannte Sprachen und gemischte CSV-Sprachen werden hart abgelehnt. Es gibt
-absichtlich keinen stillen Rückfall einzelner Texte auf Deutsch. Nur ein
-vollständiger, aktueller Locale-Katalog gelangt durch `validate`, `build` und
-`check`. Davon getrennt bleibt das bereits im HTML vorhandene deutsche
-Grundgerüst sichtbar, falls das gesamte Runtime-Bundle in einem fehlerhaften
-Deployment fehlt oder beschädigt ist. Dieser enge Bootstrap-Notfallfallback
-ersetzt keinen fehlenden Katalogeintrag und wird im normalen Sprachbetrieb nie
-verwendet.
+absichtlich keinen Rückfall einzelner Texte auf Deutsch. Nur ein vollständiger,
+aktueller Locale-Katalog gelangt durch `validate`, `build` und `check`. Erkennt
+die Runtime trotz dieser Release-Sperre ein fehlendes oder unvollständiges
+Sprachbundle, wechselt der gesamte Seitenaufruf geschlossen auf das vollständige
+deutsche Notfallbundle. Die gespeicherte Sprachpräferenz wird dabei nicht
+überschrieben. Auch die statische Seitenkopie wird erst nach einer vollständigen
+Vorprüfung geschrieben; dadurch können niemals bereits übersetzte und deutsche
+HTML-Bestandteile gemischt werden. Fehlt selbst das deutsche Bundle, bleibt das
+bereits im HTML vorhandene deutsche Bootstrap-Grundgerüst sichtbar.
 
 Besitzt der deutsche Ausgangseintrag `requiredTerms`, muss auch jede fertige
 Übersetzung sprachspezifische Schutzbegriffe festlegen. Dabei werden nicht
@@ -81,6 +87,10 @@ fehl, bis der Text wirklich übersetzt und als `translated` gekennzeichnet ist.
 Wenn sich der deutsche Text oder sein fachlicher Vertrag ändert, wird der
 `sourceContractHash` veraltet und die Übersetzung automatisch wieder
 prüfpflichtig. Ein geänderter Text darf nie automatisch als freigegeben gelten.
+Beim einmaligen Wechsel auf den um `section` und `context` erweiterten Vertrag
+migriert `sync-locales` ausschliesslich Hashes, die exakt dem bisherigen
+Altvertrag entsprechen. Bereits fachlich veraltete Hashes bleiben unangetastet
+und damit weiterhin prüfpflichtig.
 
 ## Umfang des Marketing-Exports
 
