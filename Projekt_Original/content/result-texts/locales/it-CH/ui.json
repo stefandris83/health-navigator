@@ -783,6 +783,33 @@
       "sourceContractHash": "2593fe49da9c0245a30a1a22faa568f989c7f3356a3734d7ac82a185b9588fe6"
     },
     {
+      "id": "ui.action_plan.heading.clarification",
+      "text": "Una valutazione professionale come prossimo passo",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3e491daa1239e0dc77184948ec9dbcb9264ec3052fcf820476b926e85f8f61c6"
+    },
+    {
+      "id": "ui.action_plan.intro.clarification",
+      "text": "Questo ambito d’intervento è importante, ma le informazioni disponibili non consentono di tradurlo in modo sicuro in un piano standardizzato di quattro settimane.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2dc174e5c66536af239e8aa1826aadcaef5f4c36b74cf99afd1b882eec98808d"
+    },
+    {
+      "id": "ui.action_plan.clarification.body",
+      "text": "Utilizzi l’indicazione sopra come base per un confronto con una figura professionale sanitaria o della nutrizione. I passi concreti dipendono dall’andamento nel tempo, da eventuali sintomi e dalle possibili cause.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1528237e70f8bfb42ccb1bd8f03908078a4b409ab43366a94e7743178cad4ca3"
+    },
+    {
       "id": "ui.action_plan.total_progress",
       "text": "{{done}} passi su {{total}} completati: vale la pena perseverare!",
       "requiredTerms": [],

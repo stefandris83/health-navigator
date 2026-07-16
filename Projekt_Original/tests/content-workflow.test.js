@@ -467,9 +467,29 @@ test('Review-Export ist human-first, explizit und thematisch gruppiert', () => {
     ['Körperliche Fitness', 'Krafttraining & Muskulatur']
   );
   assert.deepStrictEqual(
+    [byId.get('recommendation.strength.st_fitness_top.label').area, byId.get('recommendation.strength.st_fitness_top.label').topic],
+    ['Körperliche Fitness', 'Allgemeine Fitness']
+  );
+  assert.deepStrictEqual(
     [byId.get('recommendation.special.act_kardio.title').area, byId.get('recommendation.special.act_kardio.title').topic],
     ['Einflussfaktoren', 'Herz-Kreislauf & Vorsorge']
   );
+  ['lv_familie', 'lv_vorsorge'].forEach((leverId) => {
+    const record = byId.get(`recommendation.lever.${leverId}.label`);
+    assert.deepStrictEqual(
+      [record.area, record.topic],
+      ['Einflussfaktoren', 'Herz-Kreislauf & Vorsorge'],
+      leverId + ': Review-Facet'
+    );
+  });
+  ['lv_untergewicht', 'lv_koerperprofil'].forEach((leverId) => {
+    const record = byId.get(`recommendation.lever.${leverId}.label`);
+    assert.deepStrictEqual(
+      [record.area, record.topic],
+      ['Einflussfaktoren', 'Körperzusammensetzung & Stoffwechsel'],
+      leverId + ': Review-Facet'
+    );
+  });
   assert.deepStrictEqual(
     [byId.get('recommendation.catalog.er_protein.title').area, byId.get('recommendation.catalog.er_protein.title').topic],
     ['Ernährung', 'Protein & Muskelerhalt']
@@ -526,6 +546,31 @@ test('Review-Export ist human-first, explizit und thematisch gruppiert', () => {
     assert.ok(index > previousIndex, id + ': natürliche Review-Reihenfolge');
     return index;
   }, -1);
+});
+
+test('Neue Übersetzungen reservieren Review-Kommentare für echte Prüfrückmeldungen', () => {
+  const ids = [
+    'recommendation.lever.lv_familie.label',
+    'recommendation.lever.lv_familie.detail',
+    'recommendation.lever.lv_vorsorge.label',
+    'recommendation.lever.lv_vorsorge.detail',
+    'recommendation.lever.lv_untergewicht.label',
+    'recommendation.lever.lv_untergewicht.detail',
+    'recommendation.lever.lv_koerperprofil.label',
+    'recommendation.lever.lv_koerperprofil.detail',
+    'ui.action_plan.heading.clarification',
+    'ui.action_plan.intro.clarification',
+    'ui.action_plan.clarification.body',
+  ];
+  ['en-CH', 'fr-CH', 'it-CH'].forEach((locale) => {
+    const catalog = Workflow.loadCatalog({ locale });
+    const translations = new Map(catalog.entries.map((record) => [record.id, record.translationEntry]));
+    ids.forEach((id) => {
+      const entry = translations.get(id);
+      assert.ok(entry, locale + '/' + id + ': Übersetzung fehlt');
+      assert.strictEqual(entry.reviewComment || '', '', locale + '/' + id + ': Review-Kommentar muss leer starten');
+    });
+  });
 });
 
 test('Spaltenreihenfolge ist flexibel und Legacy-CSV bleibt ohne Verlust importierbar', () => {

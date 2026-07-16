@@ -15,20 +15,20 @@
 ## Freigabestand
 
 - Sprache: `fr-CH`
-- Quellversion: `v1:2753406ae033524b8a3a078df9e4ea8eea44d0672c1fdc016fcb1e0eef53b998`
-- Gesamtbestand: **1185 Texte**
-- Freigegeben: **0** · Offen: **1185**
+- Quellversion: `v1:b63d9395fffb5794bf0bdc1937c4cd632610499b932f72111392377cb58f8cee`
+- Gesamtbestand: **1198 Texte**
+- Freigegeben: **0** · Offen: **1198**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1185 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1198 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1185 | 0 | 1185 |
-| Medizin | 653 | 0 | 653 |
+| Marketing | 1198 | 0 | 1198 |
+| Medizin | 665 | 0 | 665 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -36,8 +36,8 @@
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 208 | 208 |
-| [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 116 | 116 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 216 | 216 |
+| [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 118 | 118 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
 | [Mentales Wohlbefinden](#bereich-mentales-wohlbefinden) | 5 | 92 | 92 |
@@ -46,7 +46,7 @@
 | [Medizin &amp; Sicherheit](#bereich-medizin-und-sicherheit) | 1 | 10 | 10 |
 | [Globale Navigation](#bereich-globale-navigation) | 1 | 48 | 48 |
 | [Quellen &amp; Transparenz](#bereich-quellen-und-transparenz) | 1 | 101 | 101 |
-| [Übergreifende Ergebnisdarstellung](#bereich-ubergreifende-ergebnisdarstellung) | 2 | 122 | 122 |
+| [Übergreifende Ergebnisdarstellung](#bereich-ubergreifende-ergebnisdarstellung) | 2 | 125 | 125 |
 
 <a id="bereich-fragebogen"></a>
 
@@ -3473,15 +3473,15 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (208 Texte)
+## 2. Einflussfaktoren (216 Texte)
 
 Themen in diesem Bereich:
 
 - [Alkohol](#thema-einflussfaktoren-alkohol): 16 Texte, 16 offen
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
-- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 94 Texte, 94 offen
-- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 27 Texte, 27 offen
+- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 98 Texte, 98 offen
+- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
 - [Weitere Einflussfaktoren](#thema-einflussfaktoren-weitere-einflussfaktoren): 7 Texte, 7 offen
@@ -4193,7 +4193,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-herz-kreislauf-und-vorsorge"></a>
 
-### Herz-Kreislauf &amp; Vorsorge (94 Texte)
+### Herz-Kreislauf &amp; Vorsorge (98 Texte)
 
 #### Überschrift: Kardiovaskulärer Vorsorge-Check, Titel
 
@@ -5034,15 +5034,16 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.plan.ei_familie.weeks_2_3`
-- Prüfhinweis: Pauschale kardiovaskuläre Laborempfehlung aus der breiten Familienfrage entfernt; durch Marketing und Medizin freigeben\.
+- Geschützte Begriffe: Lp\(a\) \| ApoB
+- Prüfhinweis: Kardiovaskuläre Werte nur konditional bei tatsächlich früher Herz-Kreislauf-Familiengeschichte; ApoB nicht als Standardtest formuliert\. Durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Klären Sie mit der Fachperson, welche Basiswerte oder gezielten Untersuchungen zu Ihrer Familiengeschichte passen.
+> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz\-Kreislauf\-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp\(a\) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.
 
 **Aktueller Text**
 
-> Prenez rendez\-vous et apportez ces antécédents familiaux. Déterminez avec le ou la spécialiste de la santé quels paramètres de base ou examens ciblés sont adaptés à vos antécédents familiaux.
+> Prenez rendez\-vous et apportez ces antécédents familiaux. Si des maladies cardiovasculaires sont apparues tôt dans votre famille, discutez de la tension artérielle et d’un bilan lipidique, ainsi que de la question de savoir si la Lp\(a\) a déjà été mesurée une fois; l’utilité d’ApoB en complément dépend de votre profil de risque individuel. En cas de diabète ou d’autres maladies héréditaires, la professionnelle ou le professionnel de santé déterminera les examens adaptés.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5414,6 +5415,38 @@ Themen in diesem Bereich:
 - Seitenelement: Handlungsfelder
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_familie.label`
+- Prüfhinweis: Neue scoreunabhängige Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Familiäres Risiko in die Vorsorge einbeziehen
+
+**Aktueller Text**
+
+> Intégrer le risque familial à la prévention
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_familie.detail`
+- Prüfhinweis: Breite Familienfrage bewusst nicht pauschal als Herz-Kreislauf-Risiko formuliert; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz\-Kreislauf\-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.
+
+**Aktueller Text**
+
+> Notez quelle maladie est apparue chez quel proche et à quel âge, puis parlez\-en avec une professionnelle ou un professionnel de santé. S’il s’agit notamment d’une maladie cardiovasculaire, abordez explicitement l’évaluation de votre risque cardiovasculaire personnel et la prévention adaptée, en particulier en cas de survenue précoce dans la famille.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.lever.lv_familienwissen.label`
 
 **Deutscher Ausgangstext**
@@ -5469,6 +5502,38 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Plusieurs facteurs augmentent ensemble votre risque cardiovasculaire, dans votre cas : {{riskFactors}}. Un check\-up médical rend votre risque personnel plus concret et aide à prioriser les prochaines étapes.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorge.label`
+- Prüfhinweis: Neue scoreunabhängige Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Persönliches Risiko einmal einschätzen lassen
+
+**Aktueller Text**
+
+> Faire évaluer une fois votre risque personnel
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorge.detail`
+- Prüfhinweis: Keine pauschale Screening-Pflicht behauptet; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Ein persönlicher Check\-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.
+
+**Aktueller Text**
+
+> Un bilan personnel peut mettre en évidence des risques qui restent longtemps inaperçus. Demandez à une professionnelle ou un professionnel de santé quels paramètres de base et examens de prévention sont adaptés à votre âge et à vos antécédents familiaux.
 
 #### Quellenbezeichnung: Sichtbares Label einer Fachquelle
 
@@ -5639,7 +5704,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
-### Körperzusammensetzung &amp; Stoffwechsel (27 Texte)
+### Körperzusammensetzung &amp; Stoffwechsel (31 Texte)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5789,6 +5854,70 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Votre tour de taille ou votre poids se situe dans une plage susceptible de solliciter le métabolisme.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_koerperprofil.label`
+- Prüfhinweis: Neutrales Wording ohne Körperbild- oder Therapiezuschreibung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Körperprofil fachlich einordnen
+
+**Aktueller Text**
+
+> Faire évaluer les mesures corporelles
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_koerperprofil.detail`
+- Prüfhinweis: Keine pauschale Gewichtsabnahme oder Diagnose aus Einzelwerten; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
+
+**Aktueller Text**
+
+> Un IMC ou un tour de taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_untergewicht.label`
+- Prüfhinweis: Bewusst ohne pauschale Aufforderung zur Gewichtszunahme; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Gewicht im Untergewichtsbereich einordnen
+
+**Aktueller Text**
+
+> Faire évaluer un poids dans la plage d’insuffisance pondérale
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_untergewicht.detail`
+- Prüfhinweis: Aus BMI allein keine Ursache oder Therapie abgeleitet; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Ein BMI im Untergewichtsbereich ist keine Diagnose. Klären Sie besonders bei unbeabsichtigtem oder neuem niedrigem Gewicht mögliche Ursachen und die Nährstoffversorgung medizinisch oder ernährungsfachlich ab.
+
+**Aktueller Text**
+
+> Un IMC dans la plage d’insuffisance pondérale n’est pas un diagnostic. Surtout si le faible poids est involontaire ou récent, faites évaluer les causes possibles et l’apport nutritionnel sur le plan médical ou nutritionnel.
 
 #### Beschriftung: Ergebnis-Zusammenfassung · Themenlabel «Körperzusammensetzung &amp; Stoffwechsel»
 
@@ -6324,14 +6453,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.strength.st_rauchfrei.detail`
+- Prüfhinweis: Nicht belegten Superlativ entfernt; durch Marketing und Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Sie rauchen nicht – der wichtigste einzelne Schutzfaktor für Herz, Gefässe und Lunge.
+> Sie rauchen nicht und vermeiden damit einen wichtigen beeinflussbaren Risikofaktor für Herz, Gefässe und Lunge.
 
 **Aktueller Text**
 
-> Vous ne fumez pas : c’est le principal facteur de protection individuel pour le cœur, les vaisseaux et les poumons.
+> Vous ne fumez pas et évitez ainsi un important facteur de risque modifiable pour le cœur, les vaisseaux et les poumons.
 
 #### Beschriftung: Stärke · Einflussfaktoren · Kurzlabel
 
@@ -6712,11 +6842,11 @@ Themen in diesem Bereich:
 
 <a id="bereich-korperliche-fitness"></a>
 
-## 3. Körperliche Fitness (116 Texte)
+## 3. Körperliche Fitness (118 Texte)
 
 Themen in diesem Bereich:
 
-- [Allgemeine Fitness](#thema-korperliche-fitness-allgemeine-fitness): 24 Texte, 24 offen
+- [Allgemeine Fitness](#thema-korperliche-fitness-allgemeine-fitness): 26 Texte, 26 offen
 - [Ausdauer &amp; Kondition](#thema-korperliche-fitness-ausdauer-und-kondition): 20 Texte, 20 offen
 - [Beweglichkeit &amp; Gleichgewicht](#thema-korperliche-fitness-beweglichkeit-und-gleichgewicht): 19 Texte, 19 offen
 - [Bewegung im Alltag &amp; Einstieg](#thema-korperliche-fitness-bewegung-im-alltag-und-einstieg): 19 Texte, 19 offen
@@ -6724,7 +6854,7 @@ Themen in diesem Bereich:
 
 <a id="thema-korperliche-fitness-allgemeine-fitness"></a>
 
-### Allgemeine Fitness (24 Texte)
+### Allgemeine Fitness (26 Texte)
 
 #### Dynamischer Text: Demo-Coach-Antwort zu Bewegung, Sport, Fitness oder Kraft
 
@@ -6881,6 +7011,38 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Vous intégrez déjà de l’activité physique dans votre quotidien. Un mélange équilibré d’endurance, de force et de mobilité peut encore renforcer ce domaine.
+
+#### Beschriftung: Stärke · Körperliche Fitness · Kurzlabel
+
+- Seitenelement: Stärken
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.strength.st_fitness_top.label`
+- Prüfhinweis: Neue, streng mehrquellenbasierte Topstärke; durch Marketing freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Sehr starke körperliche Fitness
+
+**Aktueller Text**
+
+> Très bonne condition physique
+
+#### Detailtext: Stärke · Körperliche Fitness · Detailtext
+
+- Seitenelement: Stärken
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.strength.st_fitness_top.detail`
+- Prüfhinweis: Aussage gilt nur bei Fitnessscore mindestens 90, erreichtem WHO-Ziel und passenden Top-Kurztests in Muskulatur und Balance; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Ihr Fitnesswert ist sehr hoch: Sie erreichen das WHO\-Bewegungsziel, und auswertbare Kurztests für Muskulatur und Balance liegen jeweils im obersten Orientierungsbereich.
+
+**Aktueller Text**
+
+> Votre score de forme physique est très élevé : vous atteignez l’objectif d’activité physique de l’OMS et les tests courts évaluables pour la musculature et l’équilibre se situent chacun dans la plage d’orientation la plus élevée.
 
 #### Beschriftung: 4-Wochen-Plan, Label vor einem oder mehreren persönlichen Fitness-Retests in Woche 4
 
@@ -16716,16 +16878,16 @@ Themen in diesem Bereich:
 
 <a id="bereich-ubergreifende-ergebnisdarstellung"></a>
 
-## 12. Übergreifende Ergebnisdarstellung (122 Texte)
+## 12. Übergreifende Ergebnisdarstellung (125 Texte)
 
 Themen in diesem Bereich:
 
-- [Navigation, Ergebnis &amp; Bedienung](#thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung): 120 Texte, 120 offen
+- [Navigation, Ergebnis &amp; Bedienung](#thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung): 123 Texte, 123 offen
 - [Weitere Empfehlungen](#thema-ubergreifende-ergebnisdarstellung-weitere-empfehlungen): 2 Texte, 2 offen
 
 <a id="thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung"></a>
 
-### Navigation, Ergebnis &amp; Bedienung (120 Texte)
+### Navigation, Ergebnis &amp; Bedienung (123 Texte)
 
 #### Überschrift: Aufklappbarer 4-Wochen-Plan einer Aktionskarte
 
@@ -16834,6 +16996,22 @@ Themen in diesem Bereich:
 
 > {{done}} étapes sur {{total}} terminées : cela vaut la peine de persévérer \!
 
+#### Begründung / Einordnung: Hinweiskarte bei einem sichtbaren Klärungshinweis ohne standardisierten 4-Wochen-Plan
+
+- Seitenelement: Aktionsplan
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.action_plan.clarification.body`
+- Prüfhinweis: Sichere Weiterleitung ohne Diagnose oder pauschale Therapie; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Nutzen Sie den Hinweis oben für eine medizinische oder ernährungsfachliche Einordnung. Konkrete Schritte richten sich nach Verlauf, Beschwerden und möglichen Ursachen.
+
+**Aktueller Text**
+
+> Utilisez l’indication ci\-dessus comme base de discussion avec une professionnelle ou un professionnel de santé ou de la nutrition. Les mesures concrètes dépendent de l’évolution, des symptômes et des causes possibles.
+
 #### Überschrift: Neutrale Karte ohne eindeutig priorisierten Aktionsschritt, Titel
 
 - Seitenelement: Aktionsplan
@@ -16881,6 +17059,22 @@ Themen in diesem Bereich:
 
 > Vos trois prochaines étapes
 
+#### Überschrift: Sektionsüberschrift bei einem sichtbaren medizinischen oder ernährungsfachlichen Klärungshinweis ohne standardisierten Plan
+
+- Seitenelement: Aktionsplan
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.action_plan.heading.clarification`
+- Prüfhinweis: Eigener Zustand für Summary-only-Hinweise ohne widersprüchlichen Aktionsplan-Leertext; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Fachliche Einordnung als nächster Schritt
+
+**Aktueller Text**
+
+> Une évaluation professionnelle comme prochaine étape
+
 #### Überschrift: Sektionsüberschrift bei genau einem priorisierten Schritt
 
 - Seitenelement: Aktionsplan
@@ -16926,6 +17120,22 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Votre point de départ personnel
+
+#### Begründung / Einordnung: Beschreibung bei einem sichtbaren Klärungshinweis ohne standardisierten 4-Wochen-Plan
+
+- Seitenelement: Aktionsplan
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.action_plan.intro.clarification`
+- Prüfhinweis: Verhindert eine pauschale Anleitung aus Einzelwerten; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Dieses Handlungsfeld ist wichtig, lässt sich aus den vorhandenen Angaben aber nicht sicher in einen standardisierten 4\-Wochen\-Plan übersetzen.
+
+**Aktueller Text**
+
+> Cet aspect est important, mais les informations disponibles ne permettent pas de le traduire de manière sûre en un programme standardisé de quatre semaines.
 
 #### Begründung / Einordnung: Beschreibung bei genau einem priorisierten Schritt
 

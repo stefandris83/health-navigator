@@ -983,6 +983,78 @@
       "sourceContractHash": "d39a8108279529cb607bf36f553c70fdbab1622c63a907274013c1596e73a8a1"
     },
     {
+      "id": "recommendation.lever.lv_familie.label",
+      "text": "Considerare il rischio familiare nella prevenzione",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5c2da67e06e1e49511ada68bfc164b23f690f1d3f669863d53680d9e46c358e"
+    },
+    {
+      "id": "recommendation.lever.lv_familie.detail",
+      "text": "Annoti quale malattia è comparsa in quale familiare stretto e a quale età, poi ne parli con una figura professionale sanitaria. Se tra queste vi sono malattie cardiovascolari, affronti esplicitamente una valutazione del Suo rischio cardiovascolare personale e la prevenzione adeguata, soprattutto se sono comparse precocemente in famiglia.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "4a4e3c8dba7b36cc3e3e1e4f215a0717f0d4c0b4076e52adaed20b10c0a9ff20"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.label",
+      "text": "Far valutare una volta il rischio personale",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3229d68a51876d1687a411fe57908e70355de2e36aa09a312d6002a557b1f987"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.detail",
+      "text": "Un check-up personale può individuare rischi che rimangono a lungo inosservati. Chieda a una figura professionale sanitaria quali valori di base ed esami preventivi sono adatti alla Sua età e alla Sua storia familiare.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8d9d5123e3428ff5315b83553728980991334de15c6a9a34fe2dfd1c267a060a"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.label",
+      "text": "Far valutare un peso nella fascia del sottopeso",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d32015d488fe35e2341deea9be11d10a15a9da397bb77800045ac49eef7331b8"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.detail",
+      "text": "Un BMI nella fascia del sottopeso non è una diagnosi. Soprattutto se il peso basso è involontario o recente, faccia valutare le possibili cause e l’apporto di nutrienti in ambito medico o nutrizionale.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "fb17a078a55d29615a59e7e4bed5a79295c1570be9781f19f0e6fcaf95f162a7"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.label",
+      "text": "Far valutare il profilo corporeo",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1f25452a487cd987e48b27fb75b35b619836b0a8457e79d1291a195c38ff664b"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.detail",
+      "text": "Un BMI o una circonferenza vita elevati non costituiscono una diagnosi. Valuti circonferenza vita, peso e parametri metabolici insieme a una figura professionale sanitaria prima di decidere cambiamenti specifici.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "text": "Affrontare la cessazione del fumo: la principale leva individuale",
       "requiredTerms": [],
@@ -1409,6 +1481,24 @@
       "sourceContractHash": "4190a36f4b9cd87701e983aef181336d63f61da02772e9a8e2cb7715c9d9aa00"
     },
     {
+      "id": "recommendation.strength.st_fitness_top.label",
+      "text": "Forma fisica molto elevata",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "6752c14694d89dfe43049e5afc8bdd385e9fea4d33b36bcb705e23e161550181"
+    },
+    {
+      "id": "recommendation.strength.st_fitness_top.detail",
+      "text": "Il Suo punteggio di forma fisica è molto elevato: raggiunge l’obiettivo di movimento dell’OMS e i test brevi valutabili per muscolatura ed equilibrio rientrano entrambi nella fascia orientativa più alta.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "87d43076070e0a5a68426ef31ee0c58cf81392dd1619ae7f65d9ef42ac889dd5"
+    },
+    {
       "id": "recommendation.strength.st_rauchfrei.label",
       "text": "Senza fumo",
       "requiredTerms": [],
@@ -1418,11 +1508,11 @@
     },
     {
       "id": "recommendation.strength.st_rauchfrei.detail",
-      "text": "Non fuma: è il principale fattore protettivo individuale per cuore, vasi sanguigni e polmoni.",
+      "text": "Non fuma ed evita così un importante fattore di rischio modificabile per cuore, vasi sanguigni e polmoni.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d815c95f5c54050432f5b033b76e600f11287363dc49d552de3ca0744f00666b"
+      "sourceContractHash": "8017481b834f21f24e88b3e2e7f250f5d25fa93307ff1e9ec15bdb6e836972e7"
     },
     {
       "id": "recommendation.strength.st_rauchstopp.label",
@@ -2320,11 +2410,14 @@
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
-      "text": "Fissi un appuntamento e porti con sé la storia familiare. Chiarisca con il professionista sanitario quali valori di base o accertamenti mirati siano appropriati per la Sua storia familiare.",
-      "requiredTerms": [],
+      "text": "Fissi un appuntamento e porti con sé la storia familiare. Se nella Sua famiglia si sono verificate precocemente malattie cardiovascolari, discuta pressione arteriosa e profilo lipidico, nonché se la Lp(a) sia già stata misurata una volta; l’utilità aggiuntiva di ApoB dipende dal Suo profilo di rischio individuale. In caso di diabete o altre malattie ereditarie, la figura professionale sanitaria stabilirà gli esami appropriati.",
+      "requiredTerms": [
+        "Lp(a)",
+        "ApoB"
+      ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2c46e69ce0365802bba33c8831f7df0e222df2d8b7d7fe65b065d3856299cc1d"
+      "sourceContractHash": "4bf48600e24abeb53f0844f000c8f0ee795150786825b9764326cf3b19d03646"
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",

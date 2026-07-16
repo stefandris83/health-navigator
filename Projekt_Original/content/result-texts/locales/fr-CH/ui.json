@@ -783,6 +783,33 @@
       "sourceContractHash": "2593fe49da9c0245a30a1a22faa568f989c7f3356a3734d7ac82a185b9588fe6"
     },
     {
+      "id": "ui.action_plan.heading.clarification",
+      "text": "Une évaluation professionnelle comme prochaine étape",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3e491daa1239e0dc77184948ec9dbcb9264ec3052fcf820476b926e85f8f61c6"
+    },
+    {
+      "id": "ui.action_plan.intro.clarification",
+      "text": "Cet aspect est important, mais les informations disponibles ne permettent pas de le traduire de manière sûre en un programme standardisé de quatre semaines.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2dc174e5c66536af239e8aa1826aadcaef5f4c36b74cf99afd1b882eec98808d"
+    },
+    {
+      "id": "ui.action_plan.clarification.body",
+      "text": "Utilisez l’indication ci-dessus comme base de discussion avec une professionnelle ou un professionnel de santé ou de la nutrition. Les mesures concrètes dépendent de l’évolution, des symptômes et des causes possibles.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1528237e70f8bfb42ccb1bd8f03908078a4b409ab43366a94e7743178cad4ca3"
+    },
+    {
       "id": "ui.action_plan.total_progress",
       "text": "{{done}} étapes sur {{total}} terminées : cela vaut la peine de persévérer !",
       "requiredTerms": [],

@@ -109,6 +109,22 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Diabetes und sonstige erbliche Erkrankungen und zählt deshalb nicht mehr als
   kardiovaskulärer Musterfaktor. Eigenständiges medizinisches Signal und
   Familienempfehlung bleiben erhalten.
+- [x] Scorefreie Vorsorgehinweise lückenlos in «Grösste Handlungsfelder» routen:
+  `familie_hk = ja` nutzt die spezifische Familienkarte, `vorsorge = nein` die
+  allgemeine Vorsorgekarte; treffen beide zu, erscheint keine Doppelung. Der Score
+  bleibt in allen Fällen unverändert.
+- [x] Medizinisch hohen Bluthochdruck in Mischprofilen vor Verdrängung schützen:
+  Bei einem echten Kardio-Mehrfaktorenmuster kann der Kardio-Check neben Rauchstopp
+  als zweites Haupthandlungsfeld derselben Dimension sichtbar bleiben.
+- [x] Untergewicht und auffälliges Körperprofil ohne Scheingenauigkeit abbilden:
+  Beide erhalten eine fachlich vorsichtige Summary; aus BMI oder Taillenumfang
+  allein wird bewusst kein standardisierter 4-Wochen- oder Therapieplan erzeugt.
+  Ein eigener Klärungszustand verhindert dabei einen widersprüchlichen Leertext.
+- [ ] Prioritäten und DE-/EN-/FR-/IT-Texte der neuen Vorsorge- und Summary-Hebel
+  durch Product, Marketing und Medizin freigeben. Besonders prüfen: konditionale
+  Nennung von Lp(a) nur bei tatsächlich früher Herz-Kreislauf-Familiengeschichte,
+  ApoB nur als vom individuellen Risikoprofil abhängige Zusatzfrage und neutrales
+  Wording zu Untergewicht/Körperprofil sowie die drei neuen Klärungszustand-Texte.
 - [x] Gesamtstatus gegen das Überdecken einer sehr schwachen Dimension schützen:
   Der numerische Wert bleibt der gleichgewichtete Mittelwert; liegt mindestens
   eine Dimension unter 40, ist der sichtbare Status höchstens «Solide Basis».
@@ -121,6 +137,16 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Wandsitzwerte unter 18, Liegestützwerte ausserhalb von 20–69 sowie unpassende
   geschlechtsspezifische Referenzen bleiben ohne Kategorie, Statusfarbe,
   Score-Einfluss und automatische Empfehlung.
+- [x] Breit bestätigte Spitzenfitness in der Stärkenkarte sichtbar priorisieren:
+  Fitnessscore ab 90, erreichtes WHO-Bewegungsziel sowie auswertbare Top-Kurztests
+  für Muskulatur und Balance sind gemeinsam erforderlich. Ein offener
+  Fitness-Handlungsbedarf, zwei Tests desselben Teilbereichs oder eine unpassende
+  Referenz verhindern die zusammengefasste Topaussage. Einfache Schutzfaktoren wie
+  «Rauchfrei» bleiben als Füllkandidaten erhalten.
+- [ ] Schwelle, Aussagebreiten-Rangfolge und DE-/EN-/FR-/IT-Texte der neuen
+  Fitness-Topstärke durch Product, Marketing und Medizin freigeben. Insbesondere
+  bestätigen, dass «oberster Orientierungsbereich» keine Leistungsdiagnostik,
+  VO₂max-Aussage oder individuelle Gesundheits-/Longevity-Prognose bezeichnet.
 - [x] Wandsitz im Fitness-Score medizinisch der Muskulatur zuordnen: Er misst lokale
   Bein-Kraftausdauer und bildet gemeinsam mit dem Liegestütz-Test die Testhälfte
   des Muskulatur-Sub-Scores; er wird nicht mehr der Kondition zugerechnet.

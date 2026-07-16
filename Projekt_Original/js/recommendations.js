@@ -248,7 +248,7 @@
     bluthochdruck: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bluthochdruck', 'act_kardio'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     blutdruck_unbekannt: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bd_messen', 'act_kardio'], fields: ['title', 'insight', 'clarify'] },
     familie_hk: { dimension: 'einfluss', relatedRecommendationIds: ['ei_familie', 'ei_familienwissen'], fields: ['title', 'insight', 'clarify', 'deepen'] },
-    vorsorge: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio', 'ei_vorsorge'], fields: ['title', 'insight', 'clarify', 'deepen'] },
+    vorsorge: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio', 'ei_vorsorge', 'ei_familie'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     untergewicht: { dimension: 'einfluss', relatedRecommendationIds: [], fields: ['title', 'insight', 'clarify', 'benefit'] },
     rauchen: { dimension: 'einfluss', relatedRecommendationIds: ['ei_rauchstopp'], fields: ['title', 'insight', 'action', 'deepen'] },
     alkohol: { dimension: 'einfluss', relatedRecommendationIds: ['ei_alkohol'], fields: ['title', 'insight', 'action'] },
@@ -567,19 +567,59 @@
       absorbs: ['blutdruck'],
       covers: ['ei_bluthochdruck', 'ei_vorsorge'],
       when: (c) => cvRiskPattern(c).r >= 3,
-      prio: (c) => Math.min(10, 4 + cvRiskPattern(c).r) + (c.a.vorsorge === 'nein' ? 0.5 : 0),
+      // Ein echtes Mehrfaktorenmuster mit bekanntem Bluthochdruck darf in der
+      // Kurz-Zusammenfassung nicht hinter einem einzelnen Lifestyle-Hebel
+      // verschwinden. Bei Gleichstand gewinnt die zusammengesetzte Regel durch
+      // ihre frühere Position; Rauchstopp bleibt als zweiter Top-Hebel möglich.
+      prio: (c) => Math.min(10, 5.5 + cvRiskPattern(c).r + (c.a.vorsorge === 'nein' ? 0.5 : 0)),
     },
     {
       id: 'lv_blutdruck', dim: 'einfluss', topic: 'blutdruck',
       rec: 'ei_bluthochdruck',
+      scoreIndependent: true,
       when: (c) => c.a.bluthochdruck === 'ja',
       prio: () => 7.2,
     },
     {
       id: 'lv_bd_messen', dim: 'einfluss', topic: 'blutdruck',
       rec: 'ei_bd_messen',
+      scoreIndependent: true,
       when: (c) => c.a.bluthochdruck === 'weiss_nicht',
       prio: () => 3.8,
+    },
+    {
+      id: 'lv_familie', dim: 'einfluss', topic: 'vorsorge',
+      rec: 'ei_familie',
+      scoreIndependent: true,
+      when: (c) => c.a.familie_hk === 'ja',
+      prio: (c) => (c.a.vorsorge === 'nein' ? 6.8 : 5.8),
+    },
+    {
+      id: 'lv_vorsorge', dim: 'einfluss', topic: 'vorsorge',
+      rec: 'ei_vorsorge',
+      scoreIndependent: true,
+      when: (c) => c.a.vorsorge === 'nein',
+      prio: () => 5.5,
+    },
+    {
+      id: 'lv_untergewicht', dim: 'einfluss', topic: 'gewicht_medizinisch',
+      // Aus den vorhandenen medizinisch geprüften Signaltexten entsteht ein
+      // sichtbares Haupthandlungsfeld, bewusst jedoch kein standardisierter
+      // 4-Wochen-Plan: Dafür fehlen Angaben zu Verlauf, Ursache und Beschwerden.
+      summaryOnly: true,
+      when: (c) => c.sig.has('untergewicht'),
+      prio: () => 6.2,
+    },
+    {
+      id: 'lv_koerperprofil', dim: 'einfluss', topic: 'koerperzusammensetzung',
+      // Auch hier ist die Summary sicher ableitbar, eine pauschale Gewichts-
+      // oder Therapieempfehlung aus BMI/Taille allein dagegen nicht.
+      summaryOnly: true,
+      when: (c) => c.sig.has('koerperzusammensetzung'),
+      prio: (c) => {
+        const signal = (c.signals || []).find((item) => item.id === 'koerperzusammensetzung');
+        return signal && signal.severity === 'mittel' ? 6 : 4.5;
+      },
     },
     {
       id: 'lv_rauchstopp', dim: 'einfluss', topic: 'rauchen',
@@ -782,53 +822,80 @@
 
   const LEVERS = LEVER_RULES.map(attachLeverCopy);
 
-  /* Stärken-Katalog: konkrete, antwortbasierte Schutzfaktoren. */
+  function hasOpenFitnessAction(c) {
+    return CATALOG.some((record) => record.dim === 'fitness' && safeCheck(record.when, c));
+  }
+
+  function hasBroadlyConfirmedTopFitness(c) {
+    const scorableTests = (c.fitnessTests || []).filter((test) => test.scorable);
+    const testComponents = new Set(scorableTests.map((test) => test.scoreComponent));
+    return Number(c.scores.fitness) >= 90
+      && c.activity.hasData
+      && c.activity.goalMet
+      && testComponents.has('musculature')
+      && testComponents.has('balance')
+      && scorableTests.every((test) => test.norm === 2)
+      && !c.sig.has('stabilitaet')
+      && !hasOpenFitnessAction(c);
+  }
+
+  /*
+   * Stärken-Katalog: konkrete, antwortbasierte Schutzfaktoren.
+   * `salience` beschreibt die persönliche Aussagebreite, nicht ein klinisches
+   * Risikogewicht: 3 = streng bestätigtes Mehrquellenprofil, 2 = erreichtes
+   * Ziel oder konsistentes Mehrfachmuster, 1 = einzelne aktive Ressource,
+   * 0 = einzelner Schutz-/Kontextfaktor.
+   */
   const STRENGTH_RULES = [
     {
-      id: 'st_rauchfrei', dim: 'einfluss', w: 8,
+      id: 'st_fitness_top', dim: 'fitness', salience: 3, w: 10,
+      when: hasBroadlyConfirmedTopFitness,
+    },
+    {
+      id: 'st_rauchfrei', dim: 'einfluss', salience: 0, w: 8,
       when: (c) => c.a.rauchen === 'nie',
     },
     {
-      id: 'st_rauchstopp', dim: 'einfluss', w: 7.5,
+      id: 'st_rauchstopp', dim: 'einfluss', salience: 2, w: 7.5,
       when: (c) => c.a.rauchen === 'frueher',
     },
     {
-      id: 'st_bewegung', dim: 'fitness', w: 7,
+      id: 'st_bewegung', dim: 'fitness', salience: 2, w: 7,
       when: (c) => c.activity.goalMet,
     },
     {
-      id: 'st_kraft', dim: 'fitness', w: 6.5,
+      id: 'st_kraft', dim: 'fitness', salience: 2, w: 6.5,
       when: (c) => oneOf(c.a.krafttraining, 'tage2', 'tage3plus'),
     },
     {
-      id: 'st_schlaf', dim: 'schlaf', w: 6.5,
+      id: 'st_schlaf', dim: 'schlaf', salience: 2, w: 6.5,
       when: (c) => c.a.schlafdauer === 's7_9'
         && oneOf(c.a.schlafqualitaet, 'sehr_gut', 'gut')
         && oneOf(c.a.schlafrhythmus, 'sehr_regelmaessig', 'regelmaessig')
         && oneOf(c.a.schlaf_auswirkung, 'gar_nicht', 'kaum'),
     },
     {
-      id: 'st_ernaehrung_clean', dim: 'ernaehrung', w: 6,
+      id: 'st_ernaehrung_clean', dim: 'ernaehrung', salience: 2, w: 6,
       when: (c) => oneOf(c.a.verarbeitet, 'nie', 'u1woche') && oneOf(c.a.zuckergetraenke, 'nie', 'u1woche'),
     },
     {
-      id: 'st_resilienz', dim: 'mental', w: 6,
+      id: 'st_resilienz', dim: 'mental', salience: 2, w: 6,
       when: (c) => oneOf(c.a.belastbarkeit, 'voll', 'eher') && oneOf(c.a.coping, 'voll', 'eher'),
     },
     {
-      id: 'st_alkohol', dim: 'einfluss', w: 6,
+      id: 'st_alkohol', dim: 'einfluss', salience: 0, w: 6,
       when: (c) => c.a.alkohol === 'nie_selten',
     },
     {
-      id: 'st_pflanzen', dim: 'ernaehrung', w: 5.5,
+      id: 'st_pflanzen', dim: 'ernaehrung', salience: 1, w: 5.5,
       when: (c) => oneOf(c.a.pflanzenvielfalt, 'v26_34', 'ue35'),
     },
     {
-      id: 'st_sinn', dim: 'mental', w: 5.5,
+      id: 'st_sinn', dim: 'mental', salience: 2, w: 5.5,
       when: (c) => oneOf(c.a.sinnhaftigkeit, 'voll', 'eher') && oneOf(c.a.positive_emotionen, 'voll', 'eher'),
     },
     {
-      id: 'st_erholsamer_schlaf', dim: 'schlaf', w: 5,
+      id: 'st_erholsamer_schlaf', dim: 'schlaf', salience: 2, w: 5,
       // Nur eine echte Stärke, wenn neben der Qualität auch Dauer und
       // Alltagswirkung stimmen – sonst Widerspruch zu den Schlaf-Hebeln.
       when: (c) => oneOf(c.a.schlafqualitaet, 'sehr_gut', 'gut')
@@ -836,23 +903,23 @@
         && oneOf(c.a.schlaf_auswirkung, 'gar_nicht', 'kaum'),
     },
     {
-      id: 'st_alltagsfit', dim: 'fitness', w: 5,
+      id: 'st_alltagsfit', dim: 'fitness', salience: 2, w: 5,
       when: (c) => c.a.beweglichkeit === 'gar_nicht' && oneOf(c.a.treppen, 'gar_nicht', 'kaum') && c.a.einkaufstaschen === 'gar_nicht',
     },
     {
-      id: 'st_sozial', dim: 'mental', w: 5,
+      id: 'st_sozial', dim: 'mental', salience: 1, w: 5,
       when: (c) => c.a.verbundenheit === 'voll',
     },
     {
-      id: 'st_sicherheit', dim: 'einfluss', w: 5,
+      id: 'st_sicherheit', dim: 'einfluss', salience: 1, w: 5,
       when: (c) => c.a.stabilitaet === 'sehr_sicher' && ageOf(c) >= 60,
     },
     {
-      id: 'st_vorsorge', dim: 'einfluss', w: 4.5,
+      id: 'st_vorsorge', dim: 'einfluss', salience: 1, w: 4.5,
       when: (c) => c.a.vorsorge === 'ja' && oneOf(c.a.familienwissen, 'sehr_gut', 'gut'),
     },
     {
-      id: 'st_protein', dim: 'ernaehrung', w: 4,
+      id: 'st_protein', dim: 'ernaehrung', salience: 1, w: 4,
       when: (c) => oneOf(c.a.protein, 'meistens', 'fast_immer'),
     },
   ];
@@ -874,7 +941,7 @@
     const candidates = [];
     LEVERS.forEach((L, index) => {
       if (!safeCheck(L.when, ctx)) return;
-      if (!leverAction(L, ctx)) return;
+      if (!L.summaryOnly && !leverAction(L, ctx)) return;
       let p = 0;
       try { p = L.prio(ctx) || 0; } catch (e) { p = 0; }
       if (p <= 0) return;
@@ -890,13 +957,20 @@
       || (x.index - y.index));
     const out = [];
     const topics = new Set();
-    const usedDims = new Set();
+    const dimensionCounts = new Map();
     for (const it of items) {
       if (out.length >= max) break;
-      if (usedDims.has(it.L.dim)) continue;
+      // Wie im Aktionsplan darf ein zweiter, sehr hoch priorisierter Hebel
+      // derselben Dimension sichtbar bleiben. Das schützt insbesondere einen
+      // medizinischen Kardio-Check davor, durch Rauchstopp verdrängt zu werden.
+      // Mehr als zwei Themen derselben Dimension würden andere dringende
+      // Gesundheitsbereiche aus der dreiteiligen Kurzliste verdrängen.
+      const dimensionCount = dimensionCounts.get(it.L.dim) || 0;
+      const permitsSecond = it.p >= 8 || it.L.summaryOnly || it.L.scoreIndependent;
+      if (dimensionCount >= 2 || (dimensionCount >= 1 && !permitsSecond)) continue;
       if (it.L.topic && topics.has(it.L.topic)) continue;
       if (it.L.topic) topics.add(it.L.topic);
-      usedDims.add(it.L.dim);
+      dimensionCounts.set(it.L.dim, dimensionCount + 1);
       const d = dims.find((x) => x.id === it.L.dim) || { title: it.L.dim, short: it.L.dim };
       out.push({
         id: it.L.id,
@@ -906,29 +980,50 @@
         score: ctx.scores[it.L.dim],
         label: it.L.label,
         detail: typeof it.L.detail === 'function' ? it.L.detail(ctx) : (it.L.detail || ''),
+        summaryOnly: !!it.L.summaryOnly,
+        scoreIndependent: !!it.L.scoreIndependent,
       });
     }
     return out;
   }
 
   /**
-   * Konkrete Stärken: nach Gewicht sortiert, max. eine pro Dimension.
+   * Konkrete Stärken: nach Aussagebreite, Dimensionsscore und bestehendem
+   * Fachgewicht sortiert, max. eine pro Dimension.
    * Fallback bei sehr belastetem Profil: die relativ stabilste Dimension
    * als Anker benennen.
    */
   function keyStrengths(ctx, max = 3) {
     const dims = (typeof window !== 'undefined' && window.SCORED_DIMENSIONS) || [];
-    const hits = STRENGTHS.filter((s) => safeCheck(s.when, ctx)).sort((a, b) => b.w - a.w);
+    const hits = STRENGTHS
+      .map((strength, index) => {
+        const score = ctx.scores[strength.dim] ?? 50;
+        // Ein starkes Teilmuster in einer insgesamt nicht starken Dimension
+        // bleibt sichtbar, verliert aber den Mehrfachmuster-Vorrang.
+        const salience = strength.salience >= 2 && score < 80 ? 1 : strength.salience;
+        return { strength, index, score, salience };
+      })
+      .filter((item) => safeCheck(item.strength.when, ctx))
+      .sort((a, b) => (b.salience - a.salience)
+        || (b.score - a.score)
+        || (b.strength.w - a.strength.w)
+        || (a.index - b.index));
     const out = [];
     const used = new Set();
-    for (const s of hits) {
+    for (const item of hits) {
       if (out.length >= max) break;
+      const s = item.strength;
       if (used.has(s.dim)) continue;
       // Kohärenz: keine «Stärke» in einer Dimension, die insgesamt klar
       // schwach abschneidet – sonst widerspricht die Karte den Handlungsfeldern.
       if ((ctx.scores[s.dim] ?? 50) < 45) continue;
       used.add(s.dim);
-      out.push({ id: s.id, dim: s.dim, label: s.label, detail: s.detail });
+      out.push({
+        id: s.id,
+        dim: s.dim,
+        label: s.label,
+        detail: typeof s.detail === 'function' ? s.detail(ctx) : s.detail,
+      });
     }
     if (!out.length && dims.length) {
       const best = dims
@@ -995,7 +1090,7 @@
 
     // 1) Hebel-getrieben
     const fired = LEVERS
-      .filter((L) => safeCheck(L.when, ctx))
+      .filter((L) => !L.summaryOnly && safeCheck(L.when, ctx))
       .map((L) => {
         let p = 0;
         try { p = L.prio(ctx) || 0; } catch (e) { p = 0; }
@@ -1007,7 +1102,8 @@
     for (const { L, p } of fired) {
       if (picked.length >= max) break;
       if (L.topic && usedTopics.has(L.topic)) continue;
-      if ((usedDims[L.dim] || 0) >= 1 && p < 8) continue;
+      const dimensionCount = usedDims[L.dim] || 0;
+      if (dimensionCount >= 2 || (dimensionCount >= 1 && p < 8)) continue;
       const rec = leverAction(L, ctx);
       if (!rec) continue;
       if (rec.topic && usedTopics.has(rec.topic)) continue;
@@ -1029,6 +1125,7 @@
       if (picked.length >= max) return;
       if (usedIds.has(r.id)) return;
       if (r.topic && usedTopics.has(r.topic)) return;
+      if ((usedDims[r.dim] || 0) >= 2) return;
       push(r, null, null);
     });
 

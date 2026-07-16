@@ -984,6 +984,78 @@
       "sourceContractHash": "d39a8108279529cb607bf36f553c70fdbab1622c63a907274013c1596e73a8a1"
     },
     {
+      "id": "recommendation.lever.lv_familie.label",
+      "text": "Include your family history in preventive care",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5c2da67e06e1e49511ada68bfc164b23f690f1d3f669863d53680d9e46c358e"
+    },
+    {
+      "id": "recommendation.lever.lv_familie.detail",
+      "text": "Note which condition occurred in which close relative and at what age, and discuss this with a healthcare professional. If cardiovascular disease is among them, explicitly discuss a personal cardiovascular risk assessment and appropriate prevention, especially if it occurred early in the family.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "4a4e3c8dba7b36cc3e3e1e4f215a0717f0d4c0b4076e52adaed20b10c0a9ff20"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.label",
+      "text": "Have your personal risk assessed",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3229d68a51876d1687a411fe57908e70355de2e36aa09a312d6002a557b1f987"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.detail",
+      "text": "A personal check-up can identify risks that may go unnoticed for a long time. Ask a healthcare professional which baseline measurements and screening examinations are appropriate for your age and family history.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8d9d5123e3428ff5315b83553728980991334de15c6a9a34fe2dfd1c267a060a"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.label",
+      "text": "Have weight in the underweight range assessed",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d32015d488fe35e2341deea9be11d10a15a9da397bb77800045ac49eef7331b8"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.detail",
+      "text": "A BMI in the underweight range is not a diagnosis. Especially if your low weight is unintentional or recent, ask a medical or nutrition professional to assess possible causes and your nutrient intake.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "fb17a078a55d29615a59e7e4bed5a79295c1570be9781f19f0e6fcaf95f162a7"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.label",
+      "text": "Have your body profile assessed",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1f25452a487cd987e48b27fb75b35b619836b0a8457e79d1291a195c38ff664b"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.detail",
+      "text": "An elevated BMI or waist circumference is not a diagnosis. Review waist circumference, weight and metabolic measurements together with a healthcare professional before deciding on specific changes.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "text": "Take steps to stop smoking – your single biggest lever",
       "requiredTerms": [],
@@ -1410,6 +1482,24 @@
       "sourceContractHash": "4190a36f4b9cd87701e983aef181336d63f61da02772e9a8e2cb7715c9d9aa00"
     },
     {
+      "id": "recommendation.strength.st_fitness_top.label",
+      "text": "Very strong physical fitness",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "6752c14694d89dfe43049e5afc8bdd385e9fea4d33b36bcb705e23e161550181"
+    },
+    {
+      "id": "recommendation.strength.st_fitness_top.detail",
+      "text": "Your fitness score is very high: you meet the WHO physical-activity target, and the assessable short tests for muscular fitness and balance are each in the highest orientation range.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "87d43076070e0a5a68426ef31ee0c58cf81392dd1619ae7f65d9ef42ac889dd5"
+    },
+    {
       "id": "recommendation.strength.st_rauchfrei.label",
       "text": "Smoke-free",
       "requiredTerms": [],
@@ -1419,11 +1509,11 @@
     },
     {
       "id": "recommendation.strength.st_rauchfrei.detail",
-      "text": "You do not smoke, which is the single most important protective factor for your heart, blood vessels and lungs.",
+      "text": "You do not smoke and therefore avoid an important modifiable risk factor for your heart, blood vessels and lungs.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d815c95f5c54050432f5b033b76e600f11287363dc49d552de3ca0744f00666b"
+      "sourceContractHash": "8017481b834f21f24e88b3e2e7f250f5d25fa93307ff1e9ec15bdb6e836972e7"
     },
     {
       "id": "recommendation.strength.st_rauchstopp.label",
@@ -2323,11 +2413,14 @@
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
-      "text": "Arrange an appointment and bring this family history with you. Discuss with the healthcare professional which baseline measurements or targeted examinations are appropriate for your family history.",
-      "requiredTerms": [],
+      "text": "Arrange an appointment and bring this family history with you. If cardiovascular disease occurred at an early age in your family, discuss blood pressure and a lipid profile, as well as whether Lp(a) has already been measured once; whether ApoB adds information depends on your individual risk profile. For diabetes or other inherited conditions, the healthcare professional will determine which examinations are appropriate.",
+      "requiredTerms": [
+        "Lp(a)",
+        "ApoB"
+      ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2c46e69ce0365802bba33c8831f7df0e222df2d8b7d7fe65b065d3856299cc1d"
+      "sourceContractHash": "4bf48600e24abeb53f0844f000c8f0ee795150786825b9764326cf3b19d03646"
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",

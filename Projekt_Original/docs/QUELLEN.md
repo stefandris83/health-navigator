@@ -139,8 +139,13 @@ In kundennahe Sprache übersetzte Kernaussagen:
   im Erwachsenenleben meist ausreichend; Risikomodifier ab **> 50 mg/dL bzw.
   > 105 nmol/L** gemäss ESC/EAS-Fokus-Update 2025; relevanter
   Zusatzfaktor, v. a. bei familiärer Vorbelastung.
-- Anwendung im Check: Bei familiärer Vorbelastung, erhöhtem LDL, Diabetes, Übergewicht
-  oder Bluthochdruck wird empfohlen, **ApoB/Non-HDL/Lp(a) ärztlich zu besprechen**.
+- Anwendung im Check: Die breite Familienfrage löst zuerst das Konkretisieren von
+  Erkrankung und Erkrankungsalter aus. Nur bei tatsächlich früh aufgetretenen
+  Herz-Kreislauf-Erkrankungen nennt der Plan konditional Blutdruck, Lipidprofil und
+  die Frage, ob **Lp(a)** bereits einmal bestimmt wurde. Ob **ApoB** zusätzlich
+  Information liefert, bleibt vom individuellen Risikoprofil abhängig, insbesondere
+  bei hohen Triglyceriden, Diabetes, Adipositas/metabolischem Syndrom oder sehr
+  niedrigem LDL-C.
 
 ---
 
@@ -284,8 +289,8 @@ Addition der breiten Antwortintervalle wird bewusst nicht vorgenommen.
 *Kondition* (Aktivitätskomposit 2/3, Treppen 1/3; insgesamt 2/5), *Muskulatur*
 (Krafttraining, Tragen und optionale Krafttests; 2/5) und *Balance/Beweglichkeit*
 (1/5) zusammen. Die Gewichtung ist evidenzbasiert vertretbar: kardiorespiratorische
-Fitness ist der stärkste Einzelprädiktor der Gesamtmortalität (u. a. Mandsager et al.
-2018, JAMA Netw Open), Muskelkraft ein unabhängiger Prädiktor (u. a. Leong et al.
+Fitness ist konsistent stark mit Morbidität und Mortalität assoziiert (u. a. Lang
+et al. 2024; Mandsager et al. 2018, JAMA Netw Open), Muskelkraft ein unabhängiger Prädiktor (u. a. Leong et al.
 2015, Lancet – Griffkraft; Yang et al. 2019, JAMA Netw Open – Liegestützkapazität),
 Balance ist v. a. ab 50+ prognostisch relevant (Araujo et al. 2022, BJSM).
 
@@ -414,6 +419,19 @@ Technisch werden +2 als *Stark*, +1 als *Solide Basis*, 0 als *Ausbaufähig* und
   keine klinische Risikoeinstufung. Unter 18 sowie bei «intersex/andere» gilt der
   zuvor beschriebene Rohwertvertrag ohne Einordnung und Folgewirkung.
 
+**Sichtbarer Stärkenvertrag.** Eine zusammengefasste Topstärke für körperliche
+Fitness erscheint nur bei einem Fitnessscore ab 90, erreichtem WHO-Bewegungsziel,
+je einem auswertbaren Kurztest im obersten Orientierungsband für Muskulatur und
+Balance, ausschliesslich starken zusätzlich ausgefüllten auswertbaren Kurztests
+sowie ohne gleichzeitig offenen Fitness- oder Stabilitäts-/Sturz-Handlungsbedarf. Die beiden
+Testbereiche verhindern, dass zwei ähnliche Krafttests eine scheinbar umfassende
+Fitnessaussage erzeugen. Nicht passende Alters-, Geschlechts- oder
+Protokollreferenzen zählen nicht. Das ist eine transparente Produktheuristik für
+die Reihenfolge sichtbarer Stärken, keine zusätzliche Scoregewichtung und kein
+Nachweis objektiv gemessener kardiorespiratorischer Fitness, VO₂max, individueller
+Krankheitsfreiheit oder Lebenserwartung. «Rauchfrei» bleibt als Schutzfaktor
+verfügbar, wird aber hinter breiter belegten persönlichen Fähigkeiten eingeordnet.
+
 Ist die passende Empfehlung im Top-3-Aktionsplan, enthält Woche 4 eine persönliche
 Verlaufskontrolle mit dem ursprünglichen Wert. Beim Einbeinstand und beim fachlich
 passenden Liegestützprotokoll wird die nächste Vergleichsschwelle als Orientierung
@@ -449,14 +467,18 @@ Taillenangabe dient der BMI als Ersatz. Ein einziges zentrales Körperprofil ste
 damit Score, Risikosignal, Ergebniszusammenfassung und kardiovaskuläres
 Antwortmuster; dieselbe Angabe kann nicht mehr je nach Ausgabekanal unterschiedlich
 eingeordnet werden. Diese Werte fliessen in die *Einflussfaktoren* ein und werden
-dort transparent ausgewiesen.
+dort transparent ausgewiesen. Ein auffälliges Körperprofil sowie Untergewicht
+erhalten zusätzlich ein sichtbares Haupthandlungsfeld. Aus einem Einzelwert wird
+aber bewusst kein pauschaler Therapie- oder Gewichtsplan abgeleitet; ohne Verlauf,
+Beschwerden und Ursachen bleibt die ausführliche fachliche Einordnung im
+Dimensionsdetail.
 
 **Signale statt Malus.** Nicht direkt beeinflussbare bzw. rein medizinische Angaben –
-**familiäres Risiko** und **Bluthochdruck** – ziehen **keine** Punkte ab, sondern
-erscheinen als medizinische Klärungshinweise in den Dimensionsdetails der
-*Einflussfaktoren*. So bleibt der Einflussfaktoren-Score verhaltensbezogen und fair,
-ohne dass der Hinweis in einer separaten Einordnungssektion vom fachlichen Kontext
-getrennt wird.
+**familiäres Risiko**, fehlende Risikoeinschätzung und **Bluthochdruck** – ziehen
+**keine** Punkte ab. Sie erhalten einen getrennten Signal- und Routingvertrag und
+können dadurch trotz hohem Score als Haupthandlungsfeld sowie im Aktionsplan oder
+Dimensionsdetail erscheinen. So bleibt der Einflussfaktoren-Score verhaltensbezogen
+und fair, ohne den medizinischen Hinweis zu verlieren.
 
 **Statusstufen:** 80–100 *Stark*, 60–79 *Solide Basis*, 40–59 *Ausbaufähig*,
 0–39 *Erhöhte Aufmerksamkeit*.
@@ -475,16 +497,26 @@ erhält. Offene dimensionsbezogene Risiko- oder Abklärungssignale unterdrücken
 positive Fallbacks. Ein leerer Aktionsplan ist kein Beleg für eine starke
 Ausgangslage und wird deshalb immer neutral beschrieben.
 
-**Risikosignale & priorisierter Aktionsplan.** Signale werden in
-*Lebensstilpotenzial* vs. *medizinische Abklärungsrelevanz* unterschieden.
-`actionPlan()` ist die einzige produktive Priorisierungs-Engine: Zuerst werden
-kritische Sicherheitsthemen berücksichtigt, danach die antwortabhängigen Hebel
-nach ihrer fachlichen Priorität ausgewählt und Themenüberschneidungen entfernt.
-Nur beim Auffüllen aus dem allgemeinen Empfehlungskatalog dient die transparente
-Kombination aus `impact / urgency / ease` als Rangfolge. Der Plan enthält je nach
-Profil null bis drei Schritte; ein gesundes Profil erhält ausdrücklich einen
-Erhaltungszustand statt künstlich erzeugter Empfehlungen. `topThree()` ist aus
-Kompatibilitätsgründen nur noch ein Alias derselben Engine.
+**Risikosignale, Haupthandlungsfelder & priorisierter Aktionsplan.** Signale werden
+in *Lebensstilpotenzial* vs. *medizinische Abklärungsrelevanz* unterschieden.
+`keyLevers()` und `actionPlan()` verwenden denselben Lever-Katalog und dieselben
+Prioritäten: Zuerst werden kritische Sicherheitsthemen berücksichtigt, danach die
+antwortabhängigen Hebel ausgewählt und Themenüberschneidungen entfernt. Ein zweiter
+sehr hoch priorisierter Hebel derselben Dimension kann sichtbar bleiben, damit ein
+medizinischer Kardio-Check nicht durch Rauchstopp verdeckt wird; eigenständige
+scorefreie oder `summaryOnly`-Klärungshinweise dürfen ebenfalls einen freien zweiten
+Platz nutzen. Mehr als zwei Schritte oder Kurz-Hinweise derselben Dimension sind
+ausgeschlossen. Nur beim Auffüllen
+des Aktionsplans aus dem allgemeinen Empfehlungskatalog dient die transparente
+Kombination aus `impact / urgency / ease` als Rangfolge.
+
+Untergewicht und Körperprofil sind als `summaryOnly` gekennzeichnet: Ihre
+vorhandenen, fachlich vorsichtigen Signaltexte reichen für ein sichtbares
+Haupthandlungsfeld, nicht aber für einen standardisierten Therapieplan. Ein eigener
+Klärungszustand erklärt in diesem Fall den fehlenden 4-Wochen-Plan, statt fälschlich
+«kein Handlungsfeld» zu melden. Der Aktionsplan enthält je nach Profil null bis drei
+Schritte; `topThree()` ist aus
+Kompatibilitätsgründen nur ein Alias von `actionPlan()`.
 
 Nicht priorisierte Signale ordnet `dimensionInsights()` genau einer der fünf
 Dimensionen zu. Eigenständige Hinweise werden mit persönlicher Relevanz, konkretem
@@ -500,10 +532,11 @@ Die kardiovaskuläre Top-Aktion bündelt mehrere konkrete, veränderbare oder me
 einzuordnende Faktoren. Die breite Frage `familie_hk` umfasst neben Herz-Kreislauf-
 Erkrankungen auch Diabetes und andere erbliche Erkrankungen und zählt deshalb nicht
 mehr als kardiovaskulärer Musterfaktor. Eine Ja-Antwort bleibt als eigenständiges
-medizinisches Signal und als Familien-/Vorsorgehinweis sichtbar. Bekannter
-Bluthochdruck und fehlende Vorsorge werden durch die Top-Aktion weiterhin gezielt
-abgedeckt; eine unbekannte Blutdrucksituation bleibt als konkreter Messschritt
-sichtbar.
+medizinisches Signal und als priorisierbares Familien-/Vorsorge-Handlungsfeld
+sichtbar. Trifft zusätzlich `vorsorge = nein` zu, bündelt die spezifische
+Familienkarte den generischen Vorsorgehinweis. Bekannter Bluthochdruck und fehlende
+Vorsorge werden durch die Top-Aktion weiterhin gezielt abgedeckt; eine unbekannte
+Blutdrucksituation bleibt als konkreter Messschritt sichtbar.
 
 **Textarchitektur.** Bedingungen, Gewichte und Zuordnungen bleiben in
 `js/scoring.js` und `js/recommendations.js`. Sämtliche sichtbaren Texte der
@@ -659,7 +692,10 @@ im Code verändert:
    klinische Norm oder Diagnose ausgegeben. Fachlich offen bleiben die
    Protokoll-/Referenzangleichung bei Liegestützen, die Produktivfreigabe der nur
    eingeschränkt belegten 60–69- und der extrapolierten 70+-Wandsitzbänder sowie der
-   Sicherheitsvertrag für maximale Wandsitz-Retests.
+   Sicherheitsvertrag für maximale Wandsitz-Retests. Zusätzlich benötigen die neue
+   Schwelle und Rangfolge der mehrquellenbasierten Fitness-Topstärke eine explizite
+   medizinische und Product-Freigabe; sie sind keine validierte klinische
+   Klassifikation.
 4. **Ernährungsmodell:** Die Grenzwerte für Pflanzenvielfalt, die Häufigkeit von drei
    Gelegenheiten mit Proteinquellen, die Gleichsetzung von Fisch und
    Omega-3-Supplement sind kein validierter Gesamt-Ernährungsscore. Die

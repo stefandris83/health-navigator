@@ -1228,6 +1228,86 @@
       "comment": ""
     },
     {
+      "id": "recommendation.lever.lv_familie.label",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_familie in der Dimension einfluss, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Familiäres Risiko in die Vorsorge einbeziehen",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scoreunabhängige Summary-Priorisierung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_familie.detail",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_familie in der Dimension einfluss, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz-Kreislauf-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.",
+      "reviewStatus": "needs-review",
+      "comment": "Breite Familienfrage bewusst nicht pauschal als Herz-Kreislauf-Risiko formuliert; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.label",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_vorsorge in der Dimension einfluss, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Persönliches Risiko einmal einschätzen lassen",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scoreunabhängige Summary-Priorisierung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.detail",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_vorsorge in der Dimension einfluss, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ein persönlicher Check-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.",
+      "reviewStatus": "needs-review",
+      "comment": "Keine pauschale Screening-Pflicht behauptet; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.label",
+      "section": "Handlungsfelder",
+      "context": "Summary-only-Handlungsfeld lv_untergewicht in der Dimension einfluss, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Gewicht im Untergewichtsbereich einordnen",
+      "reviewStatus": "needs-review",
+      "comment": "Bewusst ohne pauschale Aufforderung zur Gewichtszunahme; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.detail",
+      "section": "Handlungsfelder",
+      "context": "Summary-only-Handlungsfeld lv_untergewicht in der Dimension einfluss, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ein BMI im Untergewichtsbereich ist keine Diagnose. Klären Sie besonders bei unbeabsichtigtem oder neuem niedrigem Gewicht mögliche Ursachen und die Nährstoffversorgung medizinisch oder ernährungsfachlich ab.",
+      "reviewStatus": "needs-review",
+      "comment": "Aus BMI allein keine Ursache oder Therapie abgeleitet; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.label",
+      "section": "Handlungsfelder",
+      "context": "Summary-only-Handlungsfeld lv_koerperprofil in der Dimension einfluss, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Körperprofil fachlich einordnen",
+      "reviewStatus": "needs-review",
+      "comment": "Neutrales Wording ohne Körperbild- oder Therapiezuschreibung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.detail",
+      "section": "Handlungsfelder",
+      "context": "Summary-only-Handlungsfeld lv_koerperprofil in der Dimension einfluss, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.",
+      "reviewStatus": "needs-review",
+      "comment": "Keine pauschale Gewichtsabnahme oder Diagnose aus Einzelwerten; durch Marketing und Medizin freigeben."
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "section": "Handlungsfelder",
       "context": "Handlungsfeld lv_rauchstopp in der Dimension einfluss, Kurzlabel",
@@ -1761,6 +1841,26 @@
       "comment": ""
     },
     {
+      "id": "recommendation.strength.st_fitness_top.label",
+      "section": "Stärken",
+      "context": "Stärke st_fitness_top in der Dimension fitness, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing",
+      "text": "Sehr starke körperliche Fitness",
+      "reviewStatus": "needs-review",
+      "comment": "Neue, streng mehrquellenbasierte Topstärke; durch Marketing freigeben."
+    },
+    {
+      "id": "recommendation.strength.st_fitness_top.detail",
+      "section": "Stärken",
+      "context": "Stärke st_fitness_top in der Dimension fitness, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr Fitnesswert ist sehr hoch: Sie erreichen das WHO-Bewegungsziel, und auswertbare Kurztests für Muskulatur und Balance liegen jeweils im obersten Orientierungsbereich.",
+      "reviewStatus": "needs-review",
+      "comment": "Aussage gilt nur bei Fitnessscore mindestens 90, erreichtem WHO-Ziel und passenden Top-Kurztests in Muskulatur und Balance; durch Marketing und Medizin freigeben."
+    },
+    {
       "id": "recommendation.strength.st_rauchfrei.label",
       "section": "Stärken",
       "context": "Stärke st_rauchfrei in der Dimension einfluss, Kurzlabel",
@@ -1776,9 +1876,9 @@
       "context": "Stärke st_rauchfrei in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie rauchen nicht – der wichtigste einzelne Schutzfaktor für Herz, Gefässe und Lunge.",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Sie rauchen nicht und vermeiden damit einen wichtigen beeinflussbaren Risikofaktor für Herz, Gefässe und Lunge.",
+      "reviewStatus": "needs-review",
+      "comment": "Nicht belegten Superlativ entfernt; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.strength.st_rauchstopp.label",
@@ -2906,9 +3006,13 @@
       "context": "Plan ei_familie, Woche 2–3",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Klären Sie mit der Fachperson, welche Basiswerte oder gezielten Untersuchungen zu Ihrer Familiengeschichte passen.",
+      "text": "Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz-Kreislauf-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp(a) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.",
+      "requiredTerms": [
+        "Lp(a)",
+        "ApoB"
+      ],
       "reviewStatus": "needs-review",
-      "comment": "Pauschale kardiovaskuläre Laborempfehlung aus der breiten Familienfrage entfernt; durch Marketing und Medizin freigeben."
+      "comment": "Kardiovaskuläre Werte nur konditional bei tatsächlich früher Herz-Kreislauf-Familiengeschichte; ApoB nicht als Standardtest formuliert. Durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",

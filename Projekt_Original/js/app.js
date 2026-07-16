@@ -796,15 +796,22 @@
       </div>`;
     }).join('');
     const hasActionPlan = top3.length > 0;
-    const actionPlanHeading = copy.get('ui.action_plan.heading.' + (
-      top3.length === 1 ? 'one' : (top3.length === 2 ? 'two' : (top3.length === 3 ? 'three' : 'empty'))
-    ));
+    const hasClarificationOnly = !hasActionPlan && fields.some((field) => field.summaryOnly);
+    const actionPlanHeading = hasClarificationOnly
+      ? copy.get('ui.action_plan.heading.clarification')
+      : copy.get('ui.action_plan.heading.' + (
+        top3.length === 1 ? 'one' : (top3.length === 2 ? 'two' : (top3.length === 3 ? 'three' : 'empty'))
+      ));
     const actionPlanIntro = hasActionPlan
       ? copy.get(top3.length === 1 ? 'ui.action_plan.intro.one' : 'ui.action_plan.intro.multiple')
-      : copy.get('ui.action_plan.intro.empty');
+      : (hasClarificationOnly
+        ? copy.get('ui.action_plan.intro.clarification')
+        : copy.get('ui.action_plan.intro.empty'));
     const actionPlanBody = hasActionPlan
       ? `<div class="top3">${top3html}</div>`
-      : `<div class="dimension-feedback is-neutral">${I.info}<div><b>${copy.get('ui.action_plan.empty.title')}</b><br>${copy.get('ui.action_plan.empty.body')}</div></div>`;
+      : (hasClarificationOnly
+        ? `<div class="dimension-feedback is-neutral">${I.info}<div>${copy.get('ui.action_plan.clarification.body')}</div></div>`
+        : `<div class="dimension-feedback is-neutral">${I.info}<div><b>${copy.get('ui.action_plan.empty.title')}</b><br>${copy.get('ui.action_plan.empty.body')}</div></div>`);
 
     // Nicht priorisierte Signale erscheinen direkt in ihrer fachlich passenden
     // Dimension. Themen aus den Top-Schritten werden hier nicht nochmals erklärt.
@@ -994,7 +1001,7 @@
           </div>
           <div class="card signal-box medical">
             <h3>${I.list} ${copy.get('ui.overview.fields_title')}</h3>
-            ${fields.length ? `<ul class="insight-list">${fields.map((x) => `<li><i class="insight-dot" style="background:${window.Scoring.statusForScore(results.scores[x.dim] ?? 50).color}"></i><div><b>${x.short}: ${x.label}</b>${x.detail ? `<span class="insight-detail">${x.detail}</span>` : ''}</div></li>`).join('')}</ul>` : `<p class="muted">${copy.get('ui.overview.fields_empty')}</p>`}
+            ${fields.length ? `<ul class="insight-list">${fields.map((x) => `<li><i class="insight-dot" style="background:${x.scoreIndependent ? 'var(--brand)' : window.Scoring.statusForScore(results.scores[x.dim] ?? 50).color}"></i><div><b>${x.short}: ${x.label}</b>${x.detail ? `<span class="insight-detail">${x.detail}</span>` : ''}</div></li>`).join('')}</ul>` : `<p class="muted">${copy.get('ui.overview.fields_empty')}</p>`}
           </div>
         </div>
       </section>

@@ -983,6 +983,78 @@
       "sourceContractHash": "d39a8108279529cb607bf36f553c70fdbab1622c63a907274013c1596e73a8a1"
     },
     {
+      "id": "recommendation.lever.lv_familie.label",
+      "text": "Intégrer le risque familial à la prévention",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5c2da67e06e1e49511ada68bfc164b23f690f1d3f669863d53680d9e46c358e"
+    },
+    {
+      "id": "recommendation.lever.lv_familie.detail",
+      "text": "Notez quelle maladie est apparue chez quel proche et à quel âge, puis parlez-en avec une professionnelle ou un professionnel de santé. S’il s’agit notamment d’une maladie cardiovasculaire, abordez explicitement l’évaluation de votre risque cardiovasculaire personnel et la prévention adaptée, en particulier en cas de survenue précoce dans la famille.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "4a4e3c8dba7b36cc3e3e1e4f215a0717f0d4c0b4076e52adaed20b10c0a9ff20"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.label",
+      "text": "Faire évaluer une fois votre risque personnel",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3229d68a51876d1687a411fe57908e70355de2e36aa09a312d6002a557b1f987"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorge.detail",
+      "text": "Un bilan personnel peut mettre en évidence des risques qui restent longtemps inaperçus. Demandez à une professionnelle ou un professionnel de santé quels paramètres de base et examens de prévention sont adaptés à votre âge et à vos antécédents familiaux.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8d9d5123e3428ff5315b83553728980991334de15c6a9a34fe2dfd1c267a060a"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.label",
+      "text": "Faire évaluer un poids dans la plage d’insuffisance pondérale",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d32015d488fe35e2341deea9be11d10a15a9da397bb77800045ac49eef7331b8"
+    },
+    {
+      "id": "recommendation.lever.lv_untergewicht.detail",
+      "text": "Un IMC dans la plage d’insuffisance pondérale n’est pas un diagnostic. Surtout si le faible poids est involontaire ou récent, faites évaluer les causes possibles et l’apport nutritionnel sur le plan médical ou nutritionnel.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "fb17a078a55d29615a59e7e4bed5a79295c1570be9781f19f0e6fcaf95f162a7"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.label",
+      "text": "Faire évaluer les mesures corporelles",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1f25452a487cd987e48b27fb75b35b619836b0a8457e79d1291a195c38ff664b"
+    },
+    {
+      "id": "recommendation.lever.lv_koerperprofil.detail",
+      "text": "Un IMC ou un tour de taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "text": "Arrêter de fumer : votre principal levier individuel",
       "requiredTerms": [],
@@ -1409,6 +1481,24 @@
       "sourceContractHash": "4190a36f4b9cd87701e983aef181336d63f61da02772e9a8e2cb7715c9d9aa00"
     },
     {
+      "id": "recommendation.strength.st_fitness_top.label",
+      "text": "Très bonne condition physique",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "6752c14694d89dfe43049e5afc8bdd385e9fea4d33b36bcb705e23e161550181"
+    },
+    {
+      "id": "recommendation.strength.st_fitness_top.detail",
+      "text": "Votre score de forme physique est très élevé : vous atteignez l’objectif d’activité physique de l’OMS et les tests courts évaluables pour la musculature et l’équilibre se situent chacun dans la plage d’orientation la plus élevée.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "87d43076070e0a5a68426ef31ee0c58cf81392dd1619ae7f65d9ef42ac889dd5"
+    },
+    {
       "id": "recommendation.strength.st_rauchfrei.label",
       "text": "Sans tabac",
       "requiredTerms": [],
@@ -1418,11 +1508,11 @@
     },
     {
       "id": "recommendation.strength.st_rauchfrei.detail",
-      "text": "Vous ne fumez pas : c’est le principal facteur de protection individuel pour le cœur, les vaisseaux et les poumons.",
+      "text": "Vous ne fumez pas et évitez ainsi un important facteur de risque modifiable pour le cœur, les vaisseaux et les poumons.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "d815c95f5c54050432f5b033b76e600f11287363dc49d552de3ca0744f00666b"
+      "sourceContractHash": "8017481b834f21f24e88b3e2e7f250f5d25fa93307ff1e9ec15bdb6e836972e7"
     },
     {
       "id": "recommendation.strength.st_rauchstopp.label",
@@ -2320,11 +2410,14 @@
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
-      "text": "Prenez rendez-vous et apportez ces antécédents familiaux. Déterminez avec le ou la spécialiste de la santé quels paramètres de base ou examens ciblés sont adaptés à vos antécédents familiaux.",
-      "requiredTerms": [],
+      "text": "Prenez rendez-vous et apportez ces antécédents familiaux. Si des maladies cardiovasculaires sont apparues tôt dans votre famille, discutez de la tension artérielle et d’un bilan lipidique, ainsi que de la question de savoir si la Lp(a) a déjà été mesurée une fois; l’utilité d’ApoB en complément dépend de votre profil de risque individuel. En cas de diabète ou d’autres maladies héréditaires, la professionnelle ou le professionnel de santé déterminera les examens adaptés.",
+      "requiredTerms": [
+        "Lp(a)",
+        "ApoB"
+      ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2c46e69ce0365802bba33c8831f7df0e222df2d8b7d7fe65b065d3856299cc1d"
+      "sourceContractHash": "4bf48600e24abeb53f0844f000c8f0ee795150786825b9764326cf3b19d03646"
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",

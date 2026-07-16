@@ -388,6 +388,14 @@ test('Dimensionsdetails zeigen eigenständige Hinweise vollständig, statusgerec
   assert.ok(css.includes('.dimension-feedback.is-solid'));
   assert.ok(css.includes('background: var(--info-bg)'));
   assert.ok(!css.includes('.insight-ref'));
+  assert.ok(source.includes("x.scoreIndependent ? 'var(--brand)'") ,
+    'scorefreie medizinische Handlungsfelder verwenden keinen irreführenden grünen Scorepunkt');
+  assert.ok(source.includes('const hasClarificationOnly = !hasActionPlan && fields.some((field) => field.summaryOnly)'));
+  assert.ok(source.includes("ui.action_plan.heading.clarification"));
+  assert.ok(source.includes("ui.action_plan.intro.clarification"));
+  assert.ok(source.includes("ui.action_plan.clarification.body"));
+  assert.ok(/\.signal-box \.insight-list li > div\s*\{[^}]*min-width:\s*0;[^}]*overflow-wrap:\s*anywhere;[^}]*\}/s.test(css),
+    'lange lokalisierte Stärken- und Handlungsfeldtexte dürfen auf Mobile keinen horizontalen Überlauf erzeugen');
   assert.ok(!css.includes('.signal-box.empty'));
 });
 

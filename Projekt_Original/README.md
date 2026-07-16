@@ -2,9 +2,10 @@
 
 Der Health Navigator ist eine statische Helsana-Webanwendung für ein strukturiertes
 Gesundheitsassessment. Sechs Fragebogenabschnitte führen zu fünf bewerteten
-Gesundheitsdimensionen, einem persönlichen Profil, priorisierten nächsten Schritten,
-4-Wochen-Plänen, weiteren dimensionsbezogenen Handlungsschritten und medizinischen
-Klärungshinweisen sowie einer lokalen regelbasierten Coach-Vorschau.
+Gesundheitsdimensionen, einem persönlichen Profil, konkreten persönlichen Stärken,
+priorisierten nächsten Schritten, 4-Wochen-Plänen, weiteren dimensionsbezogenen
+Handlungsschritten und medizinischen Klärungshinweisen sowie einer lokalen
+regelbasierten Coach-Vorschau.
 
 > Der Check ist keine medizinische Diagnose und ersetzt keine ärztliche oder andere
 > professionelle medizinische Beratung.
@@ -69,7 +70,7 @@ js/config.js                     Validierte Laufzeitkonfiguration
 js/questions.js                  Fragen und Antwortschema
 js/persistence.js                Versionierter Storage- und Linkvertrag
 js/scoring.js                    Score-, Kennzahl- und Risikosignal-Logik
-js/recommendations.js            Kundenunabhängige Empfehlungsregeln
+js/recommendations.js            Stärken-, Empfehlungs- und Priorisierungsregeln
 js/helsana.js                    Angebotsschlüssel und HTTPS-Ziele
 js/integration.js                Minimaler, nicht persistierter CustomerContext
 js/coach.js / js/radar.js        Regelbasierte Vorschau und SVG-Radar
@@ -133,6 +134,26 @@ Nutzen. Bereits durch eine Empfehlung abgedeckte Signale erzeugen keine zusätzl
 Doppelbox. Themen aus dem Aktionsplan werden aus demselben Empfehlungsobjekt
 gespiegelt und als priorisierter Schritt markiert; die frühere separate Sektion
 «Selbst beeinflussen vs. ärztlich abklären» besteht nicht mehr.
+
+Scorefreie medizinische Angaben bleiben vom 0–100-Score getrennt, verschwinden aber
+nicht aus der Zusammenfassung: bekannte familiäre Erkrankungen und eine noch nicht
+erfolgte persönliche Risikoeinschätzung können eigene Haupthandlungsfelder und
+Vorsorgekarten auslösen. Die breite Familienfrage wird dabei nicht pauschal als
+Herz-Kreislauf-Anamnese gewertet. Untergewicht und ein auffälliges Körperprofil
+erhalten eine vorsichtige Summary-Einordnung; ohne Angaben zu Verlauf, Beschwerden
+und Ursache entsteht daraus bewusst kein automatischer Therapieplan. Ein eigener
+Klärungszustand erklärt dies, statt gleichzeitig zu behaupten, es gebe kein
+Handlungsfeld.
+
+Die Stärkenkarte bevorzugt breit abgestützte persönliche Fähigkeiten und erreichte
+Ziele vor einzelnen Schutzmerkmalen. Eine sehr hohe Fitness wird nur dann als
+herausragende Topstärke zusammengefasst, wenn Fitnessscore, WHO-Bewegungsziel und
+fachlich auswertbare Top-Kurztests für Muskulatur und Balance übereinstimmen und
+alle zusätzlich ausgefüllten auswertbaren Kurztests ebenfalls im Topband liegen
+sowie kein Fitness- oder Stabilitäts-/Sturz-Handlungsbedarf offen ist. Ohne diesen
+Mehrquellenvertrag bleibt die
+präzisere Einzelstärke wie «WHO-Bewegungsziel erreicht» sichtbar. Diese Rangfolge
+ändert weder Scores noch den Aktionsplan.
 
 Ausgefüllte Einbeinstand-, Liegestütz- und Wandsitz-Tests erscheinen immer direkt
 in der Dimension «Körperliche Fitness». Rohwert, fachlich zulässige Einordnung,

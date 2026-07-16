@@ -399,6 +399,7 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
 /* Konkrete Insights (Stärken/Hebel) mit Punkt in der Dimensions-Statusfarbe */
 .insight-list { display: grid; gap: 12px; }
 .signal-box .insight-list li { padding-left: 0; display: flex; gap: 10px; align-items: flex-start; }
+.signal-box .insight-list li > div { min-width: 0; overflow-wrap: anywhere; }
 .insight-dot { flex: none; width: 9px; height: 9px; border-radius: 50%; margin-top: 6px; }
 .insight-list b { display: block; font-size: 14.5px; color: var(--ink); line-height: 1.35; }
 .insight-detail { display: block; font-size: 13.5px; color: var(--ink-soft); margin-top: 3px; }

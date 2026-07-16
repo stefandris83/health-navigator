@@ -940,3 +940,145 @@ Starttext und Manifest. Während dieser Prüfungen blieb die Browser-Konsole ohn
 Warnungen oder Fehler. Ein pixelgenauer visueller Vorher-/Nachher-Vergleich, eine
 Browsermatrix, Screenreader-Abnahme und ein interaktiver `file://`-Test wurden nicht
 durchgeführt und werden nicht behauptet.
+
+## 19. Mehrquellenbasierte Rangfolge persönlicher Stärken
+
+Die Stärkenkarte war fachlich inkohärent zu einem sehr starken Fitnessprofil:
+`st_rauchfrei` besass das höchste statische Gewicht, während Dimensionsscore und
+positive Fitness-Kurztests gar nicht in die Rangfolge einflossen. Selbst das
+vollständig starke Referenzprofil mit Fitnessscore 100 sowie auswertbaren
+Topwerten in Muskulatur und Balance zeigte deshalb «Rauchfrei» vor Fitness.
+
+Der aktuelle Vertrag trennt nun persönliche Aussagebreite vom medizinischen Risiko:
+
+- Stufe 3 ist einem streng widerspruchsfreien Mehrquellenprofil vorbehalten;
+- erreichte Ziele und konsistente Mehrfachmuster folgen auf Stufe 2;
+- einzelne aktive Ressourcen folgen auf Stufe 1;
+- reine Schutz-/Kontextfaktoren wie nie geraucht oder selten Alkohol füllen auf
+  Stufe 0 verbleibende Plätze.
+
+Innerhalb einer Stufe entscheiden Dimensionsscore, bestehendes Fachgewicht und die
+stabile Katalogreihenfolge. Mehrfachmuster aus einer Dimension unter 80 werden für
+die Rangfolge zurückgenommen; der bestehende Kohärenzfilter unter 45 und höchstens
+eine Stärke je Dimension bleiben erhalten. Damit bleibt «Rauchfrei» verfügbar,
+verdrängt aber keine drei breiter belegten Fähigkeiten oder Ziele mehr.
+
+Die neue Stärke `st_fitness_top` erscheint nur bei Fitnessscore mindestens 90,
+erreichtem WHO-Bewegungsziel, einem auswertbaren Top-Kurztest für Muskulatur, einem
+auswertbaren Top-Kurztest für Balance, ausschliesslich starken zusätzlich
+ausgefüllten auswertbaren Kurztests und ohne ausgelöste Fitness- oder
+Stabilitäts-/Sturz-Empfehlung. Zwei Krafttests genügen nicht; ein gemischtes
+Testprofil erzeugt auch bei hohem Fitnessscore keine Topaussage.
+`protocol_unconfirmed`, `reference_unavailable` und
+`age_outside_reference` können die Aussage nicht stützen. Das Detail nennt das
+WHO-Ziel ausdrücklich und bezeichnet die Testwerte als Orientierungsbereiche; die
+Logik verändert weder Score noch Aktionsplan und behauptet keine VO₂max-Messung,
+Leistungsdiagnostik oder individuelle Prognose.
+
+Der frühere Rauchfrei-Superlativ wurde in allen vier Sprachen entfernt. Zwei neue
+Content-IDs wurden kanonisch ergänzt, als KI-gestützte Erstübersetzungen auf
+`needs-review` belassen und dem Marketing-Export unter «Körperliche Fitness ·
+Allgemeine Fitness» zugeordnet. Runtime-Bundle, vier CSVs, fünf
+Markdown-Übersichten und Manifeste wurden deterministisch regeneriert.
+
+Die Regressionen decken das starke Referenzprofil, fehlende zweite Testkomponente,
+zwei Tests desselben Teilbereichs, offenen Kraft-Handlungsbedarf, Score 89,
+verfehltes WHO-Ziel, Minderjährige, intersex/andere Referenzgruppen, das nicht
+passende weibliche Liegestützprotokoll, den Rauchfrei-Fallback, Dimensions-Dedup und
+deterministische Sprachinvarianz ab.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 41/41, Integration 65/65, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **171/171
+Tests**. Alle vier Kataloge mit je 1'187 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, CSV, Markdown und Manifeste als aktuell.
+
+Die deutsche Ergebnisansicht wurde mit dem starken Referenzprofil real über einen
+lokalen statischen HTTP-Server geprüft. Auf Desktop erschien «Sehr starke
+körperliche Fitness» vor Schlaf und Ernährung; «Rauchfrei» war nicht unter den
+Top 3. Bei einem expliziten Mobile-Viewport von 390 × 844 Pixeln war die
+Stärkenkarte 350 Pixel breit, erzeugte keinen horizontalen Seitenüberlauf und
+brach Label sowie Details lesbar um. Die Browser-Konsole blieb ohne Warnungen oder
+Fehler. Nach dem Test wurde der Viewport-Override zurückgesetzt und der lokale
+Server beendet.
+
+Nicht behauptet werden ein neuer interaktiver `file://`-Durchlauf, eine vollständige
+Browsermatrix, Screenreader-/Zoom-Abnahme oder manuelle visuelle Durchläufe aller
+vier Sprachen. Deren technische Sprachinvarianz und responsive Grundverträge sind
+automatisiert geprüft; die vollständige Go-live-Abnahme bleibt offen.
+
+## 20. Scoreunabhängige Vorsorge- und Abklärungshinweise
+
+Ein Profil mit `familie_hk = ja` und `vorsorge = nein` behielt zu Recht einen
+Einflussfaktoren-Score von 100, zeigte unter «Grösste Handlungsfelder» aber einen
+leeren Zustand. Die Ursache war eine Routinglücke: `actionPlan()` konnte über den
+Katalog-Fallback `ei_familie` wählen, während `keyLevers()` ausschliesslich Regeln
+aus `LEVER_RULES` kannte. Für Familienrisiko und allgemeine fehlende Vorsorge gab
+es dort keine Regel. Der ausführliche Aktionsplan und die Kurz-Zusammenfassung
+widersprachen sich damit bei identischen Antworten.
+
+Der aktuelle Vertrag behebt die Lücke ohne Scoreänderung:
+
+- `lv_familie` spiegelt die vorhandene Familienkarte `ei_familie`;
+- `lv_vorsorge` spiegelt `ei_vorsorge`, wenn keine Familienangabe vorliegt;
+- bei beiden Antworten gewinnt wegen desselben Themas die spezifischere
+  Familienkarte; `SIGNAL_PRESENTATION` erkennt sie auch als Abdeckung des
+  generischen Vorsorgesignals;
+- die breite Familienfrage bleibt ausserhalb von `cvRiskPattern()`, weil sie neben
+  Herz-Kreislauf-Erkrankungen auch Diabetes und andere erbliche Erkrankungen umfasst;
+- bei einem echten Kardio-Mehrfaktorenmuster kann ein zweiter Hebel derselben
+  Dimension ab Priorität 8 sichtbar bleiben. Dadurch wird bekannter Bluthochdruck
+  bei gleichzeitigem Rauchen nicht aus der Summary verdrängt;
+- maximal zwei Hebel derselben Dimension sind in Summary und Aktionsplan erlaubt;
+  eigenständige scorefreie oder `summaryOnly`-Hinweise dürfen einen freien zweiten
+  Summary-Platz nutzen, ohne eine dritte Einflusskarte zu erzeugen;
+- Untergewicht und ein auffälliges Körperprofil erhalten über
+  `lv_untergewicht`/`lv_koerperprofil` eine `summaryOnly`-Einordnung. Aus BMI oder
+  Taillenumfang allein wird ohne Verlauf, Beschwerden und Ursachen bewusst kein
+  standardisierter 4-Wochen- oder Therapieplan erzeugt. Ein eigener fachlicher
+  Klärungszustand ersetzt in diesem Fall den widersprüchlichen allgemeinen Leertext;
+- scorefreie medizinische Haupthandlungsfelder verwenden einen neutralen Markenpunkt
+  statt einer grünen Farbe aus dem unveränderten Dimensionsscore.
+
+Der Familienplan konkretisiert zunächst Erkrankung, betroffene Person und
+Erkrankungsalter. Blutdruck, Lipidprofil und die Frage nach einer einmaligen
+Lp(a)-Bestimmung werden nur genannt, falls tatsächlich früh Herz-Kreislauf-
+Erkrankungen in der Familie aufgetreten sind. ApoB bleibt ausdrücklich eine vom
+individuellen Risikoprofil abhängige Zusatzfrage. So wird der gewünschte
+kardiovaskuläre Vorsorgehinweis sichtbar, ohne die breite Ja/Nein-Frage in eine
+Scheindiagnose umzudeuten.
+
+Acht neue Lever-Texte wurden kanonisch ergänzt, in DE/EN/FR/IT auf
+`needs-review` belassen und den fachlichen Review-Facetten «Herz-Kreislauf &
+Vorsorge» beziehungsweise «Körperzusammensetzung & Stoffwechsel» zugeordnet. Der
+konditionale Familienplan wurde in allen vier Sprachen aktualisiert; `Lp(a)` und
+`ApoB` sind als geschützte Begriffe Teil des Übersetzungsvertrags. Runtime-Bundle,
+vier CSVs, fünf Markdown-Übersichten und Manifeste wurden deterministisch neu
+erzeugt.
+
+Der unabhängige Abschlussreview ergänzte drei lokalisierte UI-Texte für den
+Klärungszustand. Vorbelegte `reviewComment`-Felder der neuen Übersetzungen wurden
+geleert; fachliche Ausgangshinweise bleiben ausschliesslich im schreibgeschützten
+Prüfhinweis. Ein Regressionstest schützt diesen Redaktionsvertrag.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 42/42, Integration 70/70, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **177/177
+Tests**. Alle vier Kataloge mit je 1'198 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, CSV, Markdown und Manifeste als aktuell. Die neuen
+Regressionen decken unveränderte Scores, Familien-/Vorsorge-Bündelung,
+Vorsorge allein, Untergewicht, BMI- und Taillenprofil sowie Bluthochdruck plus
+Rauchen ab. Lange lokalisierte Summary-Texte besitzen zusätzlich einen getesteten
+`min-width: 0`-/`overflow-wrap`-Vertrag für schmale Ansichten.
+
+Ein realer Browserdurchlauf über den lokalen HTTP-Server prüfte Start-, Ergebnis-
+und Quellenseite in DE/EN/FR/IT, Ergebnis-Sprachwechsel, öffnende Dimensionsdetails,
+das Familienprofil, den reinen `summaryOnly`-Klärungszustand und das kombinierte
+Familien-/Untergewichtsprofil. Desktop und 390 × 844 Pixel blieben ohne horizontalen
+Überlauf; die Browser-Konsole meldete keine Warnungen oder Fehler. Der direkte
+`file://`-Aufruf wurde von der Sicherheitsrichtlinie des eingebetteten Browsers
+blockiert und deshalb nicht interaktiv bestätigt; belegt ist dort nur der grüne
+automatisierte Doppelklickvertrag. Medizinische, muttersprachliche und vollständige
+visuelle Go-live-Abnahmen bleiben offen.
