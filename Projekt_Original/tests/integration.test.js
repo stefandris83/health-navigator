@@ -402,7 +402,9 @@ test('Ausdauer: Alle Antwortkombinationen nutzen denselben Ziel- und Empfehlungs
     if (expectedGoal) {
       assert.ok(res.scores.fitness >= 90, label + ': erfüllter Intensitätsweg wird im Score nicht durch den anderen Weg bestraft');
       assert.ok(!recIds.includes('fi_einstieg') && !recIds.includes('fi_ausdauer'), label + ': keine widersprüchliche Ausdauerempfehlung');
-      assert.ok(W.Recommendations.keyStrengths(ctx, 5).some((s) => s.id === 'st_bewegung'), label + ': Bewegungsstärke');
+      assert.ok(W.Recommendations.keyStrengths(ctx, 5)
+        .some((s) => s.id === 'st_bewegung' || s.id === 'st_fitness_top'),
+      label + ': Bewegungsziel bleibt als eigene oder zusammengefasste Fitnessstärke sichtbar');
       assert.ok(!W.Recommendations.actionPlan(ctx).some((r) => r.id === 'fi_einstieg' || r.id === 'fi_ausdauer'), label + ': kein Ausdauerschritt');
     } else if (activity.needsEntry) {
       assert.ok(recIds.includes('fi_einstieg'), label + ': Einstiegsempfehlung');
@@ -915,9 +917,27 @@ test('Kohärenz: Kardio-Check bündelt Vorsorge und Blutdruck, Familienhinweis b
 
 test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen beide neuen Varianten', () => {
   const familyOnly = { ...HEALTHY_ANSWERS, familie_hk: 'ja', vorsorge: 'nein' };
-  const familyOnlyCtx = W.Recommendations.buildContext(familyOnly, W.Scoring.computeResults(familyOnly));
+  const healthyResults = W.Scoring.computeResults(HEALTHY_ANSWERS);
+  const familyOnlyResults = W.Scoring.computeResults(familyOnly);
+  const familyOnlyCtx = W.Recommendations.buildContext(familyOnly, familyOnlyResults);
   const familyOnlyPlan = W.Recommendations.actionPlan(familyOnlyCtx);
+  assert.deepStrictEqual(familyOnlyResults.scores, healthyResults.scores,
+    'scorefreie Familien- und Vorsorgeantworten verändern keine Dimensionspunkte');
+  assert.strictEqual(familyOnlyResults.overall, healthyResults.overall,
+    'scorefreie Familien- und Vorsorgeantworten verändern den Gesamtscore nicht');
+  assert.deepStrictEqual(
+    familyOnlyResults.signals.map((signal) => signal.id).filter((id) => id === 'familie_hk' || id === 'vorsorge'),
+    ['familie_hk', 'vorsorge']
+  );
+  const familyOnlyFields = W.Recommendations.keyLevers(familyOnlyCtx, 3);
+  assert.strictEqual(familyOnlyFields[0].id, 'lv_familie',
+    'die spezifische Familienabklärung steht trotz perfektem Einfluss-Score im Haupthandlungsfeld');
+  assert.ok(familyOnlyFields[0].detail.includes('persönliche kardiovaskuläre Risikoeinschätzung'),
+    'die konditionale kardiovaskuläre Vorsorge ist bereits im sichtbaren Haupthandlungsfeld konkret');
   assert.ok(!familyOnlyPlan.some((record) => record.id === 'act_kardio'));
+  assert.strictEqual(familyOnlyPlan[0].id, 'ei_familie');
+  assert.ok(!familyOnlyPlan.some((record) => record.id === 'ei_vorsorge'),
+    'die Familienkarte bündelt die allgemeinere fehlende Vorsorge');
   const familyOnlyDetails = W.Recommendations.recommendationsForDimension('einfluss', familyOnlyCtx, familyOnlyPlan);
   const familyOnlyIds = familyOnlyDetails.map((record) => record.id);
   assert.ok(familyOnlyIds.includes('ei_familie'));
@@ -927,9 +947,20 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
   assert.ok(familyCard);
   assert.strictEqual(familyCard.plan[1].sourceRef, null,
     'Die breite Familienfrage darf keine pauschale Herzquelle erhalten');
-  assert.ok(!familyCard.plan[1].text.includes('ApoB'));
+  assert.ok(familyCard.plan[1].text.includes('Falls in Ihrer Familie früh Herz-Kreislauf-Erkrankungen'),
+    'kardiovaskuläre Werte werden nur bei tatsächlich passender Familiengeschichte genannt');
+  assert.ok(familyCard.plan[1].text.includes('Lp(a)'));
+  assert.ok(familyCard.plan[1].text.includes('ApoB'));
+  assert.ok(familyCard.plan[1].text.includes('hängt von Ihrem Risikoprofil ab'),
+    'ApoB wird nicht als pauschaler Standardtest dargestellt');
   assert.ok(familyCard.plan[0].text.includes('Bei Herz-Kreislauf-Erkrankungen'),
     'Die Altersgrenzen müssen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt sein');
+  assert.deepStrictEqual(
+    W.Recommendations.dimensionInsights(familyOnlyResults, familyOnlyPlan).einfluss
+      .filter((item) => item.id === 'familie_hk' || item.id === 'vorsorge'),
+    [],
+    'die vollständige Familienkarte unterdrückt doppelte Familien- und Vorsorgehinweise'
+  );
 
   const familyPattern = { ...HEALTHY_ANSWERS, familie_hk: 'ja', sitzzeit: 's9_10', vorsorge: 'ja' };
   const familyPatternCtx = W.Recommendations.buildContext(familyPattern, W.Scoring.computeResults(familyPattern));
@@ -947,6 +978,63 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
     W.Recommendations.recommendationsForDimension('einfluss', unknownCtx, unknownPlan)
       .some((record) => record.id === 'ei_bd_messen'),
     'Mehrere Ruhemessungen bleiben bei unbekanntem Blutdruck als eigenständiger Hinweis erhalten'
+  );
+});
+
+test('Scorefreie Vorsorge ohne Familienangabe bleibt als Haupthandlungsfeld sichtbar', () => {
+  const answers = { ...HEALTHY_ANSWERS, vorsorge: 'nein' };
+  const baseline = W.Scoring.computeResults(HEALTHY_ANSWERS);
+  const results = W.Scoring.computeResults(answers);
+  const ctx = W.Recommendations.buildContext(answers, results);
+  assert.deepStrictEqual(results.scores, baseline.scores);
+  assert.strictEqual(results.overall, baseline.overall);
+  assert.ok(results.signals.some((signal) => signal.id === 'vorsorge' && signal.type === 'medizinisch'));
+  assert.strictEqual(W.Recommendations.keyLevers(ctx, 3)[0].id, 'lv_vorsorge');
+  assert.deepStrictEqual(W.Recommendations.actionPlan(ctx).map((record) => record.id), ['ei_vorsorge']);
+});
+
+test('Untergewicht und auffälliges Körperprofil erhalten sichere Summary-Hinweise ohne Therapieplan', () => {
+  const cases = [
+    {
+      label: 'Untergewicht',
+      answers: { ...HEALTHY_ANSWERS, gewicht: 45 },
+      signalId: 'untergewicht',
+      leverId: 'lv_untergewicht',
+    },
+    {
+      label: 'BMI-basiertes Körperprofil',
+      answers: { ...HEALTHY_ANSWERS, gewicht: 100 },
+      signalId: 'koerperzusammensetzung',
+      leverId: 'lv_koerperprofil',
+    },
+    {
+      label: 'Taillen-basiertes Körperprofil',
+      answers: { ...HEALTHY_ANSWERS, bauchumfang: 100 },
+      signalId: 'koerperzusammensetzung',
+      leverId: 'lv_koerperprofil',
+    },
+  ];
+  cases.forEach(({ label, answers, signalId, leverId }) => {
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    assert.ok(results.signals.some((signal) => signal.id === signalId), label + ': Signal fehlt');
+    const lever = W.Recommendations.keyLevers(ctx, 3).find((item) => item.id === leverId);
+    assert.ok(lever, label + ': Summary-Hinweis fehlt');
+    assert.strictEqual(lever.summaryOnly, true, label + ': kein pauschaler 4-Wochen-Plan ableitbar');
+    assert.ok(lever.label && lever.detail, label + ': laienverständliche Copy fehlt');
+    assert.strictEqual(W.Recommendations.actionPlan(ctx).length, 0,
+      label + ': aus Einzelmessungen wird bewusst kein Therapieplan erzeugt');
+    assert.ok(W.Recommendations.dimensionInsights(results, []).einfluss.some((item) => item.id === signalId),
+      label + ': ausführliche fachliche Einordnung bleibt erhalten');
+  });
+
+  const combined = { ...HEALTHY_ANSWERS, familie_hk: 'ja', vorsorge: 'nein', gewicht: 45 };
+  const combinedResults = W.Scoring.computeResults(combined);
+  const combinedCtx = W.Recommendations.buildContext(combined, combinedResults);
+  assert.deepStrictEqual(
+    W.Recommendations.keyLevers(combinedCtx, 3).map((field) => field.id),
+    ['lv_familie', 'lv_untergewicht'],
+    'unabhängige medizinische Summary-Hinweise bleiben bei freien Plätzen gemeinsam sichtbar'
   );
 });
 
@@ -1005,8 +1093,65 @@ test('Insights: Kardio-Muster wird dimensionsübergreifend erkannt (Beispielfall
     W.ResultCopy.format('recommendation.lever.lv_kardio.detail.with_risk_factors', { riskFactors: factorList }),
     'Dynamische Treiber stammen vollständig aus dem Content-Katalog'
   );
-  const dims = levers.map((l) => l.dim);
-  assert.strictEqual(new Set(dims).size, dims.length, 'max. ein Hebel pro Dimension');
+  assert.deepStrictEqual(
+    levers.filter((lever) => lever.dim === 'einfluss').map((lever) => lever.id),
+    ['lv_kardio', 'lv_rauchstopp'],
+    'ein zweiter sehr hoch priorisierter Einfluss-Hebel bleibt als dokumentierte Sicherheitsausnahme sichtbar'
+  );
+});
+
+test('Medizinischer Kardio-Check wird bei Bluthochdruck plus Rauchen nicht aus der Summary verdrängt', () => {
+  const answers = { ...HEALTHY_ANSWERS, bluthochdruck: 'ja', rauchen: 'ja_regelmaessig' };
+  const results = W.Scoring.computeResults(answers);
+  const ctx = W.Recommendations.buildContext(answers, results);
+  const fields = W.Recommendations.keyLevers(ctx, 3);
+  assert.strictEqual(fields[0].id, 'lv_kardio', 'das medizinische Mehrfaktorenmuster hat Summary-Vorrang');
+  assert.ok(fields.some((field) => field.id === 'lv_rauchstopp'), 'Rauchstopp bleibt zusätzlich sichtbar');
+  assert.ok(fields[0].detail.includes(W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.hypertension')));
+  assert.ok(fields[0].detail.includes(W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.smoking')));
+  const planIds = W.Recommendations.actionPlan(ctx).map((record) => record.id);
+  assert.deepStrictEqual(planIds.slice(0, 2), ['act_kardio', 'ei_rauchstopp']);
+});
+
+test('Auch der Aktionsplan begrenzt hoch priorisierte Karten auf zwei je Dimension', () => {
+  const answers = {
+    ...HEALTHY_ANSWERS,
+    alter: 70,
+    bluthochdruck: 'ja',
+    rauchen: 'ja_regelmaessig',
+    stabilitaet: 'sehr_unsicher',
+  };
+  const results = W.Scoring.computeResults(answers);
+  const ctx = W.Recommendations.buildContext(answers, results);
+  assert.deepStrictEqual(
+    W.Recommendations.actionPlan(ctx).map((record) => record.id),
+    ['act_kardio', 'ei_rauchstopp']
+  );
+});
+
+test('Höchstens zwei hoch priorisierte Hebel derselben Dimension verdrängen keine mentale Unterstützung', () => {
+  const answers = {
+    ...HEALTHY_ANSWERS,
+    alter: 70,
+    bluthochdruck: 'ja',
+    rauchen: 'ja_regelmaessig',
+    stabilitaet: 'sehr_unsicher',
+    belastbarkeit: 'gar_nicht',
+    selbstwirksamkeit: 'gar_nicht',
+    sinnhaftigkeit: 'gar_nicht',
+    coping: 'gar_nicht',
+    verbundenheit: 'gar_nicht',
+    selbstfuersorge: 'gar_nicht',
+    zukunft: 'gar_nicht',
+    positive_emotionen: 'gar_nicht',
+  };
+  const results = W.Scoring.computeResults(answers);
+  const ctx = W.Recommendations.buildContext(answers, results);
+  assert.ok(results.signals.some((signal) => signal.id === 'hohe_belastung'));
+  assert.deepStrictEqual(
+    W.Recommendations.keyLevers(ctx, 3).map((field) => field.id),
+    ['lv_kardio', 'lv_rauchstopp', 'lv_mental_support']
+  );
 });
 
 test('Insights: Stärken sind konkret & Fallback greift bei belastetem Profil', () => {
@@ -1014,8 +1159,12 @@ test('Insights: Stärken sind konkret & Fallback greift bei belastetem Profil', 
   const goodCtx = W.Recommendations.buildContext(HEALTHY_ANSWERS, good);
   const st = W.Recommendations.keyStrengths(goodCtx, 3);
   assert.strictEqual(st.length, 3);
-  assert.ok(st.some((s) => s.id === 'st_rauchfrei'), 'Nichtrauchen wird als Top-Stärke erkannt');
+  assert.strictEqual(st[0].id, 'st_fitness_top', 'breit bestätigte Spitzenfitness steht an erster Stelle');
+  assert.ok(st[0].detail.includes('WHO'), 'die zusammengefasste Fitnessstärke nennt das erreichte Bewegungsziel');
+  assert.ok(st.some((s) => s.id === 'st_schlaf'), 'konsistenter Schlaf bleibt als Stärke sichtbar');
+  assert.ok(!st.some((s) => s.id === 'st_rauchfrei'), 'ein einzelner Schutzfaktor verdrängt keine breiter belegte Stärke');
   assert.strictEqual(new Set(st.map((s) => s.dim)).size, st.length, 'max. eine Stärke pro Dimension');
+  assert.deepStrictEqual(W.Recommendations.keyStrengths(goodCtx, 3), st, 'Stärkenrangfolge ist deterministisch');
   assert.strictEqual(W.Recommendations.keyLevers(goodCtx, 3).length, 0, 'Gesundes Profil → keine Hebel-Nörgelei');
 
   const bad = { ...DEFICIT_ANSWERS, rauchen: 'ja_regelmaessig', alkohol: 'w4plus', verbundenheit: 'gar_nicht', selbstfuersorge: 'gar_nicht', belastbarkeit: 'gar_nicht', sinnhaftigkeit: 'gar_nicht', positive_emotionen: 'gar_nicht', schlafqualitaet: 'sehr_schlecht' };
@@ -1023,6 +1172,105 @@ test('Insights: Stärken sind konkret & Fallback greift bei belastetem Profil', 
   const badCtx = W.Recommendations.buildContext(bad, badRes);
   const fallback = W.Recommendations.keyStrengths(badCtx, 3);
   assert.ok(fallback.length >= 1, 'Fallback: stabilste Dimension wird als Anker benannt');
+});
+
+test('Insights: Spitzenfitness verlangt WHO-Ziel, hohen Score und zwei unabhängige Top-Kurztests', () => {
+  const withoutMuscleTest = { ...HEALTHY_ANSWERS };
+  delete withoutMuscleTest.wandsitz;
+  const withoutMuscleResults = W.Scoring.computeResults(withoutMuscleTest);
+  const withoutMuscleCtx = W.Recommendations.buildContext(withoutMuscleTest, withoutMuscleResults);
+  const withoutMuscleStrengths = W.Recommendations.keyStrengths(withoutMuscleCtx, 5);
+  assert.ok(!withoutMuscleStrengths.some((item) => item.id === 'st_fitness_top'));
+  assert.strictEqual(withoutMuscleStrengths[0].id, 'st_bewegung', 'ohne Muskeltest bleibt die präzise WHO-Stärke');
+
+  const muscleOnly = { ...HEALTHY_ANSWERS, geschlecht: 'maennlich', liegestuetze: 40 };
+  delete muscleOnly.einbeinstand;
+  const muscleOnlyResults = W.Scoring.computeResults(muscleOnly);
+  const muscleOnlyCtx = W.Recommendations.buildContext(muscleOnly, muscleOnlyResults);
+  assert.ok(!W.Recommendations.keyStrengths(muscleOnlyCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'zwei Muskeltests ersetzen keinen Balancetest');
+
+  const openStrengthAction = { ...HEALTHY_ANSWERS, krafttraining: 'tage1' };
+  const openStrengthResults = W.Scoring.computeResults(openStrengthAction);
+  const openStrengthCtx = W.Recommendations.buildContext(openStrengthAction, openStrengthResults);
+  assert.ok(!W.Recommendations.keyStrengths(openStrengthCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'offener Fitness-Handlungsbedarf verhindert die breite Topaussage');
+  assert.ok(W.Recommendations.recommendationsForDimension('fitness', openStrengthCtx)
+    .some((item) => item.id === 'fi_kraft'));
+
+  const belowThresholdCtx = W.Recommendations.buildContext(HEALTHY_ANSWERS, W.Scoring.computeResults(HEALTHY_ANSWERS));
+  belowThresholdCtx.scores = { ...belowThresholdCtx.scores, fitness: 89 };
+  assert.ok(!W.Recommendations.keyStrengths(belowThresholdCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'Fitnessscore unter 90 reicht nicht');
+
+  const belowGoal = { ...HEALTHY_ANSWERS, ausdauer_moderat: 'm75_150', ausdauer_intensiv: 'm30_75' };
+  const belowGoalResults = W.Scoring.computeResults(belowGoal);
+  const belowGoalCtx = W.Recommendations.buildContext(belowGoal, belowGoalResults);
+  assert.ok(!W.Recommendations.keyStrengths(belowGoalCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'nicht erreichtes WHO-Ziel verhindert die breite Topaussage');
+
+  const mixedTests = {
+    ...HEALTHY_ANSWERS,
+    geschlecht: 'maennlich',
+    liegestuetze: 40,
+    wandsitz: 50,
+  };
+  const mixedResults = W.Scoring.computeResults(mixedTests);
+  const mixedCtx = W.Recommendations.buildContext(mixedTests, mixedResults);
+  assert.ok(mixedResults.scores.fitness >= 90, 'Grenzfall behält einen hohen Gesamt-Fitnessscore');
+  assert.strictEqual(mixedResults.fitnessTests.find((test) => test.id === 'wandsitz').norm, 0);
+  assert.ok(!W.Recommendations.keyStrengths(mixedCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'ein nicht starker auswertbarer Kurztest verhindert die Topaussage');
+
+  const unsafeStability = { ...HEALTHY_ANSWERS, stabilitaet: 'sehr_unsicher' };
+  const unsafeResults = W.Scoring.computeResults(unsafeStability);
+  const unsafeCtx = W.Recommendations.buildContext(unsafeStability, unsafeResults);
+  assert.ok(unsafeResults.signals.some((signal) => signal.id === 'stabilitaet'));
+  assert.ok(W.Recommendations.keyLevers(unsafeCtx, 3).some((field) => field.id === 'lv_sturz'));
+  assert.ok(!W.Recommendations.keyStrengths(unsafeCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'offenes Stabilitätsfeld widerspricht einer breiten Top-Fitnessaussage');
+});
+
+test('Insights: nicht passende Kurztest-Referenzen erzeugen keine Spitzenfitness', () => {
+  const cases = [
+    { ...HEALTHY_ANSWERS, alter: 17, geschlecht: 'maennlich', einbeinstand: 120, liegestuetze: 100, wandsitz: 300 },
+    { ...HEALTHY_ANSWERS, alter: 45, geschlecht: 'intersex', einbeinstand: 120, liegestuetze: 100, wandsitz: 300 },
+  ];
+  cases.forEach((answers) => {
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    assert.ok(!W.Recommendations.keyStrengths(ctx, 5)
+      .some((item) => item.id === 'st_fitness_top'), answers.alter + '/' + answers.geschlecht);
+  });
+
+  const femaleWithoutSupportedMuscleTest = { ...HEALTHY_ANSWERS, liegestuetze: 100 };
+  delete femaleWithoutSupportedMuscleTest.wandsitz;
+  const femaleResults = W.Scoring.computeResults(femaleWithoutSupportedMuscleTest);
+  assert.strictEqual(
+    femaleResults.fitnessTests.find((item) => item.id === 'liegestuetze').referenceStatus,
+    'protocol_unconfirmed'
+  );
+  const femaleCtx = W.Recommendations.buildContext(femaleWithoutSupportedMuscleTest, femaleResults);
+  assert.ok(!W.Recommendations.keyStrengths(femaleCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'));
+});
+
+test('Insights: Rauchfrei bleibt als Schutzfaktor verfügbar, aber nur als Füllkandidat', () => {
+  const sparse = { alter: 45, geschlecht: 'weiblich', rauchen: 'nie' };
+  const sparseResults = W.Scoring.computeResults(sparse);
+  const sparseCtx = W.Recommendations.buildContext(sparse, sparseResults);
+  assert.strictEqual(W.Recommendations.keyStrengths(sparseCtx, 3)[0].id, 'st_rauchfrei');
+
+  const broadWithoutTests = { ...HEALTHY_ANSWERS };
+  delete broadWithoutTests.einbeinstand;
+  delete broadWithoutTests.liegestuetze;
+  delete broadWithoutTests.wandsitz;
+  const broadResults = W.Scoring.computeResults(broadWithoutTests);
+  const broadCtx = W.Recommendations.buildContext(broadWithoutTests, broadResults);
+  const broadStrengths = W.Recommendations.keyStrengths(broadCtx, 3);
+  assert.strictEqual(broadStrengths[0].id, 'st_bewegung');
+  assert.ok(!broadStrengths.some((item) => item.id === 'st_rauchfrei'),
+    'mehrere persönliche Stärken stehen vor einem einzelnen Schutzfaktor');
 });
 
 test('Kohärenz: Aktionsplan folgt den Hebeln (Kardio-Check #1, Rauchstopp #2)', () => {

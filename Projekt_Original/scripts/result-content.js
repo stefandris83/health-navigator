@@ -1372,7 +1372,7 @@ function reviewContextLabel(record, facet) {
     (_, dimension) => 'Empfehlungskarte · ' + reviewDimensionLabel(dimension) + ' · '
   );
   context = context.replace(
-    /^Handlungsfeld [a-z0-9_]+ in der Dimension ([a-z]+),\s*/,
+    /^(?:Summary-only-)?Handlungsfeld [a-z0-9_]+ in der Dimension ([a-z]+),\s*/,
     (_, dimension) => 'Handlungsfeld · ' + reviewDimensionLabel(dimension) + ' · '
   );
   context = context.replace(
@@ -1453,7 +1453,7 @@ function reviewFacetFor(record) {
 
   if (idContainsAny(id, [
     'act_kardio', 'ei_bd_messen', 'ei_bluthochdruck', 'ei_familie', 'ei_familienwissen',
-    'ei_vorsorge', 'lv_bd_messen', 'lv_blutdruck', 'lv_familienwissen', 'lv_kardio',
+    'ei_vorsorge', 'lv_bd_messen', 'lv_blutdruck', 'lv_familie', 'lv_familienwissen', 'lv_kardio', 'lv_vorsorge',
     'st_vorsorge', 'blutdruck_unbekannt', 'bluthochdruck', 'familie_hk', '.vorsorge.',
     'swissheart_', 'hero.topic.familienwissen', 'answer.medical_values',
   ])) {
@@ -1474,7 +1474,7 @@ function reviewFacetFor(record) {
   if (idContainsAny(id, ['ei_stabilitaet', 'lv_sturz', '.stabilitaet.', 'hero.topic.stabilitaet', 'st_sicherheit'])) {
     return { area: 'Einflussfaktoren', topic: 'Alltagssicherheit & Sturzprävention' };
   }
-  if (idContainsAny(id, ['koerperzusammensetzung', 'untergewicht', 'ui.metrics.', 'hero.topic.koerperzusammensetzung'])) {
+  if (idContainsAny(id, ['koerperzusammensetzung', 'koerperprofil', 'untergewicht', 'ui.metrics.', 'hero.topic.koerperzusammensetzung'])) {
     return { area: 'Einflussfaktoren', topic: 'Körperzusammensetzung & Stoffwechsel' };
   }
   if (id.includes('.ei_') || idContainsAny(id, ['dimension.einfluss', 'positive.einfluss', 'solid.einfluss'])) {
@@ -1515,7 +1515,7 @@ function reviewFacetFor(record) {
   if (idContainsAny(id, ['fi_einstieg', 'lv_fitness_alltag', 'st_alltagsfit', 'st_bewegung', 'bewegungsmangel', 'bag_bewegung'])) {
     return { area: 'Körperliche Fitness', topic: 'Bewegung im Alltag & Einstieg' };
   }
-  if (id.includes('.fi_') || idContainsAny(id, ['ui.fitness_tests.', 'recommendation.fitness_test.', 'dimension.fitness', 'positive.fitness', 'solid.fitness', 'answer.fitness'])) {
+  if (id.includes('.fi_') || idContainsAny(id, ['st_fitness_top', 'ui.fitness_tests.', 'recommendation.fitness_test.', 'dimension.fitness', 'positive.fitness', 'solid.fitness', 'answer.fitness'])) {
     return { area: 'Körperliche Fitness', topic: 'Allgemeine Fitness' };
   }
 

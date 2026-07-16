@@ -104,6 +104,8 @@ function scoringContract(runtime) {
       severity: signal.severity,
     })),
     actionPlanIds: runtime.Recommendations.actionPlan(context).map((item) => item.id),
+    leverIds: runtime.Recommendations.keyLevers(context).map((item) => item.id),
+    strengthIds: runtime.Recommendations.keyStrengths(context).map((item) => item.id),
     dimensionRecommendationIds: runtime.DIMENSION_ORDER.reduce((all, dimensionId) => {
       all[dimensionId] = runtime.Recommendations
         .recommendationsForDimension(dimensionId, context)

@@ -152,7 +152,9 @@ Für die Signalstärke gelten beim zentralen Körperprofil die zugehörigen Refe
 
 ### 5.3 Scorefreie medizinische Angaben
 
-Vorsorgeverhalten, bekannte familiäre Erkrankungen und Bluthochdruck sind keine regulären Minuspunkte. Sie können stattdessen medizinische Signale und Empfehlungen auslösen. So bleibt der 0–100-Wert eine Standortbestimmung und gibt sich nicht als klinischer Risikorechner aus.
+Vorsorgeverhalten, bekannte familiäre Erkrankungen und Bluthochdruck sind keine regulären Minuspunkte. Sie können stattdessen medizinische Signale, sichtbare Haupthandlungsfelder und Empfehlungen auslösen. So bleibt der 0–100-Wert eine Standortbestimmung und gibt sich nicht als klinischer Risikorechner aus. Insbesondere bleibt ein Einflussfaktoren-Score von 100 möglich, während die getrennte Sicherheitslogik trotzdem eine noch offene Familien- oder Vorsorgeabklärung anzeigt.
+
+Untergewicht wird ebenfalls separat als medizinischer Klärungshinweis behandelt. Untergewicht und ein auffälliges Körperprofil erhalten in «Grösste Handlungsfelder» eine vorsichtige Summary-Einordnung, aber aus BMI oder Taillenumfang allein bewusst keinen standardisierten 4-Wochen-Therapieplan.
 
 ## 6. Dimension 2: Körperliche Fitness
 
@@ -372,6 +374,8 @@ Ab einem Musterwert von 3 kann der kardiovaskuläre Vorsorge-Check als zentraler
 
 Die breite Familienfrage zählt bewusst **nicht** als zwei Punkte in diesem Muster: Sie umfasst neben Herz-Kreislauf-Erkrankungen auch Diabetes und andere erbliche Erkrankungen. Eine Ja-Antwort bleibt ein eigenes medizinisches Signal und löst weiterhin die fachlich passende Familien-/Vorsorgeempfehlung aus.
 
+Die Familienempfehlung fordert zuerst Erkrankung, betroffene Person und Erkrankungsalter. Nur falls tatsächlich früh aufgetretene Herz-Kreislauf-Erkrankungen vorliegen, nennt sie konditional Blutdruck, Lipidprofil und die Frage nach einer einmaligen Lp(a)-Bestimmung. ApoB bleibt eine vom individuellen Risikoprofil abhängige Zusatzfrage und wird nicht als Standardtest für alle ausgegeben.
+
 Die vorhandenen Textvarianten mit dem technischen Suffix `family_history` bleiben als
 redaktionell gepflegte Reserve für eine künftig differenzierte, ausdrücklich
 kardiovaskuläre Familienfrage erhalten. Mit der heutigen breiten Frage werden sie
@@ -410,9 +414,60 @@ Die Auswahl folgt vereinfacht dieser Reihenfolge:
 2. dimensionsübergreifende, antwortbasierte Haupthandlungshebel;
 3. Auffüllen aus dem Katalog nach Priorität;
 4. Deduplizierung gleicher Themen und abgedeckter Empfehlungen;
-5. normalerweise höchstens ein Schritt pro Dimension, ausser ein sehr hoch priorisierter zweiter Hebel ist fachlich gerechtfertigt.
+5. normalerweise höchstens ein Schritt pro Dimension, ausser ein fachlich gerechtfertigter zweiter Hebel; mehr als zwei Schritte derselben Dimension sind ausgeschlossen.
+
+Die Kurzliste «Grösste Handlungsfelder» verwendet dieselben Lever-Regeln. Ein zweiter Hebel derselben Dimension bleibt dort ab Priorität 8 oder als eigenständiger scorefreier beziehungsweise `summaryOnly`-Klärungshinweis sichtbar; mehr als zwei werden nie gewählt. Dadurch kann ein medizinischer Kardio-Check neben Rauchstopp bestehen, während zum Beispiel Familienrisiko und Untergewicht bei einem freien Platz ebenfalls gemeinsam sichtbar bleiben. Familienrisiko und fehlende Risikoeinschätzung werden bei gemeinsamem Auftreten über die spezifischere Familienkarte gebündelt.
+
+Eine bewusst dokumentierte Ausnahme sind `lv_untergewicht` und `lv_koerperprofil`: Sie erscheinen als `summaryOnly`, weil die vorhandenen Messwerte eine sichere Einordnung, aber ohne Verlauf, Beschwerden und Ursachen keinen pauschalen Therapie- oder 4-Wochen-Plan erlauben. Falls nur solche Hinweise vorliegen, erklärt ein eigener Klärungszustand den fehlenden standardisierten Plan; der allgemeine Leerzustand «kein Handlungsfeld» wird nicht verwendet. Der ausführliche Signalhinweis bleibt im Dimensionsdetail erhalten. Scorefreie medizinische Hebel erhalten in der Übersicht zudem einen neutralen Markenpunkt statt einer irreführenden grünen Scorefarbe.
 
 Dadurch ist der Aktionsplan kein blosses Ranking der fünf tiefsten Dimensionsscores. Er kann zum Beispiel einen kardiovaskulären Vorsorge-Check vor einen Lifestyle-Hebel setzen.
+
+### 13.3 Auswahl und Rangfolge der persönlichen Stärken
+
+Die Stärkenkarte ist ein eigener Präsentationsvertrag. Sie verändert weder den
+Dimensions- oder Gesamtscore noch die Auswahl des Aktionsplans. Angezeigt werden
+höchstens drei Stärken und grundsätzlich höchstens eine pro Dimension. Eine Stärke
+aus einer insgesamt klar schwachen Dimension mit Score unter 45 wird nicht gezeigt;
+ohne passenden Treffer dient die relativ stabilste Dimension als neutraler Anker.
+
+Die Rangfolge berücksichtigt zuerst die persönliche Aussagebreite, danach den
+Dimensionsscore, anschliessend das bestehende Fachgewicht und zuletzt die stabile
+Katalogreihenfolge:
+
+1. **Stufe 3 – streng bestätigtes Mehrquellenprofil:** eine aussergewöhnlich breite,
+   widerspruchsfreie Stärke;
+2. **Stufe 2 – erreichtes Ziel oder konsistentes Mehrfachmuster:** beispielsweise
+   WHO-Bewegungsziel, regelmässiges Krafttraining, stabiler Schlaf, Resilienz oder
+   ein konsistentes Ernährungsmuster;
+3. **Stufe 1 – einzelne aktive Ressource:** beispielsweise Pflanzenvielfalt,
+   soziale Verbundenheit oder Vorsorge;
+4. **Stufe 0 – einzelner Schutz-/Kontextfaktor:** beispielsweise nie geraucht oder
+   selten Alkohol.
+
+Ein Mehrfachmuster in einer Dimension unter 80 wird für die Rangfolge auf Stufe 1
+zurückgenommen. Dadurch kann ein positiver Teilaspekt aus einem insgesamt gemischten
+Bereich andere, breiter belegte Stärken nicht verdrängen. «Rauchfrei» bleibt ein
+valider Füllkandidat, erhält aber keinen pauschalen Vorrang vor persönlich
+beobachteten Fähigkeiten und erreichten Zielen.
+
+Die neue Topstärke **«Sehr starke körperliche Fitness»** erfordert gleichzeitig:
+
+- Fitnessscore mindestens 90;
+- vorhandene Aktivitätsangaben und erreichtes WHO-Bewegungsziel;
+- mindestens einen fachlich auswertbaren Kurztest im obersten Band für
+  *Muskulatur* und einen für *Balance*;
+- alle zusätzlich ausgefüllten, fachlich auswertbaren Kurztests ebenfalls im
+  obersten Band;
+- keinen gleichzeitig ausgelösten Fitness- oder Stabilitäts-/Sturz-Handlungsbedarf.
+
+Nur Kurztests mit `supported` oder `harmonized_orientation` und Normwert `+2`
+zählen. Zwei Krafttests ersetzen keinen Balancetest; ein gemischtes Testprofil
+erzeugt auch bei hohem Gesamtscore keine pauschale Topaussage. Nicht passende Alters-,
+Geschlechts- oder Protokollreferenzen bleiben ausgeschlossen. Da pro Dimension nur
+eine Stärke erscheint, fasst die Topstärke das WHO-Bewegungsziel sichtbar in ihrem
+Detailtext mit zusammen. Die Aussage bleibt eine Orientierung innerhalb dieses
+Checks und ist keine klinische Leistungsdiagnostik oder individuelle
+Mortalitätsprognose.
 
 ## 14. Wissenschaftliche Einordnung
 
@@ -561,8 +616,8 @@ Belastbarkeit, Selbstwirksamkeit und Coping wirken bei −2 zusätzlich auf den 
 
 | Frage | Antwortstufen / interne Einordnung | Rolle ausserhalb des regulären Mittelwerts |
 |---|---|---|
-| **Persönliches Risiko einschätzen lassen** (`vorsorge`)<br>Haben Sie sich zu Krebs, Bluthochdruck und Typ-2-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen? | Ja / Nein; kein Normwert | «Nein» erzeugt ein medizinisches Signal mittlerer Schwere und kann eine Vorsorgeempfehlung auslösen. |
-| **Familiäre Erkrankungen** (`familie_hk`)<br>Gibt es in Ihrer nahen Familie Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein medizinisches Signal mittlerer Schwere und eine Familien-/Vorsorgeempfehlung; keine Punkte im Kardio-Muster. |
+| **Persönliches Risiko einschätzen lassen** (`vorsorge`)<br>Haben Sie sich zu Krebs, Bluthochdruck und Typ-2-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen? | Ja / Nein; kein Normwert | «Nein» erzeugt ein medizinisches Signal mittlerer Schwere, ein Haupthandlungsfeld und eine Vorsorgeempfehlung. |
+| **Familiäre Erkrankungen** (`familie_hk`)<br>Gibt es in Ihrer nahen Familie Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein medizinisches Signal mittlerer Schwere sowie ein Familien-/Vorsorge-Handlungsfeld mit Empfehlung; keine Punkte im Kardio-Muster. |
 | **Bluthochdruck** (`bluthochdruck`)<br>Wurde bei Ihnen ärztlich Bluthochdruck festgestellt oder nehmen Sie Blutdruckmedikamente? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein hohes medizinisches Signal und +2 im Kardio-Muster; «Weiss ich nicht» ein mittleres Signal und +0,5 im Kardio-Muster. |
 | **Sättigung** (`saettigung`)<br>Wie häufig fühlen Sie sich nach Ihren Hauptmahlzeiten für etwa vier Stunden satt? | Nie → −2; Selten → −1; Manchmal → 0; Oft → +1; Fast immer → +2 | Kein Scoregewicht und kein Deckel. Nie/Selten/Manchmal können eine Empfehlung auslösen. |
 | **Schlafbedingte Alltagsbeeinträchtigung** (`schlaf_auswirkung`)<br>Wie stark hat Ihr Schlaf im letzten Monat Ihren Alltag beeinträchtigt? | Gar nicht → +2; Minimal → +1; Spürbar → 0; Deutlich → −1; Massiv → −2 | Kein gleichgewichteter Scorebestandteil. Spürbar deckelt Schlaf auf 75; deutlich/massiv auf 50. Massiv erzeugt zusätzlich ein medizinisches Signal mittlerer Schwere. |

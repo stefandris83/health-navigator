@@ -978,6 +978,36 @@
       "comment": "Neutraler Leerzustand ohne unzulässigen Rückschluss auf eine starke Ausgangslage; durch Marketing freigeben."
     },
     {
+      "id": "ui.action_plan.heading.clarification",
+      "section": "Aktionsplan",
+      "context": "Sektionsüberschrift bei einem sichtbaren medizinischen oder ernährungsfachlichen Klärungshinweis ohne standardisierten Plan",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Fachliche Einordnung als nächster Schritt",
+      "reviewStatus": "needs-review",
+      "comment": "Eigener Zustand für Summary-only-Hinweise ohne widersprüchlichen Aktionsplan-Leertext; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.action_plan.intro.clarification",
+      "section": "Aktionsplan",
+      "context": "Beschreibung bei einem sichtbaren Klärungshinweis ohne standardisierten 4-Wochen-Plan",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Dieses Handlungsfeld ist wichtig, lässt sich aus den vorhandenen Angaben aber nicht sicher in einen standardisierten 4-Wochen-Plan übersetzen.",
+      "reviewStatus": "needs-review",
+      "comment": "Verhindert eine pauschale Anleitung aus Einzelwerten; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.action_plan.clarification.body",
+      "section": "Aktionsplan",
+      "context": "Hinweiskarte bei einem sichtbaren Klärungshinweis ohne standardisierten 4-Wochen-Plan",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Nutzen Sie den Hinweis oben für eine medizinische oder ernährungsfachliche Einordnung. Konkrete Schritte richten sich nach Verlauf, Beschwerden und möglichen Ursachen.",
+      "reviewStatus": "needs-review",
+      "comment": "Sichere Weiterleitung ohne Diagnose oder pauschale Therapie; durch Marketing und Medizin freigeben."
+    },
+    {
       "id": "ui.action_plan.total_progress",
       "section": "Aktionsplan",
       "context": "Gesamtfortschritt über alle abgehakten Planschritte",

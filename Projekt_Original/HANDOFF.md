@@ -11,8 +11,9 @@ CSS und Vanilla JavaScript. Er unterstützt DE, EN, FR und IT, läuft grundsätz
 direkt über `file://`, kann statisch über GitHub Pages publiziert werden und speichert
 Antworten ausschliesslich lokal im Browser. Aus sechs Fragebogenabschnitten entstehen
 fünf gleichgewichtete Dimensionsscores, ein Gesamtwert, separate Risikosignale,
-personalisierte Empfehlungen, drei priorisierte nächste Schritte, 4-Wochen-Pläne und
-eine lokale regelbasierte Coach-Vorschau.
+konkret priorisierte persönliche Stärken, personalisierte Empfehlungen, drei
+priorisierte nächste Schritte, 4-Wochen-Pläne und eine lokale regelbasierte
+Coach-Vorschau.
 
 Der aktuelle Branch enthält einen grossen zusammenhängenden Änderungssatz. Er umfasst
 insbesondere das überarbeitete Scoring- und Empfehlungssystem,
@@ -22,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'185 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'198 Texten;
 - Artefakt-Check: erfolgreich;
-- 168 von 168 Einzeltests erfolgreich;
+- 174 von 174 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -104,7 +105,7 @@ Bei jeder Fortsetzung gelten diese Entscheidungen:
 | Styling | `css/styles.css` | Helsana-Look, Responsive UI, A11y-Zustände |
 | Fragen | `js/questions.js` | Bereiche, Fragen, Antwortwerte, Pflichtfelder, Zahlenlimits, Illustrationsmetadaten |
 | Scoring | `js/scoring.js` | Normen, Formeln, Körperprofil, Kurztestreferenzen, Scores und Risikosignale |
-| Empfehlungen | `js/recommendations.js` | Empfehlungsregeln, Deduplizierung, Top 3, Pläne, Detailhinweise und Test-Retests |
+| Empfehlungen | `js/recommendations.js` | Stärkenrangfolge, Empfehlungsregeln, Deduplizierung, Top 3, Pläne, Detailhinweise und Test-Retests |
 | UI/Lifecycle | `js/app.js` | Rendering, Navigation, Modals, Chat, Atemübung, Ergebnisansicht, Cleanup |
 | Texte Runtime | `js/result-copy.js` | Sichere `get`-/`format`-API, Locale-Gesamtfallback |
 | Generiertes Textbundle | `js/result-copy.generated.js` | Eingechecktes, automatisch generiertes Vier-Sprachen-Bundle |
@@ -147,9 +148,25 @@ Empfehlungen sind deshalb bewusst zwei getrennte Systeme.
   Doppelbox.
 - Der kardiovaskuläre Vorsorge-Check bündelt Blutdruck/Vorsorge, unterdrückt aber nicht
   pauschal eigenständige nicht-kardiovaskuläre Familienhinweise.
+- Scorefreie Angaben zu familiären Erkrankungen und fehlender Risikoeinschätzung
+  besitzen eigene Haupthandlungshebel. Treffen beide zu, bündelt die spezifischere
+  Familienkarte den generischen Vorsorgehinweis, ohne den Score zu verändern.
+- Untergewicht und ein auffälliges Körperprofil werden in «Grösste Handlungsfelder»
+  sichtbar, erzeugen aus Einzelmessungen aber bewusst keinen pauschalen Therapieplan.
+  Ein eigener Klärungszustand erklärt den fehlenden 4-Wochen-Plan widerspruchsfrei.
 - Eine grüne Erfolgsmeldung erscheint nicht allein aufgrund einer positiven Einzelantwort,
   wenn der Dimensionsscore nur «Ausbaufähig» ist.
 - Allgemeine positive Einordnungen und grüne Detailtexte wurden sprachlich entdoppelt.
+- Die Stärkenkarte priorisiert breit belegte Fähigkeiten und erreichte Ziele vor
+  einzelnen Schutzmerkmalen. «Sehr starke körperliche Fitness» steht nur bei
+  Fitnessscore ab 90, erreichtem WHO-Bewegungsziel, auswertbaren Top-Kurztests für
+  Muskulatur und Balance, ausschliesslich starken zusätzlich ausgefüllten
+  auswertbaren Kurztests sowie ohne offenen Fitness- oder Stabilitäts-/Sturz-
+  Handlungsbedarf an erster Stelle.
+  Das WHO-Ziel bleibt im zusammengefassten Detailtext ausdrücklich sichtbar.
+- «Rauchfrei» wurde nicht entfernt: Es bleibt ein Schutzfaktor und Füllkandidat,
+  verdrängt bei einem breit starken Profil aber nicht mehr Fitness, Schlaf,
+  mentale oder ernährungsbezogene Mehrfachmuster.
 
 ### Wesentliche sichtbare Textentscheidungen
 
@@ -189,7 +206,7 @@ Familienwissen, Rauchen, Alkohol, Social Media und Körperzusammensetzung.
 - Intersex/andere Angabe: bei Taille und Grösse wird WHtR verwendet.
 - BMI ist Fallback, wenn keine passende Taillenreferenz vorliegt.
 - Vorsorge, bekannte Familienerkrankungen und Bluthochdruck sind scorefrei, können
-  aber wichtige medizinische Signale und Empfehlungen auslösen.
+  aber wichtige medizinische Signale, Haupthandlungsfelder und Empfehlungen auslösen.
 
 ### Körperliche Fitness
 
@@ -270,8 +287,22 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Kritische Empfehlungen erhalten starken technischen Vorrang.
 - Auswahl der Top 3: kritische Hinweise, Haupthandlungshebel, Katalogauffüllung,
   Themendeduplizierung und grundsätzlich Dimensionsvielfalt.
+- Ein zweiter Hebel derselben Dimension ist bei sehr hoher Priorität oder als
+  eigenständiger scorefreier/`summaryOnly`-Klärungshinweis zulässig; ein dritter
+  ist in Summary und Aktionsplan ausgeschlossen. Dadurch bleibt ein Kardio-Check
+  bei Bluthochdruck plus Rauchen sichtbar, ohne andere Dimensionen zu verdrängen.
+- `lv_untergewicht` und `lv_koerperprofil` sind dokumentierte `summaryOnly`-Regeln:
+  sichtbare Einordnung ja, standardisierter 4-Wochen-Plan aus Einzelwerten nein;
+  die Oberfläche zeigt dafür einen eigenen fachlichen Klärungszustand.
 - `topThree` ist aus Kompatibilitätsgründen ein getesteter Alias von `actionPlan`.
 - Pläne sind zentral in `PLANS`; es gibt keine verstreuten Inline-Pläne im Katalog.
+- Persönliche Stärken werden getrennt vom Aktionsplan nach Aussagebreite,
+  Dimensionsscore, Fachgewicht und stabiler Katalogreihenfolge sortiert. Es bleibt
+  bei höchstens drei Karten und grundsätzlich einer Stärke pro Dimension.
+- Die mehrquellenbasierte Fitness-Topstärke verlangt zwei unterschiedliche
+  scorebare Testkomponenten und ausschliesslich Topwerte unter allen zusätzlich
+  ausgefüllten auswertbaren Kurztests. Nicht passende Alters-, Geschlechts- oder
+  Protokollreferenzen sowie offene Fitness- oder Stabilitäts-/Sturzfelder sperren sie.
 - Die überarbeiteten Scores benötigten keine separate pauschale Umschreibung aller
   Empfehlungstexte. Angepasst wurden nur Texte/Varianten, deren fachliche Aussage sich
   konkret geändert hatte, etwa Aktivitätskomposit, Wandsitz, Fitness-Retests,
@@ -304,7 +335,7 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'185 IDs.
+- Aktuell je Sprache 1'198 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -474,16 +505,16 @@ Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'185 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'198 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
-| `node tests/content-workflow.test.js` | 41/41 |
-| `node tests/integration.test.js` | 62/62 |
+| `node tests/content-workflow.test.js` | 42/42 |
+| `node tests/integration.test.js` | 70/70 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 168/168 Tests erfolgreich.**
+**Gesamt aktuell: 177/177 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
@@ -512,6 +543,21 @@ anderem:
   Kundenprofile, Ergebnislinks, Reset und mobile Breite;
 - bei diesen dokumentierten Läufen blieb die Konsole ohne relevante Fehler.
 
+Die neue Stärkenrangfolge wurde zusätzlich mit dem starken Referenzprofil über
+einen lokalen statischen HTTP-Server geprüft: Fitness stand auf Desktop sichtbar
+an erster Stelle; «Rauchfrei» erschien nicht in den Top 3. Bei 390 × 844 Pixeln
+war die Stärkenkarte 350 Pixel breit, ohne horizontalen Überlauf und mit lesbaren
+Umbrüchen. Die Browser-Konsole blieb ohne Warnungen oder Fehler.
+
+Der aktuelle Abschlussreview prüfte die Anwendung zusätzlich real über einen lokalen
+HTTP-Server: Startseite und Ergebnisprofil in DE/EN/FR/IT, Ergebnis-Sprachwechsel,
+öffnende Dimensionsdetails sowie die relevante Summary bei 390 × 844 Pixeln. Score,
+Texte und Handlungsfeld blieben sprachübergreifend konsistent; es gab keinen
+horizontalen Überlauf und keine Warnung oder Fehlermeldung in der Browser-Konsole.
+Der direkte `file://`-Aufruf blieb durch die Sicherheitsrichtlinie des eingebetteten
+Browsers blockiert; dafür ist nur der automatisierte statische Doppelklick-Vertrag
+belegt, kein interaktiver Browserlauf.
+
 Nicht vollständig belegt:
 
 - interaktiver kompletter `file://`-Durchlauf in der aktuellen Umgebung;
@@ -534,6 +580,13 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
 
 - Medizinische Freigabe aller Schwellen, Normtabellen, Risikosignale, Notfalltexte und
   personalisierten Empfehlungen.
+- Product-, Marketing- und Medizin-Freigabe der neuen Stärkenrangfolge, des
+  Fitnessscore-Schwellenwerts 90 und der Formulierung «oberster
+  Orientierungsbereich» in allen vier Sprachen.
+- Product-, Marketing- und Medizin-Freigabe der neuen Familien-, Vorsorge-,
+  Untergewichts- und Körperprofil-Hebel in DE/EN/FR/IT sowie ihrer Prioritäten.
+  Besonders prüfen: Lp(a) nur konditional bei tatsächlich früher
+  Herz-Kreislauf-Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
 - Freigabe des Körperzusammensetzungsmodells, besonders für 16-/17-Jährige und nahe
   den WHtR-Grenzen.
 - Einheitliches Liegestützprotokoll beziehungsweise passende weibliche Referenz.
