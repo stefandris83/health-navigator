@@ -198,7 +198,11 @@
 
   function attachCatalogCopy(rule) {
     const prefix = 'recommendation.catalog.' + rule.id + '.';
-    return Object.assign({}, rule, {
+    const copiedRule = Object.assign({}, rule);
+    if (Array.isArray(copiedRule.covers)) {
+      copiedRule.covers = Object.freeze(copiedRule.covers.slice());
+    }
+    return Object.assign(copiedRule, {
       title: copyGet(prefix + 'title'),
       why: copyGet(prefix + 'why'),
       step: copyGet(prefix + 'step'),

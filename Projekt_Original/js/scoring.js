@@ -282,8 +282,8 @@ const BALANCE_BANDS = {
  * Referenz: CSEP-PATH (2019, 2. Aufl.) – Normwerte 20–69 Jahre;
  * +2 ≈ «Excellent», +1 ≈ «Very good», 0 ≈ «Good», −1 ≈ «Fair», −2 ≈ «Needs improvement».
  * Hinweis Protokoll: Die CSEP-Frauentabelle basiert auf der KNIE-Variante.
- * Für > 69 Jahre existieren keine publizierten Normen → das 60–69-Band wird
- * konservativ weiterverwendet (in docs/QUELLEN.md zur Fachprüfung markiert). */
+ * Ausserhalb von 20–69 Jahren wird zwar intern ein Vergleichswert berechnet,
+ * aber keine sichtbare Referenzstufe, Score-Wirkung oder Empfehlung abgeleitet. */
 const PUSHUP_BANDS = {
   m: [
     [30, [36, 29, 22, 17]],

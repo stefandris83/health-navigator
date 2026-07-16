@@ -307,14 +307,16 @@
 
   function questionHTML(q) {
     let body = '';
+    const noteId = q.note ? `q-note-${q.id}` : '';
     if (q.type === 'number') {
       const v = state.answers[q.id] ?? '';
       const invalid = numberInputInvalid(q, v);
       const errorId = `q-error-${q.id}`;
+      const describedBy = [noteId, errorId].filter(Boolean).join(' ');
       body = `<div class="num-field">
         <input type="number" inputmode="numeric" data-action="num" data-q="${escAttr(q.id)}"
           min="${q.min ?? ''}" max="${q.max ?? ''}" value="${escAttr(v)}" placeholder="${escAttr(q.placeholder || '')}"
-          aria-label="${escAttr(q.text)}" aria-describedby="${escAttr(errorId)}"
+          aria-label="${escAttr(q.text)}" aria-describedby="${escAttr(describedBy)}"
           aria-required="${!q.optional}" aria-invalid="${invalid}" />
         ${q.unit ? `<span class="num-unit">${q.unit}</span>` : ''}
       </div>
@@ -324,11 +326,11 @@
       const opts = q.options.slice();
       if (q.dontKnow) opts.push(window.DONT_KNOW);
       const cols = opts.length > 3 && opts.every((o) => o.label.length < 28) ? 'cols-2' : '';
-      body = `<div class="options ${cols}" role="${q.type === 'multi' ? 'group' : 'radiogroup'}" aria-label="${escAttr(q.text)}">${opts.map((o) => optionButton(q, o)).join('')}</div>`;
+      body = `<div class="options ${cols}" role="${q.type === 'multi' ? 'group' : 'radiogroup'}" aria-label="${escAttr(q.text)}"${noteId ? ` aria-describedby="${escAttr(noteId)}"` : ''}>${opts.map((o) => optionButton(q, o)).join('')}</div>`;
     }
-    return `<div class="question" data-qwrap="${q.id}">
+    return `<div class="question" data-qwrap="${escAttr(q.id)}">
       <div class="q-text">${q.text}</div>
-      ${q.note ? `<div class="q-note">${q.note}</div>` : ''}
+      ${q.note ? `<div class="q-note" id="${escAttr(noteId)}">${q.note}</div>` : ''}
       ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle">${I.info} ${escHtml(q.helpTitle || copy.get('ui.quiz.help_fallback'))}</summary><div class="q-help">${String(q.help).replace(/\n/g, '<br>')}</div></details>` : ''}
       ${body}
     </div>`;
@@ -354,13 +356,13 @@
 
     app.innerHTML = `
       <div class="quiz-head fade-in">
-        <div class="stepper" role="list" aria-label="${escAttr(copy.get('ui.quiz.progress_aria'))}">${steps}</div>
+        <div class="stepper" role="group" aria-label="${escAttr(copy.get('ui.quiz.progress_aria'))}">${steps}</div>
       </div>
 
       <section class="card fade-in">
         <div class="dim-intro">
           <div class="dim-count">${copy.format('ui.quiz.dimension_count', { current: state.dimIndex + 1, total })}</div>
-          <h2>${dim.title}</h2>
+          <h1>${dim.title}</h1>
         </div>
         <p class="dim-lead">${dim.intro}</p>
         <div>${dim.questions.map(questionHTML).join('')}</div>
@@ -1280,7 +1282,7 @@
         if (idx <= state.maxReached) { state.dimIndex = idx; save(); renderQuiz(); focusCurrentView(); }
         break;
       }
-      case 'edit': clearShareHash(); state.screen = 'quiz'; state.dimIndex = 0; render(); window.scrollTo(0, 0); break;
+      case 'edit': clearShareHash(); state.dimIndex = 0; go('quiz'); break;
       case 'savelink': if (config.resultLinkEnabled) shareResultLink(); break;
     }
   });

@@ -262,7 +262,7 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
 .step-conn.done { background: var(--success); }
 
 .dim-intro { margin-bottom: 8px; }
-.dim-intro h2 { font-size: clamp(22px, 3.4vw, 28px); font-weight: 700; margin-bottom: 4px; }
+.dim-intro h1 { font-size: clamp(22px, 3.4vw, 28px); font-weight: 700; margin-bottom: 4px; }
 .dim-intro .dim-count { color: var(--muted); font-weight: 600; font-size: 13px; text-transform: uppercase; letter-spacing: .08em; }
 .dim-lead { color: var(--ink-soft); margin-top: 10px; }
 

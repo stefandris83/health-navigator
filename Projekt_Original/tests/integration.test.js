@@ -289,6 +289,9 @@ test('Fragen- und Scoring-APIs sind gekapselt, unveränderlich und sanitizen an 
   assert.strictEqual(Object.isFrozen(W.Recommendations), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.CATALOG), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.CATALOG[0]), true);
+  W.Recommendations.CATALOG.filter((record) => Array.isArray(record.covers)).forEach((record) => {
+    assert.strictEqual(Object.isFrozen(record.covers), true, record.id + ': covers muss unveränderlich sein');
+  });
   assert.strictEqual(Object.isFrozen(W.Recommendations.SOURCES), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.SOURCES.swissheart_werte), true);
   assert.strictEqual(Object.isFrozen(W.Recommendations.POSITIVES), true);

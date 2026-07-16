@@ -23,6 +23,21 @@ jobs:
     steps:
       - name: Repository auschecken
         uses: actions/checkout@v6
+      - name: Node.js bereitstellen
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Anwendung vor der Veröffentlichung prüfen
+        working-directory: Projekt_Original
+        run: |
+          node scripts/result-content.js validate
+          node scripts/result-content.js check
+          node tests/content-workflow.test.js
+          node tests/integration.test.js
+          node tests/robustness.test.js
+          node tests/ui-lifecycle.test.js
+          node tests/i18n-static.test.js
+          node tests/i18n-runtime.test.js
       - name: GitHub Pages konfigurieren
         uses: actions/configure-pages@v5
       - name: Öffentliche Anwendung vorbereiten

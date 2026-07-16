@@ -179,8 +179,22 @@ test('Ergebnislinks bleiben produktiv HTTPS-beschränkt und erlauben file nur im
 test('Formfelder und dynamische Statusbereiche besitzen belastbare ARIA-Verträge', () => {
   const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
   assert.ok(source.includes('aria-required="${!q.optional}" aria-invalid="${invalid}"'));
+  assert.ok(source.includes('const noteId = q.note ? `q-note-${q.id}` : \'\';'));
+  assert.ok(source.includes('const describedBy = [noteId, errorId].filter(Boolean).join(\' \');'));
+  assert.ok(source.includes('aria-describedby="${escAttr(describedBy)}"'));
+  assert.ok(source.includes('role="group" aria-label="${escAttr(copy.get(\'ui.quiz.progress_aria\'))}"'));
+  assert.ok(source.includes('<h1>${dim.title}</h1>'));
   assert.ok(source.includes('role="log" aria-live="polite" aria-relevant="additions"'));
   assert.ok(source.includes('role="status" aria-live="polite" aria-atomic="true"'));
+});
+
+test('Ergebnisse bearbeiten verwendet den zentralen Fokus- und Renderpfad', () => {
+  const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+  const editCase = source.match(/case 'edit':([^\n]*?)break;/);
+
+  assert.ok(editCase, 'Edit-Eventhandler fehlt');
+  assert.ok(editCase[1].includes("clearShareHash(); state.dimIndex = 0; go('quiz');"));
+  assert.ok(!editCase[1].includes('render()'));
 });
 
 test('Neu beginnen auf der Startseite verwendet das App-Modal statt eines nativen Browserdialogs', () => {
