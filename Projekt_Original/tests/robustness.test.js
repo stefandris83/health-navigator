@@ -480,6 +480,8 @@ test('GitHub-Pages-Deployment prüft Content, Laufzeit und alle vier Sprachen vo
 
   assert.ok(workflow.includes('uses: actions/setup-node@v4'));
   requiredCommands.forEach((command) => assert.ok(workflow.includes(command), command));
+  assert.ok(workflow.includes('cp index.html quellen.html manifest*.webmanifest ../_site/'));
+  assert.ok(workflow.includes('cp -R assets css js ../_site/'));
   assert.ok(
     workflow.indexOf('Anwendung vor der Veröffentlichung prüfen') <
       workflow.indexOf('Öffentliche Anwendung vorbereiten'),
@@ -539,6 +541,10 @@ test('Doppelklick-Portabilität: lokale Assets existieren und klassische Script-
     'js/radar.js',
     'js/app.js',
   ]);
+  scripts.forEach((script) => {
+    const source = fs.readFileSync(path.join(ROOT, script), 'utf8');
+    assert.ok(/['"]use strict['"];/.test(source), script + ': Strict Mode fehlt');
+  });
 });
 
 test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollständig und sicher', () => {
@@ -584,9 +590,6 @@ test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollstän
     assert.strictEqual(png.readUInt32BE(16), expectedSize, relativePath + ': falsche Breite');
     assert.strictEqual(png.readUInt32BE(20), expectedSize, relativePath + ': falsche Höhe');
   });
-
-  const pagesWorkflow = fs.readFileSync(path.join(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml'), 'utf8');
-  assert.ok(pagesWorkflow.includes('cp index.html quellen.html manifest*.webmanifest ../_site/'));
 });
 
 test('Helsana-Logo ist lokal, unverändert und frei von aktiven SVG-Inhalten', () => {
@@ -627,9 +630,6 @@ test('Alle Messillustrationen sind lokale quadratische PNG-Dateien und werden mi
   assert.ok(css.includes('width: min(100%, 420px)'));
   assert.ok(css.includes('filter: grayscale(1)'));
   assert.ok(css.includes('.q-illustration-wrap[hidden] { display: none; }'));
-
-  const pagesWorkflow = fs.readFileSync(path.join(ROOT, '..', '.github', 'workflows', 'deploy-pages.yml'), 'utf8');
-  assert.ok(pagesWorkflow.includes('cp -R assets css js ../_site/'));
 });
 
 (async function run() {
