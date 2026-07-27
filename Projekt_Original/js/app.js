@@ -533,9 +533,6 @@
   function fitnessTestsHTML(items) {
     if (!Array.isArray(items) || !items.length) return '';
     const cards = items.map((item) => {
-      const reference = item.referenceNote
-        ? `<p class="fitness-test-note">${I.info}<span>${item.referenceNote}</span></p>`
-        : '';
       const nextReference = item.nextReference
         ? `<p class="fitness-test-reference"><b>${copy.get('ui.fitness_tests.next_reference_label')}</b> ${item.nextReference}</p>`
         : '';
@@ -560,7 +557,6 @@
         <p><b>${copy.get('ui.fitness_tests.meaning_label')}</b> ${item.meaning}</p>
         <p><b>${copy.get('ui.fitness_tests.relevance_label')}</b> ${item.relevance}</p>
         ${nextReference}
-        ${reference}
         ${recommendation}
       </article>`;
     }).join('');

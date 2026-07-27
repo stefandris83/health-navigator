@@ -449,8 +449,6 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
 .fitness-test-value b { font-size: 18px; color: var(--brand-700); }
 .fitness-test-card p { margin: 8px 0 0; font-size: 14px; }
 .fitness-test-card p > b { color: var(--brand-700); }
-.fitness-test-note { display: flex; align-items: flex-start; gap: 7px; padding: 9px 10px; background: var(--info-bg); color: var(--info-ink); }
-.fitness-test-note svg { flex: none; width: 17px; height: 17px; margin-top: 1px; }
 .fitness-test-recommendation { display: flex; align-items: flex-start; gap: 7px; margin-top: 11px; color: var(--brand-700); font-size: 13.5px; font-weight: 700; text-decoration: none; }
 .fitness-test-recommendation:hover span { text-decoration: underline; }
 .fitness-test-recommendation:focus-visible { outline: 2px solid var(--brand); outline-offset: 3px; }

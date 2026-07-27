@@ -416,6 +416,8 @@ test('Fitness-Kurztests erscheinen nur in der Fitness-Dimension und verlinken Em
   assert.ok(app.includes('href="#recommendation-${escAttr(item.recommendationId)}"'));
   assert.ok(app.includes('<strong>${item.ratingLabel}</strong><b>${escHtml(item.value)} ${item.unit}</b>'));
   assert.ok(!app.includes('fitness-test-rating'));
+  assert.ok(!app.includes('fitness-test-note'));
+  assert.ok(!app.includes('item.referenceNote'));
   assert.ok(app.includes('class="plan-retests"'));
   assert.ok(coach.includes('retests: Array.isArray(p.retests)'));
   assert.ok(css.includes('.fitness-test-grid'));
@@ -425,6 +427,7 @@ test('Fitness-Kurztests erscheinen nur in der Fitness-Dimension und verlinken Em
     assert.ok(css.includes(`.fitness-test-card.is-${status}`));
   });
   assert.ok(!css.includes('.fitness-test-rating'));
+  assert.ok(!css.includes('.fitness-test-note'));
   assert.ok(css.includes('.fitness-test-recommendation:focus-visible'));
   assert.ok(css.includes('.plan-retests'));
 });

@@ -413,7 +413,8 @@ sowie −1/−2 = *Erhöhte Aufmerksamkeit*.
   [Rikli & Jones 1999](https://cir.nii.ac.jp/crid/1363951796123009152) und
   [Mier et al. 2014 zur unterschiedlichen Belastung von Standard- und
   Knie-Liegestütz](https://digitalcommons.wku.edu/ijes/vol7/iss2/7/).
-  Die modellierten Bänder sind sichtbar als Trainingsorientierung gekennzeichnet.
+  Die modellierten Bänder sind in dieser Quellen- und Scoringdokumentation als
+  Trainingsorientierung gekennzeichnet.
   Ab 95 sowie bei «intersex/andere» bleibt der Rohwert ohne automatische
   Einordnung, Score-Wirkung oder Empfehlung sichtbar.
 - **Einbeinstand (Augen offen, bester Versuch)** – Quelle: **Springer et al. 2007**
@@ -508,7 +509,10 @@ mit Rohwert, Bedeutung und Relevanz dargestellt. Fehlende Tests erzeugen keinen
 Leerzustand. Wenn Alter, Geschlecht, sichtbares Protokoll und Vergleichstabelle
 zusammenpassen, verwendet die Karte dieselben vier Begriffe und Statusfarben wie
 die Standortbestimmung: **Stark**, **Solide Basis**, **Ausbaufähig** und
-**Erhöhte Aufmerksamkeit**. Die frühere zusätzliche blaue Referenzplakette entfällt.
+**Erhöhte Aufmerksamkeit**. Zusätzliche blaue Methoden- oder Referenzhinweise
+werden in den drei Kurztestkarten nicht angezeigt; die Evidenzqualität und
+Modellgrenzen bleiben vollständig in dieser Quellen- und Scoringdokumentation
+nachvollziehbar.
 Ein eigener numerischer 0–100-Testscore wird nicht angezeigt; sichtbar bleiben nur
 die verbale Einordnung und der tatsächlich eingegebene Messwert.
 Technisch werden +2 als *Stark*, +1 als *Solide Basis*, 0 als *Ausbaufähig* und
@@ -802,8 +806,10 @@ im Code verändert:
    Eigentümerschaft, Versionierung und explizite medizinische Freigabe; sie sind
    kein validierter klinischer Risikoscore.
 3. **Optionale Fitnesstests:** Der technische Feedbackpfad für 1–3 ausgefüllte Tests,
-   vorsichtige Referenzhinweise, passende Empfehlungen und sichere Woche-4-Retests
-   ist implementiert. Die Zuordnung des Wandsitzes zur Muskulatur sowie der
+   intern getrennte Referenzqualitäten, passende Empfehlungen und sichere
+   Woche-4-Retests ist implementiert. Ausführliche Methoden- und Evidenzgrenzen
+   bleiben in der Quellen- und Scoringdokumentation statt in den Kurztestkarten.
+   Die Zuordnung des Wandsitzes zur Muskulatur sowie der
    gemeinsame Krafttestblock sind medizinisch freigegeben und technisch umgesetzt.
    Die früheren praxisbasierten Wandsitz-Benchmarks wurden durch die dokumentierte
    harmonisierte Trainingsorientierung ersetzt; sie wird ausdrücklich nicht als

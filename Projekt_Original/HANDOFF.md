@@ -317,7 +317,9 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
   Trainingsorientierung aus harmonisierten Referenzwerten, nicht den Anspruch einer
   klinischen Diagnosegrenze.
 - Fitness-Kurztests zeigen Rohwert, einheitliche Statusbegriffe, Bedeutung,
-  gesundheitliche Relevanz und Aussagegrenzen.
+  gesundheitliche Relevanz und gegebenenfalls die nächste Orientierung. Methoden-
+  und Aussagegrenzen bleiben in `docs/QUELLEN.md` und `docs/SCORING_MODELL.md`
+  dokumentiert, nicht als zusätzliche blaue Box in der Kurztestkarte.
 - Muskelkraft wird als relevanter Indikator für Belastbarkeit, Mobilität und gesundes
   Altern eingeordnet, ohne aus einem Einzeltest ein persönliches Erkrankungsrisiko
   abzuleiten.

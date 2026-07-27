@@ -3,7 +3,7 @@
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
 > **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
-> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 21: 1'205
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 22: 1'205
 > lokalisierte Texte je Sprache und 181/181 erfolgreiche Tests. Kleinere Zahlen in
 > früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
 > Bestandsangaben.
@@ -1136,3 +1136,13 @@ die sichtbaren Referenzhinweise in DE/EN/FR/IT.
 Die direkte empirische Evidenz für Standard-Liegestütze reicht nicht lückenlos bis
 94. Die transparent modellierten Altersbänder bleiben deshalb vor Produktivfreigabe
 eine offene medizinische und Product-Governance-Entscheidung.
+
+## 22. Reduzierte Kurztestkarten ohne blaue Methodenboxen
+
+Die zusätzlichen blauen Methoden- und Referenzhinweise wurden aus den sichtbaren
+Ergebniskarten von Einbeinstand, Liegestütz und Wandsitz entfernt. Die Karten zeigen
+weiterhin Einordnung, Messwert, Bedeutung, Relevanz, nächste Orientierung und eine
+gegebenenfalls passende Empfehlung. Scoring, Referenzstatus, Schwellen und
+Empfehlungslogik bleiben unverändert. Evidenzqualität, Modellierungen und fachliche
+Grenzen sind weiterhin vollständig in `QUELLEN.md` und `SCORING_MODELL.md`
+dokumentiert.
