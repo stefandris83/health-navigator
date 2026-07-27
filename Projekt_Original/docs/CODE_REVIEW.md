@@ -1119,8 +1119,8 @@ Nach Auswahl von «männlich» wird auf die männliche Variante gewechselt.
 
 ### Verifikation und Grenzen
 
-Final erfolgreich: Content-Workflow 42/42, Integration 73/73, Robustheit 24/24,
-UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **180/180
+Final erfolgreich: Content-Workflow 42/42, Integration 74/74, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **181/181
 Tests**. Alle vier Kataloge mit je 1'205 Texten bestanden `validate`; `check`
 bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
 aktuell. Grenztests sichern 17/18, 19/20, 24/25, 94/95 und 99/100 Jahre,

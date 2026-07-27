@@ -269,7 +269,12 @@ function bodyNorm(m, a) {
  * dass für intersexuelle Personen geschlechtsspezifische Liegestütz- oder
  * Wandsitzwerte sichtbar eingestuft, gescort oder empfohlen werden.
  *
- * Standardformat je Altersband: [ +2, +1, 0, -1 ] (darunter -2).
+ * Standardformat für Einbeinstand und Liegestütz je Altersband:
+ * [ +2, +1, 0, -1 ] (darunter -2). Zwei begründete Ausnahmen bleiben bewusst
+ * vierstufig: Die Adams-Skala für Frauen 18–24 besitzt nur eine gemeinsame
+ * Kategorie unterhalb «ausreichend» (−1 ab 0, daher kein erreichbares −2), und
+ * der Wandsitz besitzt nur drei herleitbare Grenzwerte (+2/+1/0; darunter −1).
+ * Eine zusätzliche −2-Grenze wäre bei beiden nicht aus der Referenz ableitbar.
  */
 function sexKey(a) {
   return a.geschlecht === 'maennlich' ? 'm' : 'w';
@@ -388,9 +393,10 @@ function nextBandThreshold(thresholds, normValue) {
   return index == null ? null : thresholds[index];
 }
 
-/* Vier publizistisch verständliche Stufen für den Wandsitz. Die interne
+/* Vier fachlich herleitbare Stufen für den Wandsitz. Die interne
  * Score-Abbildung +2/+1/0/-1 landet exakt in denselben vier Statusbändern wie
- * die sichtbare 0–100-Standortbestimmung; -2 bleibt für diesen Test ungenutzt. */
+ * die sichtbare 0–100-Standortbestimmung. −2 bleibt bewusst ungenutzt, weil die
+ * publizierten Perzentile keine belastbare zusätzliche fünfte Grenze liefern. */
 function fourLevelBandNorm(value, thresholds) {
   if (value >= thresholds[0]) return 2;
   if (value >= thresholds[1]) return 1;

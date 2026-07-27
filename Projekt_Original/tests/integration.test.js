@@ -1508,6 +1508,25 @@ test('Fitness-Kurztests: interne Schwellen werden auf vier sichtbare Statusstufe
   });
 });
 
+test('Fitness-Kurztests: Nullwerte folgen den dokumentierten untersten Normstufen', () => {
+  const normFor = (alter, geschlecht, id) => W.Scoring.computeResults({
+    alter,
+    geschlecht,
+    [id]: 0,
+  }).fitnessTests[0].norm;
+
+  assert.strictEqual(normFor(25, 'weiblich', 'liegestuetze'), -2,
+    'Topend 25–29: 0 Standard-Liegestütze liegt im bereits implementierten −2-Band');
+  assert.strictEqual(normFor(20, 'maennlich', 'liegestuetze'), -2,
+    'CSEP Männer 20–29: 0 Standard-Liegestütze liegt im −2-Band');
+  assert.strictEqual(normFor(24, 'weiblich', 'liegestuetze'), -1,
+    'Adams 18–24 besitzt nur eine gemeinsame unterste Kategorie und kein eigenes −2-Band');
+  assert.strictEqual(normFor(45, 'weiblich', 'einbeinstand'), -2,
+    'Einbeinstand verwendet bei 0 Sekunden die fünfte Normstufe');
+  assert.strictEqual(normFor(45, 'weiblich', 'wandsitz'), -1,
+    'Wandsitz bleibt mangels vierter herleitbarer Grenze bewusst vierstufig');
+});
+
 test('Liegestütz: Standard-Protokoll besitzt stabile Frauen- und Männerbänder bis 94', () => {
   const bands = {
     maennlich: [
