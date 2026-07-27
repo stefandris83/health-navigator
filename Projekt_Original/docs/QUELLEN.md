@@ -314,9 +314,18 @@ Muskulatur 2/5, Balance/Beweglichkeit 1/5. Für geschlechtsspezifische Tests wir
 bei «intersex/andere» **keine** männliche oder weibliche Tabelle als Ersatz
 verwendet. Der Rohwert bleibt sichtbar, erhält aber keine Statusfarbe, keinen
 Score-Einfluss und keine testbedingte Empfehlung. Der geschlechtsneutral
-auswertbare Einbeinstand ist davon nicht betroffen. Die Umrechnung auf −2…+2
-erfolgt über die Vergleichstabellen in `js/scoring.js` (Format je Altersband:
-Schwellen für +2 / +1 / 0 / −1, darunter −2):
+auswertbare Einbeinstand ist davon nicht betroffen. Die Umrechnung erfolgt über
+die Vergleichstabellen in `js/scoring.js`. Die folgenden Tabellen zeigen bewusst
+die **vollständigen Wertebereiche** und nicht nur die im Code gespeicherten
+Untergrenzen. Jede Untergrenze ist inklusive, die nächste höhere Untergrenze ist
+exklusiv. Die kompakte Ganzzahlschreibweise `29–35` bedeutet daher technisch
+`29 ≤ Wert < 36`; auch Dezimalwerte sind damit lückenlos zugeordnet. Entsprechend
+bedeutet ein Altersband `18–24` technisch `18 ≤ Alter < 25`, und eine einzelne
+Angabe wie `2` steht für `2 ≤ Wert < 3`. Ein Gedankenstrich `—` bedeutet, dass die
+zugrunde liegende Referenz keine eigene fünfte Kategorie hergibt; in diesem Fall
+wird keine zusätzliche Grenze erfunden. Die sichtbare App verwendet unabhängig
+davon vier Statusbegriffe: +2 = *Stark*, +1 = *Solide Basis*, 0 = *Ausbaufähig*
+sowie −1/−2 = *Erhöhte Aufmerksamkeit*.
 
 - **Liegestütze – einheitliches Standardprotokoll.** Für alle Geschlechter gilt
   dieselbe Ausführung: Zehen als Drehpunkt, gerade Linie von Kopf bis Fersen,
@@ -329,13 +338,13 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   **CSEP-PATH / Payne et al. (2000)** bestehen. Die Studie erfasste 571 gesunde
   Personen von 15 bis 69 Jahren; die Produktbänder lauten:
 
-  | Alter | +2 | +1 | 0 | −1 |
-  | --- | ---: | ---: | ---: | ---: |
-  | 20–29 | 36 | 29 | 22 | 17 |
-  | 30–39 | 30 | 22 | 17 | 12 |
-  | 40–49 | 25 | 17 | 13 | 10 |
-  | 50–59 | 21 | 13 | 10 | 7 |
-  | 60–69 | 18 | 11 | 8 | 5 |
+  | Alter | +2 | +1 | 0 | −1 | −2 |
+  | --- | ---: | ---: | ---: | ---: | ---: |
+  | 20–29 | ≥ 36 | 29–35 | 22–28 | 17–21 | 0–16 |
+  | 30–39 | ≥ 30 | 22–29 | 17–21 | 12–16 | 0–11 |
+  | 40–49 | ≥ 25 | 17–24 | 13–16 | 10–12 | 0–9 |
+  | 50–59 | ≥ 21 | 13–20 | 10–12 | 7–9 | 0–6 |
+  | 60–69 | ≥ 18 | 11–17 | 8–10 | 5–7 | 0–4 |
 
   Direkte Standard-Liegestütz-Normen für Männer ab 70 wurden in der Recherche
   nicht gefunden. Deshalb werden die CSEP-Grenzen ab 70 anhand der
@@ -344,11 +353,11 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   bis 94 Jahre; der Arm-Curl dient nur als Alterungsgradient, nicht als
   protokollgleicher Ersatztest:
 
-  | Alter | +2 | +1 | 0 | −1 | Status |
-  | --- | ---: | ---: | ---: | ---: | --- |
-  | 70–79 | 16 | 10 | 7 | 4 | modelliert |
-  | 80–89 | 15 | 9 | 6 | 4 | modelliert |
-  | 90–94 | 12 | 7 | 5 | 3 | modelliert |
+  | Alter | +2 | +1 | 0 | −1 | −2 | Status |
+  | --- | ---: | ---: | ---: | ---: | ---: | --- |
+  | 70–79 | ≥ 16 | 10–15 | 7–9 | 4–6 | 0–3 | modelliert |
+  | 80–89 | ≥ 15 | 9–14 | 6–8 | 4–5 | 0–3 | modelliert |
+  | 90–94 | ≥ 12 | 7–11 | 5–6 | 3–4 | 0–2 | modelliert |
 
   Für Frauen wird die frühere Knie-Liegestütz-Referenz nicht mehr verwendet.
   Von 18 bis 24 Jahren gilt die direkt untersuchte, aber kleine und noch nicht
@@ -358,7 +367,10 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   +1 = sehr gut oder gut ab 8, 0 = ausreichend ab 5 und −1 =
   Verbesserungsbedarf ab 0. Damit werden zehn saubere Standard-Liegestütze bei
   18- bis 24-jährigen Frauen wie in der Studie positiv als *Solide Basis*
-  eingeordnet.
+  eingeordnet. Die Adams-Skala besitzt unterhalb «ausreichend» nur die gemeinsame
+  Kategorie «Verbesserungsbedarf». Sie wird vorsichtig als −1 abgebildet; ein
+  zusätzliches −2-Band wäre aus dieser Referenz nicht ableitbar und bleibt deshalb
+  in genau diesem Altersband ungenutzt.
 
   Von 25 bis 65 dient die vom Auftraggeber bereitgestellte
   **Topend-Standard-Liegestütz-Tabelle** als praktische Orientierung. Topend
@@ -369,18 +381,24 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   oder «überdurchschnittlich»; 0 = «durchschnittlich»; −1 =
   «unterdurchschnittlich»; −2 = «schlecht» oder «sehr schlecht».
 
-  | Alter | +2 | +1 | 0 | −1 | Status |
-  | --- | ---: | ---: | ---: | ---: | --- |
-  | 18–24 | 18 | 8 | 5 | 0 | kleine direkt untersuchte Orientierung |
-  | 25–29 | 33 | 14 | 9 | 5 | praktische Orientierung |
-  | 30–39 | 29 | 13 | 7 | 3 | praktische Orientierung |
-  | 40–49 | 21 | 10 | 5 | 2 | praktische Orientierung |
-  | 50–59 | 17 | 9 | 4 | 2 | praktische Orientierung |
-  | 60–65 | 13 | 6 | 3 | 2 | praktische Orientierung |
-  | 66–69 | 12 | 6 | 3 | 2 | modelliert |
-  | 70–79 | 11 | 5 | 3 | 2 | modelliert |
-  | 80–89 | 10 | 5 | 3 | 2 | modelliert |
-  | 90–94 | 9 | 4 | 3 | 2 | modelliert |
+  | Alter | +2 | +1 | 0 | −1 | −2 | Status |
+  | --- | ---: | ---: | ---: | ---: | ---: | --- |
+  | 18–24 | ≥ 18 | 8–17 | 5–7 | 0–4 | — | kleine direkt untersuchte Orientierung |
+  | 25–29 | ≥ 33 | 14–32 | 9–13 | 5–8 | 0–4 | praktische Topend-Orientierung |
+  | 30–39 | ≥ 29 | 13–28 | 7–12 | 3–6 | 0–2 | praktische Topend-Orientierung |
+  | 40–49 | ≥ 21 | 10–20 | 5–9 | 2–4 | 0–1 | praktische Topend-Orientierung |
+  | 50–59 | ≥ 17 | 9–16 | 4–8 | 2–3 | 0–1 | praktische Topend-Orientierung |
+  | 60–65 | ≥ 13 | 6–12 | 3–5 | 2 | 0–1 | praktische Topend-Orientierung |
+  | 66–69 | ≥ 12 | 6–11 | 3–5 | 2 | 0–1 | modelliert |
+  | 70–79 | ≥ 11 | 5–10 | 3–4 | 2 | 0–1 | modelliert |
+  | 80–89 | ≥ 10 | 5–9 | 3–4 | 2 | 0–1 | modelliert |
+  | 90–94 | ≥ 9 | 4–8 | 3 | 2 | 0–1 | modelliert |
+
+  **Warum war −2 zuvor nicht in der Tabelle zu sehen?** Die frühere Darstellung
+  zeigte nur die vier gespeicherten Untergrenzen `+2 / +1 / 0 / −1`; der Bereich
+  darunter war im Code bereits −2. Für die Topend-Zeilen 25–65 ist −2 daher keine
+  neue Regel, sondern beispielsweise 0–4 Wiederholungen bei 25–29 Jahren. Nur die
+  separate Adams-Zeile 18–24 besitzt fachlich kein eigenes −2-Band.
 
   Die Frauenbänder 66–94 sind die bereitgestellte konservative Fortschreibung
   der 60–65-Zeile anhand des Rikli/Jones-Alterungsgradienten. Sie sind keine
@@ -402,30 +420,56 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   (J Geriatr Phys Ther, n = 549): Normwerte sind **altersabhängig**; relevante
   Geschlechtsunterschiede bestehen laut Studienlage **nicht** («performance is …
   not related to gender»). Die Tabellen sind deshalb strukturell pro Geschlecht
-  hinterlegt (Vorgabe Fragenset/Score-Dokument), aktuell mit identischen Werten:
-  < 40 [45/30/20/10], 40–49 [40/27/18/9], 50–59 [37/24/15/8], 60–69 [30/20/12/6],
-  70–79 [20/14/8/4], **80–99 [10/6/4/2]**. Springer et al. untersuchten direkt
-  eine Gruppe von 80 bis 99 Jahren; damit ist Alter 94 empirisch abgedeckt.
+  hinterlegt (Vorgabe Fragenset/Score-Dokument), aktuell jedoch für Frauen und
+  Männer identisch. Die vollständigen Bereiche in Sekunden lauten:
+
+  | Alter | +2 | +1 | 0 | −1 | −2 | Geschlecht |
+  | --- | ---: | ---: | ---: | ---: | ---: | --- |
+  | 18–39 | ≥ 45 s | 30–44 s | 20–29 s | 10–19 s | 0–9 s | identisch |
+  | 40–49 | ≥ 40 s | 27–39 s | 18–26 s | 9–17 s | 0–8 s | identisch |
+  | 50–59 | ≥ 37 s | 24–36 s | 15–23 s | 8–14 s | 0–7 s | identisch |
+  | 60–69 | ≥ 30 s | 20–29 s | 12–19 s | 6–11 s | 0–5 s | identisch |
+  | 70–79 | ≥ 20 s | 14–19 s | 8–13 s | 4–7 s | 0–3 s | identisch |
+  | 80–99 | ≥ 10 s | 6–9 s | 4–5 s | 2–3 s | 0–1 s | identisch |
+
+  Springer et al. untersuchten direkt eine Gruppe von 80 bis 99 Jahren; damit
+  ist Alter 94 empirisch abgedeckt.
   Zusatzevidenz: Araujo et al. 2022
   (BJSM) – Unfähigkeit, 10 s auf einem Bein zu stehen, ist bei 51–75-Jährigen mit
   erhöhter Gesamtmortalität assoziiert (10-s-Kriterium konsistent mit den
   −1/−2-Schwellen ab 50).
 - **Wandsitz (beidbeinig, etwa 90°)** – Die implementierte Tabelle ist eine
   **harmonisierte Trainingsorientierung**, keine klinische Norm, Diagnosegrenze
-  oder Aussage zum persönlichen Erkrankungsrisiko. Die drei Grenzen je Zeile
-  bedeuten «Stark ab / Solide Basis ab / Ausbaufähig ab»; darunter folgt
-  «Erhöhte Aufmerksamkeit»:
+  oder Aussage zum persönlichen Erkrankungsrisiko. Die Quellen liefern drei
+  herleitbare Grenzen und damit vier Bereiche. Deshalb verwendet der Wandsitz
+  bewusst +2 / +1 / 0 / −1; ein separates −2-Band wird **nicht** ohne Datenbasis
+  erfunden.
 
-  | Alter | Männer | Frauen |
-  | --- | --- | --- |
-  | 18–29 | 135 / 95 / 75 s | 110 / 80 / 60 s |
-  | 30–39 | 120 / 85 / 65 s | 100 / 72 / 55 s |
-  | 40–49 | 100 / 70 / 50 s | 67 / 50 / 33 s |
-  | 50–59 | 85 / 60 / 40 s | 61 / 45 / 30 s |
-  | 60–69 | 65 / 45 / 30 s | 45 / 30 / 20 s |
-  | 70–79 | 50 / 35 / 20 s | 35 / 22 / 12 s |
-  | 80–89 | 35 / 25 / 12 s | 25 / 15 / 8 s |
-  | 90–94 | 25 / 15 / 5 s | 15 / 8 / 3 s |
+  **Männer – vollständige Bereiche in Sekunden**
+
+  | Alter | +2 | +1 | 0 | −1 | −2 |
+  | --- | ---: | ---: | ---: | ---: | ---: |
+  | 18–29 | ≥ 135 s | 95–134 s | 75–94 s | 0–74 s | — |
+  | 30–39 | ≥ 120 s | 85–119 s | 65–84 s | 0–64 s | — |
+  | 40–49 | ≥ 100 s | 70–99 s | 50–69 s | 0–49 s | — |
+  | 50–59 | ≥ 85 s | 60–84 s | 40–59 s | 0–39 s | — |
+  | 60–69 | ≥ 65 s | 45–64 s | 30–44 s | 0–29 s | — |
+  | 70–79 | ≥ 50 s | 35–49 s | 20–34 s | 0–19 s | — |
+  | 80–89 | ≥ 35 s | 25–34 s | 12–24 s | 0–11 s | — |
+  | 90–94 | ≥ 25 s | 15–24 s | 5–14 s | 0–4 s | — |
+
+  **Frauen – vollständige Bereiche in Sekunden**
+
+  | Alter | +2 | +1 | 0 | −1 | −2 |
+  | --- | ---: | ---: | ---: | ---: | ---: |
+  | 18–29 | ≥ 110 s | 80–109 s | 60–79 s | 0–59 s | — |
+  | 30–39 | ≥ 100 s | 72–99 s | 55–71 s | 0–54 s | — |
+  | 40–49 | ≥ 67 s | 50–66 s | 33–49 s | 0–32 s | — |
+  | 50–59 | ≥ 61 s | 45–60 s | 30–44 s | 0–29 s | — |
+  | 60–69 | ≥ 45 s | 30–44 s | 20–29 s | 0–19 s | — |
+  | 70–79 | ≥ 35 s | 22–34 s | 12–21 s | 0–11 s | — |
+  | 80–89 | ≥ 25 s | 15–24 s | 8–14 s | 0–7 s | — |
+  | 90–94 | ≥ 15 s | 8–14 s | 3–7 s | 0–2 s | — |
 
   Die Ausgangsbasis sind die von **McIntosh et al. (1998)** veröffentlichten
   geschlechts- und altersbezogenen P25-/P50-/P75-Werte für 548 Erwachsene. Diese
@@ -477,9 +521,11 @@ Technisch werden +2 als *Stark*, +1 als *Solide Basis*, 0 als *Ausbaufähig* und
 - Standard-Liegestütze bei Frauen von 18 bis 24 Jahren: kleine direkt untersuchte,
   noch nicht extern validierte Orientierung; von 25 bis 65 Jahren: praktische
   Topend-Orientierung; bei Frauen 66–94 modellierte Trainingsorientierung. In allen
-  scorebaren Bändern kann −1/−2 auf `fi_kraft` verweisen. Unterhalb der jeweiligen
-  Altersuntergrenze, ab 95 sowie bei «intersex/andere» bleibt nur der Rohwert ohne
-  Kategorie, Score-Einfluss oder automatische Empfehlung;
+  Männerbändern sowie den Topend- und modellierten Frauenbändern kann −1/−2 auf
+  `fi_kraft` verweisen; im separaten Adams-Band 18–24 existiert nur −1 als unterste
+  Stufe. Unterhalb der jeweiligen Altersuntergrenze, ab 95 sowie bei
+  «intersex/andere» bleibt nur der Rohwert ohne Kategorie, Score-Einfluss oder
+  automatische Empfehlung;
 - Wandsitz ab 18 Jahren bei weiblich/männlich: vierstufige harmonisierte
   Trainingsorientierung; *Erhöhte Aufmerksamkeit* kann als Trainingshinweis auf
   `fi_kraft` verweisen. Das ist keine Diagnose und

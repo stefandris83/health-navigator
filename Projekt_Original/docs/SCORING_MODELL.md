@@ -233,6 +233,117 @@ Der Check kann ab 16 Jahren verwendet werden. Bei 16- und 17-Jährigen werden ei
 
 Die Referenztabellen und ihre fachlichen Grenzen stehen in [`scoring.js`](../js/scoring.js) und ausführlicher in [`QUELLEN.md`](QUELLEN.md).
 
+### 6.6 Referenztabellen der optionalen Fitness-Kurztests
+
+Die folgenden Tabellen zeigen direkt, welcher Rohwert in welchen internen Normwert
+einfliesst. Für den einzelnen Test bedeutet +2 = 100 Punkte, +1 = 75 Punkte,
+0 = 50 Punkte, −1 = 25 Punkte und −2 = 0 Punkte. Dieser Testwert fliesst danach
+nur mit dem in 6.3 beziehungsweise 6.4 beschriebenen Anteil in den Fitnessscore ein.
+
+Die App zeigt nicht fünf verschiedene Farbstufen: +2 erscheint als **Stark**, +1
+als **Solide Basis**, 0 als **Ausbaufähig** und −1/−2 gemeinsam als **Erhöhte
+Aufmerksamkeit**. `—` bedeutet, dass die jeweilige Referenz keine eigene fünfte
+Kategorie hergibt. Eine solche Grenze wird nicht frei erfunden.
+
+Die Tabellen verwenden für die Lesbarkeit kompakte Ganzzahlbereiche. Technisch ist
+jede Untergrenze inklusive und die nächste höhere Untergrenze exklusiv: `29–35`
+bedeutet `29 ≤ Wert < 36`, `18–24` beim Alter bedeutet `18 ≤ Alter < 25`, und eine
+einzelne Angabe wie `2` steht für `2 ≤ Wert < 3`. Dadurch sind auch zulässige
+Dezimalwerte ohne Lücke eindeutig eingeordnet.
+
+#### Einbeinstand – Frauen und Männer identisch
+
+Gemessen wird der beste Versuch mit offenen Augen in Sekunden. Die Referenz ist
+altersabhängig, laut Springer et al. jedoch nicht geschlechtsabhängig.
+
+| Alter | +2 | +1 | 0 | −1 | −2 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 18–39 | ≥ 45 s | 30–44 s | 20–29 s | 10–19 s | 0–9 s |
+| 40–49 | ≥ 40 s | 27–39 s | 18–26 s | 9–17 s | 0–8 s |
+| 50–59 | ≥ 37 s | 24–36 s | 15–23 s | 8–14 s | 0–7 s |
+| 60–69 | ≥ 30 s | 20–29 s | 12–19 s | 6–11 s | 0–5 s |
+| 70–79 | ≥ 20 s | 14–19 s | 8–13 s | 4–7 s | 0–3 s |
+| 80–99 | ≥ 10 s | 6–9 s | 4–5 s | 2–3 s | 0–1 s |
+
+#### Standard-Liegestütze – Männer
+
+Es zählen maximale korrekte Wiederholungen von den Zehen. Die Bänder 20–69 sind
+direkte CSEP-/Payne-Referenzen; 70–94 sind altersadjustiert modelliert.
+
+| Alter | +2 | +1 | 0 | −1 | −2 | Referenzqualität |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 20–29 | ≥ 36 | 29–35 | 22–28 | 17–21 | 0–16 | direkt |
+| 30–39 | ≥ 30 | 22–29 | 17–21 | 12–16 | 0–11 | direkt |
+| 40–49 | ≥ 25 | 17–24 | 13–16 | 10–12 | 0–9 | direkt |
+| 50–59 | ≥ 21 | 13–20 | 10–12 | 7–9 | 0–6 | direkt |
+| 60–69 | ≥ 18 | 11–17 | 8–10 | 5–7 | 0–4 | direkt |
+| 70–79 | ≥ 16 | 10–15 | 7–9 | 4–6 | 0–3 | modelliert |
+| 80–89 | ≥ 15 | 9–14 | 6–8 | 4–5 | 0–3 | modelliert |
+| 90–94 | ≥ 12 | 7–11 | 5–6 | 3–4 | 0–2 | modelliert |
+
+#### Standard-Liegestütze – Frauen
+
+Auch hier gilt ausschliesslich die Standardausführung von den Zehen. 18–24 basiert
+auf der kleinen Adams-Studie, 25–65 auf der praktischen Topend-Orientierung und
+66–94 auf einer altersadjustierten Modellierung.
+
+| Alter | +2 | +1 | 0 | −1 | −2 | Referenzqualität |
+| --- | ---: | ---: | ---: | ---: | ---: | --- |
+| 18–24 | ≥ 18 | 8–17 | 5–7 | 0–4 | — | kleine direkte Orientierung |
+| 25–29 | ≥ 33 | 14–32 | 9–13 | 5–8 | 0–4 | praktische Topend-Orientierung |
+| 30–39 | ≥ 29 | 13–28 | 7–12 | 3–6 | 0–2 | praktische Topend-Orientierung |
+| 40–49 | ≥ 21 | 10–20 | 5–9 | 2–4 | 0–1 | praktische Topend-Orientierung |
+| 50–59 | ≥ 17 | 9–16 | 4–8 | 2–3 | 0–1 | praktische Topend-Orientierung |
+| 60–65 | ≥ 13 | 6–12 | 3–5 | 2 | 0–1 | praktische Topend-Orientierung |
+| 66–69 | ≥ 12 | 6–11 | 3–5 | 2 | 0–1 | modelliert |
+| 70–79 | ≥ 11 | 5–10 | 3–4 | 2 | 0–1 | modelliert |
+| 80–89 | ≥ 10 | 5–9 | 3–4 | 2 | 0–1 | modelliert |
+| 90–94 | ≥ 9 | 4–8 | 3 | 2 | 0–1 | modelliert |
+
+**Warum fehlte −2 bisher scheinbar bei Topend?** Im Code werden je Altersband nur
+die vier Untergrenzen für +2, +1, 0 und −1 gespeichert. Alles unter der
+−1-Untergrenze wird automatisch −2. Bei den Topend-Zeilen 25–65 war −2 daher
+bereits vollständig implementiert; bei 25–29 sind dies beispielsweise 0–4
+Wiederholungen. Nur die separate Adams-Skala 18–24 besitzt unterhalb
+«ausreichend» lediglich eine gemeinsame Kategorie «Verbesserungsbedarf». Sie wird
+vorsichtig als −1 abgebildet, statt sie ohne Grundlage in −1 und −2 aufzuteilen.
+
+#### Wandsitz – Männer
+
+Gemessen wird die korrekte beidbeinige Haltezeit bei ungefähr 90° in Sekunden.
+Die harmonisierte Orientierung besitzt drei herleitbare Grenzen und damit vier
+Normstufen; −2 bleibt bewusst ungenutzt.
+
+| Alter | +2 | +1 | 0 | −1 | −2 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 18–29 | ≥ 135 s | 95–134 s | 75–94 s | 0–74 s | — |
+| 30–39 | ≥ 120 s | 85–119 s | 65–84 s | 0–64 s | — |
+| 40–49 | ≥ 100 s | 70–99 s | 50–69 s | 0–49 s | — |
+| 50–59 | ≥ 85 s | 60–84 s | 40–59 s | 0–39 s | — |
+| 60–69 | ≥ 65 s | 45–64 s | 30–44 s | 0–29 s | — |
+| 70–79 | ≥ 50 s | 35–49 s | 20–34 s | 0–19 s | — |
+| 80–89 | ≥ 35 s | 25–34 s | 12–24 s | 0–11 s | — |
+| 90–94 | ≥ 25 s | 15–24 s | 5–14 s | 0–4 s | — |
+
+#### Wandsitz – Frauen
+
+| Alter | +2 | +1 | 0 | −1 | −2 |
+| --- | ---: | ---: | ---: | ---: | ---: |
+| 18–29 | ≥ 110 s | 80–109 s | 60–79 s | 0–59 s | — |
+| 30–39 | ≥ 100 s | 72–99 s | 55–71 s | 0–54 s | — |
+| 40–49 | ≥ 67 s | 50–66 s | 33–49 s | 0–32 s | — |
+| 50–59 | ≥ 61 s | 45–60 s | 30–44 s | 0–29 s | — |
+| 60–69 | ≥ 45 s | 30–44 s | 20–29 s | 0–19 s | — |
+| 70–79 | ≥ 35 s | 22–34 s | 12–21 s | 0–11 s | — |
+| 80–89 | ≥ 25 s | 15–24 s | 8–14 s | 0–7 s | — |
+| 90–94 | ≥ 15 s | 8–14 s | 3–7 s | 0–2 s | — |
+
+Beim Wandsitz würde ein zusätzliches −2-Band eine vierte, nicht aus den
+publizierten Perzentilen ableitbare Grenze verlangen. Deshalb werden sehr tiefe
+Werte weiterhin als −1 beziehungsweise sichtbar als «Erhöhte Aufmerksamkeit»
+behandelt. Die Evidenzqualität, Extrapolationen und Sicherheitsgrenzen sind in
+[`QUELLEN.md`](QUELLEN.md) dokumentiert.
+
 ## 7. Dimension 3: Ernährung
 
 ### 7.1 Formel und Gewichte

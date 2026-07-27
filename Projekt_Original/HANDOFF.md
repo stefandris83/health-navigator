@@ -25,7 +25,7 @@ Aktueller Teststand:
 
 - Content-Validierung: erfolgreich, vier Sprachen mit je 1'205 Texten;
 - Artefakt-Check: erfolgreich;
-- 180 von 180 Einzeltests erfolgreich;
+- 181 von 181 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -511,13 +511,13 @@ Ausgeführt im Ordner `Projekt_Original`:
 | `node scripts/result-content.js validate` | erfolgreich; 1'205 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
-| `node tests/integration.test.js` | 73/73 |
+| `node tests/integration.test.js` | 74/74 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 180/180 Tests erfolgreich.**
+**Gesamt aktuell: 181/181 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
