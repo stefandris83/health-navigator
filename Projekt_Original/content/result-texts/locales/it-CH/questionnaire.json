@@ -741,11 +741,11 @@
     },
     {
       "id": "questionnaire.question.liegestuetze.help",
-      "text": "1 – Si sdrai a pancia in giù, con le mani sotto le spalle.\n2 – Distenda le braccia e sollevi il corpo da terra.\n3 – Mantenga corpo, fianchi e gambe in linea.\n4 – Abbassi il corpo finché il petto non sfiora quasi il suolo.\n5 – Si spinga nuovamente verso l’alto fino alla posizione iniziale.\n\nRipeta senza pause finché non riesce più.\n\n<b>Che cosa rivela il test delle flessioni:</b>\nLe flessioni misurano la forza di petto, spalle, braccia e tronco. Muscoli forti nella parte superiore del corpo sono importanti per attività quotidiane come trasportare pesi o alzarsi e aiutano a prevenire lesioni dovute alle cadute.",
+      "text": "<b>Per tutti i generi vale la stessa esecuzione standard:</b>\n1 – Si sdrai a pancia in giù, posizioni le mani all’incirca alla larghezza delle spalle e si appoggi sulle punte dei piedi.\n2 – Distenda le braccia; il corpo deve formare una linea retta dalla testa ai talloni.\n3 – Abbassi il corpo in modo controllato finché il petto non sfiora quasi il suolo e i gomiti sono piegati almeno a circa 90°.\n4 – Si spinga completamente verso l’alto fino alla posizione iniziale.\n\nRipeta senza pause mantenendo un’esecuzione corretta. Interrompa il test non appena non riesce più a correggere la tecnica dopo un richiamo.\n\n<b>Che cosa rivela il test delle flessioni:</b>\nLe flessioni misurano la resistenza muscolare di petto, spalle, braccia e tronco. Muscoli forti nella parte superiore del corpo sono importanti per attività quotidiane come trasportare pesi o alzarsi e aiutano a prevenire lesioni dovute alle cadute.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2eff26723b0176172148408bdd1bb23cefbfdbba818315aa7db31daa8cf94651"
+      "sourceContractHash": "8ff8086d58d16d5ed6ab9a819fbd04aa1c9145022ea1f8185725326b0d681cca"
     },
     {
       "id": "questionnaire.question.liegestuetze.help_title",

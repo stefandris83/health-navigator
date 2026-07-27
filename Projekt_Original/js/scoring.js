@@ -308,26 +308,38 @@ const BALANCE_BANDS = {
     [Infinity, [10, 6, 4, 2]],
   ],
 };
-/* Liegestütze (maximale Wiederholungen ohne Pause).
- * Referenz: CSEP-PATH (2019, 2. Aufl.) – Normwerte 20–69 Jahre;
- * +2 ≈ «Excellent», +1 ≈ «Very good», 0 ≈ «Good», −1 ≈ «Fair», −2 ≈ «Needs improvement».
- * Hinweis Protokoll: Die CSEP-Frauentabelle basiert auf der KNIE-Variante.
- * Ausserhalb von 20–69 Jahren wird zwar intern ein Vergleichswert berechnet,
- * aber keine sichtbare Referenzstufe, Score-Wirkung oder Empfehlung abgeleitet. */
+/* Standard-Liegestütze (Zehen als Drehpunkt, maximale korrekte Wiederholungen).
+ * Männer 20–69: CSEP-PATH/Payne et al.; 70–94 anhand der altersbezogenen
+ * Arm-Curl-Mediane von Rikli & Jones modelliert. Frauen 18–24: Adams et al.;
+ * 25–65: praktische Topend-Orientierung für Standard-Liegestütze; 66–94 mit
+ * demselben konservativen Alterungsprinzip modelliert. Die App-Skala bündelt
+ * bei Adams «sehr gut» und «gut» als solide Basis; bei Topend bündelt sie
+ * «gut» und «überdurchschnittlich» als solide Basis sowie «schlecht» und
+ * «sehr schlecht» im untersten Bereich.
+ * Direkte, praktische und modellierte Referenzqualität werden separat markiert;
+ * ab 95 bleibt der Wert eine persönliche Ausgangsmessung. Details: QUELLEN.md. */
 const PUSHUP_BANDS = {
   m: [
     [30, [36, 29, 22, 17]],
     [40, [30, 22, 17, 12]],
     [50, [25, 17, 13, 10]],
     [60, [21, 13, 10, 7]],
-    [Infinity, [18, 11, 8, 5]],
+    [70, [18, 11, 8, 5]],
+    [80, [16, 10, 7, 4]],
+    [90, [15, 9, 6, 4]],
+    [Infinity, [12, 7, 5, 3]],
   ],
   w: [
-    [30, [30, 21, 15, 10]],
-    [40, [27, 20, 13, 8]],
-    [50, [24, 15, 11, 5]],
-    [60, [21, 11, 7, 2]],
-    [Infinity, [17, 12, 5, 2]],
+    [25, [18, 8, 5, 0]],
+    [30, [33, 14, 9, 5]],
+    [40, [29, 13, 7, 3]],
+    [50, [21, 10, 5, 2]],
+    [60, [17, 9, 4, 2]],
+    [66, [13, 6, 3, 2]],
+    [70, [12, 6, 3, 2]],
+    [80, [11, 5, 3, 2]],
+    [90, [10, 5, 3, 2]],
+    [Infinity, [9, 4, 3, 2]],
   ],
 };
 /* Wandsitz (beidbeinig, 90°-Winkel), Sekunden.
@@ -394,14 +406,21 @@ function nextFourLevelThreshold(thresholds, normValue) {
 
 function fitnessTestReferenceStatus(id, age, geschlecht) {
   if (!Number.isFinite(age)) return 'age_outside_reference';
-  if (id === 'einbeinstand') return age >= 18 ? 'supported' : 'age_outside_reference';
-  if (id === 'liegestuetze') {
-    if (age < 20 || age > 69) return 'age_outside_reference';
-    // Die derzeitige sichtbare Anleitung beschreibt Standard-Liegestuetze;
-    // die hinterlegte CSEP-Frauentabelle basiert dagegen auf der Knie-Variante.
-    return geschlecht === 'maennlich' ? 'supported' : 'protocol_unconfirmed';
+  if (id === 'einbeinstand') {
+    return age >= 18 && age <= 99 ? 'supported' : 'age_outside_reference';
   }
-  if (age < 18) return 'age_outside_reference';
+  if (id === 'liegestuetze') {
+    if (geschlecht === 'maennlich') {
+      if (age < 20 || age > 94) return 'age_outside_reference';
+      return age <= 69 ? 'supported' : 'modeled_orientation';
+    }
+    if (geschlecht === 'weiblich') {
+      if (age < 18 || age > 94) return 'age_outside_reference';
+      return age <= 65 ? 'harmonized_orientation' : 'modeled_orientation';
+    }
+    return age >= 18 && age <= 94 ? 'reference_unavailable' : 'age_outside_reference';
+  }
+  if (age < 18 || age > 94) return 'age_outside_reference';
   // Die freigegebene Tabelle ist biologisch geschlechtsspezifisch. Für intersex
   // liegt keine passende eigene Vergleichsgruppe vor; der Rohwert bleibt dort
   // sichtbar, wird aber weder eingefärbt noch für Empfehlungen verwendet.
@@ -461,7 +480,9 @@ function evaluateFitnessTests(a) {
         ? nextFourLevelThreshold(thresholds, normValue)
         : nextBandThreshold(thresholds, normValue),
       referenceStatus,
-      scorable: referenceStatus === 'supported' || referenceStatus === 'harmonized_orientation',
+      scorable: referenceStatus === 'supported'
+        || referenceStatus === 'harmonized_orientation'
+        || referenceStatus === 'modeled_orientation',
     });
     return out;
   }, []);

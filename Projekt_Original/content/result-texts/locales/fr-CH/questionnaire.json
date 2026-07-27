@@ -741,11 +741,11 @@
     },
     {
       "id": "questionnaire.question.liegestuetze.help",
-      "text": "1 – Allongez-vous sur le ventre, les mains sous les épaules.\n2 – Tendez les bras et soulevez le corps du sol.\n3 – Gardez le corps, les hanches et les jambes alignés.\n4 – Abaissez le corps jusqu’à ce que la poitrine touche presque le sol.\n5 – Repoussez-vous vers le haut pour revenir à la position de départ.\n\nRépétez sans pause jusqu’à ce que vous ne puissiez plus continuer.\n\n<b>Ce que révèle le test des pompes :</b>\nLes pompes mesurent la force de la poitrine, des épaules, des bras et du tronc. Des muscles du haut du corps solides sont importants pour les activités quotidiennes telles que porter des objets ou se relever et contribuent à prévenir les blessures dues aux chutes.",
+      "text": "<b>La même exécution standard s’applique à tous les genres :</b>\n1 – Allongez-vous sur le ventre, placez les mains à peu près à la largeur des épaules et prenez appui sur la pointe des pieds.\n2 – Tendez les bras ; le corps doit former une ligne droite de la tête aux talons.\n3 – Abaissez le corps de manière contrôlée jusqu’à ce que la poitrine touche presque le sol et que les coudes soient fléchis à environ 90° au moins.\n4 – Repoussez complètement pour revenir à la position de départ.\n\nRépétez sans pause en gardant une exécution correcte. Arrêtez le test dès que vous ne parvenez plus à corriger votre technique après un rappel.\n\n<b>Ce que révèle le test des pompes :</b>\nLes pompes mesurent l’endurance musculaire de la poitrine, des épaules, des bras et du tronc. Des muscles du haut du corps solides sont importants pour les activités quotidiennes telles que porter des objets ou se relever et contribuent à prévenir les blessures dues aux chutes.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2eff26723b0176172148408bdd1bb23cefbfdbba818315aa7db31daa8cf94651"
+      "sourceContractHash": "8ff8086d58d16d5ed6ab9a819fbd04aa1c9145022ea1f8185725326b0d681cca"
     },
     {
       "id": "questionnaire.question.liegestuetze.help_title",

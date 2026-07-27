@@ -128,6 +128,7 @@ assert.ok(germanIds.length >= 1000, 'vollständiger Textkatalog erwartet');
 const germanQuestions = technicalQuestionContract(german);
 const germanScoring = scoringContract(german);
 const localizedQuestionTexts = new Set();
+const localizedPushupHelpTexts = new Set();
 const expectedBmiByLocale = {
   'de-CH': '31.5',
   'en-CH': '31.5',
@@ -155,6 +156,27 @@ LOCALES.forEach((locale) => {
     locale + ': Scoring und Empfehlungen dürfen sich nicht ändern'
   );
   localizedQuestionTexts.add(runtime.ResultCopy.get('questionnaire.question.alter.text'));
+  const pushupHelp = runtime.ResultCopy.get('questionnaire.question.liegestuetze.help');
+  localizedPushupHelpTexts.add(pushupHelp);
+  assert.ok(pushupHelp.includes('90°'), locale + ': Standard-Liegestütz beschreibt die einheitliche Bewegungstiefe');
+  assert.ok(
+    runtime.ResultCopy.get('recommendation.fitness_test.liegestuetze.reference_note.modeled_orientation'),
+    locale + ': Hinweis zur modellierten 94er-Orientierung fehlt'
+  );
+  assert.ok(
+    runtime.ResultCopy.get('recommendation.fitness_test.liegestuetze.reference_note.reference_unavailable'),
+    locale + ': neutraler Hinweis für nicht binäre Vergleichsgruppen fehlt'
+  );
+  assert.ok(
+    runtime.ResultCopy.get('recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation'),
+    locale + ': Transparenzhinweis zur Wandsitz-Orientierung fehlt'
+  );
+  [
+    'sources.strength.link_pushup_adams',
+    'sources.strength.link_pushup_payne',
+    'sources.strength.link_pushup_topend',
+    'sources.strength.link_pushup_rikli',
+  ].forEach((id) => assert.ok(runtime.ResultCopy.get(id), `${locale}: öffentliche Quelle fehlt: ${id}`));
 
   assert.strictEqual(
     runtime.HealthLocale.formatDecimal(31.5),
@@ -176,6 +198,11 @@ assert.strictEqual(
   localizedQuestionTexts.size,
   LOCALES.length,
   'Ein repräsentativer Fragetext muss in jeder Sprache wirklich lokalisiert sein'
+);
+assert.strictEqual(
+  localizedPushupHelpTexts.size,
+  LOCALES.length,
+  'Die Standard-Liegestütz-Anleitung muss in jeder Sprache wirklich lokalisiert sein'
 );
 
 console.log('✓ Vier vollständige Locale-Bundles mit identischen technischen IDs');

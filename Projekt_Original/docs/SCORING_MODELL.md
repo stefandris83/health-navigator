@@ -225,11 +225,11 @@ Ein optionaler Test wird nie als schlecht behandelt, wenn er ausgelassen wurde. 
 
 | Test | Scorewirksamer Referenzvertrag |
 |---|---|
-| Einbeinstand | ab 18 Jahren; geschlechtsunabhängige Referenz |
-| Liegestütze | männlich, 20–69 Jahre; die vorhandene Frauentabelle verwendet ein anderes Protokoll |
-| Wandsitz | ab 18 Jahren, weiblich oder männlich; vierstufige Trainingsorientierung |
+| Einbeinstand | 18–99 Jahre; geschlechtsunabhängige direkte Referenz, damit Alter 94 abgedeckt ist |
+| Liegestütze | einheitlicher Standard-Liegestütz: Frauen 18–24 kleine direkte Adams-Orientierung, 25–65 praktische Topend-Orientierung und 66–94 modelliert; Männer 20–69 direkte CSEP-Referenz und 70–94 modelliert |
+| Wandsitz | 18–94 Jahre, weiblich oder männlich; vierstufige, ab 70 extrapolierte Trainingsorientierung |
 
-Der Check kann ab 16 Jahren verwendet werden. Bei 16- und 17-Jährigen werden eingetragene Kurztestwerte deshalb nur als persönliche Rohwerte gezeigt; sie verändern weder Score noch Empfehlung.
+Der Check kann ab 16 Jahren verwendet werden. Bei 16- und 17-Jährigen werden eingetragene Kurztestwerte nur als persönliche Rohwerte gezeigt; sie verändern weder Score noch Empfehlung. Ab 95 bleiben Liegestütz und Wandsitz wegen der begrenzten Modellbasis ebenfalls Rohwerte; der direkt untersuchte Einbeinstand reicht bis 99.
 
 Die Referenztabellen und ihre fachlichen Grenzen stehen in [`scoring.js`](../js/scoring.js) und ausführlicher in [`QUELLEN.md`](QUELLEN.md).
 

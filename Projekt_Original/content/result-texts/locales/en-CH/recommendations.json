@@ -3755,11 +3755,14 @@
     },
     {
       "id": "recommendation.fitness_test.einbeinstand.reference_note.age_outside",
-      "text": "The stored comparison values are intended for adults. This result is therefore not automatically classified as a strength or training deficit.",
-      "requiredTerms": [],
+      "text": "The stored comparison values cover ages 18 to 99. Outside this age range, your value is shown only as a personal baseline measurement.",
+      "requiredTerms": [
+        "ages 18 to 99",
+        "personal baseline measurement"
+      ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7a512f9c1ec252f69b5c2b3677709512fe4d768901bd607a732b1a4817a8cfd1"
+      "sourceContractHash": "d4baef458b28fe4c2b9289360d25c2154adb55e100d3debe99f0d03eb37aa237"
     },
     {
       "id": "recommendation.fitness_test.liegestuetze.title",
@@ -3779,34 +3782,62 @@
     },
     {
       "id": "recommendation.fitness_test.liegestuetze.interpretation.unrated",
-      "text": "Your result shows your current performance using the variation you selected. Until the protocol and reference table correspond unambiguously, we deliberately do not show a reference category.",
+      "text": "Your result shows your current performance in the standard push-up. Without an appropriately matched comparison group, we deliberately do not show a rating category.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "6a3e68e486cffd43ff51e2d091697ad4294c0512d1c4e80414125596eb3bd372"
+      "sourceContractHash": "ea71f6caed26283d5fe46b38e8600c1659185c3c5545e10e7fe49f15c9f84024"
     },
     {
       "id": "recommendation.fitness_test.liegestuetze.reference_note.age_outside",
-      "text": "The reference table used covers ages 20 to 69. Outside this published age range, your value is shown only as a personal baseline measurement.",
+      "text": "The comparison series used cover women aged 18 to 94 and men aged 20 to 94. Outside these age ranges, your value is shown only as a personal baseline measurement.",
       "requiredTerms": [
-        "ages 20 to 69",
+        "women aged 18 to 94",
+        "men aged 20 to 94",
         "personal baseline measurement"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a74cd3c4e926aae98c42cb4cbcf22ff8657cd46813bfbe71ac810a5c84e2c157"
+      "sourceContractHash": "cc7fffa8832ca817d0d95a604d0e6d82d10710aa0aaa337973569aad1d6e9bd5"
     },
     {
-      "id": "recommendation.fitness_test.liegestuetze.reference_note.protocol_unconfirmed",
-      "text": "The available comparison table for women uses the knee variation, while the current instructions describe standard push-ups. Until these protocols have been harmonised, no reference category or automatic recommendation is derived from this value.",
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.harmonized_orientation",
+      "text": "For women aged 18 to 24, the rating uses a small directly studied standard-push-up scale; from 25 to 65 it uses practical orientation values. Neither is a population-validated norm or medical threshold.",
       "requiredTerms": [
-        "knee variation",
-        "standard push-ups",
-        "automatic recommendation"
+        "women aged 18 to 24",
+        "25 to 65",
+        "standard-push-up scale",
+        "population-validated norm"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a4b3b4836dcf9f0851b6789bc78009bcd6aa34de3dfaafcfe5dbaa3a475b91c8"
+      "sourceContractHash": "2f7ff7a51207e293f71ef04f3bb064c01cae3daf5eb84959130d51bcc884afe5"
+    },
+    {
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.modeled_orientation",
+      "text": "For women aged 66 to 94 and men aged 70 to 94, the comparison values are age-adjusted models because direct standard push-up norms are unavailable. They are training guidance only, not medical thresholds.",
+      "requiredTerms": [
+        "women aged 66 to 94",
+        "men aged 70 to 94",
+        "models",
+        "not medical thresholds"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "7ec119933945b0dc23cdea0542046a18f36c3a5cc8e8d2a234546a38c5728e67"
+    },
+    {
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.reference_unavailable",
+      "text": "There is no appropriately matched comparison group for the selected gender. This result therefore remains a personal baseline measurement without an automatic rating or recommendation.",
+      "requiredTerms": [
+        "no appropriately matched comparison group",
+        "personal baseline measurement"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8b76a94908003711d074489a3bbeeea39dd0627ccb36a1fcab6196942d9d549a"
     },
     {
       "id": "recommendation.fitness_test.wandsitz.title",
@@ -3837,14 +3868,28 @@
     },
     {
       "id": "recommendation.fitness_test.wandsitz.reference_note.age_outside",
-      "text": "The comparison values apply from the age of 18. Below 18, your result is therefore shown without a classification as a personal baseline measurement.",
+      "text": "The comparison values used cover ages 18 to 94. Outside this age range, your value is shown without a rating as a personal baseline measurement.",
       "requiredTerms": [
-        "from the age of 18",
-        "without a classification"
+        "ages 18 to 94",
+        "personal baseline measurement"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e0b50151fd3b8c307981716f2c17b2f9550cdfa6de321ab7bccf8bb81e0eadf0"
+      "sourceContractHash": "c784bcd59d6a4416e1e48db2456a2eee9f649172eb5bbf3c02052d0210814807"
+    },
+    {
+      "id": "recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation",
+      "text": "The wall-sit rating for ages 18 to 94 is harmonised training guidance; the older age bands are partly extrapolated. It is not a clinical norm or medical threshold.",
+      "requiredTerms": [
+        "ages 18 to 94",
+        "harmonised training guidance",
+        "partly extrapolated",
+        "not a clinical norm"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "60b65a58911deb01d470a110bb42e1dfd6204eaa086fe6a0c6626cde8fe4ea3b"
     },
     {
       "id": "recommendation.fitness_test.wandsitz.reference_note.reference_unavailable",
@@ -3904,9 +3949,9 @@
     },
     {
       "id": "recommendation.fitness_test.retest.liegestuetze",
-      "text": "Repeat the push-up test using the same variation and under the same conditions. Compare it with your baseline value of {{baselineValue}} repetitions. The next comparison value is {{orientationValue}} repetitions; it is not a medical threshold or a promised result after four weeks. Stop if you experience pain, dizziness or shortness of breath.",
+      "text": "Repeat the standard push-up test under the same conditions and with the same correct technique. Compare it with your baseline value of {{baselineValue}} repetitions. The next comparison value is {{orientationValue}} repetitions; it is not a medical threshold or a promised result after four weeks. Stop if you experience pain, dizziness or shortness of breath.",
       "requiredTerms": [
-        "same variation",
+        "standard push-up test",
         "not a medical threshold",
         "pain",
         "dizziness",
@@ -3914,7 +3959,7 @@
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "a1eea11dee3b3c6eeb0da909e445629520b4fa634fff4844aebe65ae0ee7d737"
+      "sourceContractHash": "0dccf6426a32e0d4e31fb62572ca45cdc612ad29c67926648111f072a4778325"
     },
     {
       "id": "recommendation.fitness_test.retest.wandsitz",

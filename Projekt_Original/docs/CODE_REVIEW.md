@@ -430,10 +430,12 @@ Direkt behoben:
 - 1, 2 oder 3 ausgefüllte Tests erscheinen immer, fehlende Tests erzeugen keinen
   Leerzustand; der gültige Messwert 0 bleibt erhalten.
 - Ein fachlich vergleichbarer tiefer Einbeinstand verweist auf
-  `fi_beweglichkeit`, ein tiefer Standard-Liegestütz bei Männern von 20 bis 69
-  Jahren auf `fi_kraft`. Zwei tiefe Krafttests erzeugen nur eine Kraftkarte.
-- Die nicht passende weibliche Knie-Liegestütz-Referenz und Alterswerte ausserhalb
-  20 bis 69 erzeugen keine automatische Normstufe oder Empfehlung.
+  `fi_beweglichkeit`, ein tiefer, scorebarer Standard-Liegestütz auf `fi_kraft`.
+  Zwei tiefe Krafttests erzeugen nur eine Kraftkarte.
+- Frauen und Männer verwenden dasselbe Standard-Liegestützprotokoll. Direkte,
+  praktische und modellierte Referenzstatus bleiben technisch unterscheidbar;
+  nicht passende Geschlechtsgruppen und Alterswerte ausserhalb der freigegebenen
+  Bereiche erzeugen keine automatische Normstufe oder Empfehlung.
 - Der Wandsitz wird sichtbar korrekt als lokale Bein-Kraftausdauer, nicht als
   Herz-Kreislauf-Test beschrieben. Die spätere harmonisierte vierstufige
   Trainingsorientierung ersetzt den damaligen provisorischen Hinweis; sie bleibt
@@ -969,8 +971,9 @@ auswertbaren Top-Kurztest für Balance, ausschliesslich starken zusätzlich
 ausgefüllten auswertbaren Kurztests und ohne ausgelöste Fitness- oder
 Stabilitäts-/Sturz-Empfehlung. Zwei Krafttests genügen nicht; ein gemischtes
 Testprofil erzeugt auch bei hohem Fitnessscore keine Topaussage.
-`protocol_unconfirmed`, `reference_unavailable` und
-`age_outside_reference` können die Aussage nicht stützen. Das Detail nennt das
+`reference_unavailable` und `age_outside_reference` können die Aussage nicht
+stützen; praktische oder modellierte, aber scorebare Trainingsorientierungen
+können sie bei einem starken Ergebnis stützen. Das Detail nennt das
 WHO-Ziel ausdrücklich und bezeichnet die Testwerte als Orientierungsbereiche; die
 Logik verändert weder Score noch Aktionsplan und behauptet keine VO₂max-Messung,
 Leistungsdiagnostik oder individuelle Prognose.
@@ -983,8 +986,8 @@ Markdown-Übersichten und Manifeste wurden deterministisch regeneriert.
 
 Die Regressionen decken das starke Referenzprofil, fehlende zweite Testkomponente,
 zwei Tests desselben Teilbereichs, offenen Kraft-Handlungsbedarf, Score 89,
-verfehltes WHO-Ziel, Minderjährige, intersex/andere Referenzgruppen, das nicht
-passende weibliche Liegestützprotokoll, den Rauchfrei-Fallback, Dimensions-Dedup und
+verfehltes WHO-Ziel, Minderjährige, intersex/andere Referenzgruppen, den
+Rauchfrei-Fallback, Dimensions-Dedup und
 deterministische Sprachinvarianz ab.
 
 ### Verifikation und Grenzen
@@ -1082,3 +1085,48 @@ Familien-/Untergewichtsprofil. Desktop und 390 × 844 Pixel blieben ohne horizon
 blockiert und deshalb nicht interaktiv bestätigt; belegt ist dort nur der grüne
 automatisierte Doppelklickvertrag. Medizinische, muttersprachliche und vollständige
 visuelle Go-live-Abnahmen bleiben offen.
+
+## 21. Standard-Liegestütz und Altersabdeckung bis 94
+
+Der weibliche Kurztest verwendet keine Knievariante mehr. Anleitung, Illustration,
+Scoring, Ergebnistext und Retest beschreiben für Frauen und Männer denselben sauberen
+Standard-Liegestütz von den Zehen. Die frühere Protokolldifferenz und der dadurch
+ausgelöste Zustand «keine verlässliche Einordnung» wurden entfernt.
+
+Die Referenzqualität bleibt bewusst sichtbar getrennt:
+
+- Frauen 18–24: kleine direkte Adams-Skala; «sehr gut» und «gut» werden zur
+  sichtbaren *Soliden Basis* gebündelt, sodass zehn Wiederholungen wie in der
+  Studie positiv eingeordnet werden;
+- Frauen 25–65: praktische Topend-Orientierung mit ausdrücklich unbekannter
+  Originalquelle;
+- Frauen 66–94 und Männer 70–94: konservativ anhand des Rikli/Jones-
+  Arm-Curl-Altersverlaufs modellierte Trainingsorientierung;
+- Männer 20–69: direkte CSEP/Payne-Referenz;
+- Einbeinstand 18–99: direkte Altersreferenz; Wandsitz 18–94: harmonisierte,
+  in höheren Bändern teilweise extrapolierte Trainingsorientierung.
+
+Der unabhängige Abschlussreview fand und behob zusätzlich falsche Altersformulierungen
+oberhalb der Wandsitz- und Einbeinstand-Referenzbereiche, den fehlenden sichtbaren
+Transparenzhinweis beim harmonisierten Wandsitz sowie eine uneinheitliche Priorität
+von Alters- und Geschlechtsausschluss. Die öffentliche Quellenseite verlinkt nun
+Adams, Payne/CSEP, Topend und Rikli/Jones direkt. Standard-, praktische und
+modellierte Daten werden nirgends als klinische Norm oder Diagnosegrenze bezeichnet.
+
+Die bereits vorbereitete Bildlogik zeigt Taillenumfang und alle Fitnessillustrationen
+auch vor einer Geschlechtsauswahl; standardmässig erscheint die weibliche Darstellung.
+Nach Auswahl von «männlich» wird auf die männliche Variante gewechselt.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 42/42, Integration 73/73, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **180/180
+Tests**. Alle vier Kataloge mit je 1'205 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
+aktuell. Grenztests sichern 17/18, 19/20, 24/25, 94/95 und 99/100 Jahre,
+intersex/andere Angaben, modellierte positive und negative Liegestützwerte sowie
+die sichtbaren Referenzhinweise in DE/EN/FR/IT.
+
+Die direkte empirische Evidenz für Standard-Liegestütze reicht nicht lückenlos bis
+94. Die transparent modellierten Altersbänder bleiben deshalb vor Produktivfreigabe
+eine offene medizinische und Product-Governance-Entscheidung.

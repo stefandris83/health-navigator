@@ -307,19 +307,17 @@
   }
 
   function questionIllustrationVariant(gender) {
-    if (gender === 'maennlich') return 'maennlich';
-    if (gender === 'weiblich' || gender === 'intersex') return 'weiblich';
-    return null;
+    return gender === 'maennlich' ? 'maennlich' : 'weiblich';
   }
 
   function questionIllustrationHTML(q) {
     if (!q.illustrations) return '';
     const variant = questionIllustrationVariant(state.answers.geschlecht);
-    const src = variant ? q.illustrations[variant] : '';
-    return `<div class="q-illustration-wrap"${src ? '' : ' hidden'}>
+    const src = q.illustrations[variant];
+    return `<div class="q-illustration-wrap">
       <img class="q-illustration" data-question-illustration
         data-src-weiblich="${escAttr(q.illustrations.weiblich)}" data-src-maennlich="${escAttr(q.illustrations.maennlich)}"
-        ${src ? `src="${escAttr(src)}" ` : ''}alt="" aria-hidden="true" width="1024" height="1024"
+        src="${escAttr(src)}" alt="" aria-hidden="true" width="1024" height="1024"
         loading="lazy" decoding="async" />
     </div>`;
   }
@@ -328,10 +326,6 @@
     const variant = questionIllustrationVariant(state.answers.geschlecht);
     app.querySelectorAll('[data-question-illustration]').forEach((image) => {
       const wrapper = image.closest('.q-illustration-wrap');
-      if (!variant) {
-        if (wrapper) wrapper.hidden = true;
-        return;
-      }
       image.src = variant === 'maennlich' ? image.dataset.srcMaennlich : image.dataset.srcWeiblich;
       if (wrapper) wrapper.hidden = false;
     });

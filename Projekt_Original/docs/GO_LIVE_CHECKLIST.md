@@ -82,7 +82,8 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 - [x] Mindestalter 16 technisch durchgängig umgesetzt: Jüngere Werte werden vom
   zentralen Antwortschema verworfen. Bei 16- und 17-Jährigen bleiben optionale
   Fitness-Kurztests als Rohwerte sichtbar, aber ohne Referenzstufe, Score-Einfluss
-  oder automatische Empfehlung; die Liegestütznorm beginnt weiterhin ab 20.
+  oder automatische Empfehlung; die Standard-Liegestütz-Einordnung beginnt bei
+  Frauen ab 18 und bei Männern ab 20.
 - [ ] Referenzmodell der Körperzusammensetzung freigeben: absolute
   Taillenumfangsschwellen für Erwachsene versus einheitliches Taille-Grösse-Verhältnis,
   insbesondere für 16- und 17-Jährige sowie nahe den Grenzen 0,50 und 0,60.
@@ -91,8 +92,14 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   intersex/anderer Angabe das Taille-Grösse-Verhältnis und verwendet den BMI nur
   ohne passende Taillenreferenz. Die medizinische Freigabe der Schwellen bleibt
   davon getrennt offen.
-- [ ] Liegestütz-Protokoll vereinheitlichen: Die weibliche CSEP-Referenz nutzt die
-  Knie-Variante, die aktuelle Anleitung beschreibt den Standard-Liegestütz.
+- [x] Liegestütz-Protokoll vereinheitlichen: Frauen und Männer führen denselben
+  Standard-Liegestütz von den Zehen aus; die frühere weibliche Knie-Referenz ist
+  vollständig aus Scoring und Nutzerführung entfernt.
+- [ ] Die kleine direkte Adams-Orientierung 18–24, die praktische
+  Topend-Frauenorientierung 25–65 und die modellierten Frauen- und Männerbänder
+  bis 94 durch Medizin und Product freigeben. Die Adams-Skala ist noch nicht
+  extern validiert, Topend nennt die Originalquelle unbekannt und die älteren
+  Bänder übertragen einen Arm-Curl-Altersgradienten statt direkter Liegestütz-Normen.
 - [x] Die früheren praxisbasierten Wandsitz-Benchmarks ersetzen: Implementiert ist
   eine aus publizierten Perzentilen abgeleitete, geglättete vierstufige
   Trainingsorientierung für den strikt ausgeführten beidbeinigen 90°-Wandsitz.
@@ -134,9 +141,11 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 - [x] Technischen Feedbackpfad für 1–3 ausgefüllte Fitness-Kurztests umsetzen:
   Rohwert, einheitliche vierstufige Statusbegriffe, passende Kraft-/Balance-
   Empfehlung und persönlicher Woche-4-Retest sind vorhanden. Einbeinstand- und
-  Wandsitzwerte unter 18, Liegestützwerte ausserhalb von 20–69 sowie unpassende
+  Wandsitzwerte unter 18, Liegestützwerte unter der geschlechtsspezifischen
+  Untergrenze, Liegestütz-/Wandsitzwerte ab 95 sowie unpassende
   geschlechtsspezifische Referenzen bleiben ohne Kategorie, Statusfarbe,
-  Score-Einfluss und automatische Empfehlung.
+  Score-Einfluss und automatische Empfehlung. Mit 94 sind alle drei Tests für
+  weiblich und männlich technisch abgedeckt.
 - [x] Breit bestätigte Spitzenfitness in der Stärkenkarte sichtbar priorisieren:
   Fitnessscore ab 90, erreichtes WHO-Bewegungsziel sowie auswertbare Top-Kurztests
   für Muskulatur und Balance sind gemeinsam erforderlich. Ein offener

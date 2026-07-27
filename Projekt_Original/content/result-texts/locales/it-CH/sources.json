@@ -565,11 +565,47 @@
     },
     {
       "id": "sources.strength.link_pushup",
-      "text": "Studio sulle flessioni",
+      "text": "Coorte sulle flessioni",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f4d07e3225672e8e1402163de2cb50ac03e24e25b78efc0d6d493652c96de0c6"
+      "sourceContractHash": "66f7bb3476dacaa100fffb79bf10c5ea40436a33ef328d14f1bd141ceda0bc5e"
+    },
+    {
+      "id": "sources.strength.link_pushup_adams",
+      "text": "Adams: donne 18–24",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1df053df4affcd20793c6db72e89d6e2565278f9ad28b77b6cdf283c7f9a7386"
+    },
+    {
+      "id": "sources.strength.link_pushup_payne",
+      "text": "Payne/CSEP: uomini fino a 69 anni",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5d65913302078bd89f67a3113ea1595c589445f432a062dcba68aa8595f068a"
+    },
+    {
+      "id": "sources.strength.link_pushup_topend",
+      "text": "Topend: tabella pratica per donne",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "777710f69d6ebcc10f892b5f138a8de18a2eda15c1cc0971c5fd14133851e877"
+    },
+    {
+      "id": "sources.strength.link_pushup_rikli",
+      "text": "Rikli/Jones: gradiente d’età fino a 94 anni",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "f304775a58b3c5f6f941d512bd3dbc56181c3751fce15e0a32820a3976eb5433"
     },
     {
       "id": "sources.strength.link_wall_sit",
@@ -773,11 +809,11 @@
     },
     {
       "id": "sources.scoring.point.2",
-      "text": "I test brevi facoltativi di forma fisica completano il relativo sottoambito. L’attribuzione approvata dal punto di vista medico è la seguente: flessioni e seduta al muro costituiscono insieme la metà basata sui test del sottoambito della forma muscolare; la seduta al muro non rientra nella resistenza cardiovascolare. L’equilibrio su una gamba costituisce la metà basata sui test dell’equilibrio e della mobilità. Una categoria viene mostrata soltanto se età, sesso e protocollo del test corrispondono. Dai 18 anni, la categoria della seduta al muro si basa su una guida armonizzata per l’allenamento e non su una norma clinica.",
+      "text": "I test brevi facoltativi di forma fisica completano il relativo sottoambito. L’attribuzione approvata dal punto di vista medico resta invariata: flessioni e seduta al muro costituiscono insieme la metà basata sui test della forma muscolare; l’equilibrio su una gamba costituisce la metà basata sui test dell’equilibrio e della mobilità. Donne e uomini eseguono le stesse flessioni standard sulle punte dei piedi. I valori maschili fino a 69 anni provengono da un riferimento diretto. Per le donne, la fascia 18–24 anni si basa su un piccolo studio diretto e la fascia 25–65 anni su un orientamento pratico; le fasce d’età superiori fino a 94 anni sono modellate. I valori non validati direttamente, così come la valutazione della seduta al muro, sono orientamenti per l’allenamento e non norme cliniche o soglie diagnostiche.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "77c13a1be474c833dea0ecb09c7efac1d8dc424ded8389722b4d6e5eef4397f8"
+      "sourceContractHash": "ea35c5de6331c709a183e962b6a3c4ba21e42b9c36c202dc71229f057d87cf6b"
     },
     {
       "id": "sources.scoring.point.3",
