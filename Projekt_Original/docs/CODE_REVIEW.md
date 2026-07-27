@@ -2,6 +2,12 @@
 
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
+> **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 21: 1'205
+> lokalisierte Texte je Sprache und 181/181 erfolgreiche Tests. Kleinere Zahlen in
+> früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
+> Bestandsangaben.
+
 ## 1. Gesamtbeurteilung
 
 Die Ausgangsbasis war für einen dependency-freien Prototyp bereits ungewöhnlich

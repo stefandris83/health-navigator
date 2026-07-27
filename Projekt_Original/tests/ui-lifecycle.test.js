@@ -353,6 +353,10 @@ test('Dimensionsdetails zeigen eigenständige Hinweise vollständig, statusgerec
   assert.ok(source.includes('const planStepById = new Map(top3.map'));
   assert.ok(source.includes('dimensionInsights(results, top3)'));
   assert.ok(source.includes('recommendationsForDimension(dim.id, ctx, top3)'));
+  assert.ok(source.includes('const coveredGuidanceIds = new Set('));
+  assert.ok(source.includes('.filter((item) => !coveredGuidanceIds.has(item.id))'));
+  assert.ok(!source.includes('matchingGuidance'));
+  assert.ok(!source.includes('placedGuidance'));
   assert.ok(source.includes("copy.format('ui.recommendation.action_plan_badge', { planStep })"));
   assert.ok(source.includes('class="rec dimension-guidance-card"'));
   assert.ok(!source.includes('class="rec dimension-guidance-card is-${severity}"'));

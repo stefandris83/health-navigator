@@ -17,6 +17,8 @@
  */
 
 (function () {
+  'use strict';
+
   const oneOf = (v, ...vals) => vals.includes(v);
 
   const ResultCopy = window.ResultCopy;

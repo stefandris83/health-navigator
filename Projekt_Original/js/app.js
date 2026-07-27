@@ -818,17 +818,18 @@
       const st = statusFn(sc);
       const recs = window.Recommendations.recommendationsForDimension(dim.id, ctx, top3);
       const guidance = dimensionInsights[dim.id] || [];
-      const placedGuidance = new Set();
-      const recommendationHTML = recs.map((record) => {
-        const matchingGuidance = guidance.filter((item) => {
-          if (placedGuidance.has(item.id) || !item.relatedRecommendationIds.includes(record.id)) return false;
-          placedGuidance.add(item.id);
-          return true;
-        });
-        return recHTML(record, planStepById.get(record.id));
-      }).join('');
+      // Hinweise, die bereits durch eine sichtbare Empfehlung abgedeckt sind,
+      // erscheinen nicht nochmals als eigenständige Karte.
+      const coveredGuidanceIds = new Set(
+        guidance
+          .filter((item) => recs.some((record) => item.relatedRecommendationIds.includes(record.id)))
+          .map((item) => item.id)
+      );
+      const recommendationHTML = recs
+        .map((record) => recHTML(record, planStepById.get(record.id)))
+        .join('');
       const standaloneGuidanceHTML = guidance
-        .filter((item) => !placedGuidance.has(item.id))
+        .filter((item) => !coveredGuidanceIds.has(item.id))
         .map((item) => dimensionGuidanceHTML(item))
         .join('');
       const hasOpenSignal = window.Recommendations.hasOpenDimensionSignal(dim.id, ctx);
