@@ -1,6 +1,6 @@
 # Projektübergabe: Helsana Gesundheitscheck
 
-**Stand:** 16. Juli 2026
+**Stand:** 27. Juli 2026
 **Zweck:** Vollständige Übergabe des aktuellen Arbeitsstands für die weitere Projektarbeit.
 **Wichtig:** Diese Datei beschreibt den Ist-Stand. Bei Widersprüchen sind der getestete Code, die kanonischen Content-Dateien und die Regressionstests massgebend.
 
@@ -23,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'198 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'205 Texten;
 - Artefakt-Check: erfolgreich;
-- 174 von 174 Einzeltests erfolgreich;
+- 180 von 180 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -37,9 +37,9 @@ Aktueller Teststand:
 - App: `/Users/stefandris/Desktop/Health-Navigator-Codex/Projekt_Original`
 - Git-Repository: Workspace-Wurzel
 - Remote: `https://github.com/stefandris83/health-navigator.git`
-- Aktueller Branch: `agent/rename-gesundheitscheck`
-- Tracking-Branch: `origin/agent/rename-gesundheitscheck`
-- Ausgangs-HEAD vor diesem Änderungssatz: `a975f93 Tighten quiz accessibility and validation checks`
+- Aktueller Branch: `codex/standard-pushups-94`
+- Tracking-Branch nach Veröffentlichung: `origin/codex/standard-pushups-94`
+- Ausgangs-HEAD vor diesem Änderungssatz: `3f01383 Refactor navigation and streamline health dashboard workflows`
 - Öffentliche GitHub-Pages-Adresse: `https://stefandris83.github.io/health-navigator/`
 
 Der Workflow `.github/workflows/deploy-pages.yml` läuft bei Änderungen unter
@@ -230,11 +230,13 @@ Implementierte 80/20-Verbesserungen:
 - Mindestalter für den Check: 16 Jahre. Jüngere Alterswerte werden verworfen.
 - Bei 16- und 17-Jährigen bleiben Testwerte reine Rohwerte ohne Referenzstufe, Score-
   Einfluss oder automatische Empfehlung.
-- Einbeinstand ist ab 18 scorewirksam.
-- Liegestütz ist aktuell nur für männlich, 20–69 Jahre scorewirksam, weil die vorhandene
-  Frauentabelle ein anderes Testprotokoll verwendet.
-- Wandsitz ist ab 18 für weiblich/männlich scorewirksam; für Intersex fehlt eine passende
-  Referenzgruppe.
+- Einbeinstand ist von 18 bis 99 scorewirksam und deckt Alter 94 direkt ab.
+- Beim Liegestütz gilt für alle Geschlechter dasselbe Standardprotokoll von den Zehen.
+  Frauen werden von 18 bis 24 anhand der kleinen direkten Adams-Skala, von 25 bis
+  65 praktisch und von 66 bis 94 modelliert eingeordnet; Männer von 20 bis 69
+  direkt und von 70 bis 94 modelliert.
+- Wandsitz ist von 18 bis 94 für weiblich/männlich scorewirksam; die älteren Bänder
+  sind Trainingsorientierungen. Für Intersex fehlt eine passende Referenzgruppe.
 - Einbeinstand und Wandsitz akzeptieren Eingaben bis 1'000 Sekunden. Der Rohwert wird
   bis 1'000 angezeigt; eine Bewertungsobergrenze darf den sichtbaren Wert nicht kappen.
 - Tiefe, fachlich vergleichbare Tests führen zur passenden Kraft- oder Balanceempfehlung.
@@ -335,7 +337,7 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'198 IDs.
+- Aktuell je Sprache 1'205 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -443,7 +445,7 @@ Technischer Vertrag:
 - lokale quadratische 1024×1024-PNGs unter `assets/illustrations/`;
 - Auswahl anhand der Geschlechtsangabe;
 - Intersex verwendet wie beauftragt die weibliche Illustration;
-- ohne bekannte Geschlechtsangabe wird kein falsches Bild vorab geladen;
+- ohne Geschlechtsangabe wird standardmässig die weibliche Illustration gezeigt;
 - eigenständige Einbindung unter Eingabefeld, Einheit, Fehler- und Optionalhinweis;
 - der aufklappbare hellblaue Hilfetext enthält kein Bild mehr;
 - dekoratives `alt=""`, `aria-hidden="true"`, da der benachbarte übersetzte Text die
@@ -486,8 +488,9 @@ und defensive Coach-Fallbacks, weil sie getestet oder Teil der Zielarchitektur s
 - Kein klinischer Herz-Kreislauf-, Mortalitäts- oder Longevity-Score.
 - Keine pauschalen numerischen Abzüge für familiäre Erkrankungen, Vorsorge oder
   Bluthochdruck; Routing erfolgt über Signale und Empfehlungen.
-- Keine falsche Liegestützbewertung für Frauen anhand einer Referenztabelle mit
-  abweichendem Knie-Protokoll.
+- Keine Knie-Liegestütze im Kurztest: Anleitung, Bewertung und Retest verwenden für
+  Frauen und Männer dasselbe Standardprotokoll. Praktische und modellierte
+  Vergleichsreihen werden nicht als klinische Norm ausgegeben.
 - Keine Referenzbewertung für 16-/17-Jährige oder unpassende Geschlechtsgruppen.
 - Kein deutschsprachiger Einzeltext-Fallback innerhalb einer Zielsprache; stattdessen
   vollständiger Locale-Fallback, um Mischsprache zu verhindern.
@@ -499,22 +502,22 @@ und defensive Coach-Fallbacks, weil sie getestet oder Teil der Zielarchitektur s
 - Kein Umgehen der Browser-Sicherheitsrichtlinie, als der eingebettete Browser lokale
   `file://`-URLs blockierte.
 
-## 15. Aktueller Testnachweis vom 16. Juli 2026
+## 15. Aktueller Testnachweis vom 27. Juli 2026
 
 Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'198 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'205 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
-| `node tests/integration.test.js` | 70/70 |
+| `node tests/integration.test.js` | 73/73 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 177/177 Tests erfolgreich.**
+**Gesamt aktuell: 180/180 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
@@ -589,7 +592,9 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
   Herz-Kreislauf-Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
 - Freigabe des Körperzusammensetzungsmodells, besonders für 16-/17-Jährige und nahe
   den WHtR-Grenzen.
-- Einheitliches Liegestützprotokoll beziehungsweise passende weibliche Referenz.
+- Medizinische/Product-Freigabe der kleinen direkten Adams-Orientierung 18–24, der
+  praktischen Topend-Frauenorientierung 25–65 und der modellierten
+  Frauen-/Männerbänder bis 94.
 - Governance-Freigabe der Wandsitz-Orientierung für ältere Personen; ab 70 sind Teile
   extrapoliert.
 - Sicherheitsvertrag für maximalen Wandsitz bei bekanntem Bluthochdruck.

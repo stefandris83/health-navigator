@@ -67,7 +67,7 @@ test('Einbeinstand akzeptiert optionale Werte von 0 bis 1’000 Sekunden', () =>
   assert.strictEqual(schema.isDimensionComplete(dimension, { einbeinstand: 1001 }), false);
 });
 
-test('Messhilfen besitzen lokale Geschlechtsvarianten und Intersex verwendet die weibliche Illustration', () => {
+test('Messhilfen besitzen lokale Geschlechtsvarianten und zeigen standardmässig die weibliche Illustration', () => {
   const windowObject = makeQuestions();
   const questions = Object.fromEntries(windowObject.DIMENSIONS
     .flatMap((dimension) => dimension.questions)
@@ -95,7 +95,7 @@ test('Messhilfen besitzen lokale Geschlechtsvarianten und Intersex verwendet die
   assert.strictEqual(variant('maennlich'), 'maennlich');
   assert.strictEqual(variant('weiblich'), 'weiblich');
   assert.strictEqual(variant('intersex'), 'weiblich');
-  assert.strictEqual(variant(undefined), null);
+  assert.strictEqual(variant(undefined), 'weiblich');
 
   const refreshSource = source.match(/function refreshQuestionIllustrations\(\) \{[\s\S]*?\n  \}/);
   assert.ok(refreshSource, 'Dynamische Aktualisierung der Illustrationen fehlt');
@@ -112,7 +112,8 @@ test('Messhilfen besitzen lokale Geschlechtsvarianten und Intersex verwendet die
     `${variantSource[0]}; ${refreshSource[0]}; return refreshQuestionIllustrations;`
   )(state, { querySelectorAll: () => [image] });
   refresh();
-  assert.strictEqual(wrapper.hidden, true);
+  assert.strictEqual(image.src, 'frau.png');
+  assert.strictEqual(wrapper.hidden, false);
   state.answers.geschlecht = 'maennlich';
   refresh();
   assert.strictEqual(image.src, 'mann.png');
@@ -127,7 +128,7 @@ test('Messhilfen besitzen lokale Geschlechtsvarianten und Intersex verwendet die
   assert.ok(source.includes('if (id === \'geschlecht\') refreshQuestionIllustrations();'));
   assert.ok(source.includes('loading="lazy" decoding="async"'));
   assert.ok(source.includes('alt="" aria-hidden="true"'));
-  assert.ok(source.includes("if (wrapper) wrapper.hidden = true;"));
+  assert.ok(source.includes("if (wrapper) wrapper.hidden = false;"));
   assert.ok(source.includes('<div class="q-help">${String(q.help).replace(/\\n/g, \'<br>\')}</div>'));
   assert.ok(source.includes('${body}\n      ${questionIllustrationHTML(q)}'));
 });

@@ -565,11 +565,47 @@
     },
     {
       "id": "sources.strength.link_pushup",
-      "text": "Étude sur les pompes",
+      "text": "Cohorte sur les pompes",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f4d07e3225672e8e1402163de2cb50ac03e24e25b78efc0d6d493652c96de0c6"
+      "sourceContractHash": "66f7bb3476dacaa100fffb79bf10c5ea40436a33ef328d14f1bd141ceda0bc5e"
+    },
+    {
+      "id": "sources.strength.link_pushup_adams",
+      "text": "Adams: femmes 18–24",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1df053df4affcd20793c6db72e89d6e2565278f9ad28b77b6cdf283c7f9a7386"
+    },
+    {
+      "id": "sources.strength.link_pushup_payne",
+      "text": "Payne/CSEP: hommes jusqu’à 69 ans",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5d65913302078bd89f67a3113ea1595c589445f432a062dcba68aa8595f068a"
+    },
+    {
+      "id": "sources.strength.link_pushup_topend",
+      "text": "Topend: tableau pratique pour femmes",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "777710f69d6ebcc10f892b5f138a8de18a2eda15c1cc0971c5fd14133851e877"
+    },
+    {
+      "id": "sources.strength.link_pushup_rikli",
+      "text": "Rikli/Jones: gradient d’âge jusqu’à 94 ans",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "f304775a58b3c5f6f941d512bd3dbc56181c3751fce15e0a32820a3976eb5433"
     },
     {
       "id": "sources.strength.link_wall_sit",
@@ -773,11 +809,11 @@
     },
     {
       "id": "sources.scoring.point.2",
-      "text": "Les tests de condition physique facultatifs complètent la sous-dimension correspondante. La validation médicale prévoit que les pompes et la chaise contre un mur constituent ensemble la moitié « tests » de la sous-dimension musculaire ; la chaise contre un mur n’entre pas dans l’endurance cardiovasculaire. L’équilibre sur une jambe constitue la moitié « test » de l’équilibre et de la mobilité. Une évaluation n’est affichée que si l’âge, le sexe et le protocole de test s’y prêtent. À partir de 18 ans, l’évaluation de la chaise contre un mur repose sur une orientation harmonisée pour l’entraînement et ne constitue pas une norme clinique.",
+      "text": "Les tests de condition physique facultatifs complètent la sous-dimension correspondante. L’attribution validée sur le plan médical reste inchangée : les pompes et la chaise contre un mur constituent ensemble la moitié « tests » de la forme musculaire ; l’équilibre sur une jambe constitue la moitié « test » de l’équilibre et de la mobilité. Les femmes et les hommes effectuent les mêmes pompes standard sur la pointe des pieds. Les valeurs masculines jusqu’à 69 ans proviennent d’une référence directe. Chez les femmes, les 18–24 ans reposent sur une petite étude directe et les 25–65 ans sur une orientation pratique ; les tranches d’âge supérieures jusqu’à 94 ans sont modélisées. Les valeurs non directement validées, ainsi que l’évaluation de la chaise contre un mur, sont des orientations pour l’entraînement et non des normes cliniques ou des seuils diagnostiques.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "77c13a1be474c833dea0ecb09c7efac1d8dc424ded8389722b4d6e5eef4397f8"
+      "sourceContractHash": "ea35c5de6331c709a183e962b6a3c4ba21e42b9c36c202dc71229f057d87cf6b"
     },
     {
       "id": "sources.scoring.point.3",

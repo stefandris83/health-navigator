@@ -15,20 +15,20 @@
 ## Freigabestand
 
 - Sprache: `fr-CH`
-- Quellversion: `v1:b63d9395fffb5794bf0bdc1937c4cd632610499b932f72111392377cb58f8cee`
-- Gesamtbestand: **1198 Texte**
-- Freigegeben: **0** · Offen: **1198**
+- Quellversion: `v1:6d4ca086ed525de109f55a7cd69a79b93aa605dac95bd4295ed7ee9237dd352b`
+- Gesamtbestand: **1205 Texte**
+- Freigegeben: **0** · Offen: **1205**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1198 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1205 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1198 | 0 | 1198 |
-| Medizin | 665 | 0 | 665 |
+| Marketing | 1205 | 0 | 1205 |
+| Medizin | 672 | 0 | 672 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -37,7 +37,7 @@
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
 | [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 216 | 216 |
-| [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 118 | 118 |
+| [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
 | [Mentales Wohlbefinden](#bereich-mentales-wohlbefinden) | 5 | 92 | 92 |
@@ -45,7 +45,7 @@
 | [Helsana-Angebote &amp; Versicherung](#bereich-helsana-angebote-und-versicherung) | 11 | 76 | 76 |
 | [Medizin &amp; Sicherheit](#bereich-medizin-und-sicherheit) | 1 | 10 | 10 |
 | [Globale Navigation](#bereich-globale-navigation) | 1 | 48 | 48 |
-| [Quellen &amp; Transparenz](#bereich-quellen-und-transparenz) | 1 | 101 | 101 |
+| [Quellen &amp; Transparenz](#bereich-quellen-und-transparenz) | 1 | 105 | 105 |
 | [Übergreifende Ergebnisdarstellung](#bereich-ubergreifende-ergebnisdarstellung) | 2 | 125 | 125 |
 
 <a id="bereich-fragebogen"></a>
@@ -1526,29 +1526,29 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> 1 – Auf den Bauch legen, Hände unter die Schultern.
-> 2 – Arme strecken und Körper vom Boden abheben.
-> 3 – Körper, Hüfte und Beine in einer Linie halten.
-> 4 – Körper absenken, bis die Brust fast den Boden berührt.
-> 5 – Wieder hochdrücken in die Ausgangsposition.
+> **Für alle Geschlechter gilt dieselbe Standard\-Ausführung:**
+> 1 – Auf den Bauch legen, Hände etwa schulterbreit platzieren und auf den Zehen abstützen.
+> 2 – Arme strecken; der Körper bildet vom Kopf bis zu den Fersen eine gerade Linie.
+> 3 – Den Körper kontrolliert absenken, bis die Brust fast den Boden berührt und die Ellbogen mindestens etwa 90° gebeugt sind.
+> 4 – Wieder vollständig in die Ausgangsposition hochdrücken.
 >
-> Ohne Pause wiederholen, bis es nicht mehr geht.
+> Ohne Pause mit sauberer Form wiederholen. Beenden Sie den Test, sobald Sie die korrekte Ausführung nach einem Korrekturversuch nicht mehr halten können.
 >
 > **Was der Liegestütz\-Test verrät:**
-> Liegestütze messen die Kraft von Brust, Schultern, Armen und Rumpf. Starke Oberkörpermuskeln sind wichtig für Alltagstätigkeiten wie Tragen oder Aufstehen und helfen, Sturzverletzungen zu vermeiden.
+> Liegestütze messen die Kraftausdauer von Brust, Schultern, Armen und Rumpf. Starke Oberkörpermuskeln sind wichtig für Alltagstätigkeiten wie Tragen oder Aufstehen und helfen, Sturzverletzungen zu vermeiden.
 
 **Aktueller Text**
 
-> 1 – Allongez\-vous sur le ventre, les mains sous les épaules.
-> 2 – Tendez les bras et soulevez le corps du sol.
-> 3 – Gardez le corps, les hanches et les jambes alignés.
-> 4 – Abaissez le corps jusqu’à ce que la poitrine touche presque le sol.
-> 5 – Repoussez\-vous vers le haut pour revenir à la position de départ.
+> **La même exécution standard s’applique à tous les genres :**
+> 1 – Allongez\-vous sur le ventre, placez les mains à peu près à la largeur des épaules et prenez appui sur la pointe des pieds.
+> 2 – Tendez les bras ; le corps doit former une ligne droite de la tête aux talons.
+> 3 – Abaissez le corps de manière contrôlée jusqu’à ce que la poitrine touche presque le sol et que les coudes soient fléchis à environ 90° au moins.
+> 4 – Repoussez complètement pour revenir à la position de départ.
 >
-> Répétez sans pause jusqu’à ce que vous ne puissiez plus continuer.
+> Répétez sans pause en gardant une exécution correcte. Arrêtez le test dès que vous ne parvenez plus à corriger votre technique après un rappel.
 >
 > **Ce que révèle le test des pompes :**
-> Les pompes mesurent la force de la poitrine, des épaules, des bras et du tronc. Des muscles du haut du corps solides sont importants pour les activités quotidiennes telles que porter des objets ou se relever et contribuent à prévenir les blessures dues aux chutes.
+> Les pompes mesurent l’endurance musculaire de la poitrine, des épaules, des bras et du tronc. Des muscles du haut du corps solides sont importants pour les activités quotidiennes telles que porter des objets ou se relever et contribuent à prévenir les blessures dues aux chutes.
 
 #### Titel des Hilfetexts: Frage «Liegestuetze» · Titel des Hilfetexts
 
@@ -6842,7 +6842,7 @@ Themen in diesem Bereich:
 
 <a id="bereich-korperliche-fitness"></a>
 
-## 3. Körperliche Fitness (118 Texte)
+## 3. Körperliche Fitness (121 Texte)
 
 Themen in diesem Bereich:
 
@@ -6850,7 +6850,7 @@ Themen in diesem Bereich:
 - [Ausdauer &amp; Kondition](#thema-korperliche-fitness-ausdauer-und-kondition): 20 Texte, 20 offen
 - [Beweglichkeit &amp; Gleichgewicht](#thema-korperliche-fitness-beweglichkeit-und-gleichgewicht): 19 Texte, 19 offen
 - [Bewegung im Alltag &amp; Einstieg](#thema-korperliche-fitness-bewegung-im-alltag-und-einstieg): 19 Texte, 19 offen
-- [Krafttraining &amp; Muskulatur](#thema-korperliche-fitness-krafttraining-und-muskulatur): 34 Texte, 34 offen
+- [Krafttraining &amp; Muskulatur](#thema-korperliche-fitness-krafttraining-und-muskulatur): 37 Texte, 37 offen
 
 <a id="thema-korperliche-fitness-allgemeine-fitness"></a>
 
@@ -7803,21 +7803,22 @@ Themen in diesem Bereich:
 
 > Le test donne une indication sur l’équilibre statique et le contrôle neuromusculaire. Un bon équilibre favorise des mouvements quotidiens sûrs et devient particulièrement important avec l’avancée en âge.
 
-#### Medizinischer Hinweis: Ergebnisdetail Einbeinstand, Alter ausserhalb des Erwachsenen-Referenzbereichs
+#### Medizinischer Hinweis: Ergebnisdetail Einbeinstand, Alter ausserhalb des Referenzbereichs 18 bis 99
 
 - Seitenelement: Fitness-Kurztests
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.fitness_test.einbeinstand.reference_note.age_outside`
-- Prüfhinweis: Zielalter des Navigators bleibt eine offene Go-live-Entscheidung\.
+- Geschützte Begriffe: 18 à 99 ans \| mesure initiale personnelle
+- Prüfhinweis: Springer et al\. untersuchten direkt eine Altersgruppe von 80 bis 99 Jahren\.
 
 **Deutscher Ausgangstext**
 
-> Die hinterlegten Vergleichswerte sind für Erwachsene vorgesehen. Deshalb wird dieses Ergebnis nicht automatisch als Stärke oder Trainingsdefizit eingestuft.
+> Die hinterlegten Vergleichswerte reichen von 18 bis 99 Jahren. Ausserhalb dieses Altersbereichs wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.
 
 **Aktueller Text**
 
-> Les valeurs de comparaison enregistrées sont destinées aux adultes. Ce résultat n’est donc pas automatiquement considéré comme une force ou un déficit d’entraînement.
+> Les valeurs de comparaison enregistrées couvrent les personnes de 18 à 99 ans. En dehors de cette tranche d’âge, votre valeur est uniquement affichée comme mesure initiale personnelle.
 
 #### Dynamischer Text: 4-Wochen-Plan · persönlicher Abschluss-Check nach tiefem Einbeinstand
 
@@ -8179,7 +8180,7 @@ Themen in diesem Bereich:
 
 <a id="thema-korperliche-fitness-krafttraining-und-muskulatur"></a>
 
-### Krafttraining &amp; Muskulatur (34 Texte)
+### Krafttraining &amp; Muskulatur (37 Texte)
 
 #### Überschrift: Empfehlungskarte · Körperliche Fitness · Titel
 
@@ -8354,7 +8355,7 @@ Themen in diesem Bereich:
 
 > Test des pompes
 
-#### Begründung / Einordnung: Ergebnisdetail Liegestütz-Test ohne fachlich passendes Referenzprotokoll
+#### Begründung / Einordnung: Ergebnisdetail Liegestütz-Test ohne fachlich passende Vergleichsgruppe
 
 - Seitenelement: Fitness-Kurztests
 - Freigabe durch: Marketing, Medizin
@@ -8364,11 +8365,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ihr Ergebnis zeigt Ihre aktuelle Leistung in der gewählten Ausführungsform. Bis Protokoll und Referenztabelle eindeutig zusammenpassen, zeigen wir bewusst keine Normstufe.
+> Ihr Ergebnis zeigt Ihre aktuelle Leistung im Standard\-Liegestütz. Ohne fachlich passende Vergleichsgruppe zeigen wir bewusst keine Einordnungsstufe.
 
 **Aktueller Text**
 
-> Votre résultat montre votre performance actuelle dans la variante d’exécution choisie. Tant que le protocole et le tableau de référence ne concordent pas clairement, nous n’affichons volontairement aucun niveau normatif.
+> Votre résultat montre votre performance actuelle aux pompes standard. En l’absence d’un groupe de comparaison adapté, nous n’affichons volontairement aucun niveau d’évaluation.
 
 #### Begründung / Einordnung: Ergebnisdetail Liegestütz-Test, gesundheitliche Relevanz
 
@@ -8386,39 +8387,73 @@ Themen in diesem Bereich:
 
 > Le test reflète surtout l’endurance de force de la poitrine, des épaules, des bras et du tronc. La force musculaire favorise la résistance à l’effort, la mobilité et le vieillissement en bonne santé. Le résultat constitue une indication pour l’entraînement, et non un test du risque cardiovasculaire.
 
-#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, Alter ausserhalb des publizierten Referenzbereichs
+#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, Alter ausserhalb der verwendeten Vergleichsreihen
 
 - Seitenelement: Fitness-Kurztests
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.fitness_test.liegestuetze.reference_note.age_outside`
-- Geschützte Begriffe: de 20 à 69 ans \| mesure initiale personnelle
+- Geschützte Begriffe: femmes de 18 à 94 ans \| hommes de 20 à 94 ans \| mesure initiale personnelle
 - Prüfhinweis: Vor Go-live Zielalter und Referenzmodell fachlich entscheiden\.
 
 **Deutscher Ausgangstext**
 
-> Die verwendete Referenztabelle deckt das Alter von 20 bis 69 Jahren ab. Ausserhalb dieses publizierten Altersbereichs wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.
+> Die verwendeten Vergleichsreihen reichen bei Frauen von 18 bis 94 Jahren und bei Männern von 20 bis 94 Jahren. Ausserhalb dieser Altersbereiche wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.
 
 **Aktueller Text**
 
-> Le tableau de référence utilisé couvre les personnes de 20 à 69 ans. En dehors de cette plage d’âge publiée, votre valeur est uniquement affichée comme mesure initiale personnelle.
+> Les séries de comparaison utilisées couvrent les femmes de 18 à 94 ans et les hommes de 20 à 94 ans. En dehors de ces tranches d’âge, votre valeur est uniquement affichée comme mesure initiale personnelle.
 
-#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, sichtbares Standardprotokoll passt nicht zur hinterlegten Referenztabelle
+#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, direkte und praktische Standard-Liegestütz-Orientierung für Frauen 18 bis 65
 
 - Seitenelement: Fitness-Kurztests
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `recommendation.fitness_test.liegestuetze.reference_note.protocol_unconfirmed`
-- Geschützte Begriffe: variante sur les genoux \| pompes standard \| recommandation automatique
-- Prüfhinweis: Gilt technisch auch für intersex/andere, da derzeit keine eigene passende Referenz vorliegt\.
+- Technische ID: `recommendation.fitness_test.liegestuetze.reference_note.harmonized_orientation`
+- Geschützte Begriffe: femmes de 18 à 24 ans \| 25 à 65 ans \| échelle de pompes standard \| normes validées à l’échelle de la population
+- Prüfhinweis: Adams et al\. liefern die kleine direkte Stichprobe 18 bis 24; Topend veröffentlicht die praktische Tabelle ab 25, nennt deren Originalquelle jedoch unbekannt\.
 
 **Deutscher Ausgangstext**
 
-> Die verfügbare Vergleichstabelle für Frauen verwendet die Knie\-Variante, die aktuelle Anleitung beschreibt Standard\-Liegestütze. Bis diese Protokolle vereinheitlicht sind, wird keine Referenzstufe und keine automatische Empfehlung aus diesem Wert abgeleitet.
+> Für Frauen von 18 bis 24 Jahren verwendet die Einordnung eine kleine direkt untersuchte Standard\-Liegestütz\-Skala, von 25 bis 65 Jahren praktische Orientierungswerte. Beides sind keine populationsweit validierten Normen oder medizinischen Grenzen.
 
 **Aktueller Text**
 
-> Le tableau de comparaison disponible pour les femmes utilise la variante sur les genoux, alors que les instructions actuelles décrivent les pompes standard. Tant que ces protocoles ne sont pas harmonisés, aucun niveau de référence ni aucune recommandation automatique ne sont déduits de cette valeur.
+> Pour les femmes de 18 à 24 ans, l’évaluation utilise une petite échelle de pompes standard étudiée directement; de 25 à 65 ans, elle utilise des valeurs d’orientation pratiques. Il ne s’agit ni de normes validées à l’échelle de la population ni de seuils médicaux.
+
+#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, keine passende geschlechtsspezifische Vergleichsgruppe
+
+- Seitenelement: Fitness-Kurztests
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.fitness_test.liegestuetze.reference_note.reference_unavailable`
+- Geschützte Begriffe: Aucun groupe de comparaison adapté \| mesure initiale personnelle
+- Prüfhinweis: Kein binärer Tabellen-Fallback für intersex/andere\.
+
+**Deutscher Ausgangstext**
+
+> Für die gewählte Geschlechtsangabe liegt keine passende Vergleichsgruppe vor. Deshalb bleibt dieses Ergebnis eine persönliche Ausgangsmessung ohne automatische Einordnung oder Empfehlung.
+
+**Aktueller Text**
+
+> Aucun groupe de comparaison adapté n’est disponible pour le genre indiqué. Ce résultat reste donc une mesure initiale personnelle, sans évaluation ni recommandation automatique.
+
+#### Medizinischer Hinweis: Ergebnisdetail Liegestütz-Test, modellierte Altersfortschreibung bis 94
+
+- Seitenelement: Fitness-Kurztests
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.fitness_test.liegestuetze.reference_note.modeled_orientation`
+- Geschützte Begriffe: femmes de 66 à 94 ans \| hommes de 70 à 94 ans \| modèles \| pas des seuils médicaux
+- Prüfhinweis: Die Fortschreibung nutzt die geschlechtsspezifische Arm-Curl-Altersentwicklung aus Rikli und Jones; sie ist keine direkte Liegestütz-Norm\.
+
+**Deutscher Ausgangstext**
+
+> Für Frauen von 66 bis 94 Jahren und Männer von 70 bis 94 Jahren sind die Vergleichswerte altersadjustiert modelliert, weil direkte Standard\-Liegestütz\-Normen fehlen. Sie dienen nur als Trainingsorientierung und sind keine medizinischen Grenzen.
+
+**Aktueller Text**
+
+> Pour les femmes de 66 à 94 ans et les hommes de 70 à 94 ans, les valeurs de comparaison sont des modèles ajustés selon l’âge, car il n’existe pas de normes directes pour les pompes standard. Elles servent uniquement d’orientation pour l’entraînement et ne constituent pas des seuils médicaux.
 
 #### Dynamischer Text: 4-Wochen-Plan · persönliche Verlaufskontrolle nach tiefem Wandsitz-Wert ohne bekannten Bluthochdruck
 
@@ -8445,16 +8480,16 @@ Themen in diesem Bereich:
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.fitness_test.retest.liegestuetze`
 - Platzhalter: \{\{baselineValue\}\} \| \{\{orientationValue\}\}
-- Geschützte Begriffe: même variante d’exécution \| limite médicale \| douleurs \| vertiges \| difficulté respiratoire
-- Prüfhinweis: Nur bei fachlich passendem männlichem Referenzprotokoll im Alter 20 bis 69 automatisch ausgespielt\.
+- Geschützte Begriffe: test des pompes standard \| limite médicale \| douleurs \| vertiges \| difficulté respiratoire
+- Prüfhinweis: Nur bei scorebarer Standard-Liegestütz-Einordnung automatisch ausgespielt; praktische und modellierte Werte bleiben Trainingsorientierungen\.
 
 **Deutscher Ausgangstext**
 
-> Wiederholen Sie den Liegestütz\-Test mit derselben Ausführungsvariante und unter denselben Bedingungen. Vergleichen Sie mit Ihrem Ausgangswert von {{baselineValue}} Wiederholungen. Der nächste Vergleichswert liegt bei {{orientationValue}} Wiederholungen; er ist keine medizinische Grenzlinie und kein versprochener Vier\-Wochen\-Erfolg. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.
+> Wiederholen Sie den Standard\-Liegestütz\-Test unter denselben Bedingungen und mit derselben sauberen Ausführung. Vergleichen Sie mit Ihrem Ausgangswert von {{baselineValue}} Wiederholungen. Der nächste Vergleichswert liegt bei {{orientationValue}} Wiederholungen; er ist keine medizinische Grenzlinie und kein versprochener Vier\-Wochen\-Erfolg. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.
 
 **Aktueller Text**
 
-> Répétez le test des pompes avec la même variante d’exécution et dans les mêmes conditions. Comparez le résultat à votre valeur initiale de {{baselineValue}} répétitions. La prochaine valeur de comparaison est de {{orientationValue}} répétitions ; il ne s’agit ni d’une limite médicale ni d’un résultat promis après quatre semaines. Arrêtez\-vous en cas de douleurs, de vertiges ou de difficulté respiratoire.
+> Répétez le test des pompes standard dans les mêmes conditions et avec la même exécution correcte. Comparez le résultat à votre valeur initiale de {{baselineValue}} répétitions. La prochaine valeur de comparaison est de {{orientationValue}} répétitions ; il ne s’agit ni d’une limite médicale ni d’un résultat promis après quatre semaines. Arrêtez\-vous en cas de douleurs, de vertiges ou de difficulté respiratoire.
 
 #### Dynamischer Text: 4-Wochen-Plan · Sicherheitsersatz statt maximalem Wandsitz-Retest bei bekanntem Bluthochdruck
 
@@ -8546,16 +8581,33 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.fitness_test.wandsitz.reference_note.age_outside`
-- Geschützte Begriffe: à partir de 18 ans \| sans évaluation
-- Prüfhinweis: Zielalter des Checks bleibt eine offene Go-live-Entscheidung\.
+- Geschützte Begriffe: 18 à 94 ans \| mesure initiale personnelle
+- Prüfhinweis: Ab 95 wird wegen der begrenzten Modellbasis keine Scheingenauigkeit ausgegeben\.
 
 **Deutscher Ausgangstext**
 
-> Die Vergleichswerte gelten ab 18 Jahren. Unter 18 wird Ihr Ergebnis deshalb ohne Einordnung als persönliche Ausgangsmessung gezeigt.
+> Die verwendeten Vergleichswerte reichen von 18 bis 94 Jahren. Ausserhalb dieses Altersbereichs wird Ihr Wert ohne Einordnung als persönliche Ausgangsmessung gezeigt.
 
 **Aktueller Text**
 
-> Les valeurs de comparaison sont valables à partir de 18 ans. Avant 18 ans, votre résultat est donc affiché sans évaluation comme mesure initiale personnelle.
+> Les valeurs de comparaison utilisées couvrent les personnes de 18 à 94 ans. En dehors de cette tranche d’âge, votre valeur est affichée sans évaluation comme mesure initiale personnelle.
+
+#### Medizinischer Hinweis: Ergebnisdetail Wandsitz-Test, harmonisierte Trainingsorientierung 18 bis 94
+
+- Seitenelement: Fitness-Kurztests
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation`
+- Geschützte Begriffe: 18 à 94 ans \| orientation d’entraînement harmonisée \| en partie extrapolées \| ni d’une norme clinique
+- Prüfhinweis: Transparenzhinweis für die nur eingeschränkt belegten 60- bis 69- und extrapolierten 70\+-Bänder\.
+
+**Deutscher Ausgangstext**
+
+> Die Wandsitz\-Einordnung von 18 bis 94 Jahren ist eine harmonisierte Trainingsorientierung; die höheren Altersbänder sind teilweise extrapoliert. Sie ist keine klinische Norm oder medizinische Grenze.
+
+**Aktueller Text**
+
+> L’évaluation de la chaise contre un mur de 18 à 94 ans est une orientation d’entraînement harmonisée; les tranches d’âge supérieures sont en partie extrapolées. Il ne s’agit ni d’une norme clinique ni d’un seuil médical.
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -15350,15 +15402,15 @@ Themen in diesem Bereich:
 
 <a id="bereich-quellen-und-transparenz"></a>
 
-## 11. Quellen &amp; Transparenz (101 Texte)
+## 11. Quellen &amp; Transparenz (105 Texte)
 
 Themen in diesem Bereich:
 
-- [Fachquellen &amp; Quellenverzeichnis](#thema-quellen-und-transparenz-fachquellen-und-quellenverzeichnis): 101 Texte, 101 offen
+- [Fachquellen &amp; Quellenverzeichnis](#thema-quellen-und-transparenz-fachquellen-und-quellenverzeichnis): 105 Texte, 105 offen
 
 <a id="thema-quellen-und-transparenz-fachquellen-und-quellenverzeichnis"></a>
 
-### Fachquellen &amp; Quellenverzeichnis (101 Texte)
+### Fachquellen &amp; Quellenverzeichnis (105 Texte)
 
 #### Beschriftung: Quellenseite, Trennzeichen zwischen mehreren Fachquellen
 
@@ -16435,11 +16487,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Optionale Fitness\-Kurztests ergänzen den jeweils passenden Fitness\-Teilbereich. Medizinisch freigegeben ist: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte des Teilbereichs Muskulatur; der Wandsitz zählt nicht zur Kondition. Der Einbeinstand bildet die Testhälfte von Balance/Beweglichkeit. Sichtbar wird eine Einordnung nur bei passendem Alter, Geschlecht und Testprotokoll; beim Wandsitz beruht sie ab 18 Jahren auf einer harmonisierten Trainingsorientierung und ist keine klinische Norm.
+> Optionale Fitness\-Kurztests ergänzen den jeweils passenden Fitness\-Teilbereich. Die medizinisch freigegebene Zuordnung bleibt: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte der Muskulatur; der Einbeinstand die Testhälfte von Balance/Beweglichkeit. Beim Liegestütz gilt für Frauen und Männer dieselbe Standard\-Ausführung von den Zehen. Männerwerte bis 69 stammen aus einer direkten Referenz. Bei Frauen basiert 18–24 auf einer kleinen direkten Studie und 25–65 auf einer praktischen Orientierung; die höheren Altersbänder bis 94 sind modelliert. Nicht direkt validierte Werte sowie die Wandsitz\-Einordnung sind Trainingsorientierungen, keine klinischen Normen oder Diagnosegrenzen.
 
 **Aktueller Text**
 
-> Les tests de condition physique facultatifs complètent la sous\-dimension correspondante. La validation médicale prévoit que les pompes et la chaise contre un mur constituent ensemble la moitié « tests » de la sous\-dimension musculaire ; la chaise contre un mur n’entre pas dans l’endurance cardiovasculaire. L’équilibre sur une jambe constitue la moitié « test » de l’équilibre et de la mobilité. Une évaluation n’est affichée que si l’âge, le sexe et le protocole de test s’y prêtent. À partir de 18 ans, l’évaluation de la chaise contre un mur repose sur une orientation harmonisée pour l’entraînement et ne constitue pas une norme clinique.
+> Les tests de condition physique facultatifs complètent la sous\-dimension correspondante. L’attribution validée sur le plan médical reste inchangée : les pompes et la chaise contre un mur constituent ensemble la moitié « tests » de la forme musculaire ; l’équilibre sur une jambe constitue la moitié « test » de l’équilibre et de la mobilité. Les femmes et les hommes effectuent les mêmes pompes standard sur la pointe des pieds. Les valeurs masculines jusqu’à 69 ans proviennent d’une référence directe. Chez les femmes, les 18–24 ans reposent sur une petite étude directe et les 25–65 ans sur une orientation pratique ; les tranches d’âge supérieures jusqu’à 94 ans sont modélisées. Les valeurs non directement validées, ainsi que l’évaluation de la chaise contre un mur, sont des orientations pour l’entraînement et non des normes cliniques ou des seuils diagnostiques.
 
 #### Detailtext: Scoring · Fachlicher Punkt
 
@@ -16657,14 +16709,15 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `sources.strength.link_pushup`
+- Prüfhinweis: Beobachtungsstudie bei männlichen Feuerwehrleuten; keine Quelle der Referenzbänder\.
 
 **Deutscher Ausgangstext**
 
-> Liegestütz\-Studie
+> Liegestütz\-Kohorte
 
 **Aktueller Text**
 
-> Étude sur les pompes
+> Cohorte sur les pompes
 
 #### Quellenbezeichnung: Muskelkraft · Linkbeschriftung
 
@@ -16695,6 +16748,70 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Lignes directrices de l’OMS sur l’activité physique · EWGSOP2 sur la force musculaire et la sarcopénie · études sur les tests fonctionnels courts
+
+#### Quellenbezeichnung: Quellenseite, Alterungsgradient für modellierte Bänder bis 94
+
+- Seitenelement: Krafttraining und gesundes Altern
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `sources.strength.link_pushup_rikli`
+- Prüfhinweis: Arm-Curl-Altersentwicklung dient nur zur Modellierung, nicht als direkte Liegestütz-Norm\.
+
+**Deutscher Ausgangstext**
+
+> Rikli/Jones: Altersgradient bis 94
+
+**Aktueller Text**
+
+> Rikli/Jones: gradient d’âge jusqu’à 94 ans
+
+#### Quellenbezeichnung: Quellenseite, direkte Referenzgrundlage der Männerbänder bis 69
+
+- Seitenelement: Krafttraining und gesundes Altern
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `sources.strength.link_pushup_payne`
+- Prüfhinweis: Direkte Referenzgrundlage für die Männerbänder 20 bis 69\.
+
+**Deutscher Ausgangstext**
+
+> Payne/CSEP: Männer bis 69
+
+**Aktueller Text**
+
+> Payne/CSEP: hommes jusqu’à 69 ans
+
+#### Quellenbezeichnung: Quellenseite, praktische Standard-Liegestütz-Orientierung für Frauen 25 bis 65
+
+- Seitenelement: Krafttraining und gesundes Altern
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `sources.strength.link_pushup_topend`
+- Prüfhinweis: Originalquelle unbekannt; keine validierte populationsbezogene Norm\.
+
+**Deutscher Ausgangstext**
+
+> Topend: praktische Frauentabelle
+
+**Aktueller Text**
+
+> Topend: tableau pratique pour femmes
+
+#### Quellenbezeichnung: Quellenseite, Primärquelle der Standard-Liegestütz-Skala für Frauen 18 bis 24
+
+- Seitenelement: Krafttraining und gesundes Altern
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `sources.strength.link_pushup_adams`
+- Prüfhinweis: Kleine direkte Stichprobe; Skala noch nicht extern validiert\.
+
+**Deutscher Ausgangstext**
+
+> Adams: Frauen 18–24
+
+**Aktueller Text**
+
+> Adams: femmes 18–24
 
 #### Detailtext: Muskelkraft · Fachlicher Punkt
 

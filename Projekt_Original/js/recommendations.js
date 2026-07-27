@@ -422,11 +422,18 @@
     return (c && c.fitnessTests || []).find((test) => test.id === id) || null;
   }
 
+  function scorableFitnessReference(test) {
+    return !!test && (
+      test.referenceStatus === 'supported'
+      || test.referenceStatus === 'harmonized_orientation'
+      || test.referenceStatus === 'modeled_orientation'
+    );
+  }
+
   /* Eine negative Testnorm darf nur dann automatisch eine Empfehlung ausloesen,
    * wenn Testprotokoll und Referenz hinreichend zusammenpassen. */
   function actionableFitnessTest(test) {
-    return !!test && test.norm < 0
-      && (test.referenceStatus === 'supported' || test.referenceStatus === 'harmonized_orientation');
+    return scorableFitnessReference(test) && test.norm < 0;
   }
 
   function hasActionableFitnessDeficit(c, ids) {
@@ -452,7 +459,9 @@
       relevance: copyGet('recommendation.fitness_test.liegestuetze.relevance'),
       unrated: copyGet('recommendation.fitness_test.liegestuetze.interpretation.unrated'),
       ageOutside: copyGet('recommendation.fitness_test.liegestuetze.reference_note.age_outside'),
-      protocolUnconfirmed: copyGet('recommendation.fitness_test.liegestuetze.reference_note.protocol_unconfirmed'),
+      harmonizedOrientation: copyGet('recommendation.fitness_test.liegestuetze.reference_note.harmonized_orientation'),
+      modeledOrientation: copyGet('recommendation.fitness_test.liegestuetze.reference_note.modeled_orientation'),
+      referenceUnavailable: copyGet('recommendation.fitness_test.liegestuetze.reference_note.reference_unavailable'),
       recommendationId: 'fi_kraft',
     }),
     wandsitz: Object.freeze({
@@ -460,6 +469,7 @@
       relevance: copyGet('recommendation.fitness_test.wandsitz.relevance'),
       unrated: copyGet('recommendation.fitness_test.wandsitz.interpretation.unrated'),
       ageOutside: copyGet('recommendation.fitness_test.wandsitz.reference_note.age_outside'),
+      harmonizedOrientation: copyGet('recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation'),
       referenceUnavailable: copyGet('recommendation.fitness_test.wandsitz.reference_note.reference_unavailable'),
       recommendationId: 'fi_kraft',
     }),
@@ -486,7 +496,8 @@
 
   function fitnessReferenceNote(test, presentation) {
     if (test.referenceStatus === 'age_outside_reference') return presentation.ageOutside || null;
-    if (test.referenceStatus === 'protocol_unconfirmed') return presentation.protocolUnconfirmed || null;
+    if (test.referenceStatus === 'harmonized_orientation') return presentation.harmonizedOrientation || null;
+    if (test.referenceStatus === 'modeled_orientation') return presentation.modeledOrientation || null;
     if (test.referenceStatus === 'reference_unavailable') return presentation.referenceUnavailable || null;
     return null;
   }
@@ -504,7 +515,7 @@
     return (results.fitnessTests || []).map((test) => {
       const presentation = FITNESS_TEST_COPY[test.id];
       if (!presentation) return null;
-      const rating = test.referenceStatus === 'supported' || test.referenceStatus === 'harmonized_orientation'
+      const rating = scorableFitnessReference(test)
         ? FITNESS_TEST_STATUS_COPY[test.statusKey]
         : null;
       const deficient = actionableFitnessTest(test);

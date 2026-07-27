@@ -318,30 +318,95 @@ auswertbare Einbeinstand ist davon nicht betroffen. Die Umrechnung auf −2…+2
 erfolgt über die Vergleichstabellen in `js/scoring.js` (Format je Altersband:
 Schwellen für +2 / +1 / 0 / −1, darunter −2):
 
-- **Liegestütze** – Quelle: **CSEP-PATH (2019, 2. Aufl.)**, Normwerte 20–69 Jahre;
-  Zuordnung +2 ≈ «Excellent», +1 ≈ «Very good», 0 ≈ «Good», −1 ≈ «Fair»,
-  −2 ≈ «Needs improvement». Männer (Standard-Liegestütz): 20–29 [36/29/22/17],
-  30–39 [30/22/17/12], 40–49 [25/17/13/10], 50–59 [21/13/10/7],
-  60–69 [18/11/8/5].
-  Frauen (**Knie-Variante gemäss CSEP-Protokoll**): 20–29 [30/21/15/10],
-  30–39 [27/20/13/8], 40–49 [24/15/11/5], 50–59 [21/11/7/2],
-  60–69 [17/12/5/2].
-  *Korrekturen ggü. Vorversion:* Frauen 50–59 «Very good» ab **11** (statt 13),
-  Frauen 60–69 «Fair» ab **2** (statt 1) – exakt gemäss CSEP-PATH.
-  **Protokollhinweis / Empfehlung:** Die CSEP-Frauennormen basieren auf der
-  Knie-Variante; die sichtbare Anleitung beschreibt aktuell (1:1 gemäss
-  Fragenset) den Standard-Liegestütz. Für die nächste Review-Runde empfohlen:
-  Anleitung und Referenz auf dasselbe Protokoll vereinheitlichen. Für **> 69
-  Jahre** existieren keine passenden publizierten Normen; diese Werte werden
-  deshalb sichtbar nur als Rohwert und nicht für Status, Score oder Empfehlung
-  verwendet.
+- **Liegestütze – einheitliches Standardprotokoll.** Für alle Geschlechter gilt
+  dieselbe Ausführung: Zehen als Drehpunkt, gerade Linie von Kopf bis Fersen,
+  kontrolliertes Absenken bis die Brust fast den Boden berührt und die Ellbogen
+  mindestens ungefähr 90° gebeugt sind, vollständiges Hochdrücken, keine Pause.
+  Nach einem nicht korrigierbaren Formfehler endet der Test. Knie-Liegestütze
+  zählen nicht als Wiederholung dieses Kurztests.
+
+  Für Männer von 20 bis 69 Jahren bleibt die stärkere direkte Grundlage aus
+  **CSEP-PATH / Payne et al. (2000)** bestehen. Die Studie erfasste 571 gesunde
+  Personen von 15 bis 69 Jahren; die Produktbänder lauten:
+
+  | Alter | +2 | +1 | 0 | −1 |
+  | --- | ---: | ---: | ---: | ---: |
+  | 20–29 | 36 | 29 | 22 | 17 |
+  | 30–39 | 30 | 22 | 17 | 12 |
+  | 40–49 | 25 | 17 | 13 | 10 |
+  | 50–59 | 21 | 13 | 10 | 7 |
+  | 60–69 | 18 | 11 | 8 | 5 |
+
+  Direkte Standard-Liegestütz-Normen für Männer ab 70 wurden in der Recherche
+  nicht gefunden. Deshalb werden die CSEP-Grenzen ab 70 anhand der
+  geschlechtsspezifischen Arm-Curl-Mediane von **Rikli & Jones (1999)**
+  altersadjustiert. Deren Stichprobe umfasst 7'183 selbstständig lebende Erwachsene
+  bis 94 Jahre; der Arm-Curl dient nur als Alterungsgradient, nicht als
+  protokollgleicher Ersatztest:
+
+  | Alter | +2 | +1 | 0 | −1 | Status |
+  | --- | ---: | ---: | ---: | ---: | --- |
+  | 70–79 | 16 | 10 | 7 | 4 | modelliert |
+  | 80–89 | 15 | 9 | 6 | 4 | modelliert |
+  | 90–94 | 12 | 7 | 5 | 3 | modelliert |
+
+  Für Frauen wird die frühere Knie-Liegestütz-Referenz nicht mehr verwendet.
+  Von 18 bis 24 Jahren gilt die direkt untersuchte, aber kleine und noch nicht
+  extern validierte Skala von **Adams et al. (2022)**. Damit die fachlichen
+  Kategorien zur vierstufigen sichtbaren Produktsprache passen, werden
+  «sehr gut» und «gut» als *Solide Basis* zusammengeführt: +2 = exzellent ab 18,
+  +1 = sehr gut oder gut ab 8, 0 = ausreichend ab 5 und −1 =
+  Verbesserungsbedarf ab 0. Damit werden zehn saubere Standard-Liegestütze bei
+  18- bis 24-jährigen Frauen wie in der Studie positiv als *Solide Basis*
+  eingeordnet.
+
+  Von 25 bis 65 dient die vom Auftraggeber bereitgestellte
+  **Topend-Standard-Liegestütz-Tabelle** als praktische Orientierung. Topend
+  erklärt selbst, dass die Originalquelle unbekannt ist und die Frauentabellen
+  nachträglich angepasst wurden; diese Werte sind deshalb keine validierte
+  populationsbezogene Norm. Für die vier sichtbaren App-Status werden die sieben
+  Topend-Kategorien transparent zusammengeführt: +2 = «exzellent»; +1 = «gut»
+  oder «überdurchschnittlich»; 0 = «durchschnittlich»; −1 =
+  «unterdurchschnittlich»; −2 = «schlecht» oder «sehr schlecht».
+
+  | Alter | +2 | +1 | 0 | −1 | Status |
+  | --- | ---: | ---: | ---: | ---: | --- |
+  | 18–24 | 18 | 8 | 5 | 0 | kleine direkt untersuchte Orientierung |
+  | 25–29 | 33 | 14 | 9 | 5 | praktische Orientierung |
+  | 30–39 | 29 | 13 | 7 | 3 | praktische Orientierung |
+  | 40–49 | 21 | 10 | 5 | 2 | praktische Orientierung |
+  | 50–59 | 17 | 9 | 4 | 2 | praktische Orientierung |
+  | 60–65 | 13 | 6 | 3 | 2 | praktische Orientierung |
+  | 66–69 | 12 | 6 | 3 | 2 | modelliert |
+  | 70–79 | 11 | 5 | 3 | 2 | modelliert |
+  | 80–89 | 10 | 5 | 3 | 2 | modelliert |
+  | 90–94 | 9 | 4 | 3 | 2 | modelliert |
+
+  Die Frauenbänder 66–94 sind die bereitgestellte konservative Fortschreibung
+  der 60–65-Zeile anhand des Rikli/Jones-Alterungsgradienten. Sie sind keine
+  direkt gemessenen Liegestütz-Normen. Die Adams-Stichprobe umfasst 72 überwiegend
+  aktive Frauen; die deutliche Schwellenänderung beim Wechsel zur praktischen
+  Topend-Reihe mit 25 Jahren wird deshalb transparent dokumentiert und nicht als
+  scheinpräzise populationsweite Validierung ausgegeben.
+
+  Quellen: [Payne et al. 2000](https://pubmed.ncbi.nlm.nih.gov/11098155/),
+  [Adams et al. 2022](https://pmc.ncbi.nlm.nih.gov/articles/PMC9362895/),
+  [Topend-Standardtabelle](https://www.topendsports.com/testing/tests/home-pushup.html),
+  [Rikli & Jones 1999](https://cir.nii.ac.jp/crid/1363951796123009152) und
+  [Mier et al. 2014 zur unterschiedlichen Belastung von Standard- und
+  Knie-Liegestütz](https://digitalcommons.wku.edu/ijes/vol7/iss2/7/).
+  Die modellierten Bänder sind sichtbar als Trainingsorientierung gekennzeichnet.
+  Ab 95 sowie bei «intersex/andere» bleibt der Rohwert ohne automatische
+  Einordnung, Score-Wirkung oder Empfehlung sichtbar.
 - **Einbeinstand (Augen offen, bester Versuch)** – Quelle: **Springer et al. 2007**
   (J Geriatr Phys Ther, n = 549): Normwerte sind **altersabhängig**; relevante
   Geschlechtsunterschiede bestehen laut Studienlage **nicht** («performance is …
   not related to gender»). Die Tabellen sind deshalb strukturell pro Geschlecht
   hinterlegt (Vorgabe Fragenset/Score-Dokument), aktuell mit identischen Werten:
   < 40 [45/30/20/10], 40–49 [40/27/18/9], 50–59 [37/24/15/8], 60–69 [30/20/12/6],
-  70–79 [20/14/8/4], **neu 80+ [10/6/4/2]**. Zusatzevidenz: Araujo et al. 2022
+  70–79 [20/14/8/4], **80–99 [10/6/4/2]**. Springer et al. untersuchten direkt
+  eine Gruppe von 80 bis 99 Jahren; damit ist Alter 94 empirisch abgedeckt.
+  Zusatzevidenz: Araujo et al. 2022
   (BJSM) – Unfähigkeit, 10 s auf einem Bein zu stehen, ist bei 51–75-Jährigen mit
   erhöhter Gesamtmortalität assoziiert (10-s-Kriterium konsistent mit den
   −1/−2-Schwellen ab 50).
@@ -360,7 +425,7 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   | 60–69 | 65 / 45 / 30 s | 45 / 30 / 20 s |
   | 70–79 | 50 / 35 / 20 s | 35 / 22 / 12 s |
   | 80–89 | 35 / 25 / 12 s | 25 / 15 / 8 s |
-  | 90+ | 25 / 15 / 5 s | 15 / 8 / 3 s |
+  | 90–94 | 25 / 15 / 5 s | 15 / 8 / 3 s |
 
   Die Ausgangsbasis sind die von **McIntosh et al. (1998)** veröffentlichten
   geschlechts- und altersbezogenen P25-/P50-/P75-Werte für 548 Erwachsene. Diese
@@ -389,7 +454,7 @@ Schwellen für +2 / +1 / 0 / −1, darunter −2):
   demselben strikten Protokoll: Rücken und Becken an der Wand, Hüfte und Knie etwa
   90°, parallele hüftbreite Füsse, gleichmässige Belastung beider Beine, keine
   Unterstützung durch Hände oder Arme, normale Atmung und Ende beim klaren
-  Positionsverlust. Unter 18 Jahren sowie bei «intersex/andere» wird mangels
+  Positionsverlust. Unter 18 und über 94 Jahren sowie bei «intersex/andere» wird mangels
   passender Vergleichsgruppe ausschliesslich der Rohwert gezeigt – ohne Kategorie,
   Statusfarbe, Score-Einfluss oder automatisch daraus abgeleitete Empfehlung.
 
@@ -405,18 +470,20 @@ die verbale Einordnung und der tatsächlich eingegebene Messwert.
 Technisch werden +2 als *Stark*, +1 als *Solide Basis*, 0 als *Ausbaufähig* und
 −1/−2 als *Erhöhte Aufmerksamkeit* dargestellt:
 
-- Einbeinstand ab 18 Jahren: vierstufige Einordnung und bei −1/−2 Verknüpfung mit
-  `fi_beweglichkeit`;
-- Standard-Liegestütze bei Männern von 20 bis 69 Jahren: vierstufige Einordnung
-  und bei −1/−2 Verknüpfung mit `fi_kraft`;
-- Liegestütze ausserhalb dieses Altersbereichs sowie bei weiblich/intersex/andere:
-  Rohwert ohne Kategorie, Statusfarbe, Score-Einfluss oder automatisch daraus
-  abgeleitete Empfehlung, bis
-  Ausführungsvariante und Referenztabelle fachlich vereinheitlicht sind;
+- Einbeinstand von 18 bis 99 Jahren: vierstufige Einordnung und bei −1/−2
+  Verknüpfung mit `fi_beweglichkeit`;
+- Standard-Liegestütze bei Männern von 20 bis 69 Jahren: direkte vierstufige
+  Einordnung; bei Männern 70–94 modellierte Trainingsorientierung;
+- Standard-Liegestütze bei Frauen von 18 bis 24 Jahren: kleine direkt untersuchte,
+  noch nicht extern validierte Orientierung; von 25 bis 65 Jahren: praktische
+  Topend-Orientierung; bei Frauen 66–94 modellierte Trainingsorientierung. In allen
+  scorebaren Bändern kann −1/−2 auf `fi_kraft` verweisen. Unterhalb der jeweiligen
+  Altersuntergrenze, ab 95 sowie bei «intersex/andere» bleibt nur der Rohwert ohne
+  Kategorie, Score-Einfluss oder automatische Empfehlung;
 - Wandsitz ab 18 Jahren bei weiblich/männlich: vierstufige harmonisierte
   Trainingsorientierung; *Erhöhte Aufmerksamkeit* kann als Trainingshinweis auf
   `fi_kraft` verweisen. Das ist keine Diagnose und
-  keine klinische Risikoeinstufung. Unter 18 sowie bei «intersex/andere» gilt der
+  keine klinische Risikoeinstufung. Unter 18, ab 95 sowie bei «intersex/andere» gilt der
   zuvor beschriebene Rohwertvertrag ohne Einordnung und Folgewirkung.
 
 **Sichtbarer Stärkenvertrag.** Eine zusammengefasste Topstärke für körperliche
@@ -642,8 +709,8 @@ bleiben unverändert: *Taillenumfang*, *familiäre Erkrankungen (ja/nein)*, *Blu
    des Score-Dokuments; ohne Taillenangabe der **BMI** (Bänder gemäss Score-Dokument,
    inkl. Untergewicht = 0). **Neu:** Untergewicht (BMI < 18,5) erzeugt zusätzlich ein
    *medizinisches Hinweissignal* (ohne Punktabzug).
-4. **Einbeinstand:** neues Altersband **80+** ergänzt (Referenzwerte fallen ab 80
-   deutlich ab, vgl. Springer et al. 2007); Funktion nimmt neu auch das Geschlecht
+4. **Einbeinstand:** Altersband **80–99** ergänzt (Referenzwerte fallen ab 80
+   deutlich ab, vgl. Springer et al. 2007); Funktion nimmt auch das Geschlecht
    entgegen (Tabellen strukturell geschlechtsspezifisch, Werte gemäss Evidenz identisch).
 5. **Fehlende Antworten** werden dimensionsintern ignoriert (Mittelwert der vorhandenen
    Antworten) statt fix durch 7 bzw. 5 geteilt – robuster bei übersprungenen Fragen;
@@ -665,18 +732,23 @@ bleiben unverändert: *Taillenumfang*, *familiäre Erkrankungen (ja/nein)*, *Blu
 **Zielaltervertrag:** Der Check akzeptiert Personen ab 16 Jahren. Bei 16- und
 17-Jährigen bleiben eingegebene Fitness-Kurztests als persönliche Rohwerte sichtbar,
 werden wegen der erst später beginnenden Referenztabellen aber nicht eingestuft,
-gescort oder für automatische Empfehlungen verwendet. Der Einbeinstand und der
-Wandsitz werden ab 18 Jahren referenziert, der Liegestütz-Test ab 20 Jahren.
+gescort oder für automatische Empfehlungen verwendet. Einbeinstand und Wandsitz
+werden ab 18 Jahren referenziert; beim Standard-Liegestütz beginnt die
+Frauenorientierung ab 18 und die Männerreferenz ab 20.
 
 ## Offene fachliche Entscheidungen vor Produktivgang
 
 Diese Punkte wurden bewusst **nicht** ohne medizinische bzw. Product-Entscheidung
 im Code verändert:
 
-1. **Liegestütz-Protokoll:** Die weibliche CSEP-Referenztabelle basiert auf der
-   Knie-Variante, die sichtbare Testanleitung beschreibt jedoch den
-   Standard-Liegestütz. Anleitung, erfasste Variante und Referenztabelle müssen
-   vor einer Freigabe dasselbe Protokoll abbilden.
+1. **Liegestütz-Orientierung:** Das Protokoll ist technisch auf Standard-Liegestütze
+   für alle Geschlechter vereinheitlicht. Die direkt untersuchte Adams-Skala für
+   Frauen von 18 bis 24, die praktische Topend-Reihe ab 25 und die modellierten
+   66+-Bänder sind im Produkt als unterschiedlich starke Evidenz gekennzeichnet.
+   Vor Produktivfreigabe müssen Medizin und
+   Product jedoch die praktische Topend-Frauenreihe bis 65 sowie die indirekt aus
+   Arm-Curl-Verläufen modellierten Frauen- und Männerbänder bis 94 ausdrücklich
+   akzeptieren. Diese Werte sind Trainingsorientierungen, keine Diagnosegrenzen.
 2. **Kardiovaskuläres Mustermodell:** Die Faktoren in `cvRiskPattern()` verwenden
    nachvollziehbare, aber heuristische Gewichte (z. B. 2 für Rauchen oder
    Bluthochdruck, 1,5 für ein Körperprofil mittlerer Signalstärke und 1 für
@@ -690,8 +762,8 @@ im Code verändert:
    Die früheren praxisbasierten Wandsitz-Benchmarks wurden durch die dokumentierte
    harmonisierte Trainingsorientierung ersetzt; sie wird ausdrücklich nicht als
    klinische Norm oder Diagnose ausgegeben. Fachlich offen bleiben die
-   Protokoll-/Referenzangleichung bei Liegestützen, die Produktivfreigabe der nur
-   eingeschränkt belegten 60–69- und der extrapolierten 70+-Wandsitzbänder sowie der
+   Produktivfreigabe der praktischen beziehungsweise modellierten Liegestützbänder,
+   die nur eingeschränkt belegten 60–69- und extrapolierten 70+-Wandsitzbänder sowie der
    Sicherheitsvertrag für maximale Wandsitz-Retests. Zusätzlich benötigen die neue
    Schwelle und Rangfolge der mehrquellenbasierten Fitness-Topstärke eine explizite
    medizinische und Product-Freigabe; sie sind keine validierte klinische

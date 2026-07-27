@@ -709,9 +709,49 @@
       "context": "Quellenseite, statischer Inhalt: sources.strength.link_pushup",
       "kind": "source_label",
       "reviewers": "Marketing, Medizin",
-      "text": "Liegestütz-Studie",
+      "text": "Liegestütz-Kohorte",
       "reviewStatus": "needs-review",
-      "comment": ""
+      "comment": "Beobachtungsstudie bei männlichen Feuerwehrleuten; keine Quelle der Referenzbänder."
+    },
+    {
+      "id": "sources.strength.link_pushup_adams",
+      "section": "Krafttraining und gesundes Altern",
+      "context": "Quellenseite, Primärquelle der Standard-Liegestütz-Skala für Frauen 18 bis 24",
+      "kind": "source_label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Adams: Frauen 18–24",
+      "reviewStatus": "needs-review",
+      "comment": "Kleine direkte Stichprobe; Skala noch nicht extern validiert."
+    },
+    {
+      "id": "sources.strength.link_pushup_payne",
+      "section": "Krafttraining und gesundes Altern",
+      "context": "Quellenseite, direkte Referenzgrundlage der Männerbänder bis 69",
+      "kind": "source_label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Payne/CSEP: Männer bis 69",
+      "reviewStatus": "needs-review",
+      "comment": "Direkte Referenzgrundlage für die Männerbänder 20 bis 69."
+    },
+    {
+      "id": "sources.strength.link_pushup_topend",
+      "section": "Krafttraining und gesundes Altern",
+      "context": "Quellenseite, praktische Standard-Liegestütz-Orientierung für Frauen 25 bis 65",
+      "kind": "source_label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Topend: praktische Frauentabelle",
+      "reviewStatus": "needs-review",
+      "comment": "Originalquelle unbekannt; keine validierte populationsbezogene Norm."
+    },
+    {
+      "id": "sources.strength.link_pushup_rikli",
+      "section": "Krafttraining und gesundes Altern",
+      "context": "Quellenseite, Alterungsgradient für modellierte Bänder bis 94",
+      "kind": "source_label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Rikli/Jones: Altersgradient bis 94",
+      "reviewStatus": "needs-review",
+      "comment": "Arm-Curl-Altersentwicklung dient nur zur Modellierung, nicht als direkte Liegestütz-Norm."
     },
     {
       "id": "sources.strength.link_wall_sit",
@@ -969,7 +1009,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.scoring.point.2",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Optionale Fitness-Kurztests ergänzen den jeweils passenden Fitness-Teilbereich. Medizinisch freigegeben ist: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte des Teilbereichs Muskulatur; der Wandsitz zählt nicht zur Kondition. Der Einbeinstand bildet die Testhälfte von Balance/Beweglichkeit. Sichtbar wird eine Einordnung nur bei passendem Alter, Geschlecht und Testprotokoll; beim Wandsitz beruht sie ab 18 Jahren auf einer harmonisierten Trainingsorientierung und ist keine klinische Norm.",
+      "text": "Optionale Fitness-Kurztests ergänzen den jeweils passenden Fitness-Teilbereich. Die medizinisch freigegebene Zuordnung bleibt: Liegestütz und Wandsitz bilden gemeinsam die Testhälfte der Muskulatur; der Einbeinstand die Testhälfte von Balance/Beweglichkeit. Beim Liegestütz gilt für Frauen und Männer dieselbe Standard-Ausführung von den Zehen. Männerwerte bis 69 stammen aus einer direkten Referenz. Bei Frauen basiert 18–24 auf einer kleinen direkten Studie und 25–65 auf einer praktischen Orientierung; die höheren Altersbänder bis 94 sind modelliert. Nicht direkt validierte Werte sowie die Wandsitz-Einordnung sind Trainingsorientierungen, keine klinischen Normen oder Diagnosegrenzen.",
       "reviewStatus": "needs-review",
       "comment": ""
     },

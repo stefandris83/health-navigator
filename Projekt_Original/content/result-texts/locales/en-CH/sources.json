@@ -565,11 +565,47 @@
     },
     {
       "id": "sources.strength.link_pushup",
-      "text": "Push-up study",
+      "text": "Push-up cohort",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f4d07e3225672e8e1402163de2cb50ac03e24e25b78efc0d6d493652c96de0c6"
+      "sourceContractHash": "66f7bb3476dacaa100fffb79bf10c5ea40436a33ef328d14f1bd141ceda0bc5e"
+    },
+    {
+      "id": "sources.strength.link_pushup_adams",
+      "text": "Adams: women 18–24",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "1df053df4affcd20793c6db72e89d6e2565278f9ad28b77b6cdf283c7f9a7386"
+    },
+    {
+      "id": "sources.strength.link_pushup_payne",
+      "text": "Payne/CSEP: men up to 69",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a5d65913302078bd89f67a3113ea1595c589445f432a062dcba68aa8595f068a"
+    },
+    {
+      "id": "sources.strength.link_pushup_topend",
+      "text": "Topend: practical women’s table",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "777710f69d6ebcc10f892b5f138a8de18a2eda15c1cc0971c5fd14133851e877"
+    },
+    {
+      "id": "sources.strength.link_pushup_rikli",
+      "text": "Rikli/Jones: age gradient to 94",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "f304775a58b3c5f6f941d512bd3dbc56181c3751fce15e0a32820a3976eb5433"
     },
     {
       "id": "sources.strength.link_wall_sit",
@@ -773,11 +809,11 @@
     },
     {
       "id": "sources.scoring.point.2",
-      "text": "Optional short fitness tests complement the relevant fitness sub-area. The medically approved allocation is as follows: push-ups and wall sits together form the test half of the muscular fitness sub-area; the wall sit does not count towards cardiovascular endurance. The single-leg stance forms the test half of balance/mobility. A category is only shown when age, sex and test protocol match; from age 18, the wall-sit category is based on a harmonised training guide and is not a clinical norm.",
+      "text": "Optional short fitness tests complement the relevant fitness sub-area. The medically approved allocation remains unchanged: push-ups and wall sits together form the test half of muscular fitness; the single-leg stance forms the test half of balance/mobility. Women and men use the same standard push-up from the toes. Values for men up to age 69 come from a direct reference. For women, ages 18–24 are based on a small direct study and ages 25–65 on practical guidance; the older age bands up to 94 are modelled. Values without direct validation, as well as the wall-sit rating, are training guidance rather than clinical norms or diagnostic thresholds.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "77c13a1be474c833dea0ecb09c7efac1d8dc424ded8389722b4d6e5eef4397f8"
+      "sourceContractHash": "ea35c5de6331c709a183e962b6a3c4ba21e42b9c36c202dc71229f057d87cf6b"
     },
     {
       "id": "sources.scoring.point.3",

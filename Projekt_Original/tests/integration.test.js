@@ -1177,6 +1177,7 @@ test('Insights: Stärken sind konkret & Fallback greift bei belastetem Profil', 
 test('Insights: Spitzenfitness verlangt WHO-Ziel, hohen Score und zwei unabhängige Top-Kurztests', () => {
   const withoutMuscleTest = { ...HEALTHY_ANSWERS };
   delete withoutMuscleTest.wandsitz;
+  delete withoutMuscleTest.liegestuetze;
   const withoutMuscleResults = W.Scoring.computeResults(withoutMuscleTest);
   const withoutMuscleCtx = W.Recommendations.buildContext(withoutMuscleTest, withoutMuscleResults);
   const withoutMuscleStrengths = W.Recommendations.keyStrengths(withoutMuscleCtx, 5);
@@ -1231,7 +1232,7 @@ test('Insights: Spitzenfitness verlangt WHO-Ziel, hohen Score und zwei unabhäng
     .some((item) => item.id === 'st_fitness_top'), 'offenes Stabilitätsfeld widerspricht einer breiten Top-Fitnessaussage');
 });
 
-test('Insights: nicht passende Kurztest-Referenzen erzeugen keine Spitzenfitness', () => {
+test('Insights: nur passende Kurztest-Referenzen erzeugen eine Spitzenfitness', () => {
   const cases = [
     { ...HEALTHY_ANSWERS, alter: 17, geschlecht: 'maennlich', einbeinstand: 120, liegestuetze: 100, wandsitz: 300 },
     { ...HEALTHY_ANSWERS, alter: 45, geschlecht: 'intersex', einbeinstand: 120, liegestuetze: 100, wandsitz: 300 },
@@ -1243,16 +1244,26 @@ test('Insights: nicht passende Kurztest-Referenzen erzeugen keine Spitzenfitness
       .some((item) => item.id === 'st_fitness_top'), answers.alter + '/' + answers.geschlecht);
   });
 
-  const femaleWithoutSupportedMuscleTest = { ...HEALTHY_ANSWERS, liegestuetze: 100 };
-  delete femaleWithoutSupportedMuscleTest.wandsitz;
-  const femaleResults = W.Scoring.computeResults(femaleWithoutSupportedMuscleTest);
+  const femaleWithStandardPushup = { ...HEALTHY_ANSWERS, liegestuetze: 100 };
+  delete femaleWithStandardPushup.wandsitz;
+  const femaleResults = W.Scoring.computeResults(femaleWithStandardPushup);
   assert.strictEqual(
     femaleResults.fitnessTests.find((item) => item.id === 'liegestuetze').referenceStatus,
-    'protocol_unconfirmed'
+    'harmonized_orientation'
   );
-  const femaleCtx = W.Recommendations.buildContext(femaleWithoutSupportedMuscleTest, femaleResults);
-  assert.ok(!W.Recommendations.keyStrengths(femaleCtx, 5)
-    .some((item) => item.id === 'st_fitness_top'));
+  const femaleCtx = W.Recommendations.buildContext(femaleWithStandardPushup, femaleResults);
+  assert.ok(W.Recommendations.keyStrengths(femaleCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'Standard-Liegestütze können die weibliche Topstärke belegen');
+
+  const modeledMale = { ...HEALTHY_ANSWERS, alter: 72, geschlecht: 'maennlich' };
+  const modeledMaleResults = W.Scoring.computeResults(modeledMale);
+  assert.strictEqual(
+    modeledMaleResults.fitnessTests.find((item) => item.id === 'liegestuetze').referenceStatus,
+    'modeled_orientation',
+  );
+  const modeledMaleCtx = W.Recommendations.buildContext(modeledMale, modeledMaleResults);
+  assert.ok(W.Recommendations.keyStrengths(modeledMaleCtx, 5)
+    .some((item) => item.id === 'st_fitness_top'), 'ein starkes modelliertes 70+-Band kann Spitzenfitness mitbelegen');
 });
 
 test('Insights: Rauchfrei bleibt als Schutzfaktor verfügbar, aber nur als Füllkandidat', () => {
@@ -1497,15 +1508,119 @@ test('Fitness-Kurztests: interne Schwellen werden auf vier sichtbare Statusstufe
   });
 });
 
+test('Liegestütz: Standard-Protokoll besitzt stabile Frauen- und Männerbänder bis 94', () => {
+  const bands = {
+    maennlich: [
+      [[20, 29], [36, 29, 22, 17], 'supported'],
+      [[30, 39], [30, 22, 17, 12], 'supported'],
+      [[40, 49], [25, 17, 13, 10], 'supported'],
+      [[50, 59], [21, 13, 10, 7], 'supported'],
+      [[60, 69], [18, 11, 8, 5], 'supported'],
+      [[70, 79], [16, 10, 7, 4], 'modeled_orientation'],
+      [[80, 89], [15, 9, 6, 4], 'modeled_orientation'],
+      [[90, 94], [12, 7, 5, 3], 'modeled_orientation'],
+    ],
+    weiblich: [
+      [[18, 24], [18, 8, 5, 0], 'harmonized_orientation'],
+      [[25, 29], [33, 14, 9, 5], 'harmonized_orientation'],
+      [[30, 39], [29, 13, 7, 3], 'harmonized_orientation'],
+      [[40, 49], [21, 10, 5, 2], 'harmonized_orientation'],
+      [[50, 59], [17, 9, 4, 2], 'harmonized_orientation'],
+      [[60, 65], [13, 6, 3, 2], 'harmonized_orientation'],
+      [[66, 69], [12, 6, 3, 2], 'modeled_orientation'],
+      [[70, 79], [11, 5, 3, 2], 'modeled_orientation'],
+      [[80, 89], [10, 5, 3, 2], 'modeled_orientation'],
+      [[90, 94], [9, 4, 3, 2], 'modeled_orientation'],
+    ],
+  };
+
+  Object.entries(bands).forEach(([geschlecht, ageBands]) => {
+    ageBands.forEach(([ages, thresholds, expectedStatus]) => {
+      ages.forEach((alter) => {
+        const values = [thresholds[0], thresholds[1], thresholds[2], thresholds[3]];
+        if (thresholds[3] > 0) values.push(thresholds[3] - 1);
+        const tests = values
+          .map((liegestuetze) => W.Scoring.computeResults({ alter, geschlecht, liegestuetze }).fitnessTests[0]);
+        const expectedNorms = thresholds[3] > 0 ? [2, 1, 0, -1, -2] : [2, 1, 0, -1];
+        const expectedNext = thresholds[3] > 0
+          ? [null, thresholds[0], thresholds[1], thresholds[2], thresholds[3]]
+          : [null, thresholds[0], thresholds[1], thresholds[2]];
+        assert.deepStrictEqual(tests[0].thresholds, thresholds, `${geschlecht}, ${alter}: Altersband`);
+        assert.deepStrictEqual(tests.map((item) => item.norm), expectedNorms);
+        assert.deepStrictEqual(tests.map((item) => item.nextThreshold), expectedNext);
+        tests.forEach((item) => {
+          assert.strictEqual(item.referenceStatus, expectedStatus);
+          assert.strictEqual(item.scorable, true);
+        });
+      });
+    });
+  });
+
+  const tenAt24 = W.Scoring.computeResults({ alter: 24, geschlecht: 'weiblich', liegestuetze: 10 })
+    .fitnessTests[0];
+  const tenAt25 = W.Scoring.computeResults({ alter: 25, geschlecht: 'weiblich', liegestuetze: 10 })
+    .fitnessTests[0];
+  assert.strictEqual(tenAt24.norm, 1, '10 Standard-Liegestütze sind mit 18–24 gemäss Adams positiv');
+  assert.strictEqual(tenAt24.statusKey, 'solide');
+  assert.strictEqual(tenAt25.norm, 0, 'ab 25 greift transparent die praktische Topend-Reihe');
+  assert.strictEqual(tenAt25.statusKey, 'ausbau');
+});
+
+test('Fitness-Kurztests: Altersgrenzen und unpassende Vergleichsgruppen bleiben konsistent', () => {
+  const cases = [
+    { alter: 17, geschlecht: 'weiblich', id: 'liegestuetze', expected: 'age_outside_reference' },
+    { alter: 18, geschlecht: 'weiblich', id: 'liegestuetze', expected: 'harmonized_orientation' },
+    { alter: 19, geschlecht: 'maennlich', id: 'liegestuetze', expected: 'age_outside_reference' },
+    { alter: 20, geschlecht: 'maennlich', id: 'liegestuetze', expected: 'supported' },
+    { alter: 94, geschlecht: 'weiblich', id: 'liegestuetze', expected: 'modeled_orientation' },
+    { alter: 95, geschlecht: 'weiblich', id: 'liegestuetze', expected: 'age_outside_reference' },
+    { alter: 94, geschlecht: 'maennlich', id: 'wandsitz', expected: 'harmonized_orientation' },
+    { alter: 95, geschlecht: 'maennlich', id: 'wandsitz', expected: 'age_outside_reference' },
+    { alter: 99, geschlecht: 'weiblich', id: 'einbeinstand', expected: 'supported' },
+    { alter: 100, geschlecht: 'weiblich', id: 'einbeinstand', expected: 'age_outside_reference' },
+    { alter: 45, geschlecht: 'intersex', id: 'liegestuetze', expected: 'reference_unavailable' },
+    { alter: 45, geschlecht: 'intersex', id: 'wandsitz', expected: 'reference_unavailable' },
+    { alter: 95, geschlecht: 'intersex', id: 'liegestuetze', expected: 'age_outside_reference' },
+    { alter: 95, geschlecht: 'intersex', id: 'wandsitz', expected: 'age_outside_reference' },
+  ];
+
+  cases.forEach(({ alter, geschlecht, id, expected }) => {
+    const answers = { alter, geschlecht, [id]: 5 };
+    const result = W.Scoring.computeResults(answers);
+    const testResult = result.fitnessTests.find((item) => item.id === id);
+    assert.strictEqual(testResult.referenceStatus, expected, `${alter}/${geschlecht}/${id}`);
+    assert.strictEqual(testResult.scorable, ['supported', 'harmonized_orientation', 'modeled_orientation'].includes(expected));
+    const insight = W.Recommendations.fitnessTestInsights(result, []).find((item) => item.id === id);
+    if (expected !== 'supported') assert.ok(insight.referenceNote, `${alter}/${geschlecht}/${id}: transparenter Hinweis`);
+  });
+});
+
+test('Fitness-Kurztests: beide binären Referenzgruppen sind mit 94 Jahren vollständig abgedeckt', () => {
+  ['weiblich', 'maennlich'].forEach((geschlecht) => {
+    const results = W.Scoring.computeResults({
+      alter: 94,
+      geschlecht,
+      einbeinstand: 10,
+      liegestuetze: 10,
+      wandsitz: 30,
+    });
+    assert.deepStrictEqual(results.fitnessTests.map((item) => item.id), ['einbeinstand', 'liegestuetze', 'wandsitz']);
+    results.fitnessTests.forEach((item) => assert.strictEqual(item.scorable, true, `${geschlecht}/${item.id}`));
+    assert.strictEqual(results.fitnessTests.find((item) => item.id === 'einbeinstand').referenceStatus, 'supported');
+    assert.strictEqual(results.fitnessTests.find((item) => item.id === 'liegestuetze').referenceStatus, 'modeled_orientation');
+    assert.strictEqual(results.fitnessTests.find((item) => item.id === 'wandsitz').referenceStatus, 'harmonized_orientation');
+  });
+});
+
 test('Wandsitz: alle acht harmonisierten Altersbänder je Geschlecht besitzen stabile Grenzen', () => {
   const bands = {
     maennlich: [
       [[18, 29], [135, 95, 75]], [[30, 39], [120, 85, 65]], [[40, 49], [100, 70, 50]], [[50, 59], [85, 60, 40]],
-      [[60, 69], [65, 45, 30]], [[70, 79], [50, 35, 20]], [[80, 89], [35, 25, 12]], [[90, 105], [25, 15, 5]],
+      [[60, 69], [65, 45, 30]], [[70, 79], [50, 35, 20]], [[80, 89], [35, 25, 12]], [[90, 94], [25, 15, 5]],
     ],
     weiblich: [
       [[18, 29], [110, 80, 60]], [[30, 39], [100, 72, 55]], [[40, 49], [67, 50, 33]], [[50, 59], [61, 45, 30]],
-      [[60, 69], [45, 30, 20]], [[70, 79], [35, 22, 12]], [[80, 89], [25, 15, 8]], [[90, 105], [15, 8, 3]],
+      [[60, 69], [45, 30, 20]], [[70, 79], [35, 22, 12]], [[80, 89], [25, 15, 8]], [[90, 94], [15, 8, 3]],
     ],
   };
 
@@ -1598,17 +1713,41 @@ test('Fitness-Kurztests: 40/40/20-Komponentenmodell bündelt beide Krafttests in
   assert.strictEqual(wallsit.scoreComponent, 'musculature');
 });
 
-test('Fitness-Kurztests: unpassende Vergleichsgruppen bleiben neutral, ungescort und ohne Scheinempfehlung', () => {
+test('Fitness-Kurztests: Referenzqualität steuert Einordnung, Score und Empfehlungen', () => {
   const female = { ...HEALTHY_ANSWERS, liegestuetze: 0, krafttraining: 'tage3plus' };
   const femaleResults = W.Scoring.computeResults(female);
   const pushup = femaleResults.fitnessTests.find((test) => test.id === 'liegestuetze');
-  assert.strictEqual(pushup.referenceStatus, 'protocol_unconfirmed');
+  assert.strictEqual(pushup.referenceStatus, 'harmonized_orientation');
+  assert.strictEqual(pushup.scorable, true);
   const femaleCtx = W.Recommendations.buildContext(female, femaleResults);
-  assert.ok(!W.Recommendations.recommendationsForDimension('fitness', femaleCtx).some((r) => r.id === 'fi_kraft'));
+  assert.ok(W.Recommendations.recommendationsForDimension('fitness', femaleCtx).some((r) => r.id === 'fi_kraft'));
+  assert.ok(
+    W.Recommendations.fitnessTestInsights(femaleResults, [])
+      .find((item) => item.id === 'liegestuetze').referenceNote,
+    'praktische Frauenorientierung bleibt im Ergebnis transparent',
+  );
 
   const olderMale = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, alter: 72, geschlecht: 'maennlich', liegestuetze: 0 });
-  assert.strictEqual(olderMale.fitnessTests.find((test) => test.id === 'liegestuetze').referenceStatus, 'age_outside_reference');
+  const olderPushup = olderMale.fitnessTests.find((test) => test.id === 'liegestuetze');
+  assert.strictEqual(olderPushup.referenceStatus, 'modeled_orientation');
+  assert.strictEqual(olderPushup.scorable, true);
+  assert.ok(
+    W.Recommendations.fitnessTestInsights(olderMale, [])
+      .find((item) => item.id === 'liegestuetze').referenceNote,
+    'modellierte Altersorientierung bleibt im Ergebnis transparent',
+  );
+  const olderCtx = W.Recommendations.buildContext(
+    { ...HEALTHY_ANSWERS, alter: 72, geschlecht: 'maennlich', liegestuetze: 0 },
+    olderMale,
+  );
+  assert.ok(
+    W.Recommendations.recommendationsForDimension('fitness', olderCtx).some((item) => item.id === 'fi_kraft'),
+    'ein tiefer modellierter Wert bleibt score- und empfehlungswirksam',
+  );
   assert.strictEqual(olderMale.fitnessTests.find((test) => test.id === 'wandsitz').referenceStatus, 'harmonized_orientation');
+
+  const tooOld = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, alter: 95, geschlecht: 'maennlich', liegestuetze: 20 });
+  assert.strictEqual(tooOld.fitnessTests.find((test) => test.id === 'liegestuetze').referenceStatus, 'age_outside_reference');
 
   const unsupportedCases = [
     { alter: 17, geschlecht: 'maennlich', expectedStatus: 'age_outside_reference' },
@@ -1754,7 +1893,10 @@ test('Fitness-Kurztests: Ergebnisdarstellung enthält alle Tests und verweist au
   const wallsit = insights.find((item) => item.id === 'wandsitz');
   assert.strictEqual(wallsit.ratingKey, 'solide');
   assert.strictEqual(wallsit.ratingLabel, W.ResultCopy.get('service.status_band.solide.label'));
-  assert.strictEqual(wallsit.referenceNote, null);
+  assert.strictEqual(
+    wallsit.referenceNote,
+    W.ResultCopy.get('recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation'),
+  );
   assert.ok(wallsit.nextReference.includes('100 Sekunden'));
 });
 

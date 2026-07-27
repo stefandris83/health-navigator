@@ -4682,12 +4682,16 @@
     {
       "id": "recommendation.fitness_test.einbeinstand.reference_note.age_outside",
       "section": "Fitness-Kurztests",
-      "context": "Ergebnisdetail Einbeinstand, Alter ausserhalb des Erwachsenen-Referenzbereichs",
+      "context": "Ergebnisdetail Einbeinstand, Alter ausserhalb des Referenzbereichs 18 bis 99",
       "kind": "medical_notice",
       "reviewers": "Marketing, Medizin",
-      "text": "Die hinterlegten Vergleichswerte sind für Erwachsene vorgesehen. Deshalb wird dieses Ergebnis nicht automatisch als Stärke oder Trainingsdefizit eingestuft.",
+      "text": "Die hinterlegten Vergleichswerte reichen von 18 bis 99 Jahren. Ausserhalb dieses Altersbereichs wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.",
+      "requiredTerms": [
+        "18 bis 99 Jahren",
+        "persönliche Ausgangsmessung"
+      ],
       "reviewStatus": "needs-review",
-      "comment": "Zielalter des Navigators bleibt eine offene Go-live-Entscheidung."
+      "comment": "Springer et al. untersuchten direkt eine Altersgruppe von 80 bis 99 Jahren."
     },
     {
       "id": "recommendation.fitness_test.liegestuetze.title",
@@ -4712,41 +4716,73 @@
     {
       "id": "recommendation.fitness_test.liegestuetze.interpretation.unrated",
       "section": "Fitness-Kurztests",
-      "context": "Ergebnisdetail Liegestütz-Test ohne fachlich passendes Referenzprotokoll",
+      "context": "Ergebnisdetail Liegestütz-Test ohne fachlich passende Vergleichsgruppe",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "Ihr Ergebnis zeigt Ihre aktuelle Leistung in der gewählten Ausführungsform. Bis Protokoll und Referenztabelle eindeutig zusammenpassen, zeigen wir bewusst keine Normstufe.",
+      "text": "Ihr Ergebnis zeigt Ihre aktuelle Leistung im Standard-Liegestütz. Ohne fachlich passende Vergleichsgruppe zeigen wir bewusst keine Einordnungsstufe.",
       "reviewStatus": "needs-review",
       "comment": "Verhindert eine Scheinpräzision bei Protokoll- oder Altersabweichungen."
     },
     {
       "id": "recommendation.fitness_test.liegestuetze.reference_note.age_outside",
       "section": "Fitness-Kurztests",
-      "context": "Ergebnisdetail Liegestütz-Test, Alter ausserhalb des publizierten Referenzbereichs",
+      "context": "Ergebnisdetail Liegestütz-Test, Alter ausserhalb der verwendeten Vergleichsreihen",
       "kind": "medical_notice",
       "reviewers": "Marketing, Medizin",
-      "text": "Die verwendete Referenztabelle deckt das Alter von 20 bis 69 Jahren ab. Ausserhalb dieses publizierten Altersbereichs wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.",
+      "text": "Die verwendeten Vergleichsreihen reichen bei Frauen von 18 bis 94 Jahren und bei Männern von 20 bis 94 Jahren. Ausserhalb dieser Altersbereiche wird Ihr Wert nur als persönliche Ausgangsmessung gezeigt.",
       "requiredTerms": [
-        "20 bis 69 Jahren",
+        "18 bis 94 Jahren",
+        "20 bis 94 Jahren",
         "persönliche Ausgangsmessung"
       ],
       "reviewStatus": "needs-review",
       "comment": "Vor Go-live Zielalter und Referenzmodell fachlich entscheiden."
     },
     {
-      "id": "recommendation.fitness_test.liegestuetze.reference_note.protocol_unconfirmed",
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.harmonized_orientation",
       "section": "Fitness-Kurztests",
-      "context": "Ergebnisdetail Liegestütz-Test, sichtbares Standardprotokoll passt nicht zur hinterlegten Referenztabelle",
+      "context": "Ergebnisdetail Liegestütz-Test, direkte und praktische Standard-Liegestütz-Orientierung für Frauen 18 bis 65",
       "kind": "medical_notice",
       "reviewers": "Marketing, Medizin",
-      "text": "Die verfügbare Vergleichstabelle für Frauen verwendet die Knie-Variante, die aktuelle Anleitung beschreibt Standard-Liegestütze. Bis diese Protokolle vereinheitlicht sind, wird keine Referenzstufe und keine automatische Empfehlung aus diesem Wert abgeleitet.",
+      "text": "Für Frauen von 18 bis 24 Jahren verwendet die Einordnung eine kleine direkt untersuchte Standard-Liegestütz-Skala, von 25 bis 65 Jahren praktische Orientierungswerte. Beides sind keine populationsweit validierten Normen oder medizinischen Grenzen.",
       "requiredTerms": [
-        "Knie-Variante",
-        "Standard-Liegestütze",
-        "keine automatische Empfehlung"
+        "18 bis 24 Jahren",
+        "25 bis 65 Jahren",
+        "Standard-Liegestütz-Skala",
+        "keine populationsweit validierten Normen"
       ],
       "reviewStatus": "needs-review",
-      "comment": "Gilt technisch auch für intersex/andere, da derzeit keine eigene passende Referenz vorliegt."
+      "comment": "Adams et al. liefern die kleine direkte Stichprobe 18 bis 24; Topend veröffentlicht die praktische Tabelle ab 25, nennt deren Originalquelle jedoch unbekannt."
+    },
+    {
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.modeled_orientation",
+      "section": "Fitness-Kurztests",
+      "context": "Ergebnisdetail Liegestütz-Test, modellierte Altersfortschreibung bis 94",
+      "kind": "medical_notice",
+      "reviewers": "Marketing, Medizin",
+      "text": "Für Frauen von 66 bis 94 Jahren und Männer von 70 bis 94 Jahren sind die Vergleichswerte altersadjustiert modelliert, weil direkte Standard-Liegestütz-Normen fehlen. Sie dienen nur als Trainingsorientierung und sind keine medizinischen Grenzen.",
+      "requiredTerms": [
+        "66 bis 94 Jahren",
+        "70 bis 94 Jahren",
+        "modelliert",
+        "keine medizinischen Grenzen"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Die Fortschreibung nutzt die geschlechtsspezifische Arm-Curl-Altersentwicklung aus Rikli und Jones; sie ist keine direkte Liegestütz-Norm."
+    },
+    {
+      "id": "recommendation.fitness_test.liegestuetze.reference_note.reference_unavailable",
+      "section": "Fitness-Kurztests",
+      "context": "Ergebnisdetail Liegestütz-Test, keine passende geschlechtsspezifische Vergleichsgruppe",
+      "kind": "medical_notice",
+      "reviewers": "Marketing, Medizin",
+      "text": "Für die gewählte Geschlechtsangabe liegt keine passende Vergleichsgruppe vor. Deshalb bleibt dieses Ergebnis eine persönliche Ausgangsmessung ohne automatische Einordnung oder Empfehlung.",
+      "requiredTerms": [
+        "keine passende Vergleichsgruppe",
+        "persönliche Ausgangsmessung"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Kein binärer Tabellen-Fallback für intersex/andere."
     },
     {
       "id": "recommendation.fitness_test.wandsitz.title",
@@ -4788,13 +4824,29 @@
       "context": "Ergebnisdetail Wandsitz-Test, Alter ausserhalb der harmonisierten Erwachsenentabelle",
       "kind": "medical_notice",
       "reviewers": "Marketing, Medizin",
-      "text": "Die Vergleichswerte gelten ab 18 Jahren. Unter 18 wird Ihr Ergebnis deshalb ohne Einordnung als persönliche Ausgangsmessung gezeigt.",
+      "text": "Die verwendeten Vergleichswerte reichen von 18 bis 94 Jahren. Ausserhalb dieses Altersbereichs wird Ihr Wert ohne Einordnung als persönliche Ausgangsmessung gezeigt.",
       "requiredTerms": [
-        "ab 18 Jahren",
-        "ohne Einordnung"
+        "18 bis 94 Jahren",
+        "persönliche Ausgangsmessung"
       ],
       "reviewStatus": "needs-review",
-      "comment": "Zielalter des Checks bleibt eine offene Go-live-Entscheidung."
+      "comment": "Ab 95 wird wegen der begrenzten Modellbasis keine Scheingenauigkeit ausgegeben."
+    },
+    {
+      "id": "recommendation.fitness_test.wandsitz.reference_note.harmonized_orientation",
+      "section": "Fitness-Kurztests",
+      "context": "Ergebnisdetail Wandsitz-Test, harmonisierte Trainingsorientierung 18 bis 94",
+      "kind": "medical_notice",
+      "reviewers": "Marketing, Medizin",
+      "text": "Die Wandsitz-Einordnung von 18 bis 94 Jahren ist eine harmonisierte Trainingsorientierung; die höheren Altersbänder sind teilweise extrapoliert. Sie ist keine klinische Norm oder medizinische Grenze.",
+      "requiredTerms": [
+        "18 bis 94 Jahren",
+        "harmonisierte Trainingsorientierung",
+        "teilweise extrapoliert",
+        "keine klinische Norm"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Transparenzhinweis für die nur eingeschränkt belegten 60- bis 69- und extrapolierten 70+-Bänder."
     },
     {
       "id": "recommendation.fitness_test.wandsitz.reference_note.reference_unavailable",
@@ -4872,16 +4924,16 @@
       "context": "4-Wochen-Plan fi_kraft, persönlicher Abschluss-Check nach tiefem Liegestütz-Test",
       "kind": "template",
       "reviewers": "Marketing, Medizin",
-      "text": "Wiederholen Sie den Liegestütz-Test mit derselben Ausführungsvariante und unter denselben Bedingungen. Vergleichen Sie mit Ihrem Ausgangswert von {{baselineValue}} Wiederholungen. Der nächste Vergleichswert liegt bei {{orientationValue}} Wiederholungen; er ist keine medizinische Grenzlinie und kein versprochener Vier-Wochen-Erfolg. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.",
+      "text": "Wiederholen Sie den Standard-Liegestütz-Test unter denselben Bedingungen und mit derselben sauberen Ausführung. Vergleichen Sie mit Ihrem Ausgangswert von {{baselineValue}} Wiederholungen. Der nächste Vergleichswert liegt bei {{orientationValue}} Wiederholungen; er ist keine medizinische Grenzlinie und kein versprochener Vier-Wochen-Erfolg. Brechen Sie bei Schmerzen, Schwindel oder Atemnot ab.",
       "requiredTerms": [
-        "derselben Ausführungsvariante",
+        "Standard-Liegestütz-Test",
         "keine medizinische Grenzlinie",
         "Schmerzen",
         "Schwindel",
         "Atemnot"
       ],
       "reviewStatus": "needs-review",
-      "comment": "Nur bei fachlich passendem männlichem Referenzprotokoll im Alter 20 bis 69 automatisch ausgespielt."
+      "comment": "Nur bei scorebarer Standard-Liegestütz-Einordnung automatisch ausgespielt; praktische und modellierte Werte bleiben Trainingsorientierungen."
     },
     {
       "id": "recommendation.fitness_test.retest.wandsitz",

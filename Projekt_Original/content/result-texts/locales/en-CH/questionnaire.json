@@ -741,11 +741,11 @@
     },
     {
       "id": "questionnaire.question.liegestuetze.help",
-      "text": "1 – Lie face down with your hands beneath your shoulders.\n2 – Straighten your arms and lift your body off the floor.\n3 – Keep your body, hips and legs in a straight line.\n4 – Lower your body until your chest almost touches the floor.\n5 – Push back up to the starting position.\n\nRepeat without a break until you cannot continue.\n\n<b>What the push-up test shows:</b>\nPush-ups measure the strength of your chest, shoulders, arms and core. Strong upper-body muscles are important for everyday activities such as carrying or getting up and help prevent injuries from falls.",
+      "text": "<b>The same standard technique applies to all genders:</b>\n1 – Lie face down, place your hands about shoulder-width apart and support yourself on your toes.\n2 – Straighten your arms; your body should form a straight line from head to heels.\n3 – Lower your body under control until your chest nearly touches the floor and your elbows are bent to at least about 90°.\n4 – Push all the way back up to the starting position.\n\nRepeat without a break while maintaining correct form. Stop the test as soon as you can no longer correct your technique after one cue.\n\n<b>What the push-up test shows:</b>\nPush-ups measure the muscular endurance of your chest, shoulders, arms and core. Strong upper-body muscles are important for everyday activities such as carrying or getting up and help prevent injuries from falls.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2eff26723b0176172148408bdd1bb23cefbfdbba818315aa7db31daa8cf94651"
+      "sourceContractHash": "8ff8086d58d16d5ed6ab9a819fbd04aa1c9145022ea1f8185725326b0d681cca"
     },
     {
       "id": "questionnaire.question.liegestuetze.help_title",
