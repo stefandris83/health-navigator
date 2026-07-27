@@ -232,6 +232,9 @@ Ein optionaler Test wird nie als schlecht behandelt, wenn er ausgelassen wurde. 
 Der Check kann ab 16 Jahren verwendet werden. Bei 16- und 17-Jährigen werden eingetragene Kurztestwerte nur als persönliche Rohwerte gezeigt; sie verändern weder Score noch Empfehlung. Ab 95 bleiben Liegestütz und Wandsitz wegen der begrenzten Modellbasis ebenfalls Rohwerte; der direkt untersuchte Einbeinstand reicht bis 99.
 
 Die Referenztabellen und ihre fachlichen Grenzen stehen in [`scoring.js`](../js/scoring.js) und ausführlicher in [`QUELLEN.md`](QUELLEN.md).
+Die Ergebnisansicht zeigt bewusst keine zusätzlichen blauen Methoden- oder
+Referenzboxen in den drei Kurztestkarten; Einordnung, Rohwert, Bedeutung,
+Relevanz und gegebenenfalls die nächste Orientierung bleiben erhalten.
 
 ### 6.6 Referenztabellen der optionalen Fitness-Kurztests
 

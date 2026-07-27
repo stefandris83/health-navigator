@@ -157,7 +157,9 @@ präzisere Einzelstärke wie «WHO-Bewegungsziel erreicht» sichtbar. Diese Rang
 
 Ausgefüllte Einbeinstand-, Liegestütz- und Wandsitz-Tests erscheinen immer direkt
 in der Dimension «Körperliche Fitness». Rohwert, fachlich zulässige Einordnung,
-gesundheitliche Relevanz und Aussagegrenzen werden getrennt ausgewiesen. Ein
+persönliche Bedeutung und gesundheitliche Relevanz werden übersichtlich
+ausgewiesen; Methoden- und Aussagegrenzen bleiben in `docs/QUELLEN.md` und
+`docs/SCORING_MODELL.md` dokumentiert. Ein
 Wert mit «Erhöhter Aufmerksamkeit» verweist auf dieselbe Kraft- oder
 Balance-Empfehlung; liegt diese im Aktionsplan, ergänzt Woche 4 eine persönliche
 Verlaufskontrolle mit dem ursprünglichen Testwert. Im Fitness-Score zählen
