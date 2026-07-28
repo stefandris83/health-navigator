@@ -15,20 +15,20 @@
 ## Freigabestand
 
 - Sprache: `fr-CH`
-- Quellversion: `v1:6d4ca086ed525de109f55a7cd69a79b93aa605dac95bd4295ed7ee9237dd352b`
-- Gesamtbestand: **1205 Texte**
-- Freigegeben: **0** · Offen: **1205**
+- Quellversion: `v1:eb4dab30367b9ccf8a2fdf2f4c0f4c05c47ce3d54df4d0dda3ab68bdda827725`
+- Gesamtbestand: **1206 Texte**
+- Freigegeben: **0** · Offen: **1206**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1205 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1206 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1205 | 0 | 1205 |
-| Medizin | 672 | 0 | 672 |
+| Marketing | 1206 | 0 | 1206 |
+| Medizin | 673 | 0 | 673 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -36,7 +36,7 @@
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 216 | 216 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 217 | 217 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -632,11 +632,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.
+> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ergänzt den BMI als praktischer Marker der zentralen Fettverteilung. Wenn Sie den Wert nicht kennen oder schwanger sind, lassen Sie das Feld einfach leer.
 
 **Aktueller Text**
 
-> Mesurez après une expiration normale, approximativement à mi\-distance entre la dernière côte palpable et le bord supérieur de la crête iliaque. La graisse abdominale est métaboliquement active : le rapport entre le tour de taille et la taille du corps est souvent plus parlant que le poids seul. Si vous ne connaissez pas la valeur, laissez simplement le champ vide.
+> Mesurez après une expiration normale, approximativement à mi\-distance entre la dernière côte palpable et le bord supérieur de la crête iliaque. La graisse abdominale est métaboliquement active : le rapport tour de taille/taille complète l’IMC comme marqueur pratique de la répartition centrale des graisses. Si vous ne connaissez pas la valeur ou si vous êtes enceinte, laissez simplement le champ vide.
 
 #### Frage: Frage «Belastbarkeit» · Fragetext
 
@@ -3473,7 +3473,7 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (216 Texte)
+## 2. Einflussfaktoren (217 Texte)
 
 Themen in diesem Bereich:
 
@@ -3481,7 +3481,7 @@ Themen in diesem Bereich:
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
 - [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 98 Texte, 98 offen
-- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
+- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 32 Texte, 32 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
 - [Weitere Einflussfaktoren](#thema-einflussfaktoren-weitere-einflussfaktoren): 7 Texte, 7 offen
@@ -5704,7 +5704,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
-### Körperzusammensetzung &amp; Stoffwechsel (31 Texte)
+### Körperzusammensetzung &amp; Stoffwechsel (32 Texte)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5732,11 +5732,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Taillenumfang und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung und ergänzen sich bei der Einordnung des Stoffwechsel\- und Herz\-Kreislauf\-Risikos. Beide Werte sind Orientierungen und keine Diagnose.
+> Taille\-Grösse\-Verhältnis und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung. Beide Werte sind Screeningorientierungen und keine Diagnose oder vollständige Herz\-Kreislauf\-Risikoberechnung.
 
 **Aktueller Text**
 
-> Le tour de taille et l’IMC décrivent différents aspects de la composition corporelle et se complètent pour évaluer le risque métabolique et cardiovasculaire. Ces deux valeurs sont des repères, et non un diagnostic.
+> Le rapport tour de taille/taille et l’IMC décrivent différents aspects de la composition corporelle. Ce sont deux repères de dépistage, et non un diagnostic ni un calcul complet du risque cardiovasculaire.
 
 #### Nächster Schritt: Dimensionsdetail · nächster Schritt mit bereits angegebenem Taillenumfang
 
@@ -5792,17 +5792,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist`
-- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
 - Prüfhinweis: Verhindert die falsche Behauptung eines erhöhten Taillenumfangs, wenn das Signal allein vom BMI ausgelöst wird\.
 
 **Deutscher Ausgangstext**
 
-> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihr angegebener Taillenumfang von {{waist}} cm liegt nach der verwendeten Referenz {{waistStatusLabel}}. Beide Werte beschreiben unterschiedliche Aspekte und sollten zusammen eingeordnet werden.
+> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Bei Erwachsenen mit einem BMI ab 35 verwendet der Check den BMI als Bewertungsgrundlage. Der angegebene Taillenumfang von {{waist}} cm und das daraus berechnete Taille\-Grösse\-Verhältnis {{whtr}} werden angezeigt, aber nicht zusätzlich gescort.
 
 **Aktueller Text**
 
-> Votre IMC est de {{bmi}} et se situe donc dans la plage « {{bmiClassLabel}} ». Le tour de taille indiqué, de {{waist}} cm, se situe {{waistStatusLabel}} selon la référence utilisée. Ces deux valeurs décrivent des aspects différents et doivent être évaluées ensemble.
+> Votre IMC est de {{bmi}} et se situe donc dans la plage « {{bmiClassLabel}} ». Chez les adultes dont l’IMC est égal ou supérieur à 35, le check utilise l’IMC comme base d’évaluation. Le tour de taille indiqué de {{waist}} cm et le rapport tour de taille/taille de {{whtr}} qui en résulte sont affichés, mais ne sont pas comptabilisés une seconde fois.
 
 #### Dynamischer Text: Dimensionsdetail · BMI-Hinweis ohne Taillenumfang
 
@@ -5822,23 +5822,23 @@ Themen in diesem Bereich:
 
 > Votre IMC est de {{bmi}} et se situe donc dans la plage « {{bmiClassLabel}} ». Comme aucun tour de taille n’est disponible, la répartition des graisses ne peut pas être évaluée en complément. L’IMC est un repère, et non un diagnostic.
 
-#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taillenumfangs
+#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taille-Grösse-Verhältnisses
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.with_waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
 - Prüfhinweis: Neue persönliche Einordnung mit sichtbarem Messwert und Status; Referenzlogik durch Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ihr angegebener Taillenumfang beträgt {{waist}} cm und liegt {{waistStatusLabel}}. Der Wert ergänzt Gewicht und BMI, weil die Fettverteilung für das Stoffwechsel\- und Herz\-Kreislauf\-Risiko relevant ist.
+> Ihr angegebener Taillenumfang beträgt {{waist}} cm. Daraus ergibt sich ein Taille\-Grösse\-Verhältnis von {{whtr}}, das {{waistStatusLabel}} liegt. Der Quotient ist ein praktischer Screeningmarker für die zentrale Fettverteilung, aber keine Diagnose.
 
 **Aktueller Text**
 
-> Le tour de taille que vous avez indiqué est de {{waist}} cm et se situe {{waistStatusLabel}}. Cette valeur complète le poids et l’IMC, car la répartition des graisses est pertinente pour le risque métabolique et cardiovasculaire.
+> Le tour de taille que vous avez indiqué est de {{waist}} cm. Il en résulte un rapport tour de taille/taille de {{whtr}}, qui se situe {{waistStatusLabel}}. Ce rapport est un marqueur de dépistage pratique de la répartition centrale des graisses, mais ne constitue pas un diagnostic.
 
 #### Risikosignal: Ergebnisseite, Lebensstil-Signal Körperzusammensetzung
 
@@ -5881,11 +5881,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
+> Ein auffälliger BMI oder ein auffälliges Taille\-Grösse\-Verhältnis ist kein Diagnosewert. Ordnen Sie Taillenumfang, Körpergrösse, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
 
 **Aktueller Text**
 
-> Un IMC ou un tour de taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.
+> Un IMC ou un rapport tour de taille/taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, la taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5972,15 +5972,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
+- Prüfhinweis: Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen\.
 
 **Deutscher Ausgangstext**
 
-> Bauchumfang {{waist}} cm \({{waistStatusLabel}}\)
+> Bauchumfang {{waist}} cm · Taille\-Grösse\-Verhältnis {{whtr}} \({{waistStatusLabel}}\)
 
 **Aktueller Text**
 
-> Tour de taille {{waist}} cm \({{waistStatusLabel}}\)
+> Tour de taille {{waist}} cm · rapport tour de taille/taille {{whtr}} \({{waistStatusLabel}}\)
 
 #### Dynamischer Text: Abgeleitete Kennzahlen, BMI-Zeile
 
@@ -6083,11 +6085,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im erhöhten Bereich
+> im erhöhten Bereich von 0.50 bis unter 0.60
 
 **Aktueller Text**
 
-> dans la plage élevée
+> dans la plage élevée de 0,50 à moins de 0,60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel hoch
 
@@ -6099,11 +6101,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im deutlich erhöhten Bereich
+> im deutlich erhöhten Bereich ab 0.60
 
 **Aktueller Text**
 
-> dans la plage nettement élevée
+> dans la plage nettement élevée à partir de 0,60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel normal
 
@@ -6111,14 +6113,31 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist_status.normal`
+- Prüfhinweis: Das sichtbare Label nennt die geschlechtsneutrale NICE-Grenze statt eines absoluten Zentimeterwerts\.
 
 **Deutscher Ausgangstext**
 
-> im Normalbereich
+> unter 0.50
 
 **Aktueller Text**
 
-> dans la plage normale
+> inférieur à 0,50
+
+#### Beschriftung: Sichtbares WHtR-Statuslabel, wenn bei Erwachsenen mit BMI ab 35 keine zusätzliche WHtR-Einordnung erfolgt
+
+- Seitenelement: Einordnung &amp; Metriken
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.metrics.waist_status.nicht_bewertet`
+- Prüfhinweis: NICE empfiehlt WHtR bei Erwachsenen mit BMI unter 35; darüber bleibt BMI die Bewertungsgrundlage\.
+
+**Deutscher Ausgangstext**
+
+> bei BMI ab 35 nicht zusätzlich bewertet
+
+**Aktueller Text**
+
+> non évalué séparément lorsque l’IMC est égal ou supérieur à 35
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -16882,11 +16901,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bauchfett &amp; Taillenumfang
+> Bauchfett &amp; Taille\-Grösse\-Verhältnis
 
 **Aktueller Text**
 
-> Graisse abdominale et tour de taille
+> Graisse abdominale et rapport tour de taille/taille
 
 #### Quellenbezeichnung: Taillenumfang · Linkbeschriftung
 
@@ -16927,11 +16946,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> WHO/IDF\-Schwellenwerte zum Taillenumfang ·
+> NICE\-Einordnung des Taille\-Grösse\-Verhältnisses ·
 
 **Aktueller Text**
 
-> Seuils OMS/IDF du tour de taille ·
+> Classification NICE du rapport tour de taille/taille ·
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16942,11 +16961,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Normalbereich: Männer unter 94 cm, Frauen unter 80 cm.
+> Berechnung: Taillenumfang geteilt durch Körpergrösse; beide Werte müssen in derselben Einheit vorliegen.
 
 **Aktueller Text**
 
-> Plage normale : moins de 94 cm chez les hommes, moins de 80 cm chez les femmes.
+> Calcul : tour de taille divisé par la taille ; les deux valeurs doivent être exprimées dans la même unité.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16957,11 +16976,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Erhöhter Referenzbereich: Männer 94 bis unter 102 cm, Frauen 80 bis unter 88 cm.
+> 0,40 bis unter 0,50: günstiger Bereich. Werte unter 0,40 werden nicht als «noch besser» belohnt; mögliches Untergewicht wird separat eingeordnet.
 
 **Aktueller Text**
 
-> Plage de référence élevée : de 94 à moins de 102 cm chez les hommes, de 80 à moins de 88 cm chez les femmes.
+> De 0,40 à moins de 0,50 : plage favorable. Les valeurs inférieures à 0,40 ne sont pas valorisées comme « encore meilleures » ; une éventuelle insuffisance pondérale est évaluée séparément.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16972,11 +16991,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.
+> 0,50 bis unter 0,60: erhöhte zentrale Fettverteilung. Ab 0,60: deutlich erhöhte zentrale Fettverteilung.
 
 **Aktueller Text**
 
-> Plage de référence nettement élevée : ≥ 102 cm chez les hommes, ≥ 88 cm chez les femmes.
+> De 0,50 à moins de 0,60 : adiposité centrale accrue. À partir de 0,60 : adiposité centrale élevée.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16987,11 +17006,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.
+> Im Score ersetzt WHtR die bisherigen geschlechtsspezifischen Zentimetergrenzen. Bei Erwachsenen ab BMI 35 bleibt der BMI trotz Taillenangabe die Bewertungsgrundlage; ohne Taillenangabe gilt der BMI ebenfalls als Fallback. WHtR ist ein Screeningmarker, keine Diagnose.
 
 **Aktueller Text**
 
-> L’IMC et le tour de taille sont des valeurs d’orientation complémentaires.
+> Dans le score, le rapport tour de taille/taille remplace les anciens seuils en centimètres selon le sexe. Chez les adultes dont l’IMC est égal ou supérieur à 35, l’IMC reste la base d’évaluation même si le tour de taille est disponible; sans tour de taille, l’IMC sert également de valeur de repli. Ce rapport est un marqueur de dépistage, pas un diagnostic.
 
 <a id="bereich-ubergreifende-ergebnisdarstellung"></a>
 

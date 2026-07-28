@@ -15,20 +15,20 @@
 ## Freigabestand
 
 - Sprache: `it-CH`
-- Quellversion: `v1:b7febcb6ee1448d09a894da20d7221218db20f106c40821351882355df613e9a`
-- Gesamtbestand: **1205 Texte**
-- Freigegeben: **0** · Offen: **1205**
+- Quellversion: `v1:a299790f17f2d7c31e90c96557f0f486bd0cdc191a839eab64e834b88200305a`
+- Gesamtbestand: **1206 Texte**
+- Freigegeben: **0** · Offen: **1206**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1205 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1206 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1205 | 0 | 1205 |
-| Medizin | 672 | 0 | 672 |
+| Marketing | 1206 | 0 | 1206 |
+| Medizin | 673 | 0 | 673 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -36,7 +36,7 @@
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 216 | 216 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 217 | 217 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -632,11 +632,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.
+> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ergänzt den BMI als praktischer Marker der zentralen Fettverteilung. Wenn Sie den Wert nicht kennen oder schwanger sind, lassen Sie das Feld einfach leer.
 
 **Aktueller Text**
 
-> Misuri dopo una normale espirazione, all’incirca a metà tra la costola palpabile più bassa e il bordo superiore della cresta iliaca. Il grasso addominale è metabolicamente attivo: il rapporto tra vita e altezza è spesso più significativo del solo peso. Se non conosce il valore, lasci semplicemente vuoto il campo.
+> Misuri dopo una normale espirazione, all’incirca a metà tra la costola palpabile più bassa e il bordo superiore della cresta iliaca. Il grasso addominale è metabolicamente attivo: il rapporto vita\-altezza completa il BMI come pratico indicatore della distribuzione centrale del grasso. Se non conosce il valore o è in gravidanza, lasci semplicemente vuoto il campo.
 
 #### Frage: Frage «Belastbarkeit» · Fragetext
 
@@ -3473,7 +3473,7 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (216 Texte)
+## 2. Einflussfaktoren (217 Texte)
 
 Themen in diesem Bereich:
 
@@ -3481,7 +3481,7 @@ Themen in diesem Bereich:
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
 - [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 98 Texte, 98 offen
-- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
+- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 32 Texte, 32 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
 - [Weitere Einflussfaktoren](#thema-einflussfaktoren-weitere-einflussfaktoren): 7 Texte, 7 offen
@@ -5704,7 +5704,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
-### Körperzusammensetzung &amp; Stoffwechsel (31 Texte)
+### Körperzusammensetzung &amp; Stoffwechsel (32 Texte)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5732,11 +5732,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Taillenumfang und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung und ergänzen sich bei der Einordnung des Stoffwechsel\- und Herz\-Kreislauf\-Risikos. Beide Werte sind Orientierungen und keine Diagnose.
+> Taille\-Grösse\-Verhältnis und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung. Beide Werte sind Screeningorientierungen und keine Diagnose oder vollständige Herz\-Kreislauf\-Risikoberechnung.
 
 **Aktueller Text**
 
-> Circonferenza vita e BMI descrivono aspetti diversi della composizione corporea e si completano nella valutazione del rischio metabolico e cardiovascolare. Entrambi i valori sono orientativi e non costituiscono una diagnosi.
+> Il rapporto vita\-altezza e il BMI descrivono aspetti diversi della composizione corporea. Entrambi sono indicatori orientativi di screening, non una diagnosi né un calcolo completo del rischio cardiovascolare.
 
 #### Nächster Schritt: Dimensionsdetail · nächster Schritt mit bereits angegebenem Taillenumfang
 
@@ -5792,17 +5792,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist`
-- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
 - Prüfhinweis: Verhindert die falsche Behauptung eines erhöhten Taillenumfangs, wenn das Signal allein vom BMI ausgelöst wird\.
 
 **Deutscher Ausgangstext**
 
-> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihr angegebener Taillenumfang von {{waist}} cm liegt nach der verwendeten Referenz {{waistStatusLabel}}. Beide Werte beschreiben unterschiedliche Aspekte und sollten zusammen eingeordnet werden.
+> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Bei Erwachsenen mit einem BMI ab 35 verwendet der Check den BMI als Bewertungsgrundlage. Der angegebene Taillenumfang von {{waist}} cm und das daraus berechnete Taille\-Grösse\-Verhältnis {{whtr}} werden angezeigt, aber nicht zusätzlich gescort.
 
 **Aktueller Text**
 
-> Il Suo BMI è {{bmi}} e si situa quindi nella fascia «{{bmiClassLabel}}». La circonferenza vita indicata, pari a {{waist}} cm, si situa secondo il riferimento utilizzato {{waistStatusLabel}}. I due valori descrivono aspetti diversi e devono essere valutati insieme.
+> Il Suo BMI è {{bmi}} e si situa quindi nella fascia «{{bmiClassLabel}}». Per gli adulti con un BMI pari o superiore a 35, il check usa il BMI come base di valutazione. La circonferenza vita indicata di {{waist}} cm e il rapporto vita\-altezza di {{whtr}} che ne risulta vengono mostrati, ma non conteggiati una seconda volta.
 
 #### Dynamischer Text: Dimensionsdetail · BMI-Hinweis ohne Taillenumfang
 
@@ -5822,23 +5822,23 @@ Themen in diesem Bereich:
 
 > Il Suo BMI è {{bmi}} e si situa quindi nella fascia «{{bmiClassLabel}}». Poiché non è disponibile la circonferenza vita, qui non è possibile valutare anche la distribuzione del grasso. Il BMI è un orientamento e non una diagnosi.
 
-#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taillenumfangs
+#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taille-Grösse-Verhältnisses
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.with_waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
 - Prüfhinweis: Neue persönliche Einordnung mit sichtbarem Messwert und Status; Referenzlogik durch Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ihr angegebener Taillenumfang beträgt {{waist}} cm und liegt {{waistStatusLabel}}. Der Wert ergänzt Gewicht und BMI, weil die Fettverteilung für das Stoffwechsel\- und Herz\-Kreislauf\-Risiko relevant ist.
+> Ihr angegebener Taillenumfang beträgt {{waist}} cm. Daraus ergibt sich ein Taille\-Grösse\-Verhältnis von {{whtr}}, das {{waistStatusLabel}} liegt. Der Quotient ist ein praktischer Screeningmarker für die zentrale Fettverteilung, aber keine Diagnose.
 
 **Aktueller Text**
 
-> La circonferenza vita indicata è di {{waist}} cm e si situa {{waistStatusLabel}}. Il valore completa peso e BMI, perché la distribuzione del grasso è rilevante per il rischio metabolico e cardiovascolare.
+> La circonferenza vita indicata è di {{waist}} cm. Ne risulta un rapporto vita\-altezza di {{whtr}}, che si situa {{waistStatusLabel}}. Il rapporto è un pratico indicatore di screening della distribuzione centrale del grasso, ma non è una diagnosi.
 
 #### Risikosignal: Ergebnisseite, Lebensstil-Signal Körperzusammensetzung
 
@@ -5881,11 +5881,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
+> Ein auffälliger BMI oder ein auffälliges Taille\-Grösse\-Verhältnis ist kein Diagnosewert. Ordnen Sie Taillenumfang, Körpergrösse, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
 
 **Aktueller Text**
 
-> Un BMI o una circonferenza vita elevati non costituiscono una diagnosi. Valuti circonferenza vita, peso e parametri metabolici insieme a una figura professionale sanitaria prima di decidere cambiamenti specifici.
+> Un BMI o un rapporto vita\-altezza elevati non costituiscono una diagnosi. Valuti circonferenza vita, altezza, peso e parametri metabolici insieme a una figura professionale sanitaria prima di decidere cambiamenti specifici.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5972,15 +5972,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
+- Prüfhinweis: Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen\.
 
 **Deutscher Ausgangstext**
 
-> Bauchumfang {{waist}} cm \({{waistStatusLabel}}\)
+> Bauchumfang {{waist}} cm · Taille\-Grösse\-Verhältnis {{whtr}} \({{waistStatusLabel}}\)
 
 **Aktueller Text**
 
-> Circonferenza vita {{waist}} cm \({{waistStatusLabel}}\)
+> Circonferenza vita {{waist}} cm · rapporto vita\-altezza {{whtr}} \({{waistStatusLabel}}\)
 
 #### Dynamischer Text: Abgeleitete Kennzahlen, BMI-Zeile
 
@@ -6083,11 +6085,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im erhöhten Bereich
+> im erhöhten Bereich von 0.50 bis unter 0.60
 
 **Aktueller Text**
 
-> nell’intervallo elevato
+> nell’intervallo elevato da 0,50 a meno di 0,60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel hoch
 
@@ -6099,11 +6101,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im deutlich erhöhten Bereich
+> im deutlich erhöhten Bereich ab 0.60
 
 **Aktueller Text**
 
-> nell’intervallo nettamente elevato
+> nell’intervallo nettamente elevato da 0,60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel normal
 
@@ -6111,14 +6113,31 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist_status.normal`
+- Prüfhinweis: Das sichtbare Label nennt die geschlechtsneutrale NICE-Grenze statt eines absoluten Zentimeterwerts\.
 
 **Deutscher Ausgangstext**
 
-> im Normalbereich
+> unter 0.50
 
 **Aktueller Text**
 
-> nell’intervallo normale
+> al di sotto di 0,50
+
+#### Beschriftung: Sichtbares WHtR-Statuslabel, wenn bei Erwachsenen mit BMI ab 35 keine zusätzliche WHtR-Einordnung erfolgt
+
+- Seitenelement: Einordnung &amp; Metriken
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.metrics.waist_status.nicht_bewertet`
+- Prüfhinweis: NICE empfiehlt WHtR bei Erwachsenen mit BMI unter 35; darüber bleibt BMI die Bewertungsgrundlage\.
+
+**Deutscher Ausgangstext**
+
+> bei BMI ab 35 nicht zusätzlich bewertet
+
+**Aktueller Text**
+
+> non valutato separatamente con un BMI pari o superiore a 35
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -16882,11 +16901,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bauchfett &amp; Taillenumfang
+> Bauchfett &amp; Taille\-Grösse\-Verhältnis
 
 **Aktueller Text**
 
-> Grasso addominale e circonferenza vita
+> Grasso addominale e rapporto vita\-altezza
 
 #### Quellenbezeichnung: Taillenumfang · Linkbeschriftung
 
@@ -16927,11 +16946,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> WHO/IDF\-Schwellenwerte zum Taillenumfang ·
+> NICE\-Einordnung des Taille\-Grösse\-Verhältnisses ·
 
 **Aktueller Text**
 
-> Soglie OMS/IDF per la circonferenza vita ·
+> Classificazione NICE del rapporto vita\-altezza ·
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16942,11 +16961,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Normalbereich: Männer unter 94 cm, Frauen unter 80 cm.
+> Berechnung: Taillenumfang geteilt durch Körpergrösse; beide Werte müssen in derselben Einheit vorliegen.
 
 **Aktueller Text**
 
-> Intervallo normale: uomini sotto 94 cm, donne sotto 80 cm.
+> Calcolo: circonferenza vita divisa per altezza; entrambi i valori devono essere espressi nella stessa unità.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16957,11 +16976,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Erhöhter Referenzbereich: Männer 94 bis unter 102 cm, Frauen 80 bis unter 88 cm.
+> 0,40 bis unter 0,50: günstiger Bereich. Werte unter 0,40 werden nicht als «noch besser» belohnt; mögliches Untergewicht wird separat eingeordnet.
 
 **Aktueller Text**
 
-> Intervallo di riferimento elevato: uomini da 94 a meno di 102 cm, donne da 80 a meno di 88 cm.
+> Da 0,40 a meno di 0,50: intervallo favorevole. I valori sotto 0,40 non vengono premiati come «ancora migliori»; un eventuale sottopeso viene valutato separatamente.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16972,11 +16991,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.
+> 0,50 bis unter 0,60: erhöhte zentrale Fettverteilung. Ab 0,60: deutlich erhöhte zentrale Fettverteilung.
 
 **Aktueller Text**
 
-> Intervallo di riferimento nettamente elevato: uomini da 102 cm, donne da 88 cm.
+> Da 0,50 a meno di 0,60: adiposità centrale aumentata. Da 0,60: adiposità centrale elevata.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16987,11 +17006,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.
+> Im Score ersetzt WHtR die bisherigen geschlechtsspezifischen Zentimetergrenzen. Bei Erwachsenen ab BMI 35 bleibt der BMI trotz Taillenangabe die Bewertungsgrundlage; ohne Taillenangabe gilt der BMI ebenfalls als Fallback. WHtR ist ein Screeningmarker, keine Diagnose.
 
 **Aktueller Text**
 
-> L’IMC e la circonferenza vita sono valori orientativi e si completano a vicenda.
+> Nel punteggio, il rapporto vita\-altezza sostituisce le precedenti soglie in centimetri specifiche per sesso. Per gli adulti con un BMI pari o superiore a 35, il BMI resta la base di valutazione anche se la misura della vita è disponibile; se la misura manca, il BMI funge ugualmente da valore di ripiego. Il rapporto è un indicatore di screening, non una diagnosi.
 
 <a id="bereich-ubergreifende-ergebnisdarstellung"></a>
 

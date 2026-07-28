@@ -749,9 +749,9 @@
       "context": "Sichtbares Bauchumfang-Statuslabel normal",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "im Normalbereich",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "unter 0.50",
+      "reviewStatus": "needs-review",
+      "comment": "Das sichtbare Label nennt die geschlechtsneutrale NICE-Grenze statt eines absoluten Zentimeterwerts."
     },
     {
       "id": "ui.metrics.waist_status.erhoeht",
@@ -759,7 +759,7 @@
       "context": "Sichtbares Bauchumfang-Statuslabel erhoeht",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "im erhöhten Bereich",
+      "text": "im erhöhten Bereich von 0.50 bis unter 0.60",
       "reviewStatus": "needs-review",
       "comment": "Status sprachlich klar vom deutlich erhöhten Referenzbereich abgegrenzt; durch Marketing und Medizin freigeben."
     },
@@ -769,9 +769,19 @@
       "context": "Sichtbares Bauchumfang-Statuslabel hoch",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "im deutlich erhöhten Bereich",
+      "text": "im deutlich erhöhten Bereich ab 0.60",
       "reviewStatus": "needs-review",
       "comment": "Höchstes Referenzband für die persönliche Einordnung eindeutig benannt; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "ui.metrics.waist_status.nicht_bewertet",
+      "section": "Einordnung & Metriken",
+      "context": "Sichtbares WHtR-Statuslabel, wenn bei Erwachsenen mit BMI ab 35 keine zusätzliche WHtR-Einordnung erfolgt",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "bei BMI ab 35 nicht zusätzlich bewertet",
+      "reviewStatus": "needs-review",
+      "comment": "NICE empfiehlt WHtR bei Erwachsenen mit BMI unter 35; darüber bleibt BMI die Bewertungsgrundlage."
     },
     {
       "id": "ui.metrics.bmi",
@@ -789,9 +799,14 @@
       "context": "Abgeleitete Kennzahlen, Bauchumfang-Zeile",
       "kind": "template",
       "reviewers": "Marketing, Medizin",
-      "text": "Bauchumfang {{waist}} cm ({{waistStatusLabel}})",
-      "reviewStatus": "",
-      "comment": ""
+      "text": "Bauchumfang {{waist}} cm · Taille-Grösse-Verhältnis {{whtr}} ({{waistStatusLabel}})",
+      "requiredTerms": [
+        "{{waist}}",
+        "{{whtr}}",
+        "{{waistStatusLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen."
     },
     {
       "id": "ui.metrics.line",

@@ -722,7 +722,7 @@ test('Kohärenz-Restprofile: Fitness, Schlaf, Bildschirmmuster und Taillenumfang
   assert.ok(!screenPlanIds.includes('ei_socialmedia'));
   assert.ok(!screenPlanIds.includes('sl_rhythmus'));
 
-  const knownWaist = { ...HEALTHY_ANSWERS, bauchumfang: 90 };
+  const knownWaist = { ...HEALTHY_ANSWERS, bauchumfang: 105 };
   const knownWaistResults = W.Scoring.computeResults(knownWaist);
   assert.strictEqual(knownWaistResults.metrics.waistStatus, 'hoch');
   assert.deepStrictEqual(
@@ -739,7 +739,8 @@ test('Kohärenz-Restprofile: Fitness, Schlaf, Bildschirmmuster und Taillenumfang
   assert.strictEqual(
     waistInsight.insight,
     W.ResultCopy.format('recommendation.signal.koerperzusammensetzung.insight.with_waist', {
-      waist: 90,
+      waist: 105,
+      whtr: W.HealthLocale.formatRatio(105 / 170),
       waistStatusLabel: W.ResultCopy.get('ui.metrics.waist_status.hoch'),
     }),
   );
@@ -753,37 +754,44 @@ test('Kohärenz-Restprofile: Fitness, Schlaf, Bildschirmmuster und Taillenumfang
   );
 });
 
-test('Taillenumfang-Grenzen erzeugen klare Statusstufen und passende Signalpriorität', () => {
+test('WHtR-Grenzen sind geschlechtsneutral und steuern Score sowie Signal gemeinsam', () => {
   const cases = [
-    ['weiblich', 170, 63, 79, 'normal', null, 2],
-    ['weiblich', 170, 63, 80, 'erhoeht', 'tief', 0],
-    ['weiblich', 170, 63, 87, 'erhoeht', 'tief', 0],
-    ['weiblich', 170, 63, 88, 'hoch', 'mittel', -2],
-    ['maennlich', 170, 63, 93, 'normal', null, 2],
-    ['maennlich', 170, 63, 94, 'erhoeht', 'tief', 0],
-    ['maennlich', 170, 63, 101, 'erhoeht', 'tief', 0],
-    ['maennlich', 170, 63, 102, 'hoch', 'mittel', -2],
-    ['intersex', 200, 80, 96, 'normal', null, 0],
-    ['intersex', 200, 80, 100, 'erhoeht', 'tief', 0],
-    ['intersex', 200, 80, 119, 'erhoeht', 'tief', -1],
-    ['intersex', 200, 80, 120, 'hoch', 'mittel', -2],
+    [79, 'normal', null, 2],
+    [80, 'normal', null, 2],
+    [99, 'normal', null, 2],
+    [100, 'erhoeht', 'tief', 0],
+    [119, 'erhoeht', 'tief', 0],
+    [120, 'hoch', 'mittel', -2],
   ];
 
-  cases.forEach(([geschlecht, groesse, gewicht, bauchumfang, status, severity, bodyNorm]) => {
-    const results = W.Scoring.computeResults({
-      ...HEALTHY_ANSWERS, geschlecht, groesse, gewicht, bauchumfang,
+  ['weiblich', 'maennlich', 'intersex'].forEach((geschlecht) => {
+    cases.forEach(([bauchumfang, status, severity, bodyNorm]) => {
+      const results = W.Scoring.computeResults({
+        ...HEALTHY_ANSWERS, geschlecht, groesse: 200, gewicht: 80, bauchumfang,
+      });
+      assert.strictEqual(results.metrics.waistStatus, status, `${geschlecht} ${bauchumfang} cm`);
+      assert.strictEqual(results.metrics.bodyRisk.source, 'whtr');
+      assert.strictEqual(results.metrics.bodyRisk.norm, bodyNorm, `${geschlecht} ${bauchumfang} cm Norm`);
+      const signal = results.signals.find((item) => item.id === 'koerperzusammensetzung');
+      assert.strictEqual(signal ? signal.severity : null, severity, `${geschlecht} ${bauchumfang} cm Signal`);
+      if (signal) {
+        const insight = W.Recommendations.dimensionInsights(results, []).einfluss
+          .find((item) => item.id === 'koerperzusammensetzung');
+        assert.ok(insight.insight.includes(String(bauchumfang)), 'persönlicher Wert fehlt');
+        assert.ok(insight.insight.includes(W.HealthLocale.formatRatio(bauchumfang / 200)), 'WHtR fehlt');
+        assert.ok(insight.insight.includes(W.ResultCopy.get(`ui.metrics.waist_status.${status}`)), 'Status fehlt');
+      }
     });
-    assert.strictEqual(results.metrics.waistStatus, status, `${geschlecht} ${bauchumfang} cm`);
-    assert.strictEqual(results.metrics.bodyRisk.norm, bodyNorm, `${geschlecht} ${bauchumfang} cm Norm`);
-    const signal = results.signals.find((item) => item.id === 'koerperzusammensetzung');
-    assert.strictEqual(signal ? signal.severity : null, severity, `${geschlecht} ${bauchumfang} cm Signal`);
-    if (signal) {
-      const insight = W.Recommendations.dimensionInsights(results, []).einfluss
-        .find((item) => item.id === 'koerperzusammensetzung');
-      assert.ok(insight.insight.includes(String(bauchumfang)), 'persönlicher Wert fehlt');
-      assert.ok(insight.insight.includes(W.ResultCopy.get(`ui.metrics.waist_status.${status}`)), 'Status fehlt');
-    }
   });
+
+  const elevated = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 80, bauchumfang: 100,
+  });
+  const high = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 80, bauchumfang: 120,
+  });
+  assert.strictEqual(elevated.scores.einfluss, 93, 'WHtR ab 0,50 muss den bestehenden Körperbaustein abwerten');
+  assert.strictEqual(high.scores.einfluss, 50, 'WHtR ab 0,60 aktiviert den bestehenden Schutzdeckel');
 });
 
 test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Behauptung', () => {
@@ -808,7 +816,7 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
   const normalWaistResults = W.Scoring.computeResults({ ...noWaist, bauchumfang: 70 });
   assert.strictEqual(normalWaistResults.metrics.waistStatus, 'normal');
   assert.deepStrictEqual(normalWaistResults.metrics.bodyRisk, {
-    source: 'waist', norm: 2, severity: null,
+    source: 'whtr', norm: 2, severity: null,
   });
   assert.strictEqual(normalWaistResults.scores.einfluss, 100, 'Vorhandene Taille ist der zentrale Scorevertrag');
   const normalWaistInsight = W.Recommendations.dimensionInsights(normalWaistResults, []).einfluss
@@ -827,18 +835,18 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
   assert.ok(!W.Recommendations.actionPlan(normalWaistRiskContext).some((record) => record.id === 'act_kardio'),
     'Hoher BMI darf bei vorhandener normaler Taille nicht heimlich ins Kardio-Muster einfliessen');
 
-  const highWaistRiskPattern = { ...normalWaistRiskPattern, bauchumfang: 88 };
+  const highWaistRiskPattern = { ...normalWaistRiskPattern, bauchumfang: 102 };
   const highWaistRiskResults = W.Scoring.computeResults(highWaistRiskPattern);
   const highWaistRiskContext = W.Recommendations.buildContext(highWaistRiskPattern, highWaistRiskResults);
   assert.ok(W.Recommendations.actionPlan(highWaistRiskContext).some((record) => record.id === 'act_kardio'),
     'Dasselbe Profil überschreitet mit hoher Taille nachvollziehbar die Kardio-Musterschwelle');
 
   const highWaist = {
-    ...HEALTHY_ANSWERS, gewicht: 63, bauchumfang: 88, sitzzeit: 's9_10', alkohol: 'w4plus',
+    ...HEALTHY_ANSWERS, gewicht: 63, bauchumfang: 102, sitzzeit: 's9_10', alkohol: 'w4plus',
   };
   const highWaistResults = W.Scoring.computeResults(highWaist);
   assert.deepStrictEqual(highWaistResults.metrics.bodyRisk, {
-    source: 'waist', norm: -2, severity: 'mittel',
+    source: 'whtr', norm: -2, severity: 'mittel',
   });
   assert.ok(highWaistResults.signals.some((signal) => signal.id === 'koerperzusammensetzung'));
   const highWaistCtx = W.Recommendations.buildContext(highWaist, highWaistResults);
@@ -846,11 +854,79 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
     'Derselbe hohe Taillenvertrag fliesst auch ins Kardio-Muster ein');
 });
 
+test('WHtR nutzt definierte Ausnahmen und den BMI-Fallback nachvollziehbar', () => {
+  const adultHighBmi = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, alter: 45, groesse: 170, gewicht: 102, bauchumfang: 110,
+  });
+  assert.strictEqual(adultHighBmi.metrics.waistStatus, 'nicht_bewertet');
+  assert.deepStrictEqual(adultHighBmi.metrics.bodyRisk, {
+    source: 'bmi', norm: -2, severity: 'mittel',
+  });
+  const adultInsight = W.Recommendations.dimensionInsights(adultHighBmi, []).einfluss
+    .find((item) => item.id === 'koerperzusammensetzung');
+  assert.ok(adultInsight.insight.includes(W.HealthLocale.formatRatio(110 / 170)));
+  assert.ok(adultInsight.insight.includes('nicht zusätzlich gescort'));
+
+  const youngPerson = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, alter: 17, groesse: 170, gewicht: 102, bauchumfang: 80,
+  });
+  assert.strictEqual(youngPerson.metrics.bodyRisk.source, 'whtr', 'NICE-2026-Grenzen gelten ab 5 Jahren');
+  assert.strictEqual(youngPerson.metrics.bodyRisk.norm, 2);
+
+  const lowRatioUnderweight = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 70, bauchumfang: 70,
+  });
+  assert.strictEqual(lowRatioUnderweight.metrics.whtr, 0.35);
+  assert.strictEqual(lowRatioUnderweight.metrics.bodyRisk.norm, 0, 'WHtR unter 0,40 wird bei Untergewicht nicht positiv belohnt');
+  assert.ok(lowRatioUnderweight.signals.some((signal) => signal.id === 'untergewicht'));
+
+  const roundedUnderweightBoundary = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 73.9, bauchumfang: 70,
+  });
+  assert.strictEqual(roundedUnderweightBoundary.metrics.bmi, 18.5, 'sichtbare Kompatibilitätskennzahl');
+  assert.strictEqual(roundedUnderweightBoundary.metrics.bmiClass, 'untergewicht');
+  assert.strictEqual(roundedUnderweightBoundary.metrics.bodyRisk.norm, 0,
+    'Roh-BMI knapp unter 18,5 darf trotz gerundeter Anzeige nicht positiv bewertet werden');
+
+  const exactLowRatioBoundary = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 73.9, bauchumfang: 80,
+  });
+  assert.strictEqual(exactLowRatioBoundary.metrics.whtr, 0.4);
+  assert.strictEqual(exactLowRatioBoundary.metrics.bodyRisk.norm, 2,
+    'Ab exakt 0,40 gilt das günstige WHtR-Band unabhängig vom Untergewichtssignal');
+
+  const bmiBelowThirty = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 119.84,
+  });
+  assert.strictEqual(bmiBelowThirty.metrics.bmi, 30);
+  assert.strictEqual(bmiBelowThirty.metrics.bmiClass, 'uebergewicht');
+  assert.strictEqual(bmiBelowThirty.metrics.bodyRisk.norm, 0,
+    'Roh-BMI knapp unter 30 darf durch Rundung nicht in die Adipositas-Norm fallen');
+
+  const bmiBelowTwentyFive = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, groesse: 200, gewicht: 99.84,
+  });
+  assert.strictEqual(bmiBelowTwentyFive.metrics.bmi, 25);
+  assert.strictEqual(bmiBelowTwentyFive.metrics.bmiClass, 'normal');
+  assert.strictEqual(bmiBelowTwentyFive.metrics.bodyRisk.norm, 2,
+    'Roh-BMI knapp unter 25 darf durch Rundung nicht aus dem Normalband fallen');
+
+  const bmiBelowThirtyFive = W.Scoring.computeResults({
+    ...HEALTHY_ANSWERS, alter: 45, groesse: 200, gewicht: 139.84, bauchumfang: 90,
+  });
+  assert.strictEqual(bmiBelowThirtyFive.metrics.bmi, 35);
+  assert.strictEqual(bmiBelowThirtyFive.metrics.bmiClass, 'adipositas1');
+  assert.strictEqual(bmiBelowThirtyFive.metrics.bodyRisk.source, 'whtr',
+    'Die NICE-Ausnahme beginnt erst beim ungerundeten BMI von 35');
+  assert.strictEqual(W.HealthLocale.formatBmi(bmiBelowThirtyFive.metrics.bmiRaw), '34.96',
+    'Die sichtbare BMI-Ausgabe muss zur Grenzentscheidung passen');
+});
+
 test('Alle eigenständigen Dimensionshinweise besitzen Relevanz, Schritt und Nutzen', () => {
   const underweightResults = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, gewicht: 45 });
   const underweight = W.Recommendations.dimensionInsights(underweightResults, []).einfluss
     .find((item) => item.id === 'untergewicht');
-  const bodyResults = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, bauchumfang: 88 });
+  const bodyResults = W.Scoring.computeResults({ ...HEALTHY_ANSWERS, bauchumfang: 102 });
   const body = W.Recommendations.dimensionInsights(bodyResults, []).einfluss
     .find((item) => item.id === 'koerperzusammensetzung');
 

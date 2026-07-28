@@ -145,6 +145,16 @@ und Ursache entsteht daraus bewusst kein automatischer Therapieplan. Ein eigener
 Klärungszustand erklärt dies, statt gleichzeitig zu behaupten, es gebe kein
 Handlungsfeld.
 
+Ein optional angegebener Taillenumfang wird zusammen mit der Körpergrösse als
+geschlechtsneutrales Taille-Grösse-Verhältnis (WHtR) im bestehenden
+Körperzusammensetzungs-Baustein der Einflussfaktoren berücksichtigt. Der Quotient
+wird normalerweise auf zwei Dezimalstellen ausgegeben; nahe 0,40, 0,50 oder 0,60
+bleiben bei Bedarf weitere Stellen sichtbar, damit Anzeige und Einordnung
+übereinstimmen. Alle Grenzen werden mit dem ungerundeten Wert geprüft. Bei
+Erwachsenen mit BMI ≥ 35 wird trotz Taillenangabe der BMI verwendet; ohne
+Taillenangabe ist der BMI ebenfalls der Fallback. Details, Ausnahmen und Quellen
+stehen in `docs/SCORING_MODELL.md` und `docs/QUELLEN.md`.
+
 Die Stärkenkarte bevorzugt breit abgestützte persönliche Fähigkeiten und erreichte
 Ziele vor einzelnen Schutzmerkmalen. Eine sehr hohe Fitness wird nur dann als
 herausragende Topstärke zusammengefasst, wenn Fitnessscore, WHO-Bewegungsziel und

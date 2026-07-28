@@ -1,6 +1,6 @@
 # Projektübergabe: Helsana Gesundheitscheck
 
-**Stand:** 27. Juli 2026
+**Stand:** 28. Juli 2026
 **Zweck:** Vollständige Übergabe des aktuellen Arbeitsstands für die weitere Projektarbeit.
 **Wichtig:** Diese Datei beschreibt den Ist-Stand. Bei Widersprüchen sind der getestete Code, die kanonischen Content-Dateien und die Regressionstests massgebend.
 
@@ -23,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'205 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'206 Texten;
 - Artefakt-Check: erfolgreich;
-- 181 von 181 Einzeltests erfolgreich;
+- 182 von 182 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -37,9 +37,9 @@ Aktueller Teststand:
 - App: `/Users/stefandris/Desktop/Health-Navigator-Codex/Projekt_Original`
 - Git-Repository: Workspace-Wurzel
 - Remote: `https://github.com/stefandris83/health-navigator.git`
-- Aktueller Branch: `codex/standard-pushups-94`
-- Tracking-Branch nach Veröffentlichung: `origin/codex/standard-pushups-94`
-- Ausgangs-HEAD vor diesem Änderungssatz: `3f01383 Refactor navigation and streamline health dashboard workflows`
+- Aktueller Branch: `codex/whtr-primary-scoring`
+- Tracking-Branch nach Veröffentlichung: `origin/codex/whtr-primary-scoring`
+- Ausgangs-HEAD vor diesem Änderungssatz: `871da45 Merge pull request #14 from stefandris83/codex/red-gradient-checkmark-icon`
 - Öffentliche GitHub-Pages-Adresse: `https://stefandris83.github.io/health-navigator/`
 
 Der Workflow `.github/workflows/deploy-pages.yml` läuft bei Änderungen unter
@@ -50,25 +50,16 @@ Exporte werden nicht als Website ausgeliefert.
 
 ### Umfang des Änderungssatzes
 
-Vor Erstellung dieser Handoff-Datei waren 57 getrackte Dateien verändert und folgende
-neun fachliche Dateien neu/ungetrackt:
-
-- `docs/SCORING_MODELL.md`
-- `assets/illustrations/einbeinstand-maennlich.png`
-- `assets/illustrations/einbeinstand-weiblich.png`
-- `assets/illustrations/liegestuetze-maennlich.png`
-- `assets/illustrations/liegestuetze-weiblich.png`
-- `assets/illustrations/taillenumfang-maennlich.png`
-- `assets/illustrations/taillenumfang-weiblich.png`
-- `assets/illustrations/wandsitz-maennlich.png`
-- `assets/illustrations/wandsitz-weiblich.png`
-
-Diese Übergabedatei kommt als weitere neue Datei hinzu.
+Der aktuelle Änderungssatz ersetzt die früheren geschlechtsspezifischen absoluten
+Taillenschwellen durch das geschlechtsneutrale Taille-Grösse-Verhältnis, vereinheitlicht
+Score, Signal, Empfehlung und Ergebnistext und aktualisiert alle vier Sprachen,
+Regressionstests, Quellen, Marketing-Exporte sowie die Scoring-Dokumentation. Bereits
+veröffentlichte Illustrationen, Fitnessreferenzen und das App-Icon bleiben erhalten.
 
 ### Repository-Hygiene
 
-Die beiden zuvor vom Robustheitstest gefundenen `.DS_Store`-Betriebssystemartefakte
-wurden entfernt. Der Repository-Hygienetest ist damit grün. Es gibt keinen Ordner
+`.DS_Store`-Betriebssystemartefakte werden an der Repository-Wurzel und im
+App-Ordner ignoriert. Der Repository-Hygienetest ist damit grün. Es gibt keinen Ordner
 `Projekt_Optimiert`, kein neu erstelltes ZIP und kein `node_modules` im Projekt.
 
 ## 3. Unverhandelbare technische Rahmenbedingungen
@@ -202,9 +193,13 @@ Familienwissen, Rauchen, Alkohol, Social Media und Körperzusammensetzung.
 - Aktuelles Rauchen mit −2 oder ein Körperprofil mit −2 deckelt die Dimension bei 50.
 - Körperzusammensetzung nutzt ein einziges zentrales Profil für Score, Signal und
   kardiovaskuläres Muster.
-- Frau/Mann: vorhandener Taillenumfang hat Vorrang.
-- Intersex/andere Angabe: bei Taille und Grösse wird WHtR verwendet.
-- BMI ist Fallback, wenn keine passende Taillenreferenz vorliegt.
+- Bei Taille und Grösse wird geschlechtsübergreifend WHtR verwendet: < 0,50 +2,
+  0,50 bis < 0,60 Norm 0 mit tiefem Signal, ab 0,60 −2 mit mittlerem Signal.
+- Bei Erwachsenen mit BMI ≥ 35 ist der BMI trotz Taillenangabe die Grundlage; ohne
+  Taillenangabe ist er ebenfalls der Fallback. Im ersten Fall wird der Quotient nur
+  angezeigt und nicht zusätzlich gescort.
+- WHtR < 0,40 wird nicht über das höchste Band hinaus belohnt; bei gleichzeitigem
+  Untergewicht bleibt der Körperbaustein neutral und das Untergewichtssignal separat.
 - Vorsorge, bekannte Familienerkrankungen und Bluthochdruck sind scorefrei, können
   aber wichtige medizinische Signale, Haupthandlungsfelder und Empfehlungen auslösen.
 
@@ -327,8 +322,8 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
   2,0 g/kg/Tag nur als konditionaler Spielraum etwa bei hoher Belastung,
   Energiedefizit oder zunehmendem Alter. Minderjährige und medizinische Kontexte
   werden defensiv behandelt.
-- Taillenumfang wird persönlich eingeordnet und nicht mehr als pauschal grüne Quick-
-  Win-Box ausgegeben.
+- Taillenumfang und der daraus berechnete WHtR werden persönlich und auf zwei
+  Dezimalstellen eingeordnet; der Wert erscheint nicht als pauschal grüne Quick-Win-Box.
 - Quellen, Grenzen und offene medizinische Entscheide stehen in `docs/QUELLEN.md`
   und `docs/GO_LIVE_CHECKLIST.md`.
 
@@ -339,7 +334,7 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'205 IDs.
+- Aktuell je Sprache 1'206 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -505,22 +500,22 @@ und defensive Coach-Fallbacks, weil sie getestet oder Teil der Zielarchitektur s
 - Kein Umgehen der Browser-Sicherheitsrichtlinie, als der eingebettete Browser lokale
   `file://`-URLs blockierte.
 
-## 15. Aktueller Testnachweis vom 27. Juli 2026
+## 15. Aktueller Testnachweis vom 28. Juli 2026
 
 Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'205 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'206 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
-| `node tests/integration.test.js` | 74/74 |
+| `node tests/integration.test.js` | 75/75 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 181/181 Tests erfolgreich.**
+**Gesamt aktuell: 182/182 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
@@ -560,6 +555,11 @@ HTTP-Server: Startseite und Ergebnisprofil in DE/EN/FR/IT, Ergebnis-Sprachwechse
 öffnende Dimensionsdetails sowie die relevante Summary bei 390 × 844 Pixeln. Score,
 Texte und Handlungsfeld blieben sprachübergreifend konsistent; es gab keinen
 horizontalen Überlauf und keine Warnung oder Fehlermeldung in der Browser-Konsole.
+Der WHtR-Grenzfall 86 cm bei 173 cm Körpergrösse wurde nach der finalen Korrektur
+ebenfalls in allen vier Sprachen geprüft: angezeigt wurden konsistent 0.497 bzw.
+0,497 und «unter 0.50» bzw. die locale-gerechte Übersetzung. Bei 390 Pixeln Breite
+blieb `scrollWidth === clientWidth`; die Browser-Konsole enthielt keine Warnungen
+oder Fehler.
 Der direkte `file://`-Aufruf blieb durch die Sicherheitsrichtlinie des eingebetteten
 Browsers blockiert; dafür ist nur der automatisierte statische Doppelklick-Vertrag
 belegt, kein interaktiver Browserlauf.
@@ -593,8 +593,9 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
   Untergewichts- und Körperprofil-Hebel in DE/EN/FR/IT sowie ihrer Prioritäten.
   Besonders prüfen: Lp(a) nur konditional bei tatsächlich früher
   Herz-Kreislauf-Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
-- Freigabe des Körperzusammensetzungsmodells, besonders für 16-/17-Jährige und nahe
-  den WHtR-Grenzen.
+- Freigabe des geschlechtsneutralen WHtR-Körpermodells, besonders für Werte unter
+  0,40, für 16-/17-Jährige, nahe 0,50/0,60, bei BMI ≥ 35 und für ausgeschlossene
+  Kontexte wie Schwangerschaft oder Essstörungen.
 - Medizinische/Product-Freigabe der kleinen direkten Adams-Orientierung 18–24, der
   praktischen Topend-Frauenorientierung 25–65 und der modellierten
   Frauen-/Männerbänder bis 94.

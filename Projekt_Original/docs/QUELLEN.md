@@ -164,30 +164,56 @@ metabolischer Gesundheit.
 
 ---
 
-## 6. Bauchfett & Taillenumfang
+## 6. Bauchfett & Taille-Grösse-Verhältnis
 
-**Grundlage:** [WHO-Expert Consultation zu Taillenumfang und Taille-Hüfte-Verhältnis](https://www.who.int/publications/i/item/9789241501491),
-IDF-Schwellenwerte und die [NICE-Leitlinie NG246 zur Einordnung des
-Taille-Grösse-Verhältnisses](https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity).
+**Primäre Grundlage:** [NICE NG246 zur Erkennung und Einordnung zentraler
+Fettverteilung](https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity),
+ergänzt durch die [NICE-Begründung](https://www.nice.org.uk/guidance/ng246/chapter/Rationale-and-impact)
+und die [WHO-Expert Consultation zur standardisierten Taillenmessung](https://www.who.int/publications/i/item/9789241501491).
 
-- **Normalbereich**: Männer **< 94 cm**, Frauen **< 80 cm**.
-- **Erhöhter Referenzbereich**: Männer **94 bis < 102 cm**, Frauen **80 bis < 88 cm**.
-- **Deutlich erhöhter Referenzbereich**: Männer **≥ 102 cm**, Frauen **≥ 88 cm**.
-- Im Check wird der Bauchumfang **geschlechtsspezifisch** bewertet: Für «weiblich» und
-  «männlich» gelten die obigen WHO-Umfangsschwellen, für «intersex/andere» das
-  geschlechtsneutrale **Taille-Grösse-Verhältnis** (WHtR: < 0,50 Normalbereich,
-  0,50 bis < 0,60 erhöhter und ≥ 0,60 deutlich erhöhter Referenzbereich). Ohne
-  Taillenangabe dient der BMI als Ersatzgrösse.
-- Die absoluten Umfangsschwellen stammen aus Erwachsenenreferenzen. Da der Check
-  Personen ab 16 Jahren zulässt, bleibt die Referenzwahl für 16- und
-  17-Jährige eine offene medizinische Helsana-Entscheidung; der technische Stand
-  wendet die gewählte Tabelle auch dort an und kennzeichnet die Texte zur Freigabe.
-- Das sichtbare Messprotokoll entspricht nun dem WHO-Protokoll: nach normalem
-  Ausatmen ungefähr auf halber Strecke zwischen unterster tastbarer Rippe und
-  Oberkante des Beckenkamms. Die frühere Angabe «auf Nabelhöhe» wurde entfernt,
-  weil Messorte nicht austauschbar sind.
-- **BMI** als grobe Orientierung: Normalbereich 18,5–24,9; Übergewicht 25–29,9;
-  Adipositas ≥ 30. Bauchumfang ist oft aussagekräftiger als der BMI allein.
+Der Check berechnet **nicht** das Taille-Hüfte-Verhältnis, weil kein Hüftumfang
+erhoben wird. Verwendet wird das **Taille-Grösse-Verhältnis** (Waist-to-Height
+Ratio, WHtR):
+
+`Taillenumfang in cm ÷ Körpergrösse in cm`
+
+| WHtR | NICE-Einordnung | Technische Norm | Signal |
+|---:|---|---:|---|
+| < 0,40 | unterhalb des von NICE benannten günstigen Bandes | +2, bei BMI < 18,5 nur 0 | kein WHtR-Signal; Untergewicht separat |
+| 0,40 bis < 0,50 | günstige zentrale Fettverteilung | +2 | keines |
+| 0,50 bis < 0,60 | erhöhte zentrale Fettverteilung | 0 | `tief` |
+| ≥ 0,60 | deutlich erhöhte zentrale Fettverteilung | −2 | `mittel` plus bestehender 50er-Deckel der Einflussdimension |
+
+- Die Grenzen gelten geschlechts- und ethnienübergreifend. Sie ersetzen im Code
+  die früheren absoluten Zentimetergrenzen für Frauen und Männer; derselbe Marker
+  wird nicht zusätzlich ein zweites Mal als BMI- oder Taillen-Malus gezählt.
+- Werte unter 0,40 werden nicht über +2 hinaus belohnt. Bei gleichzeitigem
+  Untergewicht bleibt der Körperbaustein neutral und das separate medizinische
+  Untergewichtssignal wird ausgelöst.
+- NICE empfiehlt WHtR bei **Erwachsenen mit BMI < 35** zusätzlich zum BMI. Bei
+  Erwachsenen ab 18 mit BMI ≥ 35 zeigt der Check den berechneten Quotienten nur
+  transparent an; Klassifikation und Score beruhen auf dem BMI-Fallback. Ohne
+  Taillenangabe gilt ebenfalls der BMI-Fallback.
+- Seit der NICE-Aktualisierung 2026 gelten dieselben WHtR-Bänder auch für Kinder
+  und Jugendliche ab 5 Jahren. Deshalb verwendet der Check sie bei 16- und
+  17-Jährigen; die BMI-35-Ausnahme beginnt technisch erst ab 18.
+- Das sichtbare Messprotokoll entspricht dem WHO-Protokoll: nach normalem Ausatmen
+  ungefähr auf halber Strecke zwischen unterster tastbarer Rippe und Oberkante des
+  Beckenkamms. In der Schwangerschaft soll die optionale Messung nicht verwendet
+  werden. Erkrankungen, die Körpergrösse oder Gewichtseinordnung wesentlich
+  beeinflussen, sowie bekannte oder vermutete Essstörungen benötigen eine
+  individuelle fachliche Einordnung.
+- Grenzentscheidungen erfolgen mit dem ungerundeten Quotienten. Die sichtbare
+  Ausgabe hat normalerweise zwei Dezimalstellen; würde die Rundung eine
+  Klassengrenze überschreiten, werden zur Widerspruchsfreiheit weitere Stellen
+  gezeigt. WHtR ist ein praktischer
+  Screeningmarker für zentrale Fettverteilung, keine Diagnose und kein vollständiger
+  Herz-Kreislauf-Risikorechner.
+- Eine Meta-Analyse von 31 Studien mit mehr als 300'000 Erwachsenen fand für WHtR
+  eine etwas bessere Diskrimination mehrerer kardiometabolischer Risikofaktoren als
+  für BMI und Taillenumfang allein. Das stützt die Richtung, begründet aber keine
+  individuelle Diagnose oder feineren App-Grenzen.
+  [Ashwell et al. 2012](https://pubmed.ncbi.nlm.nih.gov/22106927/)
 
 ---
 
@@ -252,9 +278,12 @@ Schutzfaktor.
 
 Der Fragebogen folgt dem offiziellen, rechtlich geprüften Fragenset **«Fragebogen HN»**
 mit **sechs Abschnitten**: *Persönliche Angaben, Einflussfaktoren, Körperliche Fitness,
-Ernährung, Schlaf, Mentale Gesundheit*. Die *Persönlichen Angaben* liefern
-nur Kennzahlen (Alter, Geschlecht, BMI, Taille-Grösse-Verhältnis) und erhalten **keinen**
-Score; bewertet werden die **fünf** übrigen Dimensionen. Das vollständig
+Ernährung, Schlaf, Mentale Gesundheit*. Die *Persönlichen Angaben* sind keine
+eigene Score-Dimension. Alter und Geschlecht steuern nur passende Referenzen;
+BMI oder Taille-Grösse-Verhältnis liefern gemäss der Fallbackregel genau eine
+Datengrundlage für den Körperzusammensetzungs-Baustein. Dieser ist mit den sechs
+übrigen Bausteinen der Dimension «Einflussfaktoren» gleich gewichtet.
+Bewertet werden die **fünf** übrigen Dimensionen. Das vollständig
 implementierte Modell mit allen Gewichten, Gegenchecks, Signalen und
 Empfehlungsregeln steht in [`SCORING_MODELL.md`](SCORING_MODELL.md).
 
@@ -577,10 +606,12 @@ Peter Attias Schwerpunkt auf Kraft und funktioneller Leistungsfähigkeit unterst
 die redaktionelle Sichtbarkeit, validiert aber weder diese drei Protokolle noch die
 verwendeten Schwellen oder Gewichtungen.
 
-**Kennzahlen der Körperzusammensetzung.** Für «weiblich»/«männlich» wird der
-**Taillenumfang geschlechtsspezifisch** (WHO-Schwellen) bewertet; für «intersex/andere»
-das geschlechtsneutrale **Taille-Grösse-Verhältnis** (WHtR, Ziel < 0,5). Ohne
-Taillenangabe dient der BMI als Ersatz. Ein einziges zentrales Körperprofil steuert
+**Kennzahlen der Körperzusammensetzung.** Bei vorhandener Taille und Grösse wird
+geschlechtsübergreifend das **Taille-Grösse-Verhältnis** verwendet. Bei Erwachsenen
+mit BMI ≥ 35 dient trotz vorhandener Taille der BMI als Bewertungsgrundlage; ohne
+Taillenangabe gilt der BMI ebenfalls als Fallback. Es wird somit immer genau eine
+der beiden Grundlagen ausgewählt. Ein
+einziges zentrales Körperprofil steuert
 damit Score, Risikosignal, Ergebniszusammenfassung und kardiovaskuläres
 Antwortmuster; dieselbe Angabe kann nicht mehr je nach Ausgabekanal unterschiedlich
 eingeordnet werden. Diese Werte fliessen in die *Einflussfaktoren* ein und werden
@@ -753,12 +784,13 @@ bleiben unverändert: *Taillenumfang*, *familiäre Erkrankungen (ja/nein)*, *Blu
    zeigen einen deutlichen Risikoanstieg v. a. ab ~9,5 h/Tag; 7–8 h entsprechen etwa
    dem Bevölkerungsdurchschnitt («genügend», nicht «schwach»). «Mehr als 10 h» bleibt −2;
    das Risikosignal «langes Sitzen» wird weiterhin ab 9–10 h ausgelöst.
-3. **Körperzusammensetzung (S-1.1):** Bei angegebenem Taillenumfang wird für
-   Frau/Mann der **geschlechtsspezifische WHO-Umfang** bewertet (94/102 cm bzw.
-   80/88 cm), für «intersex/andere» das geschlechtsneutrale **WHtR** mit den Bändern
-   des Score-Dokuments; ohne Taillenangabe der **BMI** (Bänder gemäss Score-Dokument,
-   inkl. Untergewicht = 0). **Neu:** Untergewicht (BMI < 18,5) erzeugt zusätzlich ein
-   *medizinisches Hinweissignal* (ohne Punktabzug).
+3. **Körperzusammensetzung (S-1.1):** Bei Taillenumfang und Grösse wird für alle
+   Geschlechter das **WHtR** nach den NICE-Bändern bewertet. 0,50 bis < 0,60 erhält
+   Norm 0, ab 0,60 Norm −2. Bei Erwachsenen mit BMI ≥ 35 dient trotz Taille der
+   **BMI** als Grundlage; ohne Taillenangabe gilt der BMI ebenfalls als Fallback.
+   Untergewicht (BMI < 18,5) erzeugt zusätzlich ein
+   *medizinisches Hinweissignal*; WHtR < 0,40 wird bei gleichzeitigem Untergewicht
+   nicht positiv bewertet.
 4. **Einbeinstand:** Altersband **80–99** ergänzt (Referenzwerte fallen ab 80
    deutlich ab, vgl. Springer et al. 2007); Funktion nimmt auch das Geschlecht
    entgegen (Tabellen strukturell geschlechtsspezifisch, Werte gemäss Evidenz identisch).

@@ -1047,12 +1047,12 @@
     },
     {
       "id": "recommendation.lever.lv_koerperprofil.detail",
-      "text": "Un BMI o una circonferenza vita elevati non costituiscono una diagnosi. Valuti circonferenza vita, peso e parametri metabolici insieme a una figura professionale sanitaria prima di decidere cambiamenti specifici.",
+      "text": "Un BMI o un rapporto vita-altezza elevati non costituiscono una diagnosi. Valuti circonferenza vita, altezza, peso e parametri metabolici insieme a una figura professionale sanitaria prima di decidere cambiamenti specifici.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+      "sourceContractHash": "9546a39b435523cccbe72b0efaeb1d0d2a2e7825b58f6cafc9432d9fd1aeed4d"
     },
     {
       "id": "recommendation.lever.lv_rauchstopp.label",
@@ -3115,11 +3115,11 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight",
-      "text": "Circonferenza vita e BMI descrivono aspetti diversi della composizione corporea e si completano nella valutazione del rischio metabolico e cardiovascolare. Entrambi i valori sono orientativi e non costituiscono una diagnosi.",
+      "text": "Il rapporto vita-altezza e il BMI descrivono aspetti diversi della composizione corporea. Entrambi sono indicatori orientativi di screening, non una diagnosi né un calcolo completo del rischio cardiovascolare.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e035069b045ebf525454d1c121826d6a6ba629e9dd98e839d029ec6292436e21"
+      "sourceContractHash": "28df13c1bcd8d0f91b4ac0b606e1cc77e567c19640ce8b891f6bf240a50f355c"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.action",
@@ -3411,27 +3411,28 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.with_waist",
-      "text": "La circonferenza vita indicata è di {{waist}} cm e si situa {{waistStatusLabel}}. Il valore completa peso e BMI, perché la distribuzione del grasso è rilevante per il rischio metabolico e cardiovascolare.",
+      "text": "La circonferenza vita indicata è di {{waist}} cm. Ne risulta un rapporto vita-altezza di {{whtr}}, che si situa {{waistStatusLabel}}. Il rapporto è un pratico indicatore di screening della distribuzione centrale del grasso, ma non è una diagnosi.",
       "requiredTerms": [
         "{{waist}}",
+        "{{whtr}}",
         "{{waistStatusLabel}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f292264c2c92e23d7fa9e9f325be8a58436f528b17a44af5a0e8cd7e5a05a30a"
+      "sourceContractHash": "82f873156b1d06965108af2126b4649c81588aabd7e736e74c2dd4d92df8dce1"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist",
-      "text": "Il Suo BMI è {{bmi}} e si situa quindi nella fascia «{{bmiClassLabel}}». La circonferenza vita indicata, pari a {{waist}} cm, si situa secondo il riferimento utilizzato {{waistStatusLabel}}. I due valori descrivono aspetti diversi e devono essere valutati insieme.",
+      "text": "Il Suo BMI è {{bmi}} e si situa quindi nella fascia «{{bmiClassLabel}}». Per gli adulti con un BMI pari o superiore a 35, il check usa il BMI come base di valutazione. La circonferenza vita indicata di {{waist}} cm e il rapporto vita-altezza di {{whtr}} che ne risulta vengono mostrati, ma non conteggiati una seconda volta.",
       "requiredTerms": [
         "{{bmi}}",
         "{{bmiClassLabel}}",
         "{{waist}}",
-        "{{waistStatusLabel}}"
+        "{{whtr}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "18082df1fe3f75ea5c8d28a520f11eb4dc9cc2d208b89c9c3b3f7a34917d736d"
+      "sourceContractHash": "ae5a2d8b52b07fca92470e412bb22a08fd75fb0f3f8c11a59549210287fc8fad"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist",

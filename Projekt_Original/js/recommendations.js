@@ -30,6 +30,12 @@
   const formatDecimal = (value) => window.HealthLocale && typeof window.HealthLocale.formatDecimal === 'function'
     ? window.HealthLocale.formatDecimal(value)
     : String(value);
+  const formatBmi = (value) => window.HealthLocale && typeof window.HealthLocale.formatBmi === 'function'
+    ? window.HealthLocale.formatBmi(value)
+    : formatDecimal(value);
+  const formatRatio = (value) => window.HealthLocale && typeof window.HealthLocale.formatRatio === 'function'
+    ? window.HealthLocale.formatRatio(value)
+    : String(value);
 
   /* Katalog: Reihenfolge innerhalb einer Dimension = inhaltliche Priorität. */
   const CATALOG_RULES = [
@@ -1355,21 +1361,24 @@
       const metrics = results.metrics || {};
       const hasWaist = Number(metrics.waist) > 0;
       const hasHighBmi = String(metrics.bmiClass || '').indexOf('adipositas') === 0;
-      if (hasWaist && (metrics.waistStatus === 'erhoeht' || metrics.waistStatus === 'hoch')) {
+      const bodyRiskSource = metrics.bodyRisk && metrics.bodyRisk.source;
+      if (hasWaist && bodyRiskSource === 'whtr'
+          && (metrics.waistStatus === 'erhoeht' || metrics.waistStatus === 'hoch')) {
         item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.with_waist', {
           waist: metrics.waist,
+          whtr: formatRatio(metrics.whtr),
           waistStatusLabel: copyGet('ui.metrics.waist_status.' + metrics.waistStatus),
         });
       } else if (hasWaist && hasHighBmi) {
         item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist', {
-          bmi: formatDecimal(metrics.bmi),
+          bmi: formatBmi(metrics.bmiRaw == null ? metrics.bmi : metrics.bmiRaw),
           bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
           waist: metrics.waist,
-          waistStatusLabel: copyGet('ui.metrics.waist_status.' + metrics.waistStatus),
+          whtr: formatRatio(metrics.whtr),
         });
       } else if (hasHighBmi) {
         item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist', {
-          bmi: formatDecimal(metrics.bmi),
+          bmi: formatBmi(metrics.bmiRaw == null ? metrics.bmi : metrics.bmiRaw),
           bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
         });
       }

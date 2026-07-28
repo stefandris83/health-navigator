@@ -691,13 +691,17 @@
     if (m.bmi) {
       const lbl = copy.get('ui.metrics.bmi_class.' + m.bmiClass);
       parts.push(copy.format('ui.metrics.bmi', {
-        bmi: window.HealthLocale.formatDecimal(m.bmi),
+        bmi: window.HealthLocale.formatBmi(m.bmiRaw == null ? m.bmi : m.bmiRaw),
         bmiClassLabel: lbl,
       }));
     }
     if (m.waist) {
       const lbl = copy.get('ui.metrics.waist_status.' + m.waistStatus);
-      parts.push(copy.format('ui.metrics.waist', { waist: m.waist, waistStatusLabel: lbl }));
+      parts.push(copy.format('ui.metrics.waist', {
+        waist: m.waist,
+        whtr: window.HealthLocale.formatRatio(m.whtr),
+        waistStatusLabel: lbl,
+      }));
     }
     return parts.length ? `<div class="metrics-summary">${I.info}<span>${copy.format('ui.metrics.line', {
       metrics: parts.join(copy.get('ui.metrics.separator')),

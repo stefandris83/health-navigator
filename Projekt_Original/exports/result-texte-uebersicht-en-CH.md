@@ -15,20 +15,20 @@
 ## Freigabestand
 
 - Sprache: `en-CH`
-- Quellversion: `v1:d51e0a7e91a3b5b6048e53d7190091078d7c56390c761e2d1609211e7df85067`
-- Gesamtbestand: **1205 Texte**
-- Freigegeben: **0** · Offen: **1205**
+- Quellversion: `v1:37d6b5ef6932884371b833dbd7e0f0854ee604c17c3360cffe4bcf56195eda2c`
+- Gesamtbestand: **1206 Texte**
+- Freigegeben: **0** · Offen: **1206**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1205 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1206 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1205 | 0 | 1205 |
-| Medizin | 672 | 0 | 672 |
+| Marketing | 1206 | 0 | 1206 |
+| Medizin | 673 | 0 | 673 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -36,7 +36,7 @@
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 216 | 216 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 217 | 217 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -632,11 +632,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.
+> Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ergänzt den BMI als praktischer Marker der zentralen Fettverteilung. Wenn Sie den Wert nicht kennen oder schwanger sind, lassen Sie das Feld einfach leer.
 
 **Aktueller Text**
 
-> After breathing out normally, measure approximately halfway between your lowest palpable rib and the top of your hip bone. Abdominal fat is metabolically active, and the ratio of waist circumference to height is often more informative than weight alone. If you do not know the value, simply leave the field blank.
+> After breathing out normally, measure approximately halfway between your lowest palpable rib and the top of your hip bone. Abdominal fat is metabolically active, and the waist\-to\-height ratio complements BMI as a practical marker of central fat distribution. If you do not know the value or are pregnant, simply leave the field blank.
 
 #### Frage: Frage «Belastbarkeit» · Fragetext
 
@@ -3473,7 +3473,7 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (216 Texte)
+## 2. Einflussfaktoren (217 Texte)
 
 Themen in diesem Bereich:
 
@@ -3481,7 +3481,7 @@ Themen in diesem Bereich:
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
 - [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 98 Texte, 98 offen
-- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
+- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 32 Texte, 32 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
 - [Weitere Einflussfaktoren](#thema-einflussfaktoren-weitere-einflussfaktoren): 7 Texte, 7 offen
@@ -5704,7 +5704,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
-### Körperzusammensetzung &amp; Stoffwechsel (31 Texte)
+### Körperzusammensetzung &amp; Stoffwechsel (32 Texte)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5732,11 +5732,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Taillenumfang und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung und ergänzen sich bei der Einordnung des Stoffwechsel\- und Herz\-Kreislauf\-Risikos. Beide Werte sind Orientierungen und keine Diagnose.
+> Taille\-Grösse\-Verhältnis und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung. Beide Werte sind Screeningorientierungen und keine Diagnose oder vollständige Herz\-Kreislauf\-Risikoberechnung.
 
 **Aktueller Text**
 
-> Waist circumference and BMI describe different aspects of body composition and complement each other when assessing metabolic and cardiovascular risk. Both values are guides, not a diagnosis.
+> Waist\-to\-height ratio and BMI describe different aspects of body composition. Both are screening guides, not a diagnosis or a complete cardiovascular risk calculation.
 
 #### Nächster Schritt: Dimensionsdetail · nächster Schritt mit bereits angegebenem Taillenumfang
 
@@ -5792,17 +5792,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist`
-- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
 - Prüfhinweis: Verhindert die falsche Behauptung eines erhöhten Taillenumfangs, wenn das Signal allein vom BMI ausgelöst wird\.
 
 **Deutscher Ausgangstext**
 
-> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihr angegebener Taillenumfang von {{waist}} cm liegt nach der verwendeten Referenz {{waistStatusLabel}}. Beide Werte beschreiben unterschiedliche Aspekte und sollten zusammen eingeordnet werden.
+> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Bei Erwachsenen mit einem BMI ab 35 verwendet der Check den BMI als Bewertungsgrundlage. Der angegebene Taillenumfang von {{waist}} cm und das daraus berechnete Taille\-Grösse\-Verhältnis {{whtr}} werden angezeigt, aber nicht zusätzlich gescort.
 
 **Aktueller Text**
 
-> Your BMI is {{bmi}}, placing it in the “{{bmiClassLabel}}” range. Your stated waist circumference of {{waist}} cm is {{waistStatusLabel}} according to the reference used. The two values describe different aspects and should be assessed together.
+> Your BMI is {{bmi}}, placing it in the “{{bmiClassLabel}}” range. For adults with a BMI of 35 or above, the check uses BMI as the assessment basis. The stated waist circumference of {{waist}} cm and the resulting waist\-to\-height ratio of {{whtr}} are shown, but are not scored additionally.
 
 #### Dynamischer Text: Dimensionsdetail · BMI-Hinweis ohne Taillenumfang
 
@@ -5822,23 +5822,23 @@ Themen in diesem Bereich:
 
 > Your BMI is {{bmi}}, placing it in the “{{bmiClassLabel}}” range. Because no waist circumference is available, fat distribution cannot be assessed in addition. BMI is a guide, not a diagnosis.
 
-#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taillenumfangs
+#### Dynamischer Text: Dimensionsdetail · persönliche Einordnung eines erhöhten Taille-Grösse-Verhältnisses
 
 - Seitenelement: Dimensionsdetails
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `recommendation.signal.koerperzusammensetzung.insight.with_waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
-- Geschützte Begriffe: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
 - Prüfhinweis: Neue persönliche Einordnung mit sichtbarem Messwert und Status; Referenzlogik durch Medizin freigeben\.
 
 **Deutscher Ausgangstext**
 
-> Ihr angegebener Taillenumfang beträgt {{waist}} cm und liegt {{waistStatusLabel}}. Der Wert ergänzt Gewicht und BMI, weil die Fettverteilung für das Stoffwechsel\- und Herz\-Kreislauf\-Risiko relevant ist.
+> Ihr angegebener Taillenumfang beträgt {{waist}} cm. Daraus ergibt sich ein Taille\-Grösse\-Verhältnis von {{whtr}}, das {{waistStatusLabel}} liegt. Der Quotient ist ein praktischer Screeningmarker für die zentrale Fettverteilung, aber keine Diagnose.
 
 **Aktueller Text**
 
-> Your stated waist circumference is {{waist}} cm and is {{waistStatusLabel}}. The value complements weight and BMI because fat distribution is relevant to metabolic and cardiovascular risk.
+> Your stated waist circumference is {{waist}} cm. This gives a waist\-to\-height ratio of {{whtr}}, which is {{waistStatusLabel}}. The ratio is a practical screening marker for central fat distribution, but it is not a diagnosis.
 
 #### Risikosignal: Ergebnisseite, Lebensstil-Signal Körperzusammensetzung
 
@@ -5881,11 +5881,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
+> Ein auffälliger BMI oder ein auffälliges Taille\-Grösse\-Verhältnis ist kein Diagnosewert. Ordnen Sie Taillenumfang, Körpergrösse, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
 
 **Aktueller Text**
 
-> An elevated BMI or waist circumference is not a diagnosis. Review waist circumference, weight and metabolic measurements together with a healthcare professional before deciding on specific changes.
+> An elevated BMI or waist\-to\-height ratio is not a diagnosis. Review waist circumference, height, weight and metabolic measurements together with a healthcare professional before deciding on specific changes.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5972,15 +5972,17 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\}
+- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
+- Prüfhinweis: Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen\.
 
 **Deutscher Ausgangstext**
 
-> Bauchumfang {{waist}} cm \({{waistStatusLabel}}\)
+> Bauchumfang {{waist}} cm · Taille\-Grösse\-Verhältnis {{whtr}} \({{waistStatusLabel}}\)
 
 **Aktueller Text**
 
-> Waist circumference {{waist}} cm \({{waistStatusLabel}}\)
+> Waist circumference {{waist}} cm · waist\-to\-height ratio {{whtr}} \({{waistStatusLabel}}\)
 
 #### Dynamischer Text: Abgeleitete Kennzahlen, BMI-Zeile
 
@@ -6083,11 +6085,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im erhöhten Bereich
+> im erhöhten Bereich von 0.50 bis unter 0.60
 
 **Aktueller Text**
 
-> within the elevated range
+> in the elevated range from 0.50 to below 0.60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel hoch
 
@@ -6099,11 +6101,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> im deutlich erhöhten Bereich
+> im deutlich erhöhten Bereich ab 0.60
 
 **Aktueller Text**
 
-> within the clearly elevated range
+> in the clearly elevated range from 0.60
 
 #### Beschriftung: Sichtbares Bauchumfang-Statuslabel normal
 
@@ -6111,14 +6113,31 @@ Themen in diesem Bereich:
 - Freigabe durch: Marketing, Medizin
 - Freigabestatus: Prüfung erforderlich
 - Technische ID: `ui.metrics.waist_status.normal`
+- Prüfhinweis: Das sichtbare Label nennt die geschlechtsneutrale NICE-Grenze statt eines absoluten Zentimeterwerts\.
 
 **Deutscher Ausgangstext**
 
-> im Normalbereich
+> unter 0.50
 
 **Aktueller Text**
 
-> within the normal range
+> below 0.50
+
+#### Beschriftung: Sichtbares WHtR-Statuslabel, wenn bei Erwachsenen mit BMI ab 35 keine zusätzliche WHtR-Einordnung erfolgt
+
+- Seitenelement: Einordnung &amp; Metriken
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.metrics.waist_status.nicht_bewertet`
+- Prüfhinweis: NICE empfiehlt WHtR bei Erwachsenen mit BMI unter 35; darüber bleibt BMI die Bewertungsgrundlage\.
+
+**Deutscher Ausgangstext**
+
+> bei BMI ab 35 nicht zusätzlich bewertet
+
+**Aktueller Text**
+
+> not additionally assessed when BMI is 35 or above
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -16882,11 +16901,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bauchfett &amp; Taillenumfang
+> Bauchfett &amp; Taille\-Grösse\-Verhältnis
 
 **Aktueller Text**
 
-> Abdominal fat &amp; waist circumference
+> Abdominal fat &amp; waist\-to\-height ratio
 
 #### Quellenbezeichnung: Taillenumfang · Linkbeschriftung
 
@@ -16927,11 +16946,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> WHO/IDF\-Schwellenwerte zum Taillenumfang ·
+> NICE\-Einordnung des Taille\-Grösse\-Verhältnisses ·
 
 **Aktueller Text**
 
-> WHO/IDF waist circumference thresholds ·
+> NICE waist\-to\-height ratio classification ·
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16942,11 +16961,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Normalbereich: Männer unter 94 cm, Frauen unter 80 cm.
+> Berechnung: Taillenumfang geteilt durch Körpergrösse; beide Werte müssen in derselben Einheit vorliegen.
 
 **Aktueller Text**
 
-> Normal range: men below 94 cm, women below 80 cm.
+> Calculation: waist circumference divided by height; both values must use the same unit.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16957,11 +16976,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Erhöhter Referenzbereich: Männer 94 bis unter 102 cm, Frauen 80 bis unter 88 cm.
+> 0,40 bis unter 0,50: günstiger Bereich. Werte unter 0,40 werden nicht als «noch besser» belohnt; mögliches Untergewicht wird separat eingeordnet.
 
 **Aktueller Text**
 
-> Elevated reference range: men 94 to below 102 cm, women 80 to below 88 cm.
+> 0.40 to below 0.50: favourable range. Values below 0.40 are not rewarded as “even better”; possible underweight is assessed separately.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16972,11 +16991,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.
+> 0,50 bis unter 0,60: erhöhte zentrale Fettverteilung. Ab 0,60: deutlich erhöhte zentrale Fettverteilung.
 
 **Aktueller Text**
 
-> Markedly elevated reference range: men 102 cm or above, women 88 cm or above.
+> 0.50 to below 0.60: increased central adiposity. From 0.60: high central adiposity.
 
 #### Detailtext: Taillenumfang · Fachlicher Punkt
 
@@ -16987,11 +17006,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.
+> Im Score ersetzt WHtR die bisherigen geschlechtsspezifischen Zentimetergrenzen. Bei Erwachsenen ab BMI 35 bleibt der BMI trotz Taillenangabe die Bewertungsgrundlage; ohne Taillenangabe gilt der BMI ebenfalls als Fallback. WHtR ist ein Screeningmarker, keine Diagnose.
 
 **Aktueller Text**
 
-> BMI and waist circumference are guides and complement each other.
+> In the score, WHtR replaces the previous sex\-specific centimetre thresholds. For adults with a BMI of 35 or above, BMI remains the assessment basis even when a waist value is available; without a waist value, BMI is also the fallback. WHtR is a screening marker, not a diagnosis.
 
 <a id="bereich-ubergreifende-ergebnisdarstellung"></a>
 

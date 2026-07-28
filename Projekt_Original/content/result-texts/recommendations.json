@@ -1303,7 +1303,7 @@
       "context": "Summary-only-Handlungsfeld lv_koerperprofil in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Ein auffälliger BMI oder Taillenumfang ist kein Diagnosewert. Ordnen Sie Taillenumfang, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.",
+      "text": "Ein auffälliger BMI oder ein auffälliges Taille-Grösse-Verhältnis ist kein Diagnosewert. Ordnen Sie Taillenumfang, Körpergrösse, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.",
       "reviewStatus": "needs-review",
       "comment": "Keine pauschale Gewichtsabnahme oder Diagnose aus Einzelwerten; durch Marketing und Medizin freigeben."
     },
@@ -3888,7 +3888,7 @@
       "context": "Dimensionsdetail koerperzusammensetzung, Einordnung",
       "kind": "insight",
       "reviewers": "Marketing, Medizin",
-      "text": "Taillenumfang und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung und ergänzen sich bei der Einordnung des Stoffwechsel- und Herz-Kreislauf-Risikos. Beide Werte sind Orientierungen und keine Diagnose.",
+      "text": "Taille-Grösse-Verhältnis und BMI beschreiben unterschiedliche Aspekte der Körperzusammensetzung. Beide Werte sind Screeningorientierungen und keine Diagnose oder vollständige Herz-Kreislauf-Risikoberechnung.",
       "reviewStatus": "needs-review",
       "comment": "Neutraler Fallback behauptet keinen erhöhten Taillenumfang, wenn das Signal allein vom BMI ausgelöst wird; durch Marketing und Medizin freigeben."
     },
@@ -4255,12 +4255,13 @@
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.with_waist",
       "section": "Dimensionsdetails",
-      "context": "Dimensionsdetail koerperzusammensetzung, persönliche Einordnung eines erhöhten Taillenumfangs",
+      "context": "Dimensionsdetail koerperzusammensetzung, persönliche Einordnung eines erhöhten Taille-Grösse-Verhältnisses",
       "kind": "template",
       "reviewers": "Marketing, Medizin",
-      "text": "Ihr angegebener Taillenumfang beträgt {{waist}} cm und liegt {{waistStatusLabel}}. Der Wert ergänzt Gewicht und BMI, weil die Fettverteilung für das Stoffwechsel- und Herz-Kreislauf-Risiko relevant ist.",
+      "text": "Ihr angegebener Taillenumfang beträgt {{waist}} cm. Daraus ergibt sich ein Taille-Grösse-Verhältnis von {{whtr}}, das {{waistStatusLabel}} liegt. Der Quotient ist ein praktischer Screeningmarker für die zentrale Fettverteilung, aber keine Diagnose.",
       "requiredTerms": [
         "{{waist}}",
+        "{{whtr}}",
         "{{waistStatusLabel}}"
       ],
       "reviewStatus": "needs-review",
@@ -4272,12 +4273,12 @@
       "context": "Dimensionsdetail koerperzusammensetzung, BMI-Hinweis bei vorhandenem Taillenumfang",
       "kind": "template",
       "reviewers": "Marketing, Medizin",
-      "text": "Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihr angegebener Taillenumfang von {{waist}} cm liegt nach der verwendeten Referenz {{waistStatusLabel}}. Beide Werte beschreiben unterschiedliche Aspekte und sollten zusammen eingeordnet werden.",
+      "text": "Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Bei Erwachsenen mit einem BMI ab 35 verwendet der Check den BMI als Bewertungsgrundlage. Der angegebene Taillenumfang von {{waist}} cm und das daraus berechnete Taille-Grösse-Verhältnis {{whtr}} werden angezeigt, aber nicht zusätzlich gescort.",
       "requiredTerms": [
         "{{bmi}}",
         "{{bmiClassLabel}}",
         "{{waist}}",
-        "{{waistStatusLabel}}"
+        "{{whtr}}"
       ],
       "reviewStatus": "needs-review",
       "comment": "Verhindert die falsche Behauptung eines erhöhten Taillenumfangs, wenn das Signal allein vom BMI ausgelöst wird."

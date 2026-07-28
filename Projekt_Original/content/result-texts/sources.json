@@ -589,7 +589,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.title",
       "kind": "title",
       "reviewers": "Marketing, Medizin",
-      "text": "Bauchfett & Taillenumfang",
+      "text": "Bauchfett & Taille-Grösse-Verhältnis",
       "reviewStatus": "needs-review",
       "comment": ""
     },
@@ -599,7 +599,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.reference",
       "kind": "source_label",
       "reviewers": "Marketing, Medizin",
-      "text": "WHO/IDF-Schwellenwerte zum Taillenumfang ·",
+      "text": "NICE-Einordnung des Taille-Grösse-Verhältnisses ·",
       "reviewStatus": "needs-review",
       "comment": ""
     },
@@ -629,7 +629,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.point.1",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Normalbereich: Männer unter 94 cm, Frauen unter 80 cm.",
+      "text": "Berechnung: Taillenumfang geteilt durch Körpergrösse; beide Werte müssen in derselben Einheit vorliegen.",
       "reviewStatus": "needs-review",
       "comment": ""
     },
@@ -639,7 +639,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.point.2",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Erhöhter Referenzbereich: Männer 94 bis unter 102 cm, Frauen 80 bis unter 88 cm.",
+      "text": "0,40 bis unter 0,50: günstiger Bereich. Werte unter 0,40 werden nicht als «noch besser» belohnt; mögliches Untergewicht wird separat eingeordnet.",
       "reviewStatus": "needs-review",
       "comment": ""
     },
@@ -649,7 +649,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.point.3",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Deutlich erhöhter Referenzbereich: Männer ≥ 102 cm, Frauen ≥ 88 cm.",
+      "text": "0,50 bis unter 0,60: erhöhte zentrale Fettverteilung. Ab 0,60: deutlich erhöhte zentrale Fettverteilung.",
       "reviewStatus": "needs-review",
       "comment": ""
     },
@@ -659,7 +659,7 @@
       "context": "Quellenseite, statischer Inhalt: sources.waist.point.4",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "BMI und Taillenumfang sind Orientierungswerte und ergänzen sich.",
+      "text": "Im Score ersetzt WHtR die bisherigen geschlechtsspezifischen Zentimetergrenzen. Bei Erwachsenen ab BMI 35 bleibt der BMI trotz Taillenangabe die Bewertungsgrundlage; ohne Taillenangabe gilt der BMI ebenfalls als Fallback. WHtR ist ein Screeningmarker, keine Diagnose.",
       "reviewStatus": "needs-review",
       "comment": ""
     },

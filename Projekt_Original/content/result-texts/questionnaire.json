@@ -349,7 +349,7 @@
       "context": "Frage bauchumfang, help",
       "kind": "help",
       "reviewers": "Marketing, Medizin",
-      "text": "Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ist oft aussagekräftiger als das Gewicht allein. Wenn Sie den Wert nicht kennen, lassen Sie das Feld einfach leer.",
+      "text": "Messen Sie nach normalem Ausatmen ungefähr auf halber Strecke zwischen der untersten tastbaren Rippe und der Oberkante des Beckenkamms. Bauchfett ist stoffwechselaktiv – das Verhältnis von Taille zu Körpergrösse ergänzt den BMI als praktischer Marker der zentralen Fettverteilung. Wenn Sie den Wert nicht kennen oder schwanger sind, lassen Sie das Feld einfach leer.",
       "reviewStatus": "",
       "comment": ""
     },
