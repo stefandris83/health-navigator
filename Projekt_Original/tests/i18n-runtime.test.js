@@ -28,7 +28,7 @@ const MODULES = [
 
 const ANSWERS = {
   alter: 52, geschlecht: 'maennlich', groesse: 178, gewicht: 96, bauchumfang: 105,
-  stabilitaet: 'unsicher', sitzzeit: 'ue10', familienwissen: 'wenig', vorsorge: 'nein',
+  stabilitaet: 'unsicher', sitzzeit: 'ue10', familienwissen: 'nein', vorsorge: 'nein',
   rauchen: 'ja_regelmaessig', alkohol: 'w4plus', socialmedia: 'oft',
   familie_hk: 'ja', bluthochdruck: 'ja',
   ausdauer_moderat: 'u30', ausdauer_intensiv: 'keine', krafttraining: 'tage0',

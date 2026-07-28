@@ -109,59 +109,59 @@
     },
     {
       "id": "recommendation.catalog.ei_familie.why",
-      "text": "Cardiovascular disease, diabetes or inherited conditions occur in your close family. This is not destiny, but it is a good reason to have your family history assessed by a healthcare professional.",
+      "text": "Relevant conditions are known in your parents, siblings or children. For medical interpretation, the condition — or type of cancer — the relative affected and their approximate age at diagnosis are especially helpful.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5d970c9bec36d448e22981202cbfaa39affd8d5788678d322968630b2a02b755"
+      "sourceContractHash": "25a741d155ac81784dfa446d308f775177d70028c1c3c5ca751f53d08df99189"
     },
     {
       "id": "recommendation.catalog.ei_familie.step",
-      "text": "Discuss your family history with a healthcare professional when convenient and clarify which baseline measurements or targeted examinations may be useful for you.",
+      "text": "Gather these details. If there is no current professional risk assessment, clarify its status and arrange a preventive-care consultation if needed; otherwise, take the details to your next planned consultation. Ask which examinations are appropriate based on your age, personal health measurements and family history.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "10bb86bb99f0eb63fd59eb7201e6afdbc277feb44667f6102117f7f81e6dd1bc"
+      "sourceContractHash": "180039b0560a3a527f8aaf9809cce5ab5eb666e8149f8e40bf09bbc5b891f83d"
     },
     {
       "id": "recommendation.catalog.ei_familie.benefit",
-      "text": "Knowing your risk allows you to start prevention earlier and target it more precisely.",
+      "text": "A precise family history makes preventive care more personal without implying that you have a condition.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f60c8e9fdd6581fa66b3abe504131722554ff7038cb877cd6bde44cd22bc4349"
+      "sourceContractHash": "0dd523a6859c5a294a67071919667e5403cdc8b06da100a1211fec8fd702e150"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.title",
-      "text": "Have your personal risk assessed",
+      "text": "Clarify whether your risk assessment is up to date",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "442d362e83bfadf5ca79710deff14436861ad29404ea49f11d0c75db809bff89"
+      "sourceContractHash": "8387f23b22b6c8f1a1acb476089756d68f1000438a48dda3d85ba1913540afab"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.why",
-      "text": "You have not yet had your personal risk of conditions such as cancer, high blood pressure or type 2 diabetes assessed. High blood pressure in particular often goes unnoticed for a long time.",
+      "text": "Your answer does not establish that your personal risk assessment is up to date. Health measurements and preventive-care needs can change with age, new results or changes in family history.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "61e24fc759ddb77a13ab529d89f058f09dd549d0c572faca7703116f55ee1ce3"
+      "sourceContractHash": "3be72d263c53f593e76a5d3020019cd731049e77becc83b7e1c13f9b868b5eb1"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.step",
-      "text": "Arrange a check-up when convenient and have baseline values such as blood pressure, blood glucose and blood lipids measured. Depending on your age and family history, consider other screening examinations as well.",
+      "text": "Check existing records or ask your practice when the last assessment took place. If there is no current assessment, ask a healthcare professional which baseline measurements and preventive examinations are appropriate now.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7a7ed99f170a6fe3a0183da417801d94ccfd2acc8d7cc6634a721c3b89d14c5e"
+      "sourceContractHash": "690722215b7ec561a78de683fe02dca25cc6f5a9d15c9e22264127e1568e3796"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.benefit",
-      "text": "Knowing your values makes prevention specific and shows where attention is particularly worthwhile.",
+      "text": "Clarifying your current status avoids unnecessary repetition and helps you schedule useful checks in good time.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "156c7b3f0c813a45fe6744d387b74fb77bd77db78373175ff7f54e9d5a32c090"
+      "sourceContractHash": "0a0ab2fa3837bc221fe1cb7525d5cbfa4880a522478c22526b3c1f24b9be406b"
     },
     {
       "id": "recommendation.catalog.ei_alkohol.title",
@@ -293,35 +293,71 @@
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.title",
-      "text": "Learn about your family history",
+      "text": "Complete your family history",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dbf51b10ebf2162b4ae969585d41d59ca3a1134b88105e4c6026acb1d2a34308"
+      "sourceContractHash": "5d4e1c15b1e37cb08cda083e91c3c7e9ea6ef93ad9ad5ae7c35f131dc0426bc2"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.why",
-      "text": "You currently know little about your family's medical history. This knowledge helps you approach preventive care more precisely.",
+      "text": "You know only part of your family medical history or do not know it. The condition, relative affected and approximate age at diagnosis are especially helpful for preventive care.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8c4c0d1860565ed5bc6670fa7d23cb3a2c4c985bd9268ff7f4fbb13ddfc4d027"
+      "sourceContractHash": "0e77104316395924259871c1e6def5b03262cabb535728698ee5397d354e8260"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.step",
-      "text": "When convenient, ask close relatives whether cardiovascular disease, diabetes or cancer occurred at a young age, and write down what you learn.",
+      "text": "Ask parents, siblings or another well-informed relative which of the listed conditions occurred, in whom and at approximately what age. For cancer, also note the type of cancer.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "74f7866866094340beede464e1b3c58cccb87c489828c623fd7c6e71cdb05fb2"
+      "sourceContractHash": "5e78e495485fd0c4705c588eb2123712d081380a5604b96d8179e901af6928e7"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.benefit",
-      "text": "Knowing your family history helps you time examinations and prevention more appropriately.",
+      "text": "These details help a healthcare professional tailor preventive care and possible screening more closely to you.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1eb52568d9e067bc10ab7881e45e14481b75c92e9d71bc5289790e23a276fcf9"
+      "sourceContractHash": "bf50afc45fda9290b89d6830836534f99759e5ba5b2ff9c8752f941898420022"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.title",
+      "text": "Learn which preventive care is right for you",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "cb9093dd7c03f1d39a50706c7b63d604714b5ede57a6f72c5910746c698b9a2f"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.why",
+      "text": "You do not yet know fully which preventive examinations are appropriate based on your age, personal health measurements and family history.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2cc6eee97da8ed19647f0bef35ccf56f87a082d3bd57254a1ef77a64d5bd87aa"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.step",
+      "text": "Use reliable health information and discuss open questions with a healthcare professional. Ask specifically what benefit an examination offers you and when it is appropriate.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "67b92d89676540929693e151cca806f474eec653395312db9208bcb772c1f1c5"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.benefit",
+      "text": "This helps you make informed decisions and plan preventive care that is appropriate for you.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "da78bd10beec7189283a6d5e613df5187164a0376cbef9abbf33d362609c9995"
     },
     {
       "id": "recommendation.catalog.fi_einstieg.title",
@@ -994,30 +1030,30 @@
     },
     {
       "id": "recommendation.lever.lv_familie.detail",
-      "text": "Note which condition occurred in which close relative and at what age, and discuss this with a healthcare professional. If cardiovascular disease is among them, explicitly discuss a personal cardiovascular risk assessment and appropriate prevention, especially if it occurred early in the family.",
+      "text": "Note the condition, relative affected and approximate age at diagnosis; for cancer, also note the type. Check whether you have a current professional risk assessment. If not, clarify its status and arrange a preventive-care consultation if needed; otherwise, take the details to your next planned consultation. Ask which preventive care is appropriate for you.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "4a4e3c8dba7b36cc3e3e1e4f215a0717f0d4c0b4076e52adaed20b10c0a9ff20"
+      "sourceContractHash": "9504cf270aa6b2f40292e4e07e824d0b7e70e8399ccfe7dd490f1f9f71e72532"
     },
     {
       "id": "recommendation.lever.lv_vorsorge.label",
-      "text": "Have your personal risk assessed",
+      "text": "Clarify whether your risk assessment is up to date",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "3229d68a51876d1687a411fe57908e70355de2e36aa09a312d6002a557b1f987"
+      "sourceContractHash": "c8f59cc8b78b61f98eaeff00815f947a83bc9e207a217dffac457b744fbb4a9c"
     },
     {
       "id": "recommendation.lever.lv_vorsorge.detail",
-      "text": "A personal check-up can identify risks that may go unnoticed for a long time. Ask a healthcare professional which baseline measurements and screening examinations are appropriate for your age and family history.",
+      "text": "Check when your personal health risk was last assessed professionally. If the assessment is not current or its status is unclear, ask a healthcare professional which baseline measurements and preventive examinations are appropriate now.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "8d9d5123e3428ff5315b83553728980991334de15c6a9a34fe2dfd1c267a060a"
+      "sourceContractHash": "eae0699178f30e3f4ddb953dbf2f18ebb57e93ea767a5f88306e77a80ebd4ef4"
     },
     {
       "id": "recommendation.lever.lv_untergewicht.label",
@@ -1177,11 +1213,29 @@
     },
     {
       "id": "recommendation.lever.lv_familienwissen.detail",
-      "text": "Knowing your family history helps target preventive care. A conversation with your family is the simplest first step.",
+      "text": "Ask relatives which relevant condition occurred, in whom and at approximately what age; for cancer, also ask about the type. Record the details for a future preventive-care consultation.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7c638a7bc3cada797960a863021c6773d68f79bb0bda37cbc9bb501fddda8703"
+      "sourceContractHash": "103ae1342f239ea720465f75e148a738057aaeca6c0fdc1228267790bc7cfb9e"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.label",
+      "text": "Learn which preventive care is right for you",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "23b82370ad189d36ac128a992d2a880395d2d36f175701443f035366f896ac22"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.detail",
+      "text": "Use reliable sources and ask a healthcare professional which preventive examinations are appropriate based on your age, personal health measurements and family history.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2931e9fcb3e920bea8dc8dad87a450367c7a1342129a45bcc296083b73ffa14c"
     },
     {
       "id": "recommendation.lever.lv_socialmedia.label",
@@ -1773,19 +1827,19 @@
     },
     {
       "id": "recommendation.strength.st_vorsorge.label",
-      "text": "Preventive care up to date and family risks known",
+      "text": "Current risk assessment and preventive-care knowledge",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "678e3f4e0dd5848287448aea6730b2cfc823edda53d25bd761228bc029e4af4b"
+      "sourceContractHash": "366f73de070224481d0fb1b6ef99bd4b495d54b84c7957d931e96f0bbd7f9fc5"
     },
     {
       "id": "recommendation.strength.st_vorsorge.detail",
-      "text": "You know your personal risk and family history, providing the best foundation for targeted prevention.",
+      "text": "Your healthcare professional considers your personal risk assessment up to date, and you know which preventive examinations are appropriate for you — a good basis for targeted prevention.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8223f30763be44fff125c018eea3c2eb7e8498267dda23ca81e40d8670852b33"
+      "sourceContractHash": "80b8b7b6612631237fa6bd33357b05bad87de0ef09deb9b5b9e374716ad06815"
     },
     {
       "id": "recommendation.strength.st_protein.label",
@@ -2429,54 +2483,81 @@
     },
     {
       "id": "recommendation.plan.ei_vorsorge.this_week",
-      "text": "Arrange a check-up. Ask for <b>blood pressure, blood glucose and a lipid profile</b>. Ask whether ApoB provides additional information for your risk profile and whether Lp(a) has already been measured once. Many risk factors cause no symptoms for a long time, so current values provide a reliable basis for discussion.",
+      "text": "Check existing records or ask your practice when your personal health risk was last assessed. If there is no current assessment, arrange an appointment and take any existing measurements and your family history with you.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "c78a0abd01247dd856df5212aad20ace72b77b75a7dbe6e7be22c15bbe5798e5"
+      "sourceContractHash": "8a5f3285a9d4e97bf696dc9bc3cae008725ffd5e396335fcdb99fa83ea6a340c"
     },
     {
       "id": "recommendation.plan.ei_vorsorge.weeks_2_3",
-      "text": "Record your values and ask for your personal risk to be explained. A baseline value measured once makes every later change visible and makes prevention specific.",
+      "text": "Ask the healthcare professional which baseline measurements and preventive examinations suit your age and risk profile. Have the results, benefits and possible next steps explained clearly.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5f51fcadd1ddbc5190b57047d8a3ad02bb9f0b4649035a49b6dead9d02d406dc"
+      "sourceContractHash": "2049583893135b202a2f6d495f529ef21181356a3b08c5789fb222096a30ce13"
     },
     {
       "id": "recommendation.plan.ei_vorsorge.week_4",
-      "text": "Record when the next check is appropriate, usually every 1–3 years depending on values and age, and schedule it. Preventive care works only when it becomes routine.",
+      "text": "Agree whether and when reassessment is useful. This keeps your preventive care up to date without repeating examinations unnecessarily.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "176977f7526cd71d4b9ae3337e92bb88270a12db088d2a65f2b652bc4282cda7"
+      "sourceContractHash": "a92e307f6dd772bf94225120ad0ed51d244ef67b39109b11b6a888c9ac3094e9"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.this_week",
+      "text": "Write down what you still want to know about your personal preventive care. Use a reliable health source to gain an initial overview.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d20befd80cce0559d34517f63295a2cc652fea7b68367fa31596e65f8e8ae59a"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.weeks_2_3",
+      "text": "Discuss open questions with a healthcare professional. Ask specifically which examination is appropriate based on your age, personal health measurements and family history, and what benefit it offers you.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "22037d6221226e6991968e0dbf2d2f56e1cabc854ba08d5ed12c944adf0433ae"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.week_4",
+      "text": "Record which preventive care is currently recommended for you and when to review the subject again. This turns information into a clear personal preventive-care plan.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "15bce608eb71c916ae63109e55938f9937066c4179b4b1737ee167703ec3c482"
     },
     {
       "id": "recommendation.plan.ei_familie.this_week",
-      "text": "Gather information about which close relatives, including parents and siblings, developed which condition and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant.",
+      "text": "Gather which relevant condition occurred in which parent, sibling or child and at approximately what age; for cancer, also record the type. Check whether you have a current professional risk assessment. If not, clarify its status and arrange a preventive-care consultation if needed; otherwise, take the details to your next planned consultation.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "69cff3a3671cc34a6de9daded6a52b9f91961b633f918f44bddd996d650c8eb0"
+      "sourceContractHash": "03ccdbd3e5a5ae6775f471a496c7f36d3b11d58aade32a423a7151ba56f13513"
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
-      "text": "Arrange an appointment and bring this family history with you. If cardiovascular disease occurred at an early age in your family, discuss blood pressure and a lipid profile, as well as whether Lp(a) has already been measured once; whether ApoB adds information depends on your individual risk profile. For diabetes or other inherited conditions, the healthcare professional will determine which examinations are appropriate.",
+      "text": "Take this family history to your next preventive-care consultation. If cardiovascular disease occurred early, a healthcare professional can assess whether a one-off Lp(a) measurement is appropriate alongside blood pressure and a lipid profile. Whether ApoB provides additional information depends on your individual risk profile. For diabetes, cancer or other hereditary conditions, they will determine suitable assessments or screening.",
       "requiredTerms": [
         "Lp(a)",
         "ApoB"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4bf48600e24abeb53f0844f000c8f0ee795150786825b9764326cf3b19d03646"
+      "sourceContractHash": "84683e8cfdea72d90e4b5851ed2ed966d4c4d283b2dedd1cf4adbe56f0e5d44f"
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",
-      "text": "Clarify whether and when early-detection examinations are appropriate for you, and set the next follow-up appointment. A family history is not destiny; it is advance information if you use it.",
+      "text": "Record which assessments were recommended and when the next useful follow-up is due. A family history is not a diagnosis, but it can make preventive care more targeted.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e3a2a221c1a1c410a9d56678dfd9e8ae4be427c25d04c45c2b1c67f0fde31bfd"
+      "sourceContractHash": "250c607d9924213648770d588f3771ff4600242b60169ae0a2665b2234afcc20"
     },
     {
       "id": "recommendation.plan.fi_beweglichkeit.this_week",
@@ -2672,27 +2753,27 @@
     },
     {
       "id": "recommendation.plan.ei_familienwissen.this_week",
-      "text": "Ask close relatives, including parents and siblings, which cardiovascular diseases or cancers occurred and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant.",
+      "text": "Ask parents, siblings or another well-informed relative which of the listed conditions occurred, in whom and at approximately what age. For cancer, also ask about the type.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "11bcd87a63e2071dfa8fe7becf59291295d1f207569263ef9c362d064fd8cd37"
+      "sourceContractHash": "a8941d21fa4270b23f310d2fc7234dfd40e2584da4b6fbd19fcc950f5faeb03d"
     },
     {
       "id": "recommendation.plan.ei_familienwissen.weeks_2_3",
-      "text": "Write down the most important information: who, which condition and at what age. A family history is not destiny but useful information, and it often shifts the appropriate start of preventive care several years earlier.",
+      "text": "Organise the details clearly: relative affected, condition or type of cancer, and approximate age at diagnosis. It can also be helpful to record that none of these conditions is known.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ec87289db8d436bdf94afa7eaa6902d84a912cb08cc8ab252403aa59b487015a"
+      "sourceContractHash": "eedc7cd8362beba527ec4d70eae9a2476adcb3774c0db68323d9c47261c698e0"
     },
     {
       "id": "recommendation.plan.ei_familienwissen.week_4",
-      "text": "Take the notes to your next medical appointment. This allows your healthcare professional to tailor preventive care and any early detection to your profile.",
+      "text": "Take the notes to your next preventive-care consultation. They help a healthcare professional assess which checks or screening programmes are appropriate for you.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "770ecb984cb339bd04ba43af05d8c711e20272022e8ab8ab5b29172acf7d3627"
+      "sourceContractHash": "cc8a65c56007bb3a3bb12deb9b3d735c9e7a3d2c0f6c0c75bd2bdd9bbf76b963"
     },
     {
       "id": "recommendation.plan.er_protein.this_week",
@@ -3020,19 +3101,19 @@
     },
     {
       "id": "recommendation.signal.familie_hk.insight",
-      "text": "A family history is not destiny, but it is important information. It helps healthcare professionals assess which preventive measures or check-ups may be useful for you.",
+      "text": "A known condition in a parent, sibling or child does not mean that you will develop it yourself. It is, however, important information for personalising preventive care and follow-up.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e59f1a86ab12d5925b21e2a352d244ff9f2f8531e90bb7be3ab70c5287d370ab"
+      "sourceContractHash": "3fba05a2d7bce382037b48f4f410a2f4d7e5089d7a8c05a471b73db7813b8bf9"
     },
     {
       "id": "recommendation.signal.familie_hk.clarify",
-      "text": "Which relatives developed which conditions and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant. The healthcare professional can also clarify whether genetic counselling may be useful.",
+      "text": "Which condition was diagnosed in which relative and at approximately what age; for cancer, also the type of cancer. A healthcare professional can use this information to assess whether targeted preventive care or genetic counselling may be useful.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8fa21378f4d54b7a612255cde9eec01353932d3da2070fa75540ca0b87824404"
+      "sourceContractHash": "41fc459a8d590bb8c6405718d322c936e0a39cf7e4c8c5e37247da6de82ffae9"
     },
     {
       "id": "recommendation.signal.familie_hk.deepen",
@@ -3044,27 +3125,27 @@
     },
     {
       "id": "recommendation.signal.vorsorge.title",
-      "text": "Personal risk never assessed",
+      "text": "Clarify whether your risk assessment is up to date",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "526f2982938c889973e6103b5364b9cfb1e94145384cb685ec06bdeaa68a5586"
+      "sourceContractHash": "b7e49cb692ab1cfdd195b9756c066eacfd2c2ac04fd0d75df753159655956c67"
     },
     {
       "id": "recommendation.signal.vorsorge.insight",
-      "text": "Several cardiovascular risk factors cause no symptoms for a long time. Knowing your blood pressure, blood glucose and blood lipids therefore provides a better basis for assessing your personal risk.",
+      "text": "Your answer does not establish that your personal risk assessment is up to date. Some risk factors cause no symptoms for a long time; current measurements and professional interpretation provide clarity.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7d5191d793503e6c75da4254ce5b37183d1f9b692f893e672077b5c12df77d32"
+      "sourceContractHash": "dcf69538e02753e38dfa9c9c2e9c0ff953cdbf9d5b346e706205d6554fd0e5c0"
     },
     {
       "id": "recommendation.signal.vorsorge.clarify",
-      "text": "Your baseline values, including blood pressure, blood glucose and blood lipids, and the resulting personal 10-year risk.",
+      "text": "When your last assessment took place, which baseline measurements were taken and which preventive examinations are appropriate for your current profile.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "02f371eb743b074d158646eaecd8f6fbdfe774e8db4bc23388f0a10e065698c4"
+      "sourceContractHash": "fa7e6c1184c4dbba44e7d7d7d87492f16de0d3fb46b2d456ffc6ab8237546c41"
     },
     {
       "id": "recommendation.signal.vorsorge.deepen",
@@ -3614,19 +3695,19 @@
     },
     {
       "id": "recommendation.risk_signal.familie_hk.label",
-      "text": "Cardiovascular disease, diabetes or hereditary conditions occur in your close family. Preventive care is particularly worthwhile.",
+      "text": "Relevant conditions are known in your parents, siblings or children. A precise family history helps plan appropriate preventive care.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0bb8020a653a1d5644967bbadcaa049ff503a1b30934fa61d44220c30c17d591"
+      "sourceContractHash": "e4afb27c1a2bf2c78f9eccea1b9722ee8ad2ef6d436a2ef6a6bbd2b0f131d152"
     },
     {
       "id": "recommendation.risk_signal.vorsorge.label",
-      "text": "You have not yet had your personal risk of conditions such as cancer, high blood pressure or type 2 diabetes assessed. A baseline check provides clarity.",
+      "text": "It is not clear that your personal risk assessment is up to date. Clarify its status and arrange a professional assessment if needed.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9513bce0c91856a95a290291b0d3ce33b2634df746305f03118e3823d55fd430"
+      "sourceContractHash": "d08827190e3b7429adc0712407b0c6e0ae8ee3da6f3372bc87ce56bcbecb7986"
     },
     {
       "id": "recommendation.risk_signal.untergewicht.label",

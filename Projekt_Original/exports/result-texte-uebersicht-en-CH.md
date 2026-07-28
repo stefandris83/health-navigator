@@ -15,28 +15,28 @@
 ## Freigabestand
 
 - Sprache: `en-CH`
-- Quellversion: `v1:b542c9a3128f6f7b76d34a670509b84eb6a2bad48bae999d92df0110f7d94c39`
-- Gesamtbestand: **1213 Texte**
-- Freigegeben: **0** · Offen: **1213**
+- Quellversion: `v1:f3e34b301d5513de6c74d9d5345210e540355d3f843e1a8500577aa3fc55bb77`
+- Gesamtbestand: **1223 Texte**
+- Freigegeben: **0** · Offen: **1223**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1213 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1223 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1213 | 0 | 1213 |
-| Medizin | 681 | 0 | 681 |
+| Marketing | 1223 | 0 | 1223 |
+| Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 219 | 219 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -50,15 +50,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (219 Texte)
+## 1. Fragebogen (220 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (219 Texte)
+### Fragebogen (220 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -1027,11 +1027,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Gibt es in Ihrer nahen Familie \(Eltern, Geschwister\) Herz\-Kreislauf\-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
 
 **Aktueller Text**
 
-> Do any close family members \(parents or siblings\) have cardiovascular disease, diabetes or a hereditary condition?
+> Have any of your parents, siblings or children had cardiovascular disease, type 2 diabetes, cancer or a known hereditary condition?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -1042,11 +1042,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Besonders relevant sind früh aufgetretene Erkrankungen \(Männer vor 55, Frauen vor 65 Jahren\). Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.
+> Für die Vorsorge sind drei Angaben besonders hilfreich: welche Erkrankung aufgetreten ist, bei wem und ungefähr in welchem Alter. Bei Krebs ist zusätzlich die Krebsart wichtig. Sie müssen diese Angaben hier nicht erfassen – es kann aber sinnvoll sein, sie für ein Vorsorgegespräch zusammenzutragen. Eine familiäre Belastung bedeutet nicht, dass Sie selbst erkranken werden.
 
 **Aktueller Text**
 
-> Conditions that occurred at a young age are particularly relevant \(men before the age of 55 and women before the age of 65\). A family history does not determine your future, but it is a good reason to take preventive care seriously.
+> Three details are especially helpful for preventive care: which condition occurred, which relative was affected and approximately how old they were at diagnosis. For cancer, the type of cancer also matters. You do not need to enter these details here, but gathering them for a preventive\-care consultation can be useful. A family history does not mean that you will develop the condition yourself.
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1072,11 +1072,26 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein
+> Nein, soweit mir bekannt
 
 **Aktueller Text**
 
-> No
+> No, not to my knowledge
+
+#### Antwortoption: Frage «Familie hk» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.familie_hk.option.teilweise`
+
+**Deutscher Ausgangstext**
+
+> Ich kenne die Familiengeschichte nur teilweise
+
+**Aktueller Text**
+
+> I know only part of my family history
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1102,11 +1117,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wie gut wissen Sie über mögliche Krebs\- oder Herz\-Kreislauferkrankungen in Ihrer Familie Bescheid?
+> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
 
 **Aktueller Text**
 
-> How well informed are you about possible cancer or cardiovascular disease in your family?
+> Do you know which preventive examinations are appropriate for you based on your age, personal health measurements and family history?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -1117,11 +1132,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Das Bewusstsein über familiäre Krebs\- und Herz\-Kreislauferkrankungen macht eine gezielte Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung fördern.
+> Welche Untersuchungen sinnvoll sind, hängt unter anderem von Ihrem Alter, Ihren persönlichen Werten und Ihrer Familiengeschichte ab. Verlässliche Informationen und ein Gespräch mit einer medizinischen Fachperson helfen, Nutzen, Zeitpunkt und Abstände passend festzulegen.
 
 **Aktueller Text**
 
-> Knowing about cancer and cardiovascular disease in your family enables targeted preventive care. If you know your family history, you can address personal risk factors early and support early detection through appropriate screening.
+> Which examinations are appropriate depends in part on your age, personal health measurements and family history. Reliable information and a conversation with a healthcare professional can help you decide which examinations are useful and when and how often to have them.
 
 #### Titel des Hilfetexts: Frage «Familienwissen» · Titel des Hilfetexts
 
@@ -1143,45 +1158,30 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.gar_nicht`
+- Technische ID: `questionnaire.question.familienwissen.option.ja`
 
 **Deutscher Ausgangstext**
 
-> Gar nicht
+> Ja
 
 **Aktueller Text**
 
-> Not at all
+> Yes
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.gut`
+- Technische ID: `questionnaire.question.familienwissen.option.nein`
 
 **Deutscher Ausgangstext**
 
-> Gut
+> Nein
 
 **Aktueller Text**
 
-> Well
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.sehr_gut`
-
-**Deutscher Ausgangstext**
-
-> Sehr gut
-
-**Aktueller Text**
-
-> Very well
+> No
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
@@ -1197,21 +1197,6 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > To some extent
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.wenig`
-
-**Deutscher Ausgangstext**
-
-> Wenig
-
-**Aktueller Text**
-
-> A little
 
 #### Frage: Frage «Geschlecht» · Fragetext
 
@@ -3207,11 +3192,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ\-2\-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen?
+> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
 
 **Aktueller Text**
 
-> Have you learned about conditions such as cancer, high blood pressure and type 2 diabetes and had your personal risk assessed?
+> Has a doctor or another healthcare professional assessed your personal health risk and discussed appropriate preventive examinations with you?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -3222,11 +3207,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für Herz\-Kreislauf\-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs\- oder ersten Anzeichen von Typ\-2\-Diabetes kann sich je nach Alter, Lebensstil oder Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im Alltag lassen sich Risiken und Auswirkungen senken.
+> Bei einer persönlichen Risikoeinschätzung werden je nach Alter, persönlichen Werten und Familiengeschichte zum Beispiel Blutdruck, Blutzucker und Blutfette sowie passende Vorsorge\- und Früherkennungsuntersuchungen besprochen. Eine medizinische Fachperson kann auch sagen, wann eine erneute Beurteilung sinnvoll ist.
 
 **Aktueller Text**
 
-> High blood pressure often goes unnoticed but is a major risk factor for cardiovascular disease. Depending on your age, lifestyle or family history, it may also be worthwhile to assess your personal risk of cancer or early signs of type 2 diabetes. Identifying risks early and making small changes in daily life can reduce both the risks and their effects.
+> Depending on your age, personal health measurements and family history, a personal risk assessment may cover blood pressure, blood glucose and blood lipids as well as appropriate preventive and screening examinations. A healthcare professional can also advise when reassessment may be useful.
 
 #### Titel des Hilfetexts: Frage «Vorsorge» · Titel des Hilfetexts
 
@@ -3248,15 +3233,30 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.vorsorge.option.ja`
+- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
 
 **Deutscher Ausgangstext**
 
-> Ja
+> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
 
 **Aktueller Text**
 
-> Yes
+> Yes, but it was some time ago or I am unsure whether it is still up to date
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.vorsorge.option.aktuell`
+
+**Deutscher Ausgangstext**
+
+> Ja, und die Einschätzung ist gemäss Fachperson aktuell
+
+**Aktueller Text**
+
+> Yes, and the healthcare professional considers the assessment up to date
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -3272,6 +3272,21 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > No
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.vorsorge.option.weiss_nicht`
+
+**Deutscher Ausgangstext**
+
+> Weiss ich nicht
+
+**Aktueller Text**
+
+> I do not know
 
 #### Eingabehinweis: Frage «Wandsitz» · Eingabehinweis
 
@@ -3473,14 +3488,14 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (219 Texte)
+## 2. Einflussfaktoren (228 Texte)
 
 Themen in diesem Bereich:
 
 - [Alkohol](#thema-einflussfaktoren-alkohol): 16 Texte, 16 offen
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
-- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 101 Texte, 101 offen
+- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 110 Texte, 110 offen
 - [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
@@ -4193,7 +4208,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-herz-kreislauf-und-vorsorge"></a>
 
-### Herz-Kreislauf &amp; Vorsorge (101 Texte)
+### Herz-Kreislauf &amp; Vorsorge (110 Texte)
 
 #### Überschrift: Kardiovaskulärer Vorsorge-Check, Titel
 
@@ -5029,11 +5044,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Für die medizinische Einordnung sind die Erkrankung – bei Krebs auch die Krebsart –, die betroffene Person und das ungefähre Diagnosealter besonders hilfreich.
 
 **Aktueller Text**
 
-> Cardiovascular disease, diabetes or inherited conditions occur in your close family. This is not destiny, but it is a good reason to have your family history assessed by a healthcare professional.
+> Relevant conditions are known in your parents, siblings or children. For medical interpretation, the condition — or type of cancer — the relative affected and their approximate age at diagnosis are especially helpful.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5045,11 +5060,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.
+> Tragen Sie diese Angaben zusammen. Falls keine aktuelle professionelle Risikoeinschätzung vorliegt, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich erklären, welche Untersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
 
 **Aktueller Text**
 
-> Discuss your family history with a healthcare professional when convenient and clarify which baseline measurements or targeted examinations may be useful for you.
+> Gather these details. If there is no current professional risk assessment, clarify its status and arrange a preventive\-care consultation if needed; otherwise, take the details to your next planned consultation. Ask which examinations are appropriate based on your age, personal health measurements and family history.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5060,11 +5075,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer sein Risiko kennt, kann Prävention früher und gezielter ausrichten.
+> Eine möglichst genaue Familiengeschichte macht Vorsorge persönlicher, ohne eine Erkrankung vorwegzunehmen.
 
 **Aktueller Text**
 
-> Knowing your risk allows you to start prevention earlier and target it more precisely.
+> A precise family history makes preventive care more personal without implying that you have a condition.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5076,11 +5091,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Tragen Sie zusammen, welche relevante Erkrankung bei welchem Familienmitglied und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit.
 
 **Aktueller Text**
 
-> Gather information about which close relatives, including parents and siblings, developed which condition and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant.
+> Gather which relevant condition occurred in which parent, sibling or child and at approximately what age; for cancer, also record the type. Check whether you have a current professional risk assessment. If not, clarify its status and arrange a preventive\-care consultation if needed; otherwise, take the details to your next planned consultation.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5093,11 +5108,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz\-Kreislauf\-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp\(a\) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.
+> Bringen Sie diese Familiengeschichte zum nächsten Vorsorgegespräch mit. Bei früh aufgetretenen Herz\-Kreislauf\-Erkrankungen kann die Fachperson neben Blutdruck und Lipidprofil einordnen, ob eine einmalige Lp\(a\)\-Bestimmung sinnvoll ist. Ob ApoB zusätzliche Informationen liefert, hängt vom individuellen Risikoprofil ab. Bei Diabetes, Krebs oder anderen erblich bedingten Erkrankungen legt sie die passenden Abklärungen oder Früherkennungsangebote fest.
 
 **Aktueller Text**
 
-> Arrange an appointment and bring this family history with you. If cardiovascular disease occurred at an early age in your family, discuss blood pressure and a lipid profile, as well as whether Lp\(a\) has already been measured once; whether ApoB adds information depends on your individual risk profile. For diabetes or other inherited conditions, the healthcare professional will determine which examinations are appropriate.
+> Take this family history to your next preventive\-care consultation. If cardiovascular disease occurred early, a healthcare professional can assess whether a one\-off Lp\(a\) measurement is appropriate alongside blood pressure and a lipid profile. Whether ApoB provides additional information depends on your individual risk profile. For diabetes, cancer or other hereditary conditions, they will determine suitable assessments or screening.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5108,11 +5123,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Klären Sie, ob und wann Früherkennungsuntersuchungen für Sie sinnvoll sind, und legen Sie den nächsten Kontrolltermin fest. Familiäre Vorbelastung ist kein Schicksal, sondern ein Vorsprung – wenn man ihn nutzt.
+> Halten Sie fest, welche Abklärungen empfohlen wurden und wann der nächste sinnvolle Kontrollzeitpunkt ist. Eine Familiengeschichte ist keine Diagnose, kann Vorsorge aber gezielter machen.
 
 **Aktueller Text**
 
-> Clarify whether and when early\-detection examinations are appropriate for you, and set the next follow\-up appointment. A family history is not destiny; it is advance information if you use it.
+> Record which assessments were recommended and when the next useful follow\-up is due. A family history is not a diagnosis, but it can make preventive care more targeted.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -5123,11 +5138,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ihre Familiengeschichte kennenlernen
+> Familiengeschichte vervollständigen
 
 **Aktueller Text**
 
-> Learn about your family history
+> Complete your family history
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -5138,11 +5153,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie kennen die Krankheitsgeschichte Ihrer Familie bisher wenig. Dieses Wissen hilft, Vorsorge gezielter anzugehen.
+> Sie kennen die Krankheitsgeschichte Ihrer Familie nur teilweise oder gar nicht. Für die Vorsorge sind Art der Erkrankung, betroffene Person und ungefähres Diagnosealter besonders hilfreich.
 
 **Aktueller Text**
 
-> You currently know little about your family's medical history. This knowledge helps you approach preventive care more precisely.
+> You know only part of your family medical history or do not know it. The condition, relative affected and approximate age at diagnosis are especially helpful for preventive care.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5153,11 +5168,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Fragen Sie bei Gelegenheit nahe Angehörige, ob Herz\-Kreislauf\-Erkrankungen, Diabetes oder Krebs früh aufgetreten sind, und notieren Sie es.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind; notieren Sie bei Krebs auch die Krebsart.
 
 **Aktueller Text**
 
-> When convenient, ask close relatives whether cardiovascular disease, diabetes or cancer occurred at a young age, and write down what you learn.
+> Ask parents, siblings or another well\-informed relative which of the listed conditions occurred, in whom and at approximately what age. For cancer, also note the type of cancer.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5168,11 +5183,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer die eigene Familiengeschichte kennt, kann Untersuchungen und Prävention besser timen.
+> Diese Angaben helfen einer Fachperson, Vorsorge und mögliche Früherkennung besser auf Sie abzustimmen.
 
 **Aktueller Text**
 
-> Knowing your family history helps you time examinations and prevention more appropriately.
+> These details help a healthcare professional tailor preventive care and possible screening more closely to you.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5184,11 +5199,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), welche Herz\-Kreislauf\- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind. Fragen Sie bei Krebs auch nach der Krebsart.
 
 **Aktueller Text**
 
-> Ask close relatives, including parents and siblings, which cardiovascular diseases or cancers occurred and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant.
+> Ask parents, siblings or another well\-informed relative which of the listed conditions occurred, in whom and at approximately what age. For cancer, also ask about the type.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5199,11 +5214,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie das Wichtigste schriftlich \(wer, welche Erkrankung, welches Alter\). Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge oft um Jahre nach vorn.
+> Notieren Sie die Angaben übersichtlich: betroffene Person, Erkrankung beziehungsweise Krebsart und ungefähres Diagnosealter. Auch die Information, dass keine solche Erkrankung bekannt ist, kann hilfreich sein.
 
 **Aktueller Text**
 
-> Write down the most important information: who, which condition and at what age. A family history is not destiny but useful information, and it often shifts the appropriate start of preventive care several years earlier.
+> Organise the details clearly: relative affected, condition or type of cancer, and approximate age at diagnosis. It can also be helpful to record that none of these conditions is known.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5214,11 +5229,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nehmen Sie die Notizen zum nächsten Arzttermin mit. So kann Ihre Fachperson Vorsorge und allfällige Früherkennung gezielt auf Ihr Profil abstimmen.
+> Nehmen Sie die Notizen zum nächsten Vorsorgegespräch mit. Eine medizinische Fachperson kann damit besser beurteilen, welche Kontrollen oder Früherkennungsangebote zu Ihnen passen.
 
 **Aktueller Text**
 
-> Take the notes to your next medical appointment. This allows your healthcare professional to tailor preventive care and any early detection to your profile.
+> Take the notes to your next preventive\-care consultation. They help a healthcare professional assess which checks or screening programmes are appropriate for you.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -5229,11 +5244,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Persönliche Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Have your personal risk assessed
+> Clarify whether your risk assessment is up to date
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -5244,11 +5259,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Gerade Bluthochdruck bleibt oft lange unbemerkt.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Gesundheitswerte und Vorsorgebedarf können sich mit dem Alter, neuen Messwerten oder der Familiengeschichte verändern.
 
 **Aktueller Text**
 
-> You have not yet had your personal risk of conditions such as cancer, high blood pressure or type 2 diabetes assessed. High blood pressure in particular often goes unnoticed for a long time.
+> Your answer does not establish that your personal risk assessment is up to date. Health measurements and preventive\-care needs can change with age, new results or changes in family history.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5259,11 +5274,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie bei Gelegenheit einen Check\-up\-Termin und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen – je nach Alter und Familiengeschichte auch weitere Vorsorgeuntersuchungen.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann die letzte Beurteilung war. Falls keine aktuelle Einschätzung vorliegt, klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt sinnvoll sind.
 
 **Aktueller Text**
 
-> Arrange a check\-up when convenient and have baseline values such as blood pressure, blood glucose and blood lipids measured. Depending on your age and family history, consider other screening examinations as well.
+> Check existing records or ask your practice when the last assessment took place. If there is no current assessment, ask a healthcare professional which baseline measurements and preventive examinations are appropriate now.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5274,11 +5289,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bekannte Werte machen Prävention konkret und zeigen, wo sich Aufmerksamkeit besonders lohnt.
+> Ein geklärter Stand verhindert unnötige Wiederholungen und hilft, sinnvolle Kontrollen rechtzeitig zu planen.
 
 **Aktueller Text**
 
-> Knowing your values makes prevention specific and shows where attention is particularly worthwhile.
+> Clarifying your current status avoids unnecessary repetition and helps you schedule useful checks in good time.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5290,11 +5305,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Check\-up\-Termin. Bitten Sie um **Blutdruck, Blutzucker und ein Lipidprofil**. Fragen Sie, ob ApoB bei Ihrem Risikoprofil zusätzliche Information liefert und ob Lp\(a\) bereits einmal bestimmt wurde. Viele Risikofaktoren verursachen lange keine Beschwerden – aktuelle Werte schaffen eine belastbare Gesprächsgrundlage.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann Ihr persönliches Gesundheitsrisiko zuletzt beurteilt wurde. Falls keine aktuelle Einschätzung vorliegt, vereinbaren Sie einen Termin und nehmen Sie vorhandene Messwerte sowie Ihre Familiengeschichte mit.
 
 **Aktueller Text**
 
-> Arrange a check\-up. Ask for **blood pressure, blood glucose and a lipid profile**. Ask whether ApoB provides additional information for your risk profile and whether Lp\(a\) has already been measured once. Many risk factors cause no symptoms for a long time, so current values provide a reliable basis for discussion.
+> Check existing records or ask your practice when your personal health risk was last assessed. If there is no current assessment, arrange an appointment and take any existing measurements and your family history with you.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5305,11 +5320,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie Ihre Werte und lassen Sie sich Ihr persönliches Risiko erklären. Ein einmal erhobener Ausgangswert macht jede spätere Veränderung sichtbar und Prävention konkret.
+> Klären Sie mit der medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Risikoprofil passen. Lassen Sie sich Ergebnisse, Nutzen und mögliche nächste Schritte verständlich erklären.
 
 **Aktueller Text**
 
-> Record your values and ask for your personal risk to be explained. A baseline value measured once makes every later change visible and makes prevention specific.
+> Ask the healthcare professional which baseline measurements and preventive examinations suit your age and risk profile. Have the results, benefits and possible next steps explained clearly.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5320,11 +5335,123 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Halten Sie fest, wann die nächste Kontrolle sinnvoll ist \(je nach Werten und Alter meist alle 1–3 Jahre\) und tragen Sie sie ein. Vorsorge wirkt nur, wenn sie zur Routine wird.
+> Halten Sie gemeinsam fest, ob und wann eine erneute Beurteilung sinnvoll ist. So bleibt Ihre Vorsorge aktuell, ohne Untersuchungen unnötig zu wiederholen.
 
 **Aktueller Text**
 
-> Record when the next check is appropriate, usually every 1–3 years depending on values and age, and schedule it. Preventive care works only when it becomes routine.
+> Agree whether and when reassessment is useful. This keeps your preventive care up to date without repeating examinations unnecessarily.
+
+#### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.title`
+- Prüfhinweis: Neue scorefreie Empfehlung bei fehlendem oder teilweisem Wissen über passende Vorsorge; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Passende Vorsorge kennenlernen
+
+**Aktueller Text**
+
+> Learn which preventive care is right for you
+
+#### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.why`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Sie wissen noch nicht vollständig, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
+
+**Aktueller Text**
+
+> You do not yet know fully which preventive examinations are appropriate based on your age, personal health measurements and family history.
+
+#### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.step`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Nutzen Sie verlässliche Gesundheitsinformationen und besprechen Sie offene Fragen mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung für Sie welchen Nutzen hat und wann sie sinnvoll ist.
+
+**Aktueller Text**
+
+> Use reliable health information and discuss open questions with a healthcare professional. Ask specifically what benefit an examination offers you and when it is appropriate.
+
+#### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.benefit`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> So können Sie informierte Entscheidungen treffen und die für Sie passende Vorsorge gezielt planen.
+
+**Aktueller Text**
+
+> This helps you make informed decisions and plan preventive care that is appropriate for you.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.this_week`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Notieren Sie, welche Frage zu Ihrer persönlichen Vorsorge noch offen ist. Nutzen Sie eine verlässliche Gesundheitsquelle, um sich einen ersten Überblick zu verschaffen.
+
+**Aktueller Text**
+
+> Write down what you still want to know about your personal preventive care. Use a reliable health source to gain an initial overview.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.weeks_2_3`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Besprechen Sie offene Punkte mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll ist und welchen Nutzen sie für Sie hat.
+
+**Aktueller Text**
+
+> Discuss open questions with a healthcare professional. Ask specifically which examination is appropriate based on your age, personal health measurements and family history, and what benefit it offers you.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.week_4`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Halten Sie fest, welche Vorsorge für Sie aktuell empfohlen ist und wann Sie das Thema erneut prüfen sollten. So wird aus Information ein übersichtlicher persönlicher Vorsorgeplan.
+
+**Aktueller Text**
+
+> Record which preventive care is currently recommended for you and when to review the subject again. This turns information into a clear personal preventive\-care plan.
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5351,11 +5478,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.
+> Eine bekannte Erkrankung bei Eltern, Geschwistern oder eigenen Kindern bedeutet nicht, dass Sie selbst erkranken werden. Sie ist aber eine wichtige Information, um Vorsorge und Kontrollen persönlich einzuordnen.
 
 **Aktueller Text**
 
-> A family history is not destiny, but it is important information. It helps healthcare professionals assess which preventive measures or check\-ups may be useful for you.
+> A known condition in a parent, sibling or child does not mean that you will develop it yourself. It is, however, important information for personalising preventive care and follow\-up.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -5367,11 +5494,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.
+> Welche Erkrankung bei wem und ungefähr in welchem Alter diagnostiziert wurde; bei Krebs zusätzlich die Krebsart. Eine medizinische Fachperson kann daraus ableiten, ob und welche gezielte Vorsorge oder genetische Beratung sinnvoll sein könnte.
 
 **Aktueller Text**
 
-> Which relatives developed which conditions and at what age. For cardiovascular disease, onset before age 55 in men or before age 65 in women is particularly relevant. The healthcare professional can also clarify whether genetic counselling may be useful.
+> Which condition was diagnosed in which relative and at approximately what age; for cancer, also the type of cancer. A healthcare professional can use this information to assess whether targeted preventive care or genetic counselling may be useful.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -5398,11 +5525,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor – Vorsorge lohnt sich besonders.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Eine genaue Familiengeschichte hilft, die passende Vorsorge zu planen.
 
 **Aktueller Text**
 
-> Cardiovascular disease, diabetes or hereditary conditions occur in your close family. Preventive care is particularly worthwhile.
+> Relevant conditions are known in your parents, siblings or children. A precise family history helps plan appropriate preventive care.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5490,11 +5617,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz\-Kreislauf\-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.
+> Notieren Sie Erkrankung, betroffene Person und ungefähres Diagnosealter; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich dort die für Sie passende Vorsorge erklären.
 
 **Aktueller Text**
 
-> Note which condition occurred in which close relative and at what age, and discuss this with a healthcare professional. If cardiovascular disease is among them, explicitly discuss a personal cardiovascular risk assessment and appropriate prevention, especially if it occurred early in the family.
+> Note the condition, relative affected and approximate age at diagnosis; for cancer, also note the type. Check whether you have a current professional risk assessment. If not, clarify its status and arrange a preventive\-care consultation if needed; otherwise, take the details to your next planned consultation. Ask which preventive care is appropriate for you.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5520,11 +5647,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer die familiäre Vorbelastung kennt, kann Vorsorge gezielt einsetzen – ein Gespräch in der Familie ist der einfachste erste Schritt.
+> Fragen Sie Angehörige, welche relevante Erkrankung bei wem und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch nach der Krebsart. Notieren Sie die Angaben für ein späteres Vorsorgegespräch.
 
 **Aktueller Text**
 
-> Knowing your family history helps target preventive care. A conversation with your family is the simplest first step.
+> Ask relatives which relevant condition occurred, in whom and at approximately what age; for cancer, also ask about the type. Record the details for a future preventive\-care consultation.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5567,11 +5694,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Aktualität der Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Have your personal risk assessed
+> Clarify whether your risk assessment is up to date
 
 #### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
 
@@ -5583,11 +5710,43 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ein persönlicher Check\-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.
+> Prüfen Sie, wann Ihr persönliches Gesundheitsrisiko zuletzt professionell beurteilt wurde. Ist die Einschätzung nicht aktuell oder unklar, besprechen Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt zu Ihnen passen.
 
 **Aktueller Text**
 
-> A personal check\-up can identify risks that may go unnoticed for a long time. Ask a healthcare professional which baseline measurements and screening examinations are appropriate for your age and family history.
+> Check when your personal health risk was last assessed professionally. If the assessment is not current or its status is unclear, ask a healthcare professional which baseline measurements and preventive examinations are appropriate now.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.label`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Passende Vorsorge kennenlernen
+
+**Aktueller Text**
+
+> Learn which preventive care is right for you
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.detail`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Informieren Sie sich aus verlässlichen Quellen und klären Sie mit einer medizinischen Fachperson, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind.
+
+**Aktueller Text**
+
+> Use reliable sources and ask a healthcare professional which preventive examinations are appropriate based on your age, personal health measurements and family history.
 
 #### Quellenbezeichnung: Sichtbares Label einer Fachquelle
 
@@ -5643,11 +5802,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vorsorge &amp; Familienrisiken im Blick
+> Aktuelle Risikoeinschätzung &amp; Vorsorgewissen
 
 **Aktueller Text**
 
-> Preventive care up to date and family risks known
+> Current risk assessment and preventive\-care knowledge
 
 #### Detailtext: Stärke · Einflussfaktoren · Detailtext
 
@@ -5658,11 +5817,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie kennen Ihr persönliches Risiko und Ihre familiäre Vorgeschichte – die beste Grundlage für gezielte Prävention.
+> Ihre persönliche Risikoeinschätzung ist gemäss Fachperson aktuell, und Sie wissen, welche Vorsorgeuntersuchungen für Sie sinnvoll sind – eine gute Grundlage für gezielte Prävention.
 
 **Aktueller Text**
 
-> You know your personal risk and family history, providing the best foundation for targeted prevention.
+> Your healthcare professional considers your personal risk assessment up to date, and you know which preventive examinations are appropriate for you — a good basis for targeted prevention.
 
 #### Beschriftung: Ergebnis-Zusammenfassung · Themenlabel «Herz-Kreislauf &amp; Vorsorge»
 
@@ -5688,11 +5847,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko nie eingeschätzt
+> Aktualität der Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Personal risk never assessed
+> Clarify whether your risk assessment is up to date
 
 #### Persönliche Einordnung: Dimensionsdetail · Einordnung
 
@@ -5704,11 +5863,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Mehrere Herz\-Kreislauf\-Risikofaktoren verursachen lange keine Beschwerden. Blutdruck, Blutzucker und Blutfette zu kennen, schafft deshalb eine bessere Grundlage für die persönliche Risikoeinordnung.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Manche Risikofaktoren verursachen lange keine Beschwerden; aktuelle Werte und eine professionelle Einordnung schaffen Klarheit.
 
 **Aktueller Text**
 
-> Several cardiovascular risk factors cause no symptoms for a long time. Knowing your blood pressure, blood glucose and blood lipids therefore provides a better basis for assessing your personal risk.
+> Your answer does not establish that your personal risk assessment is up to date. Some risk factors cause no symptoms for a long time; current measurements and professional interpretation provide clarity.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -5719,11 +5878,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Basiswerte \(Blutdruck, Blutzucker, Blutfette\) und daraus Ihr persönliches 10\-Jahres\-Risiko.
+> Wann Ihre letzte Beurteilung stattfand, welche Basiswerte damals erhoben wurden und welche Vorsorgeuntersuchungen aufgrund Ihres heutigen Profils sinnvoll sind.
 
 **Aktueller Text**
 
-> Your baseline values, including blood pressure, blood glucose and blood lipids, and the resulting personal 10\-year risk.
+> When your last assessment took place, which baseline measurements were taken and which preventive examinations are appropriate for your current profile.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -5750,11 +5909,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Ein Basis\-Check schafft Sicherheit.
+> Es ist nicht sicher, dass Ihre persönliche Risikoeinschätzung aktuell ist. Klären Sie den Stand und planen Sie bei Bedarf eine professionelle Beurteilung.
 
 **Aktueller Text**
 
-> You have not yet had your personal risk of conditions such as cancer, high blood pressure or type 2 diabetes assessed. A baseline check provides clarity.
+> It is not clear that your personal risk assessment is up to date. Clarify its status and arrange a professional assessment if needed.
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 

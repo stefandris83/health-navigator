@@ -501,11 +501,11 @@
     },
     {
       "id": "questionnaire.question.familie_hk.help",
-      "text": "Sono particolarmente rilevanti le malattie insorte precocemente (uomini prima dei 55 anni, donne prima dei 65 anni). Una predisposizione familiare non è un destino: è un motivo per prendere sul serio la prevenzione.",
+      "text": "Per la prevenzione sono particolarmente utili tre informazioni: quale malattia si è manifestata, in chi e approssimativamente a quale età. In caso di tumore è importante anche il tipo. Non deve inserire questi dati qui, ma può essere utile raccoglierli per un colloquio di prevenzione. Una storia familiare non significa che si ammalerà a Sua volta.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "fa9b58156b3ecdf7c065a8a6982881d8c9afc9a86213899798655eba9e56e91d"
+      "sourceContractHash": "67ea3e7b50dd72c5ee53615ef747e70f5d8bbb28bc4c4cd24f3145c5bfc089fb"
     },
     {
       "id": "questionnaire.question.familie_hk.option.ja",
@@ -517,11 +517,20 @@
     },
     {
       "id": "questionnaire.question.familie_hk.option.nein",
-      "text": "No",
+      "text": "No, per quanto ne so",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "810ae56d14d6db513e32d9af52e3b4a06b507a5b9db32e079bf97bd54dfdf376"
+      "sourceContractHash": "bd57d69eca88964f0124a86e67056bb095e37d4e6da593b6e7149231d44bb055"
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.teilweise",
+      "text": "Conosco solo in parte la storia medica della mia famiglia",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "19fd7ad194c4c20121c3dea3a2969ce9f832e6990d688e3740001427131f2a91"
     },
     {
       "id": "questionnaire.question.familie_hk.option.weiss_nicht",
@@ -533,19 +542,19 @@
     },
     {
       "id": "questionnaire.question.familie_hk.text",
-      "text": "Nella Sua famiglia stretta (genitori, fratelli o sorelle) vi sono malattie cardiovascolari, diabete o malattie ereditarie?",
+      "text": "Sono comparse malattie cardiovascolari, diabete di tipo 2, tumori o una malattia ereditaria nota tra i Suoi genitori, fratelli, sorelle o figli?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "be57dc8d50f0708614efe393892cf50f9813d9b1b23d4f8c84a761a607f0ee16"
+      "sourceContractHash": "7ae2f934fd3dfc70baf4d5998a36eae35e29d642e952ca1ca9dfea3ac819e3ef"
     },
     {
       "id": "questionnaire.question.familienwissen.help",
-      "text": "Conoscere i casi di cancro e di malattie cardiovascolari presenti in famiglia permette una prevenzione mirata. Chi conosce la propria predisposizione familiare può intervenire precocemente sui fattori di rischio personali e favorire la diagnosi precoce con esami preventivi mirati.",
+      "text": "Gli esami appropriati dipendono, tra l’altro, dall’età, dai parametri di salute personali e dalla storia familiare. Informazioni affidabili e un colloquio con un professionista sanitario aiutano a stabilire quali esami sono utili, quando e con quale frequenza.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "3997095866ea5f6e7250ea7cfbf408a9e16d0565a6fa3e3d55fd4e1c333447f9"
+      "sourceContractHash": "9d7526700ca8dcb881def5bea3c955d19e572c4c624f83b214f0a02fafcc9527"
     },
     {
       "id": "questionnaire.question.familienwissen.help_title",
@@ -556,28 +565,20 @@
       "sourceContractHash": "f5a349dc2722d96cc72d95cb552599460e150ce754a1bab76f596fe9992ab20e"
     },
     {
-      "id": "questionnaire.question.familienwissen.option.gar_nicht",
-      "text": "Per niente",
+      "id": "questionnaire.question.familienwissen.option.ja",
+      "text": "Sì",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "b7b1111d4f38ea7b03f3a54c881fe5fa19588abcacd48b101e12e73c2a6025a8"
+      "sourceContractHash": "373b5dc172e3ea52b818ea6fa5da5b2b566c4034b7506bc5be7ee8b80c55db22"
     },
     {
-      "id": "questionnaire.question.familienwissen.option.gut",
-      "text": "Bene",
+      "id": "questionnaire.question.familienwissen.option.nein",
+      "text": "No",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ce979d2514ddb68d7630b65af930c4edb57863c5a18fcb78eb80ed10b4f6373b"
-    },
-    {
-      "id": "questionnaire.question.familienwissen.option.sehr_gut",
-      "text": "Molto bene",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "6b90061237f000c380c2e415dcdfa99b2152a55b3fe99d628e6db162fb34a9a5"
+      "sourceContractHash": "8bfe194fe3581946b8a4fb938c962fc4471eb2a9f032cd1e28e77a6cc04bb2c3"
     },
     {
       "id": "questionnaire.question.familienwissen.option.teilweise",
@@ -588,20 +589,12 @@
       "sourceContractHash": "184f9f95139b024c333eedc28a81cea1d307593ddd2e166b83b06335c0560702"
     },
     {
-      "id": "questionnaire.question.familienwissen.option.wenig",
-      "text": "Poco",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "e863aeb0b4514ad24918ac44bd0dc75a0e0c88f57dc9228320730be4565b05cb"
-    },
-    {
       "id": "questionnaire.question.familienwissen.text",
-      "text": "Quanto è informato/a su eventuali casi di cancro o malattie cardiovascolari nella Sua famiglia?",
+      "text": "Sa quali esami preventivi sono indicati per Lei in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "55f9c5f038d03d4143f797594b07af37b543d95e9645af7355cad12c117c4036"
+      "sourceContractHash": "6f51378f337b9def884f24c0f076fe8ec6c465481fa1b8adf2502a5ee06a4297"
     },
     {
       "id": "questionnaire.question.geschlecht.option.intersex",
@@ -1621,11 +1614,11 @@
     },
     {
       "id": "questionnaire.question.vorsorge.help",
-      "text": "L’ipertensione spesso non dà sintomi, ma è un fattore di rischio centrale per le malattie cardiovascolari. A seconda dell’età, dello stile di vita o della storia familiare, può essere utile anche una valutazione del rischio personale di cancro o dei primi segni di diabete di tipo 2. Un’identificazione precoce e piccoli cambiamenti nella vita quotidiana permettono di ridurre i rischi e le conseguenze.",
+      "text": "In base all’età, ai parametri di salute personali e alla storia familiare, una valutazione del rischio può comprendere per esempio la pressione arteriosa, la glicemia e i lipidi nel sangue, oltre agli esami di prevenzione e diagnosi precoce appropriati. Un professionista sanitario può anche indicare quando è utile ripetere la valutazione.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "faafbf3abacc4c06733d221ef3f934f6c262c0a00b861f4d6ce32167094e27aa"
+      "sourceContractHash": "7f0afd898bbbd1574583fa82446a3a281b6cf4ae0a2e4a46a42c0bc7318e24fa"
     },
     {
       "id": "questionnaire.question.vorsorge.help_title",
@@ -1636,12 +1629,30 @@
       "sourceContractHash": "686caffb331936b65c4efea20e25bfb58982fd5578f093c2ffb4c8253b9260ce"
     },
     {
-      "id": "questionnaire.question.vorsorge.option.ja",
-      "text": "Sì",
+      "id": "questionnaire.question.vorsorge.option.aelter_unsicher",
+      "text": "Sì, ma risale a tempo fa o non so se sia ancora aggiornata",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "156a5af139ea234c84842979b97ace5ae5854b37e9bfd6c76d521ab07252a5b1"
+      "sourceContractHash": "a82bb4f63368187b0bf0f6572b3449b3ce8d2f8047083f9f3bcde70051fecc6f"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.aktuell",
+      "text": "Sì, e secondo il professionista la valutazione è aggiornata",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2d9f58e5bb072ac75f3d0f22cf968c276dfb9dae1a914e3c3920028b0b207a41"
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.weiss_nicht",
+      "text": "Non lo so",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "656114a43e7bc5315ee4d93490e29367062e6a86f4e8f43038e00b54a66bbfab"
     },
     {
       "id": "questionnaire.question.vorsorge.option.nein",
@@ -1653,11 +1664,11 @@
     },
     {
       "id": "questionnaire.question.vorsorge.text",
-      "text": "Si è informato/a su malattie come cancro, ipertensione e diabete di tipo 2 e ha fatto valutare il Suo rischio personale?",
+      "text": "Un medico o un altro professionista sanitario ha già valutato il Suo rischio personale per la salute e discusso con Lei gli esami preventivi appropriati?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "811d7133c6c55f9e46ec1e24df028148d24c60b5b7fb8924c432f069e0bf7eb7"
+      "sourceContractHash": "2393ec55451d67a7ca441ff5decd8a05b526d282f840a743b9d092200d2df763"
     },
     {
       "id": "questionnaire.question.wandsitz.help",

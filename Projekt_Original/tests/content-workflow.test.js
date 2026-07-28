@@ -485,7 +485,7 @@ test('Review-Export ist human-first, explizit und thematisch gruppiert', () => {
     [byId.get('recommendation.special.act_kardio.title').area, byId.get('recommendation.special.act_kardio.title').topic],
     ['Einflussfaktoren', 'Herz-Kreislauf & Vorsorge']
   );
-  ['lv_familie', 'lv_vorsorge'].forEach((leverId) => {
+  ['lv_familie', 'lv_vorsorge', 'lv_familienwissen', 'lv_vorsorgewissen'].forEach((leverId) => {
     const record = byId.get(`recommendation.lever.${leverId}.label`);
     assert.deepStrictEqual(
       [record.area, record.topic],
@@ -565,6 +565,10 @@ test('Neue Übersetzungen reservieren Review-Kommentare für echte Prüfrückmel
     'recommendation.lever.lv_familie.detail',
     'recommendation.lever.lv_vorsorge.label',
     'recommendation.lever.lv_vorsorge.detail',
+    'recommendation.lever.lv_familienwissen.label',
+    'recommendation.lever.lv_familienwissen.detail',
+    'recommendation.lever.lv_vorsorgewissen.label',
+    'recommendation.lever.lv_vorsorgewissen.detail',
     'recommendation.lever.lv_untergewicht.label',
     'recommendation.lever.lv_untergewicht.detail',
     'recommendation.lever.lv_koerperprofil.label',

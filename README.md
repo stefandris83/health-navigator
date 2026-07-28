@@ -50,6 +50,7 @@ Node.js wird nur für Tests und den Content-Workflow benötigt.
 | Thema | Dokument |
 | --- | --- |
 | Vollständiges Assessment-, Scoring- und Empfehlungsmodell | [SCORING_MODELL.md](Projekt_Original/docs/SCORING_MODELL.md) |
+| Auslöser, Priorisierung und Deduplizierung sichtbarer Empfehlungen | [EMPFEHLUNGSLOGIK.md](Projekt_Original/docs/EMPFEHLUNGSLOGIK.md) |
 | Textpflege, Übersetzungen und CSV-Workflow | [TEXTPFLEGE.md](Projekt_Original/docs/TEXTPFLEGE.md) |
 | Technische und fachliche Integration | [INTEGRATION.md](Projekt_Original/docs/INTEGRATION.md) |
 | Wissenschaftliche Quellen und Aussagegrenzen | [QUELLEN.md](Projekt_Original/docs/QUELLEN.md) |

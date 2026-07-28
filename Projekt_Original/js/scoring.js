@@ -38,7 +38,6 @@ const NORMS = {
   // erhöhtes Risiko v. a. ab ~9,5 h/Tag; 7–8 h ≈ Bevölkerungsdurchschnitt → «genügend»).
   // Details siehe docs/QUELLEN.md.
   sitzzeit: { u4: 2, s4_6: 1, s7_8: 0, s9_10: -1, ue10: -2 },
-  familienwissen: { sehr_gut: 2, gut: 1, teilweise: 0, wenig: -1, gar_nicht: -2 },
   rauchen: { nie: 2, frueher: 1, keine_angabe: 0, ja_gelegentlich: -2, ja_regelmaessig: -2 },
   alkohol: { nie_selten: 2, m1_4: 0, w2_3: -1, w4plus: -2, keine_angabe: 0 },
   socialmedia: { nein: 2, selten: 1, manchmal: 0, oft: -1, sehr_oft: -2 },
@@ -511,7 +510,6 @@ function scoreEinfluss(a, m) {
   let n = avgNorms([
     norm('stabilitaet', a.stabilitaet),
     norm('sitzzeit', a.sitzzeit),
-    norm('familienwissen', a.familienwissen),
     rauchN,
     norm('alkohol', a.alkohol),
     norm('socialmedia', a.socialmedia),
@@ -678,6 +676,8 @@ function detectRiskSignals(a, m, fitnessTests) {
   }
   if (a.vorsorge === 'nein') {
     add('vorsorge', 'medizinisch', 'mittel');
+  } else if (a.vorsorge === 'aelter_unsicher' || a.vorsorge === 'weiss_nicht') {
+    add('vorsorge', 'medizinisch', 'tief');
   }
   if (m.bmiClass === 'untergewicht') {
     add('untergewicht', 'medizinisch', 'mittel');

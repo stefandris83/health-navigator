@@ -629,7 +629,7 @@
       "context": "Frage familie_hk, help",
       "kind": "help",
       "reviewers": "Marketing, Medizin",
-      "text": "Besonders relevant sind früh aufgetretene Erkrankungen (Männer vor 55, Frauen vor 65 Jahren). Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.",
+      "text": "Für die Vorsorge sind drei Angaben besonders hilfreich: welche Erkrankung aufgetreten ist, bei wem und ungefähr in welchem Alter. Bei Krebs ist zusätzlich die Krebsart wichtig. Sie müssen diese Angaben hier nicht erfassen – es kann aber sinnvoll sein, sie für ein Vorsorgegespräch zusammenzutragen. Eine familiäre Belastung bedeutet nicht, dass Sie selbst erkranken werden.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -649,7 +649,17 @@
       "context": "Frage familie_hk, Antwortoption nein",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Nein",
+      "text": "Nein, soweit mir bekannt",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.familie_hk.option.teilweise",
+      "section": "Fragebogen",
+      "context": "Frage familie_hk, Antwortoption teilweise",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ich kenne die Familiengeschichte nur teilweise",
       "reviewStatus": "",
       "comment": ""
     },
@@ -669,7 +679,7 @@
       "context": "Frage familie_hk, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Gibt es in Ihrer nahen Familie (Eltern, Geschwister) Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?",
+      "text": "Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?",
       "reviewStatus": "",
       "comment": ""
     },
@@ -679,7 +689,7 @@
       "context": "Frage familienwissen, help",
       "kind": "help",
       "reviewers": "Marketing, Medizin",
-      "text": "Das Bewusstsein über familiäre Krebs- und Herz-Kreislauferkrankungen macht eine gezielte Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung fördern.",
+      "text": "Welche Untersuchungen sinnvoll sind, hängt unter anderem von Ihrem Alter, Ihren persönlichen Werten und Ihrer Familiengeschichte ab. Verlässliche Informationen und ein Gespräch mit einer medizinischen Fachperson helfen, Nutzen, Zeitpunkt und Abstände passend festzulegen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -694,32 +704,22 @@
       "comment": ""
     },
     {
-      "id": "questionnaire.question.familienwissen.option.gar_nicht",
+      "id": "questionnaire.question.familienwissen.option.ja",
       "section": "Fragebogen",
-      "context": "Frage familienwissen, Antwortoption gar_nicht",
+      "context": "Frage familienwissen, Antwortoption ja",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Gar nicht",
+      "text": "Ja",
       "reviewStatus": "",
       "comment": ""
     },
     {
-      "id": "questionnaire.question.familienwissen.option.gut",
+      "id": "questionnaire.question.familienwissen.option.nein",
       "section": "Fragebogen",
-      "context": "Frage familienwissen, Antwortoption gut",
+      "context": "Frage familienwissen, Antwortoption nein",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Gut",
-      "reviewStatus": "",
-      "comment": ""
-    },
-    {
-      "id": "questionnaire.question.familienwissen.option.sehr_gut",
-      "section": "Fragebogen",
-      "context": "Frage familienwissen, Antwortoption sehr_gut",
-      "kind": "option_label",
-      "reviewers": "Marketing",
-      "text": "Sehr gut",
+      "text": "Nein",
       "reviewStatus": "",
       "comment": ""
     },
@@ -734,22 +734,12 @@
       "comment": ""
     },
     {
-      "id": "questionnaire.question.familienwissen.option.wenig",
-      "section": "Fragebogen",
-      "context": "Frage familienwissen, Antwortoption wenig",
-      "kind": "option_label",
-      "reviewers": "Marketing",
-      "text": "Wenig",
-      "reviewStatus": "",
-      "comment": ""
-    },
-    {
       "id": "questionnaire.question.familienwissen.text",
       "section": "Fragebogen",
       "context": "Frage familienwissen, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Wie gut wissen Sie über mögliche Krebs- oder Herz-Kreislauferkrankungen in Ihrer Familie Bescheid?",
+      "text": "Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2029,7 +2019,7 @@
       "context": "Frage vorsorge, help",
       "kind": "help",
       "reviewers": "Marketing, Medizin",
-      "text": "Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für Herz-Kreislauf-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs- oder ersten Anzeichen von Typ-2-Diabetes kann sich je nach Alter, Lebensstil oder Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im Alltag lassen sich Risiken und Auswirkungen senken.",
+      "text": "Bei einer persönlichen Risikoeinschätzung werden je nach Alter, persönlichen Werten und Familiengeschichte zum Beispiel Blutdruck, Blutzucker und Blutfette sowie passende Vorsorge- und Früherkennungsuntersuchungen besprochen. Eine medizinische Fachperson kann auch sagen, wann eine erneute Beurteilung sinnvoll ist.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2044,12 +2034,32 @@
       "comment": ""
     },
     {
-      "id": "questionnaire.question.vorsorge.option.ja",
+      "id": "questionnaire.question.vorsorge.option.aelter_unsicher",
       "section": "Fragebogen",
-      "context": "Frage vorsorge, Antwortoption ja",
+      "context": "Frage vorsorge, Antwortoption aelter_unsicher",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Ja",
+      "text": "Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.aktuell",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, Antwortoption aktuell",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Ja, und die Einschätzung ist gemäss Fachperson aktuell",
+      "reviewStatus": "",
+      "comment": ""
+    },
+    {
+      "id": "questionnaire.question.vorsorge.option.weiss_nicht",
+      "section": "Fragebogen",
+      "context": "Frage vorsorge, Antwortoption weiss_nicht",
+      "kind": "option_label",
+      "reviewers": "Marketing",
+      "text": "Weiss ich nicht",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2069,7 +2079,7 @@
       "context": "Frage vorsorge, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ-2-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen?",
+      "text": "Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?",
       "reviewStatus": "",
       "comment": ""
     },

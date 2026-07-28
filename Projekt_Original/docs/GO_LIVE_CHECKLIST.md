@@ -132,14 +132,21 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
 - [ ] Für das heuristische kardiovaskuläre Mustermodell (`cvRiskPattern`) fachliche
   Eigentümerschaft, Versionierung und medizinische Freigabe festlegen; es ist kein
   validierter Risikorechner.
-- [x] Die breite Familienfrage vom Kardio-Mustermodell trennen: Sie umfasst auch
-  Diabetes und sonstige erbliche Erkrankungen und zählt deshalb nicht mehr als
-  kardiovaskulärer Musterfaktor. Eigenständiges medizinisches Signal und
-  Familienempfehlung bleiben erhalten.
-- [x] Scorefreie Vorsorgehinweise lückenlos in «Grösste Handlungsfelder» routen:
-  `familie_hk = ja` nutzt die spezifische Familienkarte, `vorsorge = nein` die
-  allgemeine Vorsorgekarte; treffen beide zu, erscheint keine Doppelung. Der Score
-  bleibt in allen Fällen unverändert.
+- [x] Die breite Familienfrage vom Kardio-Mustermodell trennen: Sie umfasst
+  Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs und sonstige erblich bedingte
+  Erkrankungen und zählt deshalb nicht als kardiovaskulärer Musterfaktor.
+  `familie_hk = ja` behält ein eigenständiges medizinisches Signal und die
+  Familienempfehlung.
+- [x] Die drei Vorsorgefragen fachlich trennen und scorefrei routen:
+  `familie_hk` unterscheidet bekannte, teilweise bekannte und unbekannte
+  Familiengeschichte; `vorsorge` unterscheidet aktuelle, ältere/unklare, fehlende
+  und unbekannte professionelle Risikoeinschätzung; `familienwissen` erfasst nur
+  noch vollständiges, teilweises oder fehlendes Wissen über passende Vorsorge.
+  Familienklärung, allgemeine Vorsorge und Informationsbedarf werden über ein
+  gemeinsames Thema dedupliziert und verändern den Score nicht.
+- [x] Familienklärung als kurzen Kundennutzen statt als Folgefrage umsetzen: Die
+  Empfehlung fordert auf, Erkrankung, betroffenes Familienmitglied und ungefähres
+  Diagnosealter zusammenzutragen und in ein Vorsorgegespräch mitzunehmen.
 - [x] Medizinisch hohen Bluthochdruck in Mischprofilen vor Verdrängung schützen:
   Bei einem echten Kardio-Mehrfaktorenmuster kann der Kardio-Check neben Rauchstopp
   als zweites Haupthandlungsfeld derselben Dimension sichtbar bleiben.
@@ -147,11 +154,20 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Beide erhalten eine fachlich vorsichtige Summary; aus BMI oder Taillenumfang
   allein wird bewusst kein standardisierter 4-Wochen- oder Therapieplan erzeugt.
   Ein eigener Klärungszustand verhindert dabei einen widersprüchlichen Leertext.
-- [ ] Prioritäten und DE-/EN-/FR-/IT-Texte der neuen Vorsorge- und Summary-Hebel
-  durch Product, Marketing und Medizin freigeben. Besonders prüfen: konditionale
-  Nennung von Lp(a) nur bei tatsächlich früher Herz-Kreislauf-Familiengeschichte,
-  ApoB nur als vom individuellen Risikoprofil abhängige Zusatzfrage und neutrales
-  Wording zu Untergewicht/Körperprofil sowie die drei neuen Klärungszustand-Texte.
+- [ ] Fragen, Antwortoptionen, Prioritäten und DE-/EN-/FR-/IT-Texte der drei neuen
+  scorefreien Vorsorgepfade durch Product, Marketing und Medizin freigeben.
+  Besonders prüfen: Abgrenzung von Familiengeschichte, professioneller
+  Risikoeinschätzung und Vorsorgewissen; die Kundenermutigung zu Erkrankung/Person/
+  Diagnosealter; erneute Abfrage der drei semantisch geänderten Fragen bei älteren
+  lokalen Ständen und Ergebnislinks ohne Verlust der übrigen gültigen Antworten;
+  konditionale Nennung von Lp(a) nur bei tatsächlich früher Herz-Kreislauf-
+  Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
+- [ ] Die fachliche Empfehlungsübersicht in
+  [`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md) durch Product und Medizin gegen
+  repräsentative Antwortprofile abnehmen; insbesondere Themenbündelung und
+  Prioritätskonflikte mit Kardio-Check, Bluthochdruck und Rauchstopp prüfen.
+- [ ] Neutrales Wording zu Untergewicht/Körperprofil sowie die zugehörigen
+  Klärungszustand-Texte in allen vier Sprachen freigeben.
 - [x] Gesamtstatus gegen das Überdecken einer sehr schwachen Dimension schützen:
   Der numerische Wert bleibt der gleichgewichtete Mittelwert; liegt mindestens
   eine Dimension unter 40, ist der sichtbare Status höchstens «Solide Basis».

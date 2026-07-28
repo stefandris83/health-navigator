@@ -15,28 +15,28 @@
 ## Freigabestand
 
 - Sprache: `it-CH`
-- Quellversion: `v1:3c6570e9d1cf1299b1cb2a03287e43d6c3af506998a6646f1e2c1a1b8497e81a`
-- Gesamtbestand: **1213 Texte**
-- Freigegeben: **0** · Offen: **1213**
+- Quellversion: `v1:d7f599433bb62a0c2d22bf84a878674a35f6c519bcf469c75c39cd1f8c71ece9`
+- Gesamtbestand: **1223 Texte**
+- Freigegeben: **0** · Offen: **1223**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1213 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1223 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1213 | 0 | 1213 |
-| Medizin | 681 | 0 | 681 |
+| Marketing | 1223 | 0 | 1223 |
+| Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 219 | 219 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -50,15 +50,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (219 Texte)
+## 1. Fragebogen (220 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (219 Texte)
+### Fragebogen (220 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -1027,11 +1027,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Gibt es in Ihrer nahen Familie \(Eltern, Geschwister\) Herz\-Kreislauf\-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
 
 **Aktueller Text**
 
-> Nella Sua famiglia stretta \(genitori, fratelli o sorelle\) vi sono malattie cardiovascolari, diabete o malattie ereditarie?
+> Sono comparse malattie cardiovascolari, diabete di tipo 2, tumori o una malattia ereditaria nota tra i Suoi genitori, fratelli, sorelle o figli?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -1042,11 +1042,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Besonders relevant sind früh aufgetretene Erkrankungen \(Männer vor 55, Frauen vor 65 Jahren\). Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.
+> Für die Vorsorge sind drei Angaben besonders hilfreich: welche Erkrankung aufgetreten ist, bei wem und ungefähr in welchem Alter. Bei Krebs ist zusätzlich die Krebsart wichtig. Sie müssen diese Angaben hier nicht erfassen – es kann aber sinnvoll sein, sie für ein Vorsorgegespräch zusammenzutragen. Eine familiäre Belastung bedeutet nicht, dass Sie selbst erkranken werden.
 
 **Aktueller Text**
 
-> Sono particolarmente rilevanti le malattie insorte precocemente \(uomini prima dei 55 anni, donne prima dei 65 anni\). Una predisposizione familiare non è un destino: è un motivo per prendere sul serio la prevenzione.
+> Per la prevenzione sono particolarmente utili tre informazioni: quale malattia si è manifestata, in chi e approssimativamente a quale età. In caso di tumore è importante anche il tipo. Non deve inserire questi dati qui, ma può essere utile raccoglierli per un colloquio di prevenzione. Una storia familiare non significa che si ammalerà a Sua volta.
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1072,11 +1072,26 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein
+> Nein, soweit mir bekannt
 
 **Aktueller Text**
 
-> No
+> No, per quanto ne so
+
+#### Antwortoption: Frage «Familie hk» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.familie_hk.option.teilweise`
+
+**Deutscher Ausgangstext**
+
+> Ich kenne die Familiengeschichte nur teilweise
+
+**Aktueller Text**
+
+> Conosco solo in parte la storia medica della mia famiglia
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1102,11 +1117,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wie gut wissen Sie über mögliche Krebs\- oder Herz\-Kreislauferkrankungen in Ihrer Familie Bescheid?
+> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
 
 **Aktueller Text**
 
-> Quanto è informato/a su eventuali casi di cancro o malattie cardiovascolari nella Sua famiglia?
+> Sa quali esami preventivi sono indicati per Lei in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -1117,11 +1132,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Das Bewusstsein über familiäre Krebs\- und Herz\-Kreislauferkrankungen macht eine gezielte Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung fördern.
+> Welche Untersuchungen sinnvoll sind, hängt unter anderem von Ihrem Alter, Ihren persönlichen Werten und Ihrer Familiengeschichte ab. Verlässliche Informationen und ein Gespräch mit einer medizinischen Fachperson helfen, Nutzen, Zeitpunkt und Abstände passend festzulegen.
 
 **Aktueller Text**
 
-> Conoscere i casi di cancro e di malattie cardiovascolari presenti in famiglia permette una prevenzione mirata. Chi conosce la propria predisposizione familiare può intervenire precocemente sui fattori di rischio personali e favorire la diagnosi precoce con esami preventivi mirati.
+> Gli esami appropriati dipendono, tra l’altro, dall’età, dai parametri di salute personali e dalla storia familiare. Informazioni affidabili e un colloquio con un professionista sanitario aiutano a stabilire quali esami sono utili, quando e con quale frequenza.
 
 #### Titel des Hilfetexts: Frage «Familienwissen» · Titel des Hilfetexts
 
@@ -1143,45 +1158,30 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.gar_nicht`
+- Technische ID: `questionnaire.question.familienwissen.option.ja`
 
 **Deutscher Ausgangstext**
 
-> Gar nicht
+> Ja
 
 **Aktueller Text**
 
-> Per niente
+> Sì
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.gut`
+- Technische ID: `questionnaire.question.familienwissen.option.nein`
 
 **Deutscher Ausgangstext**
 
-> Gut
+> Nein
 
 **Aktueller Text**
 
-> Bene
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.sehr_gut`
-
-**Deutscher Ausgangstext**
-
-> Sehr gut
-
-**Aktueller Text**
-
-> Molto bene
+> No
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
@@ -1197,21 +1197,6 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > In parte
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.familienwissen.option.wenig`
-
-**Deutscher Ausgangstext**
-
-> Wenig
-
-**Aktueller Text**
-
-> Poco
 
 #### Frage: Frage «Geschlecht» · Fragetext
 
@@ -3207,11 +3192,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ\-2\-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen?
+> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
 
 **Aktueller Text**
 
-> Si è informato/a su malattie come cancro, ipertensione e diabete di tipo 2 e ha fatto valutare il Suo rischio personale?
+> Un medico o un altro professionista sanitario ha già valutato il Suo rischio personale per la salute e discusso con Lei gli esami preventivi appropriati?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -3222,11 +3207,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für Herz\-Kreislauf\-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs\- oder ersten Anzeichen von Typ\-2\-Diabetes kann sich je nach Alter, Lebensstil oder Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im Alltag lassen sich Risiken und Auswirkungen senken.
+> Bei einer persönlichen Risikoeinschätzung werden je nach Alter, persönlichen Werten und Familiengeschichte zum Beispiel Blutdruck, Blutzucker und Blutfette sowie passende Vorsorge\- und Früherkennungsuntersuchungen besprochen. Eine medizinische Fachperson kann auch sagen, wann eine erneute Beurteilung sinnvoll ist.
 
 **Aktueller Text**
 
-> L’ipertensione spesso non dà sintomi, ma è un fattore di rischio centrale per le malattie cardiovascolari. A seconda dell’età, dello stile di vita o della storia familiare, può essere utile anche una valutazione del rischio personale di cancro o dei primi segni di diabete di tipo 2. Un’identificazione precoce e piccoli cambiamenti nella vita quotidiana permettono di ridurre i rischi e le conseguenze.
+> In base all’età, ai parametri di salute personali e alla storia familiare, una valutazione del rischio può comprendere per esempio la pressione arteriosa, la glicemia e i lipidi nel sangue, oltre agli esami di prevenzione e diagnosi precoce appropriati. Un professionista sanitario può anche indicare quando è utile ripetere la valutazione.
 
 #### Titel des Hilfetexts: Frage «Vorsorge» · Titel des Hilfetexts
 
@@ -3248,15 +3233,30 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.vorsorge.option.ja`
+- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
 
 **Deutscher Ausgangstext**
 
-> Ja
+> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
 
 **Aktueller Text**
 
-> Sì
+> Sì, ma risale a tempo fa o non so se sia ancora aggiornata
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.vorsorge.option.aktuell`
+
+**Deutscher Ausgangstext**
+
+> Ja, und die Einschätzung ist gemäss Fachperson aktuell
+
+**Aktueller Text**
+
+> Sì, e secondo il professionista la valutazione è aggiornata
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -3272,6 +3272,21 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > No
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `questionnaire.question.vorsorge.option.weiss_nicht`
+
+**Deutscher Ausgangstext**
+
+> Weiss ich nicht
+
+**Aktueller Text**
+
+> Non lo so
 
 #### Eingabehinweis: Frage «Wandsitz» · Eingabehinweis
 
@@ -3473,14 +3488,14 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (219 Texte)
+## 2. Einflussfaktoren (228 Texte)
 
 Themen in diesem Bereich:
 
 - [Alkohol](#thema-einflussfaktoren-alkohol): 16 Texte, 16 offen
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
-- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 101 Texte, 101 offen
+- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 110 Texte, 110 offen
 - [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
@@ -4193,7 +4208,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-herz-kreislauf-und-vorsorge"></a>
 
-### Herz-Kreislauf &amp; Vorsorge (101 Texte)
+### Herz-Kreislauf &amp; Vorsorge (110 Texte)
 
 #### Überschrift: Kardiovaskulärer Vorsorge-Check, Titel
 
@@ -5029,11 +5044,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Für die medizinische Einordnung sind die Erkrankung – bei Krebs auch die Krebsart –, die betroffene Person und das ungefähre Diagnosealter besonders hilfreich.
 
 **Aktueller Text**
 
-> Nella Sua famiglia stretta sono presenti malattie cardiovascolari, diabete o malattie ereditarie. Non è un destino inevitabile, ma un buon motivo per far valutare la storia familiare da un professionista sanitario.
+> Sono note malattie rilevanti tra i Suoi genitori, fratelli, sorelle o figli. Per la valutazione medica sono particolarmente utili la malattia — o il tipo di tumore —, la persona interessata e l’età approssimativa alla diagnosi.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5045,11 +5060,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.
+> Tragen Sie diese Angaben zusammen. Falls keine aktuelle professionelle Risikoeinschätzung vorliegt, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich erklären, welche Untersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
 
 **Aktueller Text**
 
-> Parli della Sua storia familiare con un professionista sanitario alla prossima occasione e chiarisca quali valori di base o accertamenti mirati siano utili nel Suo caso.
+> Raccolga queste informazioni. Se non vi è una valutazione professionale aggiornata del rischio, chiarisca la situazione e, se necessario, fissi un colloquio di prevenzione; altrimenti porti i dati al prossimo colloquio previsto. Chieda quali esami sono indicati in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5060,11 +5075,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer sein Risiko kennt, kann Prävention früher und gezielter ausrichten.
+> Eine möglichst genaue Familiengeschichte macht Vorsorge persönlicher, ohne eine Erkrankung vorwegzunehmen.
 
 **Aktueller Text**
 
-> Conoscere il proprio rischio permette di orientare la prevenzione prima e in modo più mirato.
+> Una storia familiare il più possibile precisa rende la prevenzione più personale senza presumere la presenza di una malattia.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5076,11 +5091,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Tragen Sie zusammen, welche relevante Erkrankung bei welchem Familienmitglied und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit.
 
 **Aktueller Text**
 
-> Raccolga le informazioni su chi nella Sua famiglia stretta \(genitori, fratelli o sorelle\) si è ammalato, di quale malattia e a quale età. Per le malattie cardiovascolari è particolarmente rilevante un esordio prima dei 55 anni negli uomini o prima dei 65 anni nelle donne.
+> Raccolga quale malattia rilevante si è manifestata in quale genitore, fratello, sorella o figlio e approssimativamente a quale età; in caso di tumore anche il tipo. Verifichi se dispone di una valutazione professionale aggiornata del rischio. In caso contrario chiarisca la situazione e, se necessario, fissi un colloquio di prevenzione; altrimenti porti i dati al prossimo colloquio previsto.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5093,11 +5108,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz\-Kreislauf\-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp\(a\) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.
+> Bringen Sie diese Familiengeschichte zum nächsten Vorsorgegespräch mit. Bei früh aufgetretenen Herz\-Kreislauf\-Erkrankungen kann die Fachperson neben Blutdruck und Lipidprofil einordnen, ob eine einmalige Lp\(a\)\-Bestimmung sinnvoll ist. Ob ApoB zusätzliche Informationen liefert, hängt vom individuellen Risikoprofil ab. Bei Diabetes, Krebs oder anderen erblich bedingten Erkrankungen legt sie die passenden Abklärungen oder Früherkennungsangebote fest.
 
 **Aktueller Text**
 
-> Fissi un appuntamento e porti con sé la storia familiare. Se nella Sua famiglia si sono verificate precocemente malattie cardiovascolari, discuta pressione arteriosa e profilo lipidico, nonché se la Lp\(a\) sia già stata misurata una volta; l’utilità aggiuntiva di ApoB dipende dal Suo profilo di rischio individuale. In caso di diabete o altre malattie ereditarie, la figura professionale sanitaria stabilirà gli esami appropriati.
+> Porti questa storia familiare al prossimo colloquio di prevenzione. In caso di malattia cardiovascolare insorta precocemente, un professionista sanitario può valutare se, oltre alla pressione arteriosa e al profilo lipidico, sia indicata una misurazione una tantum della Lp\(a\). L’utilità dell’ApoB dipende dal Suo profilo di rischio individuale. Per diabete, tumori o altre malattie ereditarie stabilirà gli accertamenti o gli esami di diagnosi precoce adatti.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5108,11 +5123,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Klären Sie, ob und wann Früherkennungsuntersuchungen für Sie sinnvoll sind, und legen Sie den nächsten Kontrolltermin fest. Familiäre Vorbelastung ist kein Schicksal, sondern ein Vorsprung – wenn man ihn nutzt.
+> Halten Sie fest, welche Abklärungen empfohlen wurden und wann der nächste sinnvolle Kontrollzeitpunkt ist. Eine Familiengeschichte ist keine Diagnose, kann Vorsorge aber gezielter machen.
 
 **Aktueller Text**
 
-> Chiarisca se e quando sono opportuni esami di diagnosi precoce per Lei e stabilisca il prossimo controllo. Una predisposizione familiare non è un destino, ma un vantaggio informativo, se lo si utilizza.
+> Annoti gli accertamenti raccomandati e la data del prossimo controllo utile. La storia familiare non è una diagnosi, ma può rendere la prevenzione più mirata.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -5123,11 +5138,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ihre Familiengeschichte kennenlernen
+> Familiengeschichte vervollständigen
 
 **Aktueller Text**
 
-> Conoscere la propria storia familiare
+> Completare la storia familiare
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -5138,11 +5153,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie kennen die Krankheitsgeschichte Ihrer Familie bisher wenig. Dieses Wissen hilft, Vorsorge gezielter anzugehen.
+> Sie kennen die Krankheitsgeschichte Ihrer Familie nur teilweise oder gar nicht. Für die Vorsorge sind Art der Erkrankung, betroffene Person und ungefähres Diagnosealter besonders hilfreich.
 
 **Aktueller Text**
 
-> Finora conosce poco la storia sanitaria della Sua famiglia. Queste informazioni aiutano ad affrontare la prevenzione in modo più mirato.
+> Conosce solo in parte, o non conosce, la storia medica della Sua famiglia. La malattia, la persona interessata e l’età approssimativa alla diagnosi sono particolarmente utili per la prevenzione.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5153,11 +5168,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Fragen Sie bei Gelegenheit nahe Angehörige, ob Herz\-Kreislauf\-Erkrankungen, Diabetes oder Krebs früh aufgetreten sind, und notieren Sie es.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind; notieren Sie bei Krebs auch die Krebsart.
 
 **Aktueller Text**
 
-> Alla prossima occasione chieda ai parenti stretti se in famiglia sono comparse precocemente malattie cardiovascolari, diabete o cancro e prenda nota delle informazioni.
+> Chieda a genitori, fratelli, sorelle o a un familiare ben informato quale delle malattie indicate si è manifestata, in chi e approssimativamente a quale età. In caso di tumore annoti anche il tipo.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5168,11 +5183,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer die eigene Familiengeschichte kennt, kann Untersuchungen und Prävention besser timen.
+> Diese Angaben helfen einer Fachperson, Vorsorge und mögliche Früherkennung besser auf Sie abzustimmen.
 
 **Aktueller Text**
 
-> Conoscere la propria storia familiare permette di pianificare meglio esami e prevenzione.
+> Queste informazioni aiutano un professionista sanitario ad adeguare meglio la prevenzione e l’eventuale diagnosi precoce alla Sua situazione.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5184,11 +5199,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), welche Herz\-Kreislauf\- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind. Fragen Sie bei Krebs auch nach der Krebsart.
 
 **Aktueller Text**
 
-> Chieda ai parenti stretti \(genitori, fratelli o sorelle\) quali malattie cardiovascolari o tumori si siano verificati e a quale età. Per le malattie cardiovascolari è particolarmente rilevante un esordio prima dei 55 anni negli uomini o prima dei 65 anni nelle donne.
+> Chieda a genitori, fratelli, sorelle o a un familiare ben informato quale delle malattie indicate si è manifestata, in chi e approssimativamente a quale età. In caso di tumore chieda anche il tipo.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5199,11 +5214,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie das Wichtigste schriftlich \(wer, welche Erkrankung, welches Alter\). Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge oft um Jahre nach vorn.
+> Notieren Sie die Angaben übersichtlich: betroffene Person, Erkrankung beziehungsweise Krebsart und ungefähres Diagnosealter. Auch die Information, dass keine solche Erkrankung bekannt ist, kann hilfreich sein.
 
 **Aktueller Text**
 
-> Annoti per iscritto le informazioni più importanti: chi, quale malattia e a quale età. Una predisposizione familiare non è un destino, ma un’informazione: spesso anticipa di anni il momento opportuno per iniziare la prevenzione.
+> Organizzi chiaramente le informazioni: persona interessata, malattia o tipo di tumore ed età approssimativa alla diagnosi. Può essere utile annotare anche che nessuna di queste malattie è nota.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5214,11 +5229,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nehmen Sie die Notizen zum nächsten Arzttermin mit. So kann Ihre Fachperson Vorsorge und allfällige Früherkennung gezielt auf Ihr Profil abstimmen.
+> Nehmen Sie die Notizen zum nächsten Vorsorgegespräch mit. Eine medizinische Fachperson kann damit besser beurteilen, welche Kontrollen oder Früherkennungsangebote zu Ihnen passen.
 
 **Aktueller Text**
 
-> Porti gli appunti al prossimo appuntamento medico. In questo modo la figura professionale può adeguare in modo mirato la prevenzione e l’eventuale diagnosi precoce al Suo profilo.
+> Porti gli appunti al prossimo colloquio di prevenzione. Aiuteranno un professionista sanitario a stabilire quali controlli o programmi di diagnosi precoce sono adatti.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -5229,11 +5244,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Persönliche Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Far valutare una volta il rischio personale
+> Verificare se la valutazione del rischio è aggiornata
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -5244,11 +5259,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Gerade Bluthochdruck bleibt oft lange unbemerkt.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Gesundheitswerte und Vorsorgebedarf können sich mit dem Alter, neuen Messwerten oder der Familiengeschichte verändern.
 
 **Aktueller Text**
 
-> Finora non ha fatto valutare il Suo rischio personale di malattie come cancro, ipertensione o diabete di tipo 2. Proprio l’ipertensione spesso rimane a lungo inosservata.
+> Dalla Sua risposta non risulta con certezza che la valutazione del rischio personale sia aggiornata. I parametri di salute e le esigenze di prevenzione possono cambiare con l’età, nuovi risultati o la storia familiare.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -5259,11 +5274,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie bei Gelegenheit einen Check\-up\-Termin und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen – je nach Alter und Familiengeschichte auch weitere Vorsorgeuntersuchungen.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann die letzte Beurteilung war. Falls keine aktuelle Einschätzung vorliegt, klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt sinnvoll sind.
 
 **Aktueller Text**
 
-> Alla prossima occasione fissi un appuntamento per un check\-up e faccia determinare valori di base come pressione, glicemia e lipidi nel sangue; a seconda dell’età e della storia familiare, anche altri esami preventivi.
+> Controlli la documentazione o chieda allo studio quando è avvenuta l’ultima valutazione. Se non ve n’è una aggiornata, chieda a un professionista sanitario quali parametri di base ed esami preventivi sono indicati ora.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -5274,11 +5289,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Bekannte Werte machen Prävention konkret und zeigen, wo sich Aufmerksamkeit besonders lohnt.
+> Ein geklärter Stand verhindert unnötige Wiederholungen und hilft, sinnvolle Kontrollen rechtzeitig zu planen.
 
 **Aktueller Text**
 
-> Valori conosciuti rendono concreta la prevenzione e indicano dove vale particolarmente la pena prestare attenzione.
+> Chiarire la situazione evita ripetizioni inutili e aiuta a pianificare per tempo i controlli utili.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -5290,11 +5305,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vereinbaren Sie einen Check\-up\-Termin. Bitten Sie um **Blutdruck, Blutzucker und ein Lipidprofil**. Fragen Sie, ob ApoB bei Ihrem Risikoprofil zusätzliche Information liefert und ob Lp\(a\) bereits einmal bestimmt wurde. Viele Risikofaktoren verursachen lange keine Beschwerden – aktuelle Werte schaffen eine belastbare Gesprächsgrundlage.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann Ihr persönliches Gesundheitsrisiko zuletzt beurteilt wurde. Falls keine aktuelle Einschätzung vorliegt, vereinbaren Sie einen Termin und nehmen Sie vorhandene Messwerte sowie Ihre Familiengeschichte mit.
 
 **Aktueller Text**
 
-> Fissi un appuntamento per un check\-up. Chieda **pressione, glicemia e un profilo lipidico**. Domandi se ApoB fornisce informazioni aggiuntive per il Suo profilo di rischio e se Lp\(a\) è già stata determinata una volta. Molti fattori di rischio non causano disturbi per lungo tempo: valori aggiornati creano una base affidabile per il colloquio.
+> Controlli la documentazione o chieda allo studio quando il Suo rischio personale per la salute è stato valutato l’ultima volta. Se non vi è una valutazione aggiornata, fissi un appuntamento e porti i valori disponibili e la storia familiare.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -5305,11 +5320,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie Ihre Werte und lassen Sie sich Ihr persönliches Risiko erklären. Ein einmal erhobener Ausgangswert macht jede spätere Veränderung sichtbar und Prävention konkret.
+> Klären Sie mit der medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Risikoprofil passen. Lassen Sie sich Ergebnisse, Nutzen und mögliche nächste Schritte verständlich erklären.
 
 **Aktueller Text**
 
-> Annoti i Suoi valori e si faccia spiegare il rischio personale. Un valore iniziale rilevato una volta rende visibile ogni cambiamento successivo e concreta la prevenzione.
+> Chieda quali parametri di base ed esami preventivi sono adatti alla Sua età e al Suo profilo di rischio. Si faccia spiegare chiaramente risultati, benefici e possibili passi successivi.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -5320,11 +5335,123 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Halten Sie fest, wann die nächste Kontrolle sinnvoll ist \(je nach Werten und Alter meist alle 1–3 Jahre\) und tragen Sie sie ein. Vorsorge wirkt nur, wenn sie zur Routine wird.
+> Halten Sie gemeinsam fest, ob und wann eine erneute Beurteilung sinnvoll ist. So bleibt Ihre Vorsorge aktuell, ohne Untersuchungen unnötig zu wiederholen.
 
 **Aktueller Text**
 
-> Annoti quando è opportuno il prossimo controllo, in genere ogni 1–3 anni a seconda dei valori e dell’età, e lo inserisca in calendario. La prevenzione funziona solo se diventa una routine.
+> Stabilisca insieme al professionista se e quando è utile ripetere la valutazione. In questo modo la prevenzione rimane aggiornata senza ripetere inutilmente gli esami.
+
+#### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.title`
+- Prüfhinweis: Neue scorefreie Empfehlung bei fehlendem oder teilweisem Wissen über passende Vorsorge; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Passende Vorsorge kennenlernen
+
+**Aktueller Text**
+
+> Conoscere la prevenzione adatta
+
+#### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.why`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Sie wissen noch nicht vollständig, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
+
+**Aktueller Text**
+
+> Non sa ancora con precisione quali esami preventivi sono indicati in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare.
+
+#### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.step`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Nutzen Sie verlässliche Gesundheitsinformationen und besprechen Sie offene Fragen mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung für Sie welchen Nutzen hat und wann sie sinnvoll ist.
+
+**Aktueller Text**
+
+> Utilizzi informazioni sanitarie affidabili e discuta le domande aperte con un professionista sanitario. Chieda concretamente quale beneficio può offrirLe un esame e quando è indicato.
+
+#### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.benefit`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> So können Sie informierte Entscheidungen treffen und die für Sie passende Vorsorge gezielt planen.
+
+**Aktueller Text**
+
+> Potrà così prendere decisioni informate e pianificare una prevenzione adatta alla Sua situazione.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.this_week`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Notieren Sie, welche Frage zu Ihrer persönlichen Vorsorge noch offen ist. Nutzen Sie eine verlässliche Gesundheitsquelle, um sich einen ersten Überblick zu verschaffen.
+
+**Aktueller Text**
+
+> Annoti quale domanda sulla prevenzione personale è ancora aperta. Consulti una fonte sanitaria affidabile per ottenere una prima panoramica.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.weeks_2_3`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Besprechen Sie offene Punkte mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll ist und welchen Nutzen sie für Sie hat.
+
+**Aktueller Text**
+
+> Discuta le domande aperte con un professionista sanitario. Chieda quale esame è indicato in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare, e quale beneficio può offrirLe.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.week_4`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Halten Sie fest, welche Vorsorge für Sie aktuell empfohlen ist und wann Sie das Thema erneut prüfen sollten. So wird aus Information ein übersichtlicher persönlicher Vorsorgeplan.
+
+**Aktueller Text**
+
+> Annoti quale prevenzione è attualmente raccomandata per Lei e quando riesaminare l’argomento. Le informazioni diventano così un piano personale di prevenzione chiaro.
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -5351,11 +5478,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.
+> Eine bekannte Erkrankung bei Eltern, Geschwistern oder eigenen Kindern bedeutet nicht, dass Sie selbst erkranken werden. Sie ist aber eine wichtige Information, um Vorsorge und Kontrollen persönlich einzuordnen.
 
 **Aktueller Text**
 
-> Una predisposizione familiare non è un destino inevitabile, ma un’informazione importante. Aiuta il personale sanitario a valutare quali misure preventive o controlli possano essere utili nel Suo caso.
+> Una malattia nota in un genitore, fratello, sorella o figlio non significa che si ammalerà a Sua volta. È tuttavia un’informazione importante per personalizzare prevenzione e controlli.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -5367,11 +5494,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.
+> Welche Erkrankung bei wem und ungefähr in welchem Alter diagnostiziert wurde; bei Krebs zusätzlich die Krebsart. Eine medizinische Fachperson kann daraus ableiten, ob und welche gezielte Vorsorge oder genetische Beratung sinnvoll sein könnte.
 
 **Aktueller Text**
 
-> Quali familiari si sono ammalati, di quale malattia e a quale età. Per le malattie cardiovascolari è particolarmente rilevante un esordio prima dei 55 anni negli uomini o prima dei 65 anni nelle donne. Il professionista sanitario può inoltre chiarire se sia utile una consulenza genetica.
+> Quale malattia è stata diagnosticata in quale familiare e a quale età approssimativa; in caso di tumore anche il tipo. Un professionista sanitario può valutare se siano utili una prevenzione mirata o una consulenza genetica.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -5398,11 +5525,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor – Vorsorge lohnt sich besonders.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Eine genaue Familiengeschichte hilft, die passende Vorsorge zu planen.
 
 **Aktueller Text**
 
-> Nella Sua famiglia stretta vi sono malattie cardiovascolari, diabete o malattie ereditarie: la prevenzione è particolarmente utile.
+> Sono note malattie rilevanti tra i Suoi genitori, fratelli, sorelle o figli. Una storia familiare precisa aiuta a pianificare la prevenzione adatta.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5490,11 +5617,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz\-Kreislauf\-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.
+> Notieren Sie Erkrankung, betroffene Person und ungefähres Diagnosealter; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich dort die für Sie passende Vorsorge erklären.
 
 **Aktueller Text**
 
-> Annoti quale malattia è comparsa in quale familiare stretto e a quale età, poi ne parli con una figura professionale sanitaria. Se tra queste vi sono malattie cardiovascolari, affronti esplicitamente una valutazione del Suo rischio cardiovascolare personale e la prevenzione adeguata, soprattutto se sono comparse precocemente in famiglia.
+> Annoti la malattia, la persona interessata e l’età approssimativa alla diagnosi; in caso di tumore anche il tipo. Verifichi se dispone di una valutazione professionale aggiornata del rischio. In caso contrario chiarisca la situazione e, se necessario, fissi un colloquio di prevenzione; altrimenti porti i dati al prossimo colloquio previsto. Chieda quale prevenzione è adatta al Suo caso.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5520,11 +5647,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wer die familiäre Vorbelastung kennt, kann Vorsorge gezielt einsetzen – ein Gespräch in der Familie ist der einfachste erste Schritt.
+> Fragen Sie Angehörige, welche relevante Erkrankung bei wem und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch nach der Krebsart. Notieren Sie die Angaben für ein späteres Vorsorgegespräch.
 
 **Aktueller Text**
 
-> Conoscere la predisposizione familiare permette di usare la prevenzione in modo mirato: parlarne in famiglia è il primo passo più semplice.
+> Chieda ai familiari quale malattia rilevante si è manifestata, in chi e approssimativamente a quale età; in caso di tumore chieda anche il tipo. Annoti i dati per un futuro colloquio di prevenzione.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -5567,11 +5694,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Aktualität der Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Far valutare una volta il rischio personale
+> Verificare se la valutazione del rischio è aggiornata
 
 #### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
 
@@ -5583,11 +5710,43 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ein persönlicher Check\-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.
+> Prüfen Sie, wann Ihr persönliches Gesundheitsrisiko zuletzt professionell beurteilt wurde. Ist die Einschätzung nicht aktuell oder unklar, besprechen Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt zu Ihnen passen.
 
 **Aktueller Text**
 
-> Un check\-up personale può individuare rischi che rimangono a lungo inosservati. Chieda a una figura professionale sanitaria quali valori di base ed esami preventivi sono adatti alla Sua età e alla Sua storia familiare.
+> Verifichi quando il Suo rischio personale per la salute è stato valutato l’ultima volta. Se la valutazione non è aggiornata o lo stato non è chiaro, chieda quali parametri di base ed esami preventivi sono indicati ora.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.label`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Passende Vorsorge kennenlernen
+
+**Aktueller Text**
+
+> Conoscere la prevenzione adatta
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.detail`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Deutscher Ausgangstext**
+
+> Informieren Sie sich aus verlässlichen Quellen und klären Sie mit einer medizinischen Fachperson, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind.
+
+**Aktueller Text**
+
+> Consulti fonti affidabili e chieda a un professionista sanitario quali esami preventivi sono indicati in base alla Sua età, ai Suoi parametri di salute personali e alla storia familiare.
 
 #### Quellenbezeichnung: Sichtbares Label einer Fachquelle
 
@@ -5643,11 +5802,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Vorsorge &amp; Familienrisiken im Blick
+> Aktuelle Risikoeinschätzung &amp; Vorsorgewissen
 
 **Aktueller Text**
 
-> Prevenzione &amp; rischi familiari sotto controllo
+> Valutazione attuale del rischio e conoscenze sulla prevenzione
 
 #### Detailtext: Stärke · Einflussfaktoren · Detailtext
 
@@ -5658,11 +5817,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie kennen Ihr persönliches Risiko und Ihre familiäre Vorgeschichte – die beste Grundlage für gezielte Prävention.
+> Ihre persönliche Risikoeinschätzung ist gemäss Fachperson aktuell, und Sie wissen, welche Vorsorgeuntersuchungen für Sie sinnvoll sind – eine gute Grundlage für gezielte Prävention.
 
 **Aktueller Text**
 
-> Conosce il Suo rischio personale e la storia familiare: è la base migliore per una prevenzione mirata.
+> Secondo il professionista sanitario, la valutazione del Suo rischio personale è aggiornata e Lei sa quali esami preventivi sono indicati: una buona base per una prevenzione mirata.
 
 #### Beschriftung: Ergebnis-Zusammenfassung · Themenlabel «Herz-Kreislauf &amp; Vorsorge»
 
@@ -5688,11 +5847,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Persönliches Risiko nie eingeschätzt
+> Aktualität der Risikoeinschätzung klären
 
 **Aktueller Text**
 
-> Rischio personale mai valutato
+> Verificare se la valutazione del rischio è aggiornata
 
 #### Persönliche Einordnung: Dimensionsdetail · Einordnung
 
@@ -5704,11 +5863,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Mehrere Herz\-Kreislauf\-Risikofaktoren verursachen lange keine Beschwerden. Blutdruck, Blutzucker und Blutfette zu kennen, schafft deshalb eine bessere Grundlage für die persönliche Risikoeinordnung.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Manche Risikofaktoren verursachen lange keine Beschwerden; aktuelle Werte und eine professionelle Einordnung schaffen Klarheit.
 
 **Aktueller Text**
 
-> Diversi fattori di rischio cardiovascolare non causano disturbi per lungo tempo. Conoscere pressione, glicemia e lipidi nel sangue crea quindi una base migliore per valutare il rischio personale.
+> Dalla Sua risposta non risulta con certezza che la valutazione del rischio personale sia aggiornata. Alcuni fattori di rischio non causano sintomi per molto tempo; valori attuali e un’interpretazione professionale fanno chiarezza.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -5719,11 +5878,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Basiswerte \(Blutdruck, Blutzucker, Blutfette\) und daraus Ihr persönliches 10\-Jahres\-Risiko.
+> Wann Ihre letzte Beurteilung stattfand, welche Basiswerte damals erhoben wurden und welche Vorsorgeuntersuchungen aufgrund Ihres heutigen Profils sinnvoll sind.
 
 **Aktueller Text**
 
-> I valori di base \(pressione, glicemia, lipidi nel sangue\) e, a partire da questi, il Suo rischio personale a 10 anni.
+> Quando è avvenuta l’ultima valutazione, quali parametri di base sono stati rilevati e quali esami preventivi sono indicati per il Suo profilo attuale.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -5750,11 +5909,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Ein Basis\-Check schafft Sicherheit.
+> Es ist nicht sicher, dass Ihre persönliche Risikoeinschätzung aktuell ist. Klären Sie den Stand und planen Sie bei Bedarf eine professionelle Beurteilung.
 
 **Aktueller Text**
 
-> Finora non ha fatto valutare il Suo rischio personale di malattie come cancro, ipertensione o diabete di tipo 2. Un check\-up di base dà sicurezza.
+> Non è certo che la valutazione del Suo rischio personale sia aggiornata. Chiarisca la situazione e, se necessario, pianifichi una valutazione professionale.
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
