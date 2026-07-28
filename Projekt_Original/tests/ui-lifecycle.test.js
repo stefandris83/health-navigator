@@ -386,7 +386,9 @@ test('Dimensionsdetails zeigen eigenständige Hinweise vollständig, statusgerec
   assert.ok(!css.includes('.dimension-guidance-card.is-hoch'));
   assert.ok(!css.includes('.dimension-guidance-card.is-mittel'));
   assert.ok(!css.includes('.dimension-guidance-card.is-tief'));
-  assert.ok(css.includes('.metrics-summary'));
+  assert.ok(!css.includes('.metrics-summary'));
+  assert.ok(!source.includes('ui.metrics.line'));
+  assert.ok(!source.includes('class="metrics-summary"'));
   assert.ok(!css.includes('.dimension-guidance.is-quick-win'));
   assert.ok(!css.includes('.dimension-guidance-addon'));
   assert.ok(css.includes('.dimension-feedback.is-neutral'));

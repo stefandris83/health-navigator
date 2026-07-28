@@ -499,7 +499,8 @@
   function actionCardRowsHTML(r) {
     return `<div class="rec-row"><b>${copy.get('ui.action_card.label.why')}</b> ${r.why}</div>
       <div class="rec-row"><b>${copy.get('ui.action_card.label.step')}</b> ${r.step}</div>
-      <div class="rec-row"><b>${copy.get('ui.action_card.label.benefit')}</b> ${r.benefit}</div>`;
+      <div class="rec-row"><b>${copy.get('ui.action_card.label.benefit')}</b> ${r.benefit}</div>
+      ${r.bodyContext ? `<div class="rec-row"><b>${copy.get('ui.recommendation.label.body_context')}</b> ${r.bodyContext}</div>` : ''}`;
   }
 
   function dimensionGuidanceHTML(item) {
@@ -521,7 +522,8 @@
       ? actionCardRowsHTML(r)
       : `<div class="rec-row"><b>${copy.get('ui.recommendation.label.why')}</b> ${r.why}</div>
         <div class="rec-row"><b>${copy.get('ui.recommendation.label.step')}</b> ${r.step}</div>
-        <div class="rec-row"><b>${copy.get('ui.recommendation.label.benefit')}</b> ${r.benefit}</div>`;
+        <div class="rec-row"><b>${copy.get('ui.recommendation.label.benefit')}</b> ${r.benefit}</div>
+        ${r.bodyContext ? `<div class="rec-row"><b>${copy.get('ui.recommendation.label.body_context')}</b> ${r.bodyContext}</div>` : ''}`;
     return `<div class="rec${isActionPlanStep ? ' is-action-plan-step' : ''}" id="recommendation-${escAttr(r.id)}">
       <h4>${r.title}</h4>
       ${badge}
@@ -686,28 +688,6 @@
       : 'ui.dimension.classification.' + status.key);
   }
 
-  function metricsLine(m) {
-    const parts = [];
-    if (m.bmi) {
-      const lbl = copy.get('ui.metrics.bmi_class.' + m.bmiClass);
-      parts.push(copy.format('ui.metrics.bmi', {
-        bmi: window.HealthLocale.formatBmi(m.bmiRaw == null ? m.bmi : m.bmiRaw),
-        bmiClassLabel: lbl,
-      }));
-    }
-    if (m.waist) {
-      const lbl = copy.get('ui.metrics.waist_status.' + m.waistStatus);
-      parts.push(copy.format('ui.metrics.waist', {
-        waist: m.waist,
-        whtr: window.HealthLocale.formatRatio(m.whtr),
-        waistStatusLabel: lbl,
-      }));
-    }
-    return parts.length ? `<div class="metrics-summary">${I.info}<span>${copy.format('ui.metrics.line', {
-      metrics: parts.join(copy.get('ui.metrics.separator')),
-    })}</span></div>` : '';
-  }
-
   function renderResults() {
     state.answers = sanitizeAnswers(state.answers);
     if (!answersComplete(state.answers)) {
@@ -861,7 +841,6 @@
           </summary>
           <div class="dim-card-body">
             <p class="einordnung"><b>${einordnungText(st, hasOpenSignal)}</b> ${dim.intro}</p>
-            ${dim.id === 'einfluss' ? metricsLine(results.metrics) : ''}
             ${fitnessTests}
             ${recsHTML}
           </div>

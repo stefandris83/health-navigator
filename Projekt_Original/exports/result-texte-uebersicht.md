@@ -13,20 +13,20 @@
 ## Freigabestand
 
 - Sprache: `de-CH`
-- Quellversion: `v1:850962bade7170ec3a4d67e5a84ecdee5a148fabb2847d3ba4089c8598e0e27c`
-- Gesamtbestand: **1206 Texte**
-- Freigegeben: **0** · Offen: **1206**
+- Quellversion: `v1:1961d7e7edd22437193cff3d7f0e68846cc7744ad22f1910d591e901fe4ed266`
+- Gesamtbestand: **1213 Texte**
+- Freigegeben: **0** · Offen: **1213**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
-| Nicht geprüft | 854 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 352 | Ausdrücklich erneut zu prüfen |
+| Nicht geprüft | 852 | Noch kein gemeinsamer Freigabestatus gesetzt |
+| Prüfung erforderlich | 361 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1206 | 0 | 1206 |
-| Medizin | 673 | 0 | 673 |
+| Marketing | 1213 | 0 | 1213 |
+| Medizin | 681 | 0 | 681 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
@@ -34,7 +34,7 @@
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
 | [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 217 | 217 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 219 | 219 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -44,7 +44,7 @@
 | [Medizin &amp; Sicherheit](#bereich-medizin-und-sicherheit) | 1 | 10 | 10 |
 | [Globale Navigation](#bereich-globale-navigation) | 1 | 48 | 48 |
 | [Quellen &amp; Transparenz](#bereich-quellen-und-transparenz) | 1 | 105 | 105 |
-| [Übergreifende Ergebnisdarstellung](#bereich-ubergreifende-ergebnisdarstellung) | 2 | 125 | 125 |
+| [Übergreifende Ergebnisdarstellung](#bereich-ubergreifende-ergebnisdarstellung) | 2 | 130 | 130 |
 
 <a id="bereich-fragebogen"></a>
 
@@ -2532,15 +2532,15 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (217 Texte)
+## 2. Einflussfaktoren (219 Texte)
 
 Themen in diesem Bereich:
 
 - [Alkohol](#thema-einflussfaktoren-alkohol): 16 Texte, 16 offen
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
-- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 98 Texte, 98 offen
-- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 32 Texte, 32 offen
+- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 101 Texte, 101 offen
+- [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
 - [Weitere Einflussfaktoren](#thema-einflussfaktoren-weitere-einflussfaktoren): 7 Texte, 7 offen
@@ -3068,7 +3068,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-herz-kreislauf-und-vorsorge"></a>
 
-### Herz-Kreislauf &amp; Vorsorge (98 Texte)
+### Herz-Kreislauf &amp; Vorsorge (101 Texte)
 
 #### Überschrift: Kardiovaskulärer Vorsorge-Check, Titel
 
@@ -3275,6 +3275,20 @@ Themen in diesem Bereich:
 
 > {{first}} und {{last}}
 
+#### Dynamischer Text: Kardiovaskulärer Vorsorge-Check, BMI-Fallback bei vorsichtig erkanntem Kraftsportkontext
+
+- Seitenelement: Spezial-Empfehlungen
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.special.act_kardio.risk_factor.body_composition_bmi_muscular`
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Prüfhinweis: Die mögliche Muskelmasse ändert weder Score noch Mustergewicht; nur vorsichtige Interpretation\.
+
+**Aktueller Text**
+
+> BMI {{bmi}} \({{bmiClassLabel}}; durch Muskelmasse möglicherweise mit beeinflusst und fachlich zu klären\)
+
 #### Dynamischer Textbaustein: Kardiovaskulärer Vorsorge-Check, dynamisch eingesetzter Risikofaktor Alkohol
 
 - Seitenelement: Spezial-Empfehlungen
@@ -3362,6 +3376,34 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > wenig Bewegung
+
+#### Dynamischer Text: Kardiovaskulärer Vorsorge-Check, persönlicher BMI-Fallback-Risikofaktor
+
+- Seitenelement: Spezial-Empfehlungen
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.special.act_kardio.risk_factor.body_composition_bmi`
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Prüfhinweis: BMI als weniger spezifischer Fallbackmarker, ohne Adipositasdiagnose\.
+
+**Aktueller Text**
+
+> BMI {{bmi}} \({{bmiClassLabel}}; Fettverteilung nicht ausreichend geklärt\)
+
+#### Dynamischer Text: Kardiovaskulärer Vorsorge-Check, persönlicher WHtR-Risikofaktor
+
+- Seitenelement: Spezial-Empfehlungen
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.special.act_kardio.risk_factor.body_composition_whtr`
+- Platzhalter: \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
+- Prüfhinweis: Macht den tatsächlichen Screeningmarker im Mehrfaktorenmuster sichtbar; keine Diagnose\.
+
+**Aktueller Text**
+
+> Taille\-Grösse\-Verhältnis {{whtr}} \({{waistStatusLabel}}\)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -4187,7 +4229,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 
-### Körperzusammensetzung &amp; Stoffwechsel (32 Texte)
+### Körperzusammensetzung &amp; Stoffwechsel (31 Texte)
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -4248,6 +4290,34 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Sie können die Entwicklung nachvollziehen und gemeinsam mit einer Fachperson entscheiden, welche weiteren Messungen oder Veränderungen sinnvoll sind.
+
+#### Dynamischer Text: BMI-Fallback ohne Taillenumfang und mit vorsichtig erkanntem Kraftsportkontext
+
+- Seitenelement: Dimensionsdetails
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist_muscular`
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
+- Prüfhinweis: Kein automatisches Neutralisieren des BMI durch Fitnessproxies; fordert zusätzliche Messung und Einordnung\.
+
+**Aktueller Text**
+
+> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihre Angaben sprechen zugleich für häufiges Krafttraining und gute Kraftleistungen. Muskelmasse kann den BMI mit beeinflussen; die Kurztests beweisen die Körperzusammensetzung jedoch nicht. Da kein Taillenumfang vorliegt, bleibt die Fettverteilung ungeklärt. Messen Sie deshalb die Taille korrekt und lassen Sie deutlich erhöhte oder widersprüchliche Werte fachlich einordnen.
+
+#### Dynamischer Text: BMI-Hinweis ab BMI 35 bei vorhandenem Taillenumfang und vorsichtig erkanntem Kraftsportkontext
+
+- Seitenelement: Dimensionsdetails
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist_muscular`
+- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
+- Geschützte Begriffe: \{\{bmi\}\} \| \{\{bmiClassLabel\}\} \| \{\{waist\}\} \| \{\{whtr\}\}
+- Prüfhinweis: Krafttraining und Testwerte sind nur Kontext, kein Muskelmassen-Nachweis und keine Score-Ausnahme\.
+
+**Aktueller Text**
+
+> Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihre Angaben sprechen zugleich für häufiges Krafttraining und gute Kraftleistungen. Muskelmasse kann den BMI mit beeinflussen; die Kurztests messen die Körperzusammensetzung aber nicht. Der Taillenumfang von {{waist}} cm und das Verhältnis {{whtr}} werden angezeigt, bei einem BMI ab 35 jedoch nicht zusätzlich gescort. Lassen Sie die widersprüchlichen Marker deshalb fachlich einordnen.
 
 #### Dynamischer Text: Dimensionsdetail · BMI-Hinweis bei vorhandenem Taillenumfang
 
@@ -4326,6 +4396,20 @@ Themen in diesem Bereich:
 
 > Ein auffälliger BMI oder ein auffälliges Taille\-Grösse\-Verhältnis ist kein Diagnosewert. Ordnen Sie Taillenumfang, Körpergrösse, Gewicht und Stoffwechselwerte gemeinsam mit einer Fachperson ein, bevor Sie konkrete Veränderungen ableiten.
 
+#### Dynamischer Text: Persönliche Messwert-Einordnung und sicherer nächster Schritt für das Körperprofil-Haupthandlungsfeld
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_koerperprofil.detail.personalized`
+- Platzhalter: \{\{nextStep\}\} \| \{\{personalAssessment\}\}
+- Geschützte Begriffe: \{\{personalAssessment\}\} \| \{\{nextStep\}\}
+- Prüfhinweis: Integriert die bisher separate Metrikbox direkt in das sichtbare Handlungsfeld\.
+
+**Aktueller Text**
+
+> {{personalAssessment}} {{nextStep}}
+
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
 - Seitenelement: Handlungsfelder
@@ -4360,56 +4444,6 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Körperzusammensetzung
-
-#### Beschriftung: Trennzeichen zwischen mehreren abgeleiteten Kennzahlen
-
-- Seitenelement: Einordnung &amp; Metriken
-- Freigabe durch: Marketing
-- Freigabestatus: Nicht geprüft
-- Technische ID: `ui.metrics.separator`
-
-**Aktueller Text**
-
->  ·
-
-#### Dynamischer Text: Abgeleitete Kennzahlen unter Einflussfaktoren
-
-- Seitenelement: Einordnung &amp; Metriken
-- Freigabe durch: Marketing, Medizin
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `ui.metrics.line`
-- Platzhalter: \{\{metrics\}\}
-- Prüfhinweis: Messwert und Status werden im Dimensionsdetail deutlicher hervorgehoben; durch Marketing und Medizin freigeben\.
-
-**Aktueller Text**
-
-> Ihre persönliche Einordnung: {{metrics}}.
-
-#### Dynamischer Text: Abgeleitete Kennzahlen, Bauchumfang-Zeile
-
-- Seitenelement: Einordnung &amp; Metriken
-- Freigabe durch: Marketing, Medizin
-- Freigabestatus: Prüfung erforderlich
-- Technische ID: `ui.metrics.waist`
-- Platzhalter: \{\{waist\}\} \| \{\{waistStatusLabel\}\} \| \{\{whtr\}\}
-- Geschützte Begriffe: \{\{waist\}\} \| \{\{whtr\}\} \| \{\{waistStatusLabel\}\}
-- Prüfhinweis: Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen\.
-
-**Aktueller Text**
-
-> Bauchumfang {{waist}} cm · Taille\-Grösse\-Verhältnis {{whtr}} \({{waistStatusLabel}}\)
-
-#### Dynamischer Text: Abgeleitete Kennzahlen, BMI-Zeile
-
-- Seitenelement: Einordnung &amp; Metriken
-- Freigabe durch: Marketing, Medizin
-- Freigabestatus: Nicht geprüft
-- Technische ID: `ui.metrics.bmi`
-- Platzhalter: \{\{bmi\}\} \| \{\{bmiClassLabel\}\}
-
-**Aktueller Text**
-
-> BMI {{bmi}} \({{bmiClassLabel}}\)
 
 #### Beschriftung: Sichtbares BMI-Klassenlabel adipositas1
 
@@ -12625,16 +12659,16 @@ Themen in diesem Bereich:
 
 <a id="bereich-ubergreifende-ergebnisdarstellung"></a>
 
-## 12. Übergreifende Ergebnisdarstellung (125 Texte)
+## 12. Übergreifende Ergebnisdarstellung (130 Texte)
 
 Themen in diesem Bereich:
 
-- [Navigation, Ergebnis &amp; Bedienung](#thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung): 123 Texte, 123 offen
-- [Weitere Empfehlungen](#thema-ubergreifende-ergebnisdarstellung-weitere-empfehlungen): 2 Texte, 2 offen
+- [Navigation, Ergebnis &amp; Bedienung](#thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung): 124 Texte, 124 offen
+- [Weitere Empfehlungen](#thema-ubergreifende-ergebnisdarstellung-weitere-empfehlungen): 6 Texte, 6 offen
 
 <a id="thema-ubergreifende-ergebnisdarstellung-navigation-ergebnis-und-bedienung"></a>
 
-### Navigation, Ergebnis &amp; Bedienung (123 Texte)
+### Navigation, Ergebnis &amp; Bedienung (124 Texte)
 
 #### Überschrift: Aufklappbarer 4-Wochen-Plan einer Aktionskarte
 
@@ -13568,6 +13602,18 @@ Themen in diesem Bereich:
 
 > Schritt {{planStep}} in Ihrem Aktionsplan
 
+#### Beschriftung: Detailkarte einer Empfehlung, Label vor dem dimensionsübergreifenden Körperprofil-Bezug
+
+- Seitenelement: Empfehlungsdarstellung
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `ui.recommendation.label.body_context`
+- Prüfhinweis: Erscheint nur bei bereits ausgelösten passenden Empfehlungen; erzeugt aus BMI oder WHtR kein neues Dimensionsdefizit\.
+
+**Aktueller Text**
+
+> Zusätzlicher Bezug zu Ihrem Körperprofil:
+
 #### Beschriftung: Detailkarte einer Empfehlung, Label vor dem nächsten Schritt
 
 - Seitenelement: Empfehlungsdarstellung
@@ -14035,7 +14081,7 @@ Themen in diesem Bereich:
 
 <a id="thema-ubergreifende-ergebnisdarstellung-weitere-empfehlungen"></a>
 
-### Weitere Empfehlungen (2 Texte)
+### Weitere Empfehlungen (6 Texte)
 
 #### Detailtext: Fallback, wenn keine konkrete Stärke ausgewählt werden kann
 
@@ -14059,4 +14105,52 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > {{dimensionTitle}} ist Ihr stabilster Bereich
+
+#### Detailtext: Zusatzsatz in der ersten ohnehin ausgelösten passenden Ernährungs-Empfehlung bei auffälligem Körperprofil
+
+- Seitenelement: Empfehlungsdarstellung
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.body_context.ernaehrung`
+- Prüfhinweis: Nicht stigmatisierend; nur bei einem unabhängig aus Antworten abgeleiteten Ernährungshebel\.
+
+**Aktueller Text**
+
+> Der hier bereits erkennbare Ernährungshebel kann zusätzlich Stoffwechselwerte und eine günstige Körperzusammensetzung unterstützen. Der Körperwert allein sagt jedoch nicht, dass Sie sich generell falsch ernähren.
+
+#### Detailtext: Zusatzsatz in der ersten ohnehin ausgelösten passenden Fitness-Empfehlung bei auffälligem Körperprofil
+
+- Seitenelement: Empfehlungsdarstellung
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.body_context.fitness`
+- Prüfhinweis: WHtR/BMI erzeugen keine Fitnessempfehlung; der Satz ergänzt nur ein unabhängig erkanntes Fitness-Handlungsfeld\.
+
+**Aktueller Text**
+
+> Die hier bereits erkennbare Bewegungs\- oder Kraftkomponente ist zusätzlich für Stoffwechsel und Körperzusammensetzung relevant. Gesundheitliche Vorteile entstehen auch dann, wenn sich Gewicht oder Taillenumfang nur langsam verändern.
+
+#### Detailtext: Zusatzsatz in der ersten ohnehin ausgelösten passenden Mental-Empfehlung bei auffälligem Körperprofil
+
+- Seitenelement: Empfehlungsdarstellung
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.body_context.mental`
+- Prüfhinweis: Keine Kausalität, Schuldzuweisung oder Mental-Score-Änderung aus Körpermassen\.
+
+**Aktueller Text**
+
+> Der hier bereits erkennbare Umgang mit Belastung oder Selbstfürsorge kann nachhaltige Gesundheitsveränderungen erleichtern. Er ist keine direkte Behandlung des Körperwerts, und der Wert erlaubt keine Aussage über Ihre psychische Gesundheit.
+
+#### Detailtext: Zusatzsatz in der ersten ohnehin ausgelösten Schlaf-Empfehlung bei auffälligem Körperprofil
+
+- Seitenelement: Empfehlungsdarstellung
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.body_context.schlaf`
+- Prüfhinweis: Keine Schlafapnoe- oder Kausalitätsbehauptung; nur bei unabhängig erkanntem Schlaf-Handlungsfeld\.
+
+**Aktueller Text**
+
+> Das hier bereits erkennbare Schlafthema kann auch für Erholung, Appetit\- und Gewichtsregulation relevant sein. Ein auffälliger Körperwert beweist aber weder eine Schlafstörung noch eine bestimmte Ursache.
 

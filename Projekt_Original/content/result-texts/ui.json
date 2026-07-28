@@ -64,6 +64,16 @@
       "comment": ""
     },
     {
+      "id": "ui.recommendation.label.body_context",
+      "section": "Empfehlungsdarstellung",
+      "context": "Detailkarte einer Empfehlung, Label vor dem dimensionsübergreifenden Körperprofil-Bezug",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Zusätzlicher Bezug zu Ihrem Körperprofil:",
+      "reviewStatus": "needs-review",
+      "comment": "Erscheint nur bei bereits ausgelösten passenden Empfehlungen; erzeugt aus BMI oder WHtR kein neues Dimensionsdefizit."
+    },
+    {
       "id": "ui.hero.dimension.einfluss.nominative",
       "section": "Ergebnis-Hero",
       "context": "Hero-Zusammenfassung, Dimension einfluss im Nominativ",
@@ -782,51 +792,6 @@
       "text": "bei BMI ab 35 nicht zusätzlich bewertet",
       "reviewStatus": "needs-review",
       "comment": "NICE empfiehlt WHtR bei Erwachsenen mit BMI unter 35; darüber bleibt BMI die Bewertungsgrundlage."
-    },
-    {
-      "id": "ui.metrics.bmi",
-      "section": "Einordnung & Metriken",
-      "context": "Abgeleitete Kennzahlen, BMI-Zeile",
-      "kind": "template",
-      "reviewers": "Marketing, Medizin",
-      "text": "BMI {{bmi}} ({{bmiClassLabel}})",
-      "reviewStatus": "",
-      "comment": ""
-    },
-    {
-      "id": "ui.metrics.waist",
-      "section": "Einordnung & Metriken",
-      "context": "Abgeleitete Kennzahlen, Bauchumfang-Zeile",
-      "kind": "template",
-      "reviewers": "Marketing, Medizin",
-      "text": "Bauchumfang {{waist}} cm · Taille-Grösse-Verhältnis {{whtr}} ({{waistStatusLabel}})",
-      "requiredTerms": [
-        "{{waist}}",
-        "{{whtr}}",
-        "{{waistStatusLabel}}"
-      ],
-      "reviewStatus": "needs-review",
-      "comment": "Der scorewirksame Quotient wird für Nachvollziehbarkeit sichtbar ausgewiesen."
-    },
-    {
-      "id": "ui.metrics.line",
-      "section": "Einordnung & Metriken",
-      "context": "Abgeleitete Kennzahlen unter Einflussfaktoren",
-      "kind": "template",
-      "reviewers": "Marketing, Medizin",
-      "text": "Ihre persönliche Einordnung: {{metrics}}.",
-      "reviewStatus": "needs-review",
-      "comment": "Messwert und Status werden im Dimensionsdetail deutlicher hervorgehoben; durch Marketing und Medizin freigeben."
-    },
-    {
-      "id": "ui.metrics.separator",
-      "section": "Einordnung & Metriken",
-      "context": "Trennzeichen zwischen mehreren abgeleiteten Kennzahlen",
-      "kind": "label",
-      "reviewers": "Marketing",
-      "text": " · ",
-      "reviewStatus": "",
-      "comment": ""
     },
     {
       "id": "ui.urgent.title",

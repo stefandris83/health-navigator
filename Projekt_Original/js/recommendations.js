@@ -260,7 +260,7 @@
     untergewicht: { dimension: 'einfluss', relatedRecommendationIds: [], fields: ['title', 'insight', 'clarify', 'benefit'] },
     rauchen: { dimension: 'einfluss', relatedRecommendationIds: ['ei_rauchstopp'], fields: ['title', 'insight', 'action', 'deepen'] },
     alkohol: { dimension: 'einfluss', relatedRecommendationIds: ['ei_alkohol'], fields: ['title', 'insight', 'action'] },
-    koerperzusammensetzung: { dimension: 'einfluss', relatedRecommendationIds: [], fields: ['title', 'insight', 'action', 'benefit'] },
+    koerperzusammensetzung: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio'], fields: ['title', 'insight', 'action', 'benefit'] },
     bewegungsmangel: { dimension: 'fitness', relatedRecommendationIds: ['fi_einstieg', 'fi_ausdauer'], fields: ['title', 'insight', 'action', 'deepen'] },
     keine_kraft: { dimension: 'fitness', relatedRecommendationIds: ['fi_kraft'], fields: ['title', 'insight', 'action'] },
     sitzen: { dimension: 'einfluss', relatedRecommendationIds: ['ei_sitzen'], fields: ['title', 'insight', 'action'] },
@@ -320,7 +320,7 @@
     const triggered = CATALOG.filter((record) => safeCheck(record.when, ctx));
     if (!Array.isArray(actionPlanItems)) {
       triggered.filter((record) => record.dim === dimId).map((record) => withPlan(record, ctx)).forEach(add);
-      return out;
+      return addBodyContext(out, ctx);
     }
 
     const coveredIds = new Set();
@@ -333,7 +333,7 @@
       add(withPlan(record, ctx));
       (record.covers || []).forEach((id) => coveredIds.add(id));
     });
-    return out;
+    return addBodyContext(out, ctx);
   }
 
   function safeCheck(predicate, ctx) {
@@ -384,16 +384,94 @@
     return copyGet('recommendation.special.act_kardio.risk_factor.' + id);
   }
 
+  function positiveFiniteNumber(value) {
+    const number = Number(value);
+    return Number.isFinite(number) && number > 0 ? number : null;
+  }
+
+  function validBmiValue(metrics) {
+    const raw = positiveFiniteNumber(metrics && metrics.bmiRaw);
+    return raw == null ? positiveFiniteNumber(metrics && metrics.bmi) : raw;
+  }
+
+  function bodyProfileInsight(metrics) {
+    const m = metrics || {};
+    const hasWaist = Number(m.waist) > 0;
+    const whtr = positiveFiniteNumber(m.whtr);
+    const bmi = validBmiValue(m);
+    const hasHighBmi = bmi != null && String(m.bmiClass || '').indexOf('adipositas') === 0;
+    if (hasWaist && m.bodyRisk && m.bodyRisk.source === 'whtr'
+        && whtr != null && (m.waistStatus === 'erhoeht' || m.waistStatus === 'hoch')) {
+      return copyFormat('recommendation.signal.koerperzusammensetzung.insight.with_waist', {
+        waist: m.waist,
+        whtr: formatRatio(whtr),
+        waistStatusLabel: copyGet('ui.metrics.waist_status.' + m.waistStatus),
+      });
+    }
+    if (!hasHighBmi) {
+      return copyGet('recommendation.signal.koerperzusammensetzung.insight');
+    }
+    const bmiVariables = {
+      bmi: formatBmi(bmi),
+      bmiClassLabel: copyGet('ui.metrics.bmi_class.' + m.bmiClass),
+    };
+    if (hasWaist && whtr == null) {
+      return copyGet('recommendation.signal.koerperzusammensetzung.insight');
+    }
+    if (hasWaist && whtr != null) {
+      return copyFormat('recommendation.signal.koerperzusammensetzung.insight.' + (
+        m.possibleMuscularBmiContext ? 'bmi_with_waist_muscular' : 'bmi_with_waist'
+      ), Object.assign({}, bmiVariables, {
+        waist: m.waist,
+        whtr: formatRatio(whtr),
+      }));
+    }
+    return copyFormat('recommendation.signal.koerperzusammensetzung.insight.' + (
+      m.possibleMuscularBmiContext ? 'bmi_without_waist_muscular' : 'bmi_without_waist'
+    ), bmiVariables);
+  }
+
+  function bodyProfileLeverDetail(c) {
+    return copyFormat('recommendation.lever.lv_koerperprofil.detail.personalized', {
+      personalAssessment: bodyProfileInsight(c.m),
+      nextStep: copyGet('recommendation.lever.lv_koerperprofil.detail'),
+    });
+  }
+
+  function bodyCompositionKardioFactor(c) {
+    const m = c && c.m ? c.m : {};
+    const whtr = positiveFiniteNumber(m.whtr);
+    const bmi = validBmiValue(m);
+    if (m.bodyRisk && m.bodyRisk.source === 'whtr'
+        && whtr != null && oneOf(m.waistStatus, 'erhoeht', 'hoch')) {
+      return copyFormat('recommendation.special.act_kardio.risk_factor.body_composition_whtr', {
+        whtr: formatRatio(whtr),
+        waistStatusLabel: copyGet('ui.metrics.waist_status.' + m.waistStatus),
+      });
+    }
+    if (m.bodyRisk && m.bodyRisk.source === 'bmi'
+        && bmi != null && oneOf(m.bmiClass, 'adipositas1', 'adipositas2')) {
+      return copyFormat('recommendation.special.act_kardio.risk_factor.' + (
+        m.possibleMuscularBmiContext ? 'body_composition_bmi_muscular' : 'body_composition_bmi'
+      ), {
+        bmi: formatBmi(bmi),
+        bmiClassLabel: copyGet('ui.metrics.bmi_class.' + m.bmiClass),
+      });
+    }
+    return kardioFactor('body_composition');
+  }
+
   /** Kardiovaskuläres Risikomuster über mehrere Dimensionen hinweg. */
   function cvRiskPattern(c) {
     let r = 0;
     const why = [];
+    const metrics = c && c.m ? c.m : {};
     if (c.a.bluthochdruck === 'ja') { r += 2; why.push(kardioFactor('hypertension')); }
     else if (c.a.bluthochdruck === 'weiss_nicht') { r += 0.5; }
     if (oneOf(c.a.rauchen, 'ja_regelmaessig', 'ja_gelegentlich')) { r += 2; why.push(kardioFactor('smoking')); }
-    if (c.m.bodyRisk && c.m.bodyRisk.severity === 'mittel') {
-      r += 1.5;
-      why.push(kardioFactor('body_composition'));
+    if (metrics.bodyRisk && oneOf(metrics.bodyRisk.severity, 'mittel', 'tief')) {
+      r += metrics.bodyRisk.severity === 'mittel' ? 1.5 : 0.5;
+      why.push(bodyCompositionKardioFactor(c));
     }
     if (oneOf(c.a.sitzzeit, 's9_10', 'ue10')) { r += 1; why.push(kardioFactor('long_sitting')); }
     if (c.activity.needsEntry) { r += 1; why.push(kardioFactor('low_activity')); }
@@ -583,7 +661,7 @@
     {
       id: 'lv_kardio', dim: 'einfluss', topic: 'vorsorge',
       action: kardioAction,
-      absorbs: ['blutdruck'],
+      absorbs: ['blutdruck', 'koerperzusammensetzung'],
       covers: ['ei_bluthochdruck', 'ei_vorsorge'],
       when: (c) => cvRiskPattern(c).r >= 3,
       // Ein echtes Mehrfaktorenmuster mit bekanntem Bluthochdruck darf in der
@@ -833,6 +911,8 @@
       detail = (c) => copyGet(prefix + 'detail.' + (ageOf(c) >= 50 ? 'age_50_plus' : 'under_50'));
     } else if (rule.id === 'lv_protein') {
       detail = (c) => copyGet(prefix + 'detail.' + (ageOf(c) >= 60 ? 'age_60_plus' : 'under_60'));
+    } else if (rule.id === 'lv_koerperprofil') {
+      detail = bodyProfileLeverDetail;
     } else {
       detail = copyGet(prefix + 'detail');
     }
@@ -989,6 +1069,7 @@
       if (dimensionCount >= 2 || (dimensionCount >= 1 && !permitsSecond)) continue;
       if (it.L.topic && topics.has(it.L.topic)) continue;
       if (it.L.topic) topics.add(it.L.topic);
+      (it.L.absorbs || []).forEach((topic) => topics.add(topic));
       dimensionCounts.set(it.L.dim, dimensionCount + 1);
       const d = dims.find((x) => x.id === it.L.dim) || { title: it.L.dim, short: it.L.dim };
       out.push({
@@ -1148,7 +1229,7 @@
       push(r, null, null);
     });
 
-    return picked.slice(0, max).map((r) => withPlan(r, ctx));
+    return addBodyContext(picked.slice(0, max).map((r) => withPlan(r, ctx)), ctx);
   }
 
   /* =====================================================================
@@ -1322,6 +1403,39 @@
     return out;
   }, {});
 
+  /* Ein ungünstiger Körpermarker erzeugt keine neuen Defizite in anderen
+   * Dimensionen. Er ergänzt nur die erste ohnehin ausgelöste, fachlich passende
+   * Empfehlung je Dimension um einen kurzen persönlichen Zusammenhang. */
+  const BODY_CONTEXT_RECOMMENDATIONS = Object.freeze({
+    fi_einstieg: 'fitness',
+    fi_ausdauer: 'fitness',
+    fi_kraft: 'fitness',
+    fi_kondition: 'fitness',
+    er_getraenke: 'ernaehrung',
+    er_verarbeitet: 'ernaehrung',
+    er_vielfalt: 'ernaehrung',
+    er_saettigung: 'ernaehrung',
+    sl_dauer: 'schlaf',
+    sl_qualitaet: 'schlaf',
+    sl_rhythmus: 'schlaf',
+    me_belastung: 'mental',
+    me_selbstfuersorge: 'mental',
+  });
+
+  function addBodyContext(records, ctx) {
+    if (!ctx || !ctx.m || !ctx.m.bodyRisk || !ctx.m.bodyRisk.severity) return records;
+    const usedDimensions = new Set();
+    return records.map((record) => {
+      if (record.bodyContext) usedDimensions.add(record.dim);
+      const contextDimension = BODY_CONTEXT_RECOMMENDATIONS[record.id];
+      if (!contextDimension || usedDimensions.has(contextDimension)) return record;
+      usedDimensions.add(contextDimension);
+      return Object.assign({}, record, {
+        bodyContext: copyGet('recommendation.body_context.' + contextDimension),
+      });
+    });
+  }
+
   /** Hängt – falls vorhanden – den massgeschneiderten Plan an eine Empfehlung. */
   function withPlan(rec, ctx) {
     const p = PLANS[rec.id];
@@ -1358,30 +1472,7 @@
       deepen: signalCopy.deepen || null,
     };
     if (signal.id === 'koerperzusammensetzung') {
-      const metrics = results.metrics || {};
-      const hasWaist = Number(metrics.waist) > 0;
-      const hasHighBmi = String(metrics.bmiClass || '').indexOf('adipositas') === 0;
-      const bodyRiskSource = metrics.bodyRisk && metrics.bodyRisk.source;
-      if (hasWaist && bodyRiskSource === 'whtr'
-          && (metrics.waistStatus === 'erhoeht' || metrics.waistStatus === 'hoch')) {
-        item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.with_waist', {
-          waist: metrics.waist,
-          whtr: formatRatio(metrics.whtr),
-          waistStatusLabel: copyGet('ui.metrics.waist_status.' + metrics.waistStatus),
-        });
-      } else if (hasWaist && hasHighBmi) {
-        item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist', {
-          bmi: formatBmi(metrics.bmiRaw == null ? metrics.bmi : metrics.bmiRaw),
-          bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
-          waist: metrics.waist,
-          whtr: formatRatio(metrics.whtr),
-        });
-      } else if (hasHighBmi) {
-        item.insight = copyFormat('recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist', {
-          bmi: formatBmi(metrics.bmiRaw == null ? metrics.bmi : metrics.bmiRaw),
-          bmiClassLabel: copyGet('ui.metrics.bmi_class.' + metrics.bmiClass),
-        });
-      }
+      item.insight = bodyProfileInsight(results.metrics || {});
     }
     return item;
   }

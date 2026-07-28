@@ -17,6 +17,8 @@ konkreten Empfehlungen und 4-Wochen-Plänen.
 - Gesundheitsprofil aus Einflussfaktoren, Fitness, Ernährung, Schlaf und mentaler
   Gesundheit
 - persönliche Stärken, priorisierte nächste Schritte und dimensionsbezogene Hinweise
+- optionales Taille-Grösse-Verhältnis mit BMI-Fallback und entscheidungsnaher
+  Einbindung in Körperprofil- und Vorsorgeempfehlungen
 - optionale Fitness-Kurztests für Balance und Muskulatur mit alters- und
   geschlechtsspezifischen Orientierungswerten
 - vollständige Benutzeroberfläche in Deutsch, Englisch, Französisch und Italienisch

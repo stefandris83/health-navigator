@@ -96,6 +96,22 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Ein zentrales Körperprofil priorisiert geschlechtsübergreifend WHtR und verwendet
   den BMI in zwei getrennten Fällen: bei Erwachsenen ab BMI 35 sowie bei fehlender
   Taillenangabe. Die medizinische Freigabe der Schwellen bleibt davon getrennt offen.
+- [x] Körperprofil entscheidungsnah in die Empfehlungen integrieren: Die separate
+  blaue Metrikbox ist entfernt. Ein persönlicher WHtR-/BMI-Faktor steht im
+  Körperprofil-Haupthandlungsfeld oder im ausgelösten kardiovaskulären Vorsorge-
+  Check; bestehende passende Empfehlungen können höchstens einen ergänzenden Bezug
+  erhalten. Der Vorsorge-Check absorbiert den bereits erklärten Körperprofil-Hebel
+  auch in der Kurzliste. Es entstehen keine künstlichen Defizite in Fitness,
+  Ernährung, Schlaf oder Mentalem; unvollständige optionale Metrikdaten fallen auf
+  einen sicheren allgemeinen Körperprofiltext zurück.
+- [x] BMI-Muskelmassen-Edge-Case defensiv abbilden: Häufiges Krafttraining, erreichtes
+  Bewegungsziel und gute auswertbare Krafttests wählen nur eine vorsichtige
+  Textvariante. Score, Signal und Abklärungsbedarf werden nicht automatisch
+  reduziert, weil die Kurztests keine Körperzusammensetzung messen.
+- [ ] Medizinische, Product- und Marketing-Freigabe der neuen Körperprofil-
+  Integration und ihrer DE-/EN-/FR-/IT-Texte einholen. Besonders prüfen: +0,5/+1,5
+  im heuristischen Kardio-Muster, die konditionalen Querverweise in vier Dimensionen
+  sowie die Formulierung des möglichen Muskelmassen-Kontexts.
 - [x] Liegestütz-Protokoll vereinheitlichen: Frauen und Männer führen denselben
   Standard-Liegestütz von den Zehen aus; die frühere weibliche Knie-Referenz ist
   vollständig aus Scoring und Nutzerführung entfernt.

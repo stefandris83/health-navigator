@@ -155,6 +155,20 @@ Erwachsenen mit BMI ≥ 35 wird trotz Taillenangabe der BMI verwendet; ohne
 Taillenangabe ist der BMI ebenfalls der Fallback. Details, Ausnahmen und Quellen
 stehen in `docs/SCORING_MODELL.md` und `docs/QUELLEN.md`.
 
+Die persönliche Einordnung erscheint nicht mehr als separate blaue Metrikbox im
+Dimensionskopf. Ein ungünstiger Körpermarker wird stattdessen dort erklärt, wo er
+für die nächste Entscheidung relevant ist: als persönliches Körperprofil-
+Handlungsfeld, als konkret benannter Faktor eines bereits ausgelösten
+kardiovaskulären Vorsorge-Checks und als kurzer Zusatzbezug bei der ersten ohnehin
+ausgelösten passenden Empfehlung in Fitness, Ernährung, Schlaf oder Mentalem. Der
+Vorsorge-Check ersetzt dabei den bereits erklärten Körperprofil-Hebel auch in der
+Kurzliste, sodass derselbe Befund nicht doppelt erscheint. Der
+Marker erzeugt in diesen vier Dimensionen weder neue Defizite noch neue
+Empfehlungen. Häufiges Krafttraining zusammen mit guten auswertbaren Krafttests
+führt bei einem BMI-basierten Signal zu einem vorsichtigen Muskelmassen-Hinweis;
+die Kurztests messen die Körperzusammensetzung jedoch nicht, weshalb Score, Signal
+und fachliche Abklärung unverändert bleiben.
+
 Die Stärkenkarte bevorzugt breit abgestützte persönliche Fähigkeiten und erreichte
 Ziele vor einzelnen Schutzmerkmalen. Eine sehr hohe Fitness wird nur dann als
 herausragende Topstärke zusammengefasst, wenn Fitnessscore, WHO-Bewegungsziel und

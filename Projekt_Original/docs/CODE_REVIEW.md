@@ -3,8 +3,8 @@
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
 > **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
-> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 24: 1'206
-> lokalisierte Texte je Sprache und 182/182 erfolgreiche Tests. Kleinere Zahlen in
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 25: 1'213
+> lokalisierte Texte je Sprache und 185/185 erfolgreiche Tests. Kleinere Zahlen in
 > früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
 > Bestandsangaben.
 
@@ -1211,3 +1211,43 @@ von der Sicherheitsrichtlinie des eingebetteten Browsers blockiert; dort belegt
 der grüne automatisierte Doppelklickvertrag weiterhin Asset- und Scriptreihenfolge,
 nicht jedoch einen interaktiven Browserlauf. Die medizinische und Product-Freigabe
 des neuen WHtR-Vertrags bleibt vor einem klinisch verantworteten Go-live offen.
+
+## 25. Entscheidungsnahe Körperprofil-Integration
+
+Die separate blaue Metrikbox mit BMI, Taillenumfang und WHtR wurde aus dem
+Dimensionskopf entfernt. Persönliche Körpermarker erscheinen nun im sicheren
+`summaryOnly`-Körperprofil-Hinweis oder – sobald ein kardiovaskuläres
+Mehrfaktorenmuster die definierte Schwelle erreicht – direkt als konkreter Faktor
+in der Begründung des Vorsorge-Checks. Der Kardio-Hebel absorbiert den bereits
+erklärten Körperprofil-Hebel auch in «Grösste Handlungsfelder»; dadurch erscheint
+derselbe Befund weder im Dimensionsdetail noch in der Kurzliste doppelt.
+
+Fitness, Ernährung, Schlaf und Mentales erhalten einen Körperprofil-Bezug nur an
+der ersten ohnehin ausgelösten, fachlich passenden Empfehlung. Der Marker erzeugt
+dort weder neue Empfehlungs-IDs noch ein vermeintliches Defizit. Beim BMI-Fallback
+wählt häufiges Krafttraining zusammen mit erreichtem Bewegungsziel und guten
+auswertbaren Krafttests ausschliesslich eine vorsichtigere Textvariante. Score,
+Signal und fachlicher Klärungsbedarf bleiben unverändert, weil die Kurztests keine
+Körperzusammensetzung messen.
+
+Ein unabhängiger Abschlussreview fand zusätzlich zwei Randfälle: Die Kurzliste
+konnte Kardio- und Körperprofil-Hebel parallel zeigen, und unvollständige optionale
+Metrikobjekte konnten durch eine fehlende dynamische Text-ID den Kardio-Check still
+unterdrücken. Die Themenabsorption gilt deshalb nun auch in `keyLevers()`; WHtR- und
+BMI-Faktoren prüfen ihre benötigten Klassen vor der Formatierung und verwenden bei
+unvollständigen Daten den sicheren allgemeinen Körperprofiltext.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 42/42, Integration 78/78, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **185/185
+Tests**. Alle vier Kataloge mit je 1'213 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
+aktuell. Ein realer Browserlauf über den lokalen Server prüfte Desktop und 390
+Pixel Breite in DE, EN, FR und IT: persönliche WHtR-Faktoren und ergänzende
+Körperprofiltexte waren lokalisiert, die blaue Metrikbox fehlte, es gab keinen
+horizontalen Überlauf und keine relevanten Konsolenmeldungen.
+
+Die medizinische, Product- und Marketing-Freigabe der heuristischen Gewichte im
+kardiovaskulären Mustermodell, der konditionalen Querverweise und der neuen Texte
+bleibt vor einem klinisch verantworteten Go-live offen.
