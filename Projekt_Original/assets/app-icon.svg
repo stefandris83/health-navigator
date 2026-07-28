@@ -1,9 +1,19 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title desc">
   <title id="title">Helsana Gesundheitscheck</title>
-  <desc id="desc">Weisses Gesundheits- und Navigationssymbol auf Helsana-Rot.</desc>
-  <rect width="512" height="512" fill="#9A0941"/>
-  <circle cx="256" cy="256" r="150" fill="none" stroke="#FFFFFF" stroke-opacity=".28" stroke-width="18"/>
-  <circle cx="256" cy="256" r="112" fill="none" stroke="#FFFFFF" stroke-opacity=".5" stroke-width="6"/>
-  <path d="M226 160a30 30 0 0 1 60 0v66h66a30 30 0 0 1 0 60h-66v66a30 30 0 0 1-60 0v-66h-66a30 30 0 0 1 0-60h66z" fill="#FFFFFF"/>
-  <path d="m256 88 23 43h-46z" fill="#FFFFFF"/>
+  <desc id="desc">Weisses Checkmark auf einem Verlauf in Helsana-Rot.</desc>
+  <defs>
+    <radialGradient id="helsana-red-gradient" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="scale(614.4 716.8)" color-interpolation="sRGB">
+      <stop offset="0" stop-color="#C01551"/>
+      <stop offset=".42" stop-color="#9A0941"/>
+      <stop offset="1" stop-color="#5E0628"/>
+    </radialGradient>
+    <radialGradient id="soft-highlight" cx="82%" cy="14%" r="68%">
+      <stop offset="0" stop-color="#FFFFFF" stop-opacity=".16"/>
+      <stop offset=".45" stop-color="#FFFFFF" stop-opacity=".05"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#helsana-red-gradient)"/>
+  <rect width="512" height="512" fill="url(#soft-highlight)"/>
+  <path d="M148 270 226 348 370 178" fill="none" stroke="#FFFFFF" stroke-width="54" stroke-linecap="round" stroke-linejoin="round"/>
 </svg>

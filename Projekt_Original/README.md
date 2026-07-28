@@ -64,7 +64,7 @@ entfernt.
 index.html / quellen.html        Statische Einstiegs- und Quellenseite
 manifest*.webmanifest            Deutscher Kompatibilitäts- und vier Sprach-Manifeste
 assets/helsana-logo.svg          Lokal eingebundenes Helsana-Markenasset
-assets/app-icon.*                Lokales Helsana-rotes App-Icon (SVG und PNGs für Mobilgeräte)
+assets/app-icon.*                Rotes Verlaufs-Icon mit Checkmark (SVG und Mobil-PNGs)
 css/styles.css                   Bestehendes Helsana-Look-and-Feel
 js/config.js                     Validierte Laufzeitkonfiguration
 js/questions.js                  Fragen und Antwortschema
@@ -187,8 +187,9 @@ Browser.
 Über die HTTPS-Vorschau kann der Check als Verknüpfung auf dem Startbildschirm
 abgelegt werden. In Chrome auf Android wählen Sie im Browsermenü «App installieren»
 oder «Zum Startbildschirm hinzufügen». In Safari auf iPhone oder iPad wählen Sie
-«Teilen» und danach «Zum Home-Bildschirm». Das lokale App-Symbol verwendet
-Helsana-Rot; seine SVG-Quelle liegt in `assets/app-icon.svg`. Die PNG-Varianten
+«Teilen» und danach «Zum Home-Bildschirm». Das lokale App-Symbol verwendet den
+Helsana-roten Verlauf der Startkachel und ein weisses Checkmark; seine SVG-Quelle
+liegt in `assets/app-icon.svg`. Die daraus erzeugten PNG-Varianten
 `assets/app-icon-192.png`, `assets/app-icon-512.png` und
 `assets/apple-touch-icon.png` sind für Android beziehungsweise iOS vorgesehen.
 

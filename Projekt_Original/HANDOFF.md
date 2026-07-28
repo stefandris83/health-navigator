@@ -429,7 +429,8 @@ Bereits implementiert und getestet:
 - Hilfstexte und kleine Badges erreichen technisch mindestens WCAG-AA-Kontrast 4,5:1;
 - mobiles Ergebnislayout nutzt die Kartenbreite besser;
 - Gesundheitsberatungs-Telefonnummer bleibt auf einer Zeile;
-- lokales Helsana-rotes PWA-Icon in SVG, Android-PNGs und Apple-Touch-Icon;
+- lokales PWA-Icon mit dem roten Verlauf der Startkachel und weissem Checkmark als
+  SVG, Android-PNGs und Apple-Touch-Icon;
 - vier sprachspezifische Manifeste plus deutscher Kompatibilitätsalias.
 
 ## 12. Messillustrationen

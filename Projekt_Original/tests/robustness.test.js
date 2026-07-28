@@ -577,7 +577,11 @@ test('Mobile Installation: Manifest und lokale Android-/iOS-Icons sind vollstän
 
   const svg = fs.readFileSync(path.join(ROOT, 'assets', 'app-icon.svg'), 'utf8');
   assert.ok(/^<svg\b/.test(svg));
-  assert.ok(svg.includes('fill="#9A0941"'));
+  assert.ok(svg.includes('id="helsana-red-gradient"'));
+  ['#C01551', '#9A0941', '#5E0628'].forEach((color) => assert.ok(svg.includes(`stop-color="${color}"`)));
+  assert.ok(svg.includes('stroke="#FFFFFF"'));
+  assert.ok(svg.includes('stroke-linecap="round"'));
+  assert.ok(svg.includes('stroke-linejoin="round"'));
   assert.ok(!/<script\b|<foreignObject\b|\son[a-z]+\s*=|\b(?:href|src)\s*=|javascript:/i.test(svg));
 
   [

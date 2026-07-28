@@ -3,7 +3,7 @@
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
 > **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
-> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 22: 1'205
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 23: 1'205
 > lokalisierte Texte je Sprache und 181/181 erfolgreiche Tests. Kleinere Zahlen in
 > früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
 > Bestandsangaben.
@@ -1146,3 +1146,17 @@ gegebenenfalls passende Empfehlung. Scoring, Referenzstatus, Schwellen und
 Empfehlungslogik bleiben unverändert. Evidenzqualität, Modellierungen und fachliche
 Grenzen sind weiterhin vollständig in `QUELLEN.md` und `SCORING_MODELL.md`
 dokumentiert.
+
+## 23. Plattformübergreifendes App-Icon mit Helsana-Verlauf
+
+Das frühere Navigations- und Gesundheitssymbol wurde durch ein weisses Checkmark auf
+dem Helsana-roten Verlauf der Startkachel ersetzt. `assets/app-icon.svg` ist die
+kanonische Vektorquelle; daraus wurden die lokalen PNGs für Android mit 192 und 512
+Pixeln sowie das Apple-Touch-Icon mit 180 Pixeln neu erzeugt. Der Verlauf verwendet
+dieselben Farbstufen `#C01551`, `#9A0941` und `#5E0628` wie die Startkachel. Das
+Checkmark bleibt innerhalb der sicheren Maskable-Zone, während der Verlauf die
+gesamte Fläche ohne transparente oder schwarze Ränder ausfüllt.
+
+Alle fünf Manifeste und beide HTML-Seiten verwenden weiterhin die bestehenden
+relativen Icon-Pfade. Die SVG-Sicherheitsprüfung, PNG-Dimensionsprüfung, lokale
+Serverdarstellung und die vollständigen 181 Regressionstests waren erfolgreich.
