@@ -139,7 +139,7 @@
       "context": "Empfehlungskarte ei_familie in der Dimension einfluss, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "In Ihrer nahen Familie kommen Herz-Kreislauf-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.",
+      "text": "Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Für die medizinische Einordnung sind die Erkrankung – bei Krebs auch die Krebsart –, die betroffene Person und das ungefähre Diagnosealter besonders hilfreich.",
       "reviewStatus": "needs-review",
       "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
@@ -149,7 +149,7 @@
       "context": "Empfehlungskarte ei_familie in der Dimension einfluss, konkreter nächster Schritt",
       "kind": "action",
       "reviewers": "Marketing, Medizin",
-      "text": "Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.",
+      "text": "Tragen Sie diese Angaben zusammen. Falls keine aktuelle professionelle Risikoeinschätzung vorliegt, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich erklären, welche Untersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.",
       "reviewStatus": "needs-review",
       "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
@@ -159,7 +159,7 @@
       "context": "Empfehlungskarte ei_familie in der Dimension einfluss, erwarteter Nutzen",
       "kind": "benefit",
       "reviewers": "Marketing, Medizin",
-      "text": "Wer sein Risiko kennt, kann Prävention früher und gezielter ausrichten.",
+      "text": "Eine möglichst genaue Familiengeschichte macht Vorsorge persönlicher, ohne eine Erkrankung vorwegzunehmen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -169,7 +169,7 @@
       "context": "Empfehlungskarte ei_vorsorge in der Dimension einfluss, Titel",
       "kind": "title",
       "reviewers": "Marketing",
-      "text": "Persönliches Risiko einmal einschätzen lassen",
+      "text": "Persönliche Risikoeinschätzung klären",
       "reviewStatus": "",
       "comment": ""
     },
@@ -179,7 +179,7 @@
       "context": "Empfehlungskarte ei_vorsorge in der Dimension einfluss, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ-2-Diabetes bisher nicht einschätzen lassen. Gerade Bluthochdruck bleibt oft lange unbemerkt.",
+      "text": "Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Gesundheitswerte und Vorsorgebedarf können sich mit dem Alter, neuen Messwerten oder der Familiengeschichte verändern.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -189,7 +189,7 @@
       "context": "Empfehlungskarte ei_vorsorge in der Dimension einfluss, konkreter nächster Schritt",
       "kind": "action",
       "reviewers": "Marketing, Medizin",
-      "text": "Vereinbaren Sie bei Gelegenheit einen Check-up-Termin und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen – je nach Alter und Familiengeschichte auch weitere Vorsorgeuntersuchungen.",
+      "text": "Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann die letzte Beurteilung war. Falls keine aktuelle Einschätzung vorliegt, klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt sinnvoll sind.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -199,7 +199,7 @@
       "context": "Empfehlungskarte ei_vorsorge in der Dimension einfluss, erwarteter Nutzen",
       "kind": "benefit",
       "reviewers": "Marketing, Medizin",
-      "text": "Bekannte Werte machen Prävention konkret und zeigen, wo sich Aufmerksamkeit besonders lohnt.",
+      "text": "Ein geklärter Stand verhindert unnötige Wiederholungen und hilft, sinnvolle Kontrollen rechtzeitig zu planen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -369,7 +369,7 @@
       "context": "Empfehlungskarte ei_familienwissen in der Dimension einfluss, Titel",
       "kind": "title",
       "reviewers": "Marketing",
-      "text": "Ihre Familiengeschichte kennenlernen",
+      "text": "Familiengeschichte vervollständigen",
       "reviewStatus": "",
       "comment": ""
     },
@@ -379,7 +379,7 @@
       "context": "Empfehlungskarte ei_familienwissen in der Dimension einfluss, Begründung",
       "kind": "explanation",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie kennen die Krankheitsgeschichte Ihrer Familie bisher wenig. Dieses Wissen hilft, Vorsorge gezielter anzugehen.",
+      "text": "Sie kennen die Krankheitsgeschichte Ihrer Familie nur teilweise oder gar nicht. Für die Vorsorge sind Art der Erkrankung, betroffene Person und ungefähres Diagnosealter besonders hilfreich.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -389,7 +389,7 @@
       "context": "Empfehlungskarte ei_familienwissen in der Dimension einfluss, konkreter nächster Schritt",
       "kind": "action",
       "reviewers": "Marketing, Medizin",
-      "text": "Fragen Sie bei Gelegenheit nahe Angehörige, ob Herz-Kreislauf-Erkrankungen, Diabetes oder Krebs früh aufgetreten sind, und notieren Sie es.",
+      "text": "Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind; notieren Sie bei Krebs auch die Krebsart.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -399,9 +399,49 @@
       "context": "Empfehlungskarte ei_familienwissen in der Dimension einfluss, erwarteter Nutzen",
       "kind": "benefit",
       "reviewers": "Marketing, Medizin",
-      "text": "Wer die eigene Familiengeschichte kennt, kann Untersuchungen und Prävention besser timen.",
+      "text": "Diese Angaben helfen einer Fachperson, Vorsorge und mögliche Früherkennung besser auf Sie abzustimmen.",
       "reviewStatus": "",
       "comment": ""
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.title",
+      "section": "Empfehlungskarten",
+      "context": "Empfehlungskarte ei_vorsorgewissen in der Dimension einfluss, Titel",
+      "kind": "title",
+      "reviewers": "Marketing, Medizin",
+      "text": "Passende Vorsorge kennenlernen",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung bei fehlendem oder teilweisem Wissen über passende Vorsorge; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.why",
+      "section": "Empfehlungskarten",
+      "context": "Empfehlungskarte ei_vorsorgewissen in der Dimension einfluss, Begründung",
+      "kind": "explanation",
+      "reviewers": "Marketing, Medizin",
+      "text": "Sie wissen noch nicht vollständig, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.step",
+      "section": "Empfehlungskarten",
+      "context": "Empfehlungskarte ei_vorsorgewissen in der Dimension einfluss, konkreter nächster Schritt",
+      "kind": "action",
+      "reviewers": "Marketing, Medizin",
+      "text": "Nutzen Sie verlässliche Gesundheitsinformationen und besprechen Sie offene Fragen mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung für Sie welchen Nutzen hat und wann sie sinnvoll ist.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.benefit",
+      "section": "Empfehlungskarten",
+      "context": "Empfehlungskarte ei_vorsorgewissen in der Dimension einfluss, erwarteter Nutzen",
+      "kind": "benefit",
+      "reviewers": "Marketing, Medizin",
+      "text": "So können Sie informierte Entscheidungen treffen und die für Sie passende Vorsorge gezielt planen.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.catalog.fi_einstieg.title",
@@ -1243,7 +1283,7 @@
       "context": "Handlungsfeld lv_familie in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz-Kreislauf-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.",
+      "text": "Notieren Sie Erkrankung, betroffene Person und ungefähres Diagnosealter; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich dort die für Sie passende Vorsorge erklären.",
       "reviewStatus": "needs-review",
       "comment": "Breite Familienfrage bewusst nicht pauschal als Herz-Kreislauf-Risiko formuliert; durch Marketing und Medizin freigeben."
     },
@@ -1253,7 +1293,7 @@
       "context": "Handlungsfeld lv_vorsorge in der Dimension einfluss, Kurzlabel",
       "kind": "label",
       "reviewers": "Marketing, Medizin",
-      "text": "Persönliches Risiko einmal einschätzen lassen",
+      "text": "Aktualität der Risikoeinschätzung klären",
       "reviewStatus": "needs-review",
       "comment": "Neue scoreunabhängige Summary-Priorisierung; durch Marketing und Medizin freigeben."
     },
@@ -1263,7 +1303,7 @@
       "context": "Handlungsfeld lv_vorsorge in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Ein persönlicher Check-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.",
+      "text": "Prüfen Sie, wann Ihr persönliches Gesundheitsrisiko zuletzt professionell beurteilt wurde. Ist die Einschätzung nicht aktuell oder unklar, besprechen Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt zu Ihnen passen.",
       "reviewStatus": "needs-review",
       "comment": "Keine pauschale Screening-Pflicht behauptet; durch Marketing und Medizin freigeben."
     },
@@ -1457,9 +1497,29 @@
       "context": "Handlungsfeld lv_familienwissen in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Wer die familiäre Vorbelastung kennt, kann Vorsorge gezielt einsetzen – ein Gespräch in der Familie ist der einfachste erste Schritt.",
+      "text": "Fragen Sie Angehörige, welche relevante Erkrankung bei wem und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch nach der Krebsart. Notieren Sie die Angaben für ein späteres Vorsorgegespräch.",
       "reviewStatus": "",
       "comment": ""
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.label",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_vorsorgewissen in der Dimension einfluss, Kurzlabel",
+      "kind": "label",
+      "reviewers": "Marketing, Medizin",
+      "text": "Passende Vorsorge kennenlernen",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.detail",
+      "section": "Handlungsfelder",
+      "context": "Handlungsfeld lv_vorsorgewissen in der Dimension einfluss, Detailtext",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Informieren Sie sich aus verlässlichen Quellen und klären Sie mit einer medizinischen Fachperson, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.lever.lv_socialmedia.label",
@@ -2200,7 +2260,7 @@
       "context": "Stärke st_vorsorge in der Dimension einfluss, Kurzlabel",
       "kind": "label",
       "reviewers": "Marketing",
-      "text": "Vorsorge & Familienrisiken im Blick",
+      "text": "Aktuelle Risikoeinschätzung & Vorsorgewissen",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2210,7 +2270,7 @@
       "context": "Stärke st_vorsorge in der Dimension einfluss, Detailtext",
       "kind": "detail",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie kennen Ihr persönliches Risiko und Ihre familiäre Vorgeschichte – die beste Grundlage für gezielte Prävention.",
+      "text": "Ihre persönliche Risikoeinschätzung ist gemäss Fachperson aktuell, und Sie wissen, welche Vorsorgeuntersuchungen für Sie sinnvoll sind – eine gute Grundlage für gezielte Prävention.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3020,7 +3080,7 @@
       "context": "Plan ei_vorsorge, Diese Woche",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Vereinbaren Sie einen Check-up-Termin. Bitten Sie um <b>Blutdruck, Blutzucker und ein Lipidprofil</b>. Fragen Sie, ob ApoB bei Ihrem Risikoprofil zusätzliche Information liefert und ob Lp(a) bereits einmal bestimmt wurde. Viele Risikofaktoren verursachen lange keine Beschwerden – aktuelle Werte schaffen eine belastbare Gesprächsgrundlage.",
+      "text": "Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann Ihr persönliches Gesundheitsrisiko zuletzt beurteilt wurde. Falls keine aktuelle Einschätzung vorliegt, vereinbaren Sie einen Termin und nehmen Sie vorhandene Messwerte sowie Ihre Familiengeschichte mit.",
       "reviewStatus": "needs-review",
       "comment": "ApoB nicht als Einmalmessung dargestellt und unbelegte Herzinfarkt-Verallgemeinerung entfernt; durch Marketing und Medizin freigeben."
     },
@@ -3030,7 +3090,7 @@
       "context": "Plan ei_vorsorge, Woche 2–3",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Notieren Sie Ihre Werte und lassen Sie sich Ihr persönliches Risiko erklären. Ein einmal erhobener Ausgangswert macht jede spätere Veränderung sichtbar und Prävention konkret.",
+      "text": "Klären Sie mit der medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Risikoprofil passen. Lassen Sie sich Ergebnisse, Nutzen und mögliche nächste Schritte verständlich erklären.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3040,9 +3100,39 @@
       "context": "Plan ei_vorsorge, Woche 4",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Halten Sie fest, wann die nächste Kontrolle sinnvoll ist (je nach Werten und Alter meist alle 1–3 Jahre) und tragen Sie sie ein. Vorsorge wirkt nur, wenn sie zur Routine wird.",
+      "text": "Halten Sie gemeinsam fest, ob und wann eine erneute Beurteilung sinnvoll ist. So bleibt Ihre Vorsorge aktuell, ohne Untersuchungen unnötig zu wiederholen.",
       "reviewStatus": "",
       "comment": ""
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.this_week",
+      "section": "4-Wochen-Pläne",
+      "context": "Plan ei_vorsorgewissen, Diese Woche",
+      "kind": "plan_step",
+      "reviewers": "Marketing, Medizin",
+      "text": "Notieren Sie, welche Frage zu Ihrer persönlichen Vorsorge noch offen ist. Nutzen Sie eine verlässliche Gesundheitsquelle, um sich einen ersten Überblick zu verschaffen.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.weeks_2_3",
+      "section": "4-Wochen-Pläne",
+      "context": "Plan ei_vorsorgewissen, Woche 2–3",
+      "kind": "plan_step",
+      "reviewers": "Marketing, Medizin",
+      "text": "Besprechen Sie offene Punkte mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll ist und welchen Nutzen sie für Sie hat.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.week_4",
+      "section": "4-Wochen-Pläne",
+      "context": "Plan ei_vorsorgewissen, Woche 4",
+      "kind": "plan_step",
+      "reviewers": "Marketing, Medizin",
+      "text": "Halten Sie fest, welche Vorsorge für Sie aktuell empfohlen ist und wann Sie das Thema erneut prüfen sollten. So wird aus Information ein übersichtlicher persönlicher Vorsorgeplan.",
+      "reviewStatus": "needs-review",
+      "comment": "Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben."
     },
     {
       "id": "recommendation.plan.ei_familie.this_week",
@@ -3050,7 +3140,7 @@
       "context": "Plan ei_familie, Diese Woche",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Tragen Sie zusammen, wer in Ihrer nahen Familie (Eltern, Geschwister) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.",
+      "text": "Tragen Sie zusammen, welche relevante Erkrankung bei welchem Familienmitglied und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit.",
       "reviewStatus": "needs-review",
       "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
@@ -3060,7 +3150,7 @@
       "context": "Plan ei_familie, Woche 2–3",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz-Kreislauf-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp(a) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.",
+      "text": "Bringen Sie diese Familiengeschichte zum nächsten Vorsorgegespräch mit. Bei früh aufgetretenen Herz-Kreislauf-Erkrankungen kann die Fachperson neben Blutdruck und Lipidprofil einordnen, ob eine einmalige Lp(a)-Bestimmung sinnvoll ist. Ob ApoB zusätzliche Informationen liefert, hängt vom individuellen Risikoprofil ab. Bei Diabetes, Krebs oder anderen erblich bedingten Erkrankungen legt sie die passenden Abklärungen oder Früherkennungsangebote fest.",
       "requiredTerms": [
         "Lp(a)",
         "ApoB"
@@ -3074,7 +3164,7 @@
       "context": "Plan ei_familie, Woche 4",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Klären Sie, ob und wann Früherkennungsuntersuchungen für Sie sinnvoll sind, und legen Sie den nächsten Kontrolltermin fest. Familiäre Vorbelastung ist kein Schicksal, sondern ein Vorsprung – wenn man ihn nutzt.",
+      "text": "Halten Sie fest, welche Abklärungen empfohlen wurden und wann der nächste sinnvolle Kontrollzeitpunkt ist. Eine Familiengeschichte ist keine Diagnose, kann Vorsorge aber gezielter machen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3324,7 +3414,7 @@
       "context": "Plan ei_familienwissen, Diese Woche",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Fragen Sie nahe Angehörige (Eltern, Geschwister), welche Herz-Kreislauf- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.",
+      "text": "Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind. Fragen Sie bei Krebs auch nach der Krebsart.",
       "reviewStatus": "needs-review",
       "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
@@ -3334,7 +3424,7 @@
       "context": "Plan ei_familienwissen, Woche 2–3",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Notieren Sie das Wichtigste schriftlich (wer, welche Erkrankung, welches Alter). Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge oft um Jahre nach vorn.",
+      "text": "Notieren Sie die Angaben übersichtlich: betroffene Person, Erkrankung beziehungsweise Krebsart und ungefähres Diagnosealter. Auch die Information, dass keine solche Erkrankung bekannt ist, kann hilfreich sein.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3344,7 +3434,7 @@
       "context": "Plan ei_familienwissen, Woche 4",
       "kind": "plan_step",
       "reviewers": "Marketing, Medizin",
-      "text": "Nehmen Sie die Notizen zum nächsten Arzttermin mit. So kann Ihre Fachperson Vorsorge und allfällige Früherkennung gezielt auf Ihr Profil abstimmen.",
+      "text": "Nehmen Sie die Notizen zum nächsten Vorsorgegespräch mit. Eine medizinische Fachperson kann damit besser beurteilen, welche Kontrollen oder Früherkennungsangebote zu Ihnen passen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3759,7 +3849,7 @@
       "context": "Dimensionsdetail familie_hk, Einordnung",
       "kind": "insight",
       "reviewers": "Marketing, Medizin",
-      "text": "Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.",
+      "text": "Eine bekannte Erkrankung bei Eltern, Geschwistern oder eigenen Kindern bedeutet nicht, dass Sie selbst erkranken werden. Sie ist aber eine wichtige Information, um Vorsorge und Kontrollen persönlich einzuordnen.",
       "reviewStatus": "needs-review",
       "comment": "An die breite Familienfrage angepasst; durch Marketing und Medizin freigeben."
     },
@@ -3769,7 +3859,7 @@
       "context": "Dimensionsdetail familie_hk, medizinischer Klärungshinweis",
       "kind": "clarify",
       "reviewers": "Marketing, Medizin",
-      "text": "Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz-Kreislauf-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.",
+      "text": "Welche Erkrankung bei wem und ungefähr in welchem Alter diagnostiziert wurde; bei Krebs zusätzlich die Krebsart. Eine medizinische Fachperson kann daraus ableiten, ob und welche gezielte Vorsorge oder genetische Beratung sinnvoll sein könnte.",
       "reviewStatus": "needs-review",
       "comment": "Altersgrenzen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt; durch Marketing und Medizin freigeben."
     },
@@ -3789,7 +3879,7 @@
       "context": "Dimensionsdetail vorsorge, Titel",
       "kind": "title",
       "reviewers": "Marketing, Medizin",
-      "text": "Persönliches Risiko nie eingeschätzt",
+      "text": "Aktualität der Risikoeinschätzung klären",
       "reviewStatus": "",
       "comment": ""
     },
@@ -3799,7 +3889,7 @@
       "context": "Dimensionsdetail vorsorge, Einordnung",
       "kind": "insight",
       "reviewers": "Marketing, Medizin",
-      "text": "Mehrere Herz-Kreislauf-Risikofaktoren verursachen lange keine Beschwerden. Blutdruck, Blutzucker und Blutfette zu kennen, schafft deshalb eine bessere Grundlage für die persönliche Risikoeinordnung.",
+      "text": "Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Manche Risikofaktoren verursachen lange keine Beschwerden; aktuelle Werte und eine professionelle Einordnung schaffen Klarheit.",
       "reviewStatus": "needs-review",
       "comment": "Nicht belegte Herzinfarkt-Verallgemeinerung durch symptomfreie Risikofaktoren ersetzt; durch Marketing und Medizin freigeben."
     },
@@ -3809,7 +3899,7 @@
       "context": "Dimensionsdetail vorsorge, medizinischer Klärungshinweis",
       "kind": "clarify",
       "reviewers": "Marketing, Medizin",
-      "text": "Basiswerte (Blutdruck, Blutzucker, Blutfette) und daraus Ihr persönliches 10-Jahres-Risiko.",
+      "text": "Wann Ihre letzte Beurteilung stattfand, welche Basiswerte damals erhoben wurden und welche Vorsorgeuntersuchungen aufgrund Ihres heutigen Profils sinnvoll sind.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -4500,7 +4590,7 @@
       "context": "Ergebnisseite, medizinisches Signal familiäre Vorbelastung",
       "kind": "signal_label",
       "reviewers": "Marketing, Medizin",
-      "text": "In Ihrer nahen Familie kommen Herz-Kreislauf-Erkrankungen, Diabetes oder erbliche Erkrankungen vor – Vorsorge lohnt sich besonders.",
+      "text": "Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Eine genaue Familiengeschichte hilft, die passende Vorsorge zu planen.",
       "reviewStatus": "",
       "comment": ""
     },
@@ -4510,7 +4600,7 @@
       "context": "Ergebnisseite, medizinisches Signal fehlender Vorsorge-Check",
       "kind": "signal_label",
       "reviewers": "Marketing, Medizin",
-      "text": "Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ-2-Diabetes bisher nicht einschätzen lassen. Ein Basis-Check schafft Sicherheit.",
+      "text": "Es ist nicht sicher, dass Ihre persönliche Risikoeinschätzung aktuell ist. Klären Sie den Stand und planen Sie bei Bedarf eine professionelle Beurteilung.",
       "reviewStatus": "",
       "comment": ""
     },

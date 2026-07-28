@@ -13,28 +13,28 @@
 ## Freigabestand
 
 - Sprache: `de-CH`
-- Quellversion: `v1:1961d7e7edd22437193cff3d7f0e68846cc7744ad22f1910d591e901fe4ed266`
-- Gesamtbestand: **1213 Texte**
-- Freigegeben: **0** · Offen: **1213**
+- Quellversion: `v1:08e156300354d46774f4f161b186342ab0cf72bfb4093a5ae3bd6e828a717d73`
+- Gesamtbestand: **1223 Texte**
+- Freigegeben: **0** · Offen: **1223**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
-| Nicht geprüft | 852 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 361 | Ausdrücklich erneut zu prüfen |
+| Nicht geprüft | 853 | Noch kein gemeinsamer Freigabestatus gesetzt |
+| Prüfung erforderlich | 370 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1213 | 0 | 1213 |
-| Medizin | 681 | 0 | 681 |
+| Marketing | 1223 | 0 | 1223 |
+| Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
 ## Arbeitsindex
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
-| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 219 | 219 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
 | [Schlaf](#bereich-schlaf) | 4 | 67 | 67 |
@@ -48,15 +48,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (219 Texte)
+## 1. Fragebogen (220 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (219 Texte)
+### Fragebogen (220 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -763,7 +763,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Gibt es in Ihrer nahen Familie \(Eltern, Geschwister\) Herz\-Kreislauf\-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -774,7 +774,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Besonders relevant sind früh aufgetretene Erkrankungen \(Männer vor 55, Frauen vor 65 Jahren\). Eine familiäre Vorbelastung ist kein Schicksal – sie ist ein Grund, Vorsorge ernst zu nehmen.
+> Für die Vorsorge sind drei Angaben besonders hilfreich: welche Erkrankung aufgetreten ist, bei wem und ungefähr in welchem Alter. Bei Krebs ist zusätzlich die Krebsart wichtig. Sie müssen diese Angaben hier nicht erfassen – es kann aber sinnvoll sein, sie für ein Vorsorgegespräch zusammenzutragen. Eine familiäre Belastung bedeutet nicht, dass Sie selbst erkranken werden.
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -796,7 +796,18 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Nein
+> Nein, soweit mir bekannt
+
+#### Antwortoption: Frage «Familie hk» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Nicht geprüft
+- Technische ID: `questionnaire.question.familie_hk.option.teilweise`
+
+**Aktueller Text**
+
+> Ich kenne die Familiengeschichte nur teilweise
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -818,7 +829,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wie gut wissen Sie über mögliche Krebs\- oder Herz\-Kreislauferkrankungen in Ihrer Familie Bescheid?
+> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -829,7 +840,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Das Bewusstsein über familiäre Krebs\- und Herz\-Kreislauferkrankungen macht eine gezielte Vorsorge möglich. Wer seine familiäre Vorbelastung kennt, kann frühzeitig den persönlichen Risikofaktoren entgegensteuern und mit gezielten Vorsorgeuntersuchungen die Früherkennung fördern.
+> Welche Untersuchungen sinnvoll sind, hängt unter anderem von Ihrem Alter, Ihren persönlichen Werten und Ihrer Familiengeschichte ab. Verlässliche Informationen und ein Gespräch mit einer medizinischen Fachperson helfen, Nutzen, Zeitpunkt und Abstände passend festzulegen.
 
 #### Titel des Hilfetexts: Frage «Familienwissen» · Titel des Hilfetexts
 
@@ -847,33 +858,22 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.familienwissen.option.gar_nicht`
+- Technische ID: `questionnaire.question.familienwissen.option.ja`
 
 **Aktueller Text**
 
-> Gar nicht
+> Ja
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.familienwissen.option.gut`
+- Technische ID: `questionnaire.question.familienwissen.option.nein`
 
 **Aktueller Text**
 
-> Gut
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.familienwissen.option.sehr_gut`
-
-**Aktueller Text**
-
-> Sehr gut
+> Nein
 
 #### Antwortoption: Frage «Familienwissen» · Antwortoption
 
@@ -885,17 +885,6 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Teilweise
-
-#### Antwortoption: Frage «Familienwissen» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.familienwissen.option.wenig`
-
-**Aktueller Text**
-
-> Wenig
 
 #### Frage: Frage «Geschlecht» · Fragetext
 
@@ -2343,7 +2332,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Haben Sie sich zu Krankheiten wie Krebs, Bluthochdruck und Typ\-2\-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen?
+> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -2354,7 +2343,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Bluthochdruck bleibt oft unbemerkt, ist aber ein zentraler Risikofaktor für Herz\-Kreislauf\-Erkrankungen. Auch eine Abklärung zum persönlichen Risiko von Krebs\- oder ersten Anzeichen von Typ\-2\-Diabetes kann sich je nach Alter, Lebensstil oder Familiengeschichte lohnen. Durch eine frühe Identifikation und kleine Veränderungen im Alltag lassen sich Risiken und Auswirkungen senken.
+> Bei einer persönlichen Risikoeinschätzung werden je nach Alter, persönlichen Werten und Familiengeschichte zum Beispiel Blutdruck, Blutzucker und Blutfette sowie passende Vorsorge\- und Früherkennungsuntersuchungen besprochen. Eine medizinische Fachperson kann auch sagen, wann eine erneute Beurteilung sinnvoll ist.
 
 #### Titel des Hilfetexts: Frage «Vorsorge» · Titel des Hilfetexts
 
@@ -2372,11 +2361,22 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.vorsorge.option.ja`
+- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
 
 **Aktueller Text**
 
-> Ja
+> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Nicht geprüft
+- Technische ID: `questionnaire.question.vorsorge.option.aktuell`
+
+**Aktueller Text**
+
+> Ja, und die Einschätzung ist gemäss Fachperson aktuell
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -2388,6 +2388,17 @@ Themen in diesem Bereich:
 **Aktueller Text**
 
 > Nein
+
+#### Antwortoption: Frage «Vorsorge» · Antwortoption
+
+- Seitenelement: Fragebogen
+- Freigabe durch: Marketing
+- Freigabestatus: Nicht geprüft
+- Technische ID: `questionnaire.question.vorsorge.option.weiss_nicht`
+
+**Aktueller Text**
+
+> Weiss ich nicht
 
 #### Eingabehinweis: Frage «Wandsitz» · Eingabehinweis
 
@@ -2532,14 +2543,14 @@ Themen in diesem Bereich:
 
 <a id="bereich-einflussfaktoren"></a>
 
-## 2. Einflussfaktoren (219 Texte)
+## 2. Einflussfaktoren (228 Texte)
 
 Themen in diesem Bereich:
 
 - [Alkohol](#thema-einflussfaktoren-alkohol): 16 Texte, 16 offen
 - [Alltagssicherheit &amp; Sturzprävention](#thema-einflussfaktoren-alltagssicherheit-und-sturzpravention): 16 Texte, 16 offen
 - [Digitale Gewohnheiten](#thema-einflussfaktoren-digitale-gewohnheiten): 14 Texte, 14 offen
-- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 101 Texte, 101 offen
+- [Herz-Kreislauf &amp; Vorsorge](#thema-einflussfaktoren-herz-kreislauf-und-vorsorge): 110 Texte, 110 offen
 - [Körperzusammensetzung &amp; Stoffwechsel](#thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel): 31 Texte, 31 offen
 - [Rauchen &amp; Rauchstopp](#thema-einflussfaktoren-rauchen-und-rauchstopp): 20 Texte, 20 offen
 - [Sitzverhalten](#thema-einflussfaktoren-sitzverhalten): 14 Texte, 14 offen
@@ -3068,7 +3079,7 @@ Themen in diesem Bereich:
 
 <a id="thema-einflussfaktoren-herz-kreislauf-und-vorsorge"></a>
 
-### Herz-Kreislauf &amp; Vorsorge (101 Texte)
+### Herz-Kreislauf &amp; Vorsorge (110 Texte)
 
 #### Überschrift: Kardiovaskulärer Vorsorge-Check, Titel
 
@@ -3692,7 +3703,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor. Das ist kein Schicksal – aber ein guter Grund, Ihre Familiengeschichte medizinisch einordnen zu lassen.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Für die medizinische Einordnung sind die Erkrankung – bei Krebs auch die Krebsart –, die betroffene Person und das ungefähre Diagnosealter besonders hilfreich.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -3704,7 +3715,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Besprechen Sie Ihre Familiengeschichte bei Gelegenheit mit einer medizinischen Fachperson und klären Sie, welche Basiswerte oder gezielten Untersuchungen für Sie sinnvoll sind.
+> Tragen Sie diese Angaben zusammen. Falls keine aktuelle professionelle Risikoeinschätzung vorliegt, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich erklären, welche Untersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -3715,7 +3726,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wer sein Risiko kennt, kann Prävention früher und gezielter ausrichten.
+> Eine möglichst genaue Familiengeschichte macht Vorsorge persönlicher, ohne eine Erkrankung vorwegzunehmen.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -3727,7 +3738,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Tragen Sie zusammen, wer in Ihrer nahen Familie \(Eltern, Geschwister\) an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Tragen Sie zusammen, welche relevante Erkrankung bei welchem Familienmitglied und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -3740,7 +3751,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Vereinbaren Sie einen Termin und bringen Sie diese Familiengeschichte mit. Falls in Ihrer Familie früh Herz\-Kreislauf\-Erkrankungen aufgetreten sind, besprechen Sie Blutdruck und ein Lipidprofil sowie, ob Lp\(a\) bereits einmal bestimmt wurde; ob ApoB zusätzlich hilft, hängt von Ihrem Risikoprofil ab. Bei Diabetes oder anderen erblichen Erkrankungen legt die Fachperson die passenden Untersuchungen fest.
+> Bringen Sie diese Familiengeschichte zum nächsten Vorsorgegespräch mit. Bei früh aufgetretenen Herz\-Kreislauf\-Erkrankungen kann die Fachperson neben Blutdruck und Lipidprofil einordnen, ob eine einmalige Lp\(a\)\-Bestimmung sinnvoll ist. Ob ApoB zusätzliche Informationen liefert, hängt vom individuellen Risikoprofil ab. Bei Diabetes, Krebs oder anderen erblich bedingten Erkrankungen legt sie die passenden Abklärungen oder Früherkennungsangebote fest.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -3751,7 +3762,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Klären Sie, ob und wann Früherkennungsuntersuchungen für Sie sinnvoll sind, und legen Sie den nächsten Kontrolltermin fest. Familiäre Vorbelastung ist kein Schicksal, sondern ein Vorsprung – wenn man ihn nutzt.
+> Halten Sie fest, welche Abklärungen empfohlen wurden und wann der nächste sinnvolle Kontrollzeitpunkt ist. Eine Familiengeschichte ist keine Diagnose, kann Vorsorge aber gezielter machen.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -3762,7 +3773,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Ihre Familiengeschichte kennenlernen
+> Familiengeschichte vervollständigen
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -3773,7 +3784,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Sie kennen die Krankheitsgeschichte Ihrer Familie bisher wenig. Dieses Wissen hilft, Vorsorge gezielter anzugehen.
+> Sie kennen die Krankheitsgeschichte Ihrer Familie nur teilweise oder gar nicht. Für die Vorsorge sind Art der Erkrankung, betroffene Person und ungefähres Diagnosealter besonders hilfreich.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -3784,7 +3795,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Fragen Sie bei Gelegenheit nahe Angehörige, ob Herz\-Kreislauf\-Erkrankungen, Diabetes oder Krebs früh aufgetreten sind, und notieren Sie es.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind; notieren Sie bei Krebs auch die Krebsart.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -3795,7 +3806,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wer die eigene Familiengeschichte kennt, kann Untersuchungen und Prävention besser timen.
+> Diese Angaben helfen einer Fachperson, Vorsorge und mögliche Früherkennung besser auf Sie abzustimmen.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -3807,7 +3818,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Fragen Sie nahe Angehörige \(Eltern, Geschwister\), welche Herz\-Kreislauf\- oder Krebserkrankungen vorkamen und in welchem Alter. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant.
+> Fragen Sie Eltern, Geschwister oder andere gut informierte Angehörige, welche der genannten Erkrankungen bei wem und ungefähr in welchem Alter aufgetreten sind. Fragen Sie bei Krebs auch nach der Krebsart.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -3818,7 +3829,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Notieren Sie das Wichtigste schriftlich \(wer, welche Erkrankung, welches Alter\). Familiäre Vorbelastung ist kein Schicksal, sondern eine Information: Sie verschiebt den sinnvollen Startzeitpunkt der Vorsorge oft um Jahre nach vorn.
+> Notieren Sie die Angaben übersichtlich: betroffene Person, Erkrankung beziehungsweise Krebsart und ungefähres Diagnosealter. Auch die Information, dass keine solche Erkrankung bekannt ist, kann hilfreich sein.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -3829,7 +3840,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Nehmen Sie die Notizen zum nächsten Arzttermin mit. So kann Ihre Fachperson Vorsorge und allfällige Früherkennung gezielt auf Ihr Profil abstimmen.
+> Nehmen Sie die Notizen zum nächsten Vorsorgegespräch mit. Eine medizinische Fachperson kann damit besser beurteilen, welche Kontrollen oder Früherkennungsangebote zu Ihnen passen.
 
 #### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
 
@@ -3840,7 +3851,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Persönliche Risikoeinschätzung klären
 
 #### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
 
@@ -3851,7 +3862,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Gerade Bluthochdruck bleibt oft lange unbemerkt.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Gesundheitswerte und Vorsorgebedarf können sich mit dem Alter, neuen Messwerten oder der Familiengeschichte verändern.
 
 #### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
 
@@ -3862,7 +3873,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Vereinbaren Sie bei Gelegenheit einen Check\-up\-Termin und lassen Sie Basiswerte wie Blutdruck, Blutzucker und Blutfette bestimmen – je nach Alter und Familiengeschichte auch weitere Vorsorgeuntersuchungen.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann die letzte Beurteilung war. Falls keine aktuelle Einschätzung vorliegt, klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt sinnvoll sind.
 
 #### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
 
@@ -3873,7 +3884,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Bekannte Werte machen Prävention konkret und zeigen, wo sich Aufmerksamkeit besonders lohnt.
+> Ein geklärter Stand verhindert unnötige Wiederholungen und hilft, sinnvolle Kontrollen rechtzeitig zu planen.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
 
@@ -3885,7 +3896,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Vereinbaren Sie einen Check\-up\-Termin. Bitten Sie um **Blutdruck, Blutzucker und ein Lipidprofil**. Fragen Sie, ob ApoB bei Ihrem Risikoprofil zusätzliche Information liefert und ob Lp\(a\) bereits einmal bestimmt wurde. Viele Risikofaktoren verursachen lange keine Beschwerden – aktuelle Werte schaffen eine belastbare Gesprächsgrundlage.
+> Prüfen Sie vorhandene Unterlagen oder fragen Sie Ihre Praxis, wann Ihr persönliches Gesundheitsrisiko zuletzt beurteilt wurde. Falls keine aktuelle Einschätzung vorliegt, vereinbaren Sie einen Termin und nehmen Sie vorhandene Messwerte sowie Ihre Familiengeschichte mit.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
 
@@ -3896,7 +3907,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Notieren Sie Ihre Werte und lassen Sie sich Ihr persönliches Risiko erklären. Ein einmal erhobener Ausgangswert macht jede spätere Veränderung sichtbar und Prävention konkret.
+> Klären Sie mit der medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Risikoprofil passen. Lassen Sie sich Ergebnisse, Nutzen und mögliche nächste Schritte verständlich erklären.
 
 #### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
 
@@ -3907,7 +3918,91 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Halten Sie fest, wann die nächste Kontrolle sinnvoll ist \(je nach Werten und Alter meist alle 1–3 Jahre\) und tragen Sie sie ein. Vorsorge wirkt nur, wenn sie zur Routine wird.
+> Halten Sie gemeinsam fest, ob und wann eine erneute Beurteilung sinnvoll ist. So bleibt Ihre Vorsorge aktuell, ohne Untersuchungen unnötig zu wiederholen.
+
+#### Überschrift: Empfehlungskarte · Einflussfaktoren · Titel
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.title`
+- Prüfhinweis: Neue scorefreie Empfehlung bei fehlendem oder teilweisem Wissen über passende Vorsorge; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Passende Vorsorge kennenlernen
+
+#### Begründung / Einordnung: Empfehlungskarte · Einflussfaktoren · Begründung
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.why`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Sie wissen noch nicht vollständig, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll sind.
+
+#### Nächster Schritt: Empfehlungskarte · Einflussfaktoren · konkreter nächster Schritt
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.step`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Nutzen Sie verlässliche Gesundheitsinformationen und besprechen Sie offene Fragen mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung für Sie welchen Nutzen hat und wann sie sinnvoll ist.
+
+#### Erwarteter Nutzen: Empfehlungskarte · Einflussfaktoren · erwarteter Nutzen
+
+- Seitenelement: Empfehlungskarten
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.catalog.ei_vorsorgewissen.benefit`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> So können Sie informierte Entscheidungen treffen und die für Sie passende Vorsorge gezielt planen.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Diese Woche
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.this_week`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Notieren Sie, welche Frage zu Ihrer persönlichen Vorsorge noch offen ist. Nutzen Sie eine verlässliche Gesundheitsquelle, um sich einen ersten Überblick zu verschaffen.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 2–3
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.weeks_2_3`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Besprechen Sie offene Punkte mit einer medizinischen Fachperson. Fragen Sie konkret, welche Untersuchung aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte sinnvoll ist und welchen Nutzen sie für Sie hat.
+
+#### 4-Wochen-Plan: 4-Wochen-Plan · Woche 4
+
+- Seitenelement: 4-Wochen-Pläne
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.plan.ei_vorsorgewissen.week_4`
+- Prüfhinweis: Neue scorefreie Empfehlung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Halten Sie fest, welche Vorsorge für Sie aktuell empfohlen ist und wann Sie das Thema erneut prüfen sollten. So wird aus Information ein übersichtlicher persönlicher Vorsorgeplan.
 
 #### Überschrift: Dimensionsdetail · Titel
 
@@ -3930,7 +4025,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Familiäre Vorbelastung ist kein Schicksal, aber eine wichtige Information. Sie hilft Fachpersonen einzuschätzen, welche Vorsorge oder Kontrollen für Sie sinnvoll sein können.
+> Eine bekannte Erkrankung bei Eltern, Geschwistern oder eigenen Kindern bedeutet nicht, dass Sie selbst erkranken werden. Sie ist aber eine wichtige Information, um Vorsorge und Kontrollen persönlich einzuordnen.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -3942,7 +4037,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wer in Ihrer Familie an welcher Erkrankung und in welchem Alter erkrankt ist. Bei Herz\-Kreislauf\-Erkrankungen ist ein Auftreten vor 55 Jahren bei Männern beziehungsweise vor 65 Jahren bei Frauen besonders relevant. Die Fachperson kann zudem klären, ob eine genetische Beratung sinnvoll ist.
+> Welche Erkrankung bei wem und ungefähr in welchem Alter diagnostiziert wurde; bei Krebs zusätzlich die Krebsart. Eine medizinische Fachperson kann daraus ableiten, ob und welche gezielte Vorsorge oder genetische Beratung sinnvoll sein könnte.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -3965,7 +4060,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> In Ihrer nahen Familie kommen Herz\-Kreislauf\-Erkrankungen, Diabetes oder erbliche Erkrankungen vor – Vorsorge lohnt sich besonders.
+> Bei Ihren Eltern, Geschwistern oder eigenen Kindern sind relevante Erkrankungen bekannt. Eine genaue Familiengeschichte hilft, die passende Vorsorge zu planen.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -4033,7 +4128,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Notieren Sie, welche Erkrankung bei wem in Ihrer nahen Familie und in welchem Alter aufgetreten ist, und besprechen Sie dies mit einer medizinischen Fachperson. Falls darunter Herz\-Kreislauf\-Erkrankungen sind, sprechen Sie ausdrücklich eine persönliche kardiovaskuläre Risikoeinschätzung und passende Vorsorge an – besonders bei frühem Auftreten in der Familie.
+> Notieren Sie Erkrankung, betroffene Person und ungefähres Diagnosealter; bei Krebs auch die Krebsart. Prüfen Sie zugleich, ob eine aktuelle professionelle Risikoeinschätzung vorliegt. Falls nicht, klären Sie den Status und vereinbaren Sie bei Bedarf ein Vorsorgegespräch; andernfalls nehmen Sie die Angaben zum nächsten vorgesehenen Gespräch mit. Lassen Sie sich dort die für Sie passende Vorsorge erklären.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -4055,7 +4150,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wer die familiäre Vorbelastung kennt, kann Vorsorge gezielt einsetzen – ein Gespräch in der Familie ist der einfachste erste Schritt.
+> Fragen Sie Angehörige, welche relevante Erkrankung bei wem und ungefähr in welchem Alter aufgetreten ist; bei Krebs auch nach der Krebsart. Notieren Sie die Angaben für ein späteres Vorsorgegespräch.
 
 #### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
 
@@ -4090,7 +4185,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Persönliches Risiko einmal einschätzen lassen
+> Aktualität der Risikoeinschätzung klären
 
 #### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
 
@@ -4102,7 +4197,31 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Ein persönlicher Check\-up kann Risiken erkennen, die lange unbemerkt bleiben. Klären Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen zu Ihrem Alter und Ihrer Familiengeschichte passen.
+> Prüfen Sie, wann Ihr persönliches Gesundheitsrisiko zuletzt professionell beurteilt wurde. Ist die Einschätzung nicht aktuell oder unklar, besprechen Sie mit einer medizinischen Fachperson, welche Basiswerte und Vorsorgeuntersuchungen jetzt zu Ihnen passen.
+
+#### Beschriftung: Handlungsfeld · Einflussfaktoren · Kurzlabel
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.label`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Passende Vorsorge kennenlernen
+
+#### Detailtext: Handlungsfeld · Einflussfaktoren · Detailtext
+
+- Seitenelement: Handlungsfelder
+- Freigabe durch: Marketing, Medizin
+- Freigabestatus: Prüfung erforderlich
+- Technische ID: `recommendation.lever.lv_vorsorgewissen.detail`
+- Prüfhinweis: Neue scorefreie Summary-Priorisierung; durch Marketing und Medizin freigeben\.
+
+**Aktueller Text**
+
+> Informieren Sie sich aus verlässlichen Quellen und klären Sie mit einer medizinischen Fachperson, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind.
 
 #### Quellenbezeichnung: Sichtbares Label einer Fachquelle
 
@@ -4146,7 +4265,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Vorsorge &amp; Familienrisiken im Blick
+> Aktuelle Risikoeinschätzung &amp; Vorsorgewissen
 
 #### Detailtext: Stärke · Einflussfaktoren · Detailtext
 
@@ -4157,7 +4276,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Sie kennen Ihr persönliches Risiko und Ihre familiäre Vorgeschichte – die beste Grundlage für gezielte Prävention.
+> Ihre persönliche Risikoeinschätzung ist gemäss Fachperson aktuell, und Sie wissen, welche Vorsorgeuntersuchungen für Sie sinnvoll sind – eine gute Grundlage für gezielte Prävention.
 
 #### Beschriftung: Ergebnis-Zusammenfassung · Themenlabel «Herz-Kreislauf &amp; Vorsorge»
 
@@ -4179,7 +4298,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Persönliches Risiko nie eingeschätzt
+> Aktualität der Risikoeinschätzung klären
 
 #### Persönliche Einordnung: Dimensionsdetail · Einordnung
 
@@ -4191,7 +4310,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Mehrere Herz\-Kreislauf\-Risikofaktoren verursachen lange keine Beschwerden. Blutdruck, Blutzucker und Blutfette zu kennen, schafft deshalb eine bessere Grundlage für die persönliche Risikoeinordnung.
+> Aus Ihrer Antwort geht nicht sicher hervor, dass Ihre persönliche Risikoeinschätzung aktuell ist. Manche Risikofaktoren verursachen lange keine Beschwerden; aktuelle Werte und eine professionelle Einordnung schaffen Klarheit.
 
 #### Medizinische Klärung: Dimensionsdetail · medizinischer Klärungshinweis
 
@@ -4202,7 +4321,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Basiswerte \(Blutdruck, Blutzucker, Blutfette\) und daraus Ihr persönliches 10\-Jahres\-Risiko.
+> Wann Ihre letzte Beurteilung stattfand, welche Basiswerte damals erhoben wurden und welche Vorsorgeuntersuchungen aufgrund Ihres heutigen Profils sinnvoll sind.
 
 #### Vertiefung: Zusatzhinweis bei bereits abgedecktem Aktionsschritt
 
@@ -4225,7 +4344,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Sie haben Ihr persönliches Risiko für Krankheiten wie Krebs, Bluthochdruck oder Typ\-2\-Diabetes bisher nicht einschätzen lassen. Ein Basis\-Check schafft Sicherheit.
+> Es ist nicht sicher, dass Ihre persönliche Risikoeinschätzung aktuell ist. Klären Sie den Stand und planen Sie bei Bedarf eine professionelle Beurteilung.
 
 <a id="thema-einflussfaktoren-korperzusammensetzung-und-stoffwechsel"></a>
 

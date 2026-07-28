@@ -109,59 +109,59 @@
     },
     {
       "id": "recommendation.catalog.ei_familie.why",
-      "text": "Des maladies cardiovasculaires, du diabète ou des maladies héréditaires sont présents dans votre famille proche. Ce n’est pas une fatalité, mais une bonne raison de faire évaluer vos antécédents familiaux par un ou une spécialiste de la santé.",
+      "text": "Des maladies pertinentes sont connues chez vos parents, vos frères et sœurs ou vos enfants. Pour l’évaluation médicale, la maladie — ou le type de cancer —, la personne touchée et son âge approximatif au moment du diagnostic sont particulièrement utiles.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5d970c9bec36d448e22981202cbfaa39affd8d5788678d322968630b2a02b755"
+      "sourceContractHash": "25a741d155ac81784dfa446d308f775177d70028c1c3c5ca751f53d08df99189"
     },
     {
       "id": "recommendation.catalog.ei_familie.step",
-      "text": "À l’occasion, discutez de vos antécédents familiaux avec un ou une spécialiste de la santé et déterminez quels paramètres de base ou examens ciblés sont utiles dans votre cas.",
+      "text": "Réunissez ces informations. En l’absence d’une évaluation professionnelle actuelle du risque, clarifiez la situation et convenez au besoin d’un entretien de prévention ; sinon, apportez-les au prochain entretien prévu. Demandez quels examens sont indiqués compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "10bb86bb99f0eb63fd59eb7201e6afdbc277feb44667f6102117f7f81e6dd1bc"
+      "sourceContractHash": "180039b0560a3a527f8aaf9809cce5ab5eb666e8149f8e40bf09bbc5b891f83d"
     },
     {
       "id": "recommendation.catalog.ei_familie.benefit",
-      "text": "Connaître son risque permet d’orienter la prévention plus tôt et de manière plus ciblée.",
+      "text": "Des antécédents familiaux aussi précis que possible permettent de personnaliser la prévention sans présumer d’une maladie.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f60c8e9fdd6581fa66b3abe504131722554ff7038cb877cd6bde44cd22bc4349"
+      "sourceContractHash": "0dd523a6859c5a294a67071919667e5403cdc8b06da100a1211fec8fd702e150"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.title",
-      "text": "Faire évaluer une fois votre risque personnel",
+      "text": "Vérifier si l’évaluation du risque est à jour",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "442d362e83bfadf5ca79710deff14436861ad29404ea49f11d0c75db809bff89"
+      "sourceContractHash": "8387f23b22b6c8f1a1acb476089756d68f1000438a48dda3d85ba1913540afab"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.why",
-      "text": "Vous n’avez encore jamais fait évaluer votre risque personnel de maladies telles que le cancer, l’hypertension ou le diabète de type 2. L’hypertension, en particulier, reste souvent longtemps inaperçue.",
+      "text": "Votre réponse ne permet pas d’établir que l’évaluation de votre risque personnel est à jour. Les valeurs de santé et les besoins de prévention peuvent évoluer avec l’âge, de nouveaux résultats ou les antécédents familiaux.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "61e24fc759ddb77a13ab529d89f058f09dd549d0c572faca7703116f55ee1ce3"
+      "sourceContractHash": "3be72d263c53f593e76a5d3020019cd731049e77becc83b7e1c13f9b868b5eb1"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.step",
-      "text": "Prenez à l’occasion un rendez-vous pour un check-up et faites mesurer des valeurs de base telles que la tension artérielle, la glycémie et les lipides sanguins. Selon votre âge et vos antécédents familiaux, d’autres examens de prévention peuvent aussi être indiqués.",
+      "text": "Consultez vos documents ou demandez à votre cabinet quand la dernière évaluation a eu lieu. Si aucune évaluation actuelle n’est disponible, demandez à une professionnelle ou un professionnel de santé quels paramètres de base et examens préventifs sont indiqués maintenant.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7a7ed99f170a6fe3a0183da417801d94ccfd2acc8d7cc6634a721c3b89d14c5e"
+      "sourceContractHash": "690722215b7ec561a78de683fe02dca25cc6f5a9d15c9e22264127e1568e3796"
     },
     {
       "id": "recommendation.catalog.ei_vorsorge.benefit",
-      "text": "Des valeurs connues rendent la prévention concrète et montrent où votre attention est particulièrement utile.",
+      "text": "Clarifier la situation évite des répétitions inutiles et aide à planifier les contrôles utiles en temps voulu.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "156c7b3f0c813a45fe6744d387b74fb77bd77db78373175ff7f54e9d5a32c090"
+      "sourceContractHash": "0a0ab2fa3837bc221fe1cb7525d5cbfa4880a522478c22526b3c1f24b9be406b"
     },
     {
       "id": "recommendation.catalog.ei_alkohol.title",
@@ -293,35 +293,71 @@
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.title",
-      "text": "Mieux connaître vos antécédents familiaux",
+      "text": "Compléter vos antécédents familiaux",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "dbf51b10ebf2162b4ae969585d41d59ca3a1134b88105e4c6026acb1d2a34308"
+      "sourceContractHash": "5d4e1c15b1e37cb08cda083e91c3c7e9ea6ef93ad9ad5ae7c35f131dc0426bc2"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.why",
-      "text": "Vous connaissez encore peu les antécédents médicaux de votre famille. Ces informations permettent une prévention plus ciblée.",
+      "text": "Vous ne connaissez que partiellement, voire pas du tout, les antécédents médicaux de votre famille. La maladie, la personne touchée et l’âge approximatif au diagnostic sont particulièrement utiles pour la prévention.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8c4c0d1860565ed5bc6670fa7d23cb3a2c4c985bd9268ff7f4fbb13ddfc4d027"
+      "sourceContractHash": "0e77104316395924259871c1e6def5b03262cabb535728698ee5397d354e8260"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.step",
-      "text": "À l’occasion, demandez à vos proches si des maladies cardiovasculaires, du diabète ou des cancers sont survenus précocement et notez ces informations.",
+      "text": "Demandez à vos parents, à vos frères et sœurs ou à un proche bien informé laquelle des maladies citées est survenue, chez qui et à quel âge environ. Pour un cancer, notez aussi le type.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "74f7866866094340beede464e1b3c58cccb87c489828c623fd7c6e71cdb05fb2"
+      "sourceContractHash": "5e78e495485fd0c4705c588eb2123712d081380a5604b96d8179e901af6928e7"
     },
     {
       "id": "recommendation.catalog.ei_familienwissen.benefit",
-      "text": "Connaître ses antécédents familiaux permet de mieux planifier les examens et la prévention.",
+      "text": "Ces informations aident une professionnelle ou un professionnel de santé à mieux adapter la prévention et les éventuels dépistages à votre situation.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "1eb52568d9e067bc10ab7881e45e14481b75c92e9d71bc5289790e23a276fcf9"
+      "sourceContractHash": "bf50afc45fda9290b89d6830836534f99759e5ba5b2ff9c8752f941898420022"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.title",
+      "text": "Connaître la prévention adaptée",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "cb9093dd7c03f1d39a50706c7b63d604714b5ede57a6f72c5910746c698b9a2f"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.why",
+      "text": "Vous ne savez pas encore précisément quels examens préventifs sont indiqués compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2cc6eee97da8ed19647f0bef35ccf56f87a082d3bd57254a1ef77a64d5bd87aa"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.step",
+      "text": "Consultez des informations de santé fiables et discutez de vos questions avec une professionnelle ou un professionnel de santé. Demandez concrètement quel bénéfice un examen peut vous apporter et quand il est indiqué.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "67b92d89676540929693e151cca806f474eec653395312db9208bcb772c1f1c5"
+    },
+    {
+      "id": "recommendation.catalog.ei_vorsorgewissen.benefit",
+      "text": "Vous pourrez ainsi prendre des décisions éclairées et planifier une prévention adaptée à votre situation.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "da78bd10beec7189283a6d5e613df5187164a0376cbef9abbf33d362609c9995"
     },
     {
       "id": "recommendation.catalog.fi_einstieg.title",
@@ -993,30 +1029,30 @@
     },
     {
       "id": "recommendation.lever.lv_familie.detail",
-      "text": "Notez quelle maladie est apparue chez quel proche et à quel âge, puis parlez-en avec une professionnelle ou un professionnel de santé. S’il s’agit notamment d’une maladie cardiovasculaire, abordez explicitement l’évaluation de votre risque cardiovasculaire personnel et la prévention adaptée, en particulier en cas de survenue précoce dans la famille.",
+      "text": "Notez la maladie, la personne touchée et l’âge approximatif au diagnostic ; pour un cancer, également le type. Vérifiez si vous disposez d’une évaluation professionnelle actuelle du risque. Sinon, clarifiez la situation et convenez au besoin d’un entretien de prévention ; dans le cas contraire, apportez les informations au prochain entretien prévu. Demandez quelle prévention vous convient.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "4a4e3c8dba7b36cc3e3e1e4f215a0717f0d4c0b4076e52adaed20b10c0a9ff20"
+      "sourceContractHash": "9504cf270aa6b2f40292e4e07e824d0b7e70e8399ccfe7dd490f1f9f71e72532"
     },
     {
       "id": "recommendation.lever.lv_vorsorge.label",
-      "text": "Faire évaluer une fois votre risque personnel",
+      "text": "Vérifier si l’évaluation du risque est à jour",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "3229d68a51876d1687a411fe57908e70355de2e36aa09a312d6002a557b1f987"
+      "sourceContractHash": "c8f59cc8b78b61f98eaeff00815f947a83bc9e207a217dffac457b744fbb4a9c"
     },
     {
       "id": "recommendation.lever.lv_vorsorge.detail",
-      "text": "Un bilan personnel peut mettre en évidence des risques qui restent longtemps inaperçus. Demandez à une professionnelle ou un professionnel de santé quels paramètres de base et examens de prévention sont adaptés à votre âge et à vos antécédents familiaux.",
+      "text": "Vérifiez quand votre risque personnel pour la santé a été évalué pour la dernière fois. Si l’évaluation n’est pas actuelle ou si son statut est incertain, demandez quels paramètres de base et examens préventifs sont indiqués maintenant.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "8d9d5123e3428ff5315b83553728980991334de15c6a9a34fe2dfd1c267a060a"
+      "sourceContractHash": "eae0699178f30e3f4ddb953dbf2f18ebb57e93ea767a5f88306e77a80ebd4ef4"
     },
     {
       "id": "recommendation.lever.lv_untergewicht.label",
@@ -1176,11 +1212,29 @@
     },
     {
       "id": "recommendation.lever.lv_familienwissen.detail",
-      "text": "Connaître ses prédispositions familiales permet de cibler la prévention. Une discussion en famille est la première étape la plus simple.",
+      "text": "Demandez à vos proches quelle maladie pertinente est survenue, chez qui et à quel âge environ ; pour un cancer, demandez aussi le type. Notez ces informations en vue d’un entretien de prévention.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7c638a7bc3cada797960a863021c6773d68f79bb0bda37cbc9bb501fddda8703"
+      "sourceContractHash": "103ae1342f239ea720465f75e148a738057aaeca6c0fdc1228267790bc7cfb9e"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.label",
+      "text": "Connaître la prévention adaptée",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "23b82370ad189d36ac128a992d2a880395d2d36f175701443f035366f896ac22"
+    },
+    {
+      "id": "recommendation.lever.lv_vorsorgewissen.detail",
+      "text": "Consultez des sources fiables et demandez à une professionnelle ou un professionnel de santé quels examens préventifs sont indiqués compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "2931e9fcb3e920bea8dc8dad87a450367c7a1342129a45bcc296083b73ffa14c"
     },
     {
       "id": "recommendation.lever.lv_socialmedia.label",
@@ -1772,19 +1826,19 @@
     },
     {
       "id": "recommendation.strength.st_vorsorge.label",
-      "text": "Prévention et risques familiaux sous contrôle",
+      "text": "Évaluation actuelle du risque et connaissances en prévention",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "678e3f4e0dd5848287448aea6730b2cfc823edda53d25bd761228bc029e4af4b"
+      "sourceContractHash": "366f73de070224481d0fb1b6ef99bd4b495d54b84c7957d931e96f0bbd7f9fc5"
     },
     {
       "id": "recommendation.strength.st_vorsorge.detail",
-      "text": "Vous connaissez votre risque personnel et vos antécédents familiaux. C’est la meilleure base pour une prévention ciblée.",
+      "text": "Selon la professionnelle ou le professionnel de santé, l’évaluation de votre risque personnel est à jour et vous savez quels examens préventifs sont indiqués pour vous : une bonne base pour une prévention ciblée.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8223f30763be44fff125c018eea3c2eb7e8498267dda23ca81e40d8670852b33"
+      "sourceContractHash": "80b8b7b6612631237fa6bd33357b05bad87de0ef09deb9b5b9e374716ad06815"
     },
     {
       "id": "recommendation.strength.st_protein.label",
@@ -2426,54 +2480,81 @@
     },
     {
       "id": "recommendation.plan.ei_vorsorge.this_week",
-      "text": "Prenez rendez-vous pour un check-up. Demandez de mesurer <b>la tension artérielle, la glycémie et un profil lipidique</b>. Demandez si l’ApoB apporte des informations supplémentaires pour votre profil de risque et si la Lp(a) a déjà été mesurée une fois. De nombreux facteurs de risque ne provoquent longtemps aucun symptôme ; des valeurs actuelles offrent une base de discussion fiable.",
+      "text": "Consultez vos documents ou demandez à votre cabinet quand votre risque personnel pour la santé a été évalué pour la dernière fois. Si aucune évaluation actuelle n’est disponible, prenez rendez-vous et apportez vos valeurs existantes ainsi que vos antécédents familiaux.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "c78a0abd01247dd856df5212aad20ace72b77b75a7dbe6e7be22c15bbe5798e5"
+      "sourceContractHash": "8a5f3285a9d4e97bf696dc9bc3cae008725ffd5e396335fcdb99fa83ea6a340c"
     },
     {
       "id": "recommendation.plan.ei_vorsorge.weeks_2_3",
-      "text": "Notez vos valeurs et demandez que l’on vous explique votre risque personnel. Une valeur initiale mesurée une fois rend visible toute évolution ultérieure et concrétise la prévention.",
+      "text": "Demandez quels paramètres de base et examens préventifs correspondent à votre âge et à votre profil de risque. Faites-vous expliquer clairement les résultats, les bénéfices et les prochaines étapes possibles.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5f51fcadd1ddbc5190b57047d8a3ad02bb9f0b4649035a49b6dead9d02d406dc"
+      "sourceContractHash": "2049583893135b202a2f6d495f529ef21181356a3b08c5789fb222096a30ce13"
     },
     {
       "id": "recommendation.plan.ei_vorsorge.week_4",
-      "text": "Notez la date du prochain contrôle approprié, généralement tous les 1 à 3 ans selon les valeurs et l’âge. La prévention n’est efficace que si elle devient une routine.",
+      "text": "Déterminez ensemble si et quand une nouvelle évaluation est utile. Votre prévention reste ainsi à jour sans répéter inutilement des examens.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "176977f7526cd71d4b9ae3337e92bb88270a12db088d2a65f2b652bc4282cda7"
+      "sourceContractHash": "a92e307f6dd772bf94225120ad0ed51d244ef67b39109b11b6a888c9ac3094e9"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.this_week",
+      "text": "Notez la question qui reste ouverte au sujet de votre prévention personnelle. Consultez une source de santé fiable pour obtenir un premier aperçu.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d20befd80cce0559d34517f63295a2cc652fea7b68367fa31596e65f8e8ae59a"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.weeks_2_3",
+      "text": "Discutez des questions ouvertes avec une professionnelle ou un professionnel de santé. Demandez quel examen est indiqué compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux, ainsi que son bénéfice pour vous.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "22037d6221226e6991968e0dbf2d2f56e1cabc854ba08d5ed12c944adf0433ae"
+    },
+    {
+      "id": "recommendation.plan.ei_vorsorgewissen.week_4",
+      "text": "Notez la prévention actuellement recommandée pour vous et quand réexaminer la question. Ces informations deviennent ainsi un plan personnel de prévention clair.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "15bce608eb71c916ae63109e55938f9937066c4179b4b1737ee167703ec3c482"
     },
     {
       "id": "recommendation.plan.ei_familie.this_week",
-      "text": "Rassemblez les informations indiquant quels membres de votre famille proche, parents, frères et sœurs, ont développé quelle maladie et à quel âge. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente.",
+      "text": "Réunissez les informations sur la maladie pertinente survenue chez quel parent, frère, sœur ou enfant et à quel âge environ ; pour un cancer, également le type. Vérifiez si vous disposez d’une évaluation professionnelle actuelle du risque. Sinon, clarifiez la situation et convenez au besoin d’un entretien de prévention ; dans le cas contraire, apportez les informations au prochain entretien prévu.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "69cff3a3671cc34a6de9daded6a52b9f91961b633f918f44bddd996d650c8eb0"
+      "sourceContractHash": "03ccdbd3e5a5ae6775f471a496c7f36d3b11d58aade32a423a7151ba56f13513"
     },
     {
       "id": "recommendation.plan.ei_familie.weeks_2_3",
-      "text": "Prenez rendez-vous et apportez ces antécédents familiaux. Si des maladies cardiovasculaires sont apparues tôt dans votre famille, discutez de la tension artérielle et d’un bilan lipidique, ainsi que de la question de savoir si la Lp(a) a déjà été mesurée une fois; l’utilité d’ApoB en complément dépend de votre profil de risque individuel. En cas de diabète ou d’autres maladies héréditaires, la professionnelle ou le professionnel de santé déterminera les examens adaptés.",
+      "text": "Apportez ces antécédents familiaux au prochain entretien de prévention. En cas de maladie cardiovasculaire précoce, une professionnelle ou un professionnel de santé peut déterminer si, en plus de la tension artérielle et d’un bilan lipidique, un dosage unique de la Lp(a) est indiqué. L’utilité d’un dosage de l’ApoB dépend de votre profil de risque individuel. Pour le diabète, le cancer ou d’autres maladies héréditaires, cette personne déterminera les examens ou dépistages adaptés.",
       "requiredTerms": [
         "Lp(a)",
         "ApoB"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4bf48600e24abeb53f0844f000c8f0ee795150786825b9764326cf3b19d03646"
+      "sourceContractHash": "84683e8cfdea72d90e4b5851ed2ed966d4c4d283b2dedd1cf4adbe56f0e5d44f"
     },
     {
       "id": "recommendation.plan.ei_familie.week_4",
-      "text": "Clarifiez quels examens de dépistage précoce sont indiqués pour vous et à quel moment, puis fixez le prochain contrôle. Une prédisposition familiale n’est pas une fatalité, mais une longueur d’avance si vous l’utilisez.",
+      "text": "Notez les examens recommandés et la date du prochain contrôle utile. Des antécédents familiaux ne constituent pas un diagnostic, mais peuvent rendre la prévention plus ciblée.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e3a2a221c1a1c410a9d56678dfd9e8ae4be427c25d04c45c2b1c67f0fde31bfd"
+      "sourceContractHash": "250c607d9924213648770d588f3771ff4600242b60169ae0a2665b2234afcc20"
     },
     {
       "id": "recommendation.plan.fi_beweglichkeit.this_week",
@@ -2669,27 +2750,27 @@
     },
     {
       "id": "recommendation.plan.ei_familienwissen.this_week",
-      "text": "Demandez à vos proches, parents, frères et sœurs, quelles maladies cardiovasculaires ou quels cancers sont survenus et à quel âge. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente.",
+      "text": "Demandez à vos parents, à vos frères et sœurs ou à un proche bien informé laquelle des maladies citées est survenue, chez qui et à quel âge environ. Pour un cancer, demandez aussi le type.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "11bcd87a63e2071dfa8fe7becf59291295d1f207569263ef9c362d064fd8cd37"
+      "sourceContractHash": "a8941d21fa4270b23f310d2fc7234dfd40e2584da4b6fbd19fcc950f5faeb03d"
     },
     {
       "id": "recommendation.plan.ei_familienwissen.weeks_2_3",
-      "text": "Notez les informations essentielles, à savoir la personne, la maladie et l’âge. Une prédisposition familiale n’est pas une fatalité, mais une information : elle avance souvent de plusieurs années le début pertinent de la prévention.",
+      "text": "Classez clairement les informations : personne touchée, maladie ou type de cancer et âge approximatif au diagnostic. Il peut aussi être utile de noter qu’aucune de ces maladies n’est connue.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ec87289db8d436bdf94afa7eaa6902d84a912cb08cc8ab252403aa59b487015a"
+      "sourceContractHash": "eedc7cd8362beba527ec4d70eae9a2476adcb3774c0db68323d9c47261c698e0"
     },
     {
       "id": "recommendation.plan.ei_familienwissen.week_4",
-      "text": "Apportez vos notes au prochain rendez-vous médical. Votre professionnel pourra ainsi adapter la prévention et les éventuels dépistages précoces à votre profil.",
+      "text": "Apportez vos notes au prochain entretien de prévention. Elles aideront une professionnelle ou un professionnel de santé à déterminer les contrôles ou programmes de dépistage adaptés.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "770ecb984cb339bd04ba43af05d8c711e20272022e8ab8ab5b29172acf7d3627"
+      "sourceContractHash": "cc8a65c56007bb3a3bb12deb9b3d735c9e7a3d2c0f6c0c75bd2bdd9bbf76b963"
     },
     {
       "id": "recommendation.plan.er_protein.this_week",
@@ -3017,19 +3098,19 @@
     },
     {
       "id": "recommendation.signal.familie_hk.insight",
-      "text": "Une prédisposition familiale n’est pas une fatalité, mais une information importante. Elle aide les spécialistes de la santé à déterminer quelles mesures de prévention ou quels contrôles peuvent être utiles dans votre cas.",
+      "text": "Une maladie connue chez un parent, un frère, une sœur ou un enfant ne signifie pas que vous la développerez vous-même. Il s’agit toutefois d’une information importante pour personnaliser la prévention et les contrôles.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e59f1a86ab12d5925b21e2a352d244ff9f2f8531e90bb7be3ab70c5287d370ab"
+      "sourceContractHash": "3fba05a2d7bce382037b48f4f410a2f4d7e5089d7a8c05a471b73db7813b8bf9"
     },
     {
       "id": "recommendation.signal.familie_hk.clarify",
-      "text": "Les membres de votre famille touchés, la maladie concernée et l’âge auquel elle est apparue. Pour les maladies cardiovasculaires, une apparition avant 55 ans chez les hommes ou avant 65 ans chez les femmes est particulièrement pertinente. Le ou la spécialiste peut aussi déterminer si un conseil génétique est utile.",
+      "text": "Quelle maladie a été diagnostiquée chez quel proche et à quel âge environ ; pour un cancer, également le type. Une professionnelle ou un professionnel de santé peut déterminer si une prévention ciblée ou un conseil génétique pourrait être utile.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "8fa21378f4d54b7a612255cde9eec01353932d3da2070fa75540ca0b87824404"
+      "sourceContractHash": "41fc459a8d590bb8c6405718d322c936e0a39cf7e4c8c5e37247da6de82ffae9"
     },
     {
       "id": "recommendation.signal.familie_hk.deepen",
@@ -3041,27 +3122,27 @@
     },
     {
       "id": "recommendation.signal.vorsorge.title",
-      "text": "Risque personnel jamais évalué",
+      "text": "Vérifier si l’évaluation du risque est à jour",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "526f2982938c889973e6103b5364b9cfb1e94145384cb685ec06bdeaa68a5586"
+      "sourceContractHash": "b7e49cb692ab1cfdd195b9756c066eacfd2c2ac04fd0d75df753159655956c67"
     },
     {
       "id": "recommendation.signal.vorsorge.insight",
-      "text": "Plusieurs facteurs de risque cardiovasculaire restent longtemps sans symptômes. Connaître la tension artérielle, la glycémie et les lipides sanguins fournit donc une meilleure base pour évaluer le risque personnel.",
+      "text": "Votre réponse ne permet pas d’établir que l’évaluation de votre risque personnel est à jour. Certains facteurs de risque restent longtemps sans symptômes ; des valeurs actuelles et une interprétation professionnelle apportent de la clarté.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7d5191d793503e6c75da4254ce5b37183d1f9b692f893e672077b5c12df77d32"
+      "sourceContractHash": "dcf69538e02753e38dfa9c9c2e9c0ff953cdbf9d5b346e706205d6554fd0e5c0"
     },
     {
       "id": "recommendation.signal.vorsorge.clarify",
-      "text": "Les valeurs de base, à savoir la tension artérielle, la glycémie et les lipides sanguins, ainsi que votre risque personnel à 10 ans qui en découle.",
+      "text": "La date de votre dernière évaluation, les paramètres de base alors mesurés et les examens préventifs indiqués pour votre profil actuel.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "02f371eb743b074d158646eaecd8f6fbdfe774e8db4bc23388f0a10e065698c4"
+      "sourceContractHash": "fa7e6c1184c4dbba44e7d7d7d87492f16de0d3fb46b2d456ffc6ab8237546c41"
     },
     {
       "id": "recommendation.signal.vorsorge.deepen",
@@ -3611,19 +3692,19 @@
     },
     {
       "id": "recommendation.risk_signal.familie_hk.label",
-      "text": "Des maladies cardiovasculaires, du diabète ou des maladies héréditaires sont présents dans votre famille proche : la prévention est particulièrement utile.",
+      "text": "Des maladies pertinentes sont connues chez vos parents, vos frères et sœurs ou vos enfants. Des antécédents familiaux précis aident à planifier la prévention adaptée.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "0bb8020a653a1d5644967bbadcaa049ff503a1b30934fa61d44220c30c17d591"
+      "sourceContractHash": "e4afb27c1a2bf2c78f9eccea1b9722ee8ad2ef6d436a2ef6a6bbd2b0f131d152"
     },
     {
       "id": "recommendation.risk_signal.vorsorge.label",
-      "text": "Vous n’avez encore jamais fait évaluer votre risque personnel de maladies telles que le cancer, l’hypertension ou le diabète de type 2. Un bilan de base apporte de la clarté.",
+      "text": "Il n’est pas certain que l’évaluation de votre risque personnel soit à jour. Clarifiez la situation et planifiez au besoin une évaluation professionnelle.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "9513bce0c91856a95a290291b0d3ce33b2634df746305f03118e3823d55fd430"
+      "sourceContractHash": "d08827190e3b7429adc0712407b0c6e0ae8ee3da6f3372bc87ce56bcbecb7986"
     },
     {
       "id": "recommendation.risk_signal.untergewicht.label",

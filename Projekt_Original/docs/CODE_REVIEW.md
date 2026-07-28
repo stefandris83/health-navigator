@@ -3,8 +3,8 @@
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
 > **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
-> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 25: 1'213
-> lokalisierte Texte je Sprache und 185/185 erfolgreiche Tests. Kleinere Zahlen in
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 26: 1'223
+> lokalisierte Texte je Sprache und 189/189 erfolgreiche Tests. Kleinere Zahlen in
 > früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
 > Bestandsangaben.
 
@@ -1251,3 +1251,47 @@ horizontalen Überlauf und keine relevanten Konsolenmeldungen.
 Die medizinische, Product- und Marketing-Freigabe der heuristischen Gewichte im
 kardiovaskulären Mustermodell, der konditionalen Querverweise und der neuen Texte
 bleibt vor einem klinisch verantworteten Go-live offen.
+
+## 26. Getrennte Familien-, Risiko- und Vorsorgefragen
+
+Die drei ähnlichen Fragen erfassen nun klar getrennte Sachverhalte: bekannte
+Erkrankungen in der nahen Familie, eine aktuelle professionelle Risikoeinschätzung
+und das Wissen über persönlich passende Vorsorge. Alle drei bleiben scorefrei.
+Damit kann ein sehr guter Gesundheitswert bestehen bleiben, während ein offener
+Vorsorgebedarf trotzdem als priorisiertes Handlungsfeld sichtbar wird.
+
+Der Fragebogen enthält bewusst keine zusätzliche Detailfrage zur Familiengeschichte.
+Bei einer bekannten, teilweise bekannten oder unbekannten Familiengeschichte fordert
+die Empfehlung stattdessen dazu auf, Erkrankung, betroffenes Familienmitglied,
+ungefähres Diagnosealter und bei Krebs die Krebsart zu klären. Bei bekannter
+Familienerkrankung bündelt eine einzige spezifische Karte gleichzeitig eine fehlende
+professionelle Einschätzung und fehlendes Vorsorgewissen. Lp(a) wird nur bei früh
+aufgetretenen Herz-Kreislauf-Erkrankungen als mögliche einmalige Bestimmung genannt;
+ob ApoB zusätzliche Information liefert, bleibt ausdrücklich vom individuellen
+Risikoprofil abhängig.
+
+Die stabilen technischen IDs haben teilweise eine neue Bedeutung. Storage-Schema 3
+und Ergebnislink-Schema 2 verhindern deshalb eine scheinpräzise Migration: Bei
+älteren Ständen bleiben alle anderen gültigen Angaben erhalten, während
+`familie_hk`, `familienwissen` und `vorsorge` entfernt und im Abschnitt
+«Einflussfaktoren» neu abgefragt werden. Die neue Dokumentation
+`EMPFEHLUNGSLOGIK.md` beschreibt den vollständigen Weg von Antworten über Signale,
+Hebel, Prioritäten und Deduplizierung bis zu den sichtbaren Texten.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 42/42, Integration 82/82, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **189/189
+Tests**. Alle vier Kataloge mit je 1'223 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
+aktuell.
+
+Ein vollständiger DE-Browserlauf über den lokalen HTTP-Server bestätigte bei
+bekannter Familiengeschichte, fehlender aktueller Einschätzung und fehlendem
+Vorsorgewissen genau eine gebündelte Empfehlung bei unverändertem Score. Die drei
+Fragen wurden zusätzlich in EN, FR und IT mit erhaltenen Auswahlwerten geprüft;
+alle geprüften Tabs blieben ohne Konsolenwarnung oder -fehler. Ein angeforderter
+390-Pixel-Viewport wurde vom eingebetteten Browser in dieser Sitzung nicht
+übernommen. Für Mobile ist deshalb nur die grüne automatisierte Layoutsuite belegt,
+nicht ein neuer visueller 390-Pixel-Durchlauf. Der direkte `file://`-Aufruf bleibt
+in dieser Browserumgebung blockiert; der statische Doppelklickvertrag ist grün.

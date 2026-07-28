@@ -9,10 +9,17 @@
 (function () {
   'use strict';
 
-  const STORAGE_SCHEMA = 2;
-  const HASH_SCHEMA = 1;
+  const STORAGE_SCHEMA = 3;
+  const PREVIOUS_STORAGE_SCHEMA = 2;
+  const HASH_SCHEMA = 2;
+  const PREVIOUS_HASH_SCHEMA = 1;
   const HASH_MAX_LENGTH = 32 * 1024;
   const FUTURE_TOLERANCE_MS = 5 * 60 * 1000;
+  const SEMANTICALLY_CHANGED_ANSWER_IDS = Object.freeze([
+    'familie_hk',
+    'familienwissen',
+    'vorsorge',
+  ]);
 
   function isPlainObject(value) {
     return value !== null && typeof value === 'object' && !Array.isArray(value);
@@ -21,6 +28,19 @@
   function sanitizeAnswers(raw) {
     const schema = typeof window !== 'undefined' && window.HealthAnswerSchema;
     return schema ? schema.sanitizeAnswers(raw) : {};
+  }
+
+  /*
+   * Die drei Fragen haben trotz stabiler IDs eine neue Bedeutung erhalten.
+   * Frühere Werte dürfen deshalb nicht geraten oder auf ähnlich klingende
+   * Optionen umgedeutet werden. Bei alten Persistenzverträgen bleiben alle
+   * übrigen Antworten erhalten; nur diese drei müssen neu beantwortet werden.
+   */
+  function withoutSemanticallyChangedAnswers(raw) {
+    if (!isPlainObject(raw)) return {};
+    const answers = Object.assign({}, raw);
+    SEMANTICALLY_CHANGED_ANSWER_IDS.forEach((id) => { delete answers[id]; });
+    return answers;
   }
 
   function effectiveTtlDays(options) {
@@ -49,15 +69,28 @@
 
     const now = options && Number.isFinite(options.now) ? options.now : Date.now();
     const ttlDays = effectiveTtlDays(options);
-    const migrated = data.v == null;
-    if (!migrated && data.v !== STORAGE_SCHEMA) return null;
-    if (!migrated && !validTimestamp(data.savedAt, now, ttlDays)) return null;
+    const unversioned = data.v == null;
+    const previous = data.v === PREVIOUS_STORAGE_SCHEMA;
+    const current = data.v === STORAGE_SCHEMA;
+    if (!unversioned && !previous && !current) return null;
+    if (!unversioned && !validTimestamp(data.savedAt, now, ttlDays)) return null;
+    const migrated = !current;
+    const rawAnswers = migrated
+      ? withoutSemanticallyChangedAnswers(data.answers)
+      : data.answers;
 
-    const total = (typeof window !== 'undefined' && window.DIMENSIONS && window.DIMENSIONS.length) || 1;
-    const dimIndex = clampIndex(data.dimIndex, total);
-    const maxReached = Math.max(dimIndex, clampIndex(data.maxReached, total));
+    const dimensions = (typeof window !== 'undefined' && window.DIMENSIONS) || [];
+    const total = dimensions.length || 1;
+    const storedDimIndex = clampIndex(data.dimIndex, total);
+    const influenceIndex = dimensions.findIndex((dimension) => dimension.id === 'einfluss');
+    const dimIndex = migrated && influenceIndex >= 0 ? influenceIndex : storedDimIndex;
+    const maxReached = Math.max(
+      dimIndex,
+      storedDimIndex,
+      clampIndex(data.maxReached, total)
+    );
     return {
-      answers: sanitizeAnswers(data.answers),
+      answers: sanitizeAnswers(rawAnswers),
       dimIndex,
       maxReached,
       migrated,
@@ -90,10 +123,15 @@
 
     const now = options && Number.isFinite(options.now) ? options.now : Date.now();
     const ttlDays = effectiveTtlDays(options);
-    const migrated = data.v == null;
-    if (!migrated && data.v !== STORAGE_SCHEMA) return null;
-    if (!migrated && !validTimestamp(data.savedAt, now, ttlDays)) return null;
-    return { items: sanitizePlanItems(migrated ? data : data.items), migrated };
+    const unversioned = data.v == null;
+    const previous = data.v === PREVIOUS_STORAGE_SCHEMA;
+    const current = data.v === STORAGE_SCHEMA;
+    if (!unversioned && !previous && !current) return null;
+    if (!unversioned && !validTimestamp(data.savedAt, now, ttlDays)) return null;
+    return {
+      items: sanitizePlanItems(unversioned ? data : data.items),
+      migrated: !current,
+    };
   }
 
   function serializePlan(items, now) {
@@ -121,8 +159,12 @@
       const binary = atob(padded);
       const bytes = Uint8Array.from(binary, (char) => char.charCodeAt(0));
       const data = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(bytes));
-      if (!isPlainObject(data) || data.v !== HASH_SCHEMA || !isPlainObject(data.a)) return null;
-      return sanitizeAnswers(data.a);
+      if (!isPlainObject(data) || !isPlainObject(data.a)) return null;
+      if (data.v === HASH_SCHEMA) return sanitizeAnswers(data.a);
+      if (data.v === PREVIOUS_HASH_SCHEMA) {
+        return sanitizeAnswers(withoutSemanticallyChangedAnswers(data.a));
+      }
+      return null;
     } catch (error) {
       return null;
     }

@@ -57,14 +57,14 @@
     },
     {
       id: 'ei_familie', dim: 'einfluss', topic: 'vorsorge', impact: 4, urgency: 3, ease: 4,
-      covers: ['ei_vorsorge', 'ei_familienwissen'],
+      covers: ['ei_vorsorge', 'ei_vorsorgewissen'],
       offer: 'vorsorge',
       when: (c) => c.a.familie_hk === 'ja',
     },
     {
       id: 'ei_vorsorge', dim: 'einfluss', topic: 'vorsorge', impact: 3, urgency: 3, ease: 5,
       offer: 'vorsorge',
-      when: (c) => c.a.vorsorge === 'nein',
+      when: (c) => oneOf(c.a.vorsorge, 'aelter_unsicher', 'nein', 'weiss_nicht'),
     },
     {
       id: 'ei_alkohol', dim: 'einfluss', impact: 4, urgency: 3, ease: 3,
@@ -89,7 +89,12 @@
     {
       id: 'ei_familienwissen', dim: 'einfluss', topic: 'vorsorge', impact: 2, urgency: 2, ease: 5,
       offer: 'vorsorge',
-      when: (c) => oneOf(c.a.familienwissen, 'wenig', 'gar_nicht'),
+      when: (c) => oneOf(c.a.familie_hk, 'teilweise', 'weiss_nicht'),
+    },
+    {
+      id: 'ei_vorsorgewissen', dim: 'einfluss', topic: 'vorsorge', impact: 2, urgency: 1, ease: 5,
+      offer: 'vorsorge',
+      when: (c) => oneOf(c.a.familienwissen, 'teilweise', 'nein'),
     },
 
     /* ---------------- S-2: Körperliche Fitness ---------------- */
@@ -255,7 +260,7 @@
     hohe_belastung: { dimension: 'mental', relatedRecommendationIds: ['me_unterstuetzung'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     bluthochdruck: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bluthochdruck', 'act_kardio'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     blutdruck_unbekannt: { dimension: 'einfluss', relatedRecommendationIds: ['ei_bd_messen', 'act_kardio'], fields: ['title', 'insight', 'clarify'] },
-    familie_hk: { dimension: 'einfluss', relatedRecommendationIds: ['ei_familie', 'ei_familienwissen'], fields: ['title', 'insight', 'clarify', 'deepen'] },
+    familie_hk: { dimension: 'einfluss', relatedRecommendationIds: ['ei_familie'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     vorsorge: { dimension: 'einfluss', relatedRecommendationIds: ['act_kardio', 'ei_vorsorge', 'ei_familie'], fields: ['title', 'insight', 'clarify', 'deepen'] },
     untergewicht: { dimension: 'einfluss', relatedRecommendationIds: [], fields: ['title', 'insight', 'clarify', 'benefit'] },
     rauchen: { dimension: 'einfluss', relatedRecommendationIds: ['ei_rauchstopp'], fields: ['title', 'insight', 'action', 'deepen'] },
@@ -289,13 +294,17 @@
   }
 
   function buildContext(answers, results) {
+    const schema = typeof window !== 'undefined' && window.HealthAnswerSchema;
+    const cleanAnswers = schema && typeof schema.sanitizeAnswers === 'function'
+      ? schema.sanitizeAnswers(answers)
+      : answers;
     return {
-      a: answers,
+      a: cleanAnswers,
       m: results.metrics,
       scores: results.scores,
       norms: results.norms || {},
       fitnessTests: results.fitnessTests || [],
-      activity: window.Scoring.activityStatus(answers),
+      activity: window.Scoring.activityStatus(cleanAnswers),
       sig: new Set(results.signals.map((s) => s.id)),
       signals: results.signals,
     };
@@ -486,14 +495,9 @@
   function kardioAction(c) {
     const why = cvRiskPattern(c).why.slice(0, 4);
     const bd = c.a.bluthochdruck === 'ja';
-    let stepVariant;
-    if (c.a.vorsorge === 'nein') {
-      if (bd) stepVariant = 'assessment_needed_hypertension';
-      else stepVariant = 'assessment_needed';
-    } else {
-      if (bd) stepVariant = 'already_assessed_hypertension';
-      else stepVariant = 'already_assessed';
-    }
+    const assessmentCurrent = c.a.vorsorge === 'aktuell';
+    let stepVariant = assessmentCurrent ? 'already_assessed' : 'assessment_needed';
+    if (bd) stepVariant += '_hypertension';
     return {
       id: 'act_kardio', dim: 'einfluss', topic: 'vorsorge',
       title: copyGet('recommendation.special.act_kardio.title'),
@@ -668,7 +672,12 @@
       // Kurz-Zusammenfassung nicht hinter einem einzelnen Lifestyle-Hebel
       // verschwinden. Bei Gleichstand gewinnt die zusammengesetzte Regel durch
       // ihre frühere Position; Rauchstopp bleibt als zweiter Top-Hebel möglich.
-      prio: (c) => Math.min(10, 5.5 + cvRiskPattern(c).r + (c.a.vorsorge === 'nein' ? 0.5 : 0)),
+      prio: (c) => {
+        const assessmentPriority = c.a.vorsorge === 'nein'
+          ? 0.5
+          : (c.a.vorsorge === 'weiss_nicht' ? 0.35 : (c.a.vorsorge === 'aelter_unsicher' ? 0.25 : 0));
+        return Math.min(10, 5.5 + cvRiskPattern(c).r + assessmentPriority);
+      },
     },
     {
       id: 'lv_blutdruck', dim: 'einfluss', topic: 'blutdruck',
@@ -689,14 +698,23 @@
       rec: 'ei_familie',
       scoreIndependent: true,
       when: (c) => c.a.familie_hk === 'ja',
-      prio: (c) => (c.a.vorsorge === 'nein' ? 6.8 : 5.8),
+      prio: (c) => {
+        if (c.a.vorsorge === 'nein') return 6.8;
+        if (c.a.vorsorge === 'weiss_nicht') return 6.4;
+        if (c.a.vorsorge === 'aelter_unsicher') return 6.2;
+        return 5.8;
+      },
     },
     {
       id: 'lv_vorsorge', dim: 'einfluss', topic: 'vorsorge',
       rec: 'ei_vorsorge',
       scoreIndependent: true,
-      when: (c) => c.a.vorsorge === 'nein',
-      prio: () => 5.5,
+      when: (c) => oneOf(c.a.vorsorge, 'aelter_unsicher', 'nein', 'weiss_nicht'),
+      prio: (c) => {
+        if (c.a.vorsorge === 'nein') return 5.5;
+        if (c.a.vorsorge === 'weiss_nicht') return 5;
+        return 4.5;
+      },
     },
     {
       id: 'lv_untergewicht', dim: 'einfluss', topic: 'gewicht_medizinisch',
@@ -745,8 +763,16 @@
     {
       id: 'lv_familienwissen', dim: 'einfluss', topic: 'vorsorge',
       rec: 'ei_familienwissen',
-      when: (c) => oneOf(c.a.familienwissen, 'wenig', 'gar_nicht') && c.a.familie_hk === 'weiss_nicht',
-      prio: () => 4,
+      scoreIndependent: true,
+      when: (c) => oneOf(c.a.familie_hk, 'teilweise', 'weiss_nicht'),
+      prio: (c) => (c.a.familie_hk === 'weiss_nicht' ? 4.2 : 3.8),
+    },
+    {
+      id: 'lv_vorsorgewissen', dim: 'einfluss', topic: 'vorsorge',
+      rec: 'ei_vorsorgewissen',
+      scoreIndependent: true,
+      when: (c) => oneOf(c.a.familienwissen, 'teilweise', 'nein'),
+      prio: (c) => (c.a.familienwissen === 'nein' ? 3.5 : 3),
     },
     {
       id: 'lv_socialmedia', dim: 'einfluss', topic: 'socialmedia',
@@ -1015,7 +1041,7 @@
     },
     {
       id: 'st_vorsorge', dim: 'einfluss', salience: 1, w: 4.5,
-      when: (c) => c.a.vorsorge === 'ja' && oneOf(c.a.familienwissen, 'sehr_gut', 'gut'),
+      when: (c) => c.a.vorsorge === 'aktuell' && c.a.familienwissen === 'ja',
     },
     {
       id: 'st_protein', dim: 'ernaehrung', salience: 1, w: 4,
@@ -1306,6 +1332,7 @@
     ei_sitzen: [{}, {}, {}],
     ei_socialmedia: [{}, {}, {}],
     ei_familienwissen: [{}, {}, {}],
+    ei_vorsorgewissen: [{}, {}, {}],
     er_protein: (ctx) => [{}, proteinEvidenceApplies(ctx) ? { source: 'morton_protein' } : {}, {}],
     er_vielfalt: [{}, {}, {}],
     er_verarbeitet: [{}, {}, {}],

@@ -201,7 +201,7 @@ test('Kaputter Adapter → sicherer anonymer Kontext (kein Absturz)', async () =
 // Profil mit klaren Defiziten → garantiert Empfehlungen.
 const DEFICIT_ANSWERS = {
   alter: 52, geschlecht: 'maennlich', groesse: 178, gewicht: 96,
-  stabilitaet: 'unsicher', sitzzeit: 'ue10', familienwissen: 'wenig', vorsorge: 'nein',
+  stabilitaet: 'unsicher', sitzzeit: 'ue10', familienwissen: 'nein', vorsorge: 'nein',
   rauchen: 'ja_regelmaessig', alkohol: 'w4plus', socialmedia: 'oft', familie_hk: 'nein', bluthochdruck: 'nein',
   ausdauer_moderat: 'u30', ausdauer_intensiv: 'keine', krafttraining: 'tage0',
   beweglichkeit: 'ziemlich', treppen: 'deutlich', einkaufstaschen: 'maessig',
@@ -215,7 +215,7 @@ const DEFICIT_ANSWERS = {
 // Gesundes Profil → Engine darf auch (fast) leer liefern, ohne zu brechen.
 const HEALTHY_ANSWERS = {
   alter: 45, geschlecht: 'weiblich', groesse: 170, gewicht: 63,
-  stabilitaet: 'sehr_sicher', sitzzeit: 'u4', familienwissen: 'sehr_gut', vorsorge: 'ja',
+  stabilitaet: 'sehr_sicher', sitzzeit: 'u4', familienwissen: 'ja', vorsorge: 'aktuell',
   rauchen: 'nie', alkohol: 'nie_selten', socialmedia: 'nein', familie_hk: 'nein', bluthochdruck: 'nein',
   ausdauer_moderat: 'ue300', ausdauer_intensiv: 'ue150', krafttraining: 'tage3plus',
   beweglichkeit: 'gar_nicht', treppen: 'gar_nicht', einkaufstaschen: 'gar_nicht',
@@ -273,6 +273,8 @@ test('Scoring exportiert questionNorm für die Ergebnis-Zusammenfassung', () => 
   assert.strictEqual(W.Scoring.questionNorm('zuckergetraenke', 'taeglich'), -2);
   assert.strictEqual(W.Scoring.questionNorm('zuckergetraenke', 'nie'), 2);
   assert.strictEqual(W.Scoring.questionNorm('zuckergetraenke', undefined), null);
+  assert.strictEqual(W.Scoring.questionNorm('familienwissen', 'nein'), null,
+    'Kenntnis passender Vorsorge ist ein scorefreier Informationsbedarf');
   assert.strictEqual(W.Scoring.questionNorm('gibt_es_nicht', 'x'), null);
 });
 
@@ -296,6 +298,35 @@ test('Antwortschema: nur bekannte, gültige Werte; alle nicht optionalen Fragen 
   delete withoutOptional.liegestuetze;
   delete withoutOptional.wandsitz;
   assert.strictEqual(Schema.areAnswersComplete(withoutOptional), true, 'Optionale Kurztests dürfen fehlen');
+});
+
+test('Antwortschema akzeptiert für die drei Vorsorgefragen ausschliesslich den aktuellen Vertrag', () => {
+  const Schema = W.HealthAnswerSchema;
+  const influenceQuestionIds = W.DIMENSIONS
+    .find((dimension) => dimension.id === 'einfluss')
+    .questions.map((question) => question.id);
+  const familyStart = influenceQuestionIds.indexOf('familie_hk');
+  assert.deepStrictEqual(
+    influenceQuestionIds.slice(familyStart, familyStart + 3),
+    ['familie_hk', 'familienwissen', 'vorsorge'],
+    'Familienanamnese, Vorsorgewissen und erfolgte Risikoeinschätzung stehen direkt beieinander'
+  );
+  assert.deepStrictEqual(
+    Schema.sanitizeAnswers({
+      familienwissen: 'sehr_gut',
+      vorsorge: 'ja',
+    }),
+    {},
+    'alte, semantisch nicht eindeutig übertragbare Werte werden nicht umgedeutet'
+  );
+  assert.deepStrictEqual(
+    Schema.sanitizeAnswers({ familienwissen: 'teilweise', vorsorge: 'nein', familie_hk: 'teilweise' }),
+    { familie_hk: 'teilweise', familienwissen: 'teilweise', vorsorge: 'nein' }
+  );
+  assert.deepStrictEqual(
+    Schema.sanitizeAnswers({ familienwissen: 'nein', vorsorge: 'aelter_unsicher', familie_hk: 'nein' }),
+    { familie_hk: 'nein', familienwissen: 'nein', vorsorge: 'aelter_unsicher' }
+  );
 });
 
 test('Zielalter: Der Check akzeptiert Personen ab 16 Jahren und verwirft jüngere Alterswerte', () => {
@@ -790,7 +821,7 @@ test('WHtR-Grenzen sind geschlechtsneutral und steuern Score sowie Signal gemein
   const high = W.Scoring.computeResults({
     ...HEALTHY_ANSWERS, groesse: 200, gewicht: 80, bauchumfang: 120,
   });
-  assert.strictEqual(elevated.scores.einfluss, 93, 'WHtR ab 0,50 muss den bestehenden Körperbaustein abwerten');
+  assert.strictEqual(elevated.scores.einfluss, 92, 'WHtR ab 0,50 muss den bestehenden Körperbaustein abwerten');
   assert.strictEqual(high.scores.einfluss, 50, 'WHtR ab 0,60 aktiviert den bestehenden Schutzdeckel');
 });
 
@@ -1109,7 +1140,7 @@ test('Dimensionsdetails spiegeln jeden Top-Schritt in globaler Reihenfolge und o
 });
 
 test('Kohärenz: Kardio-Check bündelt Vorsorge und Blutdruck, Familienhinweis bleibt eigenständig', () => {
-  const answers = { ...DEFICIT_ANSWERS, familie_hk: 'ja', bluthochdruck: 'ja', vorsorge: 'ja' };
+  const answers = { ...DEFICIT_ANSWERS, familie_hk: 'ja', bluthochdruck: 'ja', vorsorge: 'aktuell' };
   const results = W.Scoring.computeResults(answers);
   const ctx = W.Recommendations.buildContext(answers, results);
   const plan = W.Recommendations.actionPlan(ctx);
@@ -1136,8 +1167,13 @@ test('Kohärenz: Kardio-Check bündelt Vorsorge und Blutdruck, Familienhinweis b
   assert.ok(!guidanceIds.includes('bluthochdruck'), 'Blutdrucksignal ist im Kardio-Check abgedeckt');
 });
 
-test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen beide neuen Varianten', () => {
-  const familyOnly = { ...HEALTHY_ANSWERS, familie_hk: 'ja', vorsorge: 'nein' };
+test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und bündeln offene Vorsorgethemen', () => {
+  const familyOnly = {
+    ...HEALTHY_ANSWERS,
+    familie_hk: 'ja',
+    vorsorge: 'nein',
+    familienwissen: 'nein',
+  };
   const healthyResults = W.Scoring.computeResults(HEALTHY_ANSWERS);
   const familyOnlyResults = W.Scoring.computeResults(familyOnly);
   const familyOnlyCtx = W.Recommendations.buildContext(familyOnly, familyOnlyResults);
@@ -1153,8 +1189,10 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
   const familyOnlyFields = W.Recommendations.keyLevers(familyOnlyCtx, 3);
   assert.strictEqual(familyOnlyFields[0].id, 'lv_familie',
     'die spezifische Familienabklärung steht trotz perfektem Einfluss-Score im Haupthandlungsfeld');
-  assert.ok(familyOnlyFields[0].detail.includes('persönliche kardiovaskuläre Risikoeinschätzung'),
-    'die konditionale kardiovaskuläre Vorsorge ist bereits im sichtbaren Haupthandlungsfeld konkret');
+  assert.ok(familyOnlyFields[0].detail.includes('aktuelle professionelle Risikoeinschätzung'),
+    'die fehlende professionelle Einschätzung ist bereits im sichtbaren Haupthandlungsfeld konkret');
+  assert.ok(familyOnlyFields[0].detail.includes('passende Vorsorge'),
+    'die Orientierung zu geeigneter Vorsorge ist bereits im sichtbaren Haupthandlungsfeld konkret');
   assert.ok(!familyOnlyPlan.some((record) => record.id === 'act_kardio'));
   assert.strictEqual(familyOnlyPlan[0].id, 'ei_familie');
   assert.ok(!familyOnlyPlan.some((record) => record.id === 'ei_vorsorge'),
@@ -1163,19 +1201,22 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
   const familyOnlyIds = familyOnlyDetails.map((record) => record.id);
   assert.ok(familyOnlyIds.includes('ei_familie'));
   assert.ok(!familyOnlyIds.includes('ei_vorsorge'), 'Spezifische Familienkarte bündelt den generischen Check-up');
+  assert.ok(!familyOnlyIds.includes('ei_vorsorgewissen'), 'Spezifische Familienkarte bündelt die Vorsorgeorientierung');
   assert.ok(!familyOnlyIds.includes('ei_familienwissen'), 'Der Familienrisiko-Plan enthält das Erheben der Details bereits');
   const familyCard = familyOnlyDetails.find((record) => record.id === 'ei_familie');
   assert.ok(familyCard);
   assert.strictEqual(familyCard.plan[1].sourceRef, null,
     'Die breite Familienfrage darf keine pauschale Herzquelle erhalten');
-  assert.ok(familyCard.plan[1].text.includes('Falls in Ihrer Familie früh Herz-Kreislauf-Erkrankungen'),
+  assert.ok(familyCard.plan[1].text.includes('Bei früh aufgetretenen Herz-Kreislauf-Erkrankungen'),
     'kardiovaskuläre Werte werden nur bei tatsächlich passender Familiengeschichte genannt');
   assert.ok(familyCard.plan[1].text.includes('Lp(a)'));
   assert.ok(familyCard.plan[1].text.includes('ApoB'));
-  assert.ok(familyCard.plan[1].text.includes('hängt von Ihrem Risikoprofil ab'),
+  assert.ok(familyCard.plan[1].text.includes('hängt vom individuellen Risikoprofil ab'),
     'ApoB wird nicht als pauschaler Standardtest dargestellt');
-  assert.ok(familyCard.plan[0].text.includes('Bei Herz-Kreislauf-Erkrankungen'),
-    'Die Altersgrenzen müssen ausdrücklich auf Herz-Kreislauf-Erkrankungen begrenzt sein');
+  assert.ok(familyCard.plan[0].text.includes('welchem Familienmitglied'));
+  assert.ok(familyCard.plan[0].text.includes('ungefähr in welchem Alter'));
+  assert.ok(familyCard.plan[0].text.includes('aktuelle professionelle Risikoeinschätzung'));
+  assert.ok(familyCard.plan[0].text.includes('Vorsorgegespräch'));
   assert.deepStrictEqual(
     W.Recommendations.dimensionInsights(familyOnlyResults, familyOnlyPlan).einfluss
       .filter((item) => item.id === 'familie_hk' || item.id === 'vorsorge'),
@@ -1183,7 +1224,7 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
     'die vollständige Familienkarte unterdrückt doppelte Familien- und Vorsorgehinweise'
   );
 
-  const familyPattern = { ...HEALTHY_ANSWERS, familie_hk: 'ja', sitzzeit: 's9_10', vorsorge: 'ja' };
+  const familyPattern = { ...HEALTHY_ANSWERS, familie_hk: 'ja', sitzzeit: 's9_10', vorsorge: 'aktuell' };
   const familyPatternCtx = W.Recommendations.buildContext(familyPattern, W.Scoring.computeResults(familyPattern));
   const familyKardio = W.Recommendations.actionPlan(familyPatternCtx)
     .find((record) => record.id === 'act_kardio');
@@ -1200,6 +1241,111 @@ test('Kohärenz: Familienhinweise bleiben ohne Kardio-Check sichtbar und nutzen 
       .some((record) => record.id === 'ei_bd_messen'),
     'Mehrere Ruhemessungen bleiben bei unbekanntem Blutdruck als eigenständiger Hinweis erhalten'
   );
+});
+
+test('Die drei Vorsorgefragen sind scorefrei und routen Familienklärung, Fachcheck und Information getrennt', () => {
+  const baselineResults = W.Scoring.computeResults(HEALTHY_ANSWERS);
+
+  ['teilweise', 'weiss_nicht'].forEach((familyStatus) => {
+    const answers = { ...HEALTHY_ANSWERS, familie_hk: familyStatus };
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    assert.deepStrictEqual(results.scores, baselineResults.scores, familyStatus + ': scorefrei');
+    assert.ok(!results.signals.some((signal) => signal.id === 'familie_hk'),
+      familyStatus + ': unvollständiges Wissen ist kein medizinisches Risikosignal');
+    assert.strictEqual(W.Recommendations.keyLevers(ctx, 3)[0].id, 'lv_familienwissen');
+    assert.deepStrictEqual(W.Recommendations.actionPlan(ctx).map((record) => record.id), ['ei_familienwissen']);
+  });
+
+  const preventionCases = [
+    { value: 'aktuell', severity: null, recommendation: false },
+    { value: 'aelter_unsicher', severity: 'tief', recommendation: true },
+    { value: 'weiss_nicht', severity: 'tief', recommendation: true },
+    { value: 'nein', severity: 'mittel', recommendation: true },
+  ];
+  preventionCases.forEach(({ value, severity, recommendation }) => {
+    const answers = { ...HEALTHY_ANSWERS, vorsorge: value };
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    const signal = results.signals.find((item) => item.id === 'vorsorge');
+    assert.deepStrictEqual(results.scores, baselineResults.scores, value + ': scorefrei');
+    assert.strictEqual(signal ? signal.severity : null, severity, value + ': passende Signalstärke');
+    assert.strictEqual(
+      W.Recommendations.recommendationsForDimension('einfluss', ctx)
+        .some((record) => record.id === 'ei_vorsorge'),
+      recommendation,
+      value + ': Vorsorgeempfehlung'
+    );
+  });
+
+  ['aelter_unsicher', 'weiss_nicht', 'nein'].forEach((value) => {
+    const answers = {
+      ...DEFICIT_ANSWERS,
+      familie_hk: 'nein',
+      bluthochdruck: 'ja',
+      vorsorge: value,
+    };
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    const kardio = W.Recommendations.actionPlan(ctx).find((record) => record.id === 'act_kardio');
+    assert.ok(kardio, value + ': Mehrfaktoren-Check fehlt');
+    assert.strictEqual(
+      kardio.step,
+      W.ResultCopy.get('recommendation.special.act_kardio.step.assessment_needed_hypertension'),
+      value + ': nur eine nachgewiesen aktuelle Einschätzung gilt als erledigt'
+    );
+  });
+
+  ['teilweise', 'nein'].forEach((knowledgeStatus) => {
+    const answers = { ...HEALTHY_ANSWERS, familienwissen: knowledgeStatus };
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    assert.deepStrictEqual(results.scores, baselineResults.scores, knowledgeStatus + ': scorefrei');
+    assert.strictEqual(results.signals.some((signal) => signal.id === 'familienwissen'), false,
+      knowledgeStatus + ': Informationsbedarf ist kein Risikosignal');
+    assert.strictEqual(W.Recommendations.keyLevers(ctx, 3)[0].id, 'lv_vorsorgewissen');
+    assert.deepStrictEqual(W.Recommendations.actionPlan(ctx).map((record) => record.id), ['ei_vorsorgewissen']);
+  });
+});
+
+test('Fehlende Risikoeinschätzung wird höher priorisiert als eine ältere oder unklare Einschätzung', () => {
+  const base = { ...HEALTHY_ANSWERS, sitzzeit: 'ue10' };
+  const firstLever = (vorsorge) => {
+    const answers = { ...base, vorsorge };
+    const results = W.Scoring.computeResults(answers);
+    return W.Recommendations.keyLevers(W.Recommendations.buildContext(answers, results), 3)[0].id;
+  };
+  assert.strictEqual(firstLever('nein'), 'lv_vorsorge',
+    'fehlende Einschätzung gewinnt den Gleichstand mit sehr hoher Sitzzeit');
+  assert.strictEqual(firstLever('aelter_unsicher'), 'lv_sitzen',
+    'ältere Einschätzung bleibt sichtbar, aber unter dem stärkeren Lifestyle-Hebel');
+  assert.strictEqual(firstLever('weiss_nicht'), 'lv_sitzen',
+    'unklarer Status bleibt sichtbar, aber unter dem stärkeren Lifestyle-Hebel');
+});
+
+test('Spezifische Familienkarte bündelt generische Vorsorge- und Informationskarten', () => {
+  const answers = {
+    ...HEALTHY_ANSWERS,
+    familie_hk: 'ja',
+    vorsorge: 'nein',
+    familienwissen: 'nein',
+  };
+  const results = W.Scoring.computeResults(answers);
+  const ctx = W.Recommendations.buildContext(answers, results);
+  const plan = W.Recommendations.actionPlan(ctx);
+  assert.deepStrictEqual(plan.map((record) => record.id), ['ei_familie']);
+  assert.deepStrictEqual(
+    plan[0].covers,
+    ['ei_vorsorge', 'ei_vorsorgewissen']
+  );
+  const detailIds = W.Recommendations.recommendationsForDimension('einfluss', ctx, plan)
+    .map((record) => record.id);
+  assert.ok(detailIds.includes('ei_familie'));
+  ['ei_vorsorge', 'ei_vorsorgewissen'].forEach((id) => {
+    assert.ok(!detailIds.includes(id), id + ': durch spezifische Familienkarte abgedeckt');
+  });
+  assert.ok(!detailIds.includes('ei_familienwissen'),
+    'bekannte Familienerkrankung und unvollständig bekannte Familiengeschichte sind exklusive Antworten');
 });
 
 test('Scorefreie Vorsorge ohne Familienangabe bleibt als Haupthandlungsfeld sichtbar', () => {
@@ -2195,7 +2341,7 @@ test('Architektur: Ergebnis-Pläne referenzieren ausschliesslich zentral gepfleg
   );
   const personas = [
     { ...DEFICIT_ANSWERS, familie_hk: 'ja', bluthochdruck: 'ja', rauchen: 'ja_regelmaessig' },
-    { ...DEFICIT_ANSWERS, bluthochdruck: 'weiss_nicht', familienwissen: 'gar_nicht' },
+    { ...DEFICIT_ANSWERS, bluthochdruck: 'weiss_nicht', familienwissen: 'nein' },
     { ...DEFICIT_ANSWERS, omega3: 'nie', saettigung: 'nie', pflanzenvielfalt: 'u10' },
     { ...DEFICIT_ANSWERS, sinnhaftigkeit: 'gar_nicht', selbstfuersorge: 'gar_nicht', verbundenheit: 'gar_nicht' },
     { ...DEFICIT_ANSWERS, beweglichkeit: 'ziemlich', treppen: 'deutlich', einkaufstaschen: 'maessig' },
@@ -2237,7 +2383,7 @@ test('Pläne: Jede Aktionsplan-Karte hat einen eigenen, konkreten 4-Wochen-Plan'
   const personas = [
     { ...base, alkohol: 'w4plus' },
     { ...base, socialmedia: 'sehr_oft', schlafrhythmus: 'unregelmaessig', schlafqualitaet: 'schlecht' },
-    { ...base, familienwissen: 'gar_nicht', bluthochdruck: 'weiss_nicht', familie_hk: 'ja' },
+    { ...base, familienwissen: 'nein', bluthochdruck: 'weiss_nicht', familie_hk: 'ja' },
     { ...base, schlafdauer: 'u5', schlaf_auswirkung: 'massiv', schlafqualitaet: 'sehr_schlecht' },
     { ...base, selbstfuersorge: 'gar_nicht', belastbarkeit: 'gar_nicht', coping: 'eher_nicht', verbundenheit: 'eher_nicht' },
     { ...base, sitzzeit: 'ue10', stabilitaet: 'sehr_unsicher', alter: 72 },

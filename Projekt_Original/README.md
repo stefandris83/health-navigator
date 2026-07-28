@@ -300,5 +300,7 @@ Freigaben ersetzen sie nicht. Offene Entscheidungen sind zentral in
 das vollständige, implementierte Bewertungs- und Empfehlungsmodell steht in
 [docs/SCORING_MODELL.md](docs/SCORING_MODELL.md). Die wissenschaftlichen Grundlagen
 und Aussagegrenzen sind in [docs/QUELLEN.md](docs/QUELLEN.md) dokumentiert;
+die Auslöser, Bündelung und Priorisierung der sichtbaren Texte erklärt
+[docs/EMPFEHLUNGSLOGIK.md](docs/EMPFEHLUNGSLOGIK.md);
 Reviewbefunde und getestete Architektur stehen in
 [docs/CODE_REVIEW.md](docs/CODE_REVIEW.md).

@@ -23,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'213 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'223 Texten;
 - Artefakt-Check: erfolgreich;
-- 185 von 185 Einzeltests erfolgreich;
+- 189 von 189 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -37,9 +37,9 @@ Aktueller Teststand:
 - App: `/Users/stefandris/Desktop/Health-Navigator-Codex/Projekt_Original`
 - Git-Repository: Workspace-Wurzel
 - Remote: `https://github.com/stefandris83/health-navigator.git`
-- Aktueller Branch: `codex/whtr-primary-scoring`
-- Tracking-Branch nach Veröffentlichung: `origin/codex/whtr-primary-scoring`
-- Ausgangs-HEAD vor diesem Änderungssatz: `871da45 Merge pull request #14 from stefandris83/codex/red-gradient-checkmark-icon`
+- Aktueller Branch: `codex/clarify-prevention-questions`
+- Tracking-Branch nach Veröffentlichung: `origin/codex/clarify-prevention-questions`
+- Ausgangs-HEAD vor diesem Änderungssatz: `2a49fa5 Integrate body profile into recommendations`
 - Öffentliche GitHub-Pages-Adresse: `https://stefandris83.github.io/health-navigator/`
 
 Der Workflow `.github/workflows/deploy-pages.yml` läuft bei Änderungen unter
@@ -111,7 +111,7 @@ Bei jeder Fortsetzung gelten diese Entscheidungen:
 | Textquellen | `content/result-texts/` | Kanonische deutsche Texte und Übersetzungs-Overlays |
 | Generator | `scripts/result-content.js` | Validate, Build, Export, Overview, Import, Backups und Konfliktschutz |
 | Tests | `tests/*.test.js` | Fach-, Content-, I18n-, Security-, Lifecycle- und Portabilitätsverträge |
-| Dokumentation | `docs/*.md` | Scoring, Integration, Textpflege, Quellen, Review, Go-live |
+| Dokumentation | `docs/*.md` | Scoring, Empfehlungslogik, Integration, Textpflege, Quellen, Review, Go-live |
 
 ## 5. Ziele und Produktentscheidungen
 
@@ -141,9 +141,15 @@ Empfehlungen sind deshalb bewusst zwei getrennte Systeme.
   Doppelbox.
 - Der kardiovaskuläre Vorsorge-Check bündelt Blutdruck/Vorsorge, unterdrückt aber nicht
   pauschal eigenständige nicht-kardiovaskuläre Familienhinweise.
-- Scorefreie Angaben zu familiären Erkrankungen und fehlender Risikoeinschätzung
-  besitzen eigene Haupthandlungshebel. Treffen beide zu, bündelt die spezifischere
-  Familienkarte den generischen Vorsorgehinweis, ohne den Score zu verändern.
+- Drei scorefreie Angaben trennen bekannte beziehungsweise unvollständig bekannte
+  Familiengeschichte, die Aktualität einer professionellen Risikoeinschätzung und
+  das Wissen über passende Vorsorge. Treffen mehrere offene Punkte zu, bündelt die
+  spezifischere Familienkarte die generischen Vorsorge- und Informationshinweise,
+  ohne den Score zu verändern.
+- Die App erhebt aus Gründen der Kürze keine Folgefrage zur Familiengeschichte. Die
+  Empfehlung fordert stattdessen auf, Erkrankung, betroffenes Familienmitglied und
+  ungefähres Diagnosealter zu klären und diese Angaben in ein Vorsorgegespräch
+  mitzunehmen.
 - Untergewicht und ein auffälliges Körperprofil werden in «Grösste Handlungsfelder»
   sichtbar, erzeugen aus Einzelmessungen aber bewusst keinen pauschalen Therapieplan.
   Ein eigener Klärungszustand erklärt den fehlenden 4-Wochen-Plan widerspruchsfrei.
@@ -201,8 +207,9 @@ massgebende Implementierung liegt in `js/scoring.js`, das Fragenschema in
 
 ### Einflussfaktoren
 
-Gleichgewichteter Mittelwert aus sieben Bestandteilen: Stabilität, Sitzzeit,
-Familienwissen, Rauchen, Alkohol, Social Media und Körperzusammensetzung.
+Gleichgewichteter Mittelwert aus sechs Bestandteilen: Stabilität, Sitzzeit, Rauchen,
+Alkohol, Social Media und Körperzusammensetzung. Jeder Bestandteil zählt 16,67 % der
+Dimension beziehungsweise 3,33 % des Gesamtscores.
 
 - Aktuelles Rauchen mit −2 oder ein Körperprofil mit −2 deckelt die Dimension bei 50.
 - Körperzusammensetzung nutzt ein einziges zentrales Profil für Score, Signal und
@@ -217,8 +224,17 @@ Familienwissen, Rauchen, Alkohol, Social Media und Körperzusammensetzung.
 - Im heuristischen kardiovaskulären Muster zählt ein Körperprofil mit Signalstärke
   `tief` +0,5 und mit `mittel` +1,5. Erreicht das Gesamtmuster die Schwelle 3,
   nennt der Vorsorge-Check den persönlichen WHtR-/BMI-Wert samt Einordnung.
-- Vorsorge, bekannte Familienerkrankungen und Bluthochdruck sind scorefrei, können
-  aber wichtige medizinische Signale, Haupthandlungsfelder und Empfehlungen auslösen.
+- Familiengeschichte, professionelle Risikoeinschätzung, Vorsorgewissen und
+  Bluthochdruck sind scorefrei, können aber wichtige medizinische beziehungsweise
+  informationsbezogene Haupthandlungsfelder und Empfehlungen auslösen.
+- `familie_hk` verwendet `ja/nein/teilweise/weiss_nicht`; nur `ja` erzeugt das
+  medizinische Signal, während teilweise/unbekannte Angaben direkt zur
+  Klärungsempfehlung führen.
+- `vorsorge` unterscheidet `aktuell/aelter_unsicher/nein/weiss_nicht`; alle offenen
+  Werte führen zur passenden Vorsorgeempfehlung, `nein` mit mittlerem und die beiden
+  unklaren Situationen mit tiefem Signal.
+- Die kompatibel beibehaltene ID `familienwissen` fragt neu nach Wissen über passende
+  Vorsorge (`ja/teilweise/nein`) und beeinflusst den Score nicht.
 
 ### Körperliche Fitness
 
@@ -287,12 +303,17 @@ Implementierte 80/20-Verbesserungen:
 - Faktoren: Bluthochdruck, unbekannter Blutdruck, Rauchen, deutliches Körperprofil,
   lange Sitzzeit, sehr geringe Aktivität, tiefer Ernährungsscore und höchste
   Alkoholfrequenz.
-- Die breite Familienfrage zählt bewusst nicht in dieses Muster, weil sie auch Diabetes
-  und andere erbliche Erkrankungen umfasst. Sie bleibt ein eigenständiges Signal.
+- Die breite Familienfrage zählt bewusst nicht in dieses Muster, weil sie auch
+  Typ-2-Diabetes, Krebs und andere erblich bedingte Erkrankungen umfasst. Eine
+  Ja-Antwort bleibt ein eigenständiges Signal.
 
 ## 7. Empfehlungssystem
 
 Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
+
+Eine verständliche End-to-End-Übersicht aller Verarbeitungsschritte, der drei
+scorefreien Vorsorgefragen und der zentralen Triggergruppen steht neu in
+`docs/EMPFEHLUNGSLOGIK.md`.
 
 - Katalog und Bedingungen liegen in `js/recommendations.js`.
 - Jede Empfehlung besitzt stabile ID, Dimension, Bedingung, Impact, Dringlichkeit,
@@ -310,6 +331,14 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
   die Oberfläche zeigt dafür einen eigenen fachlichen Klärungszustand.
 - `topThree` ist aus Kompatibilitätsgründen ein getesteter Alias von `actionPlan`.
 - Pläne sind zentral in `PLANS`; es gibt keine verstreuten Inline-Pläne im Katalog.
+- Die drei Vorsorgepfade teilen das Deduplizierungsthema `vorsorge`. `ei_familie`
+  deckt bei bekannter Familiengeschichte die allgemeinen Einträge `ei_vorsorge`
+  und `ei_vorsorgewissen` ab. Unvollständige Familienkenntnis
+  und fehlendes Vorsorgewissen erzeugen bewusst kein Risikosignal.
+- Storage-Schema 3 und Hash-Schema 2 verhindern semantische Fehlmigrationen:
+  Bei älteren Ständen bleiben alle anderen gültigen Angaben erhalten, während
+  `familie_hk`, `familienwissen` und `vorsorge` im Abschnitt «Einflussfaktoren» neu
+  beantwortet werden müssen.
 - Persönliche Stärken werden getrennt vom Aktionsplan nach Aussagebreite,
   Dimensionsscore, Fachgewicht und stabiler Katalogreihenfolge sortiert. Es bleibt
   bei höchstens drei Karten und grundsätzlich einer Stärke pro Dimension.
@@ -353,7 +382,7 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'213 IDs.
+- Aktuell je Sprache 1'223 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -490,6 +519,7 @@ Das Projekt wurde mehrfach konservativ geprüft. Bereits umgesetzt wurden unter 
 - robuste Ergebnislink-, Storage-, Kundenadapter- und URL-Sicherheitslogik;
 - vollständige Vier-Sprachen-Parität;
 - fachlich kohärentere Score-, Signal- und Empfehlungsschwellen;
+- dokumentierte End-to-End-Empfehlungslogik für Product, Medizin und Content;
 - ausführliche Scoring-, Quellen-, Textpflege-, Integration-, Review- und Go-live-
   Dokumentation.
 
@@ -525,16 +555,16 @@ Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'213 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'223 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
-| `node tests/integration.test.js` | 78/78 |
+| `node tests/integration.test.js` | 82/82 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 185/185 Tests erfolgreich.**
+**Gesamt aktuell: 189/189 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
@@ -583,6 +613,21 @@ Der direkte `file://`-Aufruf blieb durch die Sicherheitsrichtlinie des eingebett
 Browsers blockiert; dafür ist nur der automatisierte statische Doppelklick-Vertrag
 belegt, kein interaktiver Browserlauf.
 
+Der Abschlussreview der drei scorefreien Vorsorgefragen führte zusätzlich ein
+vollständiges Profil über den lokalen HTTP-Server aus. In DE erschienen bei
+`familie_hk = ja`, `vorsorge = nein` und `familienwissen = nein` trotz unverändertem
+Score genau ein gebündeltes Haupthandlungsfeld und genau eine Aktionskarte. Die
+Karte und ihr geöffneter 4-Wochen-Plan nannten Erkrankung, Familienmitglied,
+ungefähres Diagnosealter, Krebsart, aktuelle professionelle Risikoeinschätzung,
+passende Vorsorge sowie Lp(a) und ApoB in den vorgesehenen konditionalen Rollen.
+Die drei Fragen wurden im laufenden Fragebogen in DE, EN, FR und IT geprüft;
+Antwortwerte und Auswahlzustände blieben beim Sprachwechsel erhalten. Alle geprüften
+Tabs blieben ohne Konsolenwarnung oder -fehler, besassen genau ein H1 und keine
+doppelten IDs. Der in dieser Sitzung angeforderte 390-Pixel-Override wurde vom
+eingebetteten Browser nicht übernommen (weiterhin 1'280 Pixel); für die mobile
+Darstellung ist daher in diesem Review nur der grüne automatisierte Layoutvertrag
+belegt, kein neuer visueller 390-Pixel-Lauf.
+
 Nicht vollständig belegt:
 
 - interaktiver kompletter `file://`-Durchlauf in der aktuellen Umgebung;
@@ -608,10 +653,13 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
 - Product-, Marketing- und Medizin-Freigabe der neuen Stärkenrangfolge, des
   Fitnessscore-Schwellenwerts 90 und der Formulierung «oberster
   Orientierungsbereich» in allen vier Sprachen.
-- Product-, Marketing- und Medizin-Freigabe der neuen Familien-, Vorsorge-,
-  Untergewichts- und Körperprofil-Hebel in DE/EN/FR/IT sowie ihrer Prioritäten.
-  Besonders prüfen: Lp(a) nur konditional bei tatsächlich früher
-  Herz-Kreislauf-Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
+- Product-, Marketing- und Medizin-Freigabe der drei neuen scorefreien Fragen und
+  ihrer Familien-, Vorsorge- und Informationshebel in DE/EN/FR/IT. Besonders
+  prüfen: Antwortabstufungen, Bündelung, erneute Abfrage der drei geänderten Fragen
+  bei älteren lokalen Ständen und Ergebnislinks,
+  Familienklärung zu Erkrankung/Person/Diagnosealter, Lp(a) nur konditional bei
+  tatsächlich früher Herz-Kreislauf-Familiengeschichte und ApoB nur als
+  individuelle Zusatzfrage.
 - Product-, Marketing- und Medizin-Freigabe der entscheidungsnahen Körperprofil-
   Integration: persönliche WHtR-/BMI-Nennung im Kardio-Check, Zusatzbezug nur bei
   ohnehin ausgelösten Empfehlungen, +0,5/+1,5 im heuristischen Muster sowie der
@@ -679,6 +727,7 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
 
 - `README.md` – Architektur, Betrieb, Sprachen, Integration, Content und Tests
 - `docs/SCORING_MODELL.md` – vollständiges aktuelles Score-/Signal-/Empfehlungsmodell
+- `docs/EMPFEHLUNGSLOGIK.md` – Auslöser, Priorisierung, Deduplizierung und sichtbare Ergebniswege
 - `docs/TEXTPFLEGE.md` – Vier-Sprachen-Workflow für Marketing, Medizin und Recht
 - `docs/INTEGRATION.md` – CustomerContext, Modi, Datenschutz und Hostvertrag
 - `docs/QUELLEN.md` – wissenschaftliche Grundlagen und Aussagegrenzen
@@ -687,7 +736,9 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
 
 ## 20. Abschlussstatus dieser Übergabe
 
-Diese Übergabe dokumentiert den vollständigen zusammenhängenden Änderungssatz mit
-Code-, Content-, Asset-, Konfigurations-, Test- und Dokumentationsänderungen. Der
-technische Stand ist lokal vollständig geprüft; offene medizinische, sprachliche,
-rechtliche und Brand-Freigaben bleiben davon getrennte Go-live-Aufgaben.
+Diese Übergabe dokumentiert den zusammenhängenden Änderungssatz mit Code-, Content-,
+Asset-, Konfigurations-, Test- und Dokumentationsänderungen. Der vorherige technische
+Stand war lokal vollständig geprüft; für die aktuelle Umstellung der drei
+Vorsorgefragen ist der abschliessende Gesamtlauf noch einzutragen. Offene
+medizinische, sprachliche, rechtliche und Brand-Freigaben bleiben davon getrennte
+Go-live-Aufgaben.

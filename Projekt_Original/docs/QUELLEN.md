@@ -114,6 +114,51 @@ and hydration in geriatrics*.
 - Risikofaktoren: Alter, Genetik/Familie, Übergewicht, Inaktivität, salzreiche Kost,
   Alkohol, Tabak.
 
+### Familiengeschichte, Vorsorgewissen und professionelle Risikoeinschätzung
+
+**Primäre Grundlagen:**
+
+- [CDC – About Family Health History](https://www.cdc.gov/family-health-history/about/index.html)
+- [CDC – Family Health History and Cancer](https://www.cdc.gov/cancer/risk-factors/family-health-history.html?CDC_AA_refVal=https%3A%2F%2Fwww.cdc.gov%2Fcancer%2Ffamilyhistory%2Findex.html)
+- [ACC/AHA 2019 – Guideline on the Primary Prevention of Cardiovascular Disease](https://www.ahajournals.org/doi/10.1161/CIR.0000000000000678)
+- [ADA 2026 – Diagnosis and Classification of Diabetes: Standards of Care in Diabetes](https://diabetesjournals.org/care/article/49/Supplement_1/S27/163926/2-Diagnosis-and-Classification-of-Diabetes)
+
+Der CDC empfiehlt, bei der Familiengeschichte nicht nur eine Erkrankung zu nennen,
+sondern nach Möglichkeit auch **betroffene Person und Diagnosealter** festzuhalten
+und die Informationen mit einer medizinischen Fachperson zu teilen. Eine Erkrankung
+bei mehreren nahen Verwandten oder in ungewöhnlich jungem Alter kann für die
+professionelle Einordnung besonders relevant sein. Bei Krebs hängen Konsequenzen
+zusätzlich von der konkreten Krebsart und dem Familienmuster ab.
+
+Die ACC/AHA-Leitlinie behandelt eine vorzeitige atherosklerotische
+Herz-Kreislauf-Erkrankung in der Familie als möglichen risikoverstärkenden Faktor in
+der ärztlichen Risikoabwägung. Die breite App-Frage erfasst jedoch zugleich
+Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs und andere erblich bedingte
+Erkrankungen. Eine pauschale Ja-Antwort wird deshalb **nicht** automatisch wie eine
+bestätigte vorzeitige ASCVD-Familienanamnese gewichtet.
+
+Die ADA empfiehlt, bei asymptomatischen Erwachsenen zunächst Risikofaktoren oder
+einen validierten Risikorechner zu beurteilen. Eine erstgradige Familiengeschichte
+von Typ-2-Diabetes ist dabei einer von mehreren Faktoren, die eine Untersuchung
+früher oder häufiger sinnvoll machen können. Daraus folgt für die App keine
+einheitliche Untersuchungsfrequenz: Alter, persönliche Werte, Familienmuster und
+weitere Risiken müssen professionell zusammen beurteilt werden.
+
+**Umsetzung und Aussagegrenzen:**
+
+- Die drei Fragen trennen bekannte Familienereignisse, eine bereits erfolgte und
+  noch aktuelle professionelle Risikoeinschätzung sowie das eigene Wissen über
+  passende Vorsorge.
+- Alle drei Fragen sind scorefrei. Fehlendes Wissen ist weder eine Erkrankung noch
+  ein direkter Gesundheitsmalus.
+- Aus Gründen der Fragebogenlänge wird nicht nach Erkrankung, betroffener Person und
+  Diagnosealter verzweigt. Die Familienempfehlung fordert den Kunden stattdessen
+  konkret auf, genau diese Angaben zu klären und in ein Vorsorgegespräch mitzunehmen.
+- «Teilweise», «weiss nicht», «liegt länger zurück/unsicher» und «nein» werden
+  unterschiedlich geroutet, ohne ein individuelles Risiko vorzutäuschen.
+- Die App legt weder Diagnose, genetische Testindikation noch Untersuchungsintervall
+  fest. Das bleibt Aufgabe einer qualifizierten Fachperson.
+
 ---
 
 ## 4. Blutfette, ApoB, LDL, Non-HDL & Lipoprotein(a)
@@ -637,12 +682,14 @@ Stressbewältigung können metabolische Gesundheit unterstützen; aus einem ung�
 WHtR oder BMI folgt aber nicht, dass in all diesen Bereichen ein individuelles
 Defizit vorliegt.
 
-**Signale statt Malus.** Nicht direkt beeinflussbare bzw. rein medizinische Angaben –
-**familiäres Risiko**, fehlende Risikoeinschätzung und **Bluthochdruck** – ziehen
-**keine** Punkte ab. Sie erhalten einen getrennten Signal- und Routingvertrag und
-können dadurch trotz hohem Score als Haupthandlungsfeld sowie im Aktionsplan oder
-Dimensionsdetail erscheinen. So bleibt der Einflussfaktoren-Score verhaltensbezogen
-und fair, ohne den medizinischen Hinweis zu verlieren.
+**Signale statt Malus.** Nicht direkt beeinflussbare beziehungsweise medizinische
+Angaben – **familiäres Risiko**, eine fehlende, veraltete oder unklare professionelle
+Risikoeinschätzung und **Bluthochdruck** – ziehen **keine** Punkte ab. Dasselbe gilt
+für unvollständiges Wissen über die Familiengeschichte oder passende Vorsorge. Die
+Angaben erhalten einen getrennten Signal- und Routingvertrag und können dadurch
+trotz hohem Score als Haupthandlungsfeld sowie im Aktionsplan oder Dimensionsdetail
+erscheinen. So bleibt der Einflussfaktoren-Score verhaltensbezogen und fair, ohne
+medizinische oder informationsbezogene Hinweise zu verlieren.
 
 **Statusstufen:** 80–100 *Stark*, 60–79 *Solide Basis*, 40–59 *Ausbaufähig*,
 0–39 *Erhöhte Aufmerksamkeit*.
@@ -694,13 +741,17 @@ entfernt.
 
 Die kardiovaskuläre Top-Aktion bündelt mehrere konkrete, veränderbare oder medizinisch
 einzuordnende Faktoren. Die breite Frage `familie_hk` umfasst neben Herz-Kreislauf-
-Erkrankungen auch Diabetes und andere erbliche Erkrankungen und zählt deshalb nicht
-mehr als kardiovaskulärer Musterfaktor. Eine Ja-Antwort bleibt als eigenständiges
-medizinisches Signal und als priorisierbares Familien-/Vorsorge-Handlungsfeld
-sichtbar. Trifft zusätzlich `vorsorge = nein` zu, bündelt die spezifische
-Familienkarte den generischen Vorsorgehinweis. Bekannter Bluthochdruck und fehlende
+Erkrankungen auch Typ-2-Diabetes, Krebs und andere erblich bedingte Erkrankungen und
+zählt deshalb nicht als kardiovaskulärer Musterfaktor. Eine Ja-Antwort bleibt als
+eigenständiges medizinisches Signal und als priorisierbares Familien-/Vorsorge-
+Handlungsfeld sichtbar. Teilweises oder fehlendes Familienwissen führt zur
+Klärungsempfehlung statt zu einer Risikobehauptung. Trifft zusätzlich eine fehlende,
+veraltete oder unklare professionelle Risikoeinschätzung zu, bündelt die spezifische
+Familienkarte den generischen Vorsorgehinweis. Bekannter Bluthochdruck und offene
 Vorsorge werden durch die Top-Aktion weiterhin gezielt abgedeckt; eine unbekannte
-Blutdrucksituation bleibt als konkreter Messschritt sichtbar.
+Blutdrucksituation bleibt als konkreter Messschritt sichtbar. Eine vollständige
+Übersicht der Trigger und Deduplizierung steht in
+[`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md).
 
 **Textarchitektur.** Bedingungen, Gewichte und Zuordnungen bleiben in
 `js/scoring.js` und `js/recommendations.js`. Sämtliche sichtbaren Texte der
@@ -818,9 +869,15 @@ bleiben unverändert: *Taillenumfang*, *familiäre Erkrankungen (ja/nein)*, *Blu
 - *F-1.1 Stabilität* misst neu das **Sicherheitsgefühl bei alltäglichen Bewegungen**
   (Sturzrisiko-Proxy) statt der Stabilität der Lebenssituation → Risikosignal und
   Empfehlung auf Sturzprävention/Gleichgewichtstraining umgestellt.
-- *F-1.4 Vorsorge* fragt neu nach der **Risikoeinschätzung** (Krebs, Bluthochdruck,
-  Typ-2-Diabetes) → Signal- und Empfehlungstexte entsprechend angepasst
-  (weiterhin ohne Score-Einfluss, gemäss Score-Dokument Ø).
+- Die drei Vorsorgethemen sind neu sauber getrennt: `familie_hk` erfasst bekannte
+  Erkrankungen beziehungsweise unvollständige Kenntnis der Familiengeschichte;
+  `vorsorge` erfasst, ob eine professionelle persönliche Risikoeinschätzung aktuell,
+  älter/unklar oder nicht erfolgt ist; die kompatibel beibehaltene ID
+  `familienwissen` erfasst das Wissen über passende Vorsorge. Alle drei sind
+  scorefrei und lösen nur den jeweils passenden Signal-/Empfehlungspfad aus.
+- Die Klärung von Erkrankung, betroffenem Familienmitglied und Diagnosealter wird
+  bewusst als Kundennutzen in der Empfehlung vermittelt und nicht als weitere
+  Folgefrage erhoben.
 - *F-3.1 Protein* fragt neu transparent nach der **Regelmässigkeit verteilter
   Proteinquellen**. Die frühere pauschale Vorgabe von 35–40 g je Mahlzeit wurde
   entfernt, weil dieselbe absolute Menge je nach Körpergewicht sehr unterschiedliche
@@ -885,10 +942,13 @@ im Code verändert:
    Instrument und besitzen keinen Bezugszeitraum. Entweder als nicht-klinisches
    Ressourcenprofil kennzeichnen oder ein geeignetes validiertes Instrument samt
    Lizenz-, Datenschutz- und Eskalationsprüfung wählen.
-7. **Familienfrage:** Die breite Antwort wird nicht mehr als kardiovaskuläre
-   Familiengeschichte gewichtet. Falls Helsana sie später wieder als eigenen
-   Kardio-Faktor verwenden will, braucht es eine entsprechend differenzierte Frage
-   und einen medizinisch freigegebenen Vertrag.
+7. **Familien- und Vorsorgefragen:** Die breite Familienantwort wird nicht als
+   kardiovaskuläre Familiengeschichte gewichtet. Medizin, Product und Marketing
+   müssen die vier Antwortsituationen, die Klärungsempfehlung zu Erkrankung/Person/
+   Diagnosealter sowie die Abgrenzung zwischen aktueller Risikoeinschätzung und
+   blossem Vorsorgewissen freigeben. Falls Helsana die Familienfrage später als
+   eigenen Kardio-Faktor verwenden will, braucht es eine entsprechend
+   differenzierte Frage und einen medizinisch validierten Vertrag.
 
 > **Disclaimer für die Weiterentwicklung:** Vor produktivem Einsatz sollten die
 > fachlichen Inhalte und Orientierungswerte – insbesondere die verwendeten

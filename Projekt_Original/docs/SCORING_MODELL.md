@@ -29,6 +29,7 @@ Antworten
 | Empfehlungsregeln, Muster und Top-3-Priorisierung | [`recommendations.js`](../js/recommendations.js) |
 | Reihenfolge und Metadaten der fünf Dimensionen | [`questions.js`](../js/questions.js) |
 | Sichtbare personalisierte Texte | [`content/result-texts/`](../content/result-texts/) |
+| Auslöser, Bündelung und Priorisierung der Empfehlungen | [`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md) |
 | Wissenschaftliche Quellen und fachliche Grenzen | [`QUELLEN.md`](QUELLEN.md) |
 | Noch offene Go-live-Entscheidungen | [`GO_LIVE_CHECKLIST.md`](GO_LIVE_CHECKLIST.md) |
 | Regressionstests des Fachvertrags | [`integration.test.js`](../tests/integration.test.js) |
@@ -92,23 +93,22 @@ Diese Regel verändert keine Dimension und keine Empfehlung. Sie schützt aussch
 
 ### 5.1 Formel und Gewichte
 
-Der Dimensionswert ist der gleichgewichtete Mittelwert aus sieben Bestandteilen:
+Der Dimensionswert ist der gleichgewichtete Mittelwert aus sechs Bestandteilen:
 
 \[
 E=\frac{
-Stabilität+Sitzzeit+Familienwissen+Rauchen+Alkohol+Social\ Media+Körperzusammensetzung
-}{7}
+Stabilität+Sitzzeit+Rauchen+Alkohol+Social\ Media+Körperzusammensetzung
+}{6}
 \]
 
 | Bestandteil | Anteil an «Einflussfaktoren» | Anteil am Gesamtscore |
 |---|---:|---:|
-| Stabilität | 14,29 % | 2,86 % |
-| Sitzzeit | 14,29 % | 2,86 % |
-| Wissen über familiäre Gesundheit | 14,29 % | 2,86 % |
-| Rauchen | 14,29 % | 2,86 % |
-| Alkohol | 14,29 % | 2,86 % |
-| Social-Media-Nutzung | 14,29 % | 2,86 % |
-| Körperzusammensetzung | 14,29 % | 2,86 % |
+| Stabilität | 16,67 % | 3,33 % |
+| Sitzzeit | 16,67 % | 3,33 % |
+| Rauchen | 16,67 % | 3,33 % |
+| Alkohol | 16,67 % | 3,33 % |
+| Social-Media-Nutzung | 16,67 % | 3,33 % |
+| Körperzusammensetzung | 16,67 % | 3,33 % |
 
 **Gegencheck:** Aktuelles Rauchen (−2) oder eine deutlich ungünstige Körperzusammensetzung (−2) begrenzen einen ansonsten positiven Dimensionsmittelwert auf Norm 0 beziehungsweise 50 Punkte.
 
@@ -145,9 +145,9 @@ technisches Band übereinstimmen.
 | ≥ 0,60 | −2 |
 
 Die Stufe 0,50 bis < 0,60 verändert den Score bereits: Der Körperbaustein fällt
-von 100 auf 50 Punkte. Da er ein Siebtel der Einflussdimension ausmacht, sinkt
-diese bei sonst optimalen Antworten von 100 auf 93 und der gleichgewichtete
-Gesamtscore um rund 1,4 Punkte. Ab 0,60 erhält der Körperbaustein −2; zusätzlich
+von 100 auf 50 Punkte. Da er ein Sechstel der Einflussdimension ausmacht, sinkt
+diese bei sonst optimalen Antworten von 100 auf 92 und der gleichgewichtete
+Gesamtscore um rund 1,7 Punkte. Ab 0,60 erhält der Körperbaustein −2; zusätzlich
 begrenzt der bestehende Schutzvertrag die Dimension «Einflussfaktoren» auf 50.
 Der Marker wird nicht parallel zu einem zweiten Taillen- oder BMI-Malus gezählt.
 
@@ -187,9 +187,22 @@ WHtR-Priorität**. Er wählt nur eine präzisere Formulierung und fordert bei de
 erhöhten oder widersprüchlichen Markern weiterhin die fachliche Einordnung. Die
 Kurztests sind kein Verfahren zur Messung von Fett- oder Muskelmasse.
 
-### 5.3 Scorefreie medizinische Angaben
+### 5.3 Scorefreie medizinische und Vorsorgeangaben
 
-Vorsorgeverhalten, bekannte familiäre Erkrankungen und Bluthochdruck sind keine regulären Minuspunkte. Sie können stattdessen medizinische Signale, sichtbare Haupthandlungsfelder und Empfehlungen auslösen. So bleibt der 0–100-Wert eine Standortbestimmung und gibt sich nicht als klinischer Risikorechner aus. Insbesondere bleibt ein Einflussfaktoren-Score von 100 möglich, während die getrennte Sicherheitslogik trotzdem eine noch offene Familien- oder Vorsorgeabklärung anzeigt.
+Die tatsächliche Familiengeschichte, die Aktualität einer professionellen
+Risikoeinschätzung und das Wissen über persönlich passende Vorsorge sowie
+Bluthochdruck sind keine regulären Plus- oder Minuspunkte. Sie können stattdessen
+medizinische beziehungsweise informationsbezogene Signale, sichtbare
+Haupthandlungsfelder und Empfehlungen auslösen. So bleibt der 0–100-Wert eine
+Standortbestimmung und gibt sich nicht als klinischer Risikorechner aus. Insbesondere
+bleibt ein Einflussfaktoren-Score von 100 möglich, während die getrennte
+Sicherheitslogik trotzdem eine noch offene Familien- oder Vorsorgeabklärung anzeigt.
+
+Die Familienklärung bleibt aus Gründen der Fragebogenlänge eine Empfehlung und wird
+nicht als Folgefrage erhoben: Kunden sollen nach Möglichkeit klären, **welche
+Erkrankung bei wem und ungefähr in welchem Alter diagnostiziert wurde**, und diese
+Angaben zu einem professionellen Vorsorgegespräch mitnehmen. Teilweises oder
+fehlendes Wissen wird nicht als Erkrankung interpretiert und senkt den Score nicht.
 
 Untergewicht wird ebenfalls separat als medizinischer Klärungshinweis behandelt. Untergewicht und ein auffälliges Körperprofil erhalten in «Grösste Handlungsfelder» eine vorsichtige Summary-Einordnung, aber aus BMI oder Taillenumfang allein bewusst keinen standardisierten 4-Wochen-Therapieplan.
 
@@ -513,7 +526,8 @@ Risikosignale sind ein separater Sicherheits- und Routingvertrag. Sie werden nic
 | Bluthochdruck | bekannt | medizinisch, hoch |
 | Blutdruck unbekannt | «weiss nicht» | medizinisch, mittel |
 | Familiäre Erkrankung | Frage `familie_hk` = ja | medizinisch, mittel |
-| Vorsorge | Vorsorge bisher verneint | medizinisch, mittel |
+| Risikoeinschätzung fehlt | `vorsorge` = nein | medizinisch, mittel |
+| Risikoeinschätzung veraltet oder unklar | `vorsorge` = aelter_unsicher oder weiss_nicht | medizinisch, tief |
 | Untergewicht | BMI < 18,5 | medizinisch, mittel |
 | Rauchen | gelegentlich oder regelmässig | Lebensstil, hoch |
 | Alkohol | höchste Frequenzstufe | Lebensstil, mittel |
@@ -529,6 +543,11 @@ Risikosignale sind ein separater Sicherheits- und Routingvertrag. Sie werden nic
 | Ernährung | täglich Zuckergetränke oder mehrmals täglich stark Verarbeitetes | Lebensstil, mittel |
 
 Die Typen beschreiben die gewünschte nächste Einordnung – selbst beeinflussbarer Ansatz oder medizinische Abklärung. Sie stellen keine Diagnose dar.
+
+`familie_hk = teilweise/weiss_nicht` und `familienwissen = teilweise/nein`
+erzeugen bewusst kein Risikosignal. Sie werden direkt über scorefreie
+Empfehlungsregeln geroutet: unvollständige Familieninformationen über
+`ei_familienwissen`, fehlendes Vorsorgewissen über `ei_vorsorgewissen`.
 
 ## 12. Kardiovaskuläres Antwortmuster
 
@@ -555,9 +574,18 @@ für den Vorsorge-Check; er wird erst zusammen mit weiteren erhobenen Faktoren z
 Muster. Eine mögliche hohe Muskelmasse wird beim BMI sprachlich kenntlich gemacht,
 aber nicht als rechnerischer Rabatt behandelt.
 
-Die breite Familienfrage zählt bewusst **nicht** als zwei Punkte in diesem Muster: Sie umfasst neben Herz-Kreislauf-Erkrankungen auch Diabetes und andere erbliche Erkrankungen. Eine Ja-Antwort bleibt ein eigenes medizinisches Signal und löst weiterhin die fachlich passende Familien-/Vorsorgeempfehlung aus.
+Die breite Familienfrage zählt bewusst **nicht** als zwei Punkte in diesem Muster:
+Sie umfasst neben Herz-Kreislauf-Erkrankungen auch Typ-2-Diabetes, Krebs und andere
+erblich bedingte Erkrankungen. Eine Ja-Antwort bleibt ein eigenes medizinisches
+Signal und löst weiterhin die fachlich passende Familien-/Vorsorgeempfehlung aus.
 
-Die Familienempfehlung fordert zuerst Erkrankung, betroffene Person und Erkrankungsalter. Nur falls tatsächlich früh aufgetretene Herz-Kreislauf-Erkrankungen vorliegen, nennt sie konditional Blutdruck, Lipidprofil und die Frage nach einer einmaligen Lp(a)-Bestimmung. ApoB bleibt eine vom individuellen Risikoprofil abhängige Zusatzfrage und wird nicht als Standardtest für alle ausgegeben.
+Die Familienempfehlung fordert als nächsten Schritt, Erkrankung, betroffene Person
+und ungefähres Diagnosealter zu klären. Diese Details werden bewusst nicht als
+Folgefrage im kurzen Assessment erhoben. Nur falls tatsächlich früh aufgetretene
+Herz-Kreislauf-Erkrankungen vorliegen, nennt die Empfehlung konditional Blutdruck,
+Lipidprofil und die Frage nach einer einmaligen Lp(a)-Bestimmung. ApoB bleibt eine
+vom individuellen Risikoprofil abhängige Zusatzfrage und wird nicht als Standardtest
+für alle ausgegeben.
 
 Die vorhandenen Textvarianten mit dem technischen Suffix `family_history` bleiben als
 redaktionell gepflegte Reserve für eine künftig differenzierte, ausdrücklich
@@ -565,6 +593,10 @@ kardiovaskuläre Familienfrage erhalten. Mit der heutigen breiten Frage werden s
 nicht ausgewählt.
 
 Die Zahlen in dieser Tabelle sind nachvollziehbare Priorisierungsregeln, keine klinisch kalibrierten Risikokoeffizienten. Änderungen benötigen medizinische Freigabe, Versionierung und Tests mit definierten Beispielprofilen.
+
+Wie die drei scorefreien Vorsorgefragen, das Kardio-Muster und andere Trigger zu
+sichtbaren Karten zusammengeführt und dedupliziert werden, beschreibt
+[`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md).
 
 ## 13. Empfehlungssystem und «Ihre nächsten drei Schritte»
 
@@ -599,7 +631,7 @@ Die Auswahl folgt vereinfacht dieser Reihenfolge:
 4. Deduplizierung gleicher Themen und abgedeckter Empfehlungen;
 5. normalerweise höchstens ein Schritt pro Dimension, ausser ein fachlich gerechtfertigter zweiter Hebel; mehr als zwei Schritte derselben Dimension sind ausgeschlossen.
 
-Die Kurzliste «Grösste Handlungsfelder» verwendet dieselben Lever-Regeln. Ein zweiter Hebel derselben Dimension bleibt dort ab Priorität 8 oder als eigenständiger scorefreier beziehungsweise `summaryOnly`-Klärungshinweis sichtbar; mehr als zwei werden nie gewählt. Dadurch kann ein medizinischer Kardio-Check neben Rauchstopp bestehen, während zum Beispiel Familienrisiko und Untergewicht bei einem freien Platz ebenfalls gemeinsam sichtbar bleiben. Der Kardio-Hebel absorbiert ein bereits in seiner Begründung genanntes Körperprofil; Familienrisiko und fehlende Risikoeinschätzung werden bei gemeinsamem Auftreten über die spezifischere Familienkarte gebündelt.
+Die Kurzliste «Grösste Handlungsfelder» verwendet dieselben Lever-Regeln. Ein zweiter Hebel derselben Dimension bleibt dort ab Priorität 8 oder als eigenständiger scorefreier beziehungsweise `summaryOnly`-Klärungshinweis sichtbar; mehr als zwei werden nie gewählt. Dadurch kann ein medizinischer Kardio-Check neben Rauchstopp bestehen, während zum Beispiel Familienrisiko und Untergewicht bei einem freien Platz ebenfalls gemeinsam sichtbar bleiben. Der Kardio-Hebel absorbiert ein bereits in seiner Begründung genanntes Körperprofil; Familienrisiko, offene Risikoeinschätzung, unvollständige Familienkenntnis und fehlendes Vorsorgewissen werden bei gemeinsamem Auftreten über die spezifischere Familienkarte beziehungsweise das gemeinsame Thema `vorsorge` gebündelt.
 
 Eine bewusst dokumentierte Ausnahme sind `lv_untergewicht` und `lv_koerperprofil`: Sie erscheinen als `summaryOnly`, weil die vorhandenen Messwerte eine sichere Einordnung, aber ohne Verlauf, Beschwerden und Ursachen keinen pauschalen Therapie- oder 4-Wochen-Plan erlauben. Falls nur solche Hinweise vorliegen, erklärt ein eigener Klärungszustand den fehlenden standardisierten Plan; der allgemeine Leerzustand «kein Handlungsfeld» wird nicht verwendet. Der ausführliche Signalhinweis bleibt im Dimensionsdetail erhalten. Scorefreie medizinische Hebel erhalten in der Übersicht zudem einen neutralen Markenpunkt statt einer irreführenden grünen Scorefarbe.
 
@@ -740,14 +772,13 @@ Dieser Anhang bildet den aktuellen Vertrag aus [`questions.js`](../js/questions.
 
 | Frage | Antwortstufen → Normwert | Gewicht Dimension / Gesamt |
 |---|---|---:|
-| **Stabilität im Alltag** (`stabilitaet`)<br>Wie sicher fühlen Sie sich bei alltäglichen Bewegungen? | Sehr sicher → +2; Sicher → +1; Weder noch → 0; Unsicher → −1; Sehr unsicher → −2 | 14,29 % / 2,86 % |
-| **Sitz- und Liegezeit** (`sitzzeit`)<br>Wie viele Stunden verbringen Sie an einem typischen Tag im Sitzen oder Liegen? | Weniger als 4 Stunden → +2; 4–6 Stunden → +1; 7–8 Stunden → 0; 9–10 Stunden → −1; Mehr als 10 Stunden → −2 | 14,29 % / 2,86 % |
-| **Wissen über familiäre Gesundheit** (`familienwissen`)<br>Wie gut wissen Sie über mögliche Krebs- oder Herz-Kreislauferkrankungen in Ihrer Familie Bescheid? | Sehr gut → +2; Gut → +1; Teilweise → 0; Wenig → −1; Gar nicht → −2 | 14,29 % / 2,86 % |
-| **Rauchen** (`rauchen`)<br>Rauchen Sie oder haben Sie in der Vergangenheit geraucht? | Nein, nie → +2; Nicht mehr → +1; Keine Angaben → 0; Ja, manchmal → −2; Ja, regelmässig → −2 | 14,29 % / 2,86 % |
-| **Alkohol** (`alkohol`)<br>Wie häufig haben Sie im letzten Monat alkoholische Getränke konsumiert? | Nie oder selten → +2; 2–4 x pro Monat → 0; Keine Angaben → 0; 2–3 x pro Woche → −1; 4 x oder öfter pro Woche → −2 | 14,29 % / 2,86 % |
-| **Social Media** (`socialmedia`)<br>Verbringen Sie mehr Zeit mit Social Media als Ihnen lieb ist? | Nein → +2; Selten → +1; Manchmal → 0; Oft → −1; Sehr oft → −2 | 14,29 % / 2,86 % |
+| **Stabilität im Alltag** (`stabilitaet`)<br>Wie sicher fühlen Sie sich bei alltäglichen Bewegungen? | Sehr sicher → +2; Sicher → +1; Weder noch → 0; Unsicher → −1; Sehr unsicher → −2 | 16,67 % / 3,33 % |
+| **Sitz- und Liegezeit** (`sitzzeit`)<br>Wie viele Stunden verbringen Sie an einem typischen Tag im Sitzen oder Liegen? | Weniger als 4 Stunden → +2; 4–6 Stunden → +1; 7–8 Stunden → 0; 9–10 Stunden → −1; Mehr als 10 Stunden → −2 | 16,67 % / 3,33 % |
+| **Rauchen** (`rauchen`)<br>Rauchen Sie oder haben Sie in der Vergangenheit geraucht? | Nein, nie → +2; Nicht mehr → +1; Keine Angaben → 0; Ja, manchmal → −2; Ja, regelmässig → −2 | 16,67 % / 3,33 % |
+| **Alkohol** (`alkohol`)<br>Wie häufig haben Sie im letzten Monat alkoholische Getränke konsumiert? | Nie oder selten → +2; 2–4 x pro Monat → 0; Keine Angaben → 0; 2–3 x pro Woche → −1; 4 x oder öfter pro Woche → −2 | 16,67 % / 3,33 % |
+| **Social Media** (`socialmedia`)<br>Verbringen Sie mehr Zeit mit Social Media als Ihnen lieb ist? | Nein → +2; Selten → +1; Manchmal → 0; Oft → −1; Sehr oft → −2 | 16,67 % / 3,33 % |
 
-Der siebte gleichgewichtete Bestandteil ist die **abgeleitete Körperzusammensetzung** mit 14,29 % der Dimension beziehungsweise 2,86 % des Gesamtscores. Sie ist keine Einfachauswahl; Normwerte und Datenpriorität stehen in [Abschnitt 5.2](#52-einheitliche-körperzusammensetzung). Rauchen −2 oder Körperzusammensetzung −2 deckeln die Dimension auf höchstens 50.
+Der sechste gleichgewichtete Bestandteil ist die **abgeleitete Körperzusammensetzung** mit 16,67 % der Dimension beziehungsweise 3,33 % des Gesamtscores. Sie ist keine Einfachauswahl; Normwerte und Datenpriorität stehen in [Abschnitt 5.2](#52-einheitliche-körperzusammensetzung). Rauchen −2 oder Körperzusammensetzung −2 deckeln die Dimension auf höchstens 50.
 
 ### A.2 Körperliche Fitness – scorewirksame Einfachauswahl
 
@@ -801,11 +832,20 @@ Belastbarkeit, Selbstwirksamkeit und Coping wirken bei −2 zusätzlich auf den 
 
 | Frage | Antwortstufen / interne Einordnung | Rolle ausserhalb des regulären Mittelwerts |
 |---|---|---|
-| **Persönliches Risiko einschätzen lassen** (`vorsorge`)<br>Haben Sie sich zu Krebs, Bluthochdruck und Typ-2-Diabetes informiert und Ihr persönliches Risiko einschätzen lassen? | Ja / Nein; kein Normwert | «Nein» erzeugt ein medizinisches Signal mittlerer Schwere, ein Haupthandlungsfeld und eine Vorsorgeempfehlung. |
-| **Familiäre Erkrankungen** (`familie_hk`)<br>Gibt es in Ihrer nahen Familie Herz-Kreislauf-Erkrankungen, Diabetes oder erblich bedingte Erkrankungen? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein medizinisches Signal mittlerer Schwere sowie ein Familien-/Vorsorge-Handlungsfeld mit Empfehlung; keine Punkte im Kardio-Muster. |
+| **Familiäre Erkrankungen** (`familie_hk`)<br>Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten? | Ja / Nein, soweit mir bekannt / Ich kenne die Familiengeschichte nur teilweise / Weiss ich nicht; kein Normwert | «Ja» erzeugt das medizinische Signal `familie_hk` mittlerer Schwere sowie `ei_familie`/`lv_familie`. «Teilweise» und «Weiss ich nicht» erzeugen scorefrei `ei_familienwissen`/`lv_familienwissen`, aber kein Risikosignal. Keine Antwort zählt als Punkt im Kardio-Muster. |
+| **Wissen über passende Vorsorge** (`familienwissen`)<br>Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind? | Ja / Teilweise / Nein; kein Normwert | «Teilweise» oder «Nein» erzeugt scorefrei `ei_vorsorgewissen`/`lv_vorsorgewissen`, aber kein Risikosignal. Die stabile ID bleibt aus Kompatibilitätsgründen erhalten; die Frage ist kein Scorebestandteil. |
+| **Professionelle Risikoeinschätzung** (`vorsorge`)<br>Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen? | Ja, gemäss Fachperson aktuell / Ja, aber länger zurück oder Aktualität unsicher / Nein / Weiss ich nicht; kein Normwert | `aktuell` gilt als erledigt. `nein` erzeugt das medizinische Signal `vorsorge` mittlerer, `aelter_unsicher` und `weiss_nicht` eines tiefer Schwere; alle drei offenen Werte aktivieren `ei_vorsorge`/`lv_vorsorge`. |
 | **Bluthochdruck** (`bluthochdruck`)<br>Wurde bei Ihnen ärztlich Bluthochdruck festgestellt oder nehmen Sie Blutdruckmedikamente? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein hohes medizinisches Signal und +2 im Kardio-Muster; «Weiss ich nicht» ein mittleres Signal und +0,5 im Kardio-Muster. |
 | **Sättigung** (`saettigung`)<br>Wie häufig fühlen Sie sich nach Ihren Hauptmahlzeiten für etwa vier Stunden satt? | Nie → −2; Selten → −1; Manchmal → 0; Oft → +1; Fast immer → +2 | Kein Scoregewicht und kein Deckel. Nie/Selten/Manchmal können eine Empfehlung auslösen. |
 | **Schlafbedingte Alltagsbeeinträchtigung** (`schlaf_auswirkung`)<br>Wie stark hat Ihr Schlaf im letzten Monat Ihren Alltag beeinträchtigt? | Gar nicht → +2; Minimal → +1; Spürbar → 0; Deutlich → −1; Massiv → −2 | Kein gleichgewichteter Scorebestandteil. Spürbar deckelt Schlaf auf 75; deutlich/massiv auf 50. Massiv erzeugt zusätzlich ein medizinisches Signal mittlerer Schwere. |
+
+Für bestehende lokale Stände und Ergebnislinks gilt eine defensive Migration ohne
+inhaltliche Vermutungen. Da sich die Bedeutung der drei stabilen Frage-IDs
+`familie_hk`, `familienwissen` und `vorsorge` geändert hat, werden deren frühere
+Antworten entfernt und im Abschnitt «Einflussfaktoren» neu abgefragt. Alle anderen
+weiterhin gültigen Antworten bleiben erhalten. Aktuelle lokale Stände verwenden
+Storage-Schema 3, aktuelle Ergebnislinks Hash-Schema 2; unbekannte Versionen werden
+abgelehnt. Details stehen in [`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md#45-bestehende-lokale-stände-und-ergebnislinks).
 
 ### A.7 Persönliche Angaben und optionale numerische Kurztests
 
@@ -815,7 +855,7 @@ Belastbarkeit, Selbstwirksamkeit und Coping wirken bei −2 zusätzlich auf den 
 | **Biologisches Geschlecht** (`geschlecht`) | männlich / weiblich / intersex | Kein eigener Score; bestimmt geeignete Fitness-Testreferenzen, nicht die WHtR-Grenzen. |
 | **Grösse** (`groesse`) | 100–299 cm | Kein eigener Score; Bestandteil von BMI und bei Taillenangabe des WHtR. |
 | **Gewicht** (`gewicht`) | 30–399 kg | Kein eigener Score; bestimmt BMI-Klasse, Untergewichtssignal und – bei fehlender Taille oder Erwachsenen ab BMI 35 – den BMI-Fallback. |
-| **Bauchumfang** (`bauchumfang`, optional) | 40–250 cm | Liefert mit der Körpergrösse das bevorzugte WHtR-Körperprofil. Bei Erwachsenen ab BMI 35 bleibt stattdessen trotz Taille der BMI scorewirksam; ohne Bauchumfang greift der BMI ebenfalls als Fallback. Gewicht: 14,29 % der Einflussfaktoren beziehungsweise 2,86 % gesamt. |
+| **Bauchumfang** (`bauchumfang`, optional) | 40–250 cm | Liefert mit der Körpergrösse das bevorzugte WHtR-Körperprofil. Bei Erwachsenen ab BMI 35 bleibt stattdessen trotz Taille der BMI scorewirksam; ohne Bauchumfang greift der BMI ebenfalls als Fallback. Gewicht: 16,67 % der Einflussfaktoren beziehungsweise 3,33 % gesamt. |
 | **Einbeinstand** (`einbeinstand`, optional) | 0–1'000 Sekunden | Nur mit unterstützter Referenz scorewirksam: 10 % Fitness / 2 % gesamt; ersetzt die Hälfte des Balanceblocks. |
 | **Liegestütze** (`liegestuetze`, optional) | 0–150 Wiederholungen | Bei allein scorebarem Muskeltest 20 % Fitness / 4 % gesamt; zusammen mit Wandsitz 10 % / 2 %. |
 | **Wandsitz** (`wandsitz`, optional) | 0–1'000 Sekunden | Bei allein scorebarem Muskeltest 20 % Fitness / 4 % gesamt; zusammen mit Liegestütz 10 % / 2 %. |

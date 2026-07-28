@@ -9,9 +9,9 @@
  * und bewussten Abweichungen sind in docs/QUELLEN.md (Abschnitt
  * «Abgleich mit dem finalen Fragenset») dokumentiert.
  *
- * Fragen, die NICHT im finalen Fragenset enthalten sind, bleiben unverändert
- * bestehen: Taillenumfang (bauchumfang), familiäre Erkrankungen ja/nein
- * (familie_hk) und Bluthochdruck (bluthochdruck).
+ * Zusätzliche Kontextfragen zu Taillenumfang, Familienanamnese und Blutdruck
+ * ergänzen das redaktionelle Fragenset scorefrei oder als klar dokumentierten
+ * Körpermarker.
  *
  * Frage-Schema:
  *   {
@@ -162,22 +162,34 @@ const DIMENSIONS = [
         ],
       },
       {
-        id: 'familienwissen', // F-1.3 «Familiäre Krankheitsgeschichte»
+        // Scorefreie Familienanamnese: steuert Signale und Empfehlungen.
+        id: 'familie_hk',
+        text: copy.get('questionnaire.question.familie_hk.text'),
+        help:
+          copy.get('questionnaire.question.familie_hk.help'),
+        type: 'single',
+        options: [
+          { value: 'ja', label: copy.get('questionnaire.question.familie_hk.option.ja')},
+          { value: 'nein', label: copy.get('questionnaire.question.familie_hk.option.nein')},
+          { value: 'teilweise', label: copy.get('questionnaire.question.familie_hk.option.teilweise')},
+          { value: 'weiss_nicht', label: copy.get('questionnaire.question.familie_hk.option.weiss_nicht')},
+        ],
+      },
+      {
+        id: 'familienwissen', // F-1.3 «Kenntnis passender Vorsorge»
         text: copy.get('questionnaire.question.familienwissen.text'),
         helpTitle: copy.get('questionnaire.question.familienwissen.help_title'),
         help:
           copy.get('questionnaire.question.familienwissen.help'),
         type: 'single',
         options: [
-          { value: 'sehr_gut', label: copy.get('questionnaire.question.familienwissen.option.sehr_gut')},
-          { value: 'gut', label: copy.get('questionnaire.question.familienwissen.option.gut')},
+          { value: 'ja', label: copy.get('questionnaire.question.familienwissen.option.ja')},
           { value: 'teilweise', label: copy.get('questionnaire.question.familienwissen.option.teilweise')},
-          { value: 'wenig', label: copy.get('questionnaire.question.familienwissen.option.wenig')},
-          { value: 'gar_nicht', label: copy.get('questionnaire.question.familienwissen.option.gar_nicht')},
+          { value: 'nein', label: copy.get('questionnaire.question.familienwissen.option.nein')},
         ],
       },
       {
-        id: 'vorsorge', // F-1.4 «Regelmässige Vorsorgeuntersuchung» – ohne Score-Einfluss (Ø)
+        id: 'vorsorge', // F-1.4 «Persönliche Risikoeinschätzung» – ohne Score-Einfluss (Ø)
         text:
           copy.get('questionnaire.question.vorsorge.text'),
         helpTitle: copy.get('questionnaire.question.vorsorge.help_title'),
@@ -185,8 +197,10 @@ const DIMENSIONS = [
           copy.get('questionnaire.question.vorsorge.help'),
         type: 'single',
         options: [
-          { value: 'ja', label: copy.get('questionnaire.question.vorsorge.option.ja')},
+          { value: 'aktuell', label: copy.get('questionnaire.question.vorsorge.option.aktuell')},
+          { value: 'aelter_unsicher', label: copy.get('questionnaire.question.vorsorge.option.aelter_unsicher')},
           { value: 'nein', label: copy.get('questionnaire.question.vorsorge.option.nein')},
+          { value: 'weiss_nicht', label: copy.get('questionnaire.question.vorsorge.option.weiss_nicht')},
         ],
       },
       {
@@ -235,22 +249,7 @@ const DIMENSIONS = [
         ],
       },
       {
-        // Nicht im finalen Fragenset enthalten – bleibt unverändert.
-        // Fliesst NICHT in den Score ein, nur als Risikosignal/Hinweis.
-        id: 'familie_hk',
-        text: copy.get('questionnaire.question.familie_hk.text'),
-        help:
-          copy.get('questionnaire.question.familie_hk.help'),
-        type: 'single',
-        options: [
-          { value: 'nein', label: copy.get('questionnaire.question.familie_hk.option.nein')},
-          { value: 'ja', label: copy.get('questionnaire.question.familie_hk.option.ja')},
-          { value: 'weiss_nicht', label: copy.get('questionnaire.question.familie_hk.option.weiss_nicht')},
-        ],
-      },
-      {
-        // Nicht im finalen Fragenset enthalten – bleibt unverändert.
-        // Fliesst NICHT in den Score ein, nur als Risikosignal/Hinweis.
+        // Scorefreier medizinischer Kontext: steuert Signale und Empfehlungen.
         id: 'bluthochdruck',
         text: copy.get('questionnaire.question.bluthochdruck.text'),
         help:
