@@ -1308,6 +1308,60 @@
       "comment": "Keine pauschale Gewichtsabnahme oder Diagnose aus Einzelwerten; durch Marketing und Medizin freigeben."
     },
     {
+      "id": "recommendation.lever.lv_koerperprofil.detail.personalized",
+      "section": "Handlungsfelder",
+      "context": "Persönliche Messwert-Einordnung und sicherer nächster Schritt für das Körperprofil-Haupthandlungsfeld",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "{{personalAssessment}} {{nextStep}}",
+      "requiredTerms": [
+        "{{personalAssessment}}",
+        "{{nextStep}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Integriert die bisher separate Metrikbox direkt in das sichtbare Handlungsfeld."
+    },
+    {
+      "id": "recommendation.body_context.fitness",
+      "section": "Empfehlungsdarstellung",
+      "context": "Zusatzsatz in der ersten ohnehin ausgelösten passenden Fitness-Empfehlung bei auffälligem Körperprofil",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Die hier bereits erkennbare Bewegungs- oder Kraftkomponente ist zusätzlich für Stoffwechsel und Körperzusammensetzung relevant. Gesundheitliche Vorteile entstehen auch dann, wenn sich Gewicht oder Taillenumfang nur langsam verändern.",
+      "reviewStatus": "needs-review",
+      "comment": "WHtR/BMI erzeugen keine Fitnessempfehlung; der Satz ergänzt nur ein unabhängig erkanntes Fitness-Handlungsfeld."
+    },
+    {
+      "id": "recommendation.body_context.ernaehrung",
+      "section": "Empfehlungsdarstellung",
+      "context": "Zusatzsatz in der ersten ohnehin ausgelösten passenden Ernährungs-Empfehlung bei auffälligem Körperprofil",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Der hier bereits erkennbare Ernährungshebel kann zusätzlich Stoffwechselwerte und eine günstige Körperzusammensetzung unterstützen. Der Körperwert allein sagt jedoch nicht, dass Sie sich generell falsch ernähren.",
+      "reviewStatus": "needs-review",
+      "comment": "Nicht stigmatisierend; nur bei einem unabhängig aus Antworten abgeleiteten Ernährungshebel."
+    },
+    {
+      "id": "recommendation.body_context.schlaf",
+      "section": "Empfehlungsdarstellung",
+      "context": "Zusatzsatz in der ersten ohnehin ausgelösten Schlaf-Empfehlung bei auffälligem Körperprofil",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Das hier bereits erkennbare Schlafthema kann auch für Erholung, Appetit- und Gewichtsregulation relevant sein. Ein auffälliger Körperwert beweist aber weder eine Schlafstörung noch eine bestimmte Ursache.",
+      "reviewStatus": "needs-review",
+      "comment": "Keine Schlafapnoe- oder Kausalitätsbehauptung; nur bei unabhängig erkanntem Schlaf-Handlungsfeld."
+    },
+    {
+      "id": "recommendation.body_context.mental",
+      "section": "Empfehlungsdarstellung",
+      "context": "Zusatzsatz in der ersten ohnehin ausgelösten passenden Mental-Empfehlung bei auffälligem Körperprofil",
+      "kind": "detail",
+      "reviewers": "Marketing, Medizin",
+      "text": "Der hier bereits erkennbare Umgang mit Belastung oder Selbstfürsorge kann nachhaltige Gesundheitsveränderungen erleichtern. Er ist keine direkte Behandlung des Körperwerts, und der Wert erlaubt keine Aussage über Ihre psychische Gesundheit.",
+      "reviewStatus": "needs-review",
+      "comment": "Keine Kausalität, Schuldzuweisung oder Mental-Score-Änderung aus Körpermassen."
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "section": "Handlungsfelder",
       "context": "Handlungsfeld lv_rauchstopp in der Dimension einfluss, Kurzlabel",
@@ -4298,6 +4352,36 @@
       "comment": "Verhindert die falsche Behauptung eines erhöhten Taillenumfangs, wenn kein Messwert vorliegt."
     },
     {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist_muscular",
+      "section": "Dimensionsdetails",
+      "context": "BMI-Hinweis ab BMI 35 bei vorhandenem Taillenumfang und vorsichtig erkanntem Kraftsportkontext",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihre Angaben sprechen zugleich für häufiges Krafttraining und gute Kraftleistungen. Muskelmasse kann den BMI mit beeinflussen; die Kurztests messen die Körperzusammensetzung aber nicht. Der Taillenumfang von {{waist}} cm und das Verhältnis {{whtr}} werden angezeigt, bei einem BMI ab 35 jedoch nicht zusätzlich gescort. Lassen Sie die widersprüchlichen Marker deshalb fachlich einordnen.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}",
+        "{{waist}}",
+        "{{whtr}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Krafttraining und Testwerte sind nur Kontext, kein Muskelmassen-Nachweis und keine Score-Ausnahme."
+    },
+    {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist_muscular",
+      "section": "Dimensionsdetails",
+      "context": "BMI-Fallback ohne Taillenumfang und mit vorsichtig erkanntem Kraftsportkontext",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Ihr BMI beträgt {{bmi}} und liegt damit im Bereich «{{bmiClassLabel}}». Ihre Angaben sprechen zugleich für häufiges Krafttraining und gute Kraftleistungen. Muskelmasse kann den BMI mit beeinflussen; die Kurztests beweisen die Körperzusammensetzung jedoch nicht. Da kein Taillenumfang vorliegt, bleibt die Fettverteilung ungeklärt. Messen Sie deshalb die Taille korrekt und lassen Sie deutlich erhöhte oder widersprüchliche Werte fachlich einordnen.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Kein automatisches Neutralisieren des BMI durch Fitnessproxies; fordert zusätzliche Messung und Einordnung."
+    },
+    {
       "id": "recommendation.source.swissheart_blutfette.label",
       "section": "Quellenlabels",
       "context": "Sichtbares Label der Fachquelle swissheart_blutfette",
@@ -4589,6 +4673,48 @@
       "text": "Körperzusammensetzung",
       "reviewStatus": "",
       "comment": ""
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_whtr",
+      "section": "Spezial-Empfehlungen",
+      "context": "Kardiovaskulärer Vorsorge-Check, persönlicher WHtR-Risikofaktor",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "Taille-Grösse-Verhältnis {{whtr}} ({{waistStatusLabel}})",
+      "requiredTerms": [
+        "{{whtr}}",
+        "{{waistStatusLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Macht den tatsächlichen Screeningmarker im Mehrfaktorenmuster sichtbar; keine Diagnose."
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi",
+      "section": "Spezial-Empfehlungen",
+      "context": "Kardiovaskulärer Vorsorge-Check, persönlicher BMI-Fallback-Risikofaktor",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}}; Fettverteilung nicht ausreichend geklärt)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "BMI als weniger spezifischer Fallbackmarker, ohne Adipositasdiagnose."
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi_muscular",
+      "section": "Spezial-Empfehlungen",
+      "context": "Kardiovaskulärer Vorsorge-Check, BMI-Fallback bei vorsichtig erkanntem Kraftsportkontext",
+      "kind": "template",
+      "reviewers": "Marketing, Medizin",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}}; durch Muskelmasse möglicherweise mit beeinflusst und fachlich zu klären)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "comment": "Die mögliche Muskelmasse ändert weder Score noch Mustergewicht; nur vorsichtige Interpretation."
     },
     {
       "id": "recommendation.special.act_kardio.risk_factor.long_sitting",

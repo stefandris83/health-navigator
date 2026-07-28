@@ -178,11 +178,44 @@ Ausgabe hat normalerweise eine Nachkommastelle; unmittelbar unter einer
 Klassengrenze bleiben zur widerspruchsfreien Darstellung bei Bedarf weitere
 Stellen sichtbar.
 
+Der BMI unterscheidet Fett- und Muskelmasse nicht. Der Check erkennt deshalb einen
+vorsichtigen möglichen Muskelmassen-Kontext, wenn gleichzeitig mindestens drei
+Krafttrainingstage, das WHO-Bewegungsziel und mindestens ein auswertbarer starker
+Kraft-Kurztest vorliegen und kein ausgefüllter auswertbarer Krafttest darunter
+liegt. Dieser Vertrag verändert **weder Norm, Score, Signalstärke noch die
+WHtR-Priorität**. Er wählt nur eine präzisere Formulierung und fordert bei deutlich
+erhöhten oder widersprüchlichen Markern weiterhin die fachliche Einordnung. Die
+Kurztests sind kein Verfahren zur Messung von Fett- oder Muskelmasse.
+
 ### 5.3 Scorefreie medizinische Angaben
 
 Vorsorgeverhalten, bekannte familiäre Erkrankungen und Bluthochdruck sind keine regulären Minuspunkte. Sie können stattdessen medizinische Signale, sichtbare Haupthandlungsfelder und Empfehlungen auslösen. So bleibt der 0–100-Wert eine Standortbestimmung und gibt sich nicht als klinischer Risikorechner aus. Insbesondere bleibt ein Einflussfaktoren-Score von 100 möglich, während die getrennte Sicherheitslogik trotzdem eine noch offene Familien- oder Vorsorgeabklärung anzeigt.
 
 Untergewicht wird ebenfalls separat als medizinischer Klärungshinweis behandelt. Untergewicht und ein auffälliges Körperprofil erhalten in «Grösste Handlungsfelder» eine vorsichtige Summary-Einordnung, aber aus BMI oder Taillenumfang allein bewusst keinen standardisierten 4-Wochen-Therapieplan.
+
+### 5.4 Integration des Körperprofils in Empfehlungen
+
+Die frühere separate blaue Zeile mit BMI, Taillenumfang und WHtR wurde aus dem
+Dimensionskopf entfernt. Die Rechenwerte bleiben im Ergebnisobjekt verfügbar;
+bei einem Körpersignal werden sie entscheidungsnah verwendet:
+
+1. Erreicht ein Mehrfaktorenmuster die Schwelle für den kardiovaskulären
+   Vorsorge-Check, nennt dessen Begründung den persönlichen WHtR- beziehungsweise
+   BMI-Wert samt Einordnung. Der ausführliche Körperprofil-Hinweis und der
+   gleichnamige Kurzlistenhebel werden dann beide dedupliziert.
+2. Ohne abdeckenden Vorsorge-Check bleibt das persönliche `summaryOnly`-
+   Handlungsfeld `lv_koerperprofil` mit Messwert, Einordnung und sicherem nächsten
+   Schritt sichtbar. Aus dem Einzelmarker entsteht kein pauschaler Gewichts- oder
+   Therapieplan.
+3. Besteht in Fitness, Ernährung, Schlaf oder Mentalem bereits eine passende
+   Empfehlung, erhält höchstens die erste davon einen kurzen Körperprofil-Bezug.
+   Das erklärt einen möglichen zusätzlichen Nutzen, ohne Kausalität zu behaupten.
+   Der Körpermarker allein erzeugt dort keine Empfehlung, kein Defizit und keinen
+   Punkteabzug.
+
+Damit wird zentrale Fettverteilung als dimensionsübergreifend relevanter Kontext
+sichtbar, ohne aus WHtR oder BMI abzuleiten, eine Person bewege sich zu wenig,
+ernähre sich schlecht, schlafe schlecht oder sei psychisch belastet.
 
 ## 6. Dimension 2: Körperliche Fitness
 
@@ -507,12 +540,20 @@ Das kardiovaskuläre Muster dient ausschliesslich dazu, bei mehreren zusammenkom
 | Blutdruck unbekannt | +0,5 |
 | aktuelles Rauchen | +2 |
 | Körperprofil mit Signalstärke `mittel` (inklusive BMI-Fallback) | +1,5 |
+| Körperprofil mit Signalstärke `tief` (WHtR 0,50 bis < 0,60) | +0,5 |
 | 9 Stunden oder mehr Sitzen | +1 |
 | sehr niedrige Aktivität | +1 |
 | Ernährungsscore < 45 | +1 |
 | höchste Alkoholfrequenz | +1 |
 
 Ab einem Musterwert von 3 kann der kardiovaskuläre Vorsorge-Check als zentraler Hebel erscheinen.
+
+Ist das Körperprofil Teil des Musters, erscheint in der Begründung nicht nur der
+generische Begriff, sondern der persönliche WHtR- oder BMI-Wert samt sichtbarer
+Kategorie. Ein isolierter Körpermarker reicht mit +0,5 beziehungsweise +1,5 nicht
+für den Vorsorge-Check; er wird erst zusammen mit weiteren erhobenen Faktoren zum
+Muster. Eine mögliche hohe Muskelmasse wird beim BMI sprachlich kenntlich gemacht,
+aber nicht als rechnerischer Rabatt behandelt.
 
 Die breite Familienfrage zählt bewusst **nicht** als zwei Punkte in diesem Muster: Sie umfasst neben Herz-Kreislauf-Erkrankungen auch Diabetes und andere erbliche Erkrankungen. Eine Ja-Antwort bleibt ein eigenes medizinisches Signal und löst weiterhin die fachlich passende Familien-/Vorsorgeempfehlung aus.
 
@@ -558,7 +599,7 @@ Die Auswahl folgt vereinfacht dieser Reihenfolge:
 4. Deduplizierung gleicher Themen und abgedeckter Empfehlungen;
 5. normalerweise höchstens ein Schritt pro Dimension, ausser ein fachlich gerechtfertigter zweiter Hebel; mehr als zwei Schritte derselben Dimension sind ausgeschlossen.
 
-Die Kurzliste «Grösste Handlungsfelder» verwendet dieselben Lever-Regeln. Ein zweiter Hebel derselben Dimension bleibt dort ab Priorität 8 oder als eigenständiger scorefreier beziehungsweise `summaryOnly`-Klärungshinweis sichtbar; mehr als zwei werden nie gewählt. Dadurch kann ein medizinischer Kardio-Check neben Rauchstopp bestehen, während zum Beispiel Familienrisiko und Untergewicht bei einem freien Platz ebenfalls gemeinsam sichtbar bleiben. Familienrisiko und fehlende Risikoeinschätzung werden bei gemeinsamem Auftreten über die spezifischere Familienkarte gebündelt.
+Die Kurzliste «Grösste Handlungsfelder» verwendet dieselben Lever-Regeln. Ein zweiter Hebel derselben Dimension bleibt dort ab Priorität 8 oder als eigenständiger scorefreier beziehungsweise `summaryOnly`-Klärungshinweis sichtbar; mehr als zwei werden nie gewählt. Dadurch kann ein medizinischer Kardio-Check neben Rauchstopp bestehen, während zum Beispiel Familienrisiko und Untergewicht bei einem freien Platz ebenfalls gemeinsam sichtbar bleiben. Der Kardio-Hebel absorbiert ein bereits in seiner Begründung genanntes Körperprofil; Familienrisiko und fehlende Risikoeinschätzung werden bei gemeinsamem Auftreten über die spezifischere Familienkarte gebündelt.
 
 Eine bewusst dokumentierte Ausnahme sind `lv_untergewicht` und `lv_koerperprofil`: Sie erscheinen als `summaryOnly`, weil die vorhandenen Messwerte eine sichere Einordnung, aber ohne Verlauf, Beschwerden und Ursachen keinen pauschalen Therapie- oder 4-Wochen-Plan erlauben. Falls nur solche Hinweise vorliegen, erklärt ein eigener Klärungszustand den fehlenden standardisierten Plan; der allgemeine Leerzustand «kein Handlungsfeld» wird nicht verwendet. Der ausführliche Signalhinweis bleibt im Dimensionsdetail erhalten. Scorefreie medizinische Hebel erhalten in der Übersicht zudem einen neutralen Markenpunkt statt einer irreführenden grünen Scorefarbe.
 

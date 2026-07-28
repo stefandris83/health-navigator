@@ -52,6 +52,15 @@
       "sourceContractHash": "2bcdfe330624df5a9ec4d288657d93d2f864d5d9433527ec0e75c08617ffa087"
     },
     {
+      "id": "ui.recommendation.label.body_context",
+      "text": "Lien supplémentaire avec votre profil corporel :",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "e651ddbe805d69198e94fac9a0c27d574df2234c3d1cdaf06c962a17c9b8e47e"
+    },
+    {
       "id": "ui.hero.dimension.einfluss.nominative",
       "text": "Vos facteurs d’influence",
       "requiredTerms": [],
@@ -627,42 +636,6 @@
       "translationState": "translated",
       "reviewComment": "",
       "sourceContractHash": "3cca03dfe09ff75e096ffe90a07c6f710c420b5baf8d7ff6c0ddbb891107049a"
-    },
-    {
-      "id": "ui.metrics.bmi",
-      "text": "IMC {{bmi}} ({{bmiClassLabel}})",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "d5969abebef269a4f02783af3a7649a907e703649fa7786d792361e1d19109d9"
-    },
-    {
-      "id": "ui.metrics.waist",
-      "text": "Tour de taille {{waist}} cm · rapport tour de taille/taille {{whtr}} ({{waistStatusLabel}})",
-      "requiredTerms": [
-        "{{waist}}",
-        "{{whtr}}",
-        "{{waistStatusLabel}}"
-      ],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "2caa463f1e741eec80fdb44c39280b8a13b05c8bb02aad28e3f8ce86a74bd52e"
-    },
-    {
-      "id": "ui.metrics.line",
-      "text": "Votre évaluation personnelle : {{metrics}}.",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "4946ae750c610111e65a722ce87bb3b2f6ed44ed90ae06df683cbe9729b295b4"
-    },
-    {
-      "id": "ui.metrics.separator",
-      "text": " · ",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "e096f6820e7e78c62f53a9e1f28a4abd84347c3b77ab471a99a444cbb7398b81"
     },
     {
       "id": "ui.urgent.title",

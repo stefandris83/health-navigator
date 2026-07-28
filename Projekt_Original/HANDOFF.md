@@ -23,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'206 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'213 Texten;
 - Artefakt-Check: erfolgreich;
-- 182 von 182 Einzeltests erfolgreich;
+- 185 von 185 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -52,7 +52,9 @@ Exporte werden nicht als Website ausgeliefert.
 
 Der aktuelle Änderungssatz ersetzt die früheren geschlechtsspezifischen absoluten
 Taillenschwellen durch das geschlechtsneutrale Taille-Grösse-Verhältnis, vereinheitlicht
-Score, Signal, Empfehlung und Ergebnistext und aktualisiert alle vier Sprachen,
+Score, Signal, Empfehlung und Ergebnistext, integriert das Körperprofil ohne separate
+blaue Metrikbox entscheidungsnah in die Empfehlungen und behandelt einen möglichen
+Muskelmassen-Kontext des BMI defensiv. Aktualisiert sind alle vier Sprachen,
 Regressionstests, Quellen, Marketing-Exporte sowie die Scoring-Dokumentation. Bereits
 veröffentlichte Illustrationen, Fitnessreferenzen und das App-Icon bleiben erhalten.
 
@@ -145,6 +147,18 @@ Empfehlungen sind deshalb bewusst zwei getrennte Systeme.
 - Untergewicht und ein auffälliges Körperprofil werden in «Grösste Handlungsfelder»
   sichtbar, erzeugen aus Einzelmessungen aber bewusst keinen pauschalen Therapieplan.
   Ein eigener Klärungszustand erklärt den fehlenden 4-Wochen-Plan widerspruchsfrei.
+- BMI, Taillenumfang und WHtR stehen nicht mehr in einer separaten blauen Box im
+  Dimensionskopf. Der persönliche Körpermarker erscheint stattdessen im
+  Körperprofil-Handlungsfeld oder konkret im ausgelösten kardiovaskulären
+  Vorsorge-Check; der bereits abgedeckte Signalhinweis wird dedupliziert.
+- Ein ungünstiger Körpermarker kann bei der ersten ohnehin ausgelösten passenden
+  Empfehlung in Fitness, Ernährung, Schlaf oder Mentalem einen kurzen Zusatzbezug
+  erhalten. Er erzeugt in diesen Dimensionen selbst keine Empfehlung, kein Defizit
+  und keinen Scoreabzug.
+- Häufiges Krafttraining, erreichtes Bewegungsziel und gute auswertbare Krafttests
+  wählen bei einem BMI-Signal nur eine vorsichtige Muskelmassen-Textvariante. Die
+  Tests messen keine Körperzusammensetzung; Score, Signal und Abklärungsbedarf bleiben
+  deshalb unverändert.
 - Eine grüne Erfolgsmeldung erscheint nicht allein aufgrund einer positiven Einzelantwort,
   wenn der Dimensionsscore nur «Ausbaufähig» ist.
 - Allgemeine positive Einordnungen und grüne Detailtexte wurden sprachlich entdoppelt.
@@ -200,6 +214,9 @@ Familienwissen, Rauchen, Alkohol, Social Media und Körperzusammensetzung.
   angezeigt und nicht zusätzlich gescort.
 - WHtR < 0,40 wird nicht über das höchste Band hinaus belohnt; bei gleichzeitigem
   Untergewicht bleibt der Körperbaustein neutral und das Untergewichtssignal separat.
+- Im heuristischen kardiovaskulären Muster zählt ein Körperprofil mit Signalstärke
+  `tief` +0,5 und mit `mittel` +1,5. Erreicht das Gesamtmuster die Schwelle 3,
+  nennt der Vorsorge-Check den persönlichen WHtR-/BMI-Wert samt Einordnung.
 - Vorsorge, bekannte Familienerkrankungen und Bluthochdruck sind scorefrei, können
   aber wichtige medizinische Signale, Haupthandlungsfelder und Empfehlungen auslösen.
 
@@ -322,8 +339,10 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
   2,0 g/kg/Tag nur als konditionaler Spielraum etwa bei hoher Belastung,
   Energiedefizit oder zunehmendem Alter. Minderjährige und medizinische Kontexte
   werden defensiv behandelt.
-- Taillenumfang und der daraus berechnete WHtR werden persönlich und auf zwei
-  Dezimalstellen eingeordnet; der Wert erscheint nicht als pauschal grüne Quick-Win-Box.
+- Taillenumfang und der daraus berechnete WHtR werden persönlich und normalerweise
+  auf zwei Dezimalstellen eingeordnet; nahe einer Grenze bleiben zusätzliche Stellen
+  sichtbar. Der Wert erscheint entscheidungsnah im Handlungsfeld oder Vorsorge-Check
+  statt als separate blaue Metrikbox oder pauschal grüne Quick-Win-Box.
 - Quellen, Grenzen und offene medizinische Entscheide stehen in `docs/QUELLEN.md`
   und `docs/GO_LIVE_CHECKLIST.md`.
 
@@ -334,7 +353,7 @@ Das Empfehlungssystem ist bewusst vom numerischen Score getrennt.
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'206 IDs.
+- Aktuell je Sprache 1'213 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -506,16 +525,16 @@ Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'206 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'213 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
-| `node tests/integration.test.js` | 75/75 |
+| `node tests/integration.test.js` | 78/78 |
 | `node tests/robustness.test.js` | 24/24 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 182/182 Tests erfolgreich.**
+**Gesamt aktuell: 185/185 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
@@ -593,6 +612,10 @@ Die vollständige Liste steht in `docs/GO_LIVE_CHECKLIST.md`. Besonders wichtig:
   Untergewichts- und Körperprofil-Hebel in DE/EN/FR/IT sowie ihrer Prioritäten.
   Besonders prüfen: Lp(a) nur konditional bei tatsächlich früher
   Herz-Kreislauf-Familiengeschichte und ApoB nur als individuelle Zusatzfrage.
+- Product-, Marketing- und Medizin-Freigabe der entscheidungsnahen Körperprofil-
+  Integration: persönliche WHtR-/BMI-Nennung im Kardio-Check, Zusatzbezug nur bei
+  ohnehin ausgelösten Empfehlungen, +0,5/+1,5 im heuristischen Muster sowie der
+  vorsichtige Muskelmassen-Kontext ohne Score-Rabatt.
 - Freigabe des geschlechtsneutralen WHtR-Körpermodells, besonders für Werte unter
   0,40, für 16-/17-Jährige, nahe 0,50/0,60, bei BMI ≥ 35 und für ausgeschlossene
   Kontexte wie Schwangerschaft oder Essstörungen.

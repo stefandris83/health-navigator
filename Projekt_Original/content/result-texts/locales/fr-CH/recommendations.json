@@ -1055,6 +1055,54 @@
       "sourceContractHash": "9546a39b435523cccbe72b0efaeb1d0d2a2e7825b58f6cafc9432d9fd1aeed4d"
     },
     {
+      "id": "recommendation.lever.lv_koerperprofil.detail.personalized",
+      "text": "{{personalAssessment}} {{nextStep}}",
+      "requiredTerms": [
+        "{{personalAssessment}}",
+        "{{nextStep}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a6385fe1fd2f564b33f3ab47306914ca978d66caca5a839cae66d3c359ecc915"
+    },
+    {
+      "id": "recommendation.body_context.fitness",
+      "text": "La composante de mouvement ou de force déjà identifiée ici est également pertinente pour le métabolisme et la composition corporelle. Des bénéfices pour la santé peuvent apparaître même si le poids ou le tour de taille n’évoluent que lentement.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "82048ec4108beb448c80291ac280b26a94ad5f36bdf0bcc14896a9161a259bf5"
+    },
+    {
+      "id": "recommendation.body_context.ernaehrung",
+      "text": "Le levier nutritionnel déjà identifié ici peut également soutenir les paramètres métaboliques et une composition corporelle favorable. La mesure corporelle seule ne signifie toutefois pas que votre alimentation est globalement inadéquate.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "5c3eeb45ff27014bb86dc823c7d9fbff80439b930b4f8e3921dd5a818a751b7d"
+    },
+    {
+      "id": "recommendation.body_context.schlaf",
+      "text": "Le thème du sommeil déjà identifié ici peut également être pertinent pour la récupération ainsi que la régulation de l’appétit et du poids. Une mesure corporelle défavorable ne prouve toutefois ni un trouble du sommeil ni une cause particulière.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3135cda209ec93bf67b6a71ca14f57545171d7f17e969cce7d89c357ed83ecaf"
+    },
+    {
+      "id": "recommendation.body_context.mental",
+      "text": "La gestion du stress ou les soins personnels déjà identifiés ici peuvent faciliter des changements de santé durables. Ils ne constituent pas un traitement direct de la mesure corporelle, et cette mesure ne permet aucune conclusion sur votre santé psychique.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8e583d90086a96ec88b43d8a757fd1e7319e9236e9039c920f2acac88c36219a"
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "text": "Arrêter de fumer : votre principal levier individuel",
       "requiredTerms": [],
@@ -3446,6 +3494,32 @@
       "sourceContractHash": "f8abf7e3c8f90b03e4e4a0395a990cc729947d1db6df1738da47e5a9976bed73"
     },
     {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist_muscular",
+      "text": "Votre IMC est de {{bmi}} et se situe donc dans la catégorie « {{bmiClassLabel}} ». Vos réponses indiquent également un entraînement de force fréquent et de bonnes performances de force. La masse musculaire peut influencer l’IMC, mais les tests courts ne mesurent pas la composition corporelle. Le tour de taille de {{waist}} cm et le rapport de {{whtr}} sont affichés mais, à partir d’un IMC de 35, ne sont pas comptabilisés en plus. Faites donc évaluer ces indicateurs contradictoires par un professionnel de santé.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}",
+        "{{waist}}",
+        "{{whtr}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "e3b2c0cbc0739cf20356dde8b4db8162c0e1b630d4ea9cf9474642fbabcba8f2"
+    },
+    {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist_muscular",
+      "text": "Votre IMC est de {{bmi}} et se situe donc dans la catégorie « {{bmiClassLabel}} ». Vos réponses indiquent également un entraînement de force fréquent et de bonnes performances de force. La masse musculaire peut influencer l’IMC, mais les tests courts ne prouvent pas la composition corporelle. En l’absence de tour de taille, la répartition de la graisse reste incertaine. Mesurez correctement votre taille et faites évaluer par un professionnel de santé les valeurs nettement élevées ou contradictoires.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "b543e1df47f0f966c4d59699366611e3dfab797b5fc4c223310a9dbf9b441f52"
+    },
+    {
       "id": "recommendation.source.swissheart_blutfette.label",
       "text": "Fondation Suisse de Cardiologie : lipides sanguins et cholestérol",
       "requiredTerms": [],
@@ -3678,6 +3752,42 @@
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "sourceContractHash": "eb5715813246ac0056b93692a244b45bdd59b3ef99a4ba8160788366e0d8887e"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_whtr",
+      "text": "rapport tour de taille/taille {{whtr}} ({{waistStatusLabel}})",
+      "requiredTerms": [
+        "{{whtr}}",
+        "{{waistStatusLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "27d64ccc69c38b3faa690d8d044220dfe493cfa26aca5aa2ac1450cb59b9403e"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi",
+      "text": "IMC {{bmi}} ({{bmiClassLabel}} ; répartition de la graisse insuffisamment clarifiée)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d21b65cbd2dbe5cb7a709b3cc9a5c4cd09ac18d38661b424e4d455b3b02b3055"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi_muscular",
+      "text": "IMC {{bmi}} ({{bmiClassLabel}} ; possiblement influencé par la masse musculaire et à clarifier professionnellement)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "fbdb43b3aa42f7b1c29cdee8a8c0da355aa220a0f705a5ad648b9d1cb1cd8afc"
     },
     {
       "id": "recommendation.special.act_kardio.risk_factor.long_sitting",

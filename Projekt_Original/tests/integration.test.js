@@ -795,7 +795,7 @@ test('WHtR-Grenzen sind geschlechtsneutral und steuern Score sowie Signal gemein
 });
 
 test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Behauptung', () => {
-  const noWaist = { ...HEALTHY_ANSWERS, gewicht: 90 };
+  const noWaist = { ...HEALTHY_ANSWERS, gewicht: 90, krafttraining: 'tage2' };
   delete noWaist.bauchumfang;
   const noWaistResults = W.Scoring.computeResults(noWaist);
   assert.deepStrictEqual(noWaistResults.metrics.bodyRisk, {
@@ -852,6 +852,150 @@ test('Körperzusammensetzung unterscheidet Taillenumfang und BMI ohne falsche Be
   const highWaistCtx = W.Recommendations.buildContext(highWaist, highWaistResults);
   assert.ok(W.Recommendations.actionPlan(highWaistCtx).some((record) => record.id === 'act_kardio'),
     'Derselbe hohe Taillenvertrag fliesst auch ins Kardio-Muster ein');
+});
+
+test('Körpermarker werden in bestehende Empfehlungen integriert, ohne fremde Defizite zu erfinden', () => {
+  const base = {
+    ...HEALTHY_ANSWERS,
+    groesse: 170,
+    bauchumfang: 70,
+    sitzzeit: 'ue10',
+    alkohol: 'w4plus',
+    ausdauer_moderat: 'm30_75',
+    ausdauer_intensiv: 'keine',
+    zuckergetraenke: 'taeglich',
+    schlafdauer: 's5_6',
+    selbstfuersorge: 'eher_nicht',
+  };
+  const highWaist = { ...base, bauchumfang: 102 };
+  const baseCtx = W.Recommendations.buildContext(base, W.Scoring.computeResults(base));
+  const highResults = W.Scoring.computeResults(highWaist);
+  const highCtx = W.Recommendations.buildContext(highWaist, highResults);
+
+  ['fitness', 'ernaehrung', 'schlaf', 'mental'].forEach((dimension) => {
+    const baseRecords = W.Recommendations.recommendationsForDimension(dimension, baseCtx);
+    const highRecords = W.Recommendations.recommendationsForDimension(dimension, highCtx);
+    assert.deepStrictEqual(
+      highRecords.map((record) => record.id),
+      baseRecords.map((record) => record.id),
+      dimension + ': WHtR darf keine neue Empfehlung und kein künstliches Defizit erzeugen',
+    );
+    assert.strictEqual(
+      highRecords.filter((record) => record.bodyContext).length,
+      1,
+      dimension + ': genau die erste ohnehin ausgelöste Empfehlung erhält Körperprofil-Kontext',
+    );
+    assert.strictEqual(
+      baseRecords.some((record) => record.bodyContext),
+      false,
+      dimension + ': günstiger Körpermarker erzeugt keinen Zusatztext',
+    );
+  });
+
+  const plan = W.Recommendations.actionPlan(highCtx);
+  const kardio = plan.find((record) => record.id === 'act_kardio');
+  assert.ok(kardio, 'WHtR soll zusammen mit weiteren Risikofaktoren den Vorsorge-Check stützen');
+  assert.ok(kardio.why.includes(W.HealthLocale.formatRatio(102 / 170)), 'WHtR-Wert fehlt im Vorsorgegrund');
+  assert.ok(kardio.why.includes(W.ResultCopy.get('ui.metrics.waist_status.hoch')), 'WHtR-Einordnung fehlt');
+  assert.strictEqual(
+    W.Recommendations.dimensionInsights(highResults, plan).einfluss
+      .some((item) => item.id === 'koerperzusammensetzung'),
+    false,
+    'der Vorsorge-Check ersetzt die separate, halb doppelte Körperprofil-Box',
+  );
+  const leverIds = W.Recommendations.keyLevers(highCtx).map((record) => record.id);
+  assert.ok(leverIds.includes('lv_kardio'));
+  assert.ok(!leverIds.includes('lv_koerperprofil'),
+    'der Kardio-Hebel absorbiert das bereits erklärte Körperprofil auch in der Kurzliste');
+});
+
+test('Partielle Körpermetriken lassen den Kardio-Check mit sicherem Allgemeintext bestehen', () => {
+  const assertGenericBodyFactor = (metrics, label) => {
+    const answers = {
+      ...HEALTHY_ANSWERS,
+      sitzzeit: 'ue10',
+      alkohol: 'w4plus',
+    };
+    const results = W.Scoring.computeResults(answers);
+    const ctx = W.Recommendations.buildContext(answers, results);
+    ctx.m = metrics;
+    const kardio = W.Recommendations.actionPlan(ctx)
+      .find((record) => record.id === 'act_kardio');
+    assert.ok(kardio, label + ': unvollständige optionale Metriken dürfen die Karte nicht unterdrücken');
+    assert.ok(kardio.why.includes(
+      W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.body_composition'),
+    ), label + ': sicherer allgemeiner Körperprofiltext fehlt');
+  };
+
+  assertGenericBodyFactor({
+    bodyRisk: { source: 'whtr', norm: -2, severity: 'mittel' },
+    whtr: 0.62,
+  }, 'WHtR ohne Status');
+  assertGenericBodyFactor({
+    bodyRisk: { source: 'bmi', norm: -2, severity: 'mittel' },
+    bmi: 31.1,
+  }, 'BMI ohne Klasse');
+  [null, ''].forEach((whtr) => assertGenericBodyFactor({
+    bodyRisk: { source: 'whtr', norm: -2, severity: 'mittel' },
+    whtr,
+    waistStatus: 'hoch',
+  }, 'ungültiger WHtR ' + JSON.stringify(whtr)));
+  [null, ''].forEach((bmi) => assertGenericBodyFactor({
+    bodyRisk: { source: 'bmi', norm: -2, severity: 'mittel' },
+    bmi,
+    bmiClass: 'adipositas1',
+  }, 'ungültiger BMI ' + JSON.stringify(bmi)));
+
+  const answers = { ...HEALTHY_ANSWERS, sitzzeit: 'ue10', alkohol: 'w4plus' };
+  const ctx = W.Recommendations.buildContext(answers, W.Scoring.computeResults(answers));
+  ctx.m = {
+    bodyRisk: { source: 'bmi', norm: -2, severity: 'mittel' },
+    bmi: 31.2,
+    bmiRaw: 'abc',
+    bmiClass: 'adipositas1',
+  };
+  const kardio = W.Recommendations.actionPlan(ctx)
+    .find((record) => record.id === 'act_kardio');
+  assert.ok(kardio.why.includes(W.HealthLocale.formatBmi(31.2)),
+    'ungültiges bmiRaw muss auf den gültigen BMI zurückfallen');
+  assert.ok(!kardio.why.includes('abc'));
+});
+
+test('Möglicher Muskelmassen-Kontext präzisiert hohen BMI, neutralisiert ihn aber nicht', () => {
+  const muscular = { ...HEALTHY_ANSWERS, gewicht: 90 };
+  const nonMuscular = { ...muscular, krafttraining: 'tage2' };
+  const muscularResults = W.Scoring.computeResults(muscular);
+  const nonMuscularResults = W.Scoring.computeResults(nonMuscular);
+
+  assert.deepStrictEqual(muscularResults.metrics.bodyRisk, {
+    source: 'bmi', norm: -2, severity: 'mittel',
+  });
+  assert.strictEqual(muscularResults.metrics.possibleMuscularBmiContext, true);
+  assert.strictEqual(nonMuscularResults.metrics.possibleMuscularBmiContext, false);
+  assert.strictEqual(
+    muscularResults.scores.einfluss,
+    nonMuscularResults.scores.einfluss,
+    'der vorsichtige Muskelhinweis darf den Körperbaustein nicht umgewichten',
+  );
+
+  const insight = W.Recommendations.dimensionInsights(muscularResults, []).einfluss
+    .find((item) => item.id === 'koerperzusammensetzung');
+  assert.strictEqual(
+    insight.insight,
+    W.ResultCopy.format('recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist_muscular', {
+      bmi: W.HealthLocale.formatBmi(muscularResults.metrics.bmiRaw),
+      bmiClassLabel: W.ResultCopy.get(`ui.metrics.bmi_class.${muscularResults.metrics.bmiClass}`),
+    }),
+  );
+  assert.ok(insight.insight.includes('Kurztests beweisen die Körperzusammensetzung jedoch nicht'));
+
+  const riskAnswers = { ...muscular, sitzzeit: 'ue10', alkohol: 'w4plus' };
+  const riskResults = W.Scoring.computeResults(riskAnswers);
+  const kardio = W.Recommendations.actionPlan(
+    W.Recommendations.buildContext(riskAnswers, riskResults),
+  ).find((record) => record.id === 'act_kardio');
+  assert.ok(kardio);
+  assert.ok(kardio.why.includes('durch Muskelmasse möglicherweise mit beeinflusst'));
 });
 
 test('WHtR nutzt definierte Ausnahmen und den BMI-Fallback nachvollziehbar', () => {
@@ -932,9 +1076,10 @@ test('Alle eigenständigen Dimensionshinweise besitzen Relevanz, Schritt und Nut
 
   [underweight, body].forEach((item) => {
     assert.ok(item, 'eigenständiger Hinweis fehlt');
-    assert.deepStrictEqual(item.relatedRecommendationIds, []);
     assert.ok(item.title && item.insight && (item.action || item.clarify) && item.benefit);
   });
+  assert.deepStrictEqual(underweight.relatedRecommendationIds, []);
+  assert.deepStrictEqual(body.relatedRecommendationIds, ['act_kardio']);
 });
 
 test('Dimensionsdetails spiegeln jeden Top-Schritt in globaler Reihenfolge und ohne Duplikate', () => {
@@ -1158,8 +1303,13 @@ test('Insights: Kardio-Muster wird dimensionsübergreifend erkannt (Beispielfall
   assert.strictEqual(levers[0].id, 'lv_kardio', 'Stabile Hebel-ID des kardiovaskulären Musters');
   assert.strictEqual(levers[0].label, W.ResultCopy.get('recommendation.lever.lv_kardio.label'));
   const factors = [
-    'hypertension', 'smoking', 'body_composition',
-  ].map((id) => W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.' + id));
+    W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.hypertension'),
+    W.ResultCopy.get('recommendation.special.act_kardio.risk_factor.smoking'),
+    W.ResultCopy.format('recommendation.special.act_kardio.risk_factor.body_composition_bmi', {
+      bmi: W.HealthLocale.formatBmi(res.metrics.bmiRaw),
+      bmiClassLabel: W.ResultCopy.get(`ui.metrics.bmi_class.${res.metrics.bmiClass}`),
+    }),
+  ];
   const factorList = W.ResultCopy.format('recommendation.special.act_kardio.risk_factor_list.many', {
     preceding: factors.slice(0, -1).join(', '),
     last: factors[factors.length - 1],
@@ -1492,10 +1642,11 @@ test('Dimensionshinweise unterdrücken Plan-Doppelungen und behalten eigenständ
 
   ['bluthochdruck', 'blutdruck_unbekannt', 'vorsorge', 'rauchen', 'bewegungsmangel', 'socialmedia']
     .forEach((id) => assert.ok(!ids.includes(id), id + ' ist bereits durch den Aktionsplan abgedeckt'));
-  ['familie_hk', 'untergewicht', 'koerperzusammensetzung', 'stabilitaet', 'balance']
+  ['familie_hk', 'untergewicht', 'stabilitaet', 'balance']
     .forEach((id) => assert.ok(ids.includes(id), id + ' muss als eigenständiger Dimensionshinweis bleiben'));
+  assert.ok(!ids.includes('koerperzusammensetzung'),
+    'der Vorsorge-Check deckt den darin konkret genannten Körpermarker bereits ab');
   assert.ok(grouped.einfluss.find((item) => item.id === 'untergewicht').clarify);
-  assert.ok(grouped.einfluss.find((item) => item.id === 'koerperzusammensetzung').action);
   assert.ok(grouped.einfluss.some((item) => item.id === 'stabilitaet'));
   assert.ok(grouped.fitness.some((item) => item.id === 'balance'));
   assert.strictEqual(new Set(ids).size, ids.length, 'kein Hinweis wird dimensionsübergreifend doppelt ausgegeben');

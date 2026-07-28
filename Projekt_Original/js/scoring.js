@@ -255,6 +255,21 @@ function bodyNorm(m, a) {
   return (m && m.bodyRisk ? m.bodyRisk : bodyRiskStatus(m, a)).norm;
 }
 
+/* Ein BMI unterscheidet Fett- und Muskelmasse nicht. Häufiges Krafttraining
+ * zusammen mit auswertbar guter Kraftleistung ist deshalb nur ein vorsichtiger
+ * Kontext für die Ergebnisformulierung, niemals ein Ersatz für eine direkte
+ * Körperzusammensetzungs- oder kardiometabolische Beurteilung. Score, Signal
+ * und WHtR-Priorität werden durch diesen Hinweis bewusst nicht verändert. */
+function possibleMuscularBmiContext(a, fitnessTests) {
+  if (!a || a.krafttraining !== 'tage3plus') return false;
+  const activity = activityStatus(a);
+  const strengthTests = (fitnessTests || []).filter((test) =>
+    test.scorable && test.scoreComponent === 'musculature');
+  return activity.goalMet
+    && strengthTests.length > 0
+    && strengthTests.every((test) => test.norm >= 1);
+}
+
 /* ---------- Fitness-Kurztests → Norm (-2…+2) ----------
  * Alters- und – wo fachlich passend – geschlechtsspezifische Vergleichstabellen
  * (Herleitung und Grenzen in docs/QUELLEN.md). Die interne Tabellenwahl bleibt
@@ -732,6 +747,8 @@ function computeResults(answers) {
 
   const metrics = computeMetrics(cleanAnswers);
   const fitnessTests = evaluateFitnessTests(cleanAnswers);
+  metrics.possibleMuscularBmiContext = metrics.bodyRisk.source === 'bmi'
+    && possibleMuscularBmiContext(cleanAnswers, fitnessTests);
   const scores = {};
   const norms = {};
   const order = (typeof window !== 'undefined' && window.DIMENSION_ORDER) || ['einfluss', 'fitness', 'ernaehrung', 'schlaf', 'mental'];

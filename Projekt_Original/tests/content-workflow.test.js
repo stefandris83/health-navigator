@@ -188,6 +188,7 @@ test('Alle statischen und variantenbasierten Runtime-Text-IDs existieren', () =>
     lv_ausdauer: ['detail.stairs_difficult', 'detail.default'],
     lv_kraft: ['detail.age_50_plus', 'detail.under_50'],
     lv_protein: ['detail.age_60_plus', 'detail.under_60'],
+    lv_koerperprofil: ['detail', 'detail.personalized'],
   };
   leverIds.forEach((id) => {
     requireId(`recommendation.lever.${id}.label`);
@@ -249,6 +250,15 @@ test('Alle statischen und variantenbasierten Runtime-Text-IDs existieren', () =>
     'family_history', 'hypertension', 'smoking', 'body_composition',
     'long_sitting', 'low_activity', 'nutrition_pattern', 'alcohol',
   ].forEach((id) => requireId(`recommendation.special.act_kardio.risk_factor.${id}`));
+  [
+    'body_composition_whtr', 'body_composition_bmi', 'body_composition_bmi_muscular',
+  ].forEach((id) => requireId(`recommendation.special.act_kardio.risk_factor.${id}`));
+  [
+    'bmi_with_waist', 'bmi_with_waist_muscular',
+    'bmi_without_waist', 'bmi_without_waist_muscular',
+  ].forEach((id) => requireId(`recommendation.signal.koerperzusammensetzung.insight.${id}`));
+  ['fitness', 'ernaehrung', 'schlaf', 'mental']
+    .forEach((id) => requireId(`recommendation.body_context.${id}`));
   ['two', 'many'].forEach((id) => requireId(`recommendation.special.act_kardio.risk_factor_list.${id}`));
   [
     'assessment_needed', 'assessment_needed_family_history',

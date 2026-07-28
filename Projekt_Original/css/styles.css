@@ -465,10 +465,6 @@ code { background: var(--brand-100); padding: 1px 6px; border-radius: 6px; font-
 .rec-plan-badge { display: inline-block; max-width: 100%; margin: 0 0 4px; padding: 3px 8px;
   border: 1px solid var(--brand-100); border-radius: 2px; background: var(--brand-050);
   color: var(--brand-700); font-size: 12.5px; line-height: 1.4; font-weight: 700; }
-.metrics-summary { display: flex; align-items: flex-start; gap: 9px; margin: 10px 0 14px;
-  padding: 10px 12px; border: 1px solid var(--info-line); background: var(--info-bg);
-  color: var(--info-ink); font-size: 14px; }
-.metrics-summary svg { flex: none; width: 18px; height: 18px; margin-top: 1px; }
 .dimension-feedback { display: flex; gap: 12px; align-items: flex-start; border-radius: 2px;
   padding: 14px 16px; font-size: 14.5px; }
 .dimension-feedback svg { flex: none; }

@@ -1056,6 +1056,54 @@
       "sourceContractHash": "9546a39b435523cccbe72b0efaeb1d0d2a2e7825b58f6cafc9432d9fd1aeed4d"
     },
     {
+      "id": "recommendation.lever.lv_koerperprofil.detail.personalized",
+      "text": "{{personalAssessment}} {{nextStep}}",
+      "requiredTerms": [
+        "{{personalAssessment}}",
+        "{{nextStep}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "a6385fe1fd2f564b33f3ab47306914ca978d66caca5a839cae66d3c359ecc915"
+    },
+    {
+      "id": "recommendation.body_context.fitness",
+      "text": "The movement or strength component already identified here is also relevant to metabolism and body composition. Health benefits can occur even when weight or waist circumference changes only slowly.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "82048ec4108beb448c80291ac280b26a94ad5f36bdf0bcc14896a9161a259bf5"
+    },
+    {
+      "id": "recommendation.body_context.ernaehrung",
+      "text": "The nutrition lever already identified here can also support metabolic markers and a favourable body composition. However, the body measurement alone does not mean that your overall diet is poor.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "5c3eeb45ff27014bb86dc823c7d9fbff80439b930b4f8e3921dd5a818a751b7d"
+    },
+    {
+      "id": "recommendation.body_context.schlaf",
+      "text": "The sleep issue already identified here can also be relevant to recovery, appetite and weight regulation. However, an unfavourable body measurement proves neither a sleep disorder nor a particular cause.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3135cda209ec93bf67b6a71ca14f57545171d7f17e969cce7d89c357ed83ecaf"
+    },
+    {
+      "id": "recommendation.body_context.mental",
+      "text": "The approach to stress or self-care already identified here can make sustainable health changes easier. It is not a direct treatment for the body measurement, and the measurement says nothing about your mental health.",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "8e583d90086a96ec88b43d8a757fd1e7319e9236e9039c920f2acac88c36219a"
+    },
+    {
       "id": "recommendation.lever.lv_rauchstopp.label",
       "text": "Take steps to stop smoking – your single biggest lever",
       "requiredTerms": [],
@@ -3449,6 +3497,32 @@
       "sourceContractHash": "f8abf7e3c8f90b03e4e4a0395a990cc729947d1db6df1738da47e5a9976bed73"
     },
     {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist_muscular",
+      "text": "Your BMI is {{bmi}}, placing it in the ‘{{bmiClassLabel}}’ range. Your answers also indicate frequent strength training and good strength performance. Muscle mass can influence BMI, but the short tests do not measure body composition. The waist circumference of {{waist}} cm and the ratio of {{whtr}} are shown but, with a BMI of 35 or above, are not scored additionally. Have these conflicting markers assessed by a healthcare professional.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}",
+        "{{waist}}",
+        "{{whtr}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "e3b2c0cbc0739cf20356dde8b4db8162c0e1b630d4ea9cf9474642fbabcba8f2"
+    },
+    {
+      "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist_muscular",
+      "text": "Your BMI is {{bmi}}, placing it in the ‘{{bmiClassLabel}}’ range. Your answers also indicate frequent strength training and good strength performance. Muscle mass can influence BMI, but the short tests do not prove body composition. Because no waist circumference is available, fat distribution remains unclear. Measure your waist correctly and have markedly elevated or conflicting values assessed by a healthcare professional.",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "b543e1df47f0f966c4d59699366611e3dfab797b5fc4c223310a9dbf9b441f52"
+    },
+    {
       "id": "recommendation.source.swissheart_blutfette.label",
       "text": "Swiss Heart Foundation: blood lipids and cholesterol",
       "requiredTerms": [],
@@ -3681,6 +3755,42 @@
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "sourceContractHash": "eb5715813246ac0056b93692a244b45bdd59b3ef99a4ba8160788366e0d8887e"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_whtr",
+      "text": "waist-to-height ratio {{whtr}} ({{waistStatusLabel}})",
+      "requiredTerms": [
+        "{{whtr}}",
+        "{{waistStatusLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "27d64ccc69c38b3faa690d8d044220dfe493cfa26aca5aa2ac1450cb59b9403e"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}}; fat distribution not sufficiently clarified)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "d21b65cbd2dbe5cb7a709b3cc9a5c4cd09ac18d38661b424e4d455b3b02b3055"
+    },
+    {
+      "id": "recommendation.special.act_kardio.risk_factor.body_composition_bmi_muscular",
+      "text": "BMI {{bmi}} ({{bmiClassLabel}}; possibly influenced by muscle mass and requiring professional clarification)",
+      "requiredTerms": [
+        "{{bmi}}",
+        "{{bmiClassLabel}}"
+      ],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "fbdb43b3aa42f7b1c29cdee8a8c0da355aa220a0f705a5ad648b9d1cb1cd8afc"
     },
     {
       "id": "recommendation.special.act_kardio.risk_factor.long_sitting",

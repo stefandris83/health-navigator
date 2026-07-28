@@ -194,6 +194,12 @@ Ratio, WHtR):
   Erwachsenen ab 18 mit BMI ≥ 35 zeigt der Check den berechneten Quotienten nur
   transparent an; Klassifikation und Score beruhen auf dem BMI-Fallback. Ohne
   Taillenangabe gilt ebenfalls der BMI-Fallback.
+- NICE weist ausdrücklich darauf hin, den BMI bei Erwachsenen mit hoher
+  Muskelmasse vorsichtig zu interpretieren. Der Check verwendet häufiges
+  Krafttraining und gute auswertbare Krafttests deshalb ausschliesslich für eine
+  zurückhaltende Textvariante. Diese Angaben belegen keine hohe Muskelmasse und
+  neutralisieren weder BMI-Signal noch Score. Bei widersprüchlichen Markern wird
+  weiterhin eine professionelle Einordnung empfohlen.
 - Seit der NICE-Aktualisierung 2026 gelten dieselben WHtR-Bänder auch für Kinder
   und Jugendliche ab 5 Jahren. Deshalb verwendet der Check sie bei 16- und
   17-Jährigen; die BMI-35-Ausnahme beginnt technisch erst ab 18.
@@ -614,12 +620,22 @@ der beiden Grundlagen ausgewählt. Ein
 einziges zentrales Körperprofil steuert
 damit Score, Risikosignal, Ergebniszusammenfassung und kardiovaskuläres
 Antwortmuster; dieselbe Angabe kann nicht mehr je nach Ausgabekanal unterschiedlich
-eingeordnet werden. Diese Werte fliessen in die *Einflussfaktoren* ein und werden
-dort transparent ausgewiesen. Ein auffälliges Körperprofil sowie Untergewicht
-erhalten zusätzlich ein sichtbares Haupthandlungsfeld. Aus einem Einzelwert wird
-aber bewusst kein pauschaler Therapie- oder Gewichtsplan abgeleitet; ohne Verlauf,
-Beschwerden und Ursachen bleibt die ausführliche fachliche Einordnung im
-Dimensionsdetail.
+eingeordnet werden. Der ausgewählte Marker fliesst in die *Einflussfaktoren* ein;
+bei einem auffälligen Körperprofil wird der persönliche Wert transparent im
+passenden Ergebnisweg ausgewiesen. Ohne abdeckenden kardiovaskulären Vorsorge-Check
+bleibt dafür das sichtbare `summaryOnly`-Haupthandlungsfeld zum Körperprofil. Wird
+der Vorsorge-Check durch ein Mehrfaktorenmuster ausgelöst, übernimmt seine Begründung
+den persönlichen WHtR- beziehungsweise BMI-Faktor und das separate
+Körperprofil-Haupthandlungsfeld entfällt. Untergewicht bleibt als eigenständiger
+Klärungshinweis erhalten. Aus einem Einzelwert wird bewusst kein pauschaler
+Therapie- oder Gewichtsplan abgeleitet. Die frühere blaue Metrikbox im
+Dimensionskopf wurde entfernt. In Fitness, Ernährung, Schlaf und Mentalem ergänzt
+der Körpermarker nur die erste
+ohnehin ausgelöste fachlich passende Empfehlung. Er erzeugt dort keine neue
+Empfehlung und behauptet keine Ursache. Bewegung, Ernährung, Schlaf und nachhaltige
+Stressbewältigung können metabolische Gesundheit unterstützen; aus einem ungünstigen
+WHtR oder BMI folgt aber nicht, dass in all diesen Bereichen ein individuelles
+Defizit vorliegt.
 
 **Signale statt Malus.** Nicht direkt beeinflussbare bzw. rein medizinische Angaben –
 **familiäres Risiko**, fehlende Risikoeinschätzung und **Bluthochdruck** – ziehen
@@ -833,7 +849,8 @@ im Code verändert:
    akzeptieren. Diese Werte sind Trainingsorientierungen, keine Diagnosegrenzen.
 2. **Kardiovaskuläres Mustermodell:** Die Faktoren in `cvRiskPattern()` verwenden
    nachvollziehbare, aber heuristische Gewichte (z. B. 2 für Rauchen oder
-   Bluthochdruck, 1,5 für ein Körperprofil mittlerer Signalstärke und 1 für
+   Bluthochdruck, 1,5 für ein Körperprofil mittlerer Signalstärke, 0,5 für ein
+   Körperprofil tiefer Signalstärke und 1 für
    weitere Faktoren) sowie die Schwelle 3. Diese Werte benötigen eine benannte fachliche
    Eigentümerschaft, Versionierung und explizite medizinische Freigabe; sie sind
    kein validierter klinischer Risikoscore.
