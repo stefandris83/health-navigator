@@ -84,14 +84,18 @@ Punkte stehen im Code-Review und werden hier nicht dupliziert.
   Fitness-Kurztests als Rohwerte sichtbar, aber ohne Referenzstufe, Score-Einfluss
   oder automatische Empfehlung; die Standard-Liegestütz-Einordnung beginnt bei
   Frauen ab 18 und bei Männern ab 20.
-- [ ] Referenzmodell der Körperzusammensetzung freigeben: absolute
-  Taillenumfangsschwellen für Erwachsene versus einheitliches Taille-Grösse-Verhältnis,
-  insbesondere für 16- und 17-Jährige sowie nahe den Grenzen 0,50 und 0,60.
+- [x] Referenzmodell technisch vereinheitlichen: Bei Taille und Grösse wird für alle
+  Geschlechter WHtR verwendet (0,40/0,50/0,60); alte absolute Zentimetergrenzen
+  sind aus Score, Signal und Ergebnistext entfernt. Bei Erwachsenen mit BMI ≥ 35
+  gilt trotz Taillenangabe der BMI; ohne Taillenangabe ist der BMI ebenfalls der
+  Fallback.
+- [ ] Medizinische und Product-Freigabe des WHtR-Vertrags einholen: besonders
+  Bewertung unter 0,40, 16-/17-Jährige, Grenzen 0,50 und 0,60, BMI-35-Ausnahme,
+  Schwangerschaft sowie Kontexte mit Essstörungen oder veränderter Körpergrösse.
 - [x] Score-, Signal- und Kardio-Vertrag der Körperzusammensetzung vereinheitlichen:
-  Ein zentrales Körperprofil priorisiert bei Frau/Mann den Taillenumfang, bei
-  intersex/anderer Angabe das Taille-Grösse-Verhältnis und verwendet den BMI nur
-  ohne passende Taillenreferenz. Die medizinische Freigabe der Schwellen bleibt
-  davon getrennt offen.
+  Ein zentrales Körperprofil priorisiert geschlechtsübergreifend WHtR und verwendet
+  den BMI in zwei getrennten Fällen: bei Erwachsenen ab BMI 35 sowie bei fehlender
+  Taillenangabe. Die medizinische Freigabe der Schwellen bleibt davon getrennt offen.
 - [x] Liegestütz-Protokoll vereinheitlichen: Frauen und Männer führen denselben
   Standard-Liegestütz von den Zehen aus; die frühere weibliche Knie-Referenz ist
   vollständig aus Scoring und Nutzerführung entfernt.

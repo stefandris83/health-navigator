@@ -277,11 +277,11 @@
     },
     {
       "id": "questionnaire.question.bauchumfang.help",
-      "text": "After breathing out normally, measure approximately halfway between your lowest palpable rib and the top of your hip bone. Abdominal fat is metabolically active, and the ratio of waist circumference to height is often more informative than weight alone. If you do not know the value, simply leave the field blank.",
+      "text": "After breathing out normally, measure approximately halfway between your lowest palpable rib and the top of your hip bone. Abdominal fat is metabolically active, and the waist-to-height ratio complements BMI as a practical marker of central fat distribution. If you do not know the value or are pregnant, simply leave the field blank.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "81bf6b6777552f457583ce435fe7c4fd1a93da89e0ead06854b9438204bdb10c"
+      "sourceContractHash": "60f5c7c0be953522b5aa787fb683b526d7456792a6f4248beadead4a0dfebbd4"
     },
     {
       "id": "questionnaire.question.bauchumfang.placeholder",

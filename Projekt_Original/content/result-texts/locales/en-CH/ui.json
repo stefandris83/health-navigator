@@ -597,27 +597,36 @@
     },
     {
       "id": "ui.metrics.waist_status.normal",
-      "text": "within the normal range",
+      "text": "below 0.50",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "ee24dec9d30748488a98d7fe3d66ea857161a6390f2b2f8c5ff33ac4766ad476"
+      "sourceContractHash": "5623f52aafd1f67697c2ca295d528def9d7cf22d7d05bd5ee69103579db3f151"
     },
     {
       "id": "ui.metrics.waist_status.erhoeht",
-      "text": "within the elevated range",
+      "text": "in the elevated range from 0.50 to below 0.60",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "776213d020eb30c1ab8d3c8090cd943e8c2eada56e3e2260120c58f5995f2de0"
+      "sourceContractHash": "f6e07a1d56df76b559a05813ab20bbdf630098453da1a02ebf268d804e7d179b"
     },
     {
       "id": "ui.metrics.waist_status.hoch",
-      "text": "within the clearly elevated range",
+      "text": "in the clearly elevated range from 0.60",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "db1006110495a3204c75cacdf574eff9d55406742f12166b2289fde4d83495f8"
+      "sourceContractHash": "f4dd60ecbc9822aaf4c0bcd2abc530799c94d7e6da5a8ececc94ea99e44d042b"
+    },
+    {
+      "id": "ui.metrics.waist_status.nicht_bewertet",
+      "text": "not additionally assessed when BMI is 35 or above",
+      "requiredTerms": [],
+      "reviewStatus": "needs-review",
+      "translationState": "translated",
+      "reviewComment": "",
+      "sourceContractHash": "3cca03dfe09ff75e096ffe90a07c6f710c420b5baf8d7ff6c0ddbb891107049a"
     },
     {
       "id": "ui.metrics.bmi",
@@ -629,11 +638,15 @@
     },
     {
       "id": "ui.metrics.waist",
-      "text": "Waist circumference {{waist}} cm ({{waistStatusLabel}})",
-      "requiredTerms": [],
+      "text": "Waist circumference {{waist}} cm · waist-to-height ratio {{whtr}} ({{waistStatusLabel}})",
+      "requiredTerms": [
+        "{{waist}}",
+        "{{whtr}}",
+        "{{waistStatusLabel}}"
+      ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "4a1d772519f604b0829aa4d5033aeae5ad2938a2eef8866158d3ae21e753c4c6"
+      "sourceContractHash": "2caa463f1e741eec80fdb44c39280b8a13b05c8bb02aad28e3f8ce86a74bd52e"
     },
     {
       "id": "ui.metrics.line",

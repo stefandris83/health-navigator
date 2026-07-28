@@ -469,19 +469,19 @@
     },
     {
       "id": "sources.waist.title",
-      "text": "Graisse abdominale et tour de taille",
+      "text": "Graisse abdominale et rapport tour de taille/taille",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "fd8065f9842f61de374b21eaa1fe6671c10d3303c7c5858a120ce0535c657658"
+      "sourceContractHash": "cef87cb359094750982be77cc0d473a8c6d757f6f9b1dca93a654e345a45640a"
     },
     {
       "id": "sources.waist.reference",
-      "text": "Seuils OMS/IDF du tour de taille ·",
+      "text": "Classification NICE du rapport tour de taille/taille ·",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "da9615b40429099fffafb3b5b51f3f7034cc1b15f40adef80004afbe84e83df2"
+      "sourceContractHash": "e3a94c629bbdfdfd90e89b0b7971736836dd0f07b89770d9bf7205a25cd39e47"
     },
     {
       "id": "sources.waist.link_who",
@@ -501,35 +501,35 @@
     },
     {
       "id": "sources.waist.point.1",
-      "text": "Plage normale : moins de 94 cm chez les hommes, moins de 80 cm chez les femmes.",
+      "text": "Calcul : tour de taille divisé par la taille ; les deux valeurs doivent être exprimées dans la même unité.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "5c1ea27d9c4a9429db40c91409fff1f7c4c6b98d86230d30176e6438b94e8816"
+      "sourceContractHash": "d4f40219cd03ca16dabdde9b141d87068d432a7847166ca5a43450304e3eed1f"
     },
     {
       "id": "sources.waist.point.2",
-      "text": "Plage de référence élevée : de 94 à moins de 102 cm chez les hommes, de 80 à moins de 88 cm chez les femmes.",
+      "text": "De 0,40 à moins de 0,50 : plage favorable. Les valeurs inférieures à 0,40 ne sont pas valorisées comme « encore meilleures » ; une éventuelle insuffisance pondérale est évaluée séparément.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "567b1b38e5477c87123d00a922129e071515e8322cc7d1f2934ce92db19f6d31"
+      "sourceContractHash": "ca68237501517f9339940a6199b06ce35d79905d701c52ec8c1d643102f7541b"
     },
     {
       "id": "sources.waist.point.3",
-      "text": "Plage de référence nettement élevée : ≥ 102 cm chez les hommes, ≥ 88 cm chez les femmes.",
+      "text": "De 0,50 à moins de 0,60 : adiposité centrale accrue. À partir de 0,60 : adiposité centrale élevée.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "cd10bfeac5f82eeba28f6dbf3a48d3e0edb3e5d53a103790cf1b8cba70c3f3da"
+      "sourceContractHash": "04a00a8cf03921e164911267e5264526b1fb3bf2c95dab5afb8b93f287ac679b"
     },
     {
       "id": "sources.waist.point.4",
-      "text": "L’IMC et le tour de taille sont des valeurs d’orientation complémentaires.",
+      "text": "Dans le score, le rapport tour de taille/taille remplace les anciens seuils en centimètres selon le sexe. Chez les adultes dont l’IMC est égal ou supérieur à 35, l’IMC reste la base d’évaluation même si le tour de taille est disponible; sans tour de taille, l’IMC sert également de valeur de repli. Ce rapport est un marqueur de dépistage, pas un diagnostic.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "90dd37008d853a31572219b22547424d3c8a1cefbf626dfac2aa13f9d0b74ceb"
+      "sourceContractHash": "0e64be731cf696c63c99e346c1d12493f3d74e782d87885611f5a262ebd94c9e"
     },
     {
       "id": "sources.card.7.number",

@@ -3,8 +3,8 @@
 Stand: Juli 2026 · Umfang: vollständiger Ordner `Projekt_Original`
 
 > **Leserhinweis zum aktuellen Stand:** Dieses Dokument ist chronologisch aufgebaut.
-> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 23: 1'205
-> lokalisierte Texte je Sprache und 181/181 erfolgreiche Tests. Kleinere Zahlen in
+> Der jüngste vollständig verifizierte Projektstand steht in Abschnitt 24: 1'206
+> lokalisierte Texte je Sprache und 182/182 erfolgreiche Tests. Kleinere Zahlen in
 > früheren Abschnitten dokumentieren damalige Zwischenstände und sind keine aktuellen
 > Bestandsangaben.
 
@@ -1160,3 +1160,54 @@ gesamte Fläche ohne transparente oder schwarze Ränder ausfüllt.
 Alle fünf Manifeste und beide HTML-Seiten verwenden weiterhin die bestehenden
 relativen Icon-Pfade. Die SVG-Sicherheitsprüfung, PNG-Dimensionsprüfung, lokale
 Serverdarstellung und die vollständigen 181 Regressionstests waren erfolgreich.
+
+## 24. Geschlechtsneutrales Taille-Grösse-Verhältnis im Körperprofil
+
+Der Check berechnet keine Taille-Hüfte-Ratio, weil kein Hüftumfang erhoben wird.
+Bei vorhandener Taille und Körpergrösse verwendet er stattdessen das
+Taille-Grösse-Verhältnis (WHtR) als gemeinsame Grundlage für Score, Signal,
+Ergebnistext und das kardiovaskuläre Antwortmuster. Die früheren absoluten
+geschlechtsspezifischen Zentimetergrenzen wurden ersetzt; dadurch gilt derselbe
+Vertrag in DE, EN, FR und IT sowie für alle Geschlechtsangaben.
+
+Die technische Normierung lautet: unter 0,40 und von 0,40 bis unter 0,50 grundsätzlich
++2, bei gleichzeitigem Untergewicht unter 0,40 jedoch 0; von 0,50 bis unter 0,60
+Norm 0 mit tiefem Signal; ab 0,60 Norm −2 mit mittlerem Signal und bestehendem
+50er-Deckel der Einflussdimension. Der Körperbaustein bleibt ein Siebtel der
+Einflussdimension beziehungsweise 2,86 % des Gesamtscores. WHtR wird nicht zusätzlich
+zu einem zweiten Taille- oder BMI-Malus gezählt. Bei Erwachsenen ab BMI 35 bleibt
+trotz vorhandener Taille der BMI die Bewertungsgrundlage; fehlt der Taillenumfang,
+ist der BMI ebenfalls der Fallback.
+
+Ein unabhängiger Review fand zwei relevante Rundungsrisiken. BMI- und WHtR-Grenzen
+verwenden deshalb ausschliesslich ungerundete Rechenwerte. Die sichtbare Ausgabe
+zeigt normalerweise eine beziehungsweise zwei Dezimalstellen; nur wenn die Rundung
+eine fachliche Grenze überschreiten würde, bleiben zusätzliche Stellen sichtbar.
+So erscheint beispielsweise 86/173 als 0.497 und nicht widersprüchlich als
+«0.50 (unter 0.50)». Die Dezimalzeichen sind in DE/EN Punkt und in FR/IT Komma.
+
+NICE NG246 und das WHO-Messprotokoll sind auf der öffentlichen Quellenseite
+verlinkt; die ergänzenden Meta-Analysen stehen in `QUELLEN.md` beziehungsweise
+`SCORING_MODELL.md`. README,
+Go-live-Checkliste, Handoff, alle vier Content-Kataloge, Runtime-Bundle, Manifeste,
+CSVs und Review-Übersichten entsprechen demselben Stand. Schwangerschaft und weitere
+Kontexte, in denen die einfache Messung nicht passend ist, bleiben als fachliche
+Freigabepunkte dokumentiert.
+
+### Verifikation und Grenzen
+
+Final erfolgreich: Content-Workflow 42/42, Integration 75/75, Robustheit 24/24,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **182/182
+Tests**. Alle vier Kataloge mit je 1'206 Texten bestanden `validate`; `check`
+bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
+aktuell. Grenzregressionen decken 0,40, 0,50, 0,60, Roh-BMI knapp unter 18,5, 25,
+30 und 35, 16-/17-Jährige, BMI-Fallback und DE/EN/FR/IT ab.
+
+Ein realer Browserlauf über den lokalen HTTP-Server prüfte den WHtR-Grenzfall
+86/173 in allen vier Sprachen bei 390 Pixeln Breite. Wert, Kategorie und
+Dezimalzeichen waren konsistent, es gab keinen horizontalen Überlauf und keine
+Warnungen oder Fehler in der Browser-Konsole. Der direkte `file://`-Aufruf wurde
+von der Sicherheitsrichtlinie des eingebetteten Browsers blockiert; dort belegt
+der grüne automatisierte Doppelklickvertrag weiterhin Asset- und Scriptreihenfolge,
+nicht jedoch einen interaktiven Browserlauf. Die medizinische und Product-Freigabe
+des neuen WHtR-Vertrags bleibt vor einem klinisch verantworteten Go-live offen.

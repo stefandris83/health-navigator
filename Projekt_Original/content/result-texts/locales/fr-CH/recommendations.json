@@ -1047,12 +1047,12 @@
     },
     {
       "id": "recommendation.lever.lv_koerperprofil.detail",
-      "text": "Un IMC ou un tour de taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.",
+      "text": "Un IMC ou un rapport tour de taille/taille élevé ne constitue pas un diagnostic. Évaluez le tour de taille, la taille, le poids et les paramètres métaboliques avec une professionnelle ou un professionnel de santé avant de décider de changements précis.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+      "sourceContractHash": "9546a39b435523cccbe72b0efaeb1d0d2a2e7825b58f6cafc9432d9fd1aeed4d"
     },
     {
       "id": "recommendation.lever.lv_rauchstopp.label",
@@ -3115,11 +3115,11 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight",
-      "text": "Le tour de taille et l’IMC décrivent différents aspects de la composition corporelle et se complètent pour évaluer le risque métabolique et cardiovasculaire. Ces deux valeurs sont des repères, et non un diagnostic.",
+      "text": "Le rapport tour de taille/taille et l’IMC décrivent différents aspects de la composition corporelle. Ce sont deux repères de dépistage, et non un diagnostic ni un calcul complet du risque cardiovasculaire.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e035069b045ebf525454d1c121826d6a6ba629e9dd98e839d029ec6292436e21"
+      "sourceContractHash": "28df13c1bcd8d0f91b4ac0b606e1cc77e567c19640ce8b891f6bf240a50f355c"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.action",
@@ -3411,27 +3411,28 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.with_waist",
-      "text": "Le tour de taille que vous avez indiqué est de {{waist}} cm et se situe {{waistStatusLabel}}. Cette valeur complète le poids et l’IMC, car la répartition des graisses est pertinente pour le risque métabolique et cardiovasculaire.",
+      "text": "Le tour de taille que vous avez indiqué est de {{waist}} cm. Il en résulte un rapport tour de taille/taille de {{whtr}}, qui se situe {{waistStatusLabel}}. Ce rapport est un marqueur de dépistage pratique de la répartition centrale des graisses, mais ne constitue pas un diagnostic.",
       "requiredTerms": [
         "{{waist}}",
+        "{{whtr}}",
         "{{waistStatusLabel}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f292264c2c92e23d7fa9e9f325be8a58436f528b17a44af5a0e8cd7e5a05a30a"
+      "sourceContractHash": "82f873156b1d06965108af2126b4649c81588aabd7e736e74c2dd4d92df8dce1"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist",
-      "text": "Votre IMC est de {{bmi}} et se situe donc dans la plage « {{bmiClassLabel}} ». Le tour de taille indiqué, de {{waist}} cm, se situe {{waistStatusLabel}} selon la référence utilisée. Ces deux valeurs décrivent des aspects différents et doivent être évaluées ensemble.",
+      "text": "Votre IMC est de {{bmi}} et se situe donc dans la plage « {{bmiClassLabel}} ». Chez les adultes dont l’IMC est égal ou supérieur à 35, le check utilise l’IMC comme base d’évaluation. Le tour de taille indiqué de {{waist}} cm et le rapport tour de taille/taille de {{whtr}} qui en résulte sont affichés, mais ne sont pas comptabilisés une seconde fois.",
       "requiredTerms": [
         "{{bmi}}",
         "{{bmiClassLabel}}",
         "{{waist}}",
-        "{{waistStatusLabel}}"
+        "{{whtr}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "18082df1fe3f75ea5c8d28a520f11eb4dc9cc2d208b89c9c3b3f7a34917d736d"
+      "sourceContractHash": "ae5a2d8b52b07fca92470e412bb22a08fd75fb0f3f8c11a59549210287fc8fad"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist",

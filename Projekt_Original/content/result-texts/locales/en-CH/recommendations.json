@@ -1048,12 +1048,12 @@
     },
     {
       "id": "recommendation.lever.lv_koerperprofil.detail",
-      "text": "An elevated BMI or waist circumference is not a diagnosis. Review waist circumference, weight and metabolic measurements together with a healthcare professional before deciding on specific changes.",
+      "text": "An elevated BMI or waist-to-height ratio is not a diagnosis. Review waist circumference, height, weight and metabolic measurements together with a healthcare professional before deciding on specific changes.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "98ef8fa6e41a05742be2a38a5a6d0b61099ba5beb803909114855e2aae579c69"
+      "sourceContractHash": "9546a39b435523cccbe72b0efaeb1d0d2a2e7825b58f6cafc9432d9fd1aeed4d"
     },
     {
       "id": "recommendation.lever.lv_rauchstopp.label",
@@ -3118,11 +3118,11 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight",
-      "text": "Waist circumference and BMI describe different aspects of body composition and complement each other when assessing metabolic and cardiovascular risk. Both values are guides, not a diagnosis.",
+      "text": "Waist-to-height ratio and BMI describe different aspects of body composition. Both are screening guides, not a diagnosis or a complete cardiovascular risk calculation.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e035069b045ebf525454d1c121826d6a6ba629e9dd98e839d029ec6292436e21"
+      "sourceContractHash": "28df13c1bcd8d0f91b4ac0b606e1cc77e567c19640ce8b891f6bf240a50f355c"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.action",
@@ -3414,27 +3414,28 @@
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.with_waist",
-      "text": "Your stated waist circumference is {{waist}} cm and is {{waistStatusLabel}}. The value complements weight and BMI because fat distribution is relevant to metabolic and cardiovascular risk.",
+      "text": "Your stated waist circumference is {{waist}} cm. This gives a waist-to-height ratio of {{whtr}}, which is {{waistStatusLabel}}. The ratio is a practical screening marker for central fat distribution, but it is not a diagnosis.",
       "requiredTerms": [
         "{{waist}}",
+        "{{whtr}}",
         "{{waistStatusLabel}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "f292264c2c92e23d7fa9e9f325be8a58436f528b17a44af5a0e8cd7e5a05a30a"
+      "sourceContractHash": "82f873156b1d06965108af2126b4649c81588aabd7e736e74c2dd4d92df8dce1"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_with_waist",
-      "text": "Your BMI is {{bmi}}, placing it in the “{{bmiClassLabel}}” range. Your stated waist circumference of {{waist}} cm is {{waistStatusLabel}} according to the reference used. The two values describe different aspects and should be assessed together.",
+      "text": "Your BMI is {{bmi}}, placing it in the “{{bmiClassLabel}}” range. For adults with a BMI of 35 or above, the check uses BMI as the assessment basis. The stated waist circumference of {{waist}} cm and the resulting waist-to-height ratio of {{whtr}} are shown, but are not scored additionally.",
       "requiredTerms": [
         "{{bmi}}",
         "{{bmiClassLabel}}",
         "{{waist}}",
-        "{{waistStatusLabel}}"
+        "{{whtr}}"
       ],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "18082df1fe3f75ea5c8d28a520f11eb4dc9cc2d208b89c9c3b3f7a34917d736d"
+      "sourceContractHash": "ae5a2d8b52b07fca92470e412bb22a08fd75fb0f3f8c11a59549210287fc8fad"
     },
     {
       "id": "recommendation.signal.koerperzusammensetzung.insight.bmi_without_waist",

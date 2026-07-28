@@ -135,6 +135,18 @@ const expectedBmiByLocale = {
   'fr-CH': '31,5',
   'it-CH': '31,5',
 };
+const expectedWhtrByLocale = {
+  'de-CH': '0.53',
+  'en-CH': '0.53',
+  'fr-CH': '0,53',
+  'it-CH': '0,53',
+};
+const expectedWhtrThresholdByLocale = {
+  'de-CH': '0.50',
+  'en-CH': '0.50',
+  'fr-CH': '0,50',
+  'it-CH': '0,50',
+};
 
 LOCALES.forEach((locale) => {
   const runtime = runtimes.get(locale);
@@ -183,6 +195,31 @@ LOCALES.forEach((locale) => {
     expectedBmiByLocale[locale],
     locale + ': BMI-Dezimaltrennzeichen'
   );
+  assert.strictEqual(
+    runtime.HealthLocale.formatRatio(90 / 170),
+    expectedWhtrByLocale[locale],
+    locale + ': WHtR-Dezimaltrennzeichen und Rundung'
+  );
+  assert.strictEqual(
+    runtime.HealthLocale.formatRatio(86 / 173),
+    ['fr-CH', 'it-CH'].includes(locale) ? '0,497' : '0.497',
+    locale + ': WHtR-Anzeige darf 0,50 nicht durch Rundung überschreiten'
+  );
+  assert.strictEqual(
+    runtime.HealthLocale.formatRatio(103 / 173),
+    ['fr-CH', 'it-CH'].includes(locale) ? '0,595' : '0.595',
+    locale + ': WHtR-Anzeige darf 0,60 nicht durch Rundung überschreiten'
+  );
+  assert.ok(
+    runtime.ResultCopy.get('ui.metrics.waist_status.erhoeht')
+      .includes(expectedWhtrThresholdByLocale[locale]),
+    locale + ': WHtR-Status und dynamischer Wert brauchen dasselbe Dezimalzeichen'
+  );
+  assert.strictEqual(
+    runtime.HealthLocale.formatBmi(34.96),
+    ['fr-CH', 'it-CH'].includes(locale) ? '34,96' : '34.96',
+    locale + ': BMI-Anzeige darf 35 nicht durch Rundung überschreiten'
+  );
   const bmiSignal = runtime.Recommendations.signalInsights({
     metrics: { bmi: 31.5, bmiClass: 'adipositas1', waist: null, waistStatus: null },
     signals: [{ id: 'koerperzusammensetzung', type: 'medizinisch', severity: 'mittel' }],
@@ -191,6 +228,22 @@ LOCALES.forEach((locale) => {
   assert.ok(
     bmiSignal.insight.includes(expectedBmiByLocale[locale]),
     locale + ': personalisierter BMI-Hinweis muss locale-gerecht formatiert sein'
+  );
+  const whtrSignal = runtime.Recommendations.signalInsights({
+    metrics: {
+      bmi: 21.8,
+      bmiClass: 'normal',
+      waist: 90,
+      whtr: 90 / 170,
+      waistStatus: 'erhoeht',
+      bodyRisk: { source: 'whtr', norm: 0, severity: 'tief' },
+    },
+    signals: [{ id: 'koerperzusammensetzung', type: 'lebensstil', severity: 'tief' }],
+  }, []).lifestyle[0];
+  assert.ok(whtrSignal, locale + ': WHtR-Signal erwartet');
+  assert.ok(
+    whtrSignal.insight.includes(expectedWhtrByLocale[locale]),
+    locale + ': personalisierter WHtR-Hinweis muss locale-gerecht formatiert sein'
   );
 });
 

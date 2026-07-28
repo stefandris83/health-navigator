@@ -277,11 +277,11 @@
     },
     {
       "id": "questionnaire.question.bauchumfang.help",
-      "text": "Misuri dopo una normale espirazione, all’incirca a metà tra la costola palpabile più bassa e il bordo superiore della cresta iliaca. Il grasso addominale è metabolicamente attivo: il rapporto tra vita e altezza è spesso più significativo del solo peso. Se non conosce il valore, lasci semplicemente vuoto il campo.",
+      "text": "Misuri dopo una normale espirazione, all’incirca a metà tra la costola palpabile più bassa e il bordo superiore della cresta iliaca. Il grasso addominale è metabolicamente attivo: il rapporto vita-altezza completa il BMI come pratico indicatore della distribuzione centrale del grasso. Se non conosce il valore o è in gravidanza, lasci semplicemente vuoto il campo.",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "81bf6b6777552f457583ce435fe7c4fd1a93da89e0ead06854b9438204bdb10c"
+      "sourceContractHash": "60f5c7c0be953522b5aa787fb683b526d7456792a6f4248beadead4a0dfebbd4"
     },
     {
       "id": "questionnaire.question.bauchumfang.placeholder",

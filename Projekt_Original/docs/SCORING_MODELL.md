@@ -118,26 +118,48 @@ Ein zentrales Profil wird für Score, Risikosignal und kardiovaskuläres Antwort
 
 Priorität der Datengrundlage:
 
-1. bei weiblich/männlich und vorhandenem Taillenumfang: geschlechtsspezifische Taillenschwellen;
-2. bei anderer/intersexueller Angabe und vorhandener Taille plus Grösse: Taille-Grösse-Verhältnis (WHtR);
-3. andernfalls: BMI als Fallback.
+1. bei Erwachsenen ab 18 mit BMI ≥ 35: BMI, auch wenn eine Taille vorliegt;
+2. andernfalls bei vorhandenem Taillenumfang und Körpergrösse:
+   geschlechtsneutrales Taille-Grösse-Verhältnis (WHtR);
+3. ohne Taillenangabe: BMI als Fallback.
 
-#### Taillenumfang
+Eine Taille-Hüfte-Ratio wird nicht berechnet, weil der Check keinen Hüftumfang
+erhebt. Der verwendete Quotient lautet:
 
-| Referenzgruppe | +2 | 0 | −2 |
-|---|---:|---:|---:|
-| männlich | < 94 cm | 94 bis < 102 cm | ≥ 102 cm |
-| weiblich | < 80 cm | 80 bis < 88 cm | ≥ 88 cm |
+\[
+WHtR=\frac{Taillenumfang\;(cm)}{Körpergrösse\;(cm)}
+\]
+
+Grenzentscheidungen erfolgen mit dem ungerundeten Wert. Die sichtbare Ausgabe hat
+locale-gerecht normalerweise zwei Dezimalstellen. Würde eine Rundung den Wert über
+0,40, 0,50 oder 0,60 heben, werden zusätzliche Stellen gezeigt, bis Anzeige und
+technisches Band übereinstimmen.
 
 #### Taille-Grösse-Verhältnis
 
 | WHtR | Norm |
 |---:|---:|
-| < 0,34 | 0 |
-| 0,34–0,45 | +2 |
-| > 0,45–0,51 | 0 |
-| > 0,51 bis < 0,60 | −1 |
+| < 0,40 | +2; bei gleichzeitigem BMI < 18,5 nur 0 und separates Untergewichtssignal |
+| 0,40 bis < 0,50 | +2 |
+| 0,50 bis < 0,60 | 0 |
 | ≥ 0,60 | −2 |
+
+Die Stufe 0,50 bis < 0,60 verändert den Score bereits: Der Körperbaustein fällt
+von 100 auf 50 Punkte. Da er ein Siebtel der Einflussdimension ausmacht, sinkt
+diese bei sonst optimalen Antworten von 100 auf 93 und der gleichgewichtete
+Gesamtscore um rund 1,4 Punkte. Ab 0,60 erhält der Körperbaustein −2; zusätzlich
+begrenzt der bestehende Schutzvertrag die Dimension «Einflussfaktoren» auf 50.
+Der Marker wird nicht parallel zu einem zweiten Taillen- oder BMI-Malus gezählt.
+
+Werte unter 0,40 werden nicht als «noch besser» als das höchste Scoreband behandelt.
+Ein gleichzeitig niedriger BMI verhindert dort eine positive Körperbewertung und
+löst unabhängig davon den bestehenden medizinischen Untergewichtshinweis aus.
+
+Für 16- und 17-Jährige verwendet der Check gemäss der NICE-Aktualisierung 2026
+dieselben WHtR-Bänder; die BMI-35-Ausnahme gilt im Code erst ab 18. Bei Erwachsenen
+mit BMI ≥ 35 wird WHtR zwar berechnet und angezeigt, aber weder klassifiziert noch
+zusätzlich gescort. In der Schwangerschaft soll der optionale Taillenumfang nicht
+verwendet werden; darauf weist die Messhilfe hin.
 
 #### BMI-Fallback
 
@@ -148,7 +170,13 @@ Priorität der Datengrundlage:
 | 25 bis < 30 | 0 |
 | ≥ 30 | −2 |
 
-Für die Signalstärke gelten beim zentralen Körperprofil die zugehörigen Referenzbänder: Bei Männern erzeugen 94 bis < 102 cm und bei Frauen 80 bis < 88 cm das Signal `tief`; ab 102 beziehungsweise 88 cm gilt `mittel`. Beim geschlechtsneutralen WHtR erzeugen 0,50 bis < 0,60 das Signal `tief` und Werte ab 0,60 `mittel`. Beim BMI-Fallback erzeugt BMI ≥ 30 das Signal `mittel`. Ein isolierter BMI von 25 bis unter 30 erzeugt ohne Tailleninformation kein Körpersignal.
+Für die Signalstärke erzeugt WHtR 0,50 bis < 0,60 das Signal `tief`, ab 0,60
+gilt `mittel`. Beim BMI-Fallback erzeugt BMI ≥ 30 das Signal `mittel`. Ein
+isolierter BMI von 25 bis unter 30 erzeugt ohne Tailleninformation kein Körpersignal.
+Alle BMI-Grenzen werden mit dem ungerundeten Rechenwert geprüft. Die sichtbare
+Ausgabe hat normalerweise eine Nachkommastelle; unmittelbar unter einer
+Klassengrenze bleiben zur widerspruchsfreien Darstellung bei Bedarf weitere
+Stellen sichtbar.
 
 ### 5.3 Scorefreie medizinische Angaben
 
@@ -456,7 +484,7 @@ Risikosignale sind ein separater Sicherheits- und Routingvertrag. Sie werden nic
 | Untergewicht | BMI < 18,5 | medizinisch, mittel |
 | Rauchen | gelegentlich oder regelmässig | Lebensstil, hoch |
 | Alkohol | höchste Frequenzstufe | Lebensstil, mittel |
-| Körperzusammensetzung | zentrales Körperprofil `erhöht` beziehungsweise `hoch`; beim BMI-Fallback BMI ≥ 30 | Lebensstil, tief beziehungsweise mittel |
+| Körperzusammensetzung | WHtR 0,50 bis < 0,60 beziehungsweise ≥ 0,60; beim BMI-Fallback BMI ≥ 30 | Lebensstil, tief beziehungsweise mittel |
 | Bewegungsmangel | moderate Aktivität < 30 Minuten, intensive Aktivität keine/< 30 Minuten und Krafttraining höchstens neutral | Lebensstil, hoch |
 | Keine Kraft | kein Krafttraining (−2), sofern nicht schon das kombinierte Bewegungsmangelsignal greift | Lebensstil, mittel |
 | Viel Sitzen | 9 Stunden oder mehr | Lebensstil, mittel |
@@ -598,7 +626,9 @@ Das Modell berücksichtigt Kondition und Muskulatur bereits mit zusammen 80 % de
 
 ### Körperzusammensetzung und Herz-Kreislauf
 
-- Zentrale Fettverteilung liefert über den BMI hinaus relevante Information. Das begründet die Priorität von Taille beziehungsweise WHtR vor dem BMI-Fallback. [Meta-Analyse aus 72 prospektiven Kohorten](https://pubmed.ncbi.nlm.nih.gov/32967840/)
+- Zentrale Fettverteilung liefert über den BMI hinaus relevante Information. Das
+  begründet die geschlechtsübergreifende WHtR-Priorität bei BMI < 35, ohne daraus
+  einen klinischen Risikorechner zu machen. [NICE NG246](https://www.nice.org.uk/guidance/ng246/chapter/Identifying-and-assessing-overweight-obesity-and-central-adiposity) · [Meta-Analyse aus 72 prospektiven Kohorten](https://pubmed.ncbi.nlm.nih.gov/32967840/)
 - Aktuelles Rauchen ist ein besonders starker und veränderbarer Risikofaktor. Das begründet den Gegencheck und die hohe Empfehlungspriorität. [Prospektive Evidenz zu Rauchen und Mortalität](https://www.nejm.org/doi/full/10.1056/NEJMsa1211128)
 - Klinische kardiovaskuläre Modelle kombinieren konkrete Messwerte wie Blutdruck und Lipide mit Alter, Geschlecht, Rauchen und Region. Einfache Ja/Nein-Antworten werden deshalb nicht als scheinpräziser klinischer Risikoscore ausgegeben. [SCORE2-Modell](https://pmc.ncbi.nlm.nih.gov/articles/PMC8248998/)
 
@@ -741,10 +771,10 @@ Belastbarkeit, Selbstwirksamkeit und Coping wirken bei −2 zusätzlich auf den 
 | Eingabe | Erlaubter Bereich | Score-/Signalrolle |
 |---|---:|---|
 | **Alter** (`alter`) | 16–119 Jahre | Kein eigener Score; bestimmt die zulässige Testreferenz und kann Empfehlungsprioritäten beeinflussen. |
-| **Biologisches Geschlecht** (`geschlecht`) | männlich / weiblich / intersex | Kein eigener Score; bestimmt Taillen- und geeignete Testreferenzen. |
-| **Grösse** (`groesse`) | 100–299 cm | Kein eigener Score; Bestandteil von BMI und gegebenenfalls WHtR. |
-| **Gewicht** (`gewicht`) | 30–399 kg | Kein eigener Score; Bestandteil des BMI-Fallbacks. |
-| **Bauchumfang** (`bauchumfang`, optional) | 40–250 cm | Liefert zusammen mit Geschlecht beziehungsweise Grösse die bevorzugte Körperzusammensetzung; deren Gewicht beträgt 14,29 % der Einflussfaktoren beziehungsweise 2,86 % gesamt. |
+| **Biologisches Geschlecht** (`geschlecht`) | männlich / weiblich / intersex | Kein eigener Score; bestimmt geeignete Fitness-Testreferenzen, nicht die WHtR-Grenzen. |
+| **Grösse** (`groesse`) | 100–299 cm | Kein eigener Score; Bestandteil von BMI und bei Taillenangabe des WHtR. |
+| **Gewicht** (`gewicht`) | 30–399 kg | Kein eigener Score; bestimmt BMI-Klasse, Untergewichtssignal und – bei fehlender Taille oder Erwachsenen ab BMI 35 – den BMI-Fallback. |
+| **Bauchumfang** (`bauchumfang`, optional) | 40–250 cm | Liefert mit der Körpergrösse das bevorzugte WHtR-Körperprofil. Bei Erwachsenen ab BMI 35 bleibt stattdessen trotz Taille der BMI scorewirksam; ohne Bauchumfang greift der BMI ebenfalls als Fallback. Gewicht: 14,29 % der Einflussfaktoren beziehungsweise 2,86 % gesamt. |
 | **Einbeinstand** (`einbeinstand`, optional) | 0–1'000 Sekunden | Nur mit unterstützter Referenz scorewirksam: 10 % Fitness / 2 % gesamt; ersetzt die Hälfte des Balanceblocks. |
 | **Liegestütze** (`liegestuetze`, optional) | 0–150 Wiederholungen | Bei allein scorebarem Muskeltest 20 % Fitness / 4 % gesamt; zusammen mit Wandsitz 10 % / 2 %. |
 | **Wandsitz** (`wandsitz`, optional) | 0–1'000 Sekunden | Bei allein scorebarem Muskeltest 20 % Fitness / 4 % gesamt; zusammen mit Liegestütz 10 % / 2 %. |

@@ -163,12 +163,17 @@ function bandNorm(v, t) {
 /* ---------- abgeleitete Kennzahlen ---------- */
 
 function computeMetrics(a) {
-  const m = { bmi: null, bmiClass: null, waist: null, whtr: null, waistStatus: null };
+  const m = {
+    bmi: null, bmiRaw: null, bmiClass: null, waist: null, whtr: null, waistStatus: null,
+  };
 
   const h = Number(a.groesse);
   const w = Number(a.gewicht);
   if (h > 0 && w > 0) {
     const bmi = w / Math.pow(h / 100, 2);
+    // Der Rohwert bleibt für sämtliche Grenzentscheidungen erhalten. `bmi`
+    // bleibt aus Kompatibilitätsgründen die bisherige Ein-Dezimal-Kennzahl.
+    m.bmiRaw = bmi;
     m.bmi = Math.round(bmi * 10) / 10;
     if (bmi < 18.5) m.bmiClass = 'untergewicht';
     else if (bmi < 25) m.bmiClass = 'normal';
@@ -183,10 +188,12 @@ function computeMetrics(a) {
     // Ungerundeter Wert für Grenzentscheidungen. Eine Rundung vor dem Vergleich
     // würde Werte knapp unter 0,50 beziehungsweise 0,60 falsch hochstufen.
     m.whtr = waist / h; // Taille-Grösse-Verhältnis
-    // Statusband: für Frau/Mann geschlechtsspezifische WHO-Umfangsschwellen,
-    // für «intersex/andere» das geschlechtsneutrale Taille-Grösse-Verhältnis.
-    if (a.geschlecht === 'maennlich') m.waistStatus = waist < 94 ? 'normal' : waist < 102 ? 'erhoeht' : 'hoch';
-    else if (a.geschlecht === 'weiblich') m.waistStatus = waist < 80 ? 'normal' : waist < 88 ? 'erhoeht' : 'hoch';
+    // NICE empfiehlt WHtR bis BMI < 35 geschlechtsübergreifend. Bei Erwachsenen
+    // mit BMI >= 35 wird der Quotient zwar transparent angezeigt, aber nicht als
+    // zusätzliche Risikoklasse verwendet, weil er dort wenig Zusatznutzen hat.
+    const age = Number(a.alter);
+    const adultOrUnknown = !Number.isFinite(age) || age >= 18;
+    if (adultOrUnknown && m.bmiClass === 'adipositas2') m.waistStatus = 'nicht_bewertet';
     else m.waistStatus = m.whtr < 0.5 ? 'normal' : m.whtr < 0.6 ? 'erhoeht' : 'hoch';
   }
   m.bodyRisk = bodyRiskStatus(m, a);
@@ -194,54 +201,37 @@ function computeMetrics(a) {
 }
 
 /* Körperzusammensetzung als Norm: bevorzugt Taille-Grösse-Verhältnis, sonst BMI. */
-function bmiNorm(bmi) {
+function bmiNorm(bmi, bmiClass) {
   if (bmi == null) return null;
+  if (bmiClass === 'untergewicht') return 0;
+  if (bmiClass === 'normal') return 2;
+  if (bmiClass === 'uebergewicht') return 0;
+  if (bmiClass === 'adipositas1' || bmiClass === 'adipositas2') return -2;
   if (bmi < 18.5) return 0;   // Untergewicht: nicht ideal, aber nicht kritisch
   if (bmi < 25) return 2;     // Normalbereich
   if (bmi < 30) return 0;     // Übergewicht
   return -2;                  // Adipositas
 }
-function whtrNorm(r) {
+function whtrNorm(r, bmiClass) {
   if (r == null) return null;
-  if (r < 0.34) return 0;
-  if (r <= 0.45) return 2;
-  if (r <= 0.51) return 0;
-  if (r < 0.6) return -1;
+  // Unter 0,40 wird nicht noch höher belohnt. Bei gleichzeitigem Untergewicht
+  // bleibt der Baustein neutral; das medizinische Untergewichtssignal ist separat.
+  if (r < 0.4) return bmiClass === 'untergewicht' ? 0 : 2;
+  if (r < 0.5) return 2;
+  if (r < 0.6) return 0;
   return -2;
 }
-/* Geschlechtsspezifische Taillenumfang-Norm (WHO-Schwellen), cm. */
-function waistNormBySex(waist, geschlecht) {
-  if (waist == null) return null;
-  if (geschlecht === 'maennlich') {
-    if (waist < 94) return 2;   // unauffällig
-    if (waist < 102) return 0;  // erhöht
-    return -2;                  // deutlich erhöht
-  }
-  if (geschlecht === 'weiblich') {
-    if (waist < 80) return 2;
-    if (waist < 88) return 0;
-    return -2;
-  }
-  return null; // intersex/andere → keine Sex-Referenztabelle
-}
 /* Körperzusammensetzung als Norm:
- *   Frau/Mann  → geschlechtsspezifischer Taillenumfang (WHO), sonst BMI
- *   intersex/andere → geschlechtsneutrales Taille-Grösse-Verhältnis, sonst BMI
+ *   Taille + Grösse → geschlechtsneutrales WHtR nach NICE
+ *   Erwachsene mit BMI >= 35 oder ohne Taille → BMI als Fallback
  */
 function bodyRiskStatus(m, a) {
   const metrics = m || {};
-  const bySex = waistNormBySex(metrics.waist, a && a.geschlecht);
-  if (bySex != null) {
-    return {
-      source: 'waist',
-      norm: bySex,
-      severity: metrics.waistStatus === 'hoch'
-        ? 'mittel'
-        : (metrics.waistStatus === 'erhoeht' ? 'tief' : null),
-    };
-  }
-  if (metrics.whtr != null) {
-    const whtr = whtrNorm(metrics.whtr);
+  const age = Number(a && a.alter);
+  const adultOrUnknown = !Number.isFinite(age) || age >= 18;
+  const adultBmiTooHighForWhtr = adultOrUnknown && metrics.bmiClass === 'adipositas2';
+  if (metrics.whtr != null && !adultBmiTooHighForWhtr) {
+    const whtr = whtrNorm(metrics.whtr, metrics.bmiClass);
     return {
       source: 'whtr',
       norm: whtr,
@@ -250,7 +240,10 @@ function bodyRiskStatus(m, a) {
         : (metrics.waistStatus === 'erhoeht' ? 'tief' : null),
     };
   }
-  const bmi = bmiNorm(metrics.bmi);
+  const bmi = bmiNorm(
+    metrics.bmiRaw == null ? metrics.bmi : metrics.bmiRaw,
+    metrics.bmiClass,
+  );
   return {
     source: 'bmi',
     norm: bmi,

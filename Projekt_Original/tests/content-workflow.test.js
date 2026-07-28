@@ -264,7 +264,8 @@ test('Alle statischen und variantenbasierten Runtime-Text-IDs existieren', () =>
   });
   ['untergewicht', 'normal', 'uebergewicht', 'adipositas1', 'adipositas2']
     .forEach((id) => requireId(`ui.metrics.bmi_class.${id}`));
-  ['normal', 'erhoeht', 'hoch'].forEach((id) => requireId(`ui.metrics.waist_status.${id}`));
+  ['normal', 'erhoeht', 'hoch', 'nicht_bewertet']
+    .forEach((id) => requireId(`ui.metrics.waist_status.${id}`));
   ['one', 'two', 'three', 'empty'].forEach((id) => {
     requireId(`ui.action_plan.heading.${id}`);
     requireId(`ui.coach_handoff.plan.${id}`);

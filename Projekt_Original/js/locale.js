@@ -130,7 +130,7 @@
     return localized[selected] || localized[DEFAULT_LOCALE] || null;
   }
 
-  // Der Health Check zeigt den BMI mit hoechstens einer Nachkommastelle. Die
+  // Allgemeine Dezimalwerte erscheinen mit höchstens einer Nachkommastelle. Die
   // Schweizer Sprachfassungen verwenden dabei ihre locale-gerechten
   // Dezimalzeichen: Punkt in de-CH/en-CH, Komma in fr-CH/it-CH.
   function formatDecimal(value) {
@@ -139,6 +139,43 @@
     const rounded = Math.round(number * 10) / 10;
     const formatted = String(rounded);
     return ['fr-CH', 'it-CH'].includes(current) ? formatted.replace('.', ',') : formatted;
+  }
+
+  function thresholdBand(value, boundaries) {
+    return boundaries.findIndex((boundary) => value < boundary);
+  }
+
+  function formatThresholdAware(value, defaultDigits, boundaries) {
+    const number = Number(value);
+    if (!Number.isFinite(number)) return String(value == null ? '' : value);
+    const originalBand = thresholdBand(number, boundaries);
+    let formatted = number.toFixed(defaultDigits);
+    let matched = false;
+    for (let digits = defaultDigits; digits <= 10; digits += 1) {
+      const candidate = number.toFixed(digits);
+      if (thresholdBand(Number(candidate), boundaries) === originalBand) {
+        formatted = candidate;
+        matched = true;
+        break;
+      }
+    }
+    if (!matched) formatted = String(number);
+    return ['fr-CH', 'it-CH'].includes(current) ? formatted.replace('.', ',') : formatted;
+  }
+
+  // Der BMI wird normalerweise auf eine Nachkommastelle ausgegeben. Direkt
+  // unter einer Klassengrenze bleiben bei Bedarf weitere Stellen sichtbar,
+  // damit Anzeige und fachliche Einordnung einander nicht widersprechen.
+  function formatBmi(value) {
+    return formatThresholdAware(value, 1, [18.5, 25, 30, 35]);
+  }
+
+  // Quotienten wie WHtR werden normalerweise auf zwei Nachkommastellen
+  // angezeigt. Würde die Rundung eine fachliche Grenze überschreiten, bleiben
+  // so viele weitere Stellen sichtbar, bis Anzeige und Rohwert im selben Band
+  // liegen. Die Grenzentscheidung selbst verwendet weiterhin den Rohwert.
+  function formatRatio(value) {
+    return formatThresholdAware(value, 2, [0.4, 0.5, 0.6]);
   }
 
   function urlForLocale(locale, href) {
@@ -219,6 +256,8 @@
     useRuntimeFallback,
     externalHref,
     formatDecimal,
+    formatBmi,
+    formatRatio,
     urlForLocale,
     consumeReturnView,
     syncDocument,
