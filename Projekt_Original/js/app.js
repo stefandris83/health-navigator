@@ -360,7 +360,7 @@
     return `<div class="question" data-qwrap="${escAttr(q.id)}">
       <div class="q-text">${q.text}</div>
       ${q.note ? `<div class="q-note" id="${escAttr(noteId)}">${q.note}</div>` : ''}
-      ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle">${I.info} ${escHtml(q.helpTitle || copy.get('ui.quiz.help_fallback'))}</summary><div class="q-help">${String(q.help).replace(/\n/g, '<br>')}</div></details>` : ''}
+      ${q.help ? `<details class="q-help-wrap"><summary class="q-help-toggle"><span class="q-help-toggle-icon" aria-hidden="true">${I.info}</span><span class="q-help-toggle-label">${escHtml(q.helpTitle || copy.get('ui.quiz.help_fallback'))}</span></summary><div class="q-help">${String(q.help).replace(/\n/g, '<br>')}</div></details>` : ''}
       ${body}
       ${questionIllustrationHTML(q)}
     </div>`;
