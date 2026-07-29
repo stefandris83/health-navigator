@@ -9,10 +9,12 @@
 (function () {
   'use strict';
 
-  const STORAGE_SCHEMA = 3;
-  const PREVIOUS_STORAGE_SCHEMA = 2;
-  const HASH_SCHEMA = 2;
-  const PREVIOUS_HASH_SCHEMA = 1;
+  const STORAGE_SCHEMA = 4;
+  const PREVIOUS_STORAGE_SCHEMA = 3;
+  const LEGACY_STORAGE_SCHEMA = 2;
+  const HASH_SCHEMA = 3;
+  const PREVIOUS_HASH_SCHEMA = 2;
+  const LEGACY_HASH_SCHEMA = 1;
   const HASH_MAX_LENGTH = 32 * 1024;
   const FUTURE_TOLERANCE_MS = 5 * 60 * 1000;
   const SEMANTICALLY_CHANGED_ANSWER_IDS = Object.freeze([
@@ -31,15 +33,26 @@
   }
 
   /*
-   * Die drei Fragen haben trotz stabiler IDs eine neue Bedeutung erhalten.
-   * Frühere Werte dürfen deshalb nicht geraten oder auf ähnlich klingende
-   * Optionen umgedeutet werden. Bei alten Persistenzverträgen bleiben alle
-   * übrigen Antworten erhalten; nur diese drei müssen neu beantwortet werden.
+   * Version 3 führte die drei Vorsorgefragen mit neuen Bedeutungen ein. Bei
+   * noch älteren Verträgen bleiben alle übrigen Antworten erhalten; nur diese
+   * drei müssen neu beantwortet werden.
    */
   function withoutSemanticallyChangedAnswers(raw) {
     if (!isPlainObject(raw)) return {};
     const answers = Object.assign({}, raw);
     SEMANTICALLY_CHANGED_ANSWER_IDS.forEach((id) => { delete answers[id]; });
+    return answers;
+  }
+
+  /*
+   * Version 4 fasst «nicht mehr aktuell» mit «nein» zu einer klaren Antwort
+   * zusammen. Der alte Wert aelter_unsicher beschreibt genau diesen offenen
+   * Zustand und wird deshalb verlustfrei auf nein überführt.
+   */
+  function migrateRefinedPreventionAnswer(raw) {
+    if (!isPlainObject(raw)) return {};
+    const answers = Object.assign({}, raw);
+    if (answers.vorsorge === 'aelter_unsicher') answers.vorsorge = 'nein';
     return answers;
   }
 
@@ -71,19 +84,23 @@
     const ttlDays = effectiveTtlDays(options);
     const unversioned = data.v == null;
     const previous = data.v === PREVIOUS_STORAGE_SCHEMA;
+    const legacy = data.v === LEGACY_STORAGE_SCHEMA;
     const current = data.v === STORAGE_SCHEMA;
-    if (!unversioned && !previous && !current) return null;
+    if (!unversioned && !previous && !legacy && !current) return null;
     if (!unversioned && !validTimestamp(data.savedAt, now, ttlDays)) return null;
     const migrated = !current;
-    const rawAnswers = migrated
+    const requiresFreshPreventionAnswers = unversioned || legacy;
+    const rawAnswers = requiresFreshPreventionAnswers
       ? withoutSemanticallyChangedAnswers(data.answers)
-      : data.answers;
+      : migrateRefinedPreventionAnswer(data.answers);
 
     const dimensions = (typeof window !== 'undefined' && window.DIMENSIONS) || [];
     const total = dimensions.length || 1;
     const storedDimIndex = clampIndex(data.dimIndex, total);
     const influenceIndex = dimensions.findIndex((dimension) => dimension.id === 'einfluss');
-    const dimIndex = migrated && influenceIndex >= 0 ? influenceIndex : storedDimIndex;
+    const dimIndex = requiresFreshPreventionAnswers && influenceIndex >= 0
+      ? influenceIndex
+      : storedDimIndex;
     const maxReached = Math.max(
       dimIndex,
       storedDimIndex,
@@ -125,8 +142,9 @@
     const ttlDays = effectiveTtlDays(options);
     const unversioned = data.v == null;
     const previous = data.v === PREVIOUS_STORAGE_SCHEMA;
+    const legacy = data.v === LEGACY_STORAGE_SCHEMA;
     const current = data.v === STORAGE_SCHEMA;
-    if (!unversioned && !previous && !current) return null;
+    if (!unversioned && !previous && !legacy && !current) return null;
     if (!unversioned && !validTimestamp(data.savedAt, now, ttlDays)) return null;
     return {
       items: sanitizePlanItems(unversioned ? data : data.items),
@@ -162,6 +180,9 @@
       if (!isPlainObject(data) || !isPlainObject(data.a)) return null;
       if (data.v === HASH_SCHEMA) return sanitizeAnswers(data.a);
       if (data.v === PREVIOUS_HASH_SCHEMA) {
+        return sanitizeAnswers(migrateRefinedPreventionAnswer(data.a));
+      }
+      if (data.v === LEGACY_HASH_SCHEMA) {
         return sanitizeAnswers(withoutSemanticallyChangedAnswers(data.a));
       }
       return null;

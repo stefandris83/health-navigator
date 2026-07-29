@@ -13,19 +13,19 @@
 ## Freigabestand
 
 - Sprache: `de-CH`
-- Quellversion: `v1:08e156300354d46774f4f161b186342ab0cf72bfb4093a5ae3bd6e828a717d73`
-- Gesamtbestand: **1223 Texte**
-- Freigegeben: **0** · Offen: **1223**
+- Quellversion: `v1:53424b46c1243ee3e6505ed975f56a612b38e990c9f2c7b91045479aac9cf712`
+- Gesamtbestand: **1222 Texte**
+- Freigegeben: **0** · Offen: **1222**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
-| Nicht geprüft | 853 | Noch kein gemeinsamer Freigabestatus gesetzt |
+| Nicht geprüft | 852 | Noch kein gemeinsamer Freigabestatus gesetzt |
 | Prüfung erforderlich | 370 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1223 | 0 | 1223 |
+| Marketing | 1222 | 0 | 1222 |
 | Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
@@ -33,7 +33,7 @@
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
 | [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
@@ -48,15 +48,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (220 Texte)
+## 1. Fragebogen (219 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (220 Texte)
+### Fragebogen (219 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -763,7 +763,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder bekannte erblich bedingte Erkrankungen aufgetreten?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -796,7 +796,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Nein, soweit mir bekannt
+> Nein, soweit bekannt
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -807,7 +807,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Ich kenne die Familiengeschichte nur teilweise
+> Nur teilweise bekannt
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -829,7 +829,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
+> Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll sind?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -2332,7 +2332,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
+> Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell sinnvoll sind?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -2361,22 +2361,11 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Nicht geprüft
-- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
-
-**Aktueller Text**
-
-> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
-
-#### Antwortoption: Frage «Vorsorge» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Nicht geprüft
 - Technische ID: `questionnaire.question.vorsorge.option.aktuell`
 
 **Aktueller Text**
 
-> Ja, und die Einschätzung ist gemäss Fachperson aktuell
+> Ja, aktuell
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -2387,7 +2376,7 @@ Themen in diesem Bereich:
 
 **Aktueller Text**
 
-> Nein
+> Nein oder nicht mehr aktuell
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 

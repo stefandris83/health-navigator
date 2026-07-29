@@ -1270,19 +1270,22 @@ aufgetretenen Herz-Kreislauf-Erkrankungen als mögliche einmalige Bestimmung gen
 ob ApoB zusätzliche Information liefert, bleibt ausdrücklich vom individuellen
 Risikoprofil abhängig.
 
-Die stabilen technischen IDs haben teilweise eine neue Bedeutung. Storage-Schema 3
-und Ergebnislink-Schema 2 verhindern deshalb eine scheinpräzise Migration: Bei
-älteren Ständen bleiben alle anderen gültigen Angaben erhalten, während
-`familie_hk`, `familienwissen` und `vorsorge` entfernt und im Abschnitt
-«Einflussfaktoren» neu abgefragt werden. Die neue Dokumentation
+Die stabilen technischen IDs wurden mit dem aktuellen Antwortvertrag nochmals
+verfeinert. Storage-Schema 4 und Ergebnislink-Schema 3 führen die drei Fragen in
+der Reihenfolge Familiengeschichte, professionell geklärte Vorsorge und
+Vorsorgewissen. Stände mit Schema 3 beziehungsweise Hash 2 übernehmen die frühere
+offene Auswahl `aelter_unsicher` eindeutig als `nein`; bei älteren Ständen bleiben
+alle anderen gültigen Angaben erhalten, während `familie_hk`, `familienwissen` und
+`vorsorge` entfernt und im Abschnitt «Einflussfaktoren» neu abgefragt werden. Die
+Dokumentation
 `EMPFEHLUNGSLOGIK.md` beschreibt den vollständigen Weg von Antworten über Signale,
 Hebel, Prioritäten und Deduplizierung bis zu den sichtbaren Texten.
 
 ### Verifikation und Grenzen
 
-Final erfolgreich: Content-Workflow 42/42, Integration 82/82, Robustheit 24/24,
-UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **189/189
-Tests**. Alle vier Kataloge mit je 1'223 Texten bestanden `validate`; `check`
+Final erfolgreich: Content-Workflow 42/42, Integration 82/82, Robustheit 25/25,
+UI-Lifecycle 19/19, I18n-Static 18/18 und I18n-Runtime 4/4, insgesamt **190/190
+Tests**. Alle vier Kataloge mit je 1'222 Texten bestanden `validate`; `check`
 bestätigte Runtime-Bundle, vier CSVs, fünf Markdown-Übersichten und Manifeste als
 aktuell.
 

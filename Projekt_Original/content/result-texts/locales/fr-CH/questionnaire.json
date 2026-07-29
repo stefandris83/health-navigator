@@ -517,20 +517,20 @@
     },
     {
       "id": "questionnaire.question.familie_hk.option.nein",
-      "text": "Non, pas à ma connaissance",
+      "text": "Non, à ma connaissance",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "bd57d69eca88964f0124a86e67056bb095e37d4e6da593b6e7149231d44bb055"
+      "sourceContractHash": "3aab622843d874ea1ad6b35e6aedd948c523e1536c7327206f62d4575ef37e8d"
     },
     {
       "id": "questionnaire.question.familie_hk.option.teilweise",
-      "text": "Je ne connais que partiellement les antécédents médicaux de ma famille",
+      "text": "Seulement en partie",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "19fd7ad194c4c20121c3dea3a2969ce9f832e6990d688e3740001427131f2a91"
+      "sourceContractHash": "92345bc42f989e1bb0a5238b526acf0bd3d583a53d9c573a4b7df9c9feb0b170"
     },
     {
       "id": "questionnaire.question.familie_hk.option.weiss_nicht",
@@ -542,11 +542,11 @@
     },
     {
       "id": "questionnaire.question.familie_hk.text",
-      "text": "Des maladies cardiovasculaires, un diabète de type 2, un cancer ou une maladie héréditaire connue sont-ils survenus chez vos parents, vos frères et sœurs ou vos enfants ?",
+      "text": "Des maladies cardiovasculaires, un diabète de type 2, un cancer ou des maladies héréditaires connues sont-ils survenus chez vos parents, vos frères et sœurs ou vos enfants ?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "7ae2f934fd3dfc70baf4d5998a36eae35e29d642e952ca1ca9dfea3ac819e3ef"
+      "sourceContractHash": "ac160be8602df15471b315a039db30556d9351b4e17217fce221c9c9dac93fdc"
     },
     {
       "id": "questionnaire.question.familienwissen.help",
@@ -590,11 +590,11 @@
     },
     {
       "id": "questionnaire.question.familienwissen.text",
-      "text": "Savez-vous quels examens préventifs sont indiqués pour vous compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux ?",
+      "text": "Savez-vous quels examens préventifs sont actuellement indiqués pour vous personnellement ?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "6f51378f337b9def884f24c0f076fe8ec6c465481fa1b8adf2502a5ee06a4297"
+      "sourceContractHash": "845ac18224b5eacd49782b441167763d4231d989bcb14377a113c52e8c55a5e7"
     },
     {
       "id": "questionnaire.question.geschlecht.option.intersex",
@@ -1629,21 +1629,13 @@
       "sourceContractHash": "686caffb331936b65c4efea20e25bfb58982fd5578f093c2ffb4c8253b9260ce"
     },
     {
-      "id": "questionnaire.question.vorsorge.option.aelter_unsicher",
-      "text": "Oui, mais elle remonte à un certain temps ou je ne sais pas si elle est encore à jour",
-      "requiredTerms": [],
-      "reviewStatus": "needs-review",
-      "translationState": "translated",
-      "sourceContractHash": "a82bb4f63368187b0bf0f6572b3449b3ce8d2f8047083f9f3bcde70051fecc6f"
-    },
-    {
       "id": "questionnaire.question.vorsorge.option.aktuell",
-      "text": "Oui, et l’évaluation est à jour selon la professionnelle ou le professionnel de santé",
+      "text": "Oui, à jour",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
       "reviewComment": "",
-      "sourceContractHash": "2d9f58e5bb072ac75f3d0f22cf968c276dfb9dae1a914e3c3920028b0b207a41"
+      "sourceContractHash": "d8411064e9329d41b6e00389b5b861f7799d4217fb56859d8394d25db43bd74c"
     },
     {
       "id": "questionnaire.question.vorsorge.option.weiss_nicht",
@@ -1656,19 +1648,19 @@
     },
     {
       "id": "questionnaire.question.vorsorge.option.nein",
-      "text": "Non",
+      "text": "Non ou plus à jour",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "e39562e2e9fac6b98fbd15d2063cf93619eb32047f09f1b831f77b1204706371"
+      "sourceContractHash": "499b688ad663c8788b8a1bb79d19d6b792a0694c61c64a98da45275dc1ece332"
     },
     {
       "id": "questionnaire.question.vorsorge.text",
-      "text": "Avez-vous déjà fait évaluer votre risque personnel pour la santé par une professionnelle ou un professionnel de santé et discuté avec cette personne des examens préventifs adaptés ?",
+      "text": "Une professionnelle ou un professionnel de santé a-t-il déjà déterminé avec vous quels examens préventifs sont actuellement indiqués compte tenu de vos risques personnels pour la santé ?",
       "requiredTerms": [],
       "reviewStatus": "needs-review",
       "translationState": "translated",
-      "sourceContractHash": "2393ec55451d67a7ca441ff5decd8a05b526d282f840a743b9d092200d2df763"
+      "sourceContractHash": "b03606bcfc333d3da455edd6d0f52b387b61dfb61264342cc1712af5ea6f2c45"
     },
     {
       "id": "questionnaire.question.wandsitz.help",

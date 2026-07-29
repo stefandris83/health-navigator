@@ -176,7 +176,21 @@ const DIMENSIONS = [
         ],
       },
       {
-        id: 'familienwissen', // F-1.3 «Kenntnis passender Vorsorge»
+        id: 'vorsorge', // F-1.3 «Aktuelle Vorsorgeklärung» – ohne Score-Einfluss (Ø)
+        text:
+          copy.get('questionnaire.question.vorsorge.text'),
+        helpTitle: copy.get('questionnaire.question.vorsorge.help_title'),
+        help:
+          copy.get('questionnaire.question.vorsorge.help'),
+        type: 'single',
+        options: [
+          { value: 'aktuell', label: copy.get('questionnaire.question.vorsorge.option.aktuell')},
+          { value: 'nein', label: copy.get('questionnaire.question.vorsorge.option.nein')},
+          { value: 'weiss_nicht', label: copy.get('questionnaire.question.vorsorge.option.weiss_nicht')},
+        ],
+      },
+      {
+        id: 'familienwissen', // F-1.4 «Kenntnis passender Vorsorge»
         text: copy.get('questionnaire.question.familienwissen.text'),
         helpTitle: copy.get('questionnaire.question.familienwissen.help_title'),
         help:
@@ -186,21 +200,6 @@ const DIMENSIONS = [
           { value: 'ja', label: copy.get('questionnaire.question.familienwissen.option.ja')},
           { value: 'teilweise', label: copy.get('questionnaire.question.familienwissen.option.teilweise')},
           { value: 'nein', label: copy.get('questionnaire.question.familienwissen.option.nein')},
-        ],
-      },
-      {
-        id: 'vorsorge', // F-1.4 «Persönliche Risikoeinschätzung» – ohne Score-Einfluss (Ø)
-        text:
-          copy.get('questionnaire.question.vorsorge.text'),
-        helpTitle: copy.get('questionnaire.question.vorsorge.help_title'),
-        help:
-          copy.get('questionnaire.question.vorsorge.help'),
-        type: 'single',
-        options: [
-          { value: 'aktuell', label: copy.get('questionnaire.question.vorsorge.option.aktuell')},
-          { value: 'aelter_unsicher', label: copy.get('questionnaire.question.vorsorge.option.aelter_unsicher')},
-          { value: 'nein', label: copy.get('questionnaire.question.vorsorge.option.nein')},
-          { value: 'weiss_nicht', label: copy.get('questionnaire.question.vorsorge.option.weiss_nicht')},
         ],
       },
       {

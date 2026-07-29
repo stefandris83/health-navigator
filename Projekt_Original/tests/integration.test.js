@@ -308,8 +308,8 @@ test('Antwortschema akzeptiert für die drei Vorsorgefragen ausschliesslich den 
   const familyStart = influenceQuestionIds.indexOf('familie_hk');
   assert.deepStrictEqual(
     influenceQuestionIds.slice(familyStart, familyStart + 3),
-    ['familie_hk', 'familienwissen', 'vorsorge'],
-    'Familienanamnese, Vorsorgewissen und erfolgte Risikoeinschätzung stehen direkt beieinander'
+    ['familie_hk', 'vorsorge', 'familienwissen'],
+    'Familienanamnese, professionell geklärte Vorsorge und Vorsorgewissen stehen direkt beieinander'
   );
   assert.deepStrictEqual(
     Schema.sanitizeAnswers({
@@ -324,8 +324,8 @@ test('Antwortschema akzeptiert für die drei Vorsorgefragen ausschliesslich den 
     { familie_hk: 'teilweise', familienwissen: 'teilweise', vorsorge: 'nein' }
   );
   assert.deepStrictEqual(
-    Schema.sanitizeAnswers({ familienwissen: 'nein', vorsorge: 'aelter_unsicher', familie_hk: 'nein' }),
-    { familie_hk: 'nein', familienwissen: 'nein', vorsorge: 'aelter_unsicher' }
+    Schema.sanitizeAnswers({ familienwissen: 'nein', vorsorge: 'weiss_nicht', familie_hk: 'nein' }),
+    { familie_hk: 'nein', familienwissen: 'nein', vorsorge: 'weiss_nicht' }
   );
 });
 
@@ -1259,7 +1259,6 @@ test('Die drei Vorsorgefragen sind scorefrei und routen Familienklärung, Fachch
 
   const preventionCases = [
     { value: 'aktuell', severity: null, recommendation: false },
-    { value: 'aelter_unsicher', severity: 'tief', recommendation: true },
     { value: 'weiss_nicht', severity: 'tief', recommendation: true },
     { value: 'nein', severity: 'mittel', recommendation: true },
   ];
@@ -1278,7 +1277,7 @@ test('Die drei Vorsorgefragen sind scorefrei und routen Familienklärung, Fachch
     );
   });
 
-  ['aelter_unsicher', 'weiss_nicht', 'nein'].forEach((value) => {
+  ['weiss_nicht', 'nein'].forEach((value) => {
     const answers = {
       ...DEFICIT_ANSWERS,
       familie_hk: 'nein',
@@ -1308,7 +1307,7 @@ test('Die drei Vorsorgefragen sind scorefrei und routen Familienklärung, Fachch
   });
 });
 
-test('Fehlende Risikoeinschätzung wird höher priorisiert als eine ältere oder unklare Einschätzung', () => {
+test('Fehlende Risikoeinschätzung wird höher priorisiert als ein unklarer Status', () => {
   const base = { ...HEALTHY_ANSWERS, sitzzeit: 'ue10' };
   const firstLever = (vorsorge) => {
     const answers = { ...base, vorsorge };
@@ -1317,8 +1316,6 @@ test('Fehlende Risikoeinschätzung wird höher priorisiert als eine ältere oder
   };
   assert.strictEqual(firstLever('nein'), 'lv_vorsorge',
     'fehlende Einschätzung gewinnt den Gleichstand mit sehr hoher Sitzzeit');
-  assert.strictEqual(firstLever('aelter_unsicher'), 'lv_sitzen',
-    'ältere Einschätzung bleibt sichtbar, aber unter dem stärkeren Lifestyle-Hebel');
   assert.strictEqual(firstLever('weiss_nicht'), 'lv_sitzen',
     'unklarer Status bleibt sichtbar, aber unter dem stärkeren Lifestyle-Hebel');
 });

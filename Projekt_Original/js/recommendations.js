@@ -64,7 +64,7 @@
     {
       id: 'ei_vorsorge', dim: 'einfluss', topic: 'vorsorge', impact: 3, urgency: 3, ease: 5,
       offer: 'vorsorge',
-      when: (c) => oneOf(c.a.vorsorge, 'aelter_unsicher', 'nein', 'weiss_nicht'),
+      when: (c) => oneOf(c.a.vorsorge, 'nein', 'weiss_nicht'),
     },
     {
       id: 'ei_alkohol', dim: 'einfluss', impact: 4, urgency: 3, ease: 3,
@@ -675,7 +675,7 @@
       prio: (c) => {
         const assessmentPriority = c.a.vorsorge === 'nein'
           ? 0.5
-          : (c.a.vorsorge === 'weiss_nicht' ? 0.35 : (c.a.vorsorge === 'aelter_unsicher' ? 0.25 : 0));
+          : (c.a.vorsorge === 'weiss_nicht' ? 0.35 : 0);
         return Math.min(10, 5.5 + cvRiskPattern(c).r + assessmentPriority);
       },
     },
@@ -701,7 +701,6 @@
       prio: (c) => {
         if (c.a.vorsorge === 'nein') return 6.8;
         if (c.a.vorsorge === 'weiss_nicht') return 6.4;
-        if (c.a.vorsorge === 'aelter_unsicher') return 6.2;
         return 5.8;
       },
     },
@@ -709,7 +708,7 @@
       id: 'lv_vorsorge', dim: 'einfluss', topic: 'vorsorge',
       rec: 'ei_vorsorge',
       scoreIndependent: true,
-      when: (c) => oneOf(c.a.vorsorge, 'aelter_unsicher', 'nein', 'weiss_nicht'),
+      when: (c) => oneOf(c.a.vorsorge, 'nein', 'weiss_nicht'),
       prio: (c) => {
         if (c.a.vorsorge === 'nein') return 5.5;
         if (c.a.vorsorge === 'weiss_nicht') return 5;

@@ -15,19 +15,19 @@
 ## Freigabestand
 
 - Sprache: `en-CH`
-- Quellversion: `v1:f3e34b301d5513de6c74d9d5345210e540355d3f843e1a8500577aa3fc55bb77`
-- Gesamtbestand: **1223 Texte**
-- Freigegeben: **0** · Offen: **1223**
+- Quellversion: `v1:e6daecb0aa49e1df2f481c91c7d42712d303269bec411836afa3100ea4c465a7`
+- Gesamtbestand: **1222 Texte**
+- Freigegeben: **0** · Offen: **1222**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1223 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1222 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1223 | 0 | 1223 |
+| Marketing | 1222 | 0 | 1222 |
 | Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
@@ -35,7 +35,7 @@
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
 | [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
@@ -50,15 +50,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (220 Texte)
+## 1. Fragebogen (219 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (220 Texte)
+### Fragebogen (219 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -1027,11 +1027,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder bekannte erblich bedingte Erkrankungen aufgetreten?
 
 **Aktueller Text**
 
-> Have any of your parents, siblings or children had cardiovascular disease, type 2 diabetes, cancer or a known hereditary condition?
+> Have any of your parents, siblings or children had cardiovascular disease, type 2 diabetes, cancer or known hereditary conditions?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -1072,11 +1072,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein, soweit mir bekannt
+> Nein, soweit bekannt
 
 **Aktueller Text**
 
-> No, not to my knowledge
+> No, as far as I know
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1087,11 +1087,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ich kenne die Familiengeschichte nur teilweise
+> Nur teilweise bekannt
 
 **Aktueller Text**
 
-> I know only part of my family history
+> Only partly known
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1117,11 +1117,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
+> Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll sind?
 
 **Aktueller Text**
 
-> Do you know which preventive examinations are appropriate for you based on your age, personal health measurements and family history?
+> Do you know which preventive examinations are currently appropriate for you personally?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -3192,11 +3192,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
+> Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell sinnvoll sind?
 
 **Aktueller Text**
 
-> Has a doctor or another healthcare professional assessed your personal health risk and discussed appropriate preventive examinations with you?
+> Has a healthcare professional already discussed with you which preventive examinations are currently appropriate based on your personal health risks?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -3233,30 +3233,15 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
-
-**Deutscher Ausgangstext**
-
-> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
-
-**Aktueller Text**
-
-> Yes, but it was some time ago or I am unsure whether it is still up to date
-
-#### Antwortoption: Frage «Vorsorge» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
 - Technische ID: `questionnaire.question.vorsorge.option.aktuell`
 
 **Deutscher Ausgangstext**
 
-> Ja, und die Einschätzung ist gemäss Fachperson aktuell
+> Ja, aktuell
 
 **Aktueller Text**
 
-> Yes, and the healthcare professional considers the assessment up to date
+> Yes, it is up to date
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -3267,11 +3252,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein
+> Nein oder nicht mehr aktuell
 
 **Aktueller Text**
 
-> No
+> No or no longer current
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
