@@ -89,6 +89,7 @@ test('Messhilfen besitzen lokale Geschlechtsvarianten und zeigen standardmässig
   });
 
   const source = fs.readFileSync(path.join(ROOT, 'js/app.js'), 'utf8');
+  const css = fs.readFileSync(path.join(ROOT, 'css/styles.css'), 'utf8');
   const variantSource = source.match(/function questionIllustrationVariant\(gender\) \{[\s\S]*?\n  \}/);
   assert.ok(variantSource, 'Geschlechtszuordnung der Illustrationen fehlt');
   const variant = new Function(`${variantSource[0]}; return questionIllustrationVariant;`)();
@@ -130,6 +131,10 @@ test('Messhilfen besitzen lokale Geschlechtsvarianten und zeigen standardmässig
   assert.ok(source.includes('alt="" aria-hidden="true"'));
   assert.ok(source.includes("if (wrapper) wrapper.hidden = false;"));
   assert.ok(source.includes('<div class="q-help">${String(q.help).replace(/\\n/g, \'<br>\')}</div>'));
+  assert.ok(source.includes('class="q-help-toggle-icon" aria-hidden="true"'));
+  assert.ok(source.includes('class="q-help-toggle-label"'));
+  assert.ok(css.includes('.q-help-toggle-label { overflow-wrap: anywhere; }'),
+    'lange Hilfetitel müssen auf Mobile bei Bedarf innerhalb eines Wortes umbrechen');
   assert.ok(source.includes('${body}\n      ${questionIllustrationHTML(q)}'));
 });
 
