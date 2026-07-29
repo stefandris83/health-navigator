@@ -527,7 +527,7 @@ Risikosignale sind ein separater Sicherheits- und Routingvertrag. Sie werden nic
 | Blutdruck unbekannt | «weiss nicht» | medizinisch, mittel |
 | Familiäre Erkrankung | Frage `familie_hk` = ja | medizinisch, mittel |
 | Risikoeinschätzung fehlt | `vorsorge` = nein | medizinisch, mittel |
-| Risikoeinschätzung veraltet oder unklar | `vorsorge` = aelter_unsicher oder weiss_nicht | medizinisch, tief |
+| Risikoeinschätzung unklar | `vorsorge` = weiss_nicht | medizinisch, tief |
 | Untergewicht | BMI < 18,5 | medizinisch, mittel |
 | Rauchen | gelegentlich oder regelmässig | Lebensstil, hoch |
 | Alkohol | höchste Frequenzstufe | Lebensstil, mittel |
@@ -832,19 +832,19 @@ Belastbarkeit, Selbstwirksamkeit und Coping wirken bei −2 zusätzlich auf den 
 
 | Frage | Antwortstufen / interne Einordnung | Rolle ausserhalb des regulären Mittelwerts |
 |---|---|---|
-| **Familiäre Erkrankungen** (`familie_hk`)<br>Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten? | Ja / Nein, soweit mir bekannt / Ich kenne die Familiengeschichte nur teilweise / Weiss ich nicht; kein Normwert | «Ja» erzeugt das medizinische Signal `familie_hk` mittlerer Schwere sowie `ei_familie`/`lv_familie`. «Teilweise» und «Weiss ich nicht» erzeugen scorefrei `ei_familienwissen`/`lv_familienwissen`, aber kein Risikosignal. Keine Antwort zählt als Punkt im Kardio-Muster. |
-| **Wissen über passende Vorsorge** (`familienwissen`)<br>Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind? | Ja / Teilweise / Nein; kein Normwert | «Teilweise» oder «Nein» erzeugt scorefrei `ei_vorsorgewissen`/`lv_vorsorgewissen`, aber kein Risikosignal. Die stabile ID bleibt aus Kompatibilitätsgründen erhalten; die Frage ist kein Scorebestandteil. |
-| **Professionelle Risikoeinschätzung** (`vorsorge`)<br>Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen? | Ja, gemäss Fachperson aktuell / Ja, aber länger zurück oder Aktualität unsicher / Nein / Weiss ich nicht; kein Normwert | `aktuell` gilt als erledigt. `nein` erzeugt das medizinische Signal `vorsorge` mittlerer, `aelter_unsicher` und `weiss_nicht` eines tiefer Schwere; alle drei offenen Werte aktivieren `ei_vorsorge`/`lv_vorsorge`. |
+| **Familiäre Erkrankungen** (`familie_hk`)<br>Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder bekannte erblich bedingte Erkrankungen aufgetreten? | Ja / Nein, soweit bekannt / Nur teilweise bekannt / Weiss ich nicht; kein Normwert | «Ja» erzeugt das medizinische Signal `familie_hk` mittlerer Schwere sowie `ei_familie`/`lv_familie`. «Teilweise» und «Weiss ich nicht» erzeugen scorefrei `ei_familienwissen`/`lv_familienwissen`, aber kein Risikosignal. Keine Antwort zählt als Punkt im Kardio-Muster. |
+| **Professionell geklärte Vorsorge** (`vorsorge`)<br>Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell sinnvoll sind? | Ja, aktuell / Nein oder nicht mehr aktuell / Weiss ich nicht; kein Normwert | `aktuell` gilt als erledigt. `nein` erzeugt das medizinische Signal `vorsorge` mittlerer, `weiss_nicht` eines tiefer Schwere; beide offenen Werte aktivieren `ei_vorsorge`/`lv_vorsorge`. |
+| **Wissen über passende Vorsorge** (`familienwissen`)<br>Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll sind? | Ja / Teilweise / Nein; kein Normwert | «Teilweise» oder «Nein» erzeugt scorefrei `ei_vorsorgewissen`/`lv_vorsorgewissen`, aber kein Risikosignal. Die stabile ID bleibt aus Kompatibilitätsgründen erhalten; die Frage ist kein Scorebestandteil. |
 | **Bluthochdruck** (`bluthochdruck`)<br>Wurde bei Ihnen ärztlich Bluthochdruck festgestellt oder nehmen Sie Blutdruckmedikamente? | Nein / Ja / Weiss ich nicht; kein Normwert | «Ja» erzeugt ein hohes medizinisches Signal und +2 im Kardio-Muster; «Weiss ich nicht» ein mittleres Signal und +0,5 im Kardio-Muster. |
 | **Sättigung** (`saettigung`)<br>Wie häufig fühlen Sie sich nach Ihren Hauptmahlzeiten für etwa vier Stunden satt? | Nie → −2; Selten → −1; Manchmal → 0; Oft → +1; Fast immer → +2 | Kein Scoregewicht und kein Deckel. Nie/Selten/Manchmal können eine Empfehlung auslösen. |
 | **Schlafbedingte Alltagsbeeinträchtigung** (`schlaf_auswirkung`)<br>Wie stark hat Ihr Schlaf im letzten Monat Ihren Alltag beeinträchtigt? | Gar nicht → +2; Minimal → +1; Spürbar → 0; Deutlich → −1; Massiv → −2 | Kein gleichgewichteter Scorebestandteil. Spürbar deckelt Schlaf auf 75; deutlich/massiv auf 50. Massiv erzeugt zusätzlich ein medizinisches Signal mittlerer Schwere. |
 
-Für bestehende lokale Stände und Ergebnislinks gilt eine defensive Migration ohne
-inhaltliche Vermutungen. Da sich die Bedeutung der drei stabilen Frage-IDs
-`familie_hk`, `familienwissen` und `vorsorge` geändert hat, werden deren frühere
-Antworten entfernt und im Abschnitt «Einflussfaktoren» neu abgefragt. Alle anderen
+Für bestehende lokale Stände und Ergebnislinks gilt eine defensive Migration. Bei
+Schema 3/Hash 2 wird die zusammengeführte frühere Auswahl `aelter_unsicher` als
+`nein` übernommen. Bei noch älteren Ständen werden die drei semantisch geänderten
+Antworten entfernt und im Abschnitt «Einflussfaktoren» neu abgefragt; alle anderen
 weiterhin gültigen Antworten bleiben erhalten. Aktuelle lokale Stände verwenden
-Storage-Schema 3, aktuelle Ergebnislinks Hash-Schema 2; unbekannte Versionen werden
+Storage-Schema 4, aktuelle Ergebnislinks Hash-Schema 3; unbekannte Versionen werden
 abgelehnt. Details stehen in [`EMPFEHLUNGSLOGIK.md`](EMPFEHLUNGSLOGIK.md#45-bestehende-lokale-stände-und-ergebnislinks).
 
 ### A.7 Persönliche Angaben und optionale numerische Kurztests

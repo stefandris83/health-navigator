@@ -190,8 +190,8 @@ Keine dieser Fragen fliesst in den 0–100-Score ein.
 ### 4.1 Familiäre Erkrankungen (`familie_hk`)
 
 > Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-
-> Erkrankungen, Typ-2-Diabetes, Krebs oder eine bekannte erblich bedingte
-> Erkrankung aufgetreten?
+> Erkrankungen, Typ-2-Diabetes, Krebs oder bekannte erblich bedingte
+> Erkrankungen aufgetreten?
 
 | Antwortwert | Bedeutung | Technische Wirkung |
 |---|---|---|
@@ -211,17 +211,16 @@ Diese drei Angaben sind der eigentliche Mehrwert für eine spätere professionel
 Einordnung. Die App bewertet eine breite Ja-Antwort nicht selbst als konkrete
 kardiovaskuläre Familienanamnese und stellt keine genetische Diagnose.
 
-### 4.2 Medizinische Risikoeinschätzung (`vorsorge`)
+### 4.2 Professionell geklärte Vorsorge (`vorsorge`)
 
-> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr
-> persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende
-> Vorsorgeuntersuchungen besprochen?
+> Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche
+> Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell
+> sinnvoll sind?
 
 | Antwortwert | Bedeutung | Technische Wirkung |
 |---|---|---|
-| `aktuell` | Eine medizinische Risikoeinschätzung liegt vor und wird als aktuell verstanden. | Kein offener Vorsorgehinweis; kann zusammen mit vorhandenem Orientierungswissen eine Stärke bestätigen. |
-| `aelter_unsicher` | Eine Beurteilung fand statt, liegt aber länger zurück oder ihre Aktualität ist unklar. | Signal `vorsorge` mit Schwere `tief` sowie `ei_vorsorge`/`lv_vorsorge`. |
-| `nein` | Bisher fand keine entsprechende professionelle Risikoeinschätzung statt. | Signal `vorsorge` mit Schwere `mittel` sowie `ei_vorsorge`/`lv_vorsorge`; höchste Priorität der drei offenen Werte. |
+| `aktuell` | Eine professionelle Klärung liegt vor und ist aktuell. | Kein offener Vorsorgehinweis; kann zusammen mit vorhandenem Orientierungswissen eine Stärke bestätigen. |
+| `nein` | Es gab noch keine Klärung oder sie ist nicht mehr aktuell. | Signal `vorsorge` mit Schwere `mittel` sowie `ei_vorsorge`/`lv_vorsorge`. |
 | `weiss_nicht` | Die Person kann nicht sicher sagen, ob eine solche Beurteilung erfolgt ist. | Signal `vorsorge` mit Schwere `tief` sowie `ei_vorsorge`/`lv_vorsorge`. |
 
 Die Frage trennt bewusst eine professionelle Einschätzung vom blossen Lesen oder
@@ -230,8 +229,8 @@ anderem von Alter, persönlichen Messwerten, Beschwerden und Familiengeschichte 
 
 ### 4.3 Wissen über passende Vorsorge (`familienwissen`)
 
-> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer
-> persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
+> Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll
+> sind?
 
 Die bestehende stabile technische ID bleibt aus Kompatibilitätsgründen erhalten;
 inhaltlich erfasst die Frage künftig das Wissen über persönlich passende Vorsorge
@@ -252,15 +251,15 @@ weder einen Plus- noch einen Minuspunkt.
 |---|---|
 | Familiengeschichte `ja` | Spezifische Familien-/Vorsorgekarte; sie fordert Erkrankung, betroffene Person und Diagnosealter zur Klärung auf. |
 | Familiengeschichte `teilweise` oder `weiss_nicht` | Familieninformationen gezielt einholen; keine Risikobehauptung und kein Scoremalus. |
-| Risikoeinschätzung `nein` | Professionelle Vorsorge beziehungsweise persönliche Risikoeinschätzung besprechen. |
-| Risikoeinschätzung `aelter_unsicher` oder `weiss_nicht` | Aktualität beziehungsweise bisherigen Umfang klären. |
+| Professionelle Vorsorge `nein` | Professionelle Vorsorge beziehungsweise persönliche Risikoeinschätzung besprechen. |
+| Professionelle Vorsorge `weiss_nicht` | Bisherige Klärung und Aktualität prüfen. |
 | Vorsorgewissen `teilweise` oder `nein` | Information und Gesprächsvorbereitung anbieten. |
 | Familiengeschichte `ja` plus nicht aktuelle/fehlende Risikoeinschätzung oder fehlendes Vorsorgewissen | Die spezifische Familienkarte erhält Vorrang und deckt `ei_vorsorge` und `ei_vorsorgewissen` ab. |
 | Mehrere offene Vorsorgefragen | Keine drei nahezu identischen Karten; das gemeinsame Thema `vorsorge` wird dedupliziert. |
 
 Die Lever-Prioritäten bilden die Handlungsnähe ab: Bei `familie_hk = ja` liegt
 `lv_familie` je nach Vorsorgestatus zwischen 5,8 (`aktuell`) und 6,8 (`nein`).
-`lv_vorsorge` liegt zwischen 4,5 (`aelter_unsicher`) und 5,5 (`nein`). Unbekannte
+`lv_vorsorge` liegt zwischen 4,5 (`weiss_nicht`) und 5,5 (`nein`). Unbekannte
 Familiengeschichte wird mit 4,2 vor teilweise bekannter Familiengeschichte mit 3,8
 eingeordnet; fehlendes Vorsorgewissen mit 3,5 vor teilweisem Wissen mit 3,0. Diese
 Zahlen priorisieren Texte innerhalb der App und sind keine medizinischen
@@ -268,10 +267,13 @@ Risikokoeffizienten.
 
 ### 4.5 Bestehende lokale Stände und Ergebnislinks
 
-Die Frage-IDs bleiben stabil, ihre Bedeutung hat sich jedoch verändert. Frühere
-Antworten werden deshalb **nicht geraten oder semantisch umgedeutet**:
+Die Frage-IDs bleiben stabil. Die jetzt zusammengeführte frühere Antwort
+`aelter_unsicher` wird ohne Bedeutungsverlust als `nein` übernommen; andere
+frühere semantische Änderungen werden weiterhin nicht geraten oder umgedeutet:
 
-- Local-Storage-Schema 3 und Ergebnislink-Schema 2 enthalten die aktuellen Werte.
+- Local-Storage-Schema 4 und Ergebnislink-Schema 3 enthalten die aktuellen Werte.
+- Stände mit Local-Storage-Schema 3 oder Ergebnislink-Schema 2 übernehmen alle
+  gültigen Antworten; `vorsorge = aelter_unsicher` wird zu `vorsorge = nein`.
 - Bei älteren lokalen Ständen (Schema 2 oder unversioniert) bleiben alle anderen
   gültigen Antworten erhalten; `familie_hk`, `familienwissen` und `vorsorge` werden
   entfernt. Die App öffnet anschliessend den Abschnitt «Einflussfaktoren», damit

@@ -649,7 +649,7 @@
       "context": "Frage familie_hk, Antwortoption nein",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Nein, soweit mir bekannt",
+      "text": "Nein, soweit bekannt",
       "reviewStatus": "",
       "comment": ""
     },
@@ -659,7 +659,7 @@
       "context": "Frage familie_hk, Antwortoption teilweise",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Ich kenne die Familiengeschichte nur teilweise",
+      "text": "Nur teilweise bekannt",
       "reviewStatus": "",
       "comment": ""
     },
@@ -679,7 +679,7 @@
       "context": "Frage familie_hk, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?",
+      "text": "Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz-Kreislauf-Erkrankungen, Typ-2-Diabetes, Krebs oder bekannte erblich bedingte Erkrankungen aufgetreten?",
       "reviewStatus": "",
       "comment": ""
     },
@@ -739,7 +739,7 @@
       "context": "Frage familienwissen, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?",
+      "text": "Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll sind?",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2034,22 +2034,12 @@
       "comment": ""
     },
     {
-      "id": "questionnaire.question.vorsorge.option.aelter_unsicher",
-      "section": "Fragebogen",
-      "context": "Frage vorsorge, Antwortoption aelter_unsicher",
-      "kind": "option_label",
-      "reviewers": "Marketing",
-      "text": "Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist",
-      "reviewStatus": "",
-      "comment": ""
-    },
-    {
       "id": "questionnaire.question.vorsorge.option.aktuell",
       "section": "Fragebogen",
       "context": "Frage vorsorge, Antwortoption aktuell",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Ja, und die Einschätzung ist gemäss Fachperson aktuell",
+      "text": "Ja, aktuell",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2069,7 +2059,7 @@
       "context": "Frage vorsorge, Antwortoption nein",
       "kind": "option_label",
       "reviewers": "Marketing",
-      "text": "Nein",
+      "text": "Nein oder nicht mehr aktuell",
       "reviewStatus": "",
       "comment": ""
     },
@@ -2079,7 +2069,7 @@
       "context": "Frage vorsorge, text",
       "kind": "question",
       "reviewers": "Marketing, Medizin",
-      "text": "Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?",
+      "text": "Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell sinnvoll sind?",
       "reviewStatus": "",
       "comment": ""
     },

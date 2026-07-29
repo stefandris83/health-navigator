@@ -15,19 +15,19 @@
 ## Freigabestand
 
 - Sprache: `fr-CH`
-- Quellversion: `v1:cc2c9b30d6d0735d6c67a9e9f4bfd76d7e0b5fff95043b4df62fe651f0e87d2f`
-- Gesamtbestand: **1223 Texte**
-- Freigegeben: **0** · Offen: **1223**
+- Quellversion: `v1:d69b55804c14335744a0a12a0aa976d1ec91e2438349a6a77f6bb61bec9ba1ac`
+- Gesamtbestand: **1222 Texte**
+- Freigegeben: **0** · Offen: **1222**
 
 | Status | Texte | Bedeutung |
 | --- | ---: | --- |
 | Nicht geprüft | 0 | Noch kein gemeinsamer Freigabestatus gesetzt |
-| Prüfung erforderlich | 1223 | Ausdrücklich erneut zu prüfen |
+| Prüfung erforderlich | 1222 | Ausdrücklich erneut zu prüfen |
 | Freigegeben | 0 | Alle zuständigen Stellen haben zugestimmt |
 
 | Freigabestelle | Zugeordnete Texte | Freigegeben | Offen |
 | --- | ---: | ---: | ---: |
-| Marketing | 1223 | 0 | 1223 |
+| Marketing | 1222 | 0 | 1222 |
 | Medizin | 690 | 0 | 690 |
 | Recht | 25 | 0 | 25 |
 
@@ -35,7 +35,7 @@
 
 | Gesundheitsbereich | Themen | Texte | Offen |
 | --- | ---: | ---: | ---: |
-| [Fragebogen](#bereich-fragebogen) | 1 | 220 | 220 |
+| [Fragebogen](#bereich-fragebogen) | 1 | 219 | 219 |
 | [Einflussfaktoren](#bereich-einflussfaktoren) | 8 | 228 | 228 |
 | [Körperliche Fitness](#bereich-korperliche-fitness) | 5 | 121 | 121 |
 | [Ernährung](#bereich-ernahrung) | 7 | 82 | 82 |
@@ -50,15 +50,15 @@
 
 <a id="bereich-fragebogen"></a>
 
-## 1. Fragebogen (220 Texte)
+## 1. Fragebogen (219 Texte)
 
 Themen in diesem Bereich:
 
-- [Fragebogen](#thema-fragebogen-fragebogen): 220 Texte, 220 offen
+- [Fragebogen](#thema-fragebogen-fragebogen): 219 Texte, 219 offen
 
 <a id="thema-fragebogen-fragebogen"></a>
 
-### Fragebogen (220 Texte)
+### Fragebogen (219 Texte)
 
 #### Antwortoption: Allgemeine Antwortoption für unterstützte Fragen
 
@@ -1027,11 +1027,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder eine bekannte erblich bedingte Erkrankung aufgetreten?
+> Sind bei Ihren Eltern, Geschwistern oder eigenen Kindern Herz\-Kreislauf\-Erkrankungen, Typ\-2\-Diabetes, Krebs oder bekannte erblich bedingte Erkrankungen aufgetreten?
 
 **Aktueller Text**
 
-> Des maladies cardiovasculaires, un diabète de type 2, un cancer ou une maladie héréditaire connue sont\-ils survenus chez vos parents, vos frères et sœurs ou vos enfants ?
+> Des maladies cardiovasculaires, un diabète de type 2, un cancer ou des maladies héréditaires connues sont\-ils survenus chez vos parents, vos frères et sœurs ou vos enfants ?
 
 #### Hilfetext: Frage «Familie hk» · Hilfetext
 
@@ -1072,11 +1072,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein, soweit mir bekannt
+> Nein, soweit bekannt
 
 **Aktueller Text**
 
-> Non, pas à ma connaissance
+> Non, à ma connaissance
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1087,11 +1087,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Ich kenne die Familiengeschichte nur teilweise
+> Nur teilweise bekannt
 
 **Aktueller Text**
 
-> Je ne connais que partiellement les antécédents médicaux de ma famille
+> Seulement en partie
 
 #### Antwortoption: Frage «Familie hk» · Antwortoption
 
@@ -1117,11 +1117,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Wissen Sie, welche Vorsorgeuntersuchungen aufgrund Ihres Alters, Ihrer persönlichen Werte und Ihrer Familiengeschichte für Sie sinnvoll sind?
+> Wissen Sie, welche Vorsorgeuntersuchungen für Sie persönlich aktuell sinnvoll sind?
 
 **Aktueller Text**
 
-> Savez\-vous quels examens préventifs sont indiqués pour vous compte tenu de votre âge, de vos valeurs de santé personnelles et de vos antécédents familiaux ?
+> Savez\-vous quels examens préventifs sont actuellement indiqués pour vous personnellement ?
 
 #### Hilfetext: Frage «Familienwissen» · Hilfetext
 
@@ -3192,11 +3192,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Hat eine Ärztin, ein Arzt oder eine andere medizinische Fachperson Ihr persönliches Gesundheitsrisiko bereits beurteilt und mit Ihnen passende Vorsorgeuntersuchungen besprochen?
+> Hat eine medizinische Fachperson mit Ihnen bereits geklärt, welche Vorsorgeuntersuchungen aufgrund Ihrer persönlichen Gesundheitsrisiken aktuell sinnvoll sind?
 
 **Aktueller Text**
 
-> Avez\-vous déjà fait évaluer votre risque personnel pour la santé par une professionnelle ou un professionnel de santé et discuté avec cette personne des examens préventifs adaptés ?
+> Une professionnelle ou un professionnel de santé a\-t\-il déjà déterminé avec vous quels examens préventifs sont actuellement indiqués compte tenu de vos risques personnels pour la santé ?
 
 #### Hilfetext: Frage «Vorsorge» · Hilfetext
 
@@ -3233,30 +3233,15 @@ Themen in diesem Bereich:
 - Seitenelement: Fragebogen
 - Freigabe durch: Marketing
 - Freigabestatus: Prüfung erforderlich
-- Technische ID: `questionnaire.question.vorsorge.option.aelter_unsicher`
-
-**Deutscher Ausgangstext**
-
-> Ja, aber sie liegt länger zurück oder ich bin unsicher, ob sie noch aktuell ist
-
-**Aktueller Text**
-
-> Oui, mais elle remonte à un certain temps ou je ne sais pas si elle est encore à jour
-
-#### Antwortoption: Frage «Vorsorge» · Antwortoption
-
-- Seitenelement: Fragebogen
-- Freigabe durch: Marketing
-- Freigabestatus: Prüfung erforderlich
 - Technische ID: `questionnaire.question.vorsorge.option.aktuell`
 
 **Deutscher Ausgangstext**
 
-> Ja, und die Einschätzung ist gemäss Fachperson aktuell
+> Ja, aktuell
 
 **Aktueller Text**
 
-> Oui, et l’évaluation est à jour selon la professionnelle ou le professionnel de santé
+> Oui, à jour
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 
@@ -3267,11 +3252,11 @@ Themen in diesem Bereich:
 
 **Deutscher Ausgangstext**
 
-> Nein
+> Nein oder nicht mehr aktuell
 
 **Aktueller Text**
 
-> Non
+> Non ou plus à jour
 
 #### Antwortoption: Frage «Vorsorge» · Antwortoption
 

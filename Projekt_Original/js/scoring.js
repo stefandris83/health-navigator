@@ -676,7 +676,7 @@ function detectRiskSignals(a, m, fitnessTests) {
   }
   if (a.vorsorge === 'nein') {
     add('vorsorge', 'medizinisch', 'mittel');
-  } else if (a.vorsorge === 'aelter_unsicher' || a.vorsorge === 'weiss_nicht') {
+  } else if (a.vorsorge === 'weiss_nicht') {
     add('vorsorge', 'medizinisch', 'tief');
   }
   if (m.bmiClass === 'untergewicht') {

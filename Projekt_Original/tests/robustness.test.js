@@ -165,7 +165,7 @@ test('Ergebnislink-Basis erlaubt file nur im Standalone-Mock und bevorzugt kanon
   );
 });
 
-test('Storage v3: Roundtrip, Sanitisierung und Index-Clamping', () => {
+test('Storage v4: Roundtrip, Sanitisierung und Index-Clamping', () => {
   const windowObject = makeCore();
   const persistence = windowObject.HealthPersistence;
   const now = Date.now();
@@ -174,25 +174,46 @@ test('Storage v3: Roundtrip, Sanitisierung und Index-Clamping', () => {
       alter: '45',
       familie_hk: 'teilweise',
       familienwissen: 'nein',
-      vorsorge: 'aelter_unsicher',
+      vorsorge: 'nein',
       rauchen: '<script>',
       fremd: 'x',
     },
     dimIndex: 999,
     maxReached: 999,
   }, now);
-  assert.strictEqual(JSON.parse(raw).v, 3);
-  assert.strictEqual(persistence.STORAGE_SCHEMA, 3);
+  assert.strictEqual(JSON.parse(raw).v, 4);
+  assert.strictEqual(persistence.STORAGE_SCHEMA, 4);
   const stored = persistence.readState(raw, { now });
   assert.deepStrictEqual(stored.answers, {
     alter: 45,
     familie_hk: 'teilweise',
     familienwissen: 'nein',
-    vorsorge: 'aelter_unsicher',
+    vorsorge: 'nein',
   });
   assert.strictEqual(stored.dimIndex, windowObject.DIMENSIONS.length - 1);
   assert.strictEqual(stored.maxReached, windowObject.DIMENSIONS.length - 1);
   assert.strictEqual(stored.migrated, false);
+});
+
+test('Storage v3/Hash v2 überführen die zusammengeführte Vorsorgeantwort eindeutig', () => {
+  const windowObject = makeCore();
+  const persistence = windowObject.HealthPersistence;
+  const now = Date.now();
+  const state = persistence.readState(JSON.stringify({
+    v: 3,
+    savedAt: now,
+    answers: { alter: 45, vorsorge: 'aelter_unsicher' },
+    dimIndex: 1,
+    maxReached: 2,
+  }), { now });
+  assert.strictEqual(state.migrated, true);
+  assert.deepStrictEqual(state.answers, { alter: 45, vorsorge: 'nein' });
+
+  const previousHash = Buffer.from(JSON.stringify({
+    v: 2,
+    a: { alter: 45, vorsorge: 'aelter_unsicher' },
+  })).toString('base64url');
+  assert.deepStrictEqual(persistence.decodeAnswers(previousHash), { alter: 45, vorsorge: 'nein' });
 });
 
 test('Storage v2/Legacy behält sichere Antworten und fordert die drei semantisch geänderten Fragen neu an', () => {
@@ -237,7 +258,7 @@ test('Storage v2/Legacy behält sichere Antworten und fordert die drei semantisc
   assert.strictEqual(previous.maxReached, windowObject.DIMENSIONS.length - 1);
 
   const current = persistence.readState(JSON.stringify({
-    v: 3,
+    v: 4,
     savedAt: now,
     answers: { familienwissen: 'nein', vorsorge: 'nein', familie_hk: 'ja' },
   }), { now });
@@ -249,7 +270,7 @@ test('Storage v2/Legacy behält sichere Antworten und fordert die drei semantisc
   });
 
   const old = JSON.stringify({ v: 2, savedAt: now - 91 * 86400000, answers: {} });
-  const future = JSON.stringify({ v: 3, savedAt: now + 3600000, answers: {} });
+  const future = JSON.stringify({ v: 4, savedAt: now + 3600000, answers: {} });
   assert.strictEqual(persistence.readState(old, { now }), null);
   assert.strictEqual(persistence.readState(future, { now }), null);
   assert.strictEqual(persistence.readState(JSON.stringify({ v: 99, savedAt: now, answers: {} }), { now }), null);
@@ -260,7 +281,7 @@ test('Plan-Häkchen sind versioniert, bereinigt, migrierbar und laufen ebenfalls
   const persistence = makeCore().HealthPersistence;
   const now = Date.now();
   const raw = persistence.serializePlan({ 'fi_kraft-0': true, 'fi_kraft-1': false, '<script>': true }, now);
-  assert.strictEqual(JSON.parse(raw).v, 3);
+  assert.strictEqual(JSON.parse(raw).v, 4);
   assert.deepStrictEqual(persistence.readPlan(raw, { now }), {
     items: { 'fi_kraft-0': true },
     migrated: false,
@@ -269,7 +290,7 @@ test('Plan-Häkchen sind versioniert, bereinigt, migrierbar und laufen ebenfalls
   assert.strictEqual(legacy.migrated, true);
   assert.deepStrictEqual(legacy.items, { 'sl_dauer-2': true });
   const previous = persistence.readPlan(JSON.stringify({
-    v: 2,
+    v: 3,
     savedAt: now,
     items: { 'ei_familie-0': true },
   }), { now });
@@ -279,7 +300,7 @@ test('Plan-Häkchen sind versioniert, bereinigt, migrierbar und laufen ebenfalls
   assert.strictEqual(persistence.readPlan(JSON.stringify({ v: 1, savedAt: now, items: {} }), { now }), null);
 });
 
-test('Ergebnis-Link v2 roundtript aktuelle Antworten und migriert v1 ohne semantisch geänderte Antworten', () => {
+test('Ergebnis-Link v3 roundtript aktuelle Antworten und migriert v1 ohne semantisch geänderte Antworten', () => {
   const persistence = makeCore().HealthPersistence;
   const encoded = persistence.encodeAnswers({
     alter: 45,
@@ -289,8 +310,8 @@ test('Ergebnis-Link v2 roundtript aktuelle Antworten und migriert v1 ohne semant
     rauchen: 'nie',
     fremd: '<script>',
   });
-  assert.strictEqual(persistence.HASH_SCHEMA, 2);
-  assert.strictEqual(JSON.parse(Buffer.from(encoded, 'base64url').toString('utf8')).v, 2);
+  assert.strictEqual(persistence.HASH_SCHEMA, 3);
+  assert.strictEqual(JSON.parse(Buffer.from(encoded, 'base64url').toString('utf8')).v, 3);
   assert.deepStrictEqual(persistence.decodeAnswers(encoded), {
     alter: 45,
     familie_hk: 'teilweise',

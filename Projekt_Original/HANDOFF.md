@@ -1,6 +1,6 @@
 # Projektübergabe: Helsana Gesundheitscheck
 
-**Stand:** 28. Juli 2026
+**Stand:** 29. Juli 2026
 **Zweck:** Vollständige Übergabe des aktuellen Arbeitsstands für die weitere Projektarbeit.
 **Wichtig:** Diese Datei beschreibt den Ist-Stand. Bei Widersprüchen sind der getestete Code, die kanonischen Content-Dateien und die Regressionstests massgebend.
 
@@ -23,9 +23,9 @@ nicht durch Reset, Checkout oder eine vermeintliche «Bereinigung» verloren geh
 
 Aktueller Teststand:
 
-- Content-Validierung: erfolgreich, vier Sprachen mit je 1'223 Texten;
+- Content-Validierung: erfolgreich, vier Sprachen mit je 1'222 Texten;
 - Artefakt-Check: erfolgreich;
-- 189 von 189 Einzeltests erfolgreich;
+- 190 von 190 Einzeltests erfolgreich;
 - alle Tests zu Scoring, Empfehlungen, I18n, Content, Security,
   Accessibility, Illustrationen und Lifecycle sind grün.
 
@@ -37,9 +37,9 @@ Aktueller Teststand:
 - App: `/Users/stefandris/Desktop/Health-Navigator-Codex/Projekt_Original`
 - Git-Repository: Workspace-Wurzel
 - Remote: `https://github.com/stefandris83/health-navigator.git`
-- Aktueller Branch: `codex/clarify-prevention-questions`
-- Tracking-Branch nach Veröffentlichung: `origin/codex/clarify-prevention-questions`
-- Ausgangs-HEAD vor diesem Änderungssatz: `2a49fa5 Integrate body profile into recommendations`
+- Aktueller Branch: `codex/refine-prevention-questions`
+- Tracking-Branch nach Veröffentlichung: `origin/codex/refine-prevention-questions`
+- Ausgangs-HEAD vor diesem Änderungssatz: `5f22fc7`
 - Öffentliche GitHub-Pages-Adresse: `https://stefandris83.github.io/health-navigator/`
 
 Der Workflow `.github/workflows/deploy-pages.yml` läuft bei Änderungen unter
@@ -230,9 +230,9 @@ Dimension beziehungsweise 3,33 % des Gesamtscores.
 - `familie_hk` verwendet `ja/nein/teilweise/weiss_nicht`; nur `ja` erzeugt das
   medizinische Signal, während teilweise/unbekannte Angaben direkt zur
   Klärungsempfehlung führen.
-- `vorsorge` unterscheidet `aktuell/aelter_unsicher/nein/weiss_nicht`; alle offenen
-  Werte führen zur passenden Vorsorgeempfehlung, `nein` mit mittlerem und die beiden
-  unklaren Situationen mit tiefem Signal.
+- `vorsorge` unterscheidet `aktuell/nein/weiss_nicht`; die zusammengefasste Auswahl
+  «Nein oder nicht mehr aktuell» führt mit mittlerem, «Weiss ich nicht» mit tiefem
+  Signal zur passenden Vorsorgeempfehlung.
 - Die kompatibel beibehaltene ID `familienwissen` fragt neu nach Wissen über passende
   Vorsorge (`ja/teilweise/nein`) und beeinflusst den Score nicht.
 
@@ -335,10 +335,11 @@ scorefreien Vorsorgefragen und der zentralen Triggergruppen steht neu in
   deckt bei bekannter Familiengeschichte die allgemeinen Einträge `ei_vorsorge`
   und `ei_vorsorgewissen` ab. Unvollständige Familienkenntnis
   und fehlendes Vorsorgewissen erzeugen bewusst kein Risikosignal.
-- Storage-Schema 3 und Hash-Schema 2 verhindern semantische Fehlmigrationen:
-  Bei älteren Ständen bleiben alle anderen gültigen Angaben erhalten, während
-  `familie_hk`, `familienwissen` und `vorsorge` im Abschnitt «Einflussfaktoren» neu
-  beantwortet werden müssen.
+- Storage-Schema 4 und Hash-Schema 3 führen den aktuellen Antwortvertrag. Schema 3
+  beziehungsweise Hash 2 übernimmt die zusammengeführte frühere Auswahl
+  `aelter_unsicher` als `nein`; bei noch älteren Ständen bleiben alle anderen
+  gültigen Angaben erhalten, während `familie_hk`, `familienwissen` und `vorsorge`
+  im Abschnitt «Einflussfaktoren» neu beantwortet werden müssen.
 - Persönliche Stärken werden getrennt vom Aktionsplan nach Aussagebreite,
   Dimensionsscore, Fachgewicht und stabiler Katalogreihenfolge sortiert. Es bleibt
   bei höchstens drei Karten und grundsätzlich einer Stärke pro Dimension.
@@ -382,7 +383,7 @@ scorefreien Vorsorgefragen und der zentralen Triggergruppen steht neu in
 - Deutsch: `content/result-texts/*.json` mit sieben Domains.
 - EN/FR/IT: vollständige schlanke Overlays unter
   `content/result-texts/locales/{en-CH,fr-CH,it-CH}/`.
-- Aktuell je Sprache 1'223 IDs.
+- Aktuell je Sprache 1'222 IDs.
 - Das generierte Runtime-Bundle `js/result-copy.generated.js` wird eingecheckt, damit
   `file://` ohne Build funktioniert.
 
@@ -549,22 +550,22 @@ und defensive Coach-Fallbacks, weil sie getestet oder Teil der Zielarchitektur s
 - Kein Umgehen der Browser-Sicherheitsrichtlinie, als der eingebettete Browser lokale
   `file://`-URLs blockierte.
 
-## 15. Aktueller Testnachweis vom 28. Juli 2026
+## 15. Aktueller Testnachweis vom 29. Juli 2026
 
 Ausgeführt im Ordner `Projekt_Original`:
 
 | Befehl | Ergebnis |
 |---|---|
-| `node scripts/result-content.js validate` | erfolgreich; 1'223 Texte je Locale |
+| `node scripts/result-content.js validate` | erfolgreich; 1'222 Texte je Locale |
 | `node scripts/result-content.js check` | erfolgreich; Bundle, CSV, Markdown und Manifeste aktuell |
 | `node tests/content-workflow.test.js` | 42/42 |
 | `node tests/integration.test.js` | 82/82 |
-| `node tests/robustness.test.js` | 24/24 |
+| `node tests/robustness.test.js` | 25/25 |
 | `node tests/ui-lifecycle.test.js` | 19/19 |
 | `node tests/i18n-static.test.js` | 18/18 |
 | `node tests/i18n-runtime.test.js` | 4/4 |
 
-**Gesamt aktuell: 189/189 Tests erfolgreich.**
+**Gesamt aktuell: 190/190 Tests erfolgreich.**
 
 Vollständiger Testblock:
 
